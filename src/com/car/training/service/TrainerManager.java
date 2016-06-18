@@ -22,7 +22,7 @@ public interface TrainerManager extends BaseManager<Trainer> {
 	Trainer findById(String id);
 	
 	/** 获取企业/公司列表 */
-	ResultPage<Trainer> findPageByTrainer(Trainer trainer);
+	ResultPage<Trainer> findPageByTrainer(Trainer trainer, Integer pageSize, Integer pageNo);
 	
 	/** 获取企业/公司列表 */
 	List<Trainer> findListByTrainer(Trainer trainer);

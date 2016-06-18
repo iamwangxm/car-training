@@ -72,11 +72,11 @@ public class JobsServiceImpl  implements JobsService{
 		ResultPage<com.car.training.model.Jobs> sResultPage = new ResultPage<com.car.training.model.Jobs>();
 		com.car.training.model.Jobs target = new com.car.training.model.Jobs();
 		BeanUtils.copyProperties(jobs, target);
-		sResultPage = jobsManager.findPageByJobs(target);
+		sResultPage = jobsManager.findPageByJobs(target, pageSize, pageNo);
 
 		if (sResultPage != null) {
 			tResultPage = new ResultPage<Jobs>();
-			tResultPage = ResultPageBeanUtils.copyProperties(sResultPage, pageSize, pageNo);
+			tResultPage = ResultPageBeanUtils.copyProperties(sResultPage);
 
 			if (sResultPage.getResult() != null) {
 				tResultPage.setResult(ResultPageBeanUtils.copyJobsPropertiesToRemote(sResultPage.getResult()));

@@ -72,11 +72,11 @@ public class TrainerEssayServiceImpl  implements TrainerEssayService{
 		ResultPage<com.car.training.model.TrainerEssay> sResultPage = new ResultPage<com.car.training.model.TrainerEssay>();
 		com.car.training.model.TrainerEssay target = new com.car.training.model.TrainerEssay();
 		BeanUtils.copyProperties(trainerEssay, target);
-		sResultPage = trainerEssayManager.findPageByTrainerEssay(target);
+		sResultPage = trainerEssayManager.findPageByTrainerEssay(target, pageSize, pageNo);
 
 		if (sResultPage != null) {
 			tResultPage = new ResultPage<TrainerEssay>();
-			tResultPage = ResultPageBeanUtils.copyProperties(sResultPage, pageSize, pageNo);
+			tResultPage = ResultPageBeanUtils.copyProperties(sResultPage);
 
 			if (sResultPage.getResult() != null) {
 				tResultPage.setResult(ResultPageBeanUtils.copyTrainerEssayPropertiesToRemote(sResultPage.getResult()));

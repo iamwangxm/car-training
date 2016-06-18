@@ -22,7 +22,7 @@ public interface AutobotsCommentManager extends BaseManager<AutobotsComment> {
 	AutobotsComment findById(String id);
 	
 	/** 获取汽车人评论列表 */
-	ResultPage<AutobotsComment> findPageByAutobotsComment(AutobotsComment autobotsComment);
+	ResultPage<AutobotsComment> findPageByAutobotsComment(AutobotsComment autobotsComment, Integer pageSize, Integer pageNo);
 	
 	/** 获取汽车人评论列表 */
 	List<AutobotsComment> findListByAutobotsComment(AutobotsComment autobotsComment);

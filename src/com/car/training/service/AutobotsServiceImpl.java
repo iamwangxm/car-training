@@ -72,11 +72,11 @@ public class AutobotsServiceImpl  implements AutobotsService{
 		ResultPage<com.car.training.model.Autobots> sResultPage = new ResultPage<com.car.training.model.Autobots>();
 		com.car.training.model.Autobots target = new com.car.training.model.Autobots();
 		BeanUtils.copyProperties(autobots, target);
-		sResultPage = autobotsManager.findPageByAutobots(target);
+		sResultPage = autobotsManager.findPageByAutobots(target, pageSize, pageNo);
 
 		if (sResultPage != null) {
 			tResultPage = new ResultPage<Autobots>();
-			tResultPage = ResultPageBeanUtils.copyProperties(sResultPage, pageSize, pageNo);
+			tResultPage = ResultPageBeanUtils.copyProperties(sResultPage);
 
 			if (sResultPage.getResult() != null) {
 				tResultPage.setResult(ResultPageBeanUtils.copyAutobotsPropertiesToRemote(sResultPage.getResult()));

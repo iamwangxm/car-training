@@ -72,11 +72,11 @@ public class TopicCommentServiceImpl  implements TopicCommentService{
 		ResultPage<com.car.training.model.TopicComment> sResultPage = new ResultPage<com.car.training.model.TopicComment>();
 		com.car.training.model.TopicComment target = new com.car.training.model.TopicComment();
 		BeanUtils.copyProperties(topicComment, target);
-		sResultPage = topicCommentManager.findPageByTopicComment(target);
+		sResultPage = topicCommentManager.findPageByTopicComment(target, pageSize, pageNo);
 
 		if (sResultPage != null) {
 			tResultPage = new ResultPage<TopicComment>();
-			tResultPage = ResultPageBeanUtils.copyProperties(sResultPage, pageSize, pageNo);
+			tResultPage = ResultPageBeanUtils.copyProperties(sResultPage);
 
 			if (sResultPage.getResult() != null) {
 				tResultPage.setResult(ResultPageBeanUtils.copyTopicCommentPropertiesToRemote(sResultPage.getResult()));

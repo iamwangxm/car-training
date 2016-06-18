@@ -22,7 +22,7 @@ public interface CoursesManager extends BaseManager<Courses> {
 	Courses findById(String id);
 	
 	/** 获取企业/公司列表 */
-	ResultPage<Courses> findPageByCourses(Courses courses);
+	ResultPage<Courses> findPageByCourses(Courses courses, Integer pageSize, Integer pageNo);
 	
 	/** 获取企业/公司列表 */
 	List<Courses> findListByCourses(Courses courses);

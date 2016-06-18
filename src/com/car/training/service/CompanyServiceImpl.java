@@ -72,11 +72,11 @@ public class CompanyServiceImpl  implements CompanyService{
 		ResultPage<com.car.training.model.Company> sResultPage = new ResultPage<com.car.training.model.Company>();
 		com.car.training.model.Company target = new com.car.training.model.Company();
 		BeanUtils.copyProperties(company, target);
-		sResultPage = companyManager.findPageByCompany(target);
+		sResultPage = companyManager.findPageByCompany(target, pageSize, pageNo);
 
 		if (sResultPage != null) {
 			tResultPage = new ResultPage<Company>();
-			tResultPage = ResultPageBeanUtils.copyProperties(sResultPage, pageSize, pageNo);
+			tResultPage = ResultPageBeanUtils.copyProperties(sResultPage);
 
 			if (sResultPage.getResult() != null) {
 				tResultPage.setResult(ResultPageBeanUtils.copyCompanyPropertiesToRemote(sResultPage.getResult()));

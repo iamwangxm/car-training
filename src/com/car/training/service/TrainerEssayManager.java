@@ -22,7 +22,7 @@ public interface TrainerEssayManager extends BaseManager<TrainerEssay> {
 	TrainerEssay findById(String id);
 	
 	/** 获取企业/公司列表 */
-	ResultPage<TrainerEssay> findPageByTrainerEssay(TrainerEssay trainerEssay);
+	ResultPage<TrainerEssay> findPageByTrainerEssay(TrainerEssay trainerEssay, Integer pageSize, Integer pageNo);
 	
 	/** 获取企业/公司列表 */
 	List<TrainerEssay> findListByTrainerEssay(TrainerEssay trainerEssay);

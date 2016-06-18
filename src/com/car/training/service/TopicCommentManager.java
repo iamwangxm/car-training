@@ -22,7 +22,7 @@ public interface TopicCommentManager extends BaseManager<TopicComment> {
 	TopicComment findById(String id);
 	
 	/** 获取企业/公司列表 */
-	ResultPage<TopicComment> findPageByTopicComment(TopicComment topicComment);
+	ResultPage<TopicComment> findPageByTopicComment(TopicComment topicComment, Integer pageSize, Integer pageNo);
 	
 	/** 获取企业/公司列表 */
 	List<TopicComment> findListByTopicComment(TopicComment topicComment);

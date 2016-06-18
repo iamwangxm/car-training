@@ -72,11 +72,11 @@ public class TrainerServiceImpl  implements TrainerService{
 		ResultPage<com.car.training.model.Trainer> sResultPage = new ResultPage<com.car.training.model.Trainer>();
 		com.car.training.model.Trainer target = new com.car.training.model.Trainer();
 		BeanUtils.copyProperties(trainer, target);
-		sResultPage = trainerManager.findPageByTrainer(target);
+		sResultPage = trainerManager.findPageByTrainer(target, pageSize, pageNo);
 
 		if (sResultPage != null) {
 			tResultPage = new ResultPage<Trainer>();
-			tResultPage = ResultPageBeanUtils.copyProperties(sResultPage, pageSize, pageNo);
+			tResultPage = ResultPageBeanUtils.copyProperties(sResultPage);
 
 			if (sResultPage.getResult() != null) {
 				tResultPage.setResult(ResultPageBeanUtils.copyTrainerPropertiesToRemote(sResultPage.getResult()));

@@ -22,7 +22,7 @@ public interface JobsManager extends BaseManager<Jobs> {
 	Jobs findById(String id);
 	
 	/** 获取企业/公司列表 */
-	ResultPage<Jobs> findPageByJobs(Jobs jobs);
+	ResultPage<Jobs> findPageByJobs(Jobs jobs, Integer pageSize, Integer pageNo);
 	
 	/** 获取企业/公司列表 */
 	List<Jobs> findListByJobs(Jobs jobs);

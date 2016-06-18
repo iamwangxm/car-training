@@ -72,11 +72,11 @@ public class CoursesServiceImpl  implements CoursesService{
 		ResultPage<com.car.training.model.Courses> sResultPage = new ResultPage<com.car.training.model.Courses>();
 		com.car.training.model.Courses target = new com.car.training.model.Courses();
 		BeanUtils.copyProperties(courses, target);
-		sResultPage = coursesManager.findPageByCourses(target);
+		sResultPage = coursesManager.findPageByCourses(target, pageSize, pageNo);
 
 		if (sResultPage != null) {
 			tResultPage = new ResultPage<Courses>();
-			tResultPage = ResultPageBeanUtils.copyProperties(sResultPage, pageSize, pageNo);
+			tResultPage = ResultPageBeanUtils.copyProperties(sResultPage);
 
 			if (sResultPage.getResult() != null) {
 				tResultPage.setResult(ResultPageBeanUtils.copyCoursesPropertiesToRemote(sResultPage.getResult()));

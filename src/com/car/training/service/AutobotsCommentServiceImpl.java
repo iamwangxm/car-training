@@ -68,19 +68,21 @@ public class AutobotsCommentServiceImpl  implements AutobotsCommentService{
 	@Override
 	@Timing
 	@Transactional(readOnly = true)
-	public ResultPage<AutobotsComment> findPageByAutobotsComment(AutobotsComment autobotsComment, Integer pageSize, Integer pageNo) {
+	public ResultPage<AutobotsComment> findPageByAutobotsComment(AutobotsComment autobotsComment, Integer pageSize,
+			Integer pageNo) {
 		ResultPage<AutobotsComment> tResultPage = null;
 		ResultPage<com.car.training.model.AutobotsComment> sResultPage = new ResultPage<com.car.training.model.AutobotsComment>();
 		com.car.training.model.AutobotsComment target = new com.car.training.model.AutobotsComment();
 		BeanUtils.copyProperties(autobotsComment, target);
-		sResultPage = autobotsCommentManager.findPageByAutobotsComment(target);
+
+		sResultPage = autobotsCommentManager.findPageByAutobotsComment(target, pageSize, pageNo);
 
 		if (sResultPage != null) {
 			tResultPage = new ResultPage<AutobotsComment>();
-			tResultPage = ResultPageBeanUtils.copyProperties(sResultPage, pageSize, pageNo);
-
+			tResultPage = ResultPageBeanUtils.copyProperties(sResultPage);
 			if (sResultPage.getResult() != null) {
-				tResultPage.setResult(ResultPageBeanUtils.copyAutobotsCommentPropertiesToRemote(sResultPage.getResult()));
+				tResultPage
+						.setResult(ResultPageBeanUtils.copyAutobotsCommentPropertiesToRemote(sResultPage.getResult()));
 			}
 		}
 		return tResultPage;

@@ -22,7 +22,7 @@ public interface CompanyManager extends BaseManager<Company> {
 	Company findById(String id);
 	
 	/** 获取企业/公司列表 */
-	ResultPage<Company> findPageByCompany(Company company);
+	ResultPage<Company> findPageByCompany(Company company, Integer pageSize, Integer pageNo);
 	
 	/** 获取企业/公司列表 */
 	List<Company> findListByCompany(Company company);

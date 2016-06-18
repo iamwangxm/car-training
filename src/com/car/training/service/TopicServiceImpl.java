@@ -72,11 +72,11 @@ public class TopicServiceImpl  implements TopicService{
 		ResultPage<com.car.training.model.Topic> sResultPage = new ResultPage<com.car.training.model.Topic>();
 		com.car.training.model.Topic target = new com.car.training.model.Topic();
 		BeanUtils.copyProperties(topic, target);
-		sResultPage = topicManager.findPageByTopic(target);
+		sResultPage = topicManager.findPageByTopic(target, pageSize, pageNo);
 
 		if (sResultPage != null) {
 			tResultPage = new ResultPage<Topic>();
-			tResultPage = ResultPageBeanUtils.copyProperties(sResultPage, pageSize, pageNo);
+			tResultPage = ResultPageBeanUtils.copyProperties(sResultPage);
 
 			if (sResultPage.getResult() != null) {
 				tResultPage.setResult(ResultPageBeanUtils.copyTopicPropertiesToRemote(sResultPage.getResult()));

@@ -22,7 +22,7 @@ public interface TopicManager extends BaseManager<Topic> {
 	Topic findById(String id);
 	
 	/** 获取企业/公司列表 */
-	ResultPage<Topic> findPageByTopic(Topic topic);
+	ResultPage<Topic> findPageByTopic(Topic topic, Integer pageSize, Integer pageNo);
 	
 	/** 获取企业/公司列表 */
 	List<Topic> findListByTopic(Topic topic);
