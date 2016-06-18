@@ -1,0 +1,258 @@
+package com.car.training.model;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.ConstraintMode;
+import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import org.ironrhino.common.model.Region;
+import org.ironrhino.core.metadata.AutoConfig;
+import org.ironrhino.core.metadata.Hidden;
+import org.ironrhino.core.metadata.NotInCopy;
+import org.ironrhino.core.metadata.UiConfig;
+import org.ironrhino.core.model.BaseEntity;
+import org.ironrhino.core.search.elasticsearch.annotations.Searchable;
+import org.nustaq.serialization.annotations.Version;
+
+import com.car.training.enums.Industry;
+import com.car.training.enums.Nature;
+import com.car.training.enums.Scale;
+import com.car.training.enums.Welfare;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Searchable
+@AutoConfig
+@javax.persistence.Entity
+@Table(name = "company")
+public class Company extends BaseEntity {
+
+	private static final long serialVersionUID = -5484521796779236186L;
+
+	/**公司名称**/
+	@Column(length = 50, nullable = true)
+	private String name; 
+	
+	/** 密码 */
+	@Column(length = 50, nullable = true)
+	private String password;
+	
+	/**区域**/
+	@JoinColumn(name = "region", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	private Region region;
+	
+	/**公司地址**/
+	@Column(length = 100, nullable = true)
+	private String address; 
+	
+	/**公司LOGO**/
+	@Column(length = 255, nullable = true)
+	private String logo;  
+	
+	/**公司规模**/
+	@UiConfig(hiddenInList = @Hidden(true) )
+	private Scale scale;
+	
+	/**所属行业**/
+	@UiConfig(hiddenInList = @Hidden(true) )
+	private Industry industry;
+	
+	/**公司性质**/
+	@UiConfig(hiddenInList = @Hidden(true) )
+	private Nature nature;
+	
+	/**福利**/
+	@UiConfig(hiddenInList = @Hidden(true) )
+	private Welfare welfare;
+	
+	/**公司简介*/
+	@Column(length = 4000, nullable = true)
+	private String intro;
+	
+	/**工作环境照片1**/
+	private String environmentURL1;
+	
+	/**工作环境照片2**/
+	private String environmentURL2;
+	
+	/**创建日期*/
+	@UiConfig(hidden = true)
+	@Column(updatable = false)
+	private Date createDate = new Date();
+	
+	/**修改日期*/
+	@NotInCopy
+	@UiConfig(hidden = true)
+	@Column(insertable = false)
+	private Date modifyDate;
+	
+	/**创建人*/
+	@NotInCopy
+	@UiConfig(hidden = true)
+	@Column(updatable = false)
+	private String createUser;
+
+	/**修改人*/
+	@NotInCopy
+	@UiConfig(hidden = true)
+	@Column(insertable = false)
+	private String modifyUser;
+	
+	/**是否启用*/
+	@JsonIgnore
+	private boolean enabed = true;
+	
+	@Version(value = 0)
+	private int version = -1;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Region getRegion() {
+		return region;
+	}
+
+	public void setRegion(Region region) {
+		this.region = region;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getLogo() {
+		return logo;
+	}
+
+	public void setLogo(String logo) {
+		this.logo = logo;
+	}
+
+	public Scale getScale() {
+		return scale;
+	}
+
+	public void setScale(Scale scale) {
+		this.scale = scale;
+	}
+
+	public Industry getIndustry() {
+		return industry;
+	}
+
+	public void setIndustry(Industry industry) {
+		this.industry = industry;
+	}
+
+	public Nature getNature() {
+		return nature;
+	}
+
+	public void setNature(Nature nature) {
+		this.nature = nature;
+	}
+
+	public Welfare getWelfare() {
+		return welfare;
+	}
+
+	public void setWelfare(Welfare welfare) {
+		this.welfare = welfare;
+	}
+
+	public String getIntro() {
+		return intro;
+	}
+
+	public void setIntro(String intro) {
+		this.intro = intro;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getEnvironmentURL1() {
+		return environmentURL1;
+	}
+
+	public void setEnvironmentURL1(String environmentURL1) {
+		this.environmentURL1 = environmentURL1;
+	}
+
+	public String getEnvironmentURL2() {
+		return environmentURL2;
+	}
+
+	public void setEnvironmentURL2(String environmentURL2) {
+		this.environmentURL2 = environmentURL2;
+	}
+
+	public Date getCreateDate() {
+		return createDate;
+	}
+
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+
+	public Date getModifyDate() {
+		return modifyDate;
+	}
+
+	public void setModifyDate(Date modifyDate) {
+		this.modifyDate = modifyDate;
+	}
+
+	public String getCreateUser() {
+		return createUser;
+	}
+
+	public void setCreateUser(String createUser) {
+		this.createUser = createUser;
+	}
+
+	public String getModifyUser() {
+		return modifyUser;
+	}
+
+	public void setModifyUser(String modifyUser) {
+		this.modifyUser = modifyUser;
+	}
+
+	public boolean isEnabed() {
+		return enabed;
+	}
+
+	public void setEnabed(boolean enabed) {
+		this.enabed = enabed;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+	
+	
+}

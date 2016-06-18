@@ -1,0 +1,33 @@
+package com.car.training.service;
+
+import java.util.List;
+
+import org.ironrhino.core.model.ResultPage;
+import org.ironrhino.core.remoting.Remoting;
+import org.springframework.core.annotation.Order;
+
+import com.car.training.domain.Company;
+
+@Order(12)
+@Remoting
+public interface CompanyService  {
+
+	/** 新增企业/公司信息 */
+	void save(Company company);
+
+	/** 更新企业/公司信息 */
+	void update(Company company);
+
+	/** 删除企业/公司信息 */
+	void delete(String id);
+
+	/** 获取企业/公司信息 **/
+	Company findById(String id);
+	
+	/** 获取企业/公司列表 */
+	ResultPage<Company> findPageByCompany(Company company,Integer pageSize,Integer pageNo);
+	
+	/** 获取企业/公司列表 */
+	List<Company> findListByCompany(Company company);
+	
+}

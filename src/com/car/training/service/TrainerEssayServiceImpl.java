@@ -1,0 +1,105 @@
+package com.car.training.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.commons.lang3.StringUtils;
+import org.ironrhino.core.aop.Timing;
+import org.ironrhino.core.model.ResultPage;
+import org.ironrhino.core.util.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+import com.car.training.domain.TrainerEssay;
+import com.car.training.utils.ResultPageBeanUtils;
+
+@Component
+public class TrainerEssayServiceImpl  implements TrainerEssayService{
+
+	@Autowired
+	private TrainerEssayManager trainerEssayManager;
+
+	/** 新增企业/公司信息 */
+	@Override
+	@Timing
+	@Transactional
+	public void save(TrainerEssay trainerEssay) {
+		com.car.training.model.TrainerEssay target = new com.car.training.model.TrainerEssay();
+		BeanUtils.copyProperties(trainerEssay, target);
+		trainerEssayManager.save(target);
+	}
+
+	/** 更新企业/公司信息 */
+	@Override
+	@Timing
+	@Transactional
+	public void update(TrainerEssay trainerEssay) {
+		this.save(trainerEssay);
+	}
+
+	/** 删除企业/公司信息 */
+	@Override
+	@Timing
+	@Transactional
+	public void delete(String id) {
+		if (StringUtils.isNotBlank(id)) {
+			com.car.training.model.TrainerEssay target = new com.car.training.model.TrainerEssay();
+			target = trainerEssayManager.get(id);
+			trainerEssayManager.delete(target);
+		}
+	}
+
+	/** 获取企业/公司信息 **/
+	@Override
+	@Timing
+	@Transactional(readOnly = true)
+	public TrainerEssay findById(String id) {
+		com.car.training.model.TrainerEssay source = trainerEssayManager.get(id);
+		if (source == null) {
+			return null;
+		}
+		TrainerEssay target = new TrainerEssay();
+		BeanUtils.copyProperties(source, target);
+		return target;
+	}
+	
+	/** 获取企业/公司列表 */
+	@Override
+	@Timing
+	@Transactional(readOnly = true)
+	public ResultPage<TrainerEssay> findPageByTrainerEssay(TrainerEssay trainerEssay, Integer pageSize, Integer pageNo) {
+		ResultPage<TrainerEssay> tResultPage = null;
+		ResultPage<com.car.training.model.TrainerEssay> sResultPage = new ResultPage<com.car.training.model.TrainerEssay>();
+		com.car.training.model.TrainerEssay target = new com.car.training.model.TrainerEssay();
+		BeanUtils.copyProperties(trainerEssay, target);
+		sResultPage = trainerEssayManager.findPageByTrainerEssay(target);
+
+		if (sResultPage != null) {
+			tResultPage = new ResultPage<TrainerEssay>();
+			tResultPage = ResultPageBeanUtils.copyProperties(sResultPage, pageSize, pageNo);
+
+			if (sResultPage.getResult() != null) {
+				tResultPage.setResult(ResultPageBeanUtils.copyTrainerEssayPropertiesToRemote(sResultPage.getResult()));
+			}
+		}
+		return tResultPage;
+	}
+	
+	/** 获取企业/公司列表 */
+	@Override
+	@Timing
+	@Transactional(readOnly = true)
+	public List<TrainerEssay> findListByTrainerEssay(TrainerEssay trainerEssay) {
+		List<TrainerEssay> resultList = new ArrayList<>();
+		com.car.training.model.TrainerEssay tTrainerEssay = new com.car.training.model.TrainerEssay();
+		BeanUtils.copyProperties(trainerEssay, tTrainerEssay);
+		List<com.car.training.model.TrainerEssay> sourceList = trainerEssayManager.findListByTrainerEssay(tTrainerEssay);
+		for (com.car.training.model.TrainerEssay sourceTrainerEssay : sourceList) {
+			TrainerEssay target = new TrainerEssay();
+			BeanUtils.copyProperties(sourceTrainerEssay, target);
+			resultList.add(target);
+		}
+		return resultList;
+	}
+	
+}
