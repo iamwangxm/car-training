@@ -27,7 +27,7 @@ public class ResultPageBeanUtils {
 	 * @author Alex
 	 * @date 2016年6月10日 下午19:22:51
 	 */
-	public static <T, K> ResultPage<T> copyProperties(ResultPage<K> source,Integer pageSize,Integer pageNo) {
+	public static <T, K> ResultPage<T> copyProperties(ResultPage<K> source) {
 		ResultPage<T> resultPageTarget = new ResultPage<>();
 		resultPageTarget.setResult(new ArrayList<>());
 		// 复制page信息
@@ -36,11 +36,7 @@ public class ResultPageBeanUtils {
 		resultPageTarget.setPageSize(source.getPageSize());
 		resultPageTarget.setTookInMillis(source.getTookInMillis());
 		resultPageTarget.setTotalResults(source.getTotalResults());
-		
-		pageSize = ((pageSize == null || pageSize <= 0) ? ResultPage.DEFAULT_PAGE_SIZE : pageSize);
-		pageNo = ((pageNo == null || pageNo <= 0) ? 1 : pageNo);
-		resultPageTarget.setPageSize(pageSize);
-		resultPageTarget.setPageNo(pageNo);
+
 		return resultPageTarget;
 	}
 
