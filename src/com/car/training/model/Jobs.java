@@ -1,6 +1,7 @@
 package com.car.training.model;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.ConstraintMode;
@@ -9,6 +10,8 @@ import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.ironrhino.common.model.Region;
 import org.ironrhino.core.metadata.AutoConfig;
@@ -20,6 +23,7 @@ import org.ironrhino.core.search.elasticsearch.annotations.Searchable;
 import org.nustaq.serialization.annotations.Version;
 
 import com.car.training.enums.Education;
+import com.car.training.enums.JobType;
 import com.car.training.enums.Language;
 import com.car.training.enums.Major;
 import com.car.training.enums.Welfare;
@@ -43,6 +47,7 @@ public class Jobs extends BaseEntity {
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Company company; 
 	
+	/**工作地点**/
 	@NotInCopy
 	@JoinColumn(name = "regionId", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -58,26 +63,40 @@ public class Jobs extends BaseEntity {
 	@UiConfig(hiddenInList = @Hidden(true) )
 	private Education education;
 	
-	/**工作类别**/
+	/**工作类别(全职/兼职)**/
 	@UiConfig(hiddenInList = @Hidden(true) )
-	private String jobCategory;
+	private JobType jobType;
 	
 	/**福利**/
 	@UiConfig(hiddenInList = @Hidden(true) )
-	private Welfare welfare;
+	private List<Welfare> welfare;
 	
-	private Language language;
+	/**语言要求**/
+	private List<Language> language;
 	
+	/**工作描述**/
 	@Column(length = 4000, nullable = true)
 	private String jobDescription;
 	
+	/**报告上级**/
 	private String reportTo;
 	
+	/**所属部门**/
 	private String department;
 	
-	private int underling;
+	/**下属**/
+	private Integer underling;
 	
+	/**所属专业**/
 	private Major major;
+
+	/**兼职开始执行时间**/
+	@Temporal(TemporalType.DATE)
+	private Date startExcutionDate;
+	
+	/**兼职结束执行时间**/
+	@Temporal(TemporalType.DATE)
+	private Date endExecutionDate;
 	
 	@UiConfig(hidden = true)
 	@Column(updatable = false) 
@@ -152,27 +171,27 @@ public class Jobs extends BaseEntity {
 		this.education = education;
 	}
 
-	public String getJobCategory() {
-		return jobCategory;
+	public JobType getJobType() {
+		return jobType;
 	}
 
-	public void setJobCategory(String jobCategory) {
-		this.jobCategory = jobCategory;
+	public void setJobType(JobType jobType) {
+		this.jobType = jobType;
 	}
 
-	public Welfare getWelfare() {
+	public List<Welfare> getWelfare() {
 		return welfare;
 	}
 
-	public void setWelfare(Welfare welfare) {
+	public void setWelfare(List<Welfare> welfare) {
 		this.welfare = welfare;
 	}
 
-	public Language getLanguage() {
+	public List<Language> getLanguage() {
 		return language;
 	}
 
-	public void setLanguage(Language language) {
+	public void setLanguage(List<Language> language) {
 		this.language = language;
 	}
 
@@ -200,11 +219,11 @@ public class Jobs extends BaseEntity {
 		this.department = department;
 	}
 
-	public int getUnderling() {
+	public Integer getUnderling() {
 		return underling;
 	}
 
-	public void setUnderling(int underling) {
+	public void setUnderling(Integer underling) {
 		this.underling = underling;
 	}
 
@@ -214,6 +233,22 @@ public class Jobs extends BaseEntity {
 
 	public void setMajor(Major major) {
 		this.major = major;
+	}
+
+	public Date getStartExcutionDate() {
+		return startExcutionDate;
+	}
+
+	public void setStartExcutionDate(Date startExcutionDate) {
+		this.startExcutionDate = startExcutionDate;
+	}
+
+	public Date getEndExecutionDate() {
+		return endExecutionDate;
+	}
+
+	public void setEndExecutionDate(Date endExecutionDate) {
+		this.endExecutionDate = endExecutionDate;
 	}
 
 	public Date getCreateDate() {
@@ -264,5 +299,5 @@ public class Jobs extends BaseEntity {
 		this.version = version;
 	}
 
-
+	
 }

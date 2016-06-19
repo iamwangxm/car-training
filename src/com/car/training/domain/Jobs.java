@@ -2,10 +2,12 @@ package com.car.training.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import org.ironrhino.common.model.Region;
 
 import com.car.training.enums.Education;
+import com.car.training.enums.JobType;
 import com.car.training.enums.Language;
 import com.car.training.enums.Major;
 import com.car.training.enums.Welfare;
@@ -34,12 +36,18 @@ public class Jobs implements Serializable {
 	private Education education;
 	
 	/**工作种类**/
-	private String jobCategory;
+	private JobType jobType;
+	
+	/**兼职开始执行时间**/
+	private Date startExcutionDate;
+	
+	/**兼职结束执行时间**/
+	private Date endExecutionDate;
 	
 	/**福利**/
-	private Welfare welfare;
+	private List<Welfare> welfare;
 	
-	private Language language;
+	private List<Language> language;
 	
 	private String jobDescription;
 	
@@ -47,7 +55,7 @@ public class Jobs implements Serializable {
 	
 	private String department;
 	
-	private int underling;
+	private Integer underling;
 	
 	private Major major;
 	
@@ -117,27 +125,43 @@ public class Jobs implements Serializable {
 		this.education = education;
 	}
 
-	public String getJobCategory() {
-		return jobCategory;
+	public JobType getJobType() {
+		return jobType;
 	}
 
-	public void setJobCategory(String jobCategory) {
-		this.jobCategory = jobCategory;
+	public void setJobType(JobType jobType) {
+		this.jobType = jobType;
 	}
 
-	public Welfare getWelfare() {
+	public Date getStartExcutionDate() {
+		return startExcutionDate;
+	}
+
+	public void setStartExcutionDate(Date startExcutionDate) {
+		this.startExcutionDate = startExcutionDate;
+	}
+
+	public Date getEndExecutionDate() {
+		return endExecutionDate;
+	}
+
+	public void setEndExecutionDate(Date endExecutionDate) {
+		this.endExecutionDate = endExecutionDate;
+	}
+
+	public List<Welfare> getWelfare() {
 		return welfare;
 	}
 
-	public void setWelfare(Welfare welfare) {
+	public void setWelfare(List<Welfare> welfare) {
 		this.welfare = welfare;
 	}
 
-	public Language getLanguage() {
+	public List<Language> getLanguage() {
 		return language;
 	}
 
-	public void setLanguage(Language language) {
+	public void setLanguage(List<Language> language) {
 		this.language = language;
 	}
 
@@ -165,11 +189,11 @@ public class Jobs implements Serializable {
 		this.department = department;
 	}
 
-	public int getUnderling() {
+	public Integer getUnderling() {
 		return underling;
 	}
 
-	public void setUnderling(int underling) {
+	public void setUnderling(Integer underling) {
 		this.underling = underling;
 	}
 
@@ -220,5 +244,4 @@ public class Jobs implements Serializable {
 	public void setEnabed(boolean enabed) {
 		this.enabed = enabed;
 	}
-
 }

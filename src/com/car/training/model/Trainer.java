@@ -45,10 +45,13 @@ public class Trainer extends BaseEntity {
 	private Collection <BusinessCategory> businessCategory;
 	
 	/**执行类别**/
-	private ExecutionCategory executionCategory;
+	private Collection<ExecutionCategory> executionCategory;
 	
 	/**当前职位**/
 	private String currentPosition;
+	
+	/**公司发起的橄榄枝**/
+	private String olives;
 	
 	/**创建时间**/
 	@UiConfig(hidden = true)
@@ -126,12 +129,11 @@ public class Trainer extends BaseEntity {
 	public void setBusinessCategory(Collection<BusinessCategory> businessCategory) {
 		this.businessCategory = businessCategory;
 	}
-
-	public ExecutionCategory getExecutionCategory() {
+	public Collection<ExecutionCategory> getExecutionCategory() {
 		return executionCategory;
 	}
 
-	public void setExecutionCategory(ExecutionCategory executionCategory) {
+	public void setExecutionCategory(Collection<ExecutionCategory> executionCategory) {
 		this.executionCategory = executionCategory;
 	}
 
@@ -193,6 +195,14 @@ public class Trainer extends BaseEntity {
 
 	public boolean isEnabled() {
 		return enabled;
+	}
+
+	public String getOlives() {
+		return olives;
+	}
+
+	public void setOlives(String olives) {
+		this.olives = olives;
 	}
 
 	public void setEnabled(boolean enabled) {

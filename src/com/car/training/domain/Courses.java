@@ -1,14 +1,14 @@
 package com.car.training.domain;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
 import org.ironrhino.common.model.Region;
-import org.ironrhino.core.model.BaseEntity;
 
 import com.car.training.enums.CourseType;
 
-public class Courses extends BaseEntity {
+public class Courses implements Serializable {
 
 	private static final long serialVersionUID = -2197633192945779031L;
 
