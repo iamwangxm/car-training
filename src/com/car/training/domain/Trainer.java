@@ -1,12 +1,13 @@
 package com.car.training.domain;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Collection;
 import java.util.Date;
 
 import com.car.training.enums.BusinessCategory;
 import com.car.training.enums.Education;
 import com.car.training.enums.ExecutionCategory;
-import com.car.training.enums.Sex;
 
 
 public class Trainer implements Serializable {
@@ -15,60 +16,52 @@ public class Trainer implements Serializable {
 
 	private String id;
 	
-	private String name;
-
-	private String nickname;
-
-	private String password;
-	
-	private Date brithday;
-	
-	private String headLogo;
-	
-	private Sex gender;
-
-	private String idCard;
-
-	private String QQ;
-
-	private String mobile;
-	
-	private String email;
-
-	private String weixin;
-
-	private String telephone;
-	
+	/**星级*/
 	private int starLevel;
 	
+	/**学历*/
 	private Education education;
-
-	private String intro;
 	
+	/**主修课程*/
 	private String mainCourse;
 	
+	/**汽车行业经验*/
 	private Integer autoYears;
 	
+	/**汽车行业经验*/
 	private Integer trainingYears;
 	
-	private BusinessCategory businessCategory;
+	/**业务领域**/
+	private Collection <BusinessCategory> businessCategory;
 	
-	private ExecutionCategory executionCategory;
+	/**执行类别**/
+	private Collection<ExecutionCategory> executionCategory;
 	
+	/**当前职位**/
 	private String currentPosition;
-
+	
+	/**公司发起的橄榄枝**/
+	private String olives;
+	
+	/**创建时间**/
 	private Date createDate;
-
+	
+	/**修改时间**/
 	private Date modifyDate;
 	
+	/**是否诚信认证,默认为false未认证**/
 	private boolean authFaithed;
 	
-	private Integer averageScore;
+	/**学员对讲师的平均打分**/
+	private BigDecimal averageScore;
 	
+	/**培训师的展示视频1**/
 	private String vedioURL1;
 	
+	/**培训师的展示视频2**/
 	private String vedioURL2;
 	
+	/**是否启用**/
 	private boolean enabled;
 
 	public String getId() {
@@ -77,102 +70,6 @@ public class Trainer implements Serializable {
 
 	public void setId(String id) {
 		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getNickname() {
-		return nickname;
-	}
-
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public Date getBrithday() {
-		return brithday;
-	}
-
-	public void setBrithday(Date brithday) {
-		this.brithday = brithday;
-	}
-
-	public String getHeadLogo() {
-		return headLogo;
-	}
-
-	public void setHeadLogo(String headLogo) {
-		this.headLogo = headLogo;
-	}
-
-	public Sex getGender() {
-		return gender;
-	}
-
-	public void setGender(Sex gender) {
-		this.gender = gender;
-	}
-
-	public String getIdCard() {
-		return idCard;
-	}
-
-	public void setIdCard(String idCard) {
-		this.idCard = idCard;
-	}
-
-	public String getQQ() {
-		return QQ;
-	}
-
-	public void setQQ(String qQ) {
-		QQ = qQ;
-	}
-
-	public String getMobile() {
-		return mobile;
-	}
-
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getWeixin() {
-		return weixin;
-	}
-
-	public void setWeixin(String weixin) {
-		this.weixin = weixin;
-	}
-
-	public String getTelephone() {
-		return telephone;
-	}
-
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
 	}
 
 	public int getStarLevel() {
@@ -189,14 +86,6 @@ public class Trainer implements Serializable {
 
 	public void setEducation(Education education) {
 		this.education = education;
-	}
-
-	public String getIntro() {
-		return intro;
-	}
-
-	public void setIntro(String intro) {
-		this.intro = intro;
 	}
 
 	public String getMainCourse() {
@@ -223,19 +112,19 @@ public class Trainer implements Serializable {
 		this.trainingYears = trainingYears;
 	}
 
-	public BusinessCategory getBusinessCategory() {
+	public Collection<BusinessCategory> getBusinessCategory() {
 		return businessCategory;
 	}
 
-	public void setBusinessCategory(BusinessCategory businessCategory) {
+	public void setBusinessCategory(Collection<BusinessCategory> businessCategory) {
 		this.businessCategory = businessCategory;
 	}
 
-	public ExecutionCategory getExecutionCategory() {
+	public Collection<ExecutionCategory> getExecutionCategory() {
 		return executionCategory;
 	}
 
-	public void setExecutionCategory(ExecutionCategory executionCategory) {
+	public void setExecutionCategory(Collection<ExecutionCategory> executionCategory) {
 		this.executionCategory = executionCategory;
 	}
 
@@ -245,6 +134,14 @@ public class Trainer implements Serializable {
 
 	public void setCurrentPosition(String currentPosition) {
 		this.currentPosition = currentPosition;
+	}
+
+	public String getOlives() {
+		return olives;
+	}
+
+	public void setOlives(String olives) {
+		this.olives = olives;
 	}
 
 	public Date getCreateDate() {
@@ -271,11 +168,11 @@ public class Trainer implements Serializable {
 		this.authFaithed = authFaithed;
 	}
 
-	public Integer getAverageScore() {
+	public BigDecimal getAverageScore() {
 		return averageScore;
 	}
 
-	public void setAverageScore(Integer averageScore) {
+	public void setAverageScore(BigDecimal averageScore) {
 		this.averageScore = averageScore;
 	}
 
@@ -302,5 +199,4 @@ public class Trainer implements Serializable {
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
-	
 }

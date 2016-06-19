@@ -13,6 +13,12 @@ public class Autobots implements Serializable{
 	/**当前职位**/
 	private String currentPosition;  
 	
+	/**关注培训师**/
+	private String attentionTrainer;
+	
+	/**公司发起的橄榄枝**/
+	private String olives;
+	
 	/**汽车经验**/
 	private Integer autoYears;
 	
@@ -126,5 +132,21 @@ public class Autobots implements Serializable{
 
 	public void setEnabed(boolean enabed) {
 		this.enabed = enabed;
+	}
+
+	public String getAttentionTrainer() {
+		return attentionTrainer;
+	}
+
+	public void setAttentionTrainer(String attentionTrainer) {
+		this.attentionTrainer = attentionTrainer;
+	}
+
+	public String getOlives() {
+		return olives;
+	}
+
+	public void setOlives(String olives) {
+		this.olives = olives;
 	}
 }
