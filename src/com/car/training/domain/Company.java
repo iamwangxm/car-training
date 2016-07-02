@@ -43,6 +43,9 @@ public class Company implements Serializable {
 	/**福利**/
 	private Welfare welfare;
 	
+	/**担保人**/
+	private String bondsman;
+	
 	private String intro;
 	
 	/**工作环境照片1**/
@@ -139,6 +142,14 @@ public class Company implements Serializable {
 
 	public void setWelfare(Welfare welfare) {
 		this.welfare = welfare;
+	}
+
+	public String getBondsman() {
+		return bondsman;
+	}
+
+	public void setBondsman(String bondsman) {
+		this.bondsman = bondsman;
 	}
 
 	public String getIntro() {

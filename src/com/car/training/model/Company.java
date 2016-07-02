@@ -70,6 +70,10 @@ public class Company extends BaseEntity {
 	@UiConfig(hiddenInList = @Hidden(true) )
 	private Welfare welfare;
 	
+	/**担保人**/
+	@Column(length = 1000, nullable = true)
+	private String bondsman;
+	
 	/**公司简介*/
 	@Column(length = 4000, nullable = true)
 	private String intro;
@@ -116,6 +120,14 @@ public class Company extends BaseEntity {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public Region getRegion() {
@@ -174,20 +186,20 @@ public class Company extends BaseEntity {
 		this.welfare = welfare;
 	}
 
+	public String getBondsman() {
+		return bondsman;
+	}
+
+	public void setBondsman(String bondsman) {
+		this.bondsman = bondsman;
+	}
+
 	public String getIntro() {
 		return intro;
 	}
 
 	public void setIntro(String intro) {
 		this.intro = intro;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
 	}
 
 	public String getEnvironmentURL1() {
@@ -253,6 +265,4 @@ public class Company extends BaseEntity {
 	public void setVersion(int version) {
 		this.version = version;
 	}
-	
-	
 }
