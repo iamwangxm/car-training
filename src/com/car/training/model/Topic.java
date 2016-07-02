@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Searchable
 @AutoConfig
 @javax.persistence.Entity
-@Table(name = "jobs",indexes = { @javax.persistence.Index(columnList = "company")})
+@Table(name = "topic")
 public class Topic extends BaseEntity {
 
 	private static final long serialVersionUID = -4550736635312637032L;

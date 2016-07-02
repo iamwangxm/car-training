@@ -2,7 +2,7 @@ package com.car.training.enums;
 
 import org.ironrhino.core.model.Displayable;
 
-public enum Language implements Displayable {
+public enum Languages implements Displayable {
 
 	//普通话英语日语德语
 	MANDARIN, ENGLISH, JAPANESE,GERMAN;

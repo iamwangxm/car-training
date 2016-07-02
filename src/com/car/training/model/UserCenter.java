@@ -28,8 +28,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Searchable
 @AutoConfig
 @javax.persistence.Entity
-@Table(name = "user_center", indexes = { @javax.persistence.Index(columnList = "trainer"),
-		@javax.persistence.Index(columnList = "autobots") })
+@Table(name = "user_center", indexes = { @javax.persistence.Index(columnList = "username") })
 public class UserCenter extends BaseEntity implements UserDetails {
 
 	private static final long serialVersionUID = 4453172705904061090L;
@@ -42,6 +41,10 @@ public class UserCenter extends BaseEntity implements UserDetails {
 	@Column(length = 50, nullable = true)
 	private String nickname;
 
+	/**用户名r**/
+	@Column(length = 50, nullable = false)
+	private String username;
+	
 	/** 密码 */
 	@Column(length = 50, nullable = true)
 	private String password;
@@ -84,18 +87,8 @@ public class UserCenter extends BaseEntity implements UserDetails {
 	@Column(length = 2000, nullable = true)
 	private String intro;
 
-	/** 培训师 */
-	@JoinColumn(name = "trainer", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	private Trainer trainer;
-
-	/** 汽车人 */
-	@JoinColumn(name = "autobots", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	private Autobots autobots;
-
 	/** 区域 */
-	@JoinColumn(name = "region", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
+	@JoinColumn(name = "regionId", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	private Region region;
 
@@ -148,6 +141,18 @@ public class UserCenter extends BaseEntity implements UserDetails {
 
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
+	}
+
+	public Region getRegion() {
+		return region;
+	}
+
+	public void setRegion(Region region) {
+		this.region = region;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -245,22 +250,6 @@ public class UserCenter extends BaseEntity implements UserDetails {
 
 	public void setIntro(String intro) {
 		this.intro = intro;
-	}
-
-	public Trainer getTrainer() {
-		return trainer;
-	}
-
-	public void setTrainer(Trainer trainer) {
-		this.trainer = trainer;
-	}
-
-	public Autobots getAutobots() {
-		return autobots;
-	}
-
-	public void setAutobots(Autobots autobots) {
-		this.autobots = autobots;
 	}
 
 	public Date getCreateDate() {

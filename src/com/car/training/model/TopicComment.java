@@ -22,15 +22,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Searchable
 @AutoConfig
 @javax.persistence.Entity
-@Table(name = "topic_comment",indexes = { @javax.persistence.Index(columnList = "trainer"),
-		@javax.persistence.Index(columnList = "topic")})
+@Table(name = "topic_comment")
 public class TopicComment extends BaseEntity {
 	
 	private static final long serialVersionUID = 6163518563667489408L;
 	
-	@NotInCopy
-	@JoinColumn(name = "trainer", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
-	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "trainerId", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
+	@ManyToOne(optional = true, fetch = FetchType.LAZY)
 	private Trainer	trainer;
 	
 	@NotInCopy

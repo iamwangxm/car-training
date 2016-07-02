@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Searchable
 @AutoConfig
 @javax.persistence.Entity
-@Table(name = "courses",indexes = { @javax.persistence.Index(columnList = "trainer")})
+@Table(name = "courses")
 public class Courses extends BaseEntity {
 
 	private static final long serialVersionUID = -5621639682381355149L;
@@ -51,6 +51,8 @@ public class Courses extends BaseEntity {
 	private String longTime;
 	
 	/**区域**/
+	@JoinColumn(name = "regionId", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
+	@ManyToOne(optional = true, fetch = FetchType.LAZY)
 	private Region region;
 	
 	/**受众**/
@@ -66,7 +68,7 @@ public class Courses extends BaseEntity {
 	private String toolModel;
 	
 	/**学员**/
-	@JoinColumn(name = "autobots", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
+	@JoinColumn(name = "autobotsId", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	private Autobots autobots;
 	

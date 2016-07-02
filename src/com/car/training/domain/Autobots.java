@@ -10,6 +10,9 @@ public class Autobots implements Serializable{
 	/**系统Id**/
 	private String id;
 	
+	/**用户编号外键UserCenter**/
+	private String uid;
+	
 	/**当前职位**/
 	private String currentPosition;  
 	
@@ -52,6 +55,14 @@ public class Autobots implements Serializable{
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public String getUid() {
+		return uid;
+	}
+
+	public void setUid(String uid) {
+		this.uid = uid;
 	}
 
 	public String getCurrentPosition() {

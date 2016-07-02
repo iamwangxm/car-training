@@ -20,6 +20,9 @@ public class UserCenter  implements Serializable {
 	/** 昵称 */
 	private String nickname;
 
+	/**用户名r**/
+	private String username;
+	
 	/** 密码 */
 	private String password;
 
@@ -102,6 +105,14 @@ public class UserCenter  implements Serializable {
 
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {

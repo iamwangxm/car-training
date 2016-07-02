@@ -1,10 +1,16 @@
 package com.car.training.model;
 
 import java.math.BigDecimal;
-import java.util.Collection;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
+import javax.persistence.ConstraintMode;
+import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.ironrhino.core.metadata.AutoConfig;
@@ -14,17 +20,20 @@ import org.ironrhino.core.model.BaseEntity;
 import org.ironrhino.core.search.elasticsearch.annotations.Searchable;
 import org.nustaq.serialization.annotations.Version;
 
-import com.car.training.enums.BusinessCategory;
 import com.car.training.enums.Education;
-import com.car.training.enums.ExecutionCategory;
 
 @Searchable
 @AutoConfig
 @javax.persistence.Entity
-@Table(name = "jobs",indexes = { @javax.persistence.Index(columnList = "company")})
+@Table(name = "trainer",indexes = { @javax.persistence.Index(columnList = "uid")})
 public class Trainer extends BaseEntity {
 
 	private static final long serialVersionUID = -3235752282964972966L;
+	
+	/** 用户编号外键UserCenter **/
+	@JoinColumn(name = "uid", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
+	@ManyToOne(optional = true, fetch = FetchType.LAZY)
+	private UserCenter UserCenter;
 	
 	/**星级*/
 	private int starLevel;
@@ -42,10 +51,10 @@ public class Trainer extends BaseEntity {
 	private Integer trainingYears;
 	
 	/**业务领域**/
-	private Collection <BusinessCategory> businessCategory;
+	private Set<String> businessCategory = new HashSet<String>(0);
 	
 	/**执行类别**/
-	private Collection<ExecutionCategory> executionCategory;
+	private Set<String> executionCategory = new HashSet<String>(0);
 	
 	/**当前职位**/
 	private String currentPosition;
@@ -81,6 +90,15 @@ public class Trainer extends BaseEntity {
 	
 	@Version(value = 0)
 	private int version = -1;
+	
+
+	public UserCenter getUserCenter() {
+		return UserCenter;
+	}
+
+	public void setUserCenter(UserCenter userCenter) {
+		UserCenter = userCenter;
+	}
 
 	public int getStarLevel() {
 		return starLevel;
@@ -122,18 +140,19 @@ public class Trainer extends BaseEntity {
 		this.trainingYears = trainingYears;
 	}
 
-	public Collection<BusinessCategory> getBusinessCategory() {
+	public Set<String> getBusinessCategory() {
 		return businessCategory;
 	}
 
-	public void setBusinessCategory(Collection<BusinessCategory> businessCategory) {
+	public void setBusinessCategory(Set<String> businessCategory) {
 		this.businessCategory = businessCategory;
 	}
-	public Collection<ExecutionCategory> getExecutionCategory() {
+
+	public Set<String> getExecutionCategory() {
 		return executionCategory;
 	}
 
-	public void setExecutionCategory(Collection<ExecutionCategory> executionCategory) {
+	public void setExecutionCategory(Set<String> executionCategory) {
 		this.executionCategory = executionCategory;
 	}
 

@@ -8,23 +8,29 @@ import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+import org.ironrhino.core.metadata.AutoConfig;
 import org.ironrhino.core.metadata.NotInCopy;
 import org.ironrhino.core.metadata.UiConfig;
 import org.ironrhino.core.model.BaseEntity;
+import org.ironrhino.core.search.elasticsearch.annotations.Searchable;
 import org.nustaq.serialization.annotations.Version;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+@Searchable
+@AutoConfig
+@javax.persistence.Entity
+@Table(name = "trainer_essay")
 public class TrainerEssay extends BaseEntity {
 
 	private static final long serialVersionUID = 4092941816602786998L;
 
 	/**培训师*/
-	@NotInCopy
-	@JoinColumn(name = "trainer", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
-	@ManyToOne(fetch = FetchType.LAZY)
-	private String	trainer;
+	@JoinColumn(name = "trainerId", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
+	@ManyToOne(optional = true, fetch = FetchType.LAZY)
+	private Trainer	trainer;
 	
 	/**文章标题*/
 	@Column(length = 255) 
@@ -58,11 +64,11 @@ public class TrainerEssay extends BaseEntity {
 	@Version(value = 0)
 	private int version = -1;
 
-	public String getTrainer() {
+	public Trainer getTrainer() {
 		return trainer;
 	}
 
-	public void setTrainer(String trainer) {
+	public void setTrainer(Trainer trainer) {
 		this.trainer = trainer;
 	}
 

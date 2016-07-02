@@ -21,21 +21,21 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Searchable
 @AutoConfig
 @javax.persistence.Entity
-@Table(name = "delivery_resume",indexes = { @javax.persistence.Index(columnList = "Jobs")})
+@Table(name = "delivery_resume")
 public class DeliveryResume extends BaseEntity {
 
 	private static final long serialVersionUID = -2813198005704327613L;
 
 	@NotInCopy
-	@JoinColumn(name = "jobs", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
+	@JoinColumn(name = "jobsId", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Jobs	jobs;
 	
-	@JoinColumn(name = "trainer", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
+	@JoinColumn(name = "trainerId", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Trainer	trainer;
 	
-	@JoinColumn(name = "autobots", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
+	@JoinColumn(name = "autobotsId", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Autobots	 autobots;
 	

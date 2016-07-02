@@ -1,7 +1,8 @@
 package com.car.training.model;
 
 import java.util.Date;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.ConstraintMode;
@@ -24,15 +25,13 @@ import org.nustaq.serialization.annotations.Version;
 
 import com.car.training.enums.Education;
 import com.car.training.enums.JobType;
-import com.car.training.enums.Language;
 import com.car.training.enums.Major;
-import com.car.training.enums.Welfare;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Searchable
 @AutoConfig
 @javax.persistence.Entity
-@Table(name = "jobs",indexes = { @javax.persistence.Index(columnList = "company")})
+@Table(name = "jobs")
 public class Jobs extends BaseEntity {
 
 	private static final long serialVersionUID = -4749763655490330037L;
@@ -43,7 +42,7 @@ public class Jobs extends BaseEntity {
 
 	/**所属公司**/
 	@NotInCopy
-	@JoinColumn(name = "company", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
+	@JoinColumn(name = "companyId", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Company company; 
 	
@@ -69,10 +68,10 @@ public class Jobs extends BaseEntity {
 	
 	/**福利**/
 	@UiConfig(hiddenInList = @Hidden(true) )
-	private List<Welfare> welfare;
+	private Set<String> welfare = new HashSet<String>(0);;
 	
 	/**语言要求**/
-	private List<Language> language;
+	private Set<String> languages  = new HashSet<String>(0);
 	
 	/**工作描述**/
 	@Column(length = 4000, nullable = true)
@@ -179,20 +178,20 @@ public class Jobs extends BaseEntity {
 		this.jobType = jobType;
 	}
 
-	public List<Welfare> getWelfare() {
+	public Set<String> getWelfare() {
 		return welfare;
 	}
 
-	public void setWelfare(List<Welfare> welfare) {
+	public void setWelfare(Set<String> welfare) {
 		this.welfare = welfare;
 	}
 
-	public List<Language> getLanguage() {
-		return language;
+	public Set<String> getLanguages() {
+		return languages;
 	}
 
-	public void setLanguage(List<Language> language) {
-		this.language = language;
+	public void setLanguages(Set<String> languages) {
+		this.languages = languages;
 	}
 
 	public String getJobDescription() {

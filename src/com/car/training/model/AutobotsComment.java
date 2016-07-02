@@ -3,12 +3,24 @@ package com.car.training.model;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.ConstraintMode;
+import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+import org.ironrhino.core.metadata.AutoConfig;
 import org.ironrhino.core.metadata.UiConfig;
 import org.ironrhino.core.model.BaseEntity;
+import org.ironrhino.core.search.elasticsearch.annotations.Searchable;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+@Searchable
+@AutoConfig
+@javax.persistence.Entity
+@Table(name = "autobots_comment")
 public class AutobotsComment extends BaseEntity{
 
 	private static final long serialVersionUID = 7573757095426894290L;
@@ -37,6 +49,11 @@ public class AutobotsComment extends BaseEntity{
 	/**是否启用*/
 	@JsonIgnore
 	private boolean enabed = true;
+	
+	/** 汽车人关联 **/
+	@JoinColumn(name = "autobotsId", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
+	@ManyToOne(optional = true, fetch = FetchType.LAZY)
+	private Autobots Autobots;
 
 	public Integer getContentDesignScore() {
 		return contentDesignScore;

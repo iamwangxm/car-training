@@ -3,6 +3,11 @@ package com.car.training.model;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.ConstraintMode;
+import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.ironrhino.core.metadata.AutoConfig;
@@ -17,62 +22,75 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Searchable
 @AutoConfig
 @javax.persistence.Entity
-@Table(name = "autobots",indexes = { @javax.persistence.Index(columnList = "company")})
+@Table(name = "autobots", indexes = { @javax.persistence.Index(columnList = "uid") })
 public class Autobots extends BaseEntity {
 
 	private static final long serialVersionUID = -3908483665308582434L;
-	
-	/**当前职位**/
+
+	/** 用户编号外键UserCenter **/
+	@JoinColumn(name = "uid", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
+	@ManyToOne(optional = true, fetch = FetchType.LAZY)
+	private UserCenter UserCenter;
+
+	/** 当前职位 **/
 	@Column(length = 50, nullable = true)
-	private String currentPosition;  
-	
-	/**关注培训师**/
+	private String currentPosition;
+
+	/** 关注培训师 **/
 	private String attentionTrainer;
-	
-	/**公司发起的橄榄枝**/
+
+	/** 公司发起的橄榄枝 **/
 	private String olives;
-	
-	/**汽车经验**/
+
+	/** 汽车经验 **/
 	private Integer autoYears;
-	
-	/**是否认证**/
+
+	/** 是否认证 **/
 	private boolean authFaithed = false;
-	
-	/**工作照片1**/
+
+	/** 工作照片1 **/
 	private String workPhotoURL1;
-	
-	/**工作照片2**/
+
+	/** 工作照片2 **/
 	private String workPhotoURL2;
-	
-	/**创建日期**/
+
+	/** 创建日期 **/
 	@UiConfig(hidden = true)
-	@Column(updatable = false) 
+	@Column(updatable = false)
 	private Date createDate = new Date();
-	
-	/**修改日期**/
+
+	/** 修改日期 **/
 	@NotInCopy
 	@UiConfig(hidden = true)
 	@Column(insertable = false)
 	private Date modifyDate;
-	
-	/**创建用户**/
+
+	/** 创建用户 **/
 	@NotInCopy
 	@UiConfig(hidden = true)
 	@Column(updatable = false)
 	private String createUser;
 
-	/**修改用户**/
+	/** 修改用户 **/
 	@NotInCopy
 	@UiConfig(hidden = true)
 	@Column(insertable = false)
 	private String modifyUser;
-	
-	/**是否启用**/
+
+	/** 是否启用 **/
 	@JsonIgnore
 	private boolean enabed = true;
-	
+
 	@Version(value = 0)
 	private int version = -1;
+
+	public UserCenter getUserCenter() {
+		return UserCenter;
+	}
+
+	public void setUserCenter(UserCenter userCenter) {
+		UserCenter = userCenter;
+	}
 
 	public String getCurrentPosition() {
 		return currentPosition;

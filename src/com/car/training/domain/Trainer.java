@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Set;
 
 import com.car.training.enums.BusinessCategory;
 import com.car.training.enums.Education;
@@ -15,6 +16,9 @@ public class Trainer implements Serializable {
 	private static final long serialVersionUID = 921909027302657526L;
 
 	private String id;
+	
+	/**用户编号外键UserCenter**/
+	private String uid;
 	
 	/**星级*/
 	private int starLevel;
@@ -32,10 +36,10 @@ public class Trainer implements Serializable {
 	private Integer trainingYears;
 	
 	/**业务领域**/
-	private Collection <BusinessCategory> businessCategory;
+	private Set<String>  businessCategory;
 	
 	/**执行类别**/
-	private Collection<ExecutionCategory> executionCategory;
+	private Set<String>  executionCategory;
 	
 	/**当前职位**/
 	private String currentPosition;
@@ -70,6 +74,14 @@ public class Trainer implements Serializable {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public String getUid() {
+		return uid;
+	}
+
+	public void setUid(String uid) {
+		this.uid = uid;
 	}
 
 	public int getStarLevel() {
@@ -112,19 +124,19 @@ public class Trainer implements Serializable {
 		this.trainingYears = trainingYears;
 	}
 
-	public Collection<BusinessCategory> getBusinessCategory() {
+	public Set<String> getBusinessCategory() {
 		return businessCategory;
 	}
 
-	public void setBusinessCategory(Collection<BusinessCategory> businessCategory) {
+	public void setBusinessCategory(Set<String> businessCategory) {
 		this.businessCategory = businessCategory;
 	}
 
-	public Collection<ExecutionCategory> getExecutionCategory() {
+	public Set<String> getExecutionCategory() {
 		return executionCategory;
 	}
 
-	public void setExecutionCategory(Collection<ExecutionCategory> executionCategory) {
+	public void setExecutionCategory(Set<String> executionCategory) {
 		this.executionCategory = executionCategory;
 	}
 

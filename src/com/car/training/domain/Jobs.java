@@ -2,15 +2,13 @@ package com.car.training.domain;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
+import java.util.Set;
 
 import org.ironrhino.common.model.Region;
 
 import com.car.training.enums.Education;
 import com.car.training.enums.JobType;
-import com.car.training.enums.Language;
 import com.car.training.enums.Major;
-import com.car.training.enums.Welfare;
 
 public class Jobs implements Serializable {
 	
@@ -45,9 +43,9 @@ public class Jobs implements Serializable {
 	private Date endExecutionDate;
 	
 	/**福利**/
-	private List<Welfare> welfare;
+	private Set<String> welfare;
 	
-	private List<Language> language;
+	private Set<String> languages;
 	
 	private String jobDescription;
 	
@@ -147,22 +145,6 @@ public class Jobs implements Serializable {
 
 	public void setEndExecutionDate(Date endExecutionDate) {
 		this.endExecutionDate = endExecutionDate;
-	}
-
-	public List<Welfare> getWelfare() {
-		return welfare;
-	}
-
-	public void setWelfare(List<Welfare> welfare) {
-		this.welfare = welfare;
-	}
-
-	public List<Language> getLanguage() {
-		return language;
-	}
-
-	public void setLanguage(List<Language> language) {
-		this.language = language;
 	}
 
 	public String getJobDescription() {

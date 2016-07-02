@@ -42,7 +42,7 @@ public class Company extends BaseEntity {
 	private String password;
 	
 	/**区域**/
-	@JoinColumn(name = "region", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
+	@JoinColumn(name = "regionId", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	private Region region;
 	
