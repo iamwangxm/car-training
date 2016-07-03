@@ -1,11 +1,13 @@
 package com.car.training.domain;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 import org.ironrhino.common.model.Region;
 
-import com.car.training.enums.Sex;
+import com.car.training.enums.Gender;
+import com.car.training.enums.MarryStatus;
 
 public class UserCenter  implements Serializable {
 
@@ -33,7 +35,19 @@ public class UserCenter  implements Serializable {
 	private String headLogo;
 
 	/** 性别 */
-	private Sex gender;
+	private Gender gender;
+	
+	/** 婚姻状态*/
+	private MarryStatus marryStatus;
+	
+	/** 财富值 */
+	private BigDecimal wealth;
+	
+	/** 财富值开始有效日期 */
+	private Date wealthStartDate;
+	
+	/** 财富值结束有效日期 */
+	private Date wealthEndDate;
 
 	/** 身份证号 */
 	private String idCard;
@@ -139,11 +153,43 @@ public class UserCenter  implements Serializable {
 		this.headLogo = headLogo;
 	}
 
-	public Sex getGender() {
+	public MarryStatus getMarryStatus() {
+		return marryStatus;
+	}
+
+	public void setMarryStatus(MarryStatus marryStatus) {
+		this.marryStatus = marryStatus;
+	}
+
+	public BigDecimal getWealth() {
+		return wealth;
+	}
+
+	public void setWealth(BigDecimal wealth) {
+		this.wealth = wealth;
+	}
+
+	public Date getWealthStartDate() {
+		return wealthStartDate;
+	}
+
+	public void setWealthStartDate(Date wealthStartDate) {
+		this.wealthStartDate = wealthStartDate;
+	}
+
+	public Date getWealthEndDate() {
+		return wealthEndDate;
+	}
+
+	public void setWealthEndDate(Date wealthEndDate) {
+		this.wealthEndDate = wealthEndDate;
+	}
+
+	public Gender getGender() {
 		return gender;
 	}
 
-	public void setGender(Sex gender) {
+	public void setGender(Gender gender) {
 		this.gender = gender;
 	}
 

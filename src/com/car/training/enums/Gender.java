@@ -2,7 +2,7 @@ package com.car.training.enums;
 
 import org.ironrhino.core.model.Displayable;
 
-public enum Sex implements Displayable {
+public enum Gender implements Displayable {
 	MAN, WOMAN;
 
 	@Override

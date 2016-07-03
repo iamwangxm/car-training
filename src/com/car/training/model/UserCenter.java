@@ -1,15 +1,20 @@
 package com.car.training.model;
 
+import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.ConstraintMode;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.ironrhino.common.model.Region;
 import org.ironrhino.core.metadata.AutoConfig;
@@ -22,7 +27,8 @@ import org.nustaq.serialization.annotations.Version;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.car.training.enums.Sex;
+import com.car.training.enums.MarryStatus;
+import com.car.training.enums.Gender;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Searchable
@@ -57,7 +63,25 @@ public class UserCenter extends BaseEntity implements UserDetails {
 	private String headLogo;
 
 	/** 性别 */
-	private Sex gender;
+	@Enumerated(EnumType.STRING)
+	@Column(length=10, nullable = true)
+	private Gender gender;
+	
+	/** 婚姻状态*/
+	@Enumerated(EnumType.STRING)
+	@Column(length=20, nullable = true)
+	private MarryStatus marryStatus;
+	
+	/** 财富值 */
+	private BigDecimal wealth;
+	
+	/** 财富值开始有效日期 */
+	@Temporal(TemporalType.DATE)
+	private Date wealthStartDate;
+	
+	/** 财富值结束有效日期 */
+	@Temporal(TemporalType.DATE)
+	private Date wealthEndDate;
 
 	/** 身份证号 */
 	@Column(length = 30, nullable = true)
@@ -94,17 +118,20 @@ public class UserCenter extends BaseEntity implements UserDetails {
 
 	/** 创建日期 */
 	@UiConfig(hidden = true)
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(updatable = false)
 	private Date createDate = new Date();
 
 	/** 活跃日期 */
 	@UiConfig(width = "130px")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date activeDate = new Date();
 
 	/** 修改日期 */
 	@NotInCopy
 	@UiConfig(hidden = true)
 	@Column(insertable = false)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date modifyDate;
 
 	/** 创建人 */
@@ -188,12 +215,44 @@ public class UserCenter extends BaseEntity implements UserDetails {
 		this.headLogo = headLogo;
 	}
 
-	public Sex getGender() {
+	public Gender getGender() {
 		return gender;
 	}
 
-	public void setGender(Sex gender) {
+	public void setGender(Gender gender) {
 		this.gender = gender;
+	}
+
+	public MarryStatus getMarryStatus() {
+		return marryStatus;
+	}
+
+	public void setMarryStatus(MarryStatus marryStatus) {
+		this.marryStatus = marryStatus;
+	}
+
+	public BigDecimal getWealth() {
+		return wealth;
+	}
+
+	public void setWealth(BigDecimal wealth) {
+		this.wealth = wealth;
+	}
+
+	public Date getWealthStartDate() {
+		return wealthStartDate;
+	}
+
+	public void setWealthStartDate(Date wealthStartDate) {
+		this.wealthStartDate = wealthStartDate;
+	}
+
+	public Date getWealthEndDate() {
+		return wealthEndDate;
+	}
+
+	public void setWealthEndDate(Date wealthEndDate) {
+		this.wealthEndDate = wealthEndDate;
 	}
 
 	public String getIdCard() {
