@@ -2,13 +2,10 @@ package com.car.training.domain;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Collection;
 import java.util.Date;
 import java.util.Set;
 
-import com.car.training.enums.BusinessCategory;
 import com.car.training.enums.Education;
-import com.car.training.enums.ExecutionCategory;
 
 
 public class Trainer implements Serializable {

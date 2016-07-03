@@ -1,9 +1,13 @@
 package com.car.training.model;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.ConstraintMode;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
@@ -19,10 +23,10 @@ import org.ironrhino.core.model.BaseEntity;
 import org.ironrhino.core.search.elasticsearch.annotations.Searchable;
 import org.nustaq.serialization.annotations.Version;
 
+import com.car.training.enums.CompanyType;
 import com.car.training.enums.Industry;
 import com.car.training.enums.Nature;
 import com.car.training.enums.Scale;
-import com.car.training.enums.Welfare;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Searchable
@@ -40,6 +44,12 @@ public class Company extends BaseEntity {
 	/** 密码 */
 	@Column(length = 50, nullable = true)
 	private String password;
+	
+	/**公司类别(公司/4S店)**/
+	@UiConfig(hiddenInList = @Hidden(true) )
+	@Enumerated(EnumType.STRING)
+	@Column(length=20, nullable = false)
+	private CompanyType companyType;
 	
 	/**区域**/
 	@JoinColumn(name = "regionId", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
@@ -60,15 +70,19 @@ public class Company extends BaseEntity {
 	
 	/**所属行业**/
 	@UiConfig(hiddenInList = @Hidden(true) )
+	@Enumerated(EnumType.STRING)
+	@Column(length=30, nullable = false)
 	private Industry industry;
 	
 	/**公司性质**/
 	@UiConfig(hiddenInList = @Hidden(true) )
+	@Enumerated(EnumType.STRING)
+	@Column(length=20, nullable = false)
 	private Nature nature;
 	
 	/**福利**/
 	@UiConfig(hiddenInList = @Hidden(true) )
-	private Welfare welfare;
+	private Set<String> welfare = new HashSet<String>(0);
 	
 	/**担保人**/
 	@Column(length = 1000, nullable = true)
@@ -130,6 +144,14 @@ public class Company extends BaseEntity {
 		this.password = password;
 	}
 
+	public CompanyType getCompanyType() {
+		return companyType;
+	}
+
+	public void setCompanyType(CompanyType companyType) {
+		this.companyType = companyType;
+	}
+
 	public Region getRegion() {
 		return region;
 	}
@@ -178,11 +200,11 @@ public class Company extends BaseEntity {
 		this.nature = nature;
 	}
 
-	public Welfare getWelfare() {
+	public Set<String> getWelfare() {
 		return welfare;
 	}
 
-	public void setWelfare(Welfare welfare) {
+	public void setWelfare(Set<String> welfare) {
 		this.welfare = welfare;
 	}
 

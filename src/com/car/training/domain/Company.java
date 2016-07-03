@@ -2,13 +2,14 @@ package com.car.training.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 import org.ironrhino.common.model.Region;
 
+import com.car.training.enums.CompanyType;
 import com.car.training.enums.Industry;
 import com.car.training.enums.Nature;
 import com.car.training.enums.Scale;
-import com.car.training.enums.Welfare;
 
 public class Company implements Serializable {
 
@@ -21,6 +22,9 @@ public class Company implements Serializable {
 	
 	/** 密码 */
 	private String password;
+	
+	/**公司类别(公司/4S店)**/
+	private CompanyType companyType;
 
 	/**区域**/
 	private Region region;
@@ -41,7 +45,7 @@ public class Company implements Serializable {
 	private Nature nature;
 	
 	/**福利**/
-	private Welfare welfare;
+	private Set<String> welfare;
 	
 	/**担保人**/
 	private String bondsman;
@@ -86,6 +90,14 @@ public class Company implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public CompanyType getCompanyType() {
+		return companyType;
+	}
+
+	public void setCompanyType(CompanyType companyType) {
+		this.companyType = companyType;
 	}
 
 	public Region getRegion() {
@@ -136,11 +148,11 @@ public class Company implements Serializable {
 		this.nature = nature;
 	}
 
-	public Welfare getWelfare() {
+	public Set<String> getWelfare() {
 		return welfare;
 	}
 
-	public void setWelfare(Welfare welfare) {
+	public void setWelfare(Set<String> welfare) {
 		this.welfare = welfare;
 	}
 
