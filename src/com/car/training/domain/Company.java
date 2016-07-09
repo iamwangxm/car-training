@@ -1,6 +1,7 @@
 package com.car.training.domain;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Set;
 
@@ -50,6 +51,16 @@ public class Company implements Serializable {
 	/**担保人**/
 	private String bondsman;
 	
+	/** 财富值 */
+	private BigDecimal wealth;
+	
+	/** 财富值开始有效日期 */
+	private Date wealthStartDate;
+	
+	/** 财富值结束有效日期 */
+	private Date wealthEndDate;
+	
+	/** 公司介绍 */
 	private String intro;
 	
 	/**工作环境照片1**/
@@ -162,6 +173,30 @@ public class Company implements Serializable {
 
 	public void setBondsman(String bondsman) {
 		this.bondsman = bondsman;
+	}
+
+	public BigDecimal getWealth() {
+		return wealth;
+	}
+
+	public void setWealth(BigDecimal wealth) {
+		this.wealth = wealth;
+	}
+
+	public Date getWealthStartDate() {
+		return wealthStartDate;
+	}
+
+	public void setWealthStartDate(Date wealthStartDate) {
+		this.wealthStartDate = wealthStartDate;
+	}
+
+	public Date getWealthEndDate() {
+		return wealthEndDate;
+	}
+
+	public void setWealthEndDate(Date wealthEndDate) {
+		this.wealthEndDate = wealthEndDate;
 	}
 
 	public String getIntro() {

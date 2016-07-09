@@ -1,5 +1,6 @@
 package com.car.training.model;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -13,6 +14,8 @@ import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.ironrhino.common.model.Region;
 import org.ironrhino.core.metadata.AutoConfig;
@@ -87,6 +90,17 @@ public class Company extends BaseEntity {
 	/**担保人**/
 	@Column(length = 1000, nullable = true)
 	private String bondsman;
+	
+	/** 财富值 */
+	private BigDecimal wealth;
+	
+	/** 财富值开始有效日期 */
+	@Temporal(TemporalType.DATE)
+	private Date wealthStartDate;
+	
+	/** 财富值结束有效日期 */
+	@Temporal(TemporalType.DATE)
+	private Date wealthEndDate;
 	
 	/**公司简介*/
 	@Column(length = 4000, nullable = true)
@@ -214,6 +228,30 @@ public class Company extends BaseEntity {
 
 	public void setBondsman(String bondsman) {
 		this.bondsman = bondsman;
+	}
+
+	public BigDecimal getWealth() {
+		return wealth;
+	}
+
+	public void setWealth(BigDecimal wealth) {
+		this.wealth = wealth;
+	}
+
+	public Date getWealthStartDate() {
+		return wealthStartDate;
+	}
+
+	public void setWealthStartDate(Date wealthStartDate) {
+		this.wealthStartDate = wealthStartDate;
+	}
+
+	public Date getWealthEndDate() {
+		return wealthEndDate;
+	}
+
+	public void setWealthEndDate(Date wealthEndDate) {
+		this.wealthEndDate = wealthEndDate;
 	}
 
 	public String getIntro() {
