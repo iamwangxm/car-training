@@ -77,10 +77,9 @@ public class Autobots extends BaseEntity {
 	@Column(insertable = false)
 	private String modifyUser;
 
-	/** 是否启用 **/
-	@JsonIgnore
-	private boolean enabed = true;
-
+	/**是否推荐**/
+	private boolean promoted = false;
+	
 	@Version(value = 0)
 	private int version = -1;
 
@@ -180,12 +179,12 @@ public class Autobots extends BaseEntity {
 		this.modifyUser = modifyUser;
 	}
 
-	public boolean isEnabed() {
-		return enabed;
+	public boolean isPromoted() {
+		return promoted;
 	}
 
-	public void setEnabed(boolean enabed) {
-		this.enabed = enabed;
+	public void setPromoted(boolean promoted) {
+		this.promoted = promoted;
 	}
 
 	public int getVersion() {

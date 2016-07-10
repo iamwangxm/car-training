@@ -85,8 +85,8 @@ public class Trainer extends BaseEntity {
 	/**培训师的展示视频2**/
 	private String vedioURL2;
 	
-	/**是否启用**/
-	private boolean enabled = true;
+	/**是否推荐**/
+	private boolean promoted = false;
 	
 	@Version(value = 0)
 	private int version = -1;
@@ -212,8 +212,12 @@ public class Trainer extends BaseEntity {
 		this.vedioURL2 = vedioURL2;
 	}
 
-	public boolean isEnabled() {
-		return enabled;
+	public boolean isPromoted() {
+		return promoted;
+	}
+
+	public void setPromoted(boolean promoted) {
+		this.promoted = promoted;
 	}
 
 	public String getOlives() {
@@ -222,10 +226,6 @@ public class Trainer extends BaseEntity {
 
 	public void setOlives(String olives) {
 		this.olives = olives;
-	}
-
-	public void setEnabled(boolean enabled) {
-		this.enabled = enabled;
 	}
 
 	public int getVersion() {

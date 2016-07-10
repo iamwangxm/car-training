@@ -1,136 +1,105 @@
-//package com.car.training.action;
-//
-//import java.util.List;
-//
-//import org.hibernate.criterion.Order;
-//import org.ironrhino.core.metadata.AutoConfig;
-//import org.ironrhino.core.model.ResultPage;
-//import org.ironrhino.core.struts.BaseAction;
-//import org.springframework.beans.factory.annotation.Autowired;
-//
-//import com.weshare.enums.BannerType;
-//import com.weshare.enums.FeatureType;
-//import com.weshare.model.Banner;
-//import com.weshare.model.Resort;
-//import com.weshare.model.Scenic;
-//import com.weshare.service.BannerManager;
-//import com.weshare.service.ResortManager;
-//import com.weshare.service.ScenicManager;
-//
-//@AutoConfig
-//public class IndexAction extends BaseAction {
-//
-//	private static final long serialVersionUID = 2048090665437672391L;
-//
-//	@Autowired
-//	private ResortManager resortManager;
-//	@Autowired
-//	private ScenicManager scenicManager;
-//	@Autowired
-//	private BannerManager bannerManager;
-//
-//	/** 首页广告条列表 */
-//	private List<Banner> bannerList;
-//	/** 首页最新度假屋列表 */
-//	private List<Resort> resortList;
-//	/** 首页推荐城市列表 */
-//	private List<Scenic> scenicsList;
-//	/** 首页特色列表 */
-//	private List<FeatureType> featureList;
-//	/** 首页特色度假屋列表 */
-//	private List<Resort> featureResortList;
-//	// /** 首页广告条3合1图片列表 */
-//	// private Set<String> imageList = new HashSet<String>();
-//
-//	private String loginState = "N";
-//
-//	@Override
-//	public String execute() throws Exception {
-//
-//		bannerList = bannerManager.getBannerByLocation(BannerType.WEBSITE_INDEX);
-//		// if (bannerList != null) {
-//		// if (bannerList.size() >= 3) {
-//		// for (int i = 0; i < 3; i++) {
-//		// imageList.add(bannerList.get(i).getImage());
-//		// }
-//		// bannerList.remove(Integer.parseInt((System.currentTimeMillis() % 3) +
-//		// ""));
-//		// bannerList.remove(Integer.parseInt((System.currentTimeMillis() % 2) +
-//		// ""));
-//		// } else {
-//		// for (int i = 0; i < bannerList.size(); i++) {
-//		// imageList.add(bannerList.get(i).getImage());
-//		// }
-//		// Banner banner = bannerList
-//		// .get(Integer.parseInt((System.currentTimeMillis() %
-//		// (bannerList.size())) + ""));
-//		// bannerList.clear();
-//		// bannerList.add(banner);
-//		// }
-//		// }
-//		scenicsList = scenicManager.getIndexScenics();
-//		ResultPage<Resort> rg = new ResultPage<>();
-//		rg.setPageNo(1);
-//		rg.setPageSize(9);
-//		resortList = resortManager.findAllByOrder(new Order[] { Order.desc("modifyDate") }, rg);
-//		featureList = resortManager.findFeatureTypesMoreThanThree();
-//		if (featureList != null && featureList.size() > 0) {
-//			featureResortList = resortManager.findByFeatureType(featureList.get(0));
-//		}
-//
-//		return SUCCESS;
-//	}
-//
-//	public List<Banner> getBannerList() {
-//		return bannerList;
-//	}
-//
-//	public void setBannerList(List<Banner> bannerList) {
-//		this.bannerList = bannerList;
-//	}
-//
-//	public List<Resort> getResortList() {
-//		return resortList;
-//	}
-//
-//	public void setResortList(List<Resort> resortList) {
-//		this.resortList = resortList;
-//	}
-//
-//	public List<Scenic> getScenicsList() {
-//		return scenicsList;
-//	}
-//
-//	public void setScenicsList(List<Scenic> scenicsList) {
-//		this.scenicsList = scenicsList;
-//	}
-//
-//	public List<FeatureType> getFeatureList() {
-//		return featureList;
-//	}
-//
-//	public void setFeatureList(List<FeatureType> featureList) {
-//		this.featureList = featureList;
-//	}
-//
-//	public List<Resort> getFeatureResortList() {
-//		return featureResortList;
-//	}
-//
-//	public void setFeatureResortList(List<Resort> featureResortList) {
-//		this.featureResortList = featureResortList;
-//	}
-//
-//	// public Set<String> getImageList() {
-//	// return imageList;
-//	// }
-//	//
-//	// public void setImageList(Set<String> imageList) {
-//	// this.imageList = imageList;
-//	// }
-//
-//	public String getLoginState() {
-//		return loginState;
-//	}
-//
-//}
+ package com.car.training.action;
+
+ import java.util.List;
+
+import org.ironrhino.core.metadata.AutoConfig;
+import org.ironrhino.core.struts.BaseAction;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.car.training.model.Autobots;
+import com.car.training.model.Courses;
+import com.car.training.model.Jobs;
+import com.car.training.model.Topic;
+import com.car.training.model.Trainer;
+import com.car.training.model.TrainerEssay;
+import com.car.training.service.AutobotsManager;
+import com.car.training.service.JobsManager;
+import com.car.training.service.TrainerManager;
+
+
+@AutoConfig
+public class IndexAction extends BaseAction {
+
+	private static final long serialVersionUID = 2048090665437672391L;
+
+	@Autowired
+	private TrainerManager trainerManager;
+	@Autowired
+	private AutobotsManager AutobotsManager;
+	@Autowired
+	private JobsManager jobsManager;
+
+	/** 首页推荐培训师大图 */
+	private Trainer trainer;
+	/** 首页推荐8个培训师列表 */
+	private List<Trainer> trainerList;
+	/** 首页推荐5个汽车人列表 */
+	private List<Autobots> autobotsList;
+	/** 首页2个培训需求列表 */
+	private List<Jobs> jobsTrainerList;
+	/** 首页2个汽车人才需求列表 */
+	private List<Jobs> jobsAutobotsList;
+	/** 首页培训师原创文章列表 */
+	private List<TrainerEssay> trainerEssayList;
+	/** 首页培训学热点专题列表 */
+	private List<Topic> topicList;
+	/** 首页2个公开课列表 */
+	private List<Courses> coursesList;
+
+	private String loginState = "N";
+
+	@Override
+	public String execute() throws Exception {
+		trainer = trainerManager.findOne(null);
+
+		return SUCCESS;
+	}
+
+	public TrainerManager getTrainerManager() {
+		return trainerManager;
+	}
+
+	public AutobotsManager getAutobotsManager() {
+		return AutobotsManager;
+	}
+
+	public JobsManager getJobsManager() {
+		return jobsManager;
+	}
+
+	public Trainer getTrainer() {
+		return trainer;
+	}
+
+	public List<Trainer> getTrainerList() {
+		return trainerList;
+	}
+
+	public List<Autobots> getAutobotsList() {
+		return autobotsList;
+	}
+
+	public List<Jobs> getJobsTrainerList() {
+		return jobsTrainerList;
+	}
+
+	public List<Jobs> getJobsAutobotsList() {
+		return jobsAutobotsList;
+	}
+
+	public List<TrainerEssay> getTrainerEssayList() {
+		return trainerEssayList;
+	}
+
+	public List<Topic> getTopicList() {
+		return topicList;
+	}
+
+	public List<Courses> getCoursesList() {
+		return coursesList;
+	}
+
+	public String getLoginState() {
+		return loginState;
+	}
+}

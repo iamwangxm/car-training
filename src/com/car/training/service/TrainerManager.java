@@ -9,22 +9,25 @@ import com.car.training.model.Trainer;
 
 public interface TrainerManager extends BaseManager<Trainer> {
 
-	/** 新增企业/公司信息 */
+	/** 新增培训师信息 */
 	void save(Trainer trainer);
 
-	/** 更新企业/公司信息 */
+	/** 更新培训师信息 */
 	void update(Trainer trainer);
 
-	/** 删除企业/公司信息 */
+	/** 删除培训师信息 */
 	void delete(String id);
 
-	/** 获取企业/公司信息 **/
+	/** 获取培训师信息 **/
 	Trainer findById(String id);
 	
-	/** 获取企业/公司列表 */
+	/** 获取首页推荐培训师信息 **/
+	Trainer findById(Boolean promote);
+	
+	/** 获取培训师列表 */
 	ResultPage<Trainer> findPageByTrainer(Trainer trainer, Integer pageSize, Integer pageNo);
 	
-	/** 获取企业/公司列表 */
+	/** 获取培训师列表 */
 	List<Trainer> findListByTrainer(Trainer trainer);
 	
 }

@@ -46,8 +46,8 @@ public class Autobots implements Serializable{
 	/**修改用户**/
 	private String modifyUser;
 	
-	/**是否启用**/
-	private boolean enabed;
+	/**是否推荐**/
+	private boolean promoted;
 
 	public String getId() {
 		return id;
@@ -137,12 +137,12 @@ public class Autobots implements Serializable{
 		this.modifyUser = modifyUser;
 	}
 
-	public boolean isEnabed() {
-		return enabed;
+	public boolean isPromoted() {
+		return promoted;
 	}
 
-	public void setEnabed(boolean enabed) {
-		this.enabed = enabed;
+	public void setPromoted(boolean promoted) {
+		this.promoted = promoted;
 	}
 
 	public String getAttentionTrainer() {

@@ -62,8 +62,8 @@ public class Trainer implements Serializable {
 	/**培训师的展示视频2**/
 	private String vedioURL2;
 	
-	/**是否启用**/
-	private boolean enabled;
+	/**是否推荐**/
+	private boolean promoted;
 
 	public String getId() {
 		return id;
@@ -201,11 +201,11 @@ public class Trainer implements Serializable {
 		this.vedioURL2 = vedioURL2;
 	}
 
-	public boolean isEnabled() {
-		return enabled;
+	public boolean isPromoted() {
+		return promoted;
 	}
 
-	public void setEnabled(boolean enabled) {
-		this.enabled = enabled;
+	public void setPromoted(boolean promoted) {
+		this.promoted = promoted;
 	}
 }

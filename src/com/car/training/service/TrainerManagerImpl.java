@@ -68,4 +68,15 @@ public class TrainerManagerImpl extends BaseManagerImpl<Trainer> implements Trai
 		dc.addOrder(Order.asc("displayOrder"));
 		return findListByCriteria(dc);
 	}
+
+	@Override
+	public Trainer findById(Boolean promote) {
+		DetachedCriteria dc = detachedCriteria();
+		if(promote==null){
+			dc.add(Restrictions.eq("promoted", promote));
+		}
+		dc.add(Restrictions.eq("enabled", true));
+		dc.addOrder(Order.asc("promoted"));
+		return findByCriteria(dc);
+	}
 }
