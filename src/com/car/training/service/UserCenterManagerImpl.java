@@ -199,4 +199,22 @@ public class UserCenterManagerImpl extends BaseManagerImpl<UserCenter> implement
 		return false;
 	}
 
+	@Override
+	public UserCenter register(String username, Object object, Object object2, Object object3) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UserCenter findByPassword(String username, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean checkCode(String username, String password) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

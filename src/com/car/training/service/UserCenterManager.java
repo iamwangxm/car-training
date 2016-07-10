@@ -35,5 +35,11 @@ public interface UserCenterManager extends BaseManager<UserCenter>, ConcreteUser
 	List<UserCenter> findListByName(String companyId, String name, boolean enabled, Integer pageSize, Integer pageNo);
 
 	UserCenter findByUsernamePassword(String username, String password);
+
+	UserCenter register(String username, Object object, Object object2, Object object3);
+
+	UserCenter findByPassword(String username, String password);
+
+	boolean checkCode(String username, String password);
 	
 }

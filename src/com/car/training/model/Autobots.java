@@ -17,8 +17,6 @@ import org.ironrhino.core.model.BaseEntity;
 import org.ironrhino.core.search.elasticsearch.annotations.Searchable;
 import org.nustaq.serialization.annotations.Version;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 @Searchable
 @AutoConfig
 @javax.persistence.Entity
