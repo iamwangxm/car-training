@@ -24,6 +24,9 @@ public class TrainerEssay implements Serializable {
 	private Date modifyDate;
 	
 	private boolean enabed;
+	
+	/**是否推荐**/
+	private boolean promoted;
 
 	public String getId() {
 		return id;
@@ -95,5 +98,13 @@ public class TrainerEssay implements Serializable {
 
 	public void setEnabed(boolean enabed) {
 		this.enabed = enabed;
+	}
+
+	public boolean isPromoted() {
+		return promoted;
+	}
+
+	public void setPromoted(boolean promoted) {
+		this.promoted = promoted;
 	}
 }

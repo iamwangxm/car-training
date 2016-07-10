@@ -6,6 +6,7 @@ import org.ironrhino.core.metadata.AutoConfig;
 import org.ironrhino.core.struts.BaseAction;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.car.training.enums.CompanyType;
 import com.car.training.model.Autobots;
 import com.car.training.model.Courses;
 import com.car.training.model.Jobs;
@@ -13,7 +14,10 @@ import com.car.training.model.Topic;
 import com.car.training.model.Trainer;
 import com.car.training.model.TrainerEssay;
 import com.car.training.service.AutobotsManager;
+import com.car.training.service.CoursesManager;
 import com.car.training.service.JobsManager;
+import com.car.training.service.TopicManager;
+import com.car.training.service.TrainerEssayManager;
 import com.car.training.service.TrainerManager;
 
 
@@ -23,11 +27,17 @@ public class IndexAction extends BaseAction {
 	private static final long serialVersionUID = 2048090665437672391L;
 
 	@Autowired
+	private JobsManager jobsManager;
+	@Autowired
+	private TopicManager topicManager;
+	@Autowired
 	private TrainerManager trainerManager;
+	@Autowired
+	private CoursesManager coursesManager;
 	@Autowired
 	private AutobotsManager AutobotsManager;
 	@Autowired
-	private JobsManager jobsManager;
+	private TrainerEssayManager trainerEssayManager;
 
 	/** 首页推荐培训师大图 */
 	private Trainer trainer;
@@ -50,8 +60,23 @@ public class IndexAction extends BaseAction {
 
 	@Override
 	public String execute() throws Exception {
-		trainer = trainerManager.findOne(null);
-
+		//首页推荐培训师大图1个
+		trainer = trainerManager.findByIndexPromoted(true);
+		//首页推荐培训师最上顶8位置
+		trainerList = trainerManager.findByIndexPromoted(true,8);
+		//首页推荐汽车人5个位置
+		autobotsList = AutobotsManager.findByIndexPromoted(true,5);
+		//首页培训师需求2个位置
+		jobsTrainerList = 	jobsManager.findListByIndexType(CompanyType.COMPANY, 2);
+		//首页汽车人才需求2个位置
+		jobsAutobotsList = 	jobsManager.findListByIndexType(CompanyType.STORE, 2);
+		//首页培训师原创文章列表6个位置
+		trainerEssayList = trainerEssayManager.findByIndexPromoted(true, 6);
+		//首页热点专题列表6个位置
+		topicList = topicManager.findListByIndexTopic(6);
+		//首页推荐公开课列表2个位置
+		coursesList = coursesManager.findByIndexPromoted(true,2);
+		
 		return SUCCESS;
 	}
 

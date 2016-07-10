@@ -61,6 +61,9 @@ public class TrainerEssay extends BaseEntity {
 	@JsonIgnore
 	private boolean enabed = true;
 	
+	/**是否推荐**/
+	private boolean promoted = false;
+	
 	@Version(value = 0)
 	private int version = -1;
 
@@ -128,6 +131,14 @@ public class TrainerEssay extends BaseEntity {
 		this.enabed = enabed;
 	}
 
+	public boolean isPromoted() {
+		return promoted;
+	}
+
+	public void setPromoted(boolean promoted) {
+		this.promoted = promoted;
+	}
+
 	public int getVersion() {
 		return version;
 	}
@@ -135,6 +146,5 @@ public class TrainerEssay extends BaseEntity {
 	public void setVersion(int version) {
 		this.version = version;
 	}
-	
 	
 }

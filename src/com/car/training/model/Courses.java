@@ -94,6 +94,9 @@ public class Courses extends BaseEntity {
 	@JsonIgnore
 	private boolean enabed = true;
 	
+	/**是否推荐**/
+	private boolean promoted = false;
+	
 	@Version(value = 0)
 	private int version = -1;
 
@@ -215,6 +218,22 @@ public class Courses extends BaseEntity {
 
 	public void setEnabed(boolean enabed) {
 		this.enabed = enabed;
+	}
+
+	public Autobots getAutobots() {
+		return autobots;
+	}
+
+	public void setAutobots(Autobots autobots) {
+		this.autobots = autobots;
+	}
+
+	public boolean isPromoted() {
+		return promoted;
+	}
+
+	public void setPromoted(boolean promoted) {
+		this.promoted = promoted;
 	}
 
 	public int getVersion() {

@@ -11,6 +11,7 @@ import org.ironrhino.core.service.BaseManagerImpl;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.car.training.enums.CompanyType;
 import com.car.training.exceptions.NotFoundException;
 import com.car.training.model.Jobs;
 
@@ -66,6 +67,18 @@ public class JobsManagerImpl extends BaseManagerImpl<Jobs> implements JobsManage
 		DetachedCriteria dc = detachedCriteria();
 		dc.add(Restrictions.eq("enabled", true));
 		dc.addOrder(Order.asc("displayOrder"));
+		return findListByCriteria(dc);
+	}
+
+	@Override
+	@Transactional(readOnly=true)
+	public List<Jobs> findListByIndexType(CompanyType type, Integer count) {
+		DetachedCriteria dc = detachedCriteria();
+		if(type!=null){
+			dc.add(Restrictions.eq("companyType", type));
+		}
+		dc.add(Restrictions.eq("enabled", true));
+		dc.addOrder(Order.asc("createDate"));
 		return findListByCriteria(dc);
 	}
 }

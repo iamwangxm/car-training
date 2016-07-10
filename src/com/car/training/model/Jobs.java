@@ -6,6 +6,8 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.ConstraintMode;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
@@ -23,6 +25,7 @@ import org.ironrhino.core.model.BaseEntity;
 import org.ironrhino.core.search.elasticsearch.annotations.Searchable;
 import org.nustaq.serialization.annotations.Version;
 
+import com.car.training.enums.CompanyType;
 import com.car.training.enums.Education;
 import com.car.training.enums.JobType;
 import com.car.training.enums.Major;
@@ -45,6 +48,11 @@ public class Jobs extends BaseEntity {
 	@JoinColumn(name = "companyId", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Company company; 
+	
+	/**公司职位类别(公司招聘/4S店招聘)**/
+	@Enumerated(EnumType.STRING)
+	@Column(length=20, nullable = false)
+	private CompanyType companyType;
 	
 	/**工作地点**/
 	@NotInCopy
@@ -119,6 +127,9 @@ public class Jobs extends BaseEntity {
 	@JsonIgnore
 	private boolean enabed = true;
 	
+	/**是否推荐**/
+	private boolean promoted = false;
+	
 	@Version(value = 0)
 	private int version = -1;
 
@@ -136,6 +147,14 @@ public class Jobs extends BaseEntity {
 
 	public void setCompany(Company company) {
 		this.company = company;
+	}
+
+	public CompanyType getCompanyType() {
+		return companyType;
+	}
+
+	public void setCompanyType(CompanyType companyType) {
+		this.companyType = companyType;
 	}
 
 	public Region getRegion() {
@@ -290,6 +309,14 @@ public class Jobs extends BaseEntity {
 		this.enabed = enabed;
 	}
 
+	public boolean isPromoted() {
+		return promoted;
+	}
+
+	public void setPromoted(boolean promoted) {
+		this.promoted = promoted;
+	}
+
 	public int getVersion() {
 		return version;
 	}
@@ -297,6 +324,4 @@ public class Jobs extends BaseEntity {
 	public void setVersion(int version) {
 		this.version = version;
 	}
-
-	
 }

@@ -6,6 +6,7 @@ import java.util.Set;
 
 import org.ironrhino.common.model.Region;
 
+import com.car.training.enums.CompanyType;
 import com.car.training.enums.Education;
 import com.car.training.enums.JobType;
 import com.car.training.enums.Major;
@@ -35,6 +36,9 @@ public class Jobs implements Serializable {
 	
 	/**工作种类**/
 	private JobType jobType;
+	
+	/**公司职位类别(公司招聘/4S店招聘)**/
+	private CompanyType companyType;
 	
 	/**兼职开始执行时间**/
 	private Date startExcutionDate;
@@ -66,6 +70,9 @@ public class Jobs implements Serializable {
 	private String modifyUser;
 	
 	private boolean enabed;
+	
+	/**是否推荐**/
+	private boolean promoted;
 
 	public String getId() {
 		return id;
@@ -131,6 +138,14 @@ public class Jobs implements Serializable {
 		this.jobType = jobType;
 	}
 
+	public CompanyType getCompanyType() {
+		return companyType;
+	}
+
+	public void setCompanyType(CompanyType companyType) {
+		this.companyType = companyType;
+	}
+
 	public Date getStartExcutionDate() {
 		return startExcutionDate;
 	}
@@ -145,6 +160,22 @@ public class Jobs implements Serializable {
 
 	public void setEndExecutionDate(Date endExecutionDate) {
 		this.endExecutionDate = endExecutionDate;
+	}
+
+	public Set<String> getWelfare() {
+		return welfare;
+	}
+
+	public void setWelfare(Set<String> welfare) {
+		this.welfare = welfare;
+	}
+
+	public Set<String> getLanguages() {
+		return languages;
+	}
+
+	public void setLanguages(Set<String> languages) {
+		this.languages = languages;
 	}
 
 	public String getJobDescription() {
@@ -225,5 +256,13 @@ public class Jobs implements Serializable {
 
 	public void setEnabed(boolean enabed) {
 		this.enabed = enabed;
+	}
+
+	public boolean isPromoted() {
+		return promoted;
+	}
+
+	public void setPromoted(boolean promoted) {
+		this.promoted = promoted;
 	}
 }

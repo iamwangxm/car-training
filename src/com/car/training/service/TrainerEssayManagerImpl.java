@@ -68,4 +68,18 @@ public class TrainerEssayManagerImpl extends BaseManagerImpl<TrainerEssay> imple
 		dc.addOrder(Order.asc("displayOrder"));
 		return findListByCriteria(dc);
 	}
+	
+	@Override
+	@Transactional(readOnly=true)
+	public List<TrainerEssay> findByIndexPromoted(Boolean promote, Integer count) {
+		DetachedCriteria dc = detachedCriteria();
+		if (count != null && count > 0) {
+		}
+		if (promote != null) {
+			dc.add(Restrictions.eq("promoted", promote));
+		}
+		dc.add(Restrictions.eq("enabled", true));
+		dc.addOrder(Order.asc("promoted"));
+		return findListByCriteria(dc);
+	}
 }

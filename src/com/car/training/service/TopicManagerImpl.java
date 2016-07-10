@@ -68,4 +68,13 @@ public class TopicManagerImpl extends BaseManagerImpl<Topic> implements TopicMan
 		dc.addOrder(Order.asc("displayOrder"));
 		return findListByCriteria(dc);
 	}
+
+	@Override
+	@Transactional(readOnly=true)
+	public List<Topic> findListByIndexTopic(Integer count) {
+		DetachedCriteria dc = detachedCriteria();
+		dc.add(Restrictions.eq("enabled", true));
+		dc.addOrder(Order.desc("hitCount"));
+		return findListByCriteria(dc);
+	}
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import org.ironrhino.core.model.ResultPage;
 import org.ironrhino.core.service.BaseManager;
 
+import com.car.training.enums.CompanyType;
 import com.car.training.model.Jobs;
 
 public interface JobsManager extends BaseManager<Jobs> {
@@ -26,5 +27,8 @@ public interface JobsManager extends BaseManager<Jobs> {
 	
 	/** 获取企业/公司列表 */
 	List<Jobs> findListByJobs(Jobs jobs);
+	
+	/** 获取企业/公司列表首页推荐位置2个培训师需求，2个汽车人需求 */
+	List<Jobs> findListByIndexType(CompanyType type,Integer count);
 	
 }
