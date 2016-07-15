@@ -6,32 +6,7 @@
 
 <body>
 <!-- 头部开始 -->	
-<div class="top">
-	<div class="content">
-    	<div class="logo left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/logo.jpg" /></div>
-        <div class="nav_box left">
-        	<div class="nav">
-            	<ul>
-            	<li class="cn"><a href="../index.html">首页</a></li>
-                <li><a href="trainer/trainer.html">培训师</a></li>
-                <li><a href="trainer/trainer_search.html">培训需求</a></li>
-                <li><a href="autobot/autobot.html">汽车人</a></li>
-                <li><a href="autobot/autobot_search.html">汽车人需求</a></li>
-                <li><a href="topic/topic.html">培训学院</a></li>
-                <li><a href="course/course.html">公开课</a></li>
-                
-            </ul>
-            </div>
-        </div>
-        <div class="dl_top right">
-        	<ul>
-            	<li style="background:none;"><a href="#">请登录</a></li>
-                <li><a href="#">免费注册</a></li>
-            </ul>
-        </div>
-        <div class="clear"></div>
-    </div>
-</div>
+<#include "/assets/website/common/header.html">
 <!-- 头部结束 -->	
 <!-- banner开始 -->	
 <div class="banner">
