@@ -8,7 +8,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="UTF-8">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    
     <#if request.requestURI?starts_with('/website/index')>
     <meta name="keyword" content="汽车培聘网-汽车、招聘、培训一站式的服务网站"/>
 	<#else>
@@ -30,8 +29,7 @@
     <script src="<@url value="/assets/website/js/jquery.jslides.js?v=1.1.1"/>"></script>
     <script src="<@url value="/assets/website/js/jquery.superslide.2.1.1.js?v=1.1.0"/>"></script>
     <script src="<@url value="/assets/website/js/jquery1.42.min.js?v=1.1.0"/>"></script>
-    <title>Weshare我享度假</title>
-    
+    <title>汽车培聘网</title>
 <#noescape>${head}</#noescape>
 </head>
 <body>
