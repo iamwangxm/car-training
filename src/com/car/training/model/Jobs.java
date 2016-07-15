@@ -15,6 +15,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 import org.ironrhino.common.model.Region;
 import org.ironrhino.core.metadata.AutoConfig;
@@ -75,10 +76,12 @@ public class Jobs extends BaseEntity {
 	private JobType jobType;
 	
 	/**福利**/
+	@Transient
 	@UiConfig(hiddenInList = @Hidden(true) )
 	private Set<String> welfare = new HashSet<String>(0);;
 	
 	/**语言要求**/
+	@Transient
 	private Set<String> languages  = new HashSet<String>(0);
 	
 	/**工作描述**/

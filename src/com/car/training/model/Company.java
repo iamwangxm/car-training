@@ -16,6 +16,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 import org.ironrhino.common.model.Region;
 import org.ironrhino.core.metadata.AutoConfig;
@@ -84,6 +85,7 @@ public class Company extends BaseEntity {
 	private Nature nature;
 	
 	/**福利**/
+	@Transient
 	@UiConfig(hiddenInList = @Hidden(true) )
 	private Set<String> welfare = new HashSet<String>(0);
 	

@@ -12,6 +12,7 @@ import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.ironrhino.core.metadata.AutoConfig;
 import org.ironrhino.core.metadata.NotInCopy;
@@ -51,9 +52,11 @@ public class Trainer extends BaseEntity {
 	private Integer trainingYears;
 	
 	/**业务领域**/
+	@Transient
 	private Set<String> businessCategory = new HashSet<String>(0);
 	
 	/**执行类别**/
+	@Transient
 	private Set<String> executionCategory = new HashSet<String>(0);
 	
 	/**当前职位**/
