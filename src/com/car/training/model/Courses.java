@@ -92,7 +92,7 @@ public class Courses extends BaseEntity {
 	private String modifyUser;
 	
 	@JsonIgnore
-	private boolean enabed = true;
+	private boolean enabled = true;
 	
 	/**是否推荐**/
 	private boolean promoted = false;
@@ -212,12 +212,12 @@ public class Courses extends BaseEntity {
 		this.modifyUser = modifyUser;
 	}
 
-	public boolean isEnabed() {
-		return enabed;
+	public boolean isEnabled() {
+		return enabled;
 	}
 
-	public void setEnabed(boolean enabed) {
-		this.enabed = enabed;
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 
 	public Autobots getAutobots() {

@@ -59,7 +59,7 @@ public class TrainerEssay extends BaseEntity {
 	
 	/**是否启用*/
 	@JsonIgnore
-	private boolean enabed = true;
+	private boolean enabled = true;
 	
 	/**是否推荐**/
 	private boolean promoted = false;
@@ -123,12 +123,12 @@ public class TrainerEssay extends BaseEntity {
 		this.modifyDate = modifyDate;
 	}
 
-	public boolean isEnabed() {
-		return enabed;
+	public boolean isEnabled() {
+		return enabled;
 	}
 
-	public void setEnabed(boolean enabed) {
-		this.enabed = enabed;
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 
 	public boolean isPromoted() {

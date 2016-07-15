@@ -23,7 +23,7 @@ public class TopicComment implements Serializable {
 	
 	private Date modifyDate;
 
-	private boolean enabed;
+	private boolean enabled;
 
 	public String getId() {
 		return id;
@@ -89,12 +89,12 @@ public class TopicComment implements Serializable {
 		this.modifyDate = modifyDate;
 	}
 
-	public boolean isEnabed() {
-		return enabed;
+	public boolean isEnabled() {
+		return enabled;
 	}
 
-	public void setEnabed(boolean enabed) {
-		this.enabed = enabed;
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 	
 }

@@ -77,7 +77,7 @@ public class Company implements Serializable {
 
 	private String modifyUser;
 	
-	private boolean enabed;
+	private boolean enabled;
 
 	public String getId() {
 		return id;
@@ -255,11 +255,11 @@ public class Company implements Serializable {
 		this.modifyUser = modifyUser;
 	}
 
-	public boolean isEnabed() {
-		return enabed;
+	public boolean isEnabled() {
+		return enabled;
 	}
 
-	public void setEnabed(boolean enabed) {
-		this.enabed = enabed;
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 }

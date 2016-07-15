@@ -148,7 +148,7 @@ public class UserCenter extends BaseEntity implements UserDetails {
 
 	/** 是否启用 */
 	@JsonIgnore
-	private boolean enabed = true;
+	private boolean enabled = true;
 
 	/** 版本 */
 	@Version(value = 0)
@@ -351,12 +351,8 @@ public class UserCenter extends BaseEntity implements UserDetails {
 		this.modifyUser = modifyUser;
 	}
 
-	public boolean isEnabed() {
-		return enabed;
-	}
-
-	public void setEnabed(boolean enabed) {
-		this.enabed = enabed;
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 
 	public int getVersion() {

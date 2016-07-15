@@ -37,7 +37,6 @@ public class AutobotsManagerImpl extends BaseManagerImpl<Autobots> implements Au
 		if (StringUtils.isBlank(id))
 			return null;
 		DetachedCriteria dc = detachedCriteria();
-		dc.add(Restrictions.eq("enabled", true));
 		dc.add(Restrictions.eq("id", id));
 		return findByCriteria(dc);
 	}
@@ -49,7 +48,6 @@ public class AutobotsManagerImpl extends BaseManagerImpl<Autobots> implements Au
 		if (autobotsComment == null)
 			return null;
 		DetachedCriteria dc = detachedCriteria();
-		dc.add(Restrictions.eq("enabled", true));
 		dc.addOrder(Order.asc("displayOrder"));
 		resultPage.setCriteria(dc);
 		
@@ -64,7 +62,6 @@ public class AutobotsManagerImpl extends BaseManagerImpl<Autobots> implements Au
 	@Transactional(readOnly=true)
 	public List<Autobots> findListByAutobots(Autobots autobotsComment) {
 		DetachedCriteria dc = detachedCriteria();
-		dc.add(Restrictions.eq("enabled", true));
 		dc.addOrder(Order.asc("displayOrder"));
 		return findListByCriteria(dc);
 	}
@@ -78,7 +75,6 @@ public class AutobotsManagerImpl extends BaseManagerImpl<Autobots> implements Au
 		if (promote != null) {
 			dc.add(Restrictions.eq("promoted", promote));
 		}
-		dc.add(Restrictions.eq("enabled", true));
 		dc.addOrder(Order.asc("promoted"));
 		return findListByCriteria(dc);
 	}

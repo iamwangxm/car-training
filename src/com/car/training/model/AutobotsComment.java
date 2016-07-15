@@ -48,7 +48,7 @@ public class AutobotsComment extends BaseEntity{
 	
 	/**是否启用*/
 	@JsonIgnore
-	private boolean enabed = true;
+	private boolean enabled = true;
 	
 	/** 汽车人关联 **/
 	@JoinColumn(name = "autobotsId", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
@@ -95,12 +95,12 @@ public class AutobotsComment extends BaseEntity{
 		this.createDate = createDate;
 	}
 
-	public boolean isEnabed() {
-		return enabed;
+	public boolean isEnabled() {
+		return enabled;
 	}
 
-	public void setEnabed(boolean enabed) {
-		this.enabed = enabed;
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 	
 	

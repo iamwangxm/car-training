@@ -44,7 +44,7 @@ public class DeliveryResume extends BaseEntity {
 	private Date createDate = new Date();
 	
 	@JsonIgnore
-	private boolean enabed = true;
+	private boolean enabled = true;
 
 	public Jobs getJobs() {
 		return jobs;
@@ -78,11 +78,11 @@ public class DeliveryResume extends BaseEntity {
 		this.createDate = createDate;
 	}
 
-	public boolean isEnabed() {
-		return enabed;
+	public boolean isEnabled() {
+		return enabled;
 	}
 
-	public void setEnabed(boolean enabed) {
-		this.enabed = enabed;
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 }

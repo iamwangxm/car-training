@@ -23,7 +23,7 @@ public class TrainerEssay implements Serializable {
 
 	private Date modifyDate;
 	
-	private boolean enabed;
+	private boolean enabled;
 	
 	/**是否推荐**/
 	private boolean promoted;
@@ -92,12 +92,12 @@ public class TrainerEssay implements Serializable {
 		this.modifyDate = modifyDate;
 	}
 
-	public boolean isEnabed() {
-		return enabed;
+	public boolean isEnabled() {
+		return enabled;
 	}
 
-	public void setEnabed(boolean enabed) {
-		this.enabed = enabed;
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 
 	public boolean isPromoted() {

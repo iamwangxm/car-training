@@ -45,7 +45,7 @@ public class UserCenterManagerImpl extends BaseManagerImpl<UserCenter> implement
 	@Transactional
 	@EvictCache(namespace = CACHE_NAMESPACE, key = "${[uc.id,uc.username]}")
 	public void delete(final UserCenter user) {
-		user.setEnabed(false);; // 标志删除
+		user.setEnabled(false);; // 标志删除
 		super.save(user);
 	}
 
@@ -139,7 +139,7 @@ public class UserCenterManagerImpl extends BaseManagerImpl<UserCenter> implement
 	@EvictCache(namespace = CACHE_NAMESPACE, key = "${[uc.id,uc.username]}")
 	public void recover(UserCenter user) {
 		if (user != null) {
-			user.setEnabed(false);
+			user.setEnabled(false);
 			super.save(user);
 		}
 

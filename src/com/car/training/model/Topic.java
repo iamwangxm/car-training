@@ -62,7 +62,7 @@ public class Topic extends BaseEntity {
 	private String modifyUser;
 	
 	@JsonIgnore
-	private boolean enabed = true;
+	private boolean enabled = true;
 	
 	@Version(value = 0)
 	private int version = -1;
@@ -139,12 +139,12 @@ public class Topic extends BaseEntity {
 		this.modifyUser = modifyUser;
 	}
 
-	public boolean isEnabed() {
-		return enabed;
+	public boolean isEnabled() {
+		return enabled;
 	}
 
-	public void setEnabed(boolean enabed) {
-		this.enabed = enabed;
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 
 	public int getVersion() {

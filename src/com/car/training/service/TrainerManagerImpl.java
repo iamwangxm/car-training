@@ -37,7 +37,6 @@ public class TrainerManagerImpl extends BaseManagerImpl<Trainer> implements Trai
 		if (StringUtils.isBlank(id))
 			return null;
 		DetachedCriteria dc = detachedCriteria();
-		dc.add(Restrictions.eq("enabled", true));
 		dc.add(Restrictions.eq("id", id));
 		return findByCriteria(dc);
 	}
@@ -49,7 +48,6 @@ public class TrainerManagerImpl extends BaseManagerImpl<Trainer> implements Trai
 		if (autobotsComment == null)
 			return null;
 		DetachedCriteria dc = detachedCriteria();
-		dc.add(Restrictions.eq("enabled", true));
 		dc.addOrder(Order.asc("displayOrder"));
 		resultPage.setCriteria(dc);
 		
@@ -64,7 +62,6 @@ public class TrainerManagerImpl extends BaseManagerImpl<Trainer> implements Trai
 	@Transactional(readOnly=true)
 	public List<Trainer> findListByTrainer(Trainer autobotsComment) {
 		DetachedCriteria dc = detachedCriteria();
-		dc.add(Restrictions.eq("enabled", true));
 		dc.addOrder(Order.asc("displayOrder"));
 		return findListByCriteria(dc);
 	}
@@ -76,7 +73,6 @@ public class TrainerManagerImpl extends BaseManagerImpl<Trainer> implements Trai
 		if (promote == null) {
 			dc.add(Restrictions.eq("promoted", promote));
 		}
-		dc.add(Restrictions.eq("enabled", true));
 		dc.addOrder(Order.asc("promoted"));
 		return findByCriteria(dc);
 	}
@@ -90,7 +86,6 @@ public class TrainerManagerImpl extends BaseManagerImpl<Trainer> implements Trai
 		if (promote != null) {
 			dc.add(Restrictions.eq("promoted", promote));
 		}
-		dc.add(Restrictions.eq("enabled", true));
 		dc.addOrder(Order.asc("promoted"));
 		return findListByCriteria(dc);
 	}
