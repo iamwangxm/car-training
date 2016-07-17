@@ -19,21 +19,15 @@
     <div class="ny">
      	<div class="sousuo_box">
         	<div class="pxly">
-            	<h4>培训领域:</h4>
+            	<h4>岗位类型:</h4>
                 <div class="pxly_box">
                 	<ul>
-                    	<li><a href="#">销售</a></li>
-                        <li><a href="#">产品</a></li>
-                        <li><a href="#">非技术</a></li>
-                        <li><a href="#">技术</a></li>
-                        <li><a href="#">管理</a></li>
-                        <li><a href="#">财务</a></li>
-                        <li><a href="#">市场营销</a></li>
-                        <li><a href="#">客户关系</a></li>
-                        <li><a href="#">人事</a></li>
-                        <li><a href="#">生产</a></li>
-                        <li><a href="#">领导力</a></li>
-                        <li><a href="#">新能源</a></li>
+                    	<li><a href="#">销售市场</a></li>
+                        <li><a href="#">售后客服</a></li>
+                        <li><a href="#">高级管理</a></li>
+                        <li><a href="#">人事财务</a></li>
+                        <li><a href="#">内训</a></li>
+                        <li><a href="#">生产研发</a></li>
                     </ul>
                 </div>
                 <div class="clear"></div>

@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.ConstraintMode;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
@@ -16,6 +18,8 @@ import org.ironrhino.core.metadata.UiConfig;
 import org.ironrhino.core.model.BaseEntity;
 import org.ironrhino.core.search.elasticsearch.annotations.Searchable;
 import org.nustaq.serialization.annotations.Version;
+
+import com.car.training.enums.PositionType;
 
 @Searchable
 @AutoConfig
@@ -33,8 +37,14 @@ public class Autobots extends BaseEntity {
 	/** 当前职位 **/
 	@Column(length = 50, nullable = true)
 	private String currentPosition;
+	
+	/**岗位类型**/
+	@Enumerated(EnumType.STRING)
+	@Column(length=20, nullable = false)
+	private PositionType positionType;  
 
 	/** 关注培训师 **/
+	@Column(length=1000)
 	private String attentionTrainer;
 
 	/** 公司发起的橄榄枝 **/
@@ -91,6 +101,14 @@ public class Autobots extends BaseEntity {
 
 	public String getCurrentPosition() {
 		return currentPosition;
+	}
+
+	public PositionType getPositionType() {
+		return positionType;
+	}
+
+	public void setPositionType(PositionType positionType) {
+		this.positionType = positionType;
 	}
 
 	public void setCurrentPosition(String currentPosition) {

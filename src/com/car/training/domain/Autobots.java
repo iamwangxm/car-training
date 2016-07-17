@@ -3,6 +3,8 @@ package com.car.training.domain;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.car.training.enums.PositionType;
+
 public class Autobots implements Serializable{
 	
 	private static final long serialVersionUID = 4029227868768483061L;
@@ -15,6 +17,9 @@ public class Autobots implements Serializable{
 	
 	/**当前职位**/
 	private String currentPosition;  
+	
+	/**岗位类型**/
+	private PositionType positionType;  
 	
 	/**关注培训师**/
 	private String attentionTrainer;
@@ -71,6 +76,14 @@ public class Autobots implements Serializable{
 
 	public void setCurrentPosition(String currentPosition) {
 		this.currentPosition = currentPosition;
+	}
+
+	public PositionType getPositionType() {
+		return positionType;
+	}
+
+	public void setPositionType(PositionType positionType) {
+		this.positionType = positionType;
 	}
 
 	public Integer getAutoYears() {
