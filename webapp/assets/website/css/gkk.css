@@ -1,0 +1,120 @@
+/* StyleName:公开课*/
+/* 2016/6/1 by WZM*/
+/* 全局 */
+html,body {height:100%; background:#f3f1f1;  }
+body {font:14px "微软雅黑",Arial,sans-serif; color:#4c4c4c;margin:0px; }
+form,menu,dir,fieldset,blockquote,p,pre,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6 { padding:0; margin:0;}
+ul,ol,dl { list-style:none; }
+a {color:#666666;;text-decoration: none;}
+a:hover {color:#666666;text-decoration:none;}
+a img {border: none;}
+.clear {clear: both;line-height: 0px;font-size:0px;}
+.content {width:1200px;margin: 0 auto;  }
+.left {float:left;}
+.right {float:right;}
+.mt10 {margin-top:10px;}
+.oh {height:100%;overflow: hidden;}
+
+
+/*头部*/
+.top{ background:#313a41; height:50px;}
+.logo{ width:230px;}
+.nav_box{ width:665px;}
+
+.nav li{ display:block; float:left; width:95px; height:50px;line-height:50px;font-size:14px; color:#cdcdcd; text-align:center;}
+.nav li a{ display:block;color:#cdcdcd;width:95px; height:50px;}
+.nav li a:hover{ display:block;width:95px; height:50px;color:#ffffff;font-weight:700;background:#3689b3;}
+.nav li.cn a,.nav li.cn a:hover{ display:block;width:95px; font-weight:700;height:50px;color:#ffffff;background:#3689b3;}
+
+.dl_top{ width:120px; padding-left:185px;}
+.dl_top li{ display:block; float:left; width:60px; text-align:center; background:url(../images/line.jpg) no-repeat left center; height:50px; line-height:50px; color:#a0a0a0; font-size:12px;}
+.dl_top li a{color:#a0a0a0;}
+.dl_top li a:hover{ color:#fff;}
+
+/*banner*/
+.banner{height:335px;}
+
+
+/*搜索*/
+.sousuo_box{ border:1px solid #e3e3e3; background:#f9fbfb; padding:20px; height:100%; margin-bottom:25px;}
+/*培训领域*/
+.pxly{ font-size:12px; height:30px; line-height:30px; margin-bottom:5px;}
+.pxly h4{ display:block;font-size:12px; float:left; font-weight:100; width:65px; text-align:left; background:url(../images/pxly.jpg) no-repeat left 2px; padding-left:30px; color:#3689b3;  }
+.pxly_box{ width:1030px;float:right;}
+.pxly_box li{ display:block; float:left; padding-right:40px;}
+
+
+/*擅长形式*/
+.scxs{font-size:12px; height:30px; line-height:30px; margin-bottom:5px;}
+.scxs h4{ display:block; float:left;font-size:12px;font-weight:100; width:65px; text-align:left; background:url(../images/scxs.jpg) no-repeat left 2px; padding-left:30px; color:#3689b3;  }
+.scxs_box{ width:1030px;float:right;}
+.scxs_box li{ display:block; float:left; padding-right:40px;}
+
+/*职位地址*/
+.zwdz{font-size:12px; height:30px; line-height:30px; margin-bottom:5px;}
+.zwdz h4{ display:block; float:left;font-size:12px; font-weight:100; width:65px; text-align:left; background:url(../images/zwdz.jpg) no-repeat left 2px; padding-left:30px; color:#3689b3;  }
+.zwdz_box{ width:1030px;float:right;}
+.zwdz_box li{ display:block; float:left; padding-right:40px;}
+
+/*培训形式*/
+.pxxs{font-size:12px; height:30px; line-height:30px; margin-bottom:5px;}
+.pxxs h4{ display:block; float:left;font-size:12px; font-weight:100; width:65px; text-align:left; background:url(../images/pxxs.jpg) no-repeat left 4px; padding-left:30px; color:#3689b3;  }
+.pxxs_box{ width:1030px;float:right;}
+.pxxs_box li{ display:block; float:left; padding-right:40px;}
+/*工作性质*/
+.gzxz{font-size:12px; height:30px; line-height:30px; margin-bottom:5px;}
+.gzxz h4{ display:block; float:left;font-size:12px; font-weight:100; width:65px; text-align:left; background:url(../images/gzxz.jpg) no-repeat left 2px; padding-left:30px; color:#3689b3;  }
+.gzxz_box{ width:1030px;float:right;}
+.gzxz_box li{ display:block; float:left; padding-right:40px;}
+
+/*搜索框*/
+.sou{ height:35px; line-height:35px; margin-top:10px;}
+.sou h4{ display:block; float:left; font-weight:100; width:65px; text-align:left;  padding-left:30px; color:#3689b3;font-weight:700;  }
+.sou_box{ width:1030px;float:right;}
+.sou_box li{ display:block; float:left; padding-right:40px;}
+
+/*培训时间*/
+.pxsj{ font-size:12px; height:30px; line-height:30px; margin-bottom:5px;}
+.pxsj h4{ display:block; float:left;font-size:12px; font-weight:100; width:65px; text-align:left; background:url(../images/pxsj.jpg) no-repeat left 3px; padding-left:30px; color:#3689b3;  }
+.pxsj_box{ width:1030px;float:right;}
+.pxsj_box li{ display:block; float:left; padding-right:40px;}
+
+
+/*公开课列表页*/
+.gkk{ padding:15px 0px 25px 0px; height:265px; border-bottom:1px dotted #ccc; margin-bottom:30px;}
+
+.gkk li{ display:block; float:left; width:214px; height:260px;background:#faf8f9; border:1px solid #e7e5e5;  padding:1px; margin-right:20px;}
+
+.gkk_pic{ width:214px; height:181px;}
+.gkk_pic img{ width:214px; height:181px;}
+.gkk_intro{ height:71px;width:204px; padding:4px 5px;}
+.gkk_name{ height:24px; line-height:24px;}
+.gkk_zw{ height:20px; line-height:20px;margin-bottom:3px;margin-bottom:6px;}
+.gkk_zw_l{ text-align:left;}
+.gkk_zw_r{ text-align:right;}
+.gkk_xm{ color:#3d9ccc; font-size:16px; margin-right:40px;   }
+.gkk_xm a,.gkk_xm a:hover{color:#3d9ccc;}
+.gkk_pl{ color:#ffa757; font-size:12px;}
+.gkk_pl a,.gkk_pl a:hover{ color:#ffa757; font-size:12px;}
+.gkk_pl span{ color:#818180;}
+.gkk_zp{ height:20px; line-height:20px;font-size:14px;margin-bottom:5px;}
+.gkk_rz{}
+.gkk_rz span{ display:block; float:left; margin-right:8px;}
+
+
+
+
+
+/*分页*/
+.fypage {padding:0px 0px 42px 0px;text-align: center;}
+.fypage span {padding: 5px 10px; background: #fff;border: 1px #ccc solid;margin-left: 5px;color: #777;}
+.fypage a {padding: 5px 10px;background: #3d9ccc;border: 1px #3d9ccc solid;margin-left: 5px;color: #fff;}
+.fypage a:hover {color: #fff;}
+
+
+
+
+/*底部信息*/
+.footer{ width:100%; background:url(../images/footer_bg.jpg) repeat-x left top;height:90px; padding-top:40px;}
+
+.bq{ line-height:24px; color:#000; text-align:center;}
