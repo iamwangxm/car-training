@@ -13,13 +13,11 @@
 <!-- 头部结束 -->	
 
 <!-- main开始 -->
-
-
 <div class="content">
     <div class="ny">
      	<div class="sousuo_box">
         	<div class="pxly">
-            	<h4>培训领域:</h4>
+            	<h4>业务领域:</h4>
                 <div class="pxly_box">
                 	<ul>
                     	<li><a href="#">销售</a></li>
@@ -39,7 +37,7 @@
                 <div class="clear"></div>
             </div>
             <div class="scxs">
-            	<h4>擅长形式:</h4>
+            	<h4>执行类型:</h4>
                 <div class="pxly_box">
                 	<ul>
                     	<li><a href="#">开发</a></li>
@@ -53,7 +51,7 @@
                 <div class="clear"></div>
             </div>
             <div class="pxsj">
-            	<h4>培训时间:</h4>
+            	<h4>培训经验:</h4>
                 <div class="pxly_box">
                 	<ul>
                     	<li><a href="#">5年内</a></li>
