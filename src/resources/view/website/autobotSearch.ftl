@@ -92,8 +92,8 @@
                 <div class="sou_box">
                   <table width="590px" border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                      <td width="505px"><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/images/ss_bg.jpg) no-repeat left 1px; height:35px; line-height:35px;   width:501px; border:none; padding-left:4px; " type="text" name="user_login"  placeholder="请输入关键字，如销售市场" validate-title="请输入关键字，如销售市场" /></td>
-                      <td width="85px" height="35px"><input style="border:none;" type="image" src="http://7xtuyf.com1.z0.glb.clouddn.com/images/ss.jpg" /></td>
+                      <td width="505px"><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/ss_bg.jpg) no-repeat left 1px; height:35px; line-height:35px;   width:501px; border:none; padding-left:4px; " type="text" name="user_login"  placeholder="请输入关键字，如销售市场" validate-title="请输入关键字，如销售市场" /></td>
+                      <td width="85px" height="35px"><input style="border:none;" type="image" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/ss.jpg" /></td>
                     </tr>
                   </table>
                 </div>
@@ -118,7 +118,7 @@
                     </div>
                     <div class="pxxq_r right">
                    	  <div class="qy">
-                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo.jpg" /></div>
+                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
                           <div class="qy_r right">
                             	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
                                 <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
@@ -147,7 +147,7 @@
                     </div>
                     <div class="pxxq_r right">
                    	  <div class="qy">
-                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo.jpg" /></div>
+                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
                           <div class="qy_r right">
                             	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
                                 <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
@@ -176,7 +176,7 @@
                     </div>
                     <div class="pxxq_r right">
                    	  <div class="qy">
-                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo.jpg" /></div>
+                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
                           <div class="qy_r right">
                             	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
                                 <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
@@ -205,7 +205,7 @@
                     </div>
                     <div class="pxxq_r right">
                    	  <div class="qy">
-                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo.jpg" /></div>
+                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
                           <div class="qy_r right">
                             	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
                                 <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
@@ -234,7 +234,7 @@
                     </div>
                     <div class="pxxq_r right">
                    	  <div class="qy">
-                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo.jpg" /></div>
+                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
                           <div class="qy_r right">
                             	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
                                 <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
@@ -263,7 +263,7 @@
                     </div>
                     <div class="pxxq_r right">
                    	  <div class="qy">
-                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo.jpg" /></div>
+                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
                           <div class="qy_r right">
                             	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
                                 <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
@@ -292,7 +292,7 @@
                     </div>
                     <div class="pxxq_r right">
                    	  <div class="qy">
-                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo.jpg" /></div>
+                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
                           <div class="qy_r right">
                             	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
                                 <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
@@ -321,7 +321,7 @@
                     </div>
                     <div class="pxxq_r right">
                    	  <div class="qy">
-                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo.jpg" /></div>
+                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
                           <div class="qy_r right">
                             	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
                                 <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
@@ -350,7 +350,7 @@
                     </div>
                     <div class="pxxq_r right">
                    	  <div class="qy">
-                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo.jpg" /></div>
+                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
                           <div class="qy_r right">
                             	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
                                 <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
@@ -379,7 +379,7 @@
                     </div>
                     <div class="pxxq_r right">
                    	  <div class="qy">
-                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo.jpg" /></div>
+                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
                           <div class="qy_r right">
                             	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
                                 <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
@@ -404,18 +404,18 @@
             <div class="pxgs_r right">
             	<div class="qy_logo">
                 	<ul>
-                    	<li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo_img.jpg" /></a></li>
+                    	<li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
+                        <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
+                        <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
+                        <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
+                        <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
+                        <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
+                        <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
+                        <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
+                        <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
+                        <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
+                        <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
+                        <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
                     </ul>
                 </div>
             </div>

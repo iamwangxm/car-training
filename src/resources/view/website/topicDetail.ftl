@@ -15,7 +15,7 @@
 <!-- 头部开始 -->	
 <div class="top">
 	<div class="content">
-    	<div class="logo left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/logo.jpg" /></div>
+    	<div class="logo left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/logo.jpg" /></div>
         <div class="nav_box left">
         	<div class="nav">
             	<ul>
@@ -49,9 +49,9 @@
     	<div class="zt">
         	<div class="zt_l left">
             	<div class="wenti">
-                	<div class="tubiao left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zttx1.jpg" /></div> 
+                	<div class="tubiao left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zttx1.jpg" /></div> 
                     <div class="wt_box right">
-                    	<h4><span>30人关注该问题</span><span><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/gz2.jpg" /></span>想知道大家是如何看待行政类工作的</h4>本人从事行政类工作将近2年，两年来可以说学习见识到很多，但是，真正去挖掘的话会发现其实学到的都是一些细节上的小事，也就是没有学到一点干货。个人成就感极低，感觉行政类工作就是万金油，小打杂，老板要你做什么就是做什么，职业规划很有限，基本上是拼工作时间的岗位。公司行政类工作的管理层都是老员工，基本不会动的那种，想知道大家是如何看待行政类工作的</h4>本人从事行政类工作将近2年，两年来可以说学习见识到很多，但是，真正去挖掘的话会发现其实学到的都是一些细节上的小事，也就是没有学到一点干货。个人成就感极低，感觉行政类工作就是万金油，小打杂，老板要你做什么就是做什么，职业规划很有限，基本上是拼工作时间的岗位。公司行政类工作的管理层都是老员工，基本不会动的那种，所以晋升空间所以晋升空间非常有限。现在想跳槽，但是发现自己没有拿得出手的很漂亮的成绩。之前不是管理层的想跳到管理层对一个新企业来说不太可能。想问问大家是任何看待行政类的工作，是否觉得很无足轻重？行政类工作的人想要转行应该如何选择，现在很是迷茫，希望各位前辈指点迷津。
+                    	<h4><span>30人关注该问题</span><span><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/gz2.jpg" /></span>想知道大家是如何看待行政类工作的</h4>本人从事行政类工作将近2年，两年来可以说学习见识到很多，但是，真正去挖掘的话会发现其实学到的都是一些细节上的小事，也就是没有学到一点干货。个人成就感极低，感觉行政类工作就是万金油，小打杂，老板要你做什么就是做什么，职业规划很有限，基本上是拼工作时间的岗位。公司行政类工作的管理层都是老员工，基本不会动的那种，想知道大家是如何看待行政类工作的</h4>本人从事行政类工作将近2年，两年来可以说学习见识到很多，但是，真正去挖掘的话会发现其实学到的都是一些细节上的小事，也就是没有学到一点干货。个人成就感极低，感觉行政类工作就是万金油，小打杂，老板要你做什么就是做什么，职业规划很有限，基本上是拼工作时间的岗位。公司行政类工作的管理层都是老员工，基本不会动的那种，所以晋升空间所以晋升空间非常有限。现在想跳槽，但是发现自己没有拿得出手的很漂亮的成绩。之前不是管理层的想跳到管理层对一个新企业来说不太可能。想问问大家是任何看待行政类的工作，是否觉得很无足轻重？行政类工作的人想要转行应该如何选择，现在很是迷茫，希望各位前辈指点迷津。
                     </div>
                 </div>
                 <div class="pl_kuang">
@@ -60,7 +60,7 @@
                       <td height="140" align="center" valign="middle"><textarea name="textarea2" style="width:780px; height:100px; border:1px solid #e6e5e5;" id="textarea2"></textarea></td>
                     </tr>
                     <tr>
-                      <td height="60" align="center" valign="middle"><input type="image" name="imageField2" id="imageField2" src="http://7xtuyf.com1.z0.glb.clouddn.com/images/tj.jpg" /></td>
+                      <td height="60" align="center" valign="middle"><input type="image" name="imageField2" id="imageField2" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/tj.jpg" /></td>
                     </tr>
                   </table>
                 
@@ -69,7 +69,7 @@
                 <div class="pl_shu">21人评论</div>
             	<div class="pl_list">
                 	<div class="pingl">
-                	<div class="pingl_pic left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zttx2.jpg" /></div>
+                	<div class="pingl_pic left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zttx2.jpg" /></div>
                     <div class="pingl_ren right">
                     	<div class="pingl_ren_m">王先生</div>
                         <div class="pingl_ren_zw">汽车工程师，公司副总</div>
@@ -81,10 +81,10 @@
                                 <div class="zt_pl2_r right">
                                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
-                                       <td width="30%" align="right" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pl_icon.jpg" /></td>
+                                       <td width="30%" align="right" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pl_icon.jpg" /></td>
                                       <td width="20%" align="right" valign="middle"><a href="#">评论</a></td>
                                      
-                                      <td width="21%" align="right" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/z.jpg" /></td>
+                                      <td width="21%" align="right" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/z.jpg" /></td>
                                       <td width="29%" align="right" valign="middle"><a href="#">赞(12)</a></td>
                                     </tr>
                                   </table>
@@ -94,7 +94,7 @@
                 </div>
                 <div class="pl_list">
                 	<div class="pingl">
-                	<div class="pingl_pic left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zttx2.jpg" /></div>
+                	<div class="pingl_pic left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zttx2.jpg" /></div>
                     <div class="pingl_ren right">
                     	<div class="pingl_ren_m">王先生</div>
                         <div class="pingl_ren_zw">汽车工程师，公司副总</div>
@@ -106,10 +106,10 @@
                                 <div class="zt_pl2_r right">
                                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
-                                       <td width="30%" align="right" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pl_icon.jpg" /></td>
+                                       <td width="30%" align="right" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pl_icon.jpg" /></td>
                                       <td width="20%" align="right" valign="middle"><a href="#">评论</a></td>
                                      
-                                      <td width="21%" align="right" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/z.jpg" /></td>
+                                      <td width="21%" align="right" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/z.jpg" /></td>
                                       <td width="29%" align="right" valign="middle"><a href="#">赞(12)</a></td>
                                     </tr>
                                   </table>
@@ -119,7 +119,7 @@
                 </div>
                 <div class="pl_list">
                 	<div class="pingl">
-                	<div class="pingl_pic left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zttx2.jpg" /></div>
+                	<div class="pingl_pic left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zttx2.jpg" /></div>
                     <div class="pingl_ren right">
                     	<div class="pingl_ren_m">王先生</div>
                         <div class="pingl_ren_zw">汽车工程师，公司副总</div>
@@ -131,10 +131,10 @@
                                 <div class="zt_pl2_r right">
                                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
-                                       <td width="30%" align="right" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pl_icon.jpg" /></td>
+                                       <td width="30%" align="right" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pl_icon.jpg" /></td>
                                       <td width="20%" align="right" valign="middle"><a href="#">评论</a></td>
                                      
-                                      <td width="21%" align="right" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/z.jpg" /></td>
+                                      <td width="21%" align="right" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/z.jpg" /></td>
                                       <td width="29%" align="right" valign="middle"><a href="#">赞(12)</a></td>
                                     </tr>
                                   </table>
@@ -160,7 +160,7 @@
   </tr>
   <tr>
     <td height="60" align="center" valign="middle">
-      <input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/images/tj.jpg" />
+      <input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/tj.jpg" />
   </td>
   </tr>
 </table>

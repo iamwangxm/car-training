@@ -18,13 +18,13 @@
 <div class="banner">
 	<div id="full-screen-slider">
 	<ul id="slides">
-		<li style="background:url('http://7xtuyf.com1.z0.glb.clouddn.com/images/banner3.jpg') no-repeat center top">
+		<li style="background:url('http://7xtuyf.com1.z0.glb.clouddn.com/website/images/banner3.jpg') no-repeat center top">
         
         </li>		
-		<li style="background:url('http://7xtuyf.com1.z0.glb.clouddn.com/images/banner1.jpg') no-repeat center top">
+		<li style="background:url('http://7xtuyf.com1.z0.glb.clouddn.com/website/images/banner1.jpg') no-repeat center top">
         
         </li>
-        <li style="background:url('http://7xtuyf.com1.z0.glb.clouddn.com/images/banner2.jpg') no-repeat center top">
+        <li style="background:url('http://7xtuyf.com1.z0.glb.clouddn.com/website/images/banner2.jpg') no-repeat center top">
         
         </li>
 	</ul>
@@ -89,8 +89,8 @@
                 <div class="sou_box">
                   <table width="590px" border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                      <td width="505px"><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/images/ss_bg.jpg) no-repeat left 1px; height:35px;line-height:35px;   width:501px; border:none; padding-left:4px; " type="text" name="user_login"  placeholder="请输入关键字，如销售市场" validate-title="请输入关键字，如销售市场" /></td>
-                      <td width="85px" height="35px"><input style="border:none;" type="image" src="http://7xtuyf.com1.z0.glb.clouddn.com/images/ss.jpg" /></td>
+                      <td width="505px"><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/ss_bg.jpg) no-repeat left 1px; height:35px;line-height:35px;   width:501px; border:none; padding-left:4px; " type="text" name="user_login"  placeholder="请输入关键字，如销售市场" validate-title="请输入关键字，如销售市场" /></td>
+                      <td width="85px" height="35px"><input style="border:none;" type="image" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/ss.jpg" /></td>
                     </tr>
                   </table>
                 </div>
@@ -99,7 +99,7 @@
      	<div class="gkk">
             	<ul>
                 	<li style="border:2px solid #ff7d00; padding:0px;">
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm "><a href="#">人力资源管理培训</a></div>
@@ -118,7 +118,7 @@
                     </div>
                   </li>
                     <li>
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm"><a href="#">人力资源管理培训</a></div>
@@ -139,7 +139,7 @@
                     </div>
                   </li>
                     <li>
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm"><a href="#">人力资源管理培训</a></div>
@@ -160,7 +160,7 @@
                     </div>
                   </li>
                     <li>
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm"><a href="#">人力资源管理培训</a></div>
@@ -181,7 +181,7 @@
                     </div>
                   </li>
                     <li style="margin-right:0px;">
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm"><a href="#">人力资源管理培训</a></div>
@@ -210,7 +210,7 @@
         <div class="gkk">
             	<ul>
                 	<li>
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm "><a href="#">人力资源管理培训</a></div>
@@ -229,7 +229,7 @@
                     </div>
                   </li>
                     <li>
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm"><a href="#">人力资源管理培训</a></div>
@@ -250,7 +250,7 @@
                     </div>
                   </li>
                     <li>
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm"><a href="#">人力资源管理培训</a></div>
@@ -271,7 +271,7 @@
                     </div>
                   </li>
                     <li>
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm"><a href="#">人力资源管理培训</a></div>
@@ -292,7 +292,7 @@
                     </div>
                   </li>
                     <li style="margin-right:0px;">
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm"><a href="#">人力资源管理培训</a></div>
@@ -320,7 +320,7 @@
         <div class="gkk">
             	<ul>
                 	<li>
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm "><a href="#">人力资源管理培训</a></div>
@@ -339,7 +339,7 @@
                     </div>
                   </li>
                     <li>
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm"><a href="#">人力资源管理培训</a></div>
@@ -360,7 +360,7 @@
                     </div>
                   </li>
                     <li>
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm"><a href="#">人力资源管理培训</a></div>
@@ -381,7 +381,7 @@
                     </div>
                   </li>
                     <li>
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm"><a href="#">人力资源管理培训</a></div>
@@ -402,7 +402,7 @@
                     </div>
                   </li>
                     <li style="margin-right:0px;">
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm"><a href="#">人力资源管理培训</a></div>
@@ -430,7 +430,7 @@
         <div class="gkk">
             	<ul>
                 	<li>
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm "><a href="#">人力资源管理培训</a></div>
@@ -449,7 +449,7 @@
                     </div>
                   </li>
                     <li>
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm"><a href="#">人力资源管理培训</a></div>
@@ -470,7 +470,7 @@
                     </div>
                   </li>
                     <li>
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm"><a href="#">人力资源管理培训</a></div>
@@ -491,7 +491,7 @@
                     </div>
                   </li>
                     <li>
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm"><a href="#">人力资源管理培训</a></div>
@@ -512,7 +512,7 @@
                     </div>
                   </li>
                     <li style="margin-right:0px;">
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm"><a href="#">人力资源管理培训</a></div>
@@ -540,7 +540,7 @@
         <div class="gkk">
             	<ul>
                 	<li>
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm "><a href="#">人力资源管理培训</a></div>
@@ -559,7 +559,7 @@
                     </div>
                   </li>
                     <li>
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm"><a href="#">人力资源管理培训</a></div>
@@ -580,7 +580,7 @@
                     </div>
                   </li>
                     <li>
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm"><a href="#">人力资源管理培训</a></div>
@@ -601,7 +601,7 @@
                     </div>
                   </li>
                     <li>
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm"><a href="#">人力资源管理培训</a></div>
@@ -622,7 +622,7 @@
                     </div>
                   </li>
                     <li style="margin-right:0px;">
-                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></a></div>
+                    <div class="gkk_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
                     <div class="gkk_intro">
                     	<div class="gkk_name">
                         	<div class="gkk_xm"><a href="#">人力资源管理培训</a></div>

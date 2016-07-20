@@ -15,7 +15,7 @@
 <!-- 头部开始 -->	
 <div class="top">
 	<div class="content">
-    	<div class="logo left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/logo.jpg" /></div>
+    	<div class="logo left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/logo.jpg" /></div>
         <div class="nav_box left">
         	<div class="nav">
             	<ul>
@@ -49,21 +49,21 @@
     	<div class="ny_pxshi_l left">
         	<div class="pxshi_xx">
             	<div class="zhaopian left">
-                	<img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi2.jpg" />
+                	<img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi2.jpg" />
                 </div>
                 <div class="xinxi right">
                 	<div class="mingzi">
                     	<div class="mingzi_l left">王平怡</div>
-                        <div class="mingzi_m left"><span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/xin.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zishen.jpg" /></a></span>
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dav.jpg" /></a></span></div>
+                        <div class="mingzi_m left"><span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span>
+                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span></div>
                         <div class="mingzi_r right">
                         	<div class="pinglun left">34人<span>评论</span></div>
                             <div class="dianzan left">35</div>
-                            <div class="guanzhu right"><input style="border:none;" type="image" name="gz" id="gz" src="http://7xtuyf.com1.z0.glb.clouddn.com/images/gz.jpg" /></div>
+                            <div class="guanzhu right"><input style="border:none;" type="image" name="gz" id="gz" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/gz.jpg" /></div>
                         </div>
                         <div class="clear"></div>
                     </div>
@@ -124,8 +124,8 @@
                 </div>
                 <div class="pxshi_sp_box">
                 	<ul>
-                    	<li><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/sp1.jpg" /></li>
-                        <li><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/sp2.jpg" /></li>
+                    	<li><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/sp1.jpg" /></li>
+                        <li><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/sp2.jpg" /></li>
                     </ul>
                 </div>
           </div>
@@ -154,7 +154,7 @@
       <textarea style="width:800px; height:100px;" name="textarea" id="textarea" cols="45" rows="5"></textarea></td>
   </tr>
   <tr>
-    <td height="75" align="center" valign="bottom"><input type="image" name="tj" id="tj" src="http://7xtuyf.com1.z0.glb.clouddn.com/images/tj.jpg" /></td>
+    <td height="75" align="center" valign="bottom"><input type="image" name="tj" id="tj" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/tj.jpg" /></td>
   </tr>
 </table>
 

@@ -25,7 +25,7 @@
         	<div class="zt_l left">
             	<ul>
                 	<li>
-                    	<div class="zt_pic left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zt.jpg" /></div>
+                    	<div class="zt_pic left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zt.jpg" /></div>
                         <div class="zt_box right">
                        	    <div class="zt_tit">你如何看待行政类工作？</div>
                             <div class="zt_xx">
@@ -36,7 +36,7 @@
                                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
                                       <td width="50%" align="right" valign="middle"><a href="#">评论</a></td>
-                                      <td width="21%" align="right" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/z.jpg" /></td>
+                                      <td width="21%" align="right" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/z.jpg" /></td>
                                       <td width="29%" align="right" valign="middle"><a href="#">赞(12)</a></td>
                                     </tr>
                                   </table>
@@ -47,7 +47,7 @@
                         </div>
                     </li>
                     <li>
-                    	<div class="zt_pic left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zt.jpg" /></div>
+                    	<div class="zt_pic left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zt.jpg" /></div>
                         <div class="zt_box right">
                        	    <div class="zt_tit">你如何看待行政类工作？</div>
                             <div class="zt_xx">
@@ -58,7 +58,7 @@
                                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
                                       <td width="50%" align="right" valign="middle"><a href="#">评论</a></td>
-                                      <td width="21%" align="right" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/z.jpg" /></td>
+                                      <td width="21%" align="right" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/z.jpg" /></td>
                                       <td width="29%" align="right" valign="middle"><a href="#">赞(12)</a></td>
                                     </tr>
                                   </table>
@@ -69,7 +69,7 @@
                         </div>
                     </li>
                     <li>
-                    	<div class="zt_pic left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zt.jpg" /></div>
+                    	<div class="zt_pic left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zt.jpg" /></div>
                         <div class="zt_box right">
                        	    <div class="zt_tit">你如何看待行政类工作？</div>
                             <div class="zt_xx">
@@ -80,7 +80,7 @@
                                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
                                       <td width="50%" align="right" valign="middle"><a href="#">评论</a></td>
-                                      <td width="21%" align="right" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/z.jpg" /></td>
+                                      <td width="21%" align="right" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/z.jpg" /></td>
                                       <td width="29%" align="right" valign="middle"><a href="#">赞(12)</a></td>
                                     </tr>
                                   </table>
@@ -91,7 +91,7 @@
                         </div>
                     </li>
                     <li>
-                    	<div class="zt_pic left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zt.jpg" /></div>
+                    	<div class="zt_pic left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zt.jpg" /></div>
                         <div class="zt_box right">
                        	    <div class="zt_tit">你如何看待行政类工作？</div>
                             <div class="zt_xx">
@@ -102,7 +102,7 @@
                                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
                                       <td width="50%" align="right" valign="middle"><a href="#">评论</a></td>
-                                      <td width="21%" align="right" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/z.jpg" /></td>
+                                      <td width="21%" align="right" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/z.jpg" /></td>
                                       <td width="29%" align="right" valign="middle"><a href="#">赞(12)</a></td>
                                     </tr>
                                   </table>
@@ -113,7 +113,7 @@
                         </div>
                     </li>
                     <li>
-                    	<div class="zt_pic left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zt.jpg" /></div>
+                    	<div class="zt_pic left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zt.jpg" /></div>
                         <div class="zt_box right">
                        	    <div class="zt_tit">你如何看待行政类工作？</div>
                             <div class="zt_xx">
@@ -124,7 +124,7 @@
                                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
                                       <td width="50%" align="right" valign="middle"><a href="#">评论</a></td>
-                                      <td width="21%" align="right" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/z.jpg" /></td>
+                                      <td width="21%" align="right" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/z.jpg" /></td>
                                       <td width="29%" align="right" valign="middle"><a href="#">赞(12)</a></td>
                                     </tr>
                                   </table>
@@ -151,7 +151,7 @@
   </tr>
   <tr>
     <td height="60" align="center" valign="middle">
-      <input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/images/tj.jpg" />
+      <input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/tj.jpg" />
   </td>
   </tr>
 </table>

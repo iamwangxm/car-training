@@ -13,7 +13,7 @@
 <!-- 头部开始 -->	
 <div class="top">
 	<div class="content">
-    	<div class="logo left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/logo.jpg" /></div>
+    	<div class="logo left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/logo.jpg" /></div>
         <div class="nav_box left">
         	<div class="nav">
             	<ul>
@@ -47,19 +47,19 @@
     	<div class="ny_pxshi_l left">
         	<div class="pxshi_xx">
             	<div class="zhaopian left">
-                	<img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi2.jpg" />
+                	<img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi2.jpg" />
                 </div>
                 <div class="xinxi right">
                	  <div class="mingzi">
                     	<div class="mingzi_l left">王平怡</div>
                         <div class="mingzi_m left">
                        		
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/hot2.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/yrz.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dr.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zs.jpg" /></a></span></div>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot2.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/yrz.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dr.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zs.jpg" /></a></span></div>
                     <div class="mingzi_r right">
-                        	<input style="border:none;" type="image" name="gz" id="gz" src="http://7xtuyf.com1.z0.glb.clouddn.com/images/glz.jpg" />
+                        	<input style="border:none;" type="image" name="gz" id="gz" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/glz.jpg" />
                     </div>
                         <div class="clear"></div>
                     </div>
@@ -209,7 +209,7 @@
       <textarea style="width:700px; height:100px;" name="textarea" id="textarea" cols="45" rows="5"></textarea></td>
   </tr>
   <tr>
-    <td height="75" align="center" valign="bottom"><input type="image" name="tj" id="tj" src="http://7xtuyf.com1.z0.glb.clouddn.com/images/tj.jpg" /></td>
+    <td height="75" align="center" valign="bottom"><input type="image" name="tj" id="tj" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/tj.jpg" /></td>
   </tr>
 </table>
 
@@ -221,16 +221,16 @@
             	<h4>关注培训师</h4>
                 <div class="guanzhu">
                 	<ul>
-                    	<li><a href="#">王明义 实战营销专家 </a><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/news.jpg" /></span></li>
-                        <li><a href="#">王明义 实战营销专家 </a><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/news.jpg" /></span></li>
-                        <li><a href="#">王明义 实战营销专家 </a><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/news.jpg" /></span></li>
-                        <li><a href="#">王明义 实战营销专家 </a><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/news.jpg" /></span></li>
-                        <li><a href="#">王明义 实战营销专家 </a><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/news.jpg" /></span></li>
-                        <li><a href="#">王明义 实战营销专家 </a><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/news.jpg" /></span></li>
-                        <li><a href="#">王明义 实战营销专家 </a><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/news.jpg" /></span></li>
-                        <li><a href="#">王明义 实战营销专家 </a><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/news.jpg" /></span></li>
-                        <li><a href="#">王明义 实战营销专家 </a><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/news.jpg" /></span></li>
-                        <li><a href="#">王明义 实战营销专家 </a><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/news.jpg" /></span></li>
+                    	<li><a href="#">王明义 实战营销专家 </a><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/news.jpg" /></span></li>
+                        <li><a href="#">王明义 实战营销专家 </a><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/news.jpg" /></span></li>
+                        <li><a href="#">王明义 实战营销专家 </a><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/news.jpg" /></span></li>
+                        <li><a href="#">王明义 实战营销专家 </a><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/news.jpg" /></span></li>
+                        <li><a href="#">王明义 实战营销专家 </a><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/news.jpg" /></span></li>
+                        <li><a href="#">王明义 实战营销专家 </a><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/news.jpg" /></span></li>
+                        <li><a href="#">王明义 实战营销专家 </a><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/news.jpg" /></span></li>
+                        <li><a href="#">王明义 实战营销专家 </a><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/news.jpg" /></span></li>
+                        <li><a href="#">王明义 实战营销专家 </a><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/news.jpg" /></span></li>
+                        <li><a href="#">王明义 实战营销专家 </a><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/news.jpg" /></span></li>
                     </ul>
                 </div>
         	</div>
@@ -240,7 +240,7 @@
                 	<ul>
                    	  
                       <li>
-                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dbr1.jpg" /></a></div>
+                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr1.jpg" /></a></div>
                           <div class="dbr_r right">
                             	<div class="dbr_name"><a href="#">郭启军</a></div>
                                 <div class="dbr_gs"><a href="#">上海美克斯汽车服务有限公司</a></div>
@@ -248,7 +248,7 @@
                             <div class="clear"></div>
                         </li>
                       <li>
-                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dbr2.jpg" /></a></div>
+                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr2.jpg" /></a></div>
                           <div class="dbr_r right">
                             	<div class="dbr_name"><a href="#">郭启军</a></div>
                                 <div class="dbr_gs"><a href="#">上海美克斯汽车服务有限公司</a></div>
@@ -256,7 +256,7 @@
                             <div class="clear"></div>
                         </li>
                       <li>
-                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dbr1.jpg" /></a></div>
+                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr1.jpg" /></a></div>
                           <div class="dbr_r right">
                             	<div class="dbr_name"><a href="#">郭启军</a></div>
                                 <div class="dbr_gs"><a href="#">上海美克斯汽车服务有限公司</a></div>
@@ -264,7 +264,7 @@
                             <div class="clear"></div>
                         </li>
                       <li>
-                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dbr2.jpg" /></a></div>
+                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr2.jpg" /></a></div>
                           <div class="dbr_r right">
                             	<div class="dbr_name"><a href="#">郭启军</a></div>
                                 <div class="dbr_gs"><a href="#">上海美克斯汽车服务有限公司</a></div>
@@ -272,7 +272,7 @@
                             <div class="clear"></div>
                         </li>
                       <li>
-                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dbr1.jpg" /></a></div>
+                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr1.jpg" /></a></div>
                           <div class="dbr_r right">
                             	<div class="dbr_name"><a href="#">郭启军</a></div>
                                 <div class="dbr_gs"><a href="#">上海美克斯汽车服务有限公司</a></div>
@@ -280,7 +280,7 @@
                             <div class="clear"></div>
                         </li>
                       <li>
-                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dbr2.jpg" /></a></div>
+                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr2.jpg" /></a></div>
                           <div class="dbr_r right">
                             	<div class="dbr_name"><a href="#">郭启军</a></div>
                                 <div class="dbr_gs"><a href="#">上海美克斯汽车服务有限公司</a></div>

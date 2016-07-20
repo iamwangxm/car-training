@@ -12,18 +12,18 @@
 <div class="banner">
 	<div id="full-screen-slider">
 	<ul id="slides">
-		<li style="background:url('http://7xtuyf.com1.z0.glb.clouddn.com/images/banner0.jpg') no-repeat center top">
+		<li style="background:url('http://7xtuyf.com1.z0.glb.clouddn.com/website/images/banner0.jpg') no-repeat center top">
         <div class="content">
         	<div class="dl_box">
             	<div class="dl_leibie">会员登录</div>
                 <div class="name">
                	  <div class="name_l left">账号：</div>
-                  <div class="name_r right"><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/images/name_bg2.jpg) no-repeat left top; height:30px;   width:196px; border:none; padding-left:4px; " type="text" name="user_login" data-nick="login_user" value="" class="text input-xlarge" placeholder="邮箱/手机号" validate-title="邮箱/手机号" /></div>
+                  <div class="name_r right"><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px;   width:196px; border:none; padding-left:4px; " type="text" name="user_login" data-nick="login_user" value="" class="text input-xlarge" placeholder="邮箱/手机号" validate-title="邮箱/手机号" /></div>
                     <div class="clear"></div>
               </div>
                 <div class="pwd">
                	  <div class="pwd_l left">密码：</div>
-                  <div class="pwd_r right"><input  style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/images/name_bg2.jpg) no-repeat left top; height:30px; width:196px; border:none; padding-left:4px; " type="password" name="user_pwd" data-nick="login_pwd" value="" class="text input-xlarge"  placeholder="密码" validate-title="密码" /></div>
+                  <div class="pwd_r right"><input  style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px; width:196px; border:none; padding-left:4px; " type="password" name="user_pwd" data-nick="login_pwd" value="" class="text input-xlarge"  placeholder="密码" validate-title="密码" /></div>
                     <div class="clear"></div>
               </div>
                 
@@ -32,9 +32,9 @@
               
                   <div class="yanzheng_r right"><table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/images/yzm_bg.jpg) no-repeat left top; height:30px;  width:92px; border:none; padding-left:3px; " type="text" name="user_login" data-nick="login_user" value="" class="text input-xlarge" placeholder="验证码" validate-title="验证码" /></td>
+    <td><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/yzm_bg.jpg) no-repeat left top; height:30px;  width:92px; border:none; padding-left:3px; " type="text" name="user_login" data-nick="login_user" value="" class="text input-xlarge" placeholder="验证码" validate-title="验证码" /></td>
     <td></td>
-    <td> <input type="image" name="btn_yzm" id="btn_yzm" src="http://7xtuyf.com1.z0.glb.clouddn.com/images/btn_yzm.jpg" /></td>
+    <td> <input type="image" name="btn_yzm" id="btn_yzm" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/btn_yzm.jpg" /></td>
   </tr>
 </table>
 </div>
@@ -48,23 +48,23 @@
             
 </div>
 				
-                <div class="dl"><input style="border:none;" type="image" name="dl" id="dl" src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dl_bg.jpg" /></div>
+                <div class="dl"><input style="border:none;" type="image" name="dl" id="dl" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dl_bg.jpg" /></div>
            		<div class="wjpwd"><a href="#">忘记密码？</a></div>
             </div>
         </div>
         </li>		
-		<li style="background:url('http://7xtuyf.com1.z0.glb.clouddn.com/images/banner1.jpg') no-repeat center top">
+		<li style="background:url('http://7xtuyf.com1.z0.glb.clouddn.com/website/images/banner1.jpg') no-repeat center top">
         <div class="content">
         	<div class="dl_box">
             	<div class="dl_leibie">会员登录</div>
                 <div class="name">
                	  <div class="name_l left">账号：</div>
-                  <div class="name_r right"><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/images/name_bg2.jpg) no-repeat left top; height:30px;   width:196px; border:none; padding-left:4px; " type="text" name="user_login" data-nick="login_user" value="" class="text input-xlarge" placeholder="邮箱/手机号" validate-title="邮箱/手机号" /></div>
+                  <div class="name_r right"><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px;   width:196px; border:none; padding-left:4px; " type="text" name="user_login" data-nick="login_user" value="" class="text input-xlarge" placeholder="邮箱/手机号" validate-title="邮箱/手机号" /></div>
                     <div class="clear"></div>
               </div>
                 <div class="pwd">
                	  <div class="pwd_l left">密码：</div>
-                  <div class="pwd_r right"><input  style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/images/name_bg2.jpg) no-repeat left top; height:30px; width:196px; border:none; padding-left:4px; " type="password" name="user_pwd" data-nick="login_pwd" value="" class="text input-xlarge"  placeholder="密码" validate-title="密码" /></div>
+                  <div class="pwd_r right"><input  style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px; width:196px; border:none; padding-left:4px; " type="password" name="user_pwd" data-nick="login_pwd" value="" class="text input-xlarge"  placeholder="密码" validate-title="密码" /></div>
                     <div class="clear"></div>
               </div>
                 
@@ -73,9 +73,9 @@
               
                   <div class="yanzheng_r right"><table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/images/yzm_bg.jpg) no-repeat left top; height:30px;  width:92px; border:none; padding-left:3px; " type="text" name="user_login" data-nick="login_user" value="" class="text input-xlarge" placeholder="验证码" validate-title="验证码" /></td>
+    <td><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/yzm_bg.jpg) no-repeat left top; height:30px;  width:92px; border:none; padding-left:3px; " type="text" name="user_login" data-nick="login_user" value="" class="text input-xlarge" placeholder="验证码" validate-title="验证码" /></td>
     <td></td>
-    <td> <input type="image" name="btn_yzm" id="btn_yzm" src="http://7xtuyf.com1.z0.glb.clouddn.com/images/btn_yzm.jpg" /></td>
+    <td> <input type="image" name="btn_yzm" id="btn_yzm" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/btn_yzm.jpg" /></td>
   </tr>
 </table>
 </div>
@@ -89,23 +89,23 @@
             
 </div>
 				
-                <div class="dl"><input style="border:none;" type="image" name="dl" id="dl" src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dl_bg.jpg" /></div>
+                <div class="dl"><input style="border:none;" type="image" name="dl" id="dl" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dl_bg.jpg" /></div>
            		<div class="wjpwd"><a href="#">忘记密码？</a></div>
             </div>
         </div>
         </li>
-        <li style="background:url('http://7xtuyf.com1.z0.glb.clouddn.com/images/banner2.jpg') no-repeat center top">
+        <li style="background:url('http://7xtuyf.com1.z0.glb.clouddn.com/website/images/banner2.jpg') no-repeat center top">
         <div class="content">
         	<div class="dl_box">
             	<div class="dl_leibie">会员登录</div>
                 <div class="name">
                	  <div class="name_l left">账号：</div>
-                  <div class="name_r right"><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/images/name_bg2.jpg) no-repeat left top; height:30px;   width:196px; border:none; padding-left:4px; " type="text" name="user_login" value="" placeholder="邮箱/手机号" validate-title="邮箱/手机号" /></div>
+                  <div class="name_r right"><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px;   width:196px; border:none; padding-left:4px; " type="text" name="user_login" value="" placeholder="邮箱/手机号" validate-title="邮箱/手机号" /></div>
                     <div class="clear"></div>
               </div>
                 <div class="pwd">
                	  <div class="pwd_l left">密码：</div>
-                  <div class="pwd_r right"><input  style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/images/name_bg2.jpg) no-repeat left top; height:30px; width:196px; border:none; padding-left:4px; " type="password" name="user_pwd"  placeholder="密码" validate-title="密码" /></div>
+                  <div class="pwd_r right"><input  style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px; width:196px; border:none; padding-left:4px; " type="password" name="user_pwd"  placeholder="密码" validate-title="密码" /></div>
                     <div class="clear"></div>
               </div>
                 
@@ -114,9 +114,9 @@
               
                   <div class="yanzheng_r right"><table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/images/yzm_bg.jpg) no-repeat left top; height:30px;  width:92px; border:none; padding-left:3px; " type="text" name="user_login"  placeholder="验证码" validate-title="验证码" /></td>
+    <td><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/yzm_bg.jpg) no-repeat left top; height:30px;  width:92px; border:none; padding-left:3px; " type="text" name="user_login"  placeholder="验证码" validate-title="验证码" /></td>
     <td></td>
-    <td> <input type="image" name="btn_yzm" id="btn_yzm" src="http://7xtuyf.com1.z0.glb.clouddn.com/images/btn_yzm.jpg" /></td>
+    <td> <input type="image" name="btn_yzm" id="btn_yzm" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/btn_yzm.jpg" /></td>
   </tr>
 </table>
 </div>
@@ -130,7 +130,7 @@
             
 </div>
 				
-                <div class="dl"><input style="border:none;" type="image" name="dl" id="dl" src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dl_bg.jpg" /></div>
+                <div class="dl"><input style="border:none;" type="image" name="dl" id="dl" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dl_bg.jpg" /></div>
            		<div class="wjpwd"><a href="#">忘记密码？</a></div>
             </div>
         </div>
@@ -147,7 +147,7 @@
         	<h4><span><a href="#">更多>></a></span>推荐培训师</h4>
         	<div class="pxshi">
             	<div class="pxshi_l left">
-                	<div class="pxshi_l_pic"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi1.jpg" /></div>
+                	<div class="pxshi_l_pic"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></div>
                     <div class="pxshi_l_intro">
                     	<div class="pxshi_name">
                         	<div class="xm left">王欣平</div>
@@ -158,12 +158,12 @@
                         <div class="pxshi_zp">传统企业互联网转型总教头 </div>
                         <div class="pxshi_rz">
                         	<ul>
-                            	<li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/hot.jpg" /></a></li>
-                                <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zan.jpg" /></a></li>
-                                <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zheng.jpg" /></a></li>
-                                <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/xin.jpg" /></a></li>
-                                <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zishen.jpg" /></a></li>
-                                <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dav.jpg" /></a></li>
+                            	<li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></li>
+                                <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></li>
+                                <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></li>
+                                <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></li>
+                                <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></li>
+                                <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></li>
                             </ul>
                         </div>
                     </div>
@@ -171,7 +171,7 @@
                 <div class="pxshi_r right">
                 	<ul>
                     	<li>
-                        	<div class="pxshi_pic2"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi2.jpg" /></div>
+                        	<div class="pxshi_pic2"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi2.jpg" /></div>
                     <div class="pxshi_intro2">
                     	<div class="pxshi_name2">
                         	<div class="xm2 left">王欣平</div>
@@ -181,17 +181,17 @@
                         </div>
                         <div class="pxshi_zp2">传统企业互联网转型总教头 </div>
                         <div class="rz2">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/xin.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zishen.jpg" /></a></span>
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dav.jpg" /></a></span>
+                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span>
+                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>
                         </div>
                     </div>
                         </li>
                         <li>
-                        	<div class="pxshi_pic2"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi2.jpg" /></div>
+                        	<div class="pxshi_pic2"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi2.jpg" /></div>
                     <div class="pxshi_intro2">
                     	<div class="pxshi_name2">
                         	<div class="xm2 left">王欣平</div>
@@ -201,17 +201,17 @@
                         </div>
                         <div class="pxshi_zp2">传统企业互联网转型总教头 </div>
                         <div class="rz2">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/xin.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zishen.jpg" /></a></span>
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dav.jpg" /></a></span>
+                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span>
+                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>
                         </div>
                     </div>
                         </li>
                         <li>
-                        	<div class="pxshi_pic2"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi2.jpg" /></div>
+                        	<div class="pxshi_pic2"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi2.jpg" /></div>
                     <div class="pxshi_intro2">
                     	<div class="pxshi_name2">
                         	<div class="xm2 left">王欣平</div>
@@ -221,17 +221,17 @@
                         </div>
                         <div class="pxshi_zp2">传统企业互联网转型总教头 </div>
                         <div class="rz2">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/xin.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zishen.jpg" /></a></span>
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dav.jpg" /></a></span>
+                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span>
+                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>
                         </div>
                     </div>
                         </li>
                         <li>
-                        	<div class="pxshi_pic2"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi2.jpg" /></div>
+                        	<div class="pxshi_pic2"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi2.jpg" /></div>
                     <div class="pxshi_intro2">
                     	<div class="pxshi_name2">
                         	<div class="xm2 left">王欣平</div>
@@ -241,17 +241,17 @@
                         </div>
                         <div class="pxshi_zp2">传统企业互联网转型总教头 </div>
                         <div class="rz2">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/xin.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zishen.jpg" /></a></span>
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dav.jpg" /></a></span>
+                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span>
+                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>
                         </div>
                     </div>
                         </li>
                         <li>
-                        	<div class="pxshi_pic2"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi2.jpg" /></div>
+                        	<div class="pxshi_pic2"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi2.jpg" /></div>
                     <div class="pxshi_intro2">
                     	<div class="pxshi_name2">
                         	<div class="xm2 left">王欣平</div>
@@ -261,17 +261,17 @@
                         </div>
                         <div class="pxshi_zp2">传统企业互联网转型总教头 </div>
                         <div class="rz2">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/xin.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zishen.jpg" /></a></span>
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dav.jpg" /></a></span>
+                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span>
+                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>
                         </div>
                     </div>
                         </li>
                         <li>
-                        	<div class="pxshi_pic2"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi2.jpg" /></div>
+                        	<div class="pxshi_pic2"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi2.jpg" /></div>
                     <div class="pxshi_intro2">
                     	<div class="pxshi_name2">
                         	<div class="xm2 left">王欣平</div>
@@ -281,17 +281,17 @@
                         </div>
                         <div class="pxshi_zp2">传统企业互联网转型总教头 </div>
                         <div class="rz2">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/xin.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zishen.jpg" /></a></span>
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dav.jpg" /></a></span>
+                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span>
+                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>
                         </div>
                     </div>
                         </li>
                         <li>
-                        	<div class="pxshi_pic2"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi2.jpg" /></div>
+                        	<div class="pxshi_pic2"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi2.jpg" /></div>
                     <div class="pxshi_intro2">
                     	<div class="pxshi_name2">
                         	<div class="xm2 left">王欣平</div>
@@ -301,17 +301,17 @@
                         </div>
                         <div class="pxshi_zp2">传统企业互联网转型总教头 </div>
                         <div class="rz2">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/xin.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zishen.jpg" /></a></span>
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dav.jpg" /></a></span>
+                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span>
+                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>
                         </div>
                     </div>
                         </li>
                         <li>
-                        	<div class="pxshi_pic2"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi2.jpg" /></div>
+                        	<div class="pxshi_pic2"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi2.jpg" /></div>
                     <div class="pxshi_intro2">
                     	<div class="pxshi_name2">
                         	<div class="xm2 left">王欣平</div>
@@ -321,12 +321,12 @@
                         </div>
                         <div class="pxshi_zp2">传统企业互联网转型总教头 </div>
                         <div class="rz2">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/xin.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zishen.jpg" /></a></span>
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dav.jpg" /></a></span>
+                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span>
+                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>
                         </div>
                     </div>
                         </li>
@@ -340,7 +340,7 @@
         	<div class="pxsheng">
             	<ul>
                 	<li>
-                        	<div class="pxsheng_pic"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxsheng1.jpg" /></div>
+                        	<div class="pxsheng_pic"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxsheng1.jpg" /></div>
                     <div class="pxsheng_intro">
                     	<div class="pxsheng_name">
                         	<div class="pxsheng_xm left">王欣平</div>
@@ -354,16 +354,16 @@
                             <div class="clear"></div>
                         </div>
                         <div class="pxsheng_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/hot2.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/yrz.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dr.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zs.jpg" /></a></span>
+                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot2.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/yrz.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dr.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zs.jpg" /></a></span>
                            
                         </div>
                     </div>
                   </li>
                     <li>
-                        	<div class="pxsheng_pic"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxsheng1.jpg" /></div>
+                        	<div class="pxsheng_pic"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxsheng1.jpg" /></div>
                     <div class="pxsheng_intro">
                     	<div class="pxsheng_name">
                         	<div class="pxsheng_xm left">王欣平</div>
@@ -377,16 +377,16 @@
                             <div class="clear"></div>
                         </div>
                         <div class="pxsheng_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/hot2.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/yrz.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dr.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zs.jpg" /></a></span>
+                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot2.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/yrz.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dr.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zs.jpg" /></a></span>
                            
                         </div>
                     </div>
                   </li>
                     <li>
-                        	<div class="pxsheng_pic"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxsheng1.jpg" /></div>
+                        	<div class="pxsheng_pic"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxsheng1.jpg" /></div>
                     <div class="pxsheng_intro">
                     	<div class="pxsheng_name">
                         	<div class="pxsheng_xm left">王欣平</div>
@@ -400,16 +400,16 @@
                             <div class="clear"></div>
                         </div>
                         <div class="pxsheng_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/hot2.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/yrz.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dr.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zs.jpg" /></a></span>
+                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot2.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/yrz.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dr.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zs.jpg" /></a></span>
                            
                         </div>
                     </div>
                   </li>
                     <li>
-                        	<div class="pxsheng_pic"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxsheng1.jpg" /></div>
+                        	<div class="pxsheng_pic"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxsheng1.jpg" /></div>
                     <div class="pxsheng_intro">
                     	<div class="pxsheng_name">
                         	<div class="pxsheng_xm left">王欣平</div>
@@ -423,16 +423,16 @@
                             <div class="clear"></div>
                         </div>
                         <div class="pxsheng_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/hot2.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/yrz.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dr.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zs.jpg" /></a></span>
+                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot2.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/yrz.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dr.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zs.jpg" /></a></span>
                            
                         </div>
                     </div>
                   </li>
                     <li style="margin-right:0px;">
-                        	<div class="pxsheng_pic"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxsheng1.jpg" /></div>
+                        	<div class="pxsheng_pic"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxsheng1.jpg" /></div>
                     <div class="pxsheng_intro">
                     	<div class="pxsheng_name">
                         	<div class="pxsheng_xm left">王欣平</div>
@@ -446,10 +446,10 @@
                             <div class="clear"></div>
                         </div>
                         <div class="pxsheng_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/hot2.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/yrz.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/dr.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/zs.jpg" /></a></span>
+                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot2.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/yrz.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dr.jpg" /></a></span>
+                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zs.jpg" /></a></span>
                            
                         </div>
                     </div>
@@ -473,7 +473,7 @@
                     </div>
                     <div class="pxxq_r right">
                    	  <div class="qy">
-                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo.jpg" /></div>
+                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
                           <div class="qy_r right">
                             	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
                                 <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
@@ -499,7 +499,7 @@
                     </div>
                     <div class="pxxq_r right">
                    	  <div class="qy">
-                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo.jpg" /></div>
+                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
                           <div class="qy_r right">
                             	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
                                 <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
@@ -540,7 +540,7 @@
                        
                			<div class="qcrxq_r right">
                    	  <div class="qcrxq_qy">
-                        	<div class="qcrxq_qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo.jpg" /></div>
+                        	<div class="qcrxq_qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
                           <div class="qcrxq_qy_r right">
                             	<div class="qcrxq_qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
                                 <div class="qcrxq_jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
@@ -571,7 +571,7 @@
                        
                			<div class="qcrxq_r right">
                    	  <div class="qcrxq_qy">
-                        	<div class="qcrxq_qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/qy_logo.jpg" /></div>
+                        	<div class="qcrxq_qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
                           <div class="qcrxq_qy_r right">
                             	<div class="qcrxq_qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
                                 <div class="qcrxq_jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>

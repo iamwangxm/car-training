@@ -13,7 +13,7 @@
 <!-- 头部开始 -->	
 <div class="top">
 	<div class="content">
-    	<div class="logo left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/logo.jpg" /></div>
+    	<div class="logo left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/logo.jpg" /></div>
         <div class="nav_box left">
         	<div class="nav">
             	<ul>
@@ -47,14 +47,14 @@
     	<div class="ny_pxshi_l left">
         	<div class="pxshi_xx">
             	<div class="zhaopian left">
-                	<img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/pxshi2.jpg" />
+                	<img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi2.jpg" />
                 </div>
                 <div class="xinxi right">
                 	<div class="mingzi">
                     	<div class="mingzi_l left">内训师培养EGS演绎篇之表达版</div>
                     	<div class="mingzi_r right">
-                       	  <div class="pinglun left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/bm.jpg" /></a></div>
-                       	  <div class="guanzhu right"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/images/cg.jpg" /></a></div>
+                       	  <div class="pinglun left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/bm.jpg" /></a></div>
+                       	  <div class="guanzhu right"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/cg.jpg" /></a></div>
                         </div>
                         <div class="clear"></div>
                     </div>
@@ -140,7 +140,7 @@
     </table></td>
   </tr>
   <tr>
-    <td height="75" colspan="3" align="center" valign="bottom"><input type="image" name="tj" id="tj" src="http://7xtuyf.com1.z0.glb.clouddn.com/images/tj.jpg" /></td>
+    <td height="75" colspan="3" align="center" valign="bottom"><input type="image" name="tj" id="tj" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/tj.jpg" /></td>
   </tr>
 </table>
 
