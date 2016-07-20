@@ -13,7 +13,7 @@
 <!-- 头部开始 -->	
 <div class="top">
 	<div class="content">
-    	<div class="logo left"><img src="images/logo.jpg" /></div>
+    	<div class="logo left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/logo.jpg" /></div>
         <div class="nav_box left">
         	<div class="nav">
             	<ul>
@@ -63,7 +63,7 @@
                 
             </ul>
           </div>
-          <div class="tjzt"><a href="#"><img src="images/tjzt.jpg" /></a></div>
+          <div class="tjzt"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/tjzt.jpg" /></a></div>
       </div>
         <div class="pxshi_gl_r right">
        	  <table bgcolor="#dedede" border="0" cellpadding="4" cellspacing="1" align="center" width="860">
@@ -150,7 +150,7 @@
                         <td colspan="4"  align="left" valign="middle" bgcolor="#ffffff" class="sq"><table width="200" border="0" cellspacing="0" cellpadding="0">
                           <tr>
                             <td width="80" align="center" valign="middle" class="quanxuan"><a href="#">全 选</a></td>
-                            <td width="163"><input type="image" name="imageField" id="imageField" src="images/sc.jpg" /></td>
+                            <td width="163"><input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/sc.jpg" /></td>
                           </tr>
                         </table></td>
                       </tr>

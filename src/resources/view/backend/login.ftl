@@ -13,7 +13,7 @@
 <!-- 头部开始 -->	
 <div class="top">
 	<div class="content">
-    	<div class="logo left"><img src="images/logo.jpg" /></div>
+    	<div class="logo left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/logo.jpg" /></div>
         <div class="nav_box left">
         	<div class="nav">
             	<ul>
@@ -69,11 +69,11 @@
                 <tr>
                   <td height="60" align="right" valign="middle"><font color="#ff0000">*</font>验证码：</td>
                   <td width="100"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" type="text" name="textfield3" id="textfield3" /></td>
-                  <td width="72"><img src="images/yzm.jpg" /></td>
+                  <td width="72"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/yzm.jpg" /></td>
                   <td><font color="#999999">请输入左边图片上的文字</font></td>
                 </tr>
                 <tr>
-                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="images/denglu.jpg" /></td>
+                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/denglu.jpg" /></td>
                 </tr>
               </table>
 			</div>
@@ -94,11 +94,11 @@
                 <tr>
                   <td height="60" align="right" valign="middle"><font color="#ff0000">*</font>验证码：</td>
                   <td width="100"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" type="text" name="textfield3" id="textfield3" /></td>
-                  <td width="72"><img src="images/yzm.jpg" /></td>
+                  <td width="72"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/yzm.jpg" /></td>
                   <td><font color="#999999">请输入左边图片上的文字</font></td>
                 </tr>
                 <tr>
-                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="images/denglu.jpg" /></td>
+                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/denglu.jpg" /></td>
                 </tr>
               </table>
 			</div>
@@ -119,11 +119,11 @@
                 <tr>
                   <td height="60" align="right" valign="middle"><font color="#ff0000">*</font>验证码：</td>
                   <td width="100"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" type="text" name="textfield3" id="textfield3" /></td>
-                  <td width="72"><img src="images/yzm.jpg" /></td>
+                  <td width="72"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/yzm.jpg" /></td>
                   <td><font color="#999999">请输入左边图片上的文字</font></td>
                 </tr>
                 <tr>
-                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="images/denglu.jpg" /></td>
+                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/denglu.jpg" /></td>
                 </tr>
               </table>
 			</div>

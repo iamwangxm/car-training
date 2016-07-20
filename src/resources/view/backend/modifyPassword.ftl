@@ -13,7 +13,7 @@
 <!-- 头部开始 -->	
 <div class="top">
 	<div class="content">
-    	<div class="logo left"><img src="images/logo.jpg" /></div>
+    	<div class="logo left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/logo.jpg" /></div>
         <div class="nav_box left">
         	<div class="nav">
             	<ul>
@@ -83,7 +83,7 @@
                 </tr>
                 
                 <tr>
-                  <td height="150" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="images/tj.jpg" /></td>
+                  <td height="150" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/tj.jpg" /></td>
                 </tr>
               </table>
           

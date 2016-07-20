@@ -13,7 +13,7 @@
 <!-- 头部开始 -->	
 <div class="top">
 	<div class="content">
-    	<div class="logo left"><img src="images/logo.jpg" /></div>
+    	<div class="logo left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/logo.jpg" /></div>
         <div class="nav_box left">
         	<div class="nav">
             	<ul>
@@ -86,7 +86,7 @@
     </table></td>
     <td width="439" colspan="4" align="left" valign="top"><table width="400" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td><img src="images/zw.jpg" /></td>
+        <td><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/zw.jpg" /></td>
         </tr>
       <tr>
         <td><table width="400" border="0" cellspacing="0" cellpadding="0">
@@ -253,7 +253,7 @@
           <div class="tj">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <td height="60" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="images/tj.jpg" /> </td>
+                    <td height="60" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/tj.jpg" /> </td>
                   </tr>
             </table>
           </div>

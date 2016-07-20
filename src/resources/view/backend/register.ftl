@@ -13,7 +13,7 @@
 <!-- 头部开始 -->	
 <div class="top">
 	<div class="content">
-    	<div class="logo left"><img src="images/logo.jpg" /></div>
+    	<div class="logo left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/logo.jpg" /></div>
         <div class="nav_box left">
         	<div class="nav">
             	<ul>
@@ -56,7 +56,7 @@
 			<div id="item_con_0">
 				<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td height="60" colspan="4" align="left" valign="middle" style="background:url(images/icon2.jpg) no-repeat left center; padding:20px 0px; height:30px; line-height:30px; padding-left:30px;">每个手机或邮箱只能申请一个账号</td>
+                  <td height="60" colspan="4" align="left" valign="middle" style="background:url(http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/icon2.jpg) no-repeat left center; padding:20px 0px; height:30px; line-height:30px; padding-left:30px;">每个手机或邮箱只能申请一个账号</td>
                   </tr>
                 <tr>
                   <td width="106" height="60" align="right" valign="middle"><font color="#ff0000">*</font>邮箱 / 手机：</td>
@@ -76,18 +76,18 @@
                 <tr>
                   <td height="60" align="right" valign="middle"><font color="#ff0000">*</font>验证码：</td>
                   <td width="100"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" type="text" name="textfield3" id="textfield3" /></td>
-                  <td width="72"><img src="images/yzm.jpg" /></td>
+                  <td width="72"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/yzm.jpg" /></td>
                   <td><font color="#999999">请输入左边图片上的文字</font></td>
                 </tr>
                 <tr>
-                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="images/tj.jpg" /></td>
+                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/tj.jpg" /></td>
                 </tr>
               </table>
 			</div>
 			<div id="item_con_1" style="display:none">
 				<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td height="60" colspan="4" align="left" valign="middle" style="background:url(images/icon2.jpg) no-repeat left center; padding:20px 0px; height:30px; line-height:30px; padding-left:30px;">每个手机或邮箱只能申请一个账号</td>
+                  <td height="60" colspan="4" align="left" valign="middle" style="background:url(http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/icon2.jpg) no-repeat left center; padding:20px 0px; height:30px; line-height:30px; padding-left:30px;">每个手机或邮箱只能申请一个账号</td>
                   </tr>
                 <tr>
                   <td width="106" height="60" align="right" valign="middle"><font color="#ff0000">*</font>邮箱 / 手机：</td>
@@ -107,18 +107,18 @@
                 <tr>
                   <td height="60" align="right" valign="middle"><font color="#ff0000">*</font>验证码：</td>
                   <td width="100"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" type="text" name="textfield3" id="textfield3" /></td>
-                  <td width="72"><img src="images/yzm.jpg" /></td>
+                  <td width="72"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/yzm.jpg" /></td>
                   <td><font color="#999999">请输入左边图片上的文字</font></td>
                 </tr>
                 <tr>
-                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="images/tj.jpg" /></td>
+                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/tj.jpg" /></td>
                 </tr>
               </table>
 			</div>
 			<div id="item_con_2" style="display:none">
 				<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td height="60" colspan="4" align="left" valign="middle" style="background:url(images/icon2.jpg) no-repeat left center; padding:20px 0px; height:30px; line-height:30px; padding-left:30px;">每个手机或邮箱只能申请一个账号</td>
+                  <td height="60" colspan="4" align="left" valign="middle" style="background:url(http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/icon2.jpg) no-repeat left center; padding:20px 0px; height:30px; line-height:30px; padding-left:30px;">每个手机或邮箱只能申请一个账号</td>
                   </tr>
                 <tr>
                   <td width="106" height="60" align="right" valign="middle"><font color="#ff0000">*</font>邮箱 / 手机：</td>
@@ -138,11 +138,11 @@
                 <tr>
                   <td height="60" align="right" valign="middle"><font color="#ff0000">*</font>验证码：</td>
                   <td width="100"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" type="text" name="textfield3" id="textfield3" /></td>
-                  <td width="72"><img src="images/yzm.jpg" /></td>
+                  <td width="72"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/yzm.jpg" /></td>
                   <td><font color="#999999">请输入左边图片上的文字</font></td>
                 </tr>
                 <tr>
-                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="images/tj.jpg" /></td>
+                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/tj.jpg" /></td>
                 </tr>
               </table>
 			</div>
