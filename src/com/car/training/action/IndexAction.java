@@ -20,7 +20,6 @@ import com.car.training.service.TopicManager;
 import com.car.training.service.TrainerEssayManager;
 import com.car.training.service.TrainerManager;
 
-
 @AutoConfig
 public class IndexAction extends BaseAction {
 
