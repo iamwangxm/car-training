@@ -8,7 +8,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="UTF-8">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <#if request.requestURI?starts_with('/backend/login')>
+    <#if request.requestURI?starts_with('/website/backend/login')>
     <meta name="keyword" content="汽车培聘网-汽车、招聘、培训一站式的服务网站"/>
 	<#else>
 	<meta name="keyword" content=""/>
