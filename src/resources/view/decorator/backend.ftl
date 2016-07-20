@@ -8,14 +8,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="UTF-8">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <#if request.requestURI?starts_with('/website/index')>
+    <#if request.requestURI?starts_with('/backend/login')>
     <meta name="keyword" content="汽车培聘网-汽车、招聘、培训一站式的服务网站"/>
 	<#else>
 	<meta name="keyword" content=""/>
     <meta name="Description" content=""/>
     </#if>
     
-
     <link href="<@url value="/assets/website/backend/css/jquery.jslides.css?v=1.1.0"/>" type="text/css" rel="stylesheet"  media="screen"/>
     <link href="<@url value="/assets/website/backend/css/pxshi.css?v=1.1.0"/>" type="text/css" rel="stylesheet" />
 	<link href="<@url value="/assets/website/backend/css/style.css?v=1.1.0"/>" type="text/css" rel="stylesheet"  media="screen" />	
