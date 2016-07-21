@@ -158,7 +158,7 @@
                         <div class="pxshi_zp">传统企业互联网转型总教头 </div>
                         <div class="pxshi_rz">
                         	<ul>
-                            	<li><a href='<@url value='/website/trainer?trainer.id=${trainer.id!}'/>'><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></li>
+                            	<li><a href='#'><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></li>
                                 
                                 <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></li>
                                 <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></li>
@@ -171,18 +171,17 @@
                 </div>
                 <div class="pxshi_r right">
                 	<ul>
-                	<#if trainerList??>
-                        	<#list trainerList as trainer>
+
                     	<li>
                         	<div class="pxshi_pic2"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi2.jpg" /></div>
                     <div class="pxshi_intro2">
                     	<div class="pxshi_name2">
-                        	<div class="xm2 left">${trainer.name!}</div>
+                        	<div class="xm2 left">name</div>
                             <div class="pl2 left">34人<span>评论</span></div>
                             <div class="dz2 right">35</div>
                             <div class="clear"></div>
                         </div>
-                        <div class="pxshi_zp2">${trainer.currentPosition!} </div>
+                        <div class="pxshi_zp2">positionTitle </div>
                         <div class="rz2">
                         	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
@@ -193,8 +192,7 @@
                         </div>
                     </div>
                         </li>
-                        </#list>
-                 </#if>
+  
                     </ul>
                 </div>
                 <div class="clear"></div>
@@ -204,8 +202,6 @@
         	<h4><span><a href="#">更多>></a></span>推荐培训生</h4>
         	<div class="pxsheng">
             	<ul>
-            		<#if autobotsList??>
-                        	<#list autobotsList as autobot>
                 	<li>
                         	<div class="pxsheng_pic"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxsheng1.jpg" /></div>
                     <div class="pxsheng_intro">
@@ -229,8 +225,6 @@
                         </div>
                     </div>
                   </li>
-                   </#list>
-                 </#if>
 
                 </ul>
             </div>
