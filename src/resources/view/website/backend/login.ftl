@@ -68,8 +68,8 @@
                 
                 <tr>
                   <td height="60" align="right" valign="middle"><font color="#ff0000">*</font>验证码：</td>
-                  <td width="100"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" type="text" name="textfield3" id="textfield3" /></td>
-                  <td width="72"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/yzm.jpg" /></td>
+                  <td width="100"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" type="text" name="captch" id="captchacode" /></td>
+                  <td width="72"><img src="/website/captch/captimg?token=149823767236" /></td>
                   <td><font color="#999999">请输入左边图片上的文字</font></td>
                 </tr>
                 <tr>
@@ -148,6 +148,51 @@ Copyright©2000-2016 peipin.net All Rights Reserved
     </div>
 </div>
 <!-- footer结束 -->
-
+<script>
+	
+	//图片验证码
+	$(function(){
+		$('div.captcha_box input:button').bind('click', sendmessage);
+	});
+	$('img.captcha').bind('click', refreshcode);
+	
+	$('div.button').bind('click', register);
+    function register(){
+    	var curr_form = $('div.button').siblings('form');
+          var inputs = curr_form.find('input');
+          inputs.blur();
+          if(!inputs.hasClass('on')){
+			$('div.button').unbind('click');
+			//$('#submit_btn').css('background-color', '#d7d7d7');
+			$.ajax({
+				 type: "POST",
+			     url: "/website/backend/login",
+			     data: $("#form_register").serialize(),
+			     error: function(request) {
+		             alert("网络错误！");
+		             $('div.button').bind('click', register);
+		         },
+			     success: function (data) {
+			     	 if(data.code == 400){
+			     	 	showErrMsg(data.msg);
+			     	 	$('div.button').bind('click', register);
+			     	 }else if(data.code == 200){
+			     	 	showErrMsg(data.msg);
+			     	 	if(data.target == "" || data.target == null){
+			     	 		setTimeout(function(){
+			     	 			window.location.href = "/website/backend/login";
+			     	 		},2000);
+						 }else{
+			     	 		setTimeout(function(){
+			     	 			window.location.href = data.target;
+			     	 		},2000);
+						 }
+			     	 	$('div.button').bind('click', register);
+			    	 }
+			     }
+			});
+		}
+	}
+</script>
 </body>
 </html>
