@@ -148,14 +148,15 @@
         	<div class="pxshi">
             	<div class="pxshi_l left">
                 	<div class="pxshi_l_pic"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></div>
+                		 <#if trainer??>
                     <div class="pxshi_l_intro">
                     	<div class="pxshi_name">
-                        	<div class="xm left">王欣平</div>
+                        	<div class="xm left"><#if trainer.UserCenter??>${trainer.UserCenter.name!}</#if></div>
                             <div class="pl left">34人<span>评论</span></div>
                             <div class="dz right">35</div>
                             <div class="clear"></div>
                         </div>
-                        <div class="pxshi_zp">传统企业互联网转型总教头 </div>
+                        <div class="pxshi_zp">${trainer.currentPosition!} </div>
                         <div class="pxshi_rz">
                         	<ul>
                             	<li><a href='#'><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></li>
@@ -168,32 +169,38 @@
                             </ul>
                         </div>
                     </div>
+                         </#if>
                 </div>
                 <div class="pxshi_r right">
+						<#if trainerList??>
                 	<ul>
-
+							<#list trainerList as t>
                     	<li>
-                        	<div class="pxshi_pic2"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi2.jpg" /></div>
-                    <div class="pxshi_intro2">
-                    	<div class="pxshi_name2">
-                        	<div class="xm2 left">name</div>
-                            <div class="pl2 left">34人<span>评论</span></div>
-                            <div class="dz2 right">35</div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="pxshi_zp2">positionTitle </div>
-                        <div class="rz2">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span>
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>
-                        </div>
-                    </div>
+                    		<#if t?? && t.UserCenter??>
+	                        	<div class="pxshi_pic2"><img src="${t.UserCenter.headLogo!}" /></div>
+			                    <div class="pxshi_intro2">
+			                    	<div class="pxshi_name2">
+			                        	<div class="xm2 left">${t.UserCenter.name!}</div>
+			                            <div class="pl2 left">34人<span>评论</span></div>
+			                            <div class="dz2 right">35</div>
+			                            <div class="clear"></div>currentPosition
+			                        </div>
+			                        <div class="pxshi_zp2">${t.currentPosition!} </div>
+			                        <div class="rz2">
+			                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
+			                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
+			                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
+			                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
+			                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span>
+			                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>
+			                        </div>
+			                   </div>
+		                   </#if>
                         </li>
   
+							</#list>
                     </ul>
+						</#if>
                 </div>
                 <div class="clear"></div>
             </div>
@@ -201,19 +208,22 @@
         <div class="pxsheng_box">
         	<h4><span><a href="#">更多>></a></span>推荐培训生</h4>
         	<div class="pxsheng">
+        	<#if autobotsList??>
             	<ul>
+            	<#list trainerList as t>
                 	<li>
-                        	<div class="pxsheng_pic"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxsheng1.jpg" /></div>
+                	<#if t?? && t.UserCenter??>
+                        	<div class="pxsheng_pic"><img src="${t.UserCenter.headLogo!}" /></div>
                     <div class="pxsheng_intro">
                     	<div class="pxsheng_name">
-                        	<div class="pxsheng_xm left">王欣平</div>
+                        	<div class="pxsheng_xm left">${t.UserCenter.name!}</div>
                           <div class="pxsheng_pl right">34人<span>评论</span></div>
                             
                             <div class="clear"></div>
                         </div>
                         <div class="pxsheng_zw">
-                        	<div class="pxsheng_zw_l left">售后服务经理</div>
-                            <div class="pxsheng_zw_r  right">工作经验7年</div>
+                        	<div class="pxsheng_zw_l left">${t.currentPosition!}</div>
+                            <div class="pxsheng_zw_r  right">工作经验${t.autoYears!}年</div>
                             <div class="clear"></div>
                         </div>
                         <div class="pxsheng_rz">
@@ -224,176 +234,150 @@
                            
                         </div>
                     </div>
+                    </#if>
                   </li>
-
+					</#list>
                 </ul>
+                </#if>
             </div>
         </div>
         <div class="pxxq_box">
         	<h4><span><a href="#">更多>></a></span>培训需求</h4>
             <div class="pxxq">
+            	<#if jobsTrainerList??>
             	<ul>
-                	<li><div class="qz"></div> <div class="pxxq_l left">
-                   	  <div class="zw_name">项目管理培训师 </div>
+            	<#list jobsTrainerList as t>
+                	<li>
+                	<#if t?? && t.company>
+                	<div class="qz"></div> <div class="pxxq_l left">
+                   	  <div class="zw_name">${t.name!}</div>
                         <div class="dy_box">
-                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">3年工作经验</a></span><span style="background:none;"><a href="#">上海-嘉定区</a></span>
+                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">${t.workExprience!}年工作经验</a></span><span style="background:none;"><a href="#"><#if t.region??></#if>${t.region.fullname!}</a></span>
                         </div>
                         <div class="fb_box">
-                        	<span  style="padding-left:0px;"><a href="#">发布于：昨天</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
+                        	<span  style="padding-left:0px;"><a href="#">发布于：${t.publishDate!}</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
                         </div>
                     </div>
                     <div class="pxxq_r right">
                    	  <div class="qy">
-                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
+                        	<div class="qy_l left"><img src="${t.company.logo!}" /></div>
                           <div class="qy_r right">
-                            	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
+                            	<div class="qy_name"><span><a href="#">已有${t.company.bondsman}人担保</a></span><a href="#">${t.company.name!}</a></div>
                                 <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
                           </div>
                             <div class="clear"></div>
                         </div>
                         <div class="fl">
-                        	<span><a href="#">五险一金</a></span>
-                            <span><a href="#">双休</a></span><span><a href="#">绩效奖金</a></span>
-                            <span><a href="#">定期体检</a></span><span><a href="#">公司聚餐</a></span>
-                        </div>
-                    </div>
-                    <div class="clear"></div></li>
-                    <li style="margin-bottom:0px;"><div class="jz"></div>
-                    <div class="pxxq_l left">
-                   	  <div class="zw_name">项目管理培训师 </div>
-                        <div class="dy_box">
-                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">3年工作经验</a></span><span style="background:none;"><a href="#">上海-嘉定区</a></span>
-                        </div>
-                        <div class="fb_box">
-                        	<span  style="padding-left:0px;"><a href="#">发布于：昨天</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
-                        </div>
-                    </div>
-                    <div class="pxxq_r right">
-                   	  <div class="qy">
-                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
-                          <div class="qy_r right">
-                            	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
-                                <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
-                          </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="fl">
-                        	<span><a href="#">五险一金</a></span>
-                            <span><a href="#">双休</a></span><span><a href="#">绩效奖金</a></span>
-                            <span><a href="#">定期体检</a></span><span><a href="#">公司聚餐</a></span>
+                        <#if t.welfare??>
+                        	<#list t.welfare as w>
+                        	<span><a href="#">${w!}</a></span>
+                            </#list>
+                        </#if>
                         </div>
                     </div>
                     <div class="clear"></div>
                     
-                    </li>
-              </ul>
-            
+                    </#if>
+                  </li>
+					</#list>
+                </ul>
+                </#if>
             </div>
         </div>
         <div class="qcrxq_box">
         	<h4><span><a href="#">更多>></a></span>汽车人需求</h4>
             <div class="qcrxq">
+            	<#if jobsAutobotsList??>
             	<ul>
+            	<#list jobsAutobotsList as t>
                 	<li>
+                	<#if t?? && t.company>
                     	<div class="qcrxq_l left">
-                        	 <div class="qcrxq_zw_name">项目管理培训师 </div>
+                        	 <div class="qcrxq_zw_name">${t.name!} </div>
                        		 <div class="qcrxq_dy_box">
-                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">3年工作经验</a></span><span style="background:none;"><a href="#">上海-嘉定区</a></span>
+                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">${t.workExprience!}年工作经验</a></span><span style="background:none;"><a href="#">上海-嘉定区</a></span>
                         </div>
                         	 <div class="pingpai">
                         <em>当前汽车品牌：</em><span>宝马</span><span>宝马</span>
                         <div class="clear"></div>
                         </div>
                        		 <div class="qcrxq_fb_box">
-                        	<span  style="padding-left:0px;"><a href="#">发布于：昨天</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
+                        	<span  style="padding-left:0px;"><a href="#">发布于：${t.publishDate!}</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
                         </div>
                     </div>
                        
                			<div class="qcrxq_r right">
                    	  <div class="qcrxq_qy">
-                        	<div class="qcrxq_qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
+                        	<div class="qcrxq_qy_l left"><img src="${t.company.logo!}" /></div>
                           <div class="qcrxq_qy_r right">
-                            	<div class="qcrxq_qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
+                            	<div class="qcrxq_qy_name"><span><a href="#">已有${t.company.bondsman}人担保</a></span><a href="#">${t.company.name!}</a></div>
                                 <div class="qcrxq_jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
                           </div>
                             <div class="clear"></div>
                         </div>
                         <div class="qcrxq_fl">
-                        	<span><a href="#">五险一金</a></span><span><a href="#">五险一金</a></span><span><a href="#">五险一金</a></span><span><a href="#">五险一金</a></span><span><a href="#">五险一金</a></span>
-                            <span><a href="#">双休</a></span>
+                        	<#if t.welfare??>
+                        	<#list t.welfare as w>
+                        	<span><a href="#">${w!}</a></span>
+                            </#list>
+                        </#if>
                         </div>
                     </div>
                 		<div class="clear"></div>
-                    </li>
-                    <li style="margin-bottom:0px;">
-                    	<div class="qcrxq_l left">
-                        	 <div class="qcrxq_zw_name">项目管理培训师 </div>
-                       		 <div class="qcrxq_dy_box">
-                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">3年工作经验</a></span><span style="background:none;"><a href="#">上海-嘉定区</a></span>
-                        </div>
-                        	 <div class="pingpai">
-                        <em>当前汽车品牌：</em><span>宝马</span><span>宝马</span>
-                        <div class="clear"></div>
-                        </div>
-                       		 <div class="qcrxq_fb_box">
-                        	<span  style="padding-left:0px;"><a href="#">发布于：昨天</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
-                        </div>
-                    </div>
-                       
-               			<div class="qcrxq_r right">
-                   	  <div class="qcrxq_qy">
-                        	<div class="qcrxq_qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
-                          <div class="qcrxq_qy_r right">
-                            	<div class="qcrxq_qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
-                                <div class="qcrxq_jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
-                          </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="qcrxq_fl">
-                        	<span><a href="#">五险一金</a></span><span><a href="#">五险一金</a></span><span><a href="#">五险一金</a></span><span><a href="#">五险一金</a></span><span><a href="#">五险一金</a></span>
-                            <span><a href="#">双休</a></span>
-                        </div>
-                    </div>
-                		<div class="clear"></div>
-                    </li>
+                    </#if>
+                  </li>
+					</#list>
                 </ul>
+                </#if>
             </div>
         </div>
         <div class="art_box">
         	<div class="ycwz left">
             	<h4><span><a href="#">更多>></a></span>原创文章</h4>
                 <div class="ycwz_box">
-                	<ul>
-                    	<li><span><a href="#">2016-07-02</a></span><a href="#">全面薪酬体系设计“6+1”实操训练营</a></li>
-                        <li><span><a href="#">2016-07-02</a></span><a href="#">全面薪酬体系设计“6+1” </a></li>
-                        <li><span><a href="#">2016-07-02</a></span><a href="#">如何有效的提取绩效管理指标 </a></li>
-                        <li><span><a href="#">2016-07-02</a></span><a href="#">基于平衡计分卡的绩效管理体系（2天</a></li>
-                        <li><span><a href="#">2016-07-02</a></span><a href="#">基于KPI的绩效管理体系（2天）</a></li>
-                    </ul>
+                	<#if trainerEssayList??>
+            	<ul>
+            	<#list trainerEssayList as t>
+                	<li>
+                	<#if t??>
+                    	<span><a href="#">${t.publishDate!}</a></span><a href="#">${t.title!}</a>
+                    	</#if>
+                  </li>
+					</#list>
+                </ul>
+                </#if>
                 </div>
             </div>
             <div class="yiti left">
             	<h4><span><a href="#">更多>></a></span>培训学院热点议题</h4>
                 <div class="yiti_box">
-                	<ul>
-                    	<li><span><a href="#">2016-07-02</a></span><a href="#">全面薪酬体系设计“6+1”实操训练营</a></li>
-                        <li><span><a href="#">2016-07-02</a></span><a href="#">全面薪酬体系设计“6+1” </a></li>
-                        <li><span><a href="#">2016-07-02</a></span><a href="#">如何有效的提取绩效管理指标 </a></li>
-                        <li><span><a href="#">2016-07-02</a></span><a href="#">基于平衡计分卡的绩效管理体系（2天</a></li>
-                        <li><span><a href="#">2016-07-02</a></span><a href="#">基于KPI的绩效管理体系（2天）</a></li>
-                    </ul>
+                	<#if topicList??>
+            	<ul>
+            	<#list topicList as t>
+                	<li>
+                	<#if t?? && t.company>
+                    	<span><a href="#">${t.publishDate!}</a></span><a href="#">${t.title!}</a>
+                    	</#if>
+                  </li>
+					</#list>
+                </ul>
+                </#if>
                 </div>
             </div>
             <div class="gkk right">
             	<h4><span><a href="#">更多>></a></span>热点议题</h4>
                 <div class="gkk_box">
-                	<ul>
-                    	<li><span><a href="#">2016-07-02</a></span><a href="#">全面薪酬体系设计“6+1”实操训练营</a></li>
-                        <li><span><a href="#">2016-07-02</a></span><a href="#">全面薪酬体系设计“6+1” </a></li>
-                        <li><span><a href="#">2016-07-02</a></span><a href="#">如何有效的提取绩效管理指标 </a></li>
-                        <li><span><a href="#">2016-07-02</a></span><a href="#">基于平衡计分卡的绩效管理体系（2天</a></li>
-                        <li><span><a href="#">2016-07-02</a></span><a href="#">基于KPI的绩效管理体系（2天）</a></li>
-                    </ul>
+                	<#if coursesList??>
+            	<ul>
+            	<#list coursesList as t>
+                	<li>
+                	<#if t??>
+                    	<span><a href="#">2016-07-02</a></span><a href="#">全面薪酬体系设计“6+1”实操训练营</a>
+                    	</#if>
+                  </li>
+					</#list>
+                </ul>
+                </#if>
                 </div>
             </div>
             <div class="clear"></div>
