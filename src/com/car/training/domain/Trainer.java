@@ -29,7 +29,7 @@ public class Trainer implements Serializable {
 	/**汽车行业经验*/
 	private Integer autoYears;
 	
-	/**汽车行业经验*/
+	/**培训行业经验*/
 	private Integer trainingYears;
 	
 	/**业务领域**/
