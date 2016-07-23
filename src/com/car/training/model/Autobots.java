@@ -31,7 +31,7 @@ public class Autobots extends BaseEntity {
 
 	/** 用户编号外键UserCenter **/
 	@JoinColumn(name = "uid", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
-	@ManyToOne(optional = true, fetch = FetchType.LAZY)
+	@ManyToOne(optional = true, fetch = FetchType.EAGER)
 	private UserCenter userCenter;
 
 	/** 当前职位 **/

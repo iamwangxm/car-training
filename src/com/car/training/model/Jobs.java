@@ -46,7 +46,7 @@ public class Jobs extends BaseEntity {
 
 	/**所属公司**/
 	@JoinColumn(name = "companyId", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(optional = true, fetch = FetchType.LAZY)
 	private Company company; 
 	
 	/**公司职位类别(公司招聘/4S店招聘)**/

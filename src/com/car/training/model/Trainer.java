@@ -33,7 +33,7 @@ public class Trainer extends BaseEntity {
 	
 	/** 用户编号外键UserCenter **/
 	@JoinColumn(name = "uid", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
-	@ManyToOne(optional = true, fetch = FetchType.LAZY)
+	@ManyToOne(optional = true, fetch = FetchType.EAGER)
 	private UserCenter UserCenter;
 	
 	/**星级*/
@@ -52,11 +52,9 @@ public class Trainer extends BaseEntity {
 	private Integer trainingYears;
 	
 	/**业务领域**/
-	@Transient
 	private Set<String> businessCategory = new HashSet<String>(0);
 	
 	/**执行类别**/
-	@Transient
 	private Set<String> executionCategory = new HashSet<String>(0);
 	
 	/**当前职位**/
