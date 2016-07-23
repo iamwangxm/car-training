@@ -77,666 +77,75 @@
                 </div>
           </div>
         </div>
-    	<div class="xiaoshou_box">
-        	<h4><span><a href="#">更多>></a></span>销 售</h4>
-        	<div class="pxshi">
-            	<ul>
-                	<li style="border:2px solid #ff7d00; padding:0px;">
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    <li>
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    <li>
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    <li>
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    <li style="margin-right:0px;">
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    
-                </ul>
-                
-                
-            </div>
-      </div>   
-      	<div class="chanpin_box">
-        	<h4><span><a href="#">更多>></a></span>产品</h4>
-        	<div class="pxshi">
-            	<ul>
-                	<li style="border:2px solid #ff7d00; padding:0px;">
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    <li>
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    <li>
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    <li>
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    <li style="margin-right:0px;">
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    
-                </ul>
-                
-                
-            </div>
-      </div>
-      	<div class="fjs_box">
-        	<h4><span><a href="#">更多>></a></span>非技术</h4>
-        	<div class="pxshi">
-            	<ul>
-                	<li style="border:2px solid #ff7d00; padding:0px;">
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    <li>
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    <li>
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    <li>
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    <li style="margin-right:0px;">
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    
-                </ul>
-                
-                
-            </div>
-      </div>
-      	<div class="js_box">
-        	<h4><span><a href="#">更多>></a></span>技 术</h4>
-        	<div class="pxshi">
-            	<ul>
-                	<li style="border:2px solid #ff7d00; padding:0px;">
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    <li>
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    <li>
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    <li>
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    <li style="margin-right:0px;">
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    
-                </ul>
-                
-                
-            </div>
-      </div>
-     	<div class="gl_box">
-        	<h4><span><a href="#">更多>></a></span>管 理</h4>
-        	<div class="pxshi">
-            	<ul>
-                	<li style="border:2px solid #ff7d00; padding:0px;">
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    <li>
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    <li>
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    <li>
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    <li style="margin-right:0px;">
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    
-                </ul>
-                
-                
-            </div>
-      </div>
-        <div class="cw_box">
-        	<h4><span><a href="#">更多>></a></span>财 务</h4>
-        	<div class="pxshi">
-            	<ul>
-                	<li style="border:2px solid #ff7d00; padding:0px;">
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    <li>
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    <li>
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    <li>
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    <li style="margin-right:0px;">
-                    <div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-                    <div class="pxshi_intro">
-                    	<div class="pxshi_name">
-                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
-                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
-                            
-                            <div class="clear"></div>
-                        </div>
-                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
-                        <div class="pxshi_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
-                        </div>
-                    </div>
-                  </li>
-                    
-                </ul>
-                
-                
-            </div>
-      </div>
+        
+        <#if trainerList??>
+       <#if businessCategoryEnum??>
+    		<#list businessCategoryEnum?keys as key>
+    			<div class="xiaoshou_box">
+    				<h4><span><a href="#">更多>></a></span>${businessCategoryEnum.get(key)!}</h4>
+    				
+    				<div class="pxshi">
+    					<ul>
+    						<#list trainerList as t>
+	    						<#if t?? && t.businessCategory??>
+	    						  <#list t.businessCategory as b>
+	    						  	<#if b = key>
+	    						  		<#if t_index = 0>
+    						   		<li style="border:2px solid #ff7d00; padding:0px;">
+    						   			<div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
+    						   			<div class="pxshi_intro">
+					                    	<div class="pxshi_name">
+					                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
+					                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
+					                            
+					                            <div class="clear"></div>
+					                        </div>
+					                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
+					                        <div class="pxshi_rz">
+					                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
+					                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
+					                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
+					                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
+					                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
+					                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
+					                        </div>
+					                    </div>
+    						   		</li>
+    						   <#else>
+    						   		<li>
+    						   			<div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
+					                    <div class="pxshi_intro">
+					                    	<div class="pxshi_name">
+					                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
+					                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
+					                            
+					                            <div class="clear"></div>
+					                        </div>
+					                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
+					                        <div class="pxshi_rz">
+					                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
+					                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
+					                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
+					                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
+					                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
+					                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
+					                        </div>
+					                    </div>
+    						   		</li>
+    						   </#if>
+	    						  		<#break>
+	    						  	</#if>
+	    						  </#list>
+	    						</#if>
+    						</#list>
+    					</ul>
+    				</div>
+    			</div>
+    			
+        	</#list>
+      </#if>
+      </#if>
+        
     </div>
 </div>
     
