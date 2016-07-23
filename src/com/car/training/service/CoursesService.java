@@ -29,5 +29,8 @@ public interface CoursesService  {
 
 	/** 获取公开课列表 */
 	List<Courses> findListByCourses(Courses courses);
+
+	/** 获取公开课列表首页2个位置 */
+	List<Courses> findByIndexPromoted(Boolean promote, Integer count);
 	
 }

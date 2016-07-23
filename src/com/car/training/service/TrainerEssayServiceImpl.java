@@ -101,5 +101,13 @@ public class TrainerEssayServiceImpl  implements TrainerEssayService{
 		}
 		return resultList;
 	}
+
+	@Override
+	@Timing
+	@Transactional(readOnly = true)
+	public List<TrainerEssay> findByIndexPromoted(Boolean promote, Integer count) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

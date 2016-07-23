@@ -101,5 +101,13 @@ public class AutobotsServiceImpl  implements AutobotsService{
 		}
 		return resultList;
 	}
+
+	@Override
+	@Timing
+	@Transactional(readOnly = true)
+	public List<Autobots> findByIndexPromoted(Boolean promote, Integer count) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

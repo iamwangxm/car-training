@@ -101,5 +101,13 @@ public class TopicServiceImpl  implements TopicService{
 		}
 		return resultList;
 	}
+
+	@Override
+	@Timing
+	@Transactional(readOnly = true)
+	public List<Topic> findListByIndexTopic(Integer count) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

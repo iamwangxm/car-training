@@ -7,6 +7,7 @@ import org.ironrhino.core.remoting.Remoting;
 import org.springframework.core.annotation.Order;
 
 import com.car.training.domain.Jobs;
+import com.car.training.enums.CompanyType;
 
 @Order(12)
 @Remoting
@@ -29,5 +30,8 @@ public interface JobsService  {
 
 	/** 获取职位列表 */
 	List<Jobs> findListByJobs(Jobs jobs);
+	
+	/** 获取企业/公司列表首页推荐位置2个培训师需求，2个汽车人需求 */
+	List<Jobs> findListByIndexType(CompanyType type,Integer count);
 	
 }

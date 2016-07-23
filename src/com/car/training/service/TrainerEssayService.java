@@ -30,4 +30,7 @@ public interface TrainerEssayService  {
 	/** 获取专题评论列表 */
 	List<TrainerEssay> findListByTrainerEssay(TrainerEssay trainerEssay);
 	
+	/** 获取培训师文章列首页推荐6个位置 */
+	List<TrainerEssay> findByIndexPromoted(Boolean promote, Integer count);
+	
 }

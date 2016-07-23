@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import com.car.training.domain.Jobs;
+import com.car.training.enums.CompanyType;
 import com.car.training.utils.ResultPageBeanUtils;
 
 @Component
@@ -100,6 +101,14 @@ public class JobsServiceImpl  implements JobsService{
 			resultList.add(target);
 		}
 		return resultList;
+	}
+
+	@Override
+	@Timing
+	@Transactional(readOnly = true)
+	public List<Jobs> findListByIndexType(CompanyType type, Integer count) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

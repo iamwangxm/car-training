@@ -6,19 +6,19 @@ import org.ironrhino.core.metadata.AutoConfig;
 import org.ironrhino.core.struts.BaseAction;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.car.training.domain.Autobots;
+import com.car.training.domain.Courses;
+import com.car.training.domain.Jobs;
+import com.car.training.domain.Topic;
+import com.car.training.domain.Trainer;
+import com.car.training.domain.TrainerEssay;
 import com.car.training.enums.CompanyType;
-import com.car.training.model.Autobots;
-import com.car.training.model.Courses;
-import com.car.training.model.Jobs;
-import com.car.training.model.Topic;
-import com.car.training.model.Trainer;
-import com.car.training.model.TrainerEssay;
-import com.car.training.service.AutobotsManager;
-import com.car.training.service.CoursesManager;
-import com.car.training.service.JobsManager;
-import com.car.training.service.TopicManager;
-import com.car.training.service.TrainerEssayManager;
-import com.car.training.service.TrainerManager;
+import com.car.training.service.AutobotsService;
+import com.car.training.service.CoursesService;
+import com.car.training.service.JobsService;
+import com.car.training.service.TopicService;
+import com.car.training.service.TrainerEssayService;
+import com.car.training.service.TrainerService;
 
 @AutoConfig
 public class IndexAction extends BaseAction {
@@ -26,17 +26,17 @@ public class IndexAction extends BaseAction {
 	private static final long serialVersionUID = 2048090665437672391L;
 
 	@Autowired
-	private JobsManager jobsManager;
+	private JobsService jobsService;
 	@Autowired
-	private TopicManager topicManager;
+	private TopicService topicService;
 	@Autowired
-	private TrainerManager trainerManager;
+	private TrainerService trainerService;
 	@Autowired
-	private CoursesManager coursesManager;
+	private CoursesService coursesService;
 	@Autowired
-	private AutobotsManager AutobotsManager;
+	private AutobotsService AutobotsService;
 	@Autowired
-	private TrainerEssayManager trainerEssayManager;
+	private TrainerEssayService trainerEssayService;
 
 	/** 首页推荐培训师大图 */
 	private Trainer trainer;
@@ -60,35 +60,23 @@ public class IndexAction extends BaseAction {
 	@Override
 	public String execute() throws Exception {
 		//首页推荐培训师大图1个
-		trainer = trainerManager.findByIndexPromoted(true);
+		trainer = trainerService.findByIndexPromoted(true);
 		//首页推荐培训师最上顶8位置
-		trainerList = trainerManager.findByIndexPromoted(true,8);
+		trainerList = trainerService.findByIndexPromoted(true,8);
 		//首页推荐汽车人5个位置
-		autobotsList = AutobotsManager.findByIndexPromoted(true,5);
+		autobotsList = AutobotsService.findByIndexPromoted(true,5);
 		//首页培训师需求2个位置
-		jobsTrainerList = 	jobsManager.findListByIndexType(CompanyType.COMPANY, 2);
+		jobsTrainerList = 	jobsService.findListByIndexType(CompanyType.COMPANY, 2);
 		//首页汽车人才需求2个位置
-		jobsAutobotsList = 	jobsManager.findListByIndexType(CompanyType.STORE, 2);
+		jobsAutobotsList = 	jobsService.findListByIndexType(CompanyType.STORE, 2);
 		//首页培训师原创文章列表6个位置
-		trainerEssayList = trainerEssayManager.findByIndexPromoted(true, 6);
+		trainerEssayList = trainerEssayService.findByIndexPromoted(true, 6);
 		//首页热点专题列表6个位置
-		topicList = topicManager.findListByIndexTopic(6);
+		topicList = topicService.findListByIndexTopic(6);
 		//首页推荐公开课列表2个位置
-		coursesList = coursesManager.findByIndexPromoted(true,2);
+		coursesList = coursesService.findByIndexPromoted(true,2);
 		
 		return SUCCESS;
-	}
-
-	public TrainerManager getTrainerManager() {
-		return trainerManager;
-	}
-
-	public AutobotsManager getAutobotsManager() {
-		return AutobotsManager;
-	}
-
-	public JobsManager getJobsManager() {
-		return jobsManager;
 	}
 
 	public Trainer getTrainer() {

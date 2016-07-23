@@ -30,4 +30,7 @@ public interface TopicService  {
 	/** 获取专题列表 */
 	List<Topic> findListByTopic(Topic topic);
 	
+	/** 获取专题列表首页推荐 */
+	List<Topic> findListByIndexTopic(Integer count);
+	
 }

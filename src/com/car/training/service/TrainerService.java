@@ -24,6 +24,12 @@ public interface TrainerService  {
 	/** 获取培训师信息 **/
 	Trainer findById(String id);
 	
+	/** 获取首页推荐培训师信息 **/
+	Trainer findByIndexPromoted(Boolean promote);
+	
+	/** 获取首页推荐培训师信息 **/
+	List<Trainer> findByIndexPromoted(Boolean promote,Integer count);
+	
 	/** 获取培训师列表 */
 	ResultPage<Trainer> findPageByTrainer(Trainer trainer,Integer pageSize,Integer pageNo);
 

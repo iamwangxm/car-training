@@ -101,5 +101,21 @@ public class TrainerServiceImpl  implements TrainerService{
 		}
 		return resultList;
 	}
+
+	@Override
+	@Timing
+	@Transactional(readOnly = true)
+	public Trainer findByIndexPromoted(Boolean promote) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	@Timing
+	@Transactional(readOnly = true)
+	public List<Trainer> findByIndexPromoted(Boolean promote, Integer count) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

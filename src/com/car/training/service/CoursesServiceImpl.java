@@ -101,5 +101,13 @@ public class CoursesServiceImpl  implements CoursesService{
 		}
 		return resultList;
 	}
+
+	@Override
+	@Timing
+	@Transactional(readOnly = true)
+	public List<Courses> findByIndexPromoted(Boolean promote, Integer count) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

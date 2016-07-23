@@ -30,4 +30,7 @@ public interface AutobotsService  {
 	/** 获取汽车人列表 */
 	List<Autobots> findListByAutobots(Autobots autobots);
 	
+	/** 获取汽车人列表首页推荐5个位置 */
+	List<Autobots> findByIndexPromoted(Boolean promote,Integer count);
+	
 }

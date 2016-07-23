@@ -27,7 +27,7 @@ public interface TopicManager extends BaseManager<Topic> {
 	/** 获取专题列表 */
 	List<Topic> findListByTopic(Topic topic);
 	
-	/** 获取专题列表 */
+	/** 获取专题列表首页推荐 */
 	List<Topic> findListByIndexTopic(Integer count);
 	
 }
