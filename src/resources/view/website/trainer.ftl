@@ -92,15 +92,16 @@
 	    						  	<#if b = key>
 	    						  		<#if t_index = 0>
     						   		<li style="border:2px solid #ff7d00; padding:0px;">
-    						   			<div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
+    						   		<#if t.UserCenter??>
+    						   			<div class="pxshi_pic"><a href="#"><img src="${t.UserCenter.headLogo!}" /></a></div>
     						   			<div class="pxshi_intro">
 					                    	<div class="pxshi_name">
-					                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
+					                        	<div class="pxshi_xm left"><a href="#">${t.UserCenter.name!}</a></div>
 					                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
 					                            
 					                            <div class="clear"></div>
 					                        </div>
-					                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
+					                          <div class="pxshi_zp"><a href="#">${t.currentPosition!}</a></div>
 					                        <div class="pxshi_rz">
 					                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
 					                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
@@ -110,18 +111,20 @@
 					                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
 					                        </div>
 					                    </div>
+				                    </#if>
     						   		</li>
     						   <#else>
     						   		<li>
-    						   			<div class="pxshi_pic"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></a></div>
-					                    <div class="pxshi_intro">
+    						   			<#if t.UserCenter??>
+    						   			<div class="pxshi_pic"><a href="#"><img src="${t.UserCenter.headLogo!}" /></a></div>
+    						   			<div class="pxshi_intro">
 					                    	<div class="pxshi_name">
-					                        	<div class="pxshi_xm left"><a href="#">王欣平</a></div>
+					                        	<div class="pxshi_xm left"><a href="#">${t.UserCenter.name!}</a></div>
 					                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
 					                            
 					                            <div class="clear"></div>
 					                        </div>
-					                          <div class="pxshi_zp"><a href="#">传统企业互联网转型总教头</a></div>
+					                          <div class="pxshi_zp"><a href="#">${t.currentPosition!}</a></div>
 					                        <div class="pxshi_rz">
 					                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
 					                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
@@ -131,6 +134,7 @@
 					                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
 					                        </div>
 					                    </div>
+				                    </#if>
     						   		</li>
     						   </#if>
 	    						  		<#break>

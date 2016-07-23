@@ -147,11 +147,11 @@
         	<h4><span><a href="#">更多>></a></span>推荐培训师</h4>
         	<div class="pxshi">
             	<div class="pxshi_l left">
-                	<div class="pxshi_l_pic"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi1.jpg" /></div>
-                		 <#if trainer??>
+                		 <#if trainer?? && trainer.UserCenter??>
+                	<div class="pxshi_l_pic"><img src="${t.UserCenter.headLogo!}" /></div>
                     <div class="pxshi_l_intro">
                     	<div class="pxshi_name">
-                        	<div class="xm left"><#if trainer.UserCenter??>${trainer.UserCenter.name!}</#if></div>
+                        	<div class="xm left">${trainer.UserCenter.name!}</div>
                             <div class="pl left">34人<span>评论</span></div>
                             <div class="dz right">35</div>
                             <div class="clear"></div>
