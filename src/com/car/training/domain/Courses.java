@@ -7,6 +7,7 @@ import java.util.Date;
 import org.ironrhino.common.model.Region;
 
 import com.car.training.enums.CourseType;
+import com.car.training.model.Trainer;
 
 public class Courses implements Serializable {
 
@@ -44,8 +45,8 @@ public class Courses implements Serializable {
 	/**课程大纲**/
 	private String toolModel;
 	
-	/**学员**/
-	private Autobots autobots;
+	/**培训师*/
+	private Trainer trainer;
 	
 	private Date createDate;
 	
@@ -147,13 +148,13 @@ public class Courses implements Serializable {
 	public void setToolModel(String toolModel) {
 		this.toolModel = toolModel;
 	}
-
-	public Autobots getAutobots() {
-		return autobots;
+	
+	public Trainer getTrainer() {
+		return trainer;
 	}
 
-	public void setAutobots(Autobots autobots) {
-		this.autobots = autobots;
+	public void setTrainer(Trainer trainer) {
+		this.trainer = trainer;
 	}
 
 	public Date getCreateDate() {

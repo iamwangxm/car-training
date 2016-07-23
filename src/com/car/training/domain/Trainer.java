@@ -15,7 +15,7 @@ public class Trainer implements Serializable {
 	private String id;
 	
 	/**用户编号外键UserCenter**/
-	private String uid;
+	private UserCenter userCenter;
 	
 	/**星级*/
 	private int starLevel;
@@ -72,13 +72,13 @@ public class Trainer implements Serializable {
 	public void setId(String id) {
 		this.id = id;
 	}
-
-	public String getUid() {
-		return uid;
+	
+	public UserCenter getUserCenter() {
+		return userCenter;
 	}
 
-	public void setUid(String uid) {
-		this.uid = uid;
+	public void setUserCenter(UserCenter userCenter) {
+		this.userCenter = userCenter;
 	}
 
 	public int getStarLevel() {

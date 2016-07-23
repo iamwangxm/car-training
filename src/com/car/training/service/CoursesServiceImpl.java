@@ -106,8 +106,14 @@ public class CoursesServiceImpl  implements CoursesService{
 	@Timing
 	@Transactional(readOnly = true)
 	public List<Courses> findByIndexPromoted(Boolean promote, Integer count) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Courses> resultList = new ArrayList<>();
+		List<com.car.training.model.Courses> sourceList = coursesManager.findByIndexPromoted(promote, count);
+		for (com.car.training.model.Courses sourceCourses : sourceList) {
+			Courses target = new Courses();
+			BeanUtils.copyProperties(sourceCourses, target);
+			resultList.add(target);
+		}
+		return resultList;
 	}
 	
 }

@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import com.car.training.domain.Autobots;
+import com.car.training.domain.UserCenter;
 import com.car.training.utils.ResultPageBeanUtils;
 
 @Component
@@ -106,8 +107,19 @@ public class AutobotsServiceImpl  implements AutobotsService{
 	@Timing
 	@Transactional(readOnly = true)
 	public List<Autobots> findByIndexPromoted(Boolean promote, Integer count) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Autobots> resultList = new ArrayList<>();
+		List<com.car.training.model.Autobots> sourceList = autobotsManager.findByIndexPromoted(promote, count);
+		for (com.car.training.model.Autobots sourceAutobots : sourceList) {
+			Autobots target = new Autobots();
+			BeanUtils.copyProperties(sourceAutobots, target);
+			if (sourceAutobots != null && sourceAutobots.getUserCenter() != null) {
+				UserCenter remotingUserCenter = new UserCenter();
+				BeanUtils.copyProperties(sourceAutobots.getUserCenter() , remotingUserCenter);
+				target.setUserCenter(remotingUserCenter);
+			}
+			resultList.add(target);
+		}
+		return resultList;
 	}
 	
 }

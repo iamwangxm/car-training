@@ -10,6 +10,8 @@ import org.ironrhino.core.util.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.car.training.domain.Company;
 import com.car.training.domain.Jobs;
 import com.car.training.enums.CompanyType;
 import com.car.training.utils.ResultPageBeanUtils;
@@ -107,8 +109,18 @@ public class JobsServiceImpl  implements JobsService{
 	@Timing
 	@Transactional(readOnly = true)
 	public List<Jobs> findListByIndexType(CompanyType type, Integer count) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Jobs> resultList = new ArrayList<>();
+		List<com.car.training.model.Jobs> sourceList = jobsManager.findListByIndexType(type, count);
+		for (com.car.training.model.Jobs sourceJobs : sourceList) {
+			Jobs target = new Jobs();
+			BeanUtils.copyProperties(sourceJobs, target);
+			if (sourceJobs != null && sourceJobs.getCompany() != null) {
+				Company remotingCompany = new Company();
+				BeanUtils.copyProperties(sourceJobs.getCompany() , remotingCompany);
+			}
+			resultList.add(target);
+		}
+		return resultList;
 	}
 	
 }

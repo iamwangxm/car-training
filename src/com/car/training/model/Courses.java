@@ -67,10 +67,10 @@ public class Courses extends BaseEntity {
 	/**课程大纲**/
 	private String toolModel;
 	
-	/**学员**/
-	@JoinColumn(name = "autobotsId", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
+	/**培训师*/
+	@JoinColumn(name = "trainerId", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	private Autobots autobots;
+	private Trainer trainer;
 	
 	@UiConfig(hidden = true)
 	@Column(updatable = false) 
@@ -219,13 +219,13 @@ public class Courses extends BaseEntity {
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
-
-	public Autobots getAutobots() {
-		return autobots;
+	
+	public Trainer getTrainer() {
+		return trainer;
 	}
 
-	public void setAutobots(Autobots autobots) {
-		this.autobots = autobots;
+	public void setTrainer(Trainer trainer) {
+		this.trainer = trainer;
 	}
 
 	public boolean isPromoted() {

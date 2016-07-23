@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import com.car.training.domain.Trainer;
+import com.car.training.domain.UserCenter;
 import com.car.training.utils.ResultPageBeanUtils;
 
 @Component
@@ -106,16 +107,32 @@ public class TrainerServiceImpl  implements TrainerService{
 	@Timing
 	@Transactional(readOnly = true)
 	public Trainer findByIndexPromoted(Boolean promote) {
-		// TODO Auto-generated method stub
-		return null;
+		com.car.training.model.Trainer source = trainerManager.findByIndexPromoted(promote);
+		if (source == null) {
+			return null;
+		}
+		Trainer target = new Trainer();
+		BeanUtils.copyProperties(source, target);
+		return target;
 	}
 
 	@Override
 	@Timing
 	@Transactional(readOnly = true)
 	public List<Trainer> findByIndexPromoted(Boolean promote, Integer count) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Trainer> resultList = new ArrayList<>();
+		List<com.car.training.model.Trainer> sourceList = trainerManager.findByIndexPromoted(promote, count);
+		for (com.car.training.model.Trainer sourceTrainer : sourceList) {
+			Trainer target = new Trainer();
+			BeanUtils.copyProperties(sourceTrainer, target);
+			if (sourceTrainer != null && sourceTrainer.getUserCenter() != null) {
+				UserCenter remotingUserCenter = new UserCenter();
+				BeanUtils.copyProperties(sourceTrainer.getUserCenter() , remotingUserCenter);
+				target.setUserCenter(remotingUserCenter);
+			}
+			resultList.add(target);
+		}
+		return resultList;
 	}
 	
 }

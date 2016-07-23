@@ -106,8 +106,14 @@ public class TopicServiceImpl  implements TopicService{
 	@Timing
 	@Transactional(readOnly = true)
 	public List<Topic> findListByIndexTopic(Integer count) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Topic> resultList = new ArrayList<>();
+		List<com.car.training.model.Topic> sourceList = topicManager.findListByIndexTopic(count);
+		for (com.car.training.model.Topic sourceTopic : sourceList) {
+			Topic target = new Topic();
+			BeanUtils.copyProperties(sourceTopic, target);
+			resultList.add(target);
+		}
+		return resultList;
 	}
 	
 }

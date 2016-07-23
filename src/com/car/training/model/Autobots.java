@@ -32,7 +32,7 @@ public class Autobots extends BaseEntity {
 	/** 用户编号外键UserCenter **/
 	@JoinColumn(name = "uid", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
 	@ManyToOne(optional = true, fetch = FetchType.LAZY)
-	private UserCenter UserCenter;
+	private UserCenter userCenter;
 
 	/** 当前职位 **/
 	@Column(length = 50, nullable = true)
@@ -91,12 +91,13 @@ public class Autobots extends BaseEntity {
 	@Version(value = 0)
 	private int version = -1;
 
+
 	public UserCenter getUserCenter() {
-		return UserCenter;
+		return userCenter;
 	}
 
 	public void setUserCenter(UserCenter userCenter) {
-		UserCenter = userCenter;
+		this.userCenter = userCenter;
 	}
 
 	public String getCurrentPosition() {
