@@ -263,7 +263,7 @@
                         	<div class="qy_l left"><img src="${t.company.logo!}" /></div>
                           <div class="qy_r right">
                             	<div class="qy_name"><span><a href="#">已有${t.company.bondsman}人担保</a></span><a href="#">${t.company.name!}</a></div>
-                                <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
+                                <div class="jyfw"><a href="#">${t.company.industry!}</a></div>
                           </div>
                             <div class="clear"></div>
                         </div>
