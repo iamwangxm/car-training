@@ -8,6 +8,7 @@ import org.ironrhino.common.model.Region;
 
 import com.car.training.enums.Gender;
 import com.car.training.enums.MarryStatus;
+import com.car.training.enums.PersonalType;
 
 public class UserCenter  implements Serializable {
 
@@ -73,8 +74,8 @@ public class UserCenter  implements Serializable {
 	/** 培训师 */
 	private Trainer trainer;
 
-	/** 汽车人 */
-	private Autobots autobots;
+	/** 个人类型 */
+	private PersonalType personalType;
 
 	/** 区域 */
 	private Region region;
@@ -257,12 +258,12 @@ public class UserCenter  implements Serializable {
 		this.trainer = trainer;
 	}
 
-	public Autobots getAutobots() {
-		return autobots;
+	public PersonalType getPersonalType() {
+		return personalType;
 	}
 
-	public void setAutobots(Autobots autobots) {
-		this.autobots = autobots;
+	public void setPersonalType(PersonalType personalType) {
+		this.personalType = personalType;
 	}
 
 	public Region getRegion() {
