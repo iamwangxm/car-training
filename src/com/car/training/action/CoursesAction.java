@@ -33,6 +33,14 @@ public class CoursesAction extends BaseAction {
 		return SUCCESS;
 	}
 
+	public ResultPage<Courses> getCoursesList() {
+		return coursesList;
+	}
+
+	public void setCoursesList(ResultPage<Courses> coursesList) {
+		this.coursesList = coursesList;
+	}
+
 	public Integer getPageSize() {
 		return pageSize;
 	}

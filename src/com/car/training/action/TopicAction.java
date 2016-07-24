@@ -31,12 +31,12 @@ public class TopicAction extends BaseAction {
 		return SUCCESS;
 	}
 
-	public String getKeyword() {
-		return keyword;
+	public ResultPage<Topic> getTopicList() {
+		return topicList;
 	}
 
-	public void setKeyword(String keyword) {
-		this.keyword = keyword;
+	public void setTopicList(ResultPage<Topic> topicList) {
+		this.topicList = topicList;
 	}
 
 	public Integer getPageSize() {

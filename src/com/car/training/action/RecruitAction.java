@@ -13,7 +13,6 @@ import com.car.training.domain.Jobs;
 import com.car.training.enums.CompanyType;
 import com.car.training.enums.JobType;
 import com.car.training.enums.PositionType;
-import com.car.training.service.CompanyService;
 import com.car.training.service.JobsService;
 
 /**招聘需求，包括公司招聘培训师的需求和4S店汽车人的需求*/
@@ -23,8 +22,6 @@ public class RecruitAction extends BaseAction {
 	private static final long serialVersionUID = 4839883380537115435L;
 	@Autowired
 	private JobsService jobsService;
-	@Autowired
-	private CompanyService companyService;
 
 	/** 公司招聘职位列表 */
 	private ResultPage<Jobs> jobsCompanyList;
@@ -56,7 +53,7 @@ public class RecruitAction extends BaseAction {
 			jobs.setCompanyType(CompanyType.COMPANY);// 公司招聘职位
 			jobs.setRegion(region);
 			jobs.setCreateDate(createDate);
-			jobs.setJobType(jobType.FULLTIME);
+			jobs.setJobType(JobType.FULLTIME);
 			//jobs.setexe TODO 执行类别
 			jobs.setName(keyword);
 			// 按条件筛选公司招聘职位列表(包含分页)
@@ -69,6 +66,26 @@ public class RecruitAction extends BaseAction {
 		}
 
 		return SUCCESS;
+	}
+
+
+	public ResultPage<Jobs> getJobsCompanyList() {
+		return jobsCompanyList;
+	}
+
+
+	public void setJobsCompanyList(ResultPage<Jobs> jobsCompanyList) {
+		this.jobsCompanyList = jobsCompanyList;
+	}
+
+
+	public ResultPage<Jobs> getJobsStoreList() {
+		return jobsStoreList;
+	}
+
+
+	public void setJobsStoreList(ResultPage<Jobs> jobsStoreList) {
+		this.jobsStoreList = jobsStoreList;
 	}
 
 
