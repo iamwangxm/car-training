@@ -248,7 +248,7 @@
             	<ul>
             	<#list jobsTrainerList as t>
                 	<li>
-                	<#if t?? && t.company>
+                	<#if t?? && t.company??>
                 	<div class="qz"></div> <div class="pxxq_l left">
                    	  <div class="zw_name">${t.name!}</div>
                         <div class="dy_box">
@@ -291,7 +291,7 @@
             	<ul>
             	<#list jobsAutobotsList as t>
                 	<li>
-                	<#if t?? && t.company>
+                	<#if t?? && t.company??>
                     	<div class="qcrxq_l left">
                         	 <div class="qcrxq_zw_name">${t.name!} </div>
                        		 <div class="qcrxq_dy_box">
@@ -355,7 +355,7 @@
             	<ul>
             	<#list topicList as t>
                 	<li>
-                	<#if t?? && t.company>
+                	<#if t?? && t.company??>
                     	<span><a href="#">${t.publishDate!}</a></span><a href="#">${t.title!}</a>
                     	</#if>
                   </li>
