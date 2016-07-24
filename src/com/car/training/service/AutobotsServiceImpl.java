@@ -95,10 +95,13 @@ public class AutobotsServiceImpl  implements AutobotsService{
 		com.car.training.model.Autobots tAutobots = new com.car.training.model.Autobots();
 		BeanUtils.copyProperties(autobots, tAutobots);
 		List<com.car.training.model.Autobots> sourceList = autobotsManager.findListByAutobots(tAutobots);
-		for (com.car.training.model.Autobots sourceAutobots : sourceList) {
-			Autobots target = new Autobots();
-			BeanUtils.copyProperties(sourceAutobots, target);
-			resultList.add(target);
+		if (sourceList != null) {
+			resultList = new ArrayList<>(sourceList.size());
+			for (com.car.training.model.Autobots sourceAutobots : sourceList) {
+				Autobots target = new Autobots();
+				BeanUtils.copyProperties(sourceAutobots, target);
+				resultList.add(target);
+			}
 		}
 		return resultList;
 	}
@@ -107,17 +110,20 @@ public class AutobotsServiceImpl  implements AutobotsService{
 	@Timing
 	@Transactional(readOnly = true)
 	public List<Autobots> findByIndexPromoted(Boolean promote, Integer count) {
-		List<Autobots> resultList = new ArrayList<>();
+		List<Autobots> resultList = null;
 		List<com.car.training.model.Autobots> sourceList = autobotsManager.findByIndexPromoted(promote, count);
-		for (com.car.training.model.Autobots sourceAutobots : sourceList) {
-			Autobots target = new Autobots();
-			BeanUtils.copyProperties(sourceAutobots, target);
-			if (sourceAutobots != null && sourceAutobots.getUserCenter() != null) {
-				UserCenter remotingUserCenter = new UserCenter();
-				BeanUtils.copyProperties(sourceAutobots.getUserCenter() , remotingUserCenter);
-				target.setUserCenter(remotingUserCenter);
+		if (sourceList != null) {
+			resultList = new ArrayList<>(sourceList.size());
+			for (com.car.training.model.Autobots sourceAutobots : sourceList) {
+				Autobots target = new Autobots();
+				BeanUtils.copyProperties(sourceAutobots, target);
+				if (sourceAutobots != null && sourceAutobots.getUserCenter() != null) {
+					UserCenter remotingUserCenter = new UserCenter();
+					BeanUtils.copyProperties(sourceAutobots.getUserCenter(), remotingUserCenter);
+					target.setUserCenter(remotingUserCenter);
+				}
+				resultList.add(target);
 			}
-			resultList.add(target);
 		}
 		return resultList;
 	}

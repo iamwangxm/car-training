@@ -91,14 +91,17 @@ public class TrainerServiceImpl  implements TrainerService{
 	@Timing
 	@Transactional(readOnly = true)
 	public List<Trainer> findListByTrainer(Trainer trainer) {
-		List<Trainer> resultList = new ArrayList<>();
+		List<Trainer> resultList = null;
 		com.car.training.model.Trainer tTrainer = new com.car.training.model.Trainer();
 		BeanUtils.copyProperties(trainer, tTrainer);
 		List<com.car.training.model.Trainer> sourceList = trainerManager.findListByTrainer(tTrainer);
-		for (com.car.training.model.Trainer sourceTrainer : sourceList) {
-			Trainer target = new Trainer();
-			BeanUtils.copyProperties(sourceTrainer, target);
-			resultList.add(target);
+		if (sourceList != null) {
+			resultList = new ArrayList<>(sourceList.size());
+			for (com.car.training.model.Trainer sourceTrainer : sourceList) {
+				Trainer target = new Trainer();
+				BeanUtils.copyProperties(sourceTrainer, target);
+				resultList.add(target);
+			}
 		}
 		return resultList;
 	}
@@ -120,17 +123,20 @@ public class TrainerServiceImpl  implements TrainerService{
 	@Timing
 	@Transactional(readOnly = true)
 	public List<Trainer> findByIndexPromoted(Boolean promote, Integer count) {
-		List<Trainer> resultList = new ArrayList<>();
+		List<Trainer> resultList = null;
 		List<com.car.training.model.Trainer> sourceList = trainerManager.findByIndexPromoted(promote, count);
-		for (com.car.training.model.Trainer sourceTrainer : sourceList) {
-			Trainer target = new Trainer();
-			BeanUtils.copyProperties(sourceTrainer, target);
-			if (sourceTrainer != null && sourceTrainer.getUserCenter() != null) {
-				UserCenter remotingUserCenter = new UserCenter();
-				BeanUtils.copyProperties(sourceTrainer.getUserCenter() , remotingUserCenter);
-				target.setUserCenter(remotingUserCenter);
+		if (sourceList != null) {
+			resultList = new ArrayList<>(sourceList.size());
+			for (com.car.training.model.Trainer sourceTrainer : sourceList) {
+				Trainer target = new Trainer();
+				BeanUtils.copyProperties(sourceTrainer, target);
+				if (sourceTrainer != null && sourceTrainer.getUserCenter() != null) {
+					UserCenter remotingUserCenter = new UserCenter();
+					BeanUtils.copyProperties(sourceTrainer.getUserCenter(), remotingUserCenter);
+					target.setUserCenter(remotingUserCenter);
+				}
+				resultList.add(target);
 			}
-			resultList.add(target);
 		}
 		return resultList;
 	}

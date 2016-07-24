@@ -93,14 +93,17 @@ public class JobsServiceImpl  implements JobsService{
 	@Timing
 	@Transactional(readOnly = true)
 	public List<Jobs> findListByJobs(Jobs jobs) {
-		List<Jobs> resultList = new ArrayList<>();
+		List<Jobs> resultList = null;
 		com.car.training.model.Jobs tJobs = new com.car.training.model.Jobs();
 		BeanUtils.copyProperties(jobs, tJobs);
 		List<com.car.training.model.Jobs> sourceList = jobsManager.findListByJobs(tJobs);
-		for (com.car.training.model.Jobs sourceJobs : sourceList) {
-			Jobs target = new Jobs();
-			BeanUtils.copyProperties(sourceJobs, target);
-			resultList.add(target);
+		if (sourceList != null) {
+			resultList = new ArrayList<>(sourceList.size());
+			for (com.car.training.model.Jobs sourceJobs : sourceList) {
+				Jobs target = new Jobs();
+				BeanUtils.copyProperties(sourceJobs, target);
+				resultList.add(target);
+			}
 		}
 		return resultList;
 	}
@@ -109,16 +112,19 @@ public class JobsServiceImpl  implements JobsService{
 	@Timing
 	@Transactional(readOnly = true)
 	public List<Jobs> findListByIndexType(CompanyType type, Integer count) {
-		List<Jobs> resultList = new ArrayList<>();
+		List<Jobs> resultList = null;
 		List<com.car.training.model.Jobs> sourceList = jobsManager.findListByIndexType(type, count);
-		for (com.car.training.model.Jobs sourceJobs : sourceList) {
-			Jobs target = new Jobs();
-			BeanUtils.copyProperties(sourceJobs, target);
-			if (sourceJobs != null && sourceJobs.getCompany() != null) {
-				Company remotingCompany = new Company();
-				BeanUtils.copyProperties(sourceJobs.getCompany() , remotingCompany);
+		if (sourceList != null) {
+			resultList = new ArrayList<>(sourceList.size());
+			for (com.car.training.model.Jobs sourceJobs : sourceList) {
+				Jobs target = new Jobs();
+				BeanUtils.copyProperties(sourceJobs, target);
+				if (sourceJobs != null && sourceJobs.getCompany() != null) {
+					Company remotingCompany = new Company();
+					BeanUtils.copyProperties(sourceJobs.getCompany(), remotingCompany);
+				}
+				resultList.add(target);
 			}
-			resultList.add(target);
 		}
 		return resultList;
 	}

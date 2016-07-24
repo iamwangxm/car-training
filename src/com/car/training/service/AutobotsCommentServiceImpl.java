@@ -93,14 +93,18 @@ public class AutobotsCommentServiceImpl  implements AutobotsCommentService{
 	@Timing
 	@Transactional(readOnly = true)
 	public List<AutobotsComment> findListByAutobotsComment(AutobotsComment autobotsComment) {
-		List<AutobotsComment> resultList = new ArrayList<>();
+		List<AutobotsComment> resultList = null;
 		com.car.training.model.AutobotsComment tAutobotsComment = new com.car.training.model.AutobotsComment();
 		BeanUtils.copyProperties(autobotsComment, tAutobotsComment);
-		List<com.car.training.model.AutobotsComment> sourceList = autobotsCommentManager.findListByAutobotsComment(tAutobotsComment);
-		for (com.car.training.model.AutobotsComment sourceAutobotsComment : sourceList) {
-			AutobotsComment target = new AutobotsComment();
-			BeanUtils.copyProperties(sourceAutobotsComment, target);
-			resultList.add(target);
+		List<com.car.training.model.AutobotsComment> sourceList = autobotsCommentManager
+				.findListByAutobotsComment(tAutobotsComment);
+		if (sourceList != null) {
+			resultList = new ArrayList<>(sourceList.size());
+			for (com.car.training.model.AutobotsComment sourceAutobotsComment : sourceList) {
+				AutobotsComment target = new AutobotsComment();
+				BeanUtils.copyProperties(sourceAutobotsComment, target);
+				resultList.add(target);
+			}
 		}
 		return resultList;
 	}

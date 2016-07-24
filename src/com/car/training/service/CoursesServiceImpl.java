@@ -90,14 +90,17 @@ public class CoursesServiceImpl  implements CoursesService{
 	@Timing
 	@Transactional(readOnly = true)
 	public List<Courses> findListByCourses(Courses courses) {
-		List<Courses> resultList = new ArrayList<>();
+		List<Courses> resultList = null;
 		com.car.training.model.Courses tCourses = new com.car.training.model.Courses();
 		BeanUtils.copyProperties(courses, tCourses);
 		List<com.car.training.model.Courses> sourceList = coursesManager.findListByCourses(tCourses);
-		for (com.car.training.model.Courses sourceCourses : sourceList) {
-			Courses target = new Courses();
-			BeanUtils.copyProperties(sourceCourses, target);
-			resultList.add(target);
+		if (sourceList != null) {
+			resultList = new ArrayList<>(sourceList.size());
+			for (com.car.training.model.Courses sourceCourses : sourceList) {
+				Courses target = new Courses();
+				BeanUtils.copyProperties(sourceCourses, target);
+				resultList.add(target);
+			}
 		}
 		return resultList;
 	}
@@ -106,12 +109,15 @@ public class CoursesServiceImpl  implements CoursesService{
 	@Timing
 	@Transactional(readOnly = true)
 	public List<Courses> findByIndexPromoted(Boolean promote, Integer count) {
-		List<Courses> resultList = new ArrayList<>();
+		List<Courses> resultList = null;
 		List<com.car.training.model.Courses> sourceList = coursesManager.findByIndexPromoted(promote, count);
-		for (com.car.training.model.Courses sourceCourses : sourceList) {
-			Courses target = new Courses();
-			BeanUtils.copyProperties(sourceCourses, target);
-			resultList.add(target);
+		if (sourceList != null) {
+			resultList = new ArrayList<>(sourceList.size());
+			for (com.car.training.model.Courses sourceCourses : sourceList) {
+				Courses target = new Courses();
+				BeanUtils.copyProperties(sourceCourses, target);
+				resultList.add(target);
+			}
 		}
 		return resultList;
 	}

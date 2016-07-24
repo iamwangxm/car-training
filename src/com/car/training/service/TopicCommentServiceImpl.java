@@ -90,14 +90,18 @@ public class TopicCommentServiceImpl  implements TopicCommentService{
 	@Timing
 	@Transactional(readOnly = true)
 	public List<TopicComment> findListByTopicComment(TopicComment topicComment) {
-		List<TopicComment> resultList = new ArrayList<>();
+		List<TopicComment> resultList = null;
 		com.car.training.model.TopicComment tTopicComment = new com.car.training.model.TopicComment();
 		BeanUtils.copyProperties(topicComment, tTopicComment);
-		List<com.car.training.model.TopicComment> sourceList = topicCommentManager.findListByTopicComment(tTopicComment);
-		for (com.car.training.model.TopicComment sourceTopicComment : sourceList) {
-			TopicComment target = new TopicComment();
-			BeanUtils.copyProperties(sourceTopicComment, target);
-			resultList.add(target);
+		List<com.car.training.model.TopicComment> sourceList = topicCommentManager
+				.findListByTopicComment(tTopicComment);
+		if (sourceList != null) {
+			resultList = new ArrayList<>(sourceList.size());
+			for (com.car.training.model.TopicComment sourceTopicComment : sourceList) {
+				TopicComment target = new TopicComment();
+				BeanUtils.copyProperties(sourceTopicComment, target);
+				resultList.add(target);
+			}
 		}
 		return resultList;
 	}

@@ -90,16 +90,19 @@ public class CompanyServiceImpl  implements CompanyService{
 	@Timing
 	@Transactional(readOnly = true)
 	public List<Company> findListByCompany(Company company) {
-		List<Company> resultList = new ArrayList<>();
+		List<Company> resultList = null;
 		com.car.training.model.Company tCompany = new com.car.training.model.Company();
 		BeanUtils.copyProperties(company, tCompany);
 		List<com.car.training.model.Company> sourceList = companyManager.findListByCompany(tCompany);
-		for (com.car.training.model.Company sourceCompany : sourceList) {
-			Company target = new Company();
-			BeanUtils.copyProperties(sourceCompany, target);
-			resultList.add(target);
+		if (sourceList != null) {
+			resultList = new ArrayList<>(sourceList.size());
+			for (com.car.training.model.Company sourceCompany : sourceList) {
+				Company target = new Company();
+				BeanUtils.copyProperties(sourceCompany, target);
+				resultList.add(target);
+			}
 		}
 		return resultList;
 	}
-	
+
 }

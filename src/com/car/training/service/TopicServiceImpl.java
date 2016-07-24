@@ -90,14 +90,17 @@ public class TopicServiceImpl  implements TopicService{
 	@Timing
 	@Transactional(readOnly = true)
 	public List<Topic> findListByTopic(Topic topic) {
-		List<Topic> resultList = new ArrayList<>();
+		List<Topic> resultList = null;
 		com.car.training.model.Topic tTopic = new com.car.training.model.Topic();
 		BeanUtils.copyProperties(topic, tTopic);
 		List<com.car.training.model.Topic> sourceList = topicManager.findListByTopic(tTopic);
-		for (com.car.training.model.Topic sourceTopic : sourceList) {
-			Topic target = new Topic();
-			BeanUtils.copyProperties(sourceTopic, target);
-			resultList.add(target);
+		if (sourceList != null) {
+			resultList = new ArrayList<>(sourceList.size());
+			for (com.car.training.model.Topic sourceTopic : sourceList) {
+				Topic target = new Topic();
+				BeanUtils.copyProperties(sourceTopic, target);
+				resultList.add(target);
+			}
 		}
 		return resultList;
 	}
@@ -106,14 +109,17 @@ public class TopicServiceImpl  implements TopicService{
 	@Timing
 	@Transactional(readOnly = true)
 	public List<Topic> findListByIndexTopic(Integer count) {
-		List<Topic> resultList = new ArrayList<>();
+		List<Topic> resultList = null;
 		List<com.car.training.model.Topic> sourceList = topicManager.findListByIndexTopic(count);
-		for (com.car.training.model.Topic sourceTopic : sourceList) {
-			Topic target = new Topic();
-			BeanUtils.copyProperties(sourceTopic, target);
-			resultList.add(target);
+		if (sourceList != null) {
+			resultList = new ArrayList<>(sourceList.size());
+			for (com.car.training.model.Topic sourceTopic : sourceList) {
+				Topic target = new Topic();
+				BeanUtils.copyProperties(sourceTopic, target);
+				resultList.add(target);
+			}
 		}
 		return resultList;
 	}
-	
+
 }

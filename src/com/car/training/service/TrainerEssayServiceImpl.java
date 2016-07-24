@@ -90,14 +90,18 @@ public class TrainerEssayServiceImpl  implements TrainerEssayService{
 	@Timing
 	@Transactional(readOnly = true)
 	public List<TrainerEssay> findListByTrainerEssay(TrainerEssay trainerEssay) {
-		List<TrainerEssay> resultList = new ArrayList<>();
+		List<TrainerEssay> resultList = null;
 		com.car.training.model.TrainerEssay tTrainerEssay = new com.car.training.model.TrainerEssay();
 		BeanUtils.copyProperties(trainerEssay, tTrainerEssay);
-		List<com.car.training.model.TrainerEssay> sourceList = trainerEssayManager.findListByTrainerEssay(tTrainerEssay);
-		for (com.car.training.model.TrainerEssay sourceTrainerEssay : sourceList) {
-			TrainerEssay target = new TrainerEssay();
-			BeanUtils.copyProperties(sourceTrainerEssay, target);
-			resultList.add(target);
+		List<com.car.training.model.TrainerEssay> sourceList = trainerEssayManager
+				.findListByTrainerEssay(tTrainerEssay);
+		if (sourceList != null) {
+			resultList = new ArrayList<>(sourceList.size());
+			for (com.car.training.model.TrainerEssay sourceTrainerEssay : sourceList) {
+				TrainerEssay target = new TrainerEssay();
+				BeanUtils.copyProperties(sourceTrainerEssay, target);
+				resultList.add(target);
+			}
 		}
 		return resultList;
 	}
@@ -106,8 +110,17 @@ public class TrainerEssayServiceImpl  implements TrainerEssayService{
 	@Timing
 	@Transactional(readOnly = true)
 	public List<TrainerEssay> findByIndexPromoted(Boolean promote, Integer count) {
-		// TODO Auto-generated method stub
-		return null;
+		List<TrainerEssay> resultList = null;
+		List<com.car.training.model.TrainerEssay> sourceList = trainerEssayManager.findByIndexPromoted(promote, count);
+		if (sourceList != null) {
+			resultList = new ArrayList<>(sourceList.size());
+			for (com.car.training.model.TrainerEssay sourceTrainerEssay : sourceList) {
+				TrainerEssay target = new TrainerEssay();
+				BeanUtils.copyProperties(sourceTrainerEssay, target);
+				resultList.add(target);
+			}
+		}
+		return resultList;
 	}
-	
+
 }
