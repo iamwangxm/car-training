@@ -9,10 +9,10 @@ public class Topic implements Serializable {
 
 	private String id;
 	
-	/**文章标题**/
+	/**专题标题**/
 	private String title; 
 	
-	/**文章内容**/
+	/**专题内容**/
 	private String content;  
 	
 	/**发布日期**/
