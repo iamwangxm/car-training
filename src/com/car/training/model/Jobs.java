@@ -15,7 +15,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 
 import org.ironrhino.common.model.Region;
 import org.ironrhino.core.metadata.AutoConfig;
@@ -67,20 +66,20 @@ public class Jobs extends BaseEntity {
 	private Date publishDate = new Date();
 	
 	/**学历要求**/
+	@Enumerated(EnumType.STRING)
 	@UiConfig(hiddenInList = @Hidden(true) )
 	private Education education;
 	
 	/**工作类别(全职/兼职)**/
+	@Enumerated(EnumType.STRING)
 	@UiConfig(hiddenInList = @Hidden(true) )
 	private JobType jobType;
 	
 	/**福利**/
-	@Transient
 	@UiConfig(hiddenInList = @Hidden(true) )
 	private Set<String> welfare = new HashSet<String>(0);;
 	
 	/**语言要求**/
-	@Transient
 	private Set<String> languages  = new HashSet<String>(0);
 	
 	/**工作描述**/
@@ -97,6 +96,7 @@ public class Jobs extends BaseEntity {
 	private Integer underling;
 	
 	/**所属专业**/
+	@Enumerated(EnumType.STRING)
 	private Major major;
 
 	/**兼职开始执行时间**/
