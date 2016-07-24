@@ -1,6 +1,9 @@
  package com.car.training.action.website;
 
- import org.ironrhino.core.metadata.AutoConfig;
+ import java.util.ArrayList;
+import java.util.List;
+
+import org.ironrhino.core.metadata.AutoConfig;
 import org.ironrhino.core.model.ResultPage;
 import org.ironrhino.core.struts.BaseAction;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +32,24 @@ public class CoursesAction extends BaseAction {
 		Courses courses = new Courses();
 		//按条件筛选培训师列表(包含分页)
 		 coursesList = coursesService.findPageByCourses(courses, pageSize, pageNo);
-		
+		 List<Courses> cs = new ArrayList<>();
+		 Courses c = new Courses();
+		 cs.add(c);
+		 c = new Courses();
+		 cs.add(c);
+		 c = new Courses();
+		 cs.add(c);
+		 c = new Courses();
+		 cs.add(c);
+		 c = new Courses();
+		 cs.add(c);
+		 c = new Courses();
+		 cs.add(c);
+		 c = new Courses();
+		 cs.add(c);
+		 c = new Courses();
+		 cs.add(c);
+		 coursesList.setResult(cs);
 		return SUCCESS;
 	}
 
