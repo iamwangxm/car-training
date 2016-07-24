@@ -1,6 +1,8 @@
  package com.car.training.action.website;
 
- import java.util.List;
+ import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.ironrhino.core.metadata.AutoConfig;
@@ -32,6 +34,9 @@ public class AutobotsAction extends BaseAction {
 	/** 关健字 */
 	private String keyword;
 	
+	/**类别枚举*/
+	private Map<String,Object> positionTypeEnum;
+	
 	@Override
 	public String execute() throws Exception {
 		Autobots autobots = new Autobots();
@@ -40,8 +45,17 @@ public class AutobotsAction extends BaseAction {
 		autobots.setCurrentPosition(keyword);
 		//按条件筛选培训师列表(包含分页)
 		autobotsList = autobotsService.findListByAutobots(autobots);
+		//设置类别枚举值
+		setPositionTypeEnumVal();
 		
 		return SUCCESS;
+	}
+	
+	public void setPositionTypeEnumVal(){
+		positionTypeEnum = new HashMap<>();
+		for (PositionType b : PositionType.values()) {
+			positionTypeEnum.put(b.getName(), b);
+		}
 	}
 
 	public List<Autobots> getAutobotsList() {
@@ -82,6 +96,14 @@ public class AutobotsAction extends BaseAction {
 
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
+	}
+
+	public Map<String, Object> getPositionTypeEnum() {
+		return positionTypeEnum;
+	}
+
+	public void setPositionTypeEnum(Map<String, Object> positionTypeEnum) {
+		this.positionTypeEnum = positionTypeEnum;
 	}
 
 
