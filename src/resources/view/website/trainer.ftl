@@ -114,6 +114,9 @@
 				                    </#if>
     						   		</li>
     						   <#else>
+    						   		<#if t_index gt 4>  
+    						   			<#break>
+    						   		</#if>
     						   		<li>
     						   			<#if t.UserCenter??>
     						   			<div class="pxshi_pic"><a href="#"><img src="${t.UserCenter.headLogo!}" /></a></div>
@@ -137,7 +140,6 @@
 				                    </#if>
     						   		</li>
     						   </#if>
-	    						  		<#break>
 	    						  	</#if>
 	    						  </#list>
 	    						</#if>
