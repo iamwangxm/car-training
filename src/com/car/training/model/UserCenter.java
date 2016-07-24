@@ -153,6 +153,7 @@ public class UserCenter extends BaseEntity implements UserDetails {
 
 	/** 版本 */
 	@Version(value = 0)
+	@UiConfig(hidden = true)
 	private int version = -1;
 
 	public String getName() {

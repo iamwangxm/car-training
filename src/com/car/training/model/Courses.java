@@ -101,6 +101,7 @@ public class Courses extends BaseEntity {
 	private boolean promoted = false;
 	
 	@Version(value = 0)
+	@UiConfig(hidden = true)
 	private int version = -1;
 
 	public String getCourseName() {

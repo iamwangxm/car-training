@@ -58,6 +58,7 @@ public class TopicComment extends BaseEntity {
 	private boolean enabled = true;
 	
 	@Version(value = 0)
+	@UiConfig(hidden = true)
 	private int version = -1;
 
 	public Trainer getTrainer() {
