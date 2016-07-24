@@ -4,10 +4,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <title>汽车培聘网</title>
-<link rel="stylesheet" href="../css/gkk.css" type="text/css" media="screen" />
-<link rel="stylesheet" type="text/css" href="../css/jquery.jslides.css" media="screen" />
-<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
-<script type="text/javascript" src="../js/jquery.jslides.js"></script>
+<link rel="stylesheet" href="/assets/website/css/gkk.css" type="text/css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/assets/website/css/jquery.jslides.css" media="screen" />
+<script type="text/javascript" src="/assets/website/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="/assets/website/js/jquery.jslides.js"></script>
 </head>
 
 <body>
@@ -107,6 +107,7 @@
         		
         		<#list 1..ronum as i>
         			<div class="gkk">
+        				<ul>
         				<#list coursesList.result as t>
         					<#if t_index gte 5 * (i-1) && t_index lt 5 * i>
         						<#if t_index = 0>
@@ -134,6 +135,7 @@
         							</li>
         					</#if>
         				</#list>
+        				</ul>
         			</div>
     			</#list>
         	</#if>
