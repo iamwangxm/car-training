@@ -102,298 +102,47 @@
         <div class="pxgs">
         	<div class="pxgs_l left">
             	<div class="pxxq">
+            	<#if jobsCompanyList??>
             	<ul>
-                	<li> <div class="pxxq_l left">
-                   	  <div class="zw_name">项目管理培训师 </div>
+            		<#list jobsCompanyList as t>
+            		<#if t?? && t.company??>
+                	<li> 
+                	<div class="pxxq_l left">
+                   	  <div class="zw_name">${t.name!} </div>
                         <div class="dy_box">
-                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">3年工作经验</a></span><span style="background:none;"><a href="#">上海-嘉定区</a></span>
+                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">${t.workExprience!}年工作经验</a></span><span style="background:none;"><a href="#"><#if t.region??>${t.region.fullname}</#if></a></span>
                         </div>
                         <div class="pingpai">
                         <em>当前汽车品牌：</em><span>宝马</span><span>宝马</span>
                         <div class="clear"></div>
                         </div>
                         <div class="fb_box">
-                        	<span  style="padding-left:0px;"><a href="#">发布于：昨天</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
+                        	<span  style="padding-left:0px;"><a href="#">发布于：${t.publishDate!}</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
                         </div>
                     </div>
                     <div class="pxxq_r right">
                    	  <div class="qy">
-                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
+                        	<div class="qy_l left"><img src="${t.company.logo!}" /></div>
                           <div class="qy_r right">
-                            	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
+                            	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">${t.company.name!}</a></div>
                                 <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
                           </div>
                             <div class="clear"></div>
                         </div>
                         <div class="fl">
-                        	<span><a href="#">五险一金</a></span>
-                            <span><a href="#">双休</a></span><span><a href="#">绩效奖金</a></span>
-                            <span><a href="#">定期体检</a></span><span><a href="#">公司聚餐</a></span>
+                        	<#if t.welfare??>
+                        	<#list t.welfare as w>
+                        	<span><a href="#">${w!}</a></span>
+                            </#list>
+                        	</#if>
                         </div>
                     </div>
-                    <div class="clear"></div></li>
-                    <li> <div class="pxxq_l left">
-                   	  <div class="zw_name">项目管理培训师 </div>
-                        <div class="dy_box">
-                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">3年工作经验</a></span><span style="background:none;"><a href="#">上海-嘉定区</a></span>
-                        </div>
-                        <div class="pingpai">
-                        <em>当前汽车品牌：</em><span>宝马</span><span>宝马</span>
-                        <div class="clear"></div>
-                        </div>
-                        <div class="fb_box">
-                        	<span  style="padding-left:0px;"><a href="#">发布于：昨天</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
-                        </div>
-                    </div>
-                    <div class="pxxq_r right">
-                   	  <div class="qy">
-                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
-                          <div class="qy_r right">
-                            	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
-                                <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
-                          </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="fl">
-                        	<span><a href="#">五险一金</a></span>
-                            <span><a href="#">双休</a></span><span><a href="#">绩效奖金</a></span>
-                            <span><a href="#">定期体检</a></span><span><a href="#">公司聚餐</a></span>
-                        </div>
-                    </div>
-                    <div class="clear"></div></li>
-                    <li> <div class="pxxq_l left">
-                   	  <div class="zw_name">项目管理培训师 </div>
-                        <div class="dy_box">
-                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">3年工作经验</a></span><span style="background:none;"><a href="#">上海-嘉定区</a></span>
-                        </div>
-                        <div class="pingpai">
-                        <em>当前汽车品牌：</em><span>宝马</span><span>宝马</span>
-                        <div class="clear"></div>
-                        </div>
-                        <div class="fb_box">
-                        	<span  style="padding-left:0px;"><a href="#">发布于：昨天</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
-                        </div>
-                    </div>
-                    <div class="pxxq_r right">
-                   	  <div class="qy">
-                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
-                          <div class="qy_r right">
-                            	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
-                                <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
-                          </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="fl">
-                        	<span><a href="#">五险一金</a></span>
-                            <span><a href="#">双休</a></span><span><a href="#">绩效奖金</a></span>
-                            <span><a href="#">定期体检</a></span><span><a href="#">公司聚餐</a></span>
-                        </div>
-                    </div>
-                    <div class="clear"></div></li>
-                    <li> <div class="pxxq_l left">
-                   	  <div class="zw_name">项目管理培训师 </div>
-                        <div class="dy_box">
-                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">3年工作经验</a></span><span style="background:none;"><a href="#">上海-嘉定区</a></span>
-                        </div>
-                        <div class="pingpai">
-                        <em>当前汽车品牌：</em><span>宝马</span><span>宝马</span>
-                        <div class="clear"></div>
-                        </div>
-                        <div class="fb_box">
-                        	<span  style="padding-left:0px;"><a href="#">发布于：昨天</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
-                        </div>
-                    </div>
-                    <div class="pxxq_r right">
-                   	  <div class="qy">
-                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
-                          <div class="qy_r right">
-                            	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
-                                <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
-                          </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="fl">
-                        	<span><a href="#">五险一金</a></span>
-                            <span><a href="#">双休</a></span><span><a href="#">绩效奖金</a></span>
-                            <span><a href="#">定期体检</a></span><span><a href="#">公司聚餐</a></span>
-                        </div>
-                    </div>
-                    <div class="clear"></div></li>
-                    <li> <div class="pxxq_l left">
-                   	  <div class="zw_name">项目管理培训师 </div>
-                        <div class="dy_box">
-                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">3年工作经验</a></span><span style="background:none;"><a href="#">上海-嘉定区</a></span>
-                        </div>
-                        <div class="pingpai">
-                        <em>当前汽车品牌：</em><span>宝马</span><span>宝马</span>
-                        <div class="clear"></div>
-                        </div>
-                        <div class="fb_box">
-                        	<span  style="padding-left:0px;"><a href="#">发布于：昨天</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
-                        </div>
-                    </div>
-                    <div class="pxxq_r right">
-                   	  <div class="qy">
-                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
-                          <div class="qy_r right">
-                            	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
-                                <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
-                          </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="fl">
-                        	<span><a href="#">五险一金</a></span>
-                            <span><a href="#">双休</a></span><span><a href="#">绩效奖金</a></span>
-                            <span><a href="#">定期体检</a></span><span><a href="#">公司聚餐</a></span>
-                        </div>
-                    </div>
-                    <div class="clear"></div></li>
-                    <li> <div class="pxxq_l left">
-                   	  <div class="zw_name">项目管理培训师 </div>
-                        <div class="dy_box">
-                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">3年工作经验</a></span><span style="background:none;"><a href="#">上海-嘉定区</a></span>
-                        </div>
-                        <div class="pingpai">
-                        <em>当前汽车品牌：</em><span>宝马</span><span>宝马</span>
-                        <div class="clear"></div>
-                        </div>
-                        <div class="fb_box">
-                        	<span  style="padding-left:0px;"><a href="#">发布于：昨天</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
-                        </div>
-                    </div>
-                    <div class="pxxq_r right">
-                   	  <div class="qy">
-                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
-                          <div class="qy_r right">
-                            	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
-                                <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
-                          </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="fl">
-                        	<span><a href="#">五险一金</a></span>
-                            <span><a href="#">双休</a></span><span><a href="#">绩效奖金</a></span>
-                            <span><a href="#">定期体检</a></span><span><a href="#">公司聚餐</a></span>
-                        </div>
-                    </div>
-                    <div class="clear"></div></li>
-                    <li> <div class="pxxq_l left">
-                   	  <div class="zw_name">项目管理培训师 </div>
-                        <div class="dy_box">
-                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">3年工作经验</a></span><span style="background:none;"><a href="#">上海-嘉定区</a></span>
-                        </div>
-                        <div class="pingpai">
-                        <em>当前汽车品牌：</em><span>宝马</span><span>宝马</span>
-                        <div class="clear"></div>
-                        </div>
-                        <div class="fb_box">
-                        	<span  style="padding-left:0px;"><a href="#">发布于：昨天</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
-                        </div>
-                    </div>
-                    <div class="pxxq_r right">
-                   	  <div class="qy">
-                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
-                          <div class="qy_r right">
-                            	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
-                                <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
-                          </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="fl">
-                        	<span><a href="#">五险一金</a></span>
-                            <span><a href="#">双休</a></span><span><a href="#">绩效奖金</a></span>
-                            <span><a href="#">定期体检</a></span><span><a href="#">公司聚餐</a></span>
-                        </div>
-                    </div>
-                    <div class="clear"></div></li>
-                    <li> <div class="pxxq_l left">
-                   	  <div class="zw_name">项目管理培训师 </div>
-                        <div class="dy_box">
-                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">3年工作经验</a></span><span style="background:none;"><a href="#">上海-嘉定区</a></span>
-                        </div>
-                        <div class="pingpai">
-                        <em>当前汽车品牌：</em><span>宝马</span><span>宝马</span>
-                        <div class="clear"></div>
-                        </div>
-                        <div class="fb_box">
-                        	<span  style="padding-left:0px;"><a href="#">发布于：昨天</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
-                        </div>
-                    </div>
-                    <div class="pxxq_r right">
-                   	  <div class="qy">
-                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
-                          <div class="qy_r right">
-                            	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
-                                <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
-                          </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="fl">
-                        	<span><a href="#">五险一金</a></span>
-                            <span><a href="#">双休</a></span><span><a href="#">绩效奖金</a></span>
-                            <span><a href="#">定期体检</a></span><span><a href="#">公司聚餐</a></span>
-                        </div>
-                    </div>
-                    <div class="clear"></div></li>
-                    <li> <div class="pxxq_l left">
-                   	  <div class="zw_name">项目管理培训师 </div>
-                        <div class="dy_box">
-                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">3年工作经验</a></span><span style="background:none;"><a href="#">上海-嘉定区</a></span>
-                        </div>
-                        <div class="pingpai">
-                        <em>当前汽车品牌：</em><span>宝马</span><span>宝马</span>
-                        <div class="clear"></div>
-                        </div>
-                        <div class="fb_box">
-                        	<span  style="padding-left:0px;"><a href="#">发布于：昨天</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
-                        </div>
-                    </div>
-                    <div class="pxxq_r right">
-                   	  <div class="qy">
-                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
-                          <div class="qy_r right">
-                            	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
-                                <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
-                          </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="fl">
-                        	<span><a href="#">五险一金</a></span>
-                            <span><a href="#">双休</a></span><span><a href="#">绩效奖金</a></span>
-                            <span><a href="#">定期体检</a></span><span><a href="#">公司聚餐</a></span>
-                        </div>
-                    </div>
-                    <div class="clear"></div></li>
-                    <li> <div class="pxxq_l left">
-                   	  <div class="zw_name">项目管理培训师 </div>
-                        <div class="dy_box">
-                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">3年工作经验</a></span><span style="background:none;"><a href="#">上海-嘉定区</a></span>
-                        </div>
-                        <div class="pingpai">
-                        <em>当前汽车品牌：</em><span>宝马</span><span>宝马</span>
-                        <div class="clear"></div>
-                        </div>
-                        <div class="fb_box">
-                        	<span  style="padding-left:0px;"><a href="#">发布于：昨天</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
-                        </div>
-                    </div>
-                    <div class="pxxq_r right">
-                   	  <div class="qy">
-                        	<div class="qy_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
-                          <div class="qy_r right">
-                            	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="#">上海奧马汽车管理培训有限公司</a></div>
-                                <div class="jyfw"><a href="#">汽车销售、汽车维修、团队管理、售后服务</a></div>
-                          </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="fl">
-                        	<span><a href="#">五险一金</a></span>
-                            <span><a href="#">双休</a></span><span><a href="#">绩效奖金</a></span>
-                            <span><a href="#">定期体检</a></span><span><a href="#">公司聚餐</a></span>
-                        </div>
-                    </div>
-                    <div class="clear"></div></li>
+                    <div class="clear"></div>
+                </li>
+                </#if>
+              </#list>
               </ul>
+            	</#if>
             
             </div>
             	<div class="fypage" ><span>上五页</span><span class="">上一页</span><span>1</span><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">下一页</a><a href="#">下五页</a>  跳转到 <select name="PageSelect" onchange=""><option value="" selected="selected">第01页</option><option value="">第02页</option><option value="">第03页</option><option value="">第04页</option><option value="">第05页</option><option value="">第06页</option><option value="index_7.html">第07页</option>
