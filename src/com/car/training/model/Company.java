@@ -85,7 +85,6 @@ public class Company extends BaseEntity {
 	private Nature nature;
 	
 	/**福利**/
-	@Transient
 	@UiConfig(hiddenInList = @Hidden(true) )
 	private Set<String> welfare = new HashSet<String>(0);
 	

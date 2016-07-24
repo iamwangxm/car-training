@@ -32,7 +32,7 @@ public class TopicComment extends BaseEntity {
 	private Trainer	trainer;
 	
 	@NotInCopy
-	@JoinColumn(name = "topic", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
+	@JoinColumn(name = "topicId", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Topic	topic;
 	

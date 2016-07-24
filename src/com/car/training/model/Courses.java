@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.ConstraintMode;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
@@ -36,7 +38,8 @@ public class Courses extends BaseEntity {
 	private String courseName; 
 	
 	/**课程类型**/
-	@Column(length = 2000, nullable = true)
+	@Enumerated(EnumType.STRING)
+	@Column(length = 200, nullable = true)
 	private CourseType courseType;  
 	
 	/**发布日期**/

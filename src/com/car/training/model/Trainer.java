@@ -7,6 +7,8 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.ConstraintMode;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
@@ -40,6 +42,7 @@ public class Trainer extends BaseEntity {
 	private int starLevel;
 	
 	/**学历*/
+	@Enumerated(EnumType.STRING)
 	private Education education;
 	
 	/**主修课程*/
