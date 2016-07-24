@@ -60,6 +60,7 @@ public class UserCenter extends BaseEntity implements UserDetails {
 
 	/** 头像 */
 	@Column(length = 255, nullable = true)
+	@UiConfig(cssClass = "imagepick", viewTemplate = "<#if value?has_content><a href=\"<@url value=value/>\" target=\"_blank\"><img src=\"<@url value=value/>\" style=\"height:50px;\"/></a></#if>")
 	private String headLogo;
 
 	/** 性别 */

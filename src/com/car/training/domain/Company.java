@@ -21,6 +21,9 @@ public class Company implements Serializable {
 	/**公司名称**/
 	private String name; 
 	
+	/**账户名称**/
+	private String username;
+	
 	/** 密码 */
 	private String password;
 	
@@ -93,6 +96,14 @@ public class Company implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {

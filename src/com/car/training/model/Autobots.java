@@ -57,9 +57,11 @@ public class Autobots extends BaseEntity {
 	private boolean authFaithed = false;
 
 	/** 工作照片1 **/
+	@UiConfig(cssClass = "imagepick", viewTemplate = "<#if value?has_content><a href=\"<@url value=value/>\" target=\"_blank\"><img src=\"<@url value=value/>\" style=\"height:50px;\"/></a></#if>")
 	private String workPhotoURL1;
 
 	/** 工作照片2 **/
+	@UiConfig(cssClass = "imagepick", viewTemplate = "<#if value?has_content><a href=\"<@url value=value/>\" target=\"_blank\"><img src=\"<@url value=value/>\" style=\"height:50px;\"/></a></#if>")
 	private String workPhotoURL2;
 
 	/** 创建日期 **/

@@ -16,7 +16,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 
 import org.ironrhino.common.model.Region;
 import org.ironrhino.core.metadata.AutoConfig;
@@ -45,6 +44,10 @@ public class Company extends BaseEntity {
 	@Column(length = 50, nullable = true)
 	private String name; 
 	
+	/**账户名称**/
+	@Column(length = 50, nullable = false)
+	private String username;
+	
 	/** 密码 */
 	@Column(length = 50, nullable = true)
 	private String password;
@@ -66,6 +69,7 @@ public class Company extends BaseEntity {
 	
 	/**公司LOGO**/
 	@Column(length = 255, nullable = true)
+	@UiConfig(cssClass = "imagepick", viewTemplate = "<#if value?has_content><a href=\"<@url value=value/>\" target=\"_blank\"><img src=\"<@url value=value/>\" style=\"height:50px;\"/></a></#if>")
 	private String logo;  
 	
 	/**公司规模**/
@@ -108,9 +112,11 @@ public class Company extends BaseEntity {
 	private String intro;
 	
 	/**工作环境照片1**/
+	@UiConfig(cssClass = "imagepick", viewTemplate = "<#if value?has_content><a href=\"<@url value=value/>\" target=\"_blank\"><img src=\"<@url value=value/>\" style=\"height:50px;\"/></a></#if>")
 	private String environmentURL1;
 	
 	/**工作环境照片2**/
+	@UiConfig(cssClass = "imagepick", viewTemplate = "<#if value?has_content><a href=\"<@url value=value/>\" target=\"_blank\"><img src=\"<@url value=value/>\" style=\"height:50px;\"/></a></#if>")
 	private String environmentURL2;
 	
 	/**创建日期*/
@@ -149,6 +155,14 @@ public class Company extends BaseEntity {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
