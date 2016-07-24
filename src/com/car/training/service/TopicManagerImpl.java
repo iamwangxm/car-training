@@ -50,7 +50,7 @@ public class TopicManagerImpl extends BaseManagerImpl<Topic> implements TopicMan
 			return null;
 		DetachedCriteria dc = detachedCriteria();
 		dc.add(Restrictions.eq("enabled", true));
-		dc.addOrder(Order.asc("displayOrder"));
+		dc.addOrder(Order.desc("createDate"));
 		resultPage.setCriteria(dc);
 		
 		pageSize = ((pageSize == null || pageSize <= 0) ? ResultPage.DEFAULT_PAGE_SIZE : pageSize);
@@ -65,7 +65,7 @@ public class TopicManagerImpl extends BaseManagerImpl<Topic> implements TopicMan
 	public List<Topic> findListByTopic(Topic autobotsComment) {
 		DetachedCriteria dc = detachedCriteria();
 		dc.add(Restrictions.eq("enabled", true));
-		dc.addOrder(Order.asc("displayOrder"));
+		dc.addOrder(Order.desc("createDate"));
 		return findListByCriteria(dc);
 	}
 

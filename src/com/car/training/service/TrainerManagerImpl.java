@@ -48,7 +48,7 @@ public class TrainerManagerImpl extends BaseManagerImpl<Trainer> implements Trai
 		if (autobotsComment == null)
 			return null;
 		DetachedCriteria dc = detachedCriteria();
-		dc.addOrder(Order.asc("displayOrder"));
+		dc.addOrder(Order.desc("createDate"));
 		resultPage.setCriteria(dc);
 		
 		pageSize = ((pageSize == null || pageSize <= 0) ? ResultPage.DEFAULT_PAGE_SIZE : pageSize);
@@ -62,7 +62,7 @@ public class TrainerManagerImpl extends BaseManagerImpl<Trainer> implements Trai
 	@Transactional(readOnly=true)
 	public List<Trainer> findListByTrainer(Trainer autobotsComment) {
 		DetachedCriteria dc = detachedCriteria();
-		dc.addOrder(Order.asc("displayOrder"));
+		dc.addOrder(Order.desc("createDate"));
 		return findListByCriteria(dc);
 	}
 

@@ -48,7 +48,7 @@ public class AutobotsManagerImpl extends BaseManagerImpl<Autobots> implements Au
 		if (autobotsComment == null)
 			return null;
 		DetachedCriteria dc = detachedCriteria();
-		dc.addOrder(Order.asc("displayOrder"));
+		dc.addOrder(Order.desc("createDate"));
 		resultPage.setCriteria(dc);
 		
 		pageSize = ((pageSize == null || pageSize <= 0) ? ResultPage.DEFAULT_PAGE_SIZE : pageSize);
@@ -62,7 +62,7 @@ public class AutobotsManagerImpl extends BaseManagerImpl<Autobots> implements Au
 	@Transactional(readOnly=true)
 	public List<Autobots> findListByAutobots(Autobots autobotsComment) {
 		DetachedCriteria dc = detachedCriteria();
-		dc.addOrder(Order.asc("displayOrder"));
+		dc.addOrder(Order.desc("createDate"));
 		return findListByCriteria(dc);
 	}
 
