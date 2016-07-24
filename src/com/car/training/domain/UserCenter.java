@@ -71,9 +71,6 @@ public class UserCenter  implements Serializable {
 	/** 简介 */
 	private String intro;
 
-	/** 培训师 */
-	private Trainer trainer;
-
 	/** 个人类型 */
 	private PersonalType personalType;
 
@@ -248,14 +245,6 @@ public class UserCenter  implements Serializable {
 
 	public void setIntro(String intro) {
 		this.intro = intro;
-	}
-
-	public Trainer getTrainer() {
-		return trainer;
-	}
-
-	public void setTrainer(Trainer trainer) {
-		this.trainer = trainer;
 	}
 
 	public PersonalType getPersonalType() {
