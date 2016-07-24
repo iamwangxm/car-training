@@ -27,6 +27,11 @@ public class Topic extends BaseEntity {
 	@Column(length = 100, nullable = true)
 	private String title; 
 	
+	/**专题标识图片**/
+	@Column(length = 255, nullable = true)
+	@UiConfig(cssClass = "imagepick", viewTemplate = "<#if value?has_content><a href=\"<@url value=value/>\" target=\"_blank\"><img src=\"<@url value=value/>\" style=\"height:50px;\"/></a></#if>")
+	private String topicLogo;
+	
 	/**专题内容**/
 	@Column(length = 2000, nullable = true)
 	private String content;  
@@ -74,6 +79,14 @@ public class Topic extends BaseEntity {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public String getTopicLogo() {
+		return topicLogo;
+	}
+
+	public void setTopicLogo(String topicLogo) {
+		this.topicLogo = topicLogo;
 	}
 
 	public String getContent() {

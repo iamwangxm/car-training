@@ -12,6 +12,9 @@ public class Topic implements Serializable {
 	/**专题标题**/
 	private String title; 
 	
+	/**专题标识图片**/
+	private String topicLogo;
+	
 	/**专题内容**/
 	private String content;  
 	
@@ -48,6 +51,14 @@ public class Topic implements Serializable {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public String getTopicLogo() {
+		return topicLogo;
+	}
+
+	public void setTopicLogo(String topicLogo) {
+		this.topicLogo = topicLogo;
 	}
 
 	public String getContent() {
