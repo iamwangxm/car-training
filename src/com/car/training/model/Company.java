@@ -147,6 +147,7 @@ public class Company extends BaseEntity {
 	private boolean enabled = true;
 	
 	@Version(value = 0)
+	@UiConfig(hidden = true)
 	private int version = -1;
 
 	public String getName() {

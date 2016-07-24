@@ -83,6 +83,7 @@ public class Jobs extends BaseEntity {
 	private Set<String> languages  = new HashSet<String>(0);
 	
 	/**工作描述**/
+	@UiConfig(hidden = true)
 	@Column(length = 4000, nullable = true)
 	private String jobDescription;
 	
@@ -133,6 +134,7 @@ public class Jobs extends BaseEntity {
 	private boolean promoted = false;
 	
 	@Version(value = 0)
+	@UiConfig(hidden = true)
 	private int version = -1;
 
 	public String getName() {
