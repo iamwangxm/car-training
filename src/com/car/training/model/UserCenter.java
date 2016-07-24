@@ -28,6 +28,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.car.training.enums.MarryStatus;
+import com.car.training.enums.PersonalType;
 import com.car.training.enums.Gender;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -67,6 +68,11 @@ public class UserCenter extends BaseEntity implements UserDetails {
 	@Enumerated(EnumType.STRING)
 	@Column(length=10, nullable = true)
 	private Gender gender;
+	
+	/** 个人类型 */
+	@Enumerated(EnumType.STRING)
+	@Column(length=20, nullable = false)
+	private PersonalType personalType;
 	
 	/** 婚姻状态*/
 	@Enumerated(EnumType.STRING)
@@ -223,6 +229,14 @@ public class UserCenter extends BaseEntity implements UserDetails {
 
 	public void setGender(Gender gender) {
 		this.gender = gender;
+	}
+
+	public PersonalType getPersonalType() {
+		return personalType;
+	}
+
+	public void setPersonalType(PersonalType personalType) {
+		this.personalType = personalType;
 	}
 
 	public MarryStatus getMarryStatus() {
