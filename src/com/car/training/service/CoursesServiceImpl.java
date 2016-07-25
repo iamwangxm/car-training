@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.car.training.domain.Company;
 import com.car.training.domain.Courses;
 import com.car.training.domain.Trainer;
 import com.car.training.utils.ResultPageBeanUtils;
