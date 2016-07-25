@@ -53,7 +53,7 @@ public class AutobotsComment extends BaseEntity{
 	/** 汽车人关联 **/
 	@JoinColumn(name = "autobotsId", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
 	@ManyToOne(optional = true, fetch = FetchType.LAZY)
-	private Autobots Autobots;
+	private Autobots autobots;
 
 	public Integer getContentDesignScore() {
 		return contentDesignScore;
@@ -101,6 +101,14 @@ public class AutobotsComment extends BaseEntity{
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	}
+
+	public Autobots getAutobots() {
+		return autobots;
+	}
+
+	public void setAutobots(Autobots autobots) {
+		this.autobots = autobots;
 	}
 	
 	

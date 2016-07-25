@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
+import org.ironrhino.common.model.Region;
 import org.ironrhino.core.aop.Timing;
 import org.ironrhino.core.model.ResultPage;
 import org.ironrhino.core.util.BeanUtils;
@@ -99,6 +100,11 @@ public class CompanyServiceImpl  implements CompanyService{
 			for (com.car.training.model.Company sourceCompany : sourceList) {
 				Company target = new Company();
 				BeanUtils.copyProperties(sourceCompany, target);
+				if (sourceCompany != null && sourceCompany.getRegion()!= null) {
+					Region remotingRegion = new Region();
+					BeanUtils.copyProperties(sourceCompany.getRegion(), remotingRegion);
+					target.setRegion(remotingRegion);
+				}
 				resultList.add(target);
 			}
 		}

@@ -34,7 +34,7 @@ public class IndexAction extends BaseAction {
 	@Autowired
 	private CoursesService coursesService;
 	@Autowired
-	private AutobotsService AutobotsService;
+	private AutobotsService autobotsService;
 	@Autowired
 	private TrainerEssayService trainerEssayService;
 
@@ -64,7 +64,7 @@ public class IndexAction extends BaseAction {
 		//首页推荐培训师最上顶8位置
 		trainerList = trainerService.findByIndexPromoted(true,8);
 		//首页推荐汽车人5个位置
-		autobotsList = AutobotsService.findByIndexPromoted(true,5);
+		autobotsList = autobotsService.findByIndexPromoted(true,5);
 		//首页培训师需求2个位置
 		jobsTrainerList = 	jobsService.findListByIndexType(CompanyType.COMPANY, 2);
 		//首页汽车人才需求2个位置

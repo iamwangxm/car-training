@@ -28,6 +28,8 @@ public class AutobotsComment implements Serializable{
 	/**是否启用*/
 	private boolean enabled;
 	
+	private Autobots autobots;
+	
 	public String getId() {
 		return id;
 	}
@@ -83,6 +85,13 @@ public class AutobotsComment implements Serializable{
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
-	
+
+	public Autobots getAutobots() {
+		return autobots;
+	}
+
+	public void setAutobots(Autobots autobots) {
+		this.autobots = autobots;
+	}
 	
 }

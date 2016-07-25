@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
+import org.ironrhino.common.model.Region;
 import org.ironrhino.core.aop.Timing;
 import org.ironrhino.core.model.ResultPage;
 import org.ironrhino.core.util.BeanUtils;
@@ -102,6 +103,16 @@ public class JobsServiceImpl  implements JobsService{
 			for (com.car.training.model.Jobs sourceJobs : sourceList) {
 				Jobs target = new Jobs();
 				BeanUtils.copyProperties(sourceJobs, target);
+				if (sourceJobs != null && sourceJobs.getCompany() != null) {
+					Company remotingCompany = new Company();
+					BeanUtils.copyProperties(sourceJobs.getCompany(), remotingCompany);
+					target.setCompany(remotingCompany);
+				}
+				if (sourceJobs != null && sourceJobs.getRegion()!= null) {
+					Region remotingRegion = new Region();
+					BeanUtils.copyProperties(sourceJobs.getRegion(), remotingRegion);
+					target.setRegion(remotingRegion);
+				}
 				resultList.add(target);
 			}
 		}
@@ -122,6 +133,12 @@ public class JobsServiceImpl  implements JobsService{
 				if (sourceJobs != null && sourceJobs.getCompany() != null) {
 					Company remotingCompany = new Company();
 					BeanUtils.copyProperties(sourceJobs.getCompany(), remotingCompany);
+					target.setCompany(remotingCompany);
+				}
+				if (sourceJobs != null && sourceJobs.getRegion()!= null) {
+					Region remotingRegion = new Region();
+					BeanUtils.copyProperties(sourceJobs.getRegion(), remotingRegion);
+					target.setRegion(remotingRegion);
 				}
 				resultList.add(target);
 			}

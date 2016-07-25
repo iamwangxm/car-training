@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.car.training.domain.Autobots;
 import com.car.training.domain.AutobotsComment;
 import com.car.training.utils.ResultPageBeanUtils;
 
@@ -103,6 +104,11 @@ public class AutobotsCommentServiceImpl  implements AutobotsCommentService{
 			for (com.car.training.model.AutobotsComment sourceAutobotsComment : sourceList) {
 				AutobotsComment target = new AutobotsComment();
 				BeanUtils.copyProperties(sourceAutobotsComment, target);
+				if (sourceAutobotsComment != null && sourceAutobotsComment.getAutobots()!= null) {
+					Autobots remotingAutobots = new Autobots();
+					BeanUtils.copyProperties(sourceAutobotsComment.getAutobots(), remotingAutobots);
+					target.setAutobots(remotingAutobots);
+				}
 				resultList.add(target);
 			}
 		}
