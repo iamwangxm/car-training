@@ -13,7 +13,6 @@ import com.car.training.domain.Autobots;
 import com.car.training.enums.PositionType;
 import com.car.training.service.AutobotsService;
 
-
 @AutoConfig
 public class AutobotsAction extends BaseAction {
 

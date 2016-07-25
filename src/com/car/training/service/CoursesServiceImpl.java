@@ -4,13 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
+import org.ironrhino.common.model.Region;
 import org.ironrhino.core.aop.Timing;
 import org.ironrhino.core.model.ResultPage;
 import org.ironrhino.core.util.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.car.training.domain.Company;
 import com.car.training.domain.Courses;
+import com.car.training.domain.Trainer;
 import com.car.training.utils.ResultPageBeanUtils;
 
 @Component
@@ -116,6 +120,16 @@ public class CoursesServiceImpl  implements CoursesService{
 			for (com.car.training.model.Courses sourceCourses : sourceList) {
 				Courses target = new Courses();
 				BeanUtils.copyProperties(sourceCourses, target);
+				if (sourceCourses != null && sourceCourses.getTrainer() != null) {
+					Trainer remotingTrainer = new Trainer();
+					BeanUtils.copyProperties(sourceCourses.getTrainer(), remotingTrainer);
+					target.setTrainer(remotingTrainer);
+				}
+				if (sourceCourses != null && sourceCourses.getRegion()!= null) {
+					Region remotingRegion = new Region();
+					BeanUtils.copyProperties(sourceCourses.getRegion(), remotingRegion);
+					target.setRegion(remotingRegion);
+				}
 				resultList.add(target);
 			}
 		}

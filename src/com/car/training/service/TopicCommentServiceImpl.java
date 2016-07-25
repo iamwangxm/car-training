@@ -10,6 +10,8 @@ import org.ironrhino.core.util.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.car.training.domain.Topic;
 import com.car.training.domain.TopicComment;
 import com.car.training.utils.ResultPageBeanUtils;
 
@@ -100,6 +102,11 @@ public class TopicCommentServiceImpl  implements TopicCommentService{
 			for (com.car.training.model.TopicComment sourceTopicComment : sourceList) {
 				TopicComment target = new TopicComment();
 				BeanUtils.copyProperties(sourceTopicComment, target);
+				if (sourceTopicComment != null && sourceTopicComment.getTopic() != null) {
+					Topic topic = new Topic();
+					BeanUtils.copyProperties(sourceTopicComment.getTopic(), topic);
+					target.setTopic(topic);
+				}
 				resultList.add(target);
 			}
 		}

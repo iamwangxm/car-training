@@ -9,7 +9,7 @@ public class TrainerEssay implements Serializable {
 
 	private String id;
 	
-	private String	trainer;
+	private Trainer	trainer;
 	
 	private String	title;
 	
@@ -36,11 +36,11 @@ public class TrainerEssay implements Serializable {
 		this.id = id;
 	}
 
-	public String getTrainer() {
+	public Trainer getTrainer() {
 		return trainer;
 	}
 
-	public void setTrainer(String trainer) {
+	public void setTrainer(Trainer trainer) {
 		this.trainer = trainer;
 	}
 

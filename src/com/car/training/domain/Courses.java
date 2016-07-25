@@ -7,7 +7,6 @@ import java.util.Date;
 import org.ironrhino.common.model.Region;
 
 import com.car.training.enums.CourseType;
-import com.car.training.model.Trainer;
 
 public class Courses implements Serializable {
 

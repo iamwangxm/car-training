@@ -10,6 +10,8 @@ import org.ironrhino.core.util.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.car.training.domain.Trainer;
 import com.car.training.domain.TrainerEssay;
 import com.car.training.utils.ResultPageBeanUtils;
 
@@ -117,6 +119,11 @@ public class TrainerEssayServiceImpl  implements TrainerEssayService{
 			for (com.car.training.model.TrainerEssay sourceTrainerEssay : sourceList) {
 				TrainerEssay target = new TrainerEssay();
 				BeanUtils.copyProperties(sourceTrainerEssay, target);
+				if (sourceTrainerEssay != null && sourceTrainerEssay.getTrainer() != null) {
+					Trainer trainer = new Trainer();
+					BeanUtils.copyProperties(sourceTrainerEssay.getTrainer(), trainer);
+					target.setTrainer(trainer);
+				}
 				resultList.add(target);
 			}
 		}
