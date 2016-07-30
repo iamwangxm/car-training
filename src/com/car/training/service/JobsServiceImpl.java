@@ -126,7 +126,7 @@ public class JobsServiceImpl  implements JobsService{
 		List<Jobs> resultList = null;
 		List<com.car.training.model.Jobs> sourceList = jobsManager.findListByIndexType(type, count);
 		if (sourceList != null) {
-			resultList = new ArrayList<>(sourceList.size());
+			resultList = new ArrayList<Jobs>(sourceList.size());
 			for (com.car.training.model.Jobs sourceJobs : sourceList) {
 				Jobs target = new Jobs();
 				BeanUtils.copyProperties(sourceJobs, target);
