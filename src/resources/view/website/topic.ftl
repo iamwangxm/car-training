@@ -25,7 +25,7 @@
         	<div class="zt_l left">
             	<ul>
             	 <#if topicList??>
-	            	 <#list topicList as t>
+	            	 <#list topicList.result as t>
 	            	 	<li>
                     	<div class="zt_pic left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zt.jpg" /></div>
                         <div class="zt_box right">
@@ -51,7 +51,7 @@
 	            	 </#list>
             	 </#if>
                 </ul>
-            	<div class="fypage" ><span>上五页</span><span class="">上一页</span><span>1</span><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">下一页</a><a href="#">下五页</a>  跳转到 <select name="PageSelect" onchange=""><option value="" selected="selected">第01页</option><option value="">第02页</option><option value="">第03页</option><option value="">第04页</option><option value="">第05页</option><option value="">第06页</option><option value="index_7.html">第07页</option>
+            	<div class="fypage" ><span>首页</span><span class="">上一页</span><span>1</span><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">下一页</a><a href="#">尾页</a>  跳转到 <select name="PageSelect" onchange=""><option value="" selected="selected">第01页</option><option value="">第02页</option><option value="">第03页</option><option value="">第04页</option><option value="">第05页</option><option value="">第06页</option><option value="index_7.html">第07页</option>
                 
                
                </select></div>
