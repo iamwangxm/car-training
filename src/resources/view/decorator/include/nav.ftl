@@ -5,7 +5,7 @@
  	<a href="#" class="dropdown-toggle" data-toggle="dropdown">用户中心</a>
 	<ul class="dropdown-menu">
 	  <@authorize ifAnyGranted="ROLE_ADMINISTRATOR">
-	    <li><a href="<@url value="/usercenter"/>" class="ajax view">${action.getText("usercenter")}</a></li>
+	    <li><a href="<@url value="/userCenter"/>" class="ajax view">${action.getText("userCenter")}</a></li>
         <li><a href="<@url value="/trainer"/>" class="ajax view">${action.getText("trainer")}</a></li>
 	  	<li><a href="<@url value="/trainerEssay"/>" class="ajax view">${action.getText("trainerEssay")}</a></li>
 	  	<li><a href="<@url value="/courses"/>" class="ajax view">${action.getText("courses")}</a></li>

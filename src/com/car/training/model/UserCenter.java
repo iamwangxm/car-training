@@ -15,6 +15,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 import org.ironrhino.common.model.Region;
 import org.ironrhino.core.metadata.AutoConfig;
@@ -27,16 +28,16 @@ import org.nustaq.serialization.annotations.Version;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.car.training.enums.Gender;
 import com.car.training.enums.MarryStatus;
 import com.car.training.enums.PersonalType;
-import com.car.training.enums.Gender;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Searchable
 @AutoConfig
 @javax.persistence.Entity
 @Table(name = "user_center", indexes = { @javax.persistence.Index(columnList = "username") })
-public class UserCenter extends BaseEntity implements UserDetails {
+public class UserCenter extends BaseEntity implements UserDetails{
 
 	private static final long serialVersionUID = 4453172705904061090L;
 
@@ -160,7 +161,13 @@ public class UserCenter extends BaseEntity implements UserDetails {
 	/** 版本 */
 	@Version(value = 0)
 	@UiConfig(hidden = true)
-	private int version = -1;
+	private int version = 0;
+	
+	@NotInCopy
+	@JsonIgnore
+	@Transient
+	@UiConfig(hidden = true)
+	private Collection<GrantedAuthority> authorities;
 
 	public String getName() {
 		return name;
@@ -184,6 +191,10 @@ public class UserCenter extends BaseEntity implements UserDetails {
 
 	public void setRegion(Region region) {
 		this.region = region;
+	}
+
+	public String getUsername() {
+		return username;
 	}
 
 	public void setUsername(String username) {
@@ -379,39 +390,31 @@ public class UserCenter extends BaseEntity implements UserDetails {
 		this.version = version;
 	}
 
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		return null;
+	public Collection<GrantedAuthority> getAuthorities() {
+		return authorities;
 	}
 
-	@Override
-	public String getUsername() {
-		// TODO Auto-generated method stub
-		return null;
+	public void setAuthorities(Collection<GrantedAuthority> authorities) {
+		this.authorities = authorities;
 	}
 
 	@Override
 	public boolean isAccountNonExpired() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean isEnabled() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 }
