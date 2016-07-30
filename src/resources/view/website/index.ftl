@@ -257,7 +257,7 @@
                         	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">${t.workExprience!}年工作经验</a></span><span style="background:none;"><a href="#"><#if t.region??></#if>${t.region.fullname!}</a></span>
                         </div>
                         <div class="fb_box">
-                        	<span  style="padding-left:0px;"><a href="#">发布于：${t.publishDate!}</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
+                        	<span  style="padding-left:0px;"><a href="#">发布于：${t.publishDate!?string("yyyy-MM-dd")}</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
                         </div>
                     </div>
                     <div class="pxxq_r right">
@@ -304,7 +304,7 @@
                         <div class="clear"></div>
                         </div>
                        		 <div class="qcrxq_fb_box">
-                        	<span  style="padding-left:0px;"><a href="#">发布于：${t.publishDate!}</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
+                        	<span  style="padding-left:0px;"><a href="#">发布于：${t.publishDate!?string("yyyy-MM-dd")}</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
                         </div>
                     </div>
                        
@@ -358,7 +358,7 @@
             	<#list topicList as t>
                 	<li>
                 	<#if t??>
-                    	<span><a href="#">${t.publishDate!}</a></span><a href="#">${t.title!}</a>
+                    	<span><a href="#">${t.publishDate?string("yyyy-MM-dd")}</a></span><a href="#">${t.title!}</a>
                     	</#if>
                   </li>
 					</#list>
