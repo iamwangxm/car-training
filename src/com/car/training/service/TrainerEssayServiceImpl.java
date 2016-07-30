@@ -98,7 +98,7 @@ public class TrainerEssayServiceImpl  implements TrainerEssayService{
 		List<com.car.training.model.TrainerEssay> sourceList = trainerEssayManager
 				.findListByTrainerEssay(tTrainerEssay);
 		if (sourceList != null) {
-			resultList = new ArrayList<>(sourceList.size());
+			resultList = new ArrayList<TrainerEssay>(sourceList.size());
 			for (com.car.training.model.TrainerEssay sourceTrainerEssay : sourceList) {
 				TrainerEssay target = new TrainerEssay();
 				BeanUtils.copyProperties(sourceTrainerEssay, target);
@@ -115,7 +115,7 @@ public class TrainerEssayServiceImpl  implements TrainerEssayService{
 		List<TrainerEssay> resultList = null;
 		List<com.car.training.model.TrainerEssay> sourceList = trainerEssayManager.findByIndexPromoted(promote, count);
 		if (sourceList != null) {
-			resultList = new ArrayList<>(sourceList.size());
+			resultList = new ArrayList<TrainerEssay>(sourceList.size());
 			for (com.car.training.model.TrainerEssay sourceTrainerEssay : sourceList) {
 				TrainerEssay target = new TrainerEssay();
 				BeanUtils.copyProperties(sourceTrainerEssay, target);

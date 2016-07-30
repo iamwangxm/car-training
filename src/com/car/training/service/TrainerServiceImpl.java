@@ -96,7 +96,7 @@ public class TrainerServiceImpl  implements TrainerService{
 		BeanUtils.copyProperties(trainer, tTrainer);
 		List<com.car.training.model.Trainer> sourceList = trainerManager.findListByTrainer(tTrainer);
 		if (sourceList != null) {
-			resultList = new ArrayList<>(sourceList.size());
+			resultList = new ArrayList<Trainer>(sourceList.size());
 			for (com.car.training.model.Trainer sourceTrainer : sourceList) {
 				Trainer target = new Trainer();
 				BeanUtils.copyProperties(sourceTrainer, target);
@@ -126,7 +126,7 @@ public class TrainerServiceImpl  implements TrainerService{
 		List<Trainer> resultList = null;
 		List<com.car.training.model.Trainer> sourceList = trainerManager.findByIndexPromoted(promote, count);
 		if (sourceList != null) {
-			resultList = new ArrayList<>(sourceList.size());
+			resultList = new ArrayList<Trainer>(sourceList.size());
 			for (com.car.training.model.Trainer sourceTrainer : sourceList) {
 				Trainer target = new Trainer();
 				BeanUtils.copyProperties(sourceTrainer, target);

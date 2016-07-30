@@ -95,7 +95,7 @@ public class TopicServiceImpl  implements TopicService{
 		BeanUtils.copyProperties(topic, tTopic);
 		List<com.car.training.model.Topic> sourceList = topicManager.findListByTopic(tTopic);
 		if (sourceList != null) {
-			resultList = new ArrayList<>(sourceList.size());
+			resultList = new ArrayList<Topic>(sourceList.size());
 			for (com.car.training.model.Topic sourceTopic : sourceList) {
 				Topic target = new Topic();
 				BeanUtils.copyProperties(sourceTopic, target);
@@ -112,7 +112,7 @@ public class TopicServiceImpl  implements TopicService{
 		List<Topic> resultList = null;
 		List<com.car.training.model.Topic> sourceList = topicManager.findListByIndexTopic(count);
 		if (sourceList != null) {
-			resultList = new ArrayList<>(sourceList.size());
+			resultList = new ArrayList<Topic>(sourceList.size());
 			for (com.car.training.model.Topic sourceTopic : sourceList) {
 				Topic target = new Topic();
 				BeanUtils.copyProperties(sourceTopic, target);

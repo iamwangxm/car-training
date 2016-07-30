@@ -96,7 +96,7 @@ public class AutobotsServiceImpl  implements AutobotsService{
 		BeanUtils.copyProperties(autobots, tAutobots);
 		List<com.car.training.model.Autobots> sourceList = autobotsManager.findListByAutobots(tAutobots);
 		if (sourceList != null) {
-			resultList = new ArrayList<>(sourceList.size());
+			resultList = new ArrayList<Autobots>(sourceList.size());
 			for (com.car.training.model.Autobots sourceAutobots : sourceList) {
 				Autobots target = new Autobots();
 				BeanUtils.copyProperties(sourceAutobots, target);
@@ -113,7 +113,7 @@ public class AutobotsServiceImpl  implements AutobotsService{
 		List<Autobots> resultList = null;
 		List<com.car.training.model.Autobots> sourceList = autobotsManager.findByIndexPromoted(promote, count);
 		if (sourceList != null) {
-			resultList = new ArrayList<>(sourceList.size());
+			resultList = new ArrayList<Autobots>(sourceList.size());
 			for (com.car.training.model.Autobots sourceAutobots : sourceList) {
 				Autobots target = new Autobots();
 				BeanUtils.copyProperties(sourceAutobots, target);

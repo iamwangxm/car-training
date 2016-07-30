@@ -98,7 +98,7 @@ public class TopicCommentServiceImpl  implements TopicCommentService{
 		List<com.car.training.model.TopicComment> sourceList = topicCommentManager
 				.findListByTopicComment(tTopicComment);
 		if (sourceList != null) {
-			resultList = new ArrayList<>(sourceList.size());
+			resultList = new ArrayList<TopicComment>(sourceList.size());
 			for (com.car.training.model.TopicComment sourceTopicComment : sourceList) {
 				TopicComment target = new TopicComment();
 				BeanUtils.copyProperties(sourceTopicComment, target);

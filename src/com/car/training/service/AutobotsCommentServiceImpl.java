@@ -100,7 +100,7 @@ public class AutobotsCommentServiceImpl  implements AutobotsCommentService{
 		List<com.car.training.model.AutobotsComment> sourceList = autobotsCommentManager
 				.findListByAutobotsComment(tAutobotsComment);
 		if (sourceList != null) {
-			resultList = new ArrayList<>(sourceList.size());
+			resultList = new ArrayList<AutobotsComment>(sourceList.size());
 			for (com.car.training.model.AutobotsComment sourceAutobotsComment : sourceList) {
 				AutobotsComment target = new AutobotsComment();
 				BeanUtils.copyProperties(sourceAutobotsComment, target);

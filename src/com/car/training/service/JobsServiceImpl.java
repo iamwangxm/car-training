@@ -99,7 +99,7 @@ public class JobsServiceImpl  implements JobsService{
 		BeanUtils.copyProperties(jobs, tJobs);
 		List<com.car.training.model.Jobs> sourceList = jobsManager.findListByJobs(tJobs);
 		if (sourceList != null) {
-			resultList = new ArrayList<>(sourceList.size());
+			resultList = new ArrayList<Jobs>(sourceList.size());
 			for (com.car.training.model.Jobs sourceJobs : sourceList) {
 				Jobs target = new Jobs();
 				BeanUtils.copyProperties(sourceJobs, target);

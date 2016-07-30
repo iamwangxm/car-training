@@ -96,7 +96,7 @@ public class CompanyServiceImpl  implements CompanyService{
 		BeanUtils.copyProperties(company, tCompany);
 		List<com.car.training.model.Company> sourceList = companyManager.findListByCompany(tCompany);
 		if (sourceList != null) {
-			resultList = new ArrayList<>(sourceList.size());
+			resultList = new ArrayList<Company>(sourceList.size());
 			for (com.car.training.model.Company sourceCompany : sourceList) {
 				Company target = new Company();
 				BeanUtils.copyProperties(sourceCompany, target);

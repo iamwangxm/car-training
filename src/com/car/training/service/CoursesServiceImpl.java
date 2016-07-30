@@ -97,7 +97,7 @@ public class CoursesServiceImpl  implements CoursesService{
 		BeanUtils.copyProperties(courses, tCourses);
 		List<com.car.training.model.Courses> sourceList = coursesManager.findListByCourses(tCourses);
 		if (sourceList != null) {
-			resultList = new ArrayList<>(sourceList.size());
+			resultList = new ArrayList<Courses>(sourceList.size());
 			for (com.car.training.model.Courses sourceCourses : sourceList) {
 				Courses target = new Courses();
 				BeanUtils.copyProperties(sourceCourses, target);
@@ -114,7 +114,7 @@ public class CoursesServiceImpl  implements CoursesService{
 		List<Courses> resultList = null;
 		List<com.car.training.model.Courses> sourceList = coursesManager.findByIndexPromoted(promote, count);
 		if (sourceList != null) {
-			resultList = new ArrayList<>(sourceList.size());
+			resultList = new ArrayList<Courses>(sourceList.size());
 			for (com.car.training.model.Courses sourceCourses : sourceList) {
 				Courses target = new Courses();
 				BeanUtils.copyProperties(sourceCourses, target);
