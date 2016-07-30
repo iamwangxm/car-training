@@ -185,7 +185,7 @@
 			                        	<div class="xm2 left">${t.UserCenter.name!}</div>
 			                            <div class="pl2 left">34人<span>评论</span></div>
 			                            <div class="dz2 right">35</div>
-			                            <div class="clear"></div>currentPosition
+			                            <div class="clear"></div>
 			                        </div>
 			                        <div class="pxshi_zp2">${t.currentPosition!} </div>
 			                        <div class="rz2">
@@ -212,7 +212,7 @@
         	<div class="pxsheng">
         	<#if autobotsList??>
             	<ul>
-            	<#list trainerList as t>
+            	<#list autobotsList as t>
                 	<li>
                 	<#if t?? && t.UserCenter??>
                         	<div class="pxsheng_pic"><img src="${t.UserCenter.headLogo!}" /></div>
