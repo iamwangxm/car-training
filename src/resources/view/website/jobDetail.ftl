@@ -298,18 +298,6 @@ $(".www51buycom").slide({ titCell:".num ul" , mainCell:".51buypic" , effect:"fol
 	
 
 <!-- main结束 -->
-<!-- footer开始 -->
-<div class="footer">
-	<div class="content">
-    	
-      <div class="bq">
-       		培聘网 www.peipin.net 专业的汽车培训招聘平台  沪ICP备09083***号<br /> 
-
-Copyright©2000-2016 peipin.net All Rights Reserved
-
-
-        </div>
-    </div>
-</div><!-- footer结束 -->
+<#include "/assets/website/common/footer.html">
 </body>
 </html>

@@ -188,8 +188,6 @@
         
 </div>
     
-	
-
 <!-- main结束 -->
 <#include "/assets/website/common/footer.html">
 </body>
