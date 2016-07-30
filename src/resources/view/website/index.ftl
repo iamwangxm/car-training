@@ -357,7 +357,7 @@
             	<ul>
             	<#list topicList as t>
                 	<li>
-                	<#if t?? && t.company??>
+                	<#if t??>
                     	<span><a href="#">${t.publishDate!}</a></span><a href="#">${t.title!}</a>
                     	</#if>
                   </li>
@@ -367,7 +367,7 @@
                 </div>
             </div>
             <div class="gkk right">
-            	<h4><span><a href="#">更多>></a></span>热点议题</h4>
+            	<h4><span><a href="#">更多>></a></span>公开课</h4>
                 <div class="gkk_box">
                 	<#if coursesList??>
             	<ul>
