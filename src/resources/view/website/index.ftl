@@ -75,7 +75,9 @@
   <tr>
     <td><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/yzm_bg.jpg) no-repeat left top; height:30px;  width:92px; border:none; padding-left:3px; " type="text" name="user_login" data-nick="login_user" value="" class="text input-xlarge" placeholder="验证码" validate-title="验证码" /></td>
     <td></td>
-    <td> <input type="image" name="btn_yzm" id="btn_yzm" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/btn_yzm.jpg" /></td>
+    <td> <input type="image" name="btn_yzm" id="btn_yzm" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/btn_yzm.jpg" />
+
+    </td>
   </tr>
 </table>
 </div>
