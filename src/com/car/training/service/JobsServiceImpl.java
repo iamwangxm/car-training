@@ -133,6 +133,11 @@ public class JobsServiceImpl  implements JobsService{
 				if (sourceJobs != null && sourceJobs.getCompany() != null) {
 					Company remotingCompany = new Company();
 					BeanUtils.copyProperties(sourceJobs.getCompany(), remotingCompany);
+					int bandmanCount = 0;
+					if (StringUtils.isNotBlank(remotingCompany.getBondsman())) {
+						bandmanCount = remotingCompany.getBondsman().split(",").length;
+						remotingCompany.setBondsmanCount(bandmanCount);
+					}
 					target.setCompany(remotingCompany);
 				}
 				if (sourceJobs != null && sourceJobs.getRegion()!= null) {

@@ -104,7 +104,7 @@
             	<div class="pxxq">
             	<#if jobsCompanyList??>
             	<ul>
-            		<#list jobsCompanyList as t>
+            		<#list jobsStoreList.result as t>
             		<#if t?? && t.company??>
                 	<li> 
                 	<div class="pxxq_l left">
@@ -172,12 +172,8 @@
         </div>
     </div>
         
-        
-        
-        
 </div>
     
-	
 
 <!-- main结束 -->
 <#include "/assets/website/common/footer.html">

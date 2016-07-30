@@ -264,7 +264,7 @@
                    	  <div class="qy">
                         	<div class="qy_l left"><img src="${t.company.logo!}" /></div>
                           <div class="qy_r right">
-                            	<div class="qy_name"><span><a href="#">已有${t.company.bondsman}人担保</a></span><a href="#">${t.company.name!}</a></div>
+                            	<div class="qy_name"><span><a href="#">已有${t.company.bandmanCount}人担保</a></span><a href="#">${t.company.name!}</a></div>
                                 <div class="jyfw"><a href="#">${t.company.industry!}</a></div>
                           </div>
                             <div class="clear"></div>
@@ -312,7 +312,7 @@
                    	  <div class="qcrxq_qy">
                         	<div class="qcrxq_qy_l left"><img src="${t.company.logo!}" /></div>
                           <div class="qcrxq_qy_r right">
-                            	<div class="qcrxq_qy_name"><span><a href="#">已有${t.company.bondsman}人担保</a></span><a href="#">${t.company.name!}</a></div>
+                            	<div class="qcrxq_qy_name"><span><a href="#">已有${t.company.bandmanCount}人担保</a></span><a href="#">${t.company.name!}</a></div>
                                 <div class="qcrxq_jyfw"><a href="#">${t.company.industry!}</a></div>
                           </div>
                             <div class="clear"></div>

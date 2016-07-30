@@ -53,6 +53,8 @@ public class Company implements Serializable {
 	
 	/**担保人**/
 	private String bondsman;
+	/**担保人数**/
+	private int bondsmanCount;
 	
 	/** 财富值 */
 	private BigDecimal wealth;
@@ -184,6 +186,14 @@ public class Company implements Serializable {
 
 	public void setBondsman(String bondsman) {
 		this.bondsman = bondsman;
+	}
+
+	public int getBondsmanCount() {
+		return bondsmanCount;
+	}
+
+	public void setBondsmanCount(int bondsmanCount) {
+		this.bondsmanCount = bondsmanCount;
 	}
 
 	public BigDecimal getWealth() {

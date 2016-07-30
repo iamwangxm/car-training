@@ -120,7 +120,7 @@
             	<div class="pxxq">
             	<#if jobsCompanyList??>
             	<ul>
-            		<#list jobsCompanyList as t>
+            		<#list jobsCompanyList.result as t>
             		<#if t?? && t.company??>
                 	<li>
                 	<div class="qz"></div> <div class="pxxq_l left">
