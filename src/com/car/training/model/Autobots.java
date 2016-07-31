@@ -1,6 +1,8 @@
 package com.car.training.model;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.ConstraintMode;
@@ -38,6 +40,12 @@ public class Autobots extends BaseEntity {
 	@Column(length = 50, nullable = true)
 	private String currentPosition;
 	
+	/** 当前汽车品牌 **/
+	private String autoBrand;
+	
+	/** 擅长领域 **/
+	private Set<String> businessCategory = new HashSet<String>(0);
+	
 	/**岗位类型**/
 	@Enumerated(EnumType.STRING)
 	@Column(length=20, nullable = false)
@@ -55,6 +63,18 @@ public class Autobots extends BaseEntity {
 
 	/** 是否认证 **/
 	private boolean authFaithed = false;
+	
+	/** 培训经历 **/
+	@Column(length=1000)
+	private String trainingHistroy;
+	
+	/** 工作经历 **/
+	@Column(length=1000)
+	private String workingHistroy;
+	
+	/** 所获认证 **/
+	@Column(length=1000)
+	private String authHistroy;
 
 	/** 工作照片1 **/
 	@UiConfig(cssClass = "imagepick", viewTemplate = "<#if value?has_content><a href=\"<@url value=value/>\" target=\"_blank\"><img src=\"<@url value=value/>\" style=\"height:50px;\"/></a></#if>")
@@ -115,6 +135,22 @@ public class Autobots extends BaseEntity {
 		this.positionType = positionType;
 	}
 
+	public String getAutoBrand() {
+		return autoBrand;
+	}
+
+	public void setAutoBrand(String autoBrand) {
+		this.autoBrand = autoBrand;
+	}
+
+	public Set<String> getBusinessCategory() {
+		return businessCategory;
+	}
+
+	public void setBusinessCategory(Set<String> businessCategory) {
+		this.businessCategory = businessCategory;
+	}
+
 	public void setCurrentPosition(String currentPosition) {
 		this.currentPosition = currentPosition;
 	}
@@ -149,6 +185,30 @@ public class Autobots extends BaseEntity {
 
 	public void setAuthFaithed(boolean authFaithed) {
 		this.authFaithed = authFaithed;
+	}
+
+	public String getTrainingHistroy() {
+		return trainingHistroy;
+	}
+
+	public void setTrainingHistroy(String trainingHistroy) {
+		this.trainingHistroy = trainingHistroy;
+	}
+
+	public String getWorkingHistroy() {
+		return workingHistroy;
+	}
+
+	public void setWorkingHistroy(String workingHistroy) {
+		this.workingHistroy = workingHistroy;
+	}
+
+	public String getAuthHistroy() {
+		return authHistroy;
+	}
+
+	public void setAuthHistroy(String authHistroy) {
+		this.authHistroy = authHistroy;
 	}
 
 	public String getWorkPhotoURL1() {

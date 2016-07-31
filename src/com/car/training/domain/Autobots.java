@@ -2,6 +2,8 @@ package com.car.training.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import com.car.training.enums.PositionType;
 
@@ -21,6 +23,12 @@ public class Autobots implements Serializable{
 	/**岗位类型**/
 	private PositionType positionType;  
 	
+	/** 当前汽车品牌 **/
+	private String autoBrand;
+	
+	/** 擅长领域 **/
+	private Set<String> businessCategory = new HashSet<String>(0);
+	
 	/**关注培训师**/
 	private String attentionTrainer;
 	
@@ -32,6 +40,15 @@ public class Autobots implements Serializable{
 	
 	/**是否认证**/
 	private boolean authFaithed;
+	
+	/** 培训经历 **/
+	private String trainingHistroy;
+	
+	/** 工作经历 **/
+	private String workingHistroy;
+	
+	/** 所获认证 **/
+	private String authHistroy;
 	
 	/**工作照片1**/
 	private String workPhotoURL1;
@@ -86,6 +103,22 @@ public class Autobots implements Serializable{
 		this.positionType = positionType;
 	}
 
+	public String getAutoBrand() {
+		return autoBrand;
+	}
+
+	public void setAutoBrand(String autoBrand) {
+		this.autoBrand = autoBrand;
+	}
+
+	public Set<String> getBusinessCategory() {
+		return businessCategory;
+	}
+
+	public void setBusinessCategory(Set<String> businessCategory) {
+		this.businessCategory = businessCategory;
+	}
+
 	public Integer getAutoYears() {
 		return autoYears;
 	}
@@ -100,6 +133,30 @@ public class Autobots implements Serializable{
 
 	public void setAuthFaithed(boolean authFaithed) {
 		this.authFaithed = authFaithed;
+	}
+
+	public String getTrainingHistroy() {
+		return trainingHistroy;
+	}
+
+	public void setTrainingHistroy(String trainingHistroy) {
+		this.trainingHistroy = trainingHistroy;
+	}
+
+	public String getWorkingHistroy() {
+		return workingHistroy;
+	}
+
+	public void setWorkingHistroy(String workingHistroy) {
+		this.workingHistroy = workingHistroy;
+	}
+
+	public String getAuthHistroy() {
+		return authHistroy;
+	}
+
+	public void setAuthHistroy(String authHistroy) {
+		this.authHistroy = authHistroy;
 	}
 
 	public String getWorkPhotoURL1() {
