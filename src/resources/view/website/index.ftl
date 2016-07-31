@@ -149,11 +149,11 @@
         	<h4><span><a href="#">更多>></a></span>推荐培训师</h4>
         	<div class="pxshi">
             	<div class="pxshi_l left">
-                		 <#if trainer?? && trainer.UserCenter??>
-                	<div class="pxshi_l_pic"><img src="${t.UserCenter.headLogo!}" /></div>
+                		 <#if trainer?? && trainer.userCenter??>
+                	<div class="pxshi_l_pic"><img src="${trainer.userCenter.headLogo!}" /></div>
                     <div class="pxshi_l_intro">
                     	<div class="pxshi_name">
-                        	<div class="xm left">${trainer.UserCenter.name!}</div>
+                        	<div class="xm left">${trainer.userCenter.name!}</div>
                             <div class="pl left">34人<span>评论</span></div>
                             <div class="dz right">35</div>
                             <div class="clear"></div>
@@ -178,11 +178,11 @@
                 	<ul>
 							<#list trainerList as t>
                     	<li>
-                    		<#if t?? && t.UserCenter??>
-	                        	<div class="pxshi_pic2"><img src="${t.UserCenter.headLogo!}" /></div>
+                    		<#if t?? && t.userCenter??>
+	                        	<div class="pxshi_pic2"><img src="${t.userCenter.headLogo!}" /></div>
 			                    <div class="pxshi_intro2">
 			                    	<div class="pxshi_name2">
-			                        	<div class="xm2 left">${t.UserCenter.name!}</div>
+			                        	<div class="xm2 left">${t.userCenter.name!}</div>
 			                            <div class="pl2 left">34人<span>评论</span></div>
 			                            <div class="dz2 right">35</div>
 			                            <div class="clear"></div>
@@ -214,11 +214,11 @@
             	<ul>
             	<#list autobotsList as t>
                 	<li>
-                	<#if t?? && t.UserCenter??>
-                        	<div class="pxsheng_pic"><img src="${t.UserCenter.headLogo!}" /></div>
+                	<#if t?? && t.userCenter??>
+                        	<div class="pxsheng_pic"><img src="${t.userCenter.headLogo!}" /></div>
                     <div class="pxsheng_intro">
                     	<div class="pxsheng_name">
-                        	<div class="pxsheng_xm left">${t.UserCenter.name!}</div>
+                        	<div class="pxsheng_xm left">${t.userCenter.name!}</div>
                           <div class="pxsheng_pl right">34人<span>评论</span></div>
                             
                             <div class="clear"></div>

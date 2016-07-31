@@ -35,7 +35,7 @@ public class Trainer extends BaseEntity {
 	/** 用户编号外键UserCenter **/
 	@JoinColumn(name = "uid", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
 	@ManyToOne(optional = true, fetch = FetchType.EAGER)
-	private UserCenter UserCenter;
+	private UserCenter userCenter;
 	
 	/**星级*/
 	private int starLevel;
@@ -97,11 +97,11 @@ public class Trainer extends BaseEntity {
 	
 
 	public UserCenter getUserCenter() {
-		return UserCenter;
+		return userCenter;
 	}
 
 	public void setUserCenter(UserCenter userCenter) {
-		UserCenter = userCenter;
+		this.userCenter = userCenter;
 	}
 
 	public int getStarLevel() {
