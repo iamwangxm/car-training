@@ -25,6 +25,9 @@ public class AutobotDetailAction extends BaseAction {
 	private Autobots autobots;
 	
 	private List<Trainer> listTrainer;
+	
+	/** 朋友圈汽车人列表 */
+	private List<Autobots> autobotsList;
 
 	@Override
 	public String execute() throws Exception {
@@ -44,6 +47,8 @@ public class AutobotDetailAction extends BaseAction {
 			}
 			autobots.setAttentionTrainerList(listTrainer);
 		}
+		//朋友圈
+		autobotsList = autobotsService.findByIndexPromoted(true,6);
 		return SUCCESS;
 	}
 
@@ -61,6 +66,14 @@ public class AutobotDetailAction extends BaseAction {
 
 	public void setListTrainer(List<Trainer> listTrainer) {
 		this.listTrainer = listTrainer;
+	}
+
+	public List<Autobots> getAutobotsList() {
+		return autobotsList;
+	}
+
+	public void setAutobotsList(List<Autobots> autobotsList) {
+		this.autobotsList = autobotsList;
 	}
 
 }
