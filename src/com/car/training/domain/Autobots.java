@@ -3,6 +3,7 @@ package com.car.training.domain;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import com.car.training.enums.PositionType;
@@ -31,6 +32,8 @@ public class Autobots implements Serializable{
 	
 	/**关注培训师**/
 	private String attentionTrainer;
+	
+	private List<Trainer> attentionTrainerList;
 	
 	/**公司发起的橄榄枝**/
 	private String olives;
@@ -221,6 +224,14 @@ public class Autobots implements Serializable{
 
 	public void setAttentionTrainer(String attentionTrainer) {
 		this.attentionTrainer = attentionTrainer;
+	}
+
+	public List<Trainer> getAttentionTrainerList() {
+		return attentionTrainerList;
+	}
+
+	public void setAttentionTrainerList(List<Trainer> attentionTrainerList) {
+		this.attentionTrainerList = attentionTrainerList;
 	}
 
 	public String getOlives() {
