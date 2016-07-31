@@ -23,6 +23,9 @@ public class Courses implements Serializable {
 	/**发布日期**/
 	private Date publishDate;
 	
+	/**上课时间**/
+	private String schoolTime;
+	
 	/**价格**/
 	private BigDecimal price;
 	
@@ -90,6 +93,14 @@ public class Courses implements Serializable {
 
 	public void setPublishDate(Date publishDate) {
 		this.publishDate = publishDate;
+	}
+
+	public String getSchoolTime() {
+		return schoolTime;
+	}
+
+	public void setSchoolTime(String schoolTime) {
+		this.schoolTime = schoolTime;
 	}
 
 	public BigDecimal getPrice() {

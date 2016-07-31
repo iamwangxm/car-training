@@ -2,6 +2,7 @@ package com.car.training.model;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.ConstraintMode;
@@ -40,10 +41,14 @@ public class Courses extends BaseEntity {
 	/**课程类型**/
 	@Enumerated(EnumType.STRING)
 	@Column(length = 200, nullable = true)
-	private CourseType courseType;  
+	private List<CourseType> courseType;  
 	
 	/**发布日期**/
 	private Date publishDate = new Date();
+	
+	/**上课时间**/
+	@Column(length = 50, nullable = true)
+	private String schoolTime;
 	
 	/**价格**/
 	@UiConfig(hiddenInList = @Hidden(true) )
@@ -112,12 +117,21 @@ public class Courses extends BaseEntity {
 		this.courseName = courseName;
 	}
 
-	public CourseType getCourseType() {
+
+	public List<CourseType> getCourseType() {
 		return courseType;
 	}
 
-	public void setCourseType(CourseType courseType) {
+	public void setCourseType(List<CourseType> courseType) {
 		this.courseType = courseType;
+	}
+
+	public String getSchoolTime() {
+		return schoolTime;
+	}
+
+	public void setSchoolTime(String schoolTime) {
+		this.schoolTime = schoolTime;
 	}
 
 	public Date getPublishDate() {

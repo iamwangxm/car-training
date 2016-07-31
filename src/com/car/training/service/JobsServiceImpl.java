@@ -64,6 +64,11 @@ public class JobsServiceImpl  implements JobsService{
 		}
 		Jobs target = new Jobs();
 		BeanUtils.copyProperties(source, target);
+		if (source != null && source.getCompany() != null) {
+			Company remotingCompany = new Company();
+			BeanUtils.copyProperties(source.getCompany(), remotingCompany);
+			target.setCompany(remotingCompany);
+		}
 		return target;
 	}
 	
