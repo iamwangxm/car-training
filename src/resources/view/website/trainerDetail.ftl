@@ -104,13 +104,13 @@
             	<h4><span><a href="#">更多>></a></span>培训课程</h4>
                 </div>
                 <div class="pxshi_kc_box">
+                	<#if coursesList??>
                 	<ul>
-                    	<li><span><a href="#">2016-07-02</a></span><a href="#">全面薪酬体系设计“6+1”实操训练营</a></li>
-                        <li><span><a href="#">2016-07-02</a></span><a href="#">全面薪酬体系设计“6+1” </a></li>
-                        <li><span><a href="#">2016-07-02</a></span><a href="#">如何有效的提取绩效管理指标 </a></li>
-                        <li><span><a href="#">2016-07-02</a></span><a href="#">基于平衡计分卡的绩效管理体系（2天</a></li>
-                        <li><span><a href="#">2016-07-02</a></span><a href="#">基于KPI的绩效管理体系（2天）</a></li>
+                		<#list coursesList as c>
+                        <li><span><a href="#">${c.publishDate!}</a></span><a href="#">${c.courseName!}（${c.longTime!}天）</a></li>
+                        </#list>
                     </ul>
+                    </#if>
                 </div>
             </div>
             <div class="pxshi_sp">
