@@ -45,15 +45,16 @@
 
 
 <div class="content">
+<#if trainer?? && trainer.userCenter??>
 	<div class="ny_pxshi">
     	<div class="ny_pxshi_l left">
         	<div class="pxshi_xx">
             	<div class="zhaopian left">
-                	<img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi2.jpg" />
+                	<img src="${trainer.userCenter.headLogo!}" />
                 </div>
                 <div class="xinxi right">
                 	<div class="mingzi">
-                    	<div class="mingzi_l left">王平怡</div>
+                    	<div class="mingzi_l left">${trainer.userCneter.name!}</div>
                         <div class="mingzi_m left"><span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
@@ -67,7 +68,7 @@
                         </div>
                         <div class="clear"></div>
                     </div>
-                    <div class="ziping">传统企业互联网转型总教头</div>
+                    <div class="ziping">${trainer.currentPosition!}</div>
                     <div class="scxs2">
                     <em>擅长形式：</em><span>市场营销</span><span>产品</span><span style=" background:none;">非技术</span>
                     </div>
@@ -76,14 +77,14 @@
                     <div class="clear"></div>
                     </div>
                     <div class="shijian">
-                  		<div class="shijian_l left"><em>汽车行业时间（不含培训）：</em>7年</div>
+                  		<div class="shijian_l left"><em>汽车行业时间（不含培训）：</em>${trainer.autoYears!}年</div>
                         <div class="shijian_r  right"><em>常住地：</em>上海——嘉定</div>
                         <div class="clear"></div>
 
                     </div>
                     <div class="shijian">
-                  		<div class="shijian_l left"><em>汽车培训时间：</em>5年</div>
-                        <div class="shijian_r  right"><em>学 历：</em>本科</div>
+                  		<div class="shijian_l left"><em>汽车培训时间：</em>${trainer.trainingYears!}年</div>
+                        <div class="shijian_r  right"><em>学 历：</em>${trainer.education!}</div>
                         <div class="clear"></div>
 
                     </div>
@@ -95,13 +96,7 @@
             	<h4><span><a href="#">更多>></a></span>培训师简介</h4>
                 </div>
             	<div class="pxshi_jj_box">
-               　　中国政治学者、作家。
-　　复旦大学特聘教授、中国发展模式研究中心主任，瑞士日内瓦外交与国际关系学院访问教授，春秋研究院高级研究员，上海社科院世界中国学研究所所长，日内瓦大学亚洲研究中心高级研究员。<Br /><Br />
-　　复旦大学外文系毕业，日内瓦大学国际关系硕士、博士，曾为英国牛津大学访问学者，现为复旦大学中国发展模式研究中心主任、春秋研究院高级研究员、上海社科院世界中国学研究所所长 、瑞士日内瓦外交与国际关系学院客座教授 、日内瓦亚洲研究中心资深研究员。上世纪80年代中期曾担任及其他中国领导人的英文翻译，走访过100多个国家。<Br /><Br />
-　　曾任美国韦伯斯特大学日内瓦校区国际关系教授，现为日内瓦外交与国际关系学院教授，日内瓦大学亚洲研究中心高级研究员，《人民网》、《观察者网》专栏作家、专家，复旦大学特聘教授、中国发展模式研究中心主任，春秋研究院高级研究员。<Br /><Br />
-<Br />
-　　著作<Br />
-　　张维为著有《时代的意识形态与经济改革》(Ideol 
+				               　　${trainer.userCenter.intro!}
                 </div>
             </div>
             <div class="pxshi_kc">
@@ -165,36 +160,31 @@
         	<div class="pxshi_lx">
             	<h4>联系方式</h4>
                 <div class="lx_box">
-                	<div class="xingming">王欣平(培训师本人)</div>
-                    电话：13825262436<br />
-QQ：1371226000<br />
-邮箱：1371226000@qq.com<br />
-微信：13825262436<br />
-费用：25000元/天(参考价格)<br />
-<div class="xingming">屈文明(讲师助理)</div>
-                   电话：13530398488
-<br />
-QQ：910283168<br />
+                	<div class="xingming">${trainer.userCenter.name!}(培训师本人)</div>
+                   电话：${course.trainer.userCenter.mobile!}<br />
+QQ：${trainer.userCenter.QQ!}<br />
+邮箱：${trainer.userCenter.email!}<br />
+微信：${trainer.userCenter.weixin!}<br />
                 </div>
             </div>
             <div class="pxshi_pj">
             	<h4>学员评价</h4>
                 <div class="pj_box">
+                	<#if trainer.autobotsCommentList??>
                 	<ul>
-                    	<li><a href="#">新员工入职培训的内容和方案</a></li>
-                        <li><a href="#">企业机制和管理层能力</a></li>
-                        <li><a href="#">轻资产战略——中小银行快速成长之路</a></li>
-                        <li><a href="#">好广告的两种表现形式</a></li>
-                        <li><a href="#">新员工入职培训的内容和方案</a></li>
-                        <li><a href="#">企业机制和管理层能力</a></li>
-                        <li><a href="#">轻资产战略——中小银行快速成长之路</a></li>
-                        <li><a href="#">好广告的两种表现形式</a></li>
+                		<#list trainer.autobotsCommentList as t>
+                		<#if t?? && t.content>
+                    	<li><a href="#"><#if  t.content?length lt 19>${t.content!}<#else>${t.content?substring(18)!}...</#if></a></li>
+                    	</#if>
+                        </#list>
                     </ul>
+                </#if> 
                 </div>
             </div>
         </div>
         <div class="clear"></div>
     </div>
+    </#if>
 </div>
     
 	
