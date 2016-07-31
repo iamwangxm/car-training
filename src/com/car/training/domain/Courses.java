@@ -3,10 +3,9 @@ package com.car.training.domain;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Set;
 
 import org.ironrhino.common.model.Region;
-
-import com.car.training.enums.CourseType;
 
 public class Courses implements Serializable {
 
@@ -18,10 +17,13 @@ public class Courses implements Serializable {
 	private String courseName; 
 	
 	/**课程类型**/
-	private CourseType courseType;  
+	private Set<String> courseType;  
 	
 	/**发布日期**/
 	private Date publishDate;
+	
+	/**上课时间**/
+	private String schoolTime;
 	
 	/**价格**/
 	private BigDecimal price;
@@ -75,12 +77,12 @@ public class Courses implements Serializable {
 	public void setCourseName(String courseName) {
 		this.courseName = courseName;
 	}
-
-	public CourseType getCourseType() {
+	
+	public Set<String> getCourseType() {
 		return courseType;
 	}
 
-	public void setCourseType(CourseType courseType) {
+	public void setCourseType(Set<String> courseType) {
 		this.courseType = courseType;
 	}
 
@@ -90,6 +92,14 @@ public class Courses implements Serializable {
 
 	public void setPublishDate(Date publishDate) {
 		this.publishDate = publishDate;
+	}
+
+	public String getSchoolTime() {
+		return schoolTime;
+	}
+
+	public void setSchoolTime(String schoolTime) {
+		this.schoolTime = schoolTime;
 	}
 
 	public BigDecimal getPrice() {
