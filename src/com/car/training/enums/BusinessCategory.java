@@ -4,8 +4,8 @@ import org.ironrhino.core.model.Displayable;
 
 public enum BusinessCategory implements Displayable {
 	
-	//产品,销售,售后,非技术,售后技术,二手车,水平业务,业务竞赛,经销商,托管业务
-	PRODUCT, SELL,AFTERSELLNOSKILL,AFTERSELLSKILL,SECONDCAR,HORIZONTALBUSINESS,COMPETITIONBUSINESS,AGENCY,TRUSTEEBUSINESS;
+	//产品,销售,售后,非技术,技术,管理,财务,市场营销,客户关系,人事,生产,领导力,新能源
+	PRODUCT, SELL,NOSKILL,SKILL,MANAGEMENT,FINANCE,MARKET,CUSTOMERRELATION,HUMANRESOURCE,PRODUCE,LEADERSHIP,NEWENERGY;
 
 	@Override
 	public String getName() {
