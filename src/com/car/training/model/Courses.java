@@ -2,12 +2,11 @@ package com.car.training.model;
 
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.ConstraintMode;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
@@ -23,7 +22,6 @@ import org.ironrhino.core.model.BaseEntity;
 import org.ironrhino.core.search.elasticsearch.annotations.Searchable;
 import org.nustaq.serialization.annotations.Version;
 
-import com.car.training.enums.CourseType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Searchable
@@ -39,9 +37,7 @@ public class Courses extends BaseEntity {
 	private String courseName; 
 	
 	/**课程类型**/
-	@Enumerated(EnumType.STRING)
-	@Column(length = 200, nullable = true)
-	private List<CourseType> courseType;  
+	private Set<String> courseType = new HashSet<String>(0);  
 	
 	/**发布日期**/
 	private Date publishDate = new Date();
@@ -117,12 +113,11 @@ public class Courses extends BaseEntity {
 		this.courseName = courseName;
 	}
 
-
-	public List<CourseType> getCourseType() {
+	public Set<String> getCourseType() {
 		return courseType;
 	}
 
-	public void setCourseType(List<CourseType> courseType) {
+	public void setCourseType(Set<String> courseType) {
 		this.courseType = courseType;
 	}
 

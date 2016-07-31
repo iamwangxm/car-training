@@ -14,7 +14,6 @@
 	<meta name="keyword" content=""/>
     <meta name="Description" content=""/>
     </#if>
-
     <link href="<@url value="/assets/website/css/jquery.jslides.css?v=1.1.0"/>" type="text/css" rel="stylesheet"  media="screen"/>
     <link href="<@url value="/assets/website/css/pxshi.css?v=1.1.0"/>" type="text/css" rel="stylesheet" />
 	<link href="<@url value="/assets/website/css/style.css?v=1.1.0"/>" type="text/css" rel="stylesheet"  media="screen" />	
@@ -26,20 +25,6 @@
 <#noescape>${head}</#noescape>
 </head>
 <body>
-<#if action.hasActionMessages() || action.hasActionErrors()>
-<@s.actionerror />
-<@s.actionmessage />
-</#if>
-<#noescape>${body}</#noescape>
-<script>
-	var _hmt = _hmt || [];
-	(function() {
-	  var hm = document.createElement("script");
-	  var code = '${request.serverName?ends_with('.com')?string('64a5b5c6a1df2d5e2d7adb4b11bd330d','f343ca0459e308819950f55102a4c353')}';
-	  hm.src = "//hm.baidu.com/hm.js?"+code;
-	  var s = document.getElementsByTagName("script")[0]; 
-	  s.parentNode.insertBefore(hm, s);
-	})();
-</script>
+
 </body>
 </html></#escape></#compress>
