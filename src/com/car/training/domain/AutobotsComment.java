@@ -30,6 +30,8 @@ public class AutobotsComment implements Serializable{
 	
 	private Autobots autobots;
 	
+	private Trainer trainer;
+	
 	public String getId() {
 		return id;
 	}
@@ -92,6 +94,14 @@ public class AutobotsComment implements Serializable{
 
 	public void setAutobots(Autobots autobots) {
 		this.autobots = autobots;
+	}
+
+	public Trainer getTrainer() {
+		return trainer;
+	}
+
+	public void setTrainer(Trainer trainer) {
+		this.trainer = trainer;
 	}
 	
 }

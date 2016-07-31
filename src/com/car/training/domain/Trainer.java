@@ -3,6 +3,7 @@ package com.car.training.domain;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 import com.car.training.enums.Education;
@@ -64,6 +65,15 @@ public class Trainer implements Serializable {
 	
 	/**是否推荐**/
 	private boolean promoted;
+	
+	/**学员评论列表 */
+	private List<AutobotsComment> autobotsCommentList;
+	
+	/**学员评论列表 */
+	private List<TrainerEssay> trainerEssayList;
+	
+	/**培训公开课列表 */
+	private List<Courses> coursesList;
 
 	public String getId() {
 		return id;
@@ -207,5 +217,29 @@ public class Trainer implements Serializable {
 
 	public void setPromoted(boolean promoted) {
 		this.promoted = promoted;
+	}
+
+	public List<AutobotsComment> getAutobotsCommentList() {
+		return autobotsCommentList;
+	}
+
+	public void setAutobotsCommentList(List<AutobotsComment> autobotsCommentList) {
+		this.autobotsCommentList = autobotsCommentList;
+	}
+
+	public List<TrainerEssay> getTrainerEssayList() {
+		return trainerEssayList;
+	}
+
+	public void setTrainerEssayList(List<TrainerEssay> trainerEssayList) {
+		this.trainerEssayList = trainerEssayList;
+	}
+
+	public List<Courses> getCoursesList() {
+		return coursesList;
+	}
+
+	public void setCoursesList(List<Courses> coursesList) {
+		this.coursesList = coursesList;
 	}
 }

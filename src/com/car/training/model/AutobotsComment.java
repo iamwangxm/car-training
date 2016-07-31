@@ -54,6 +54,11 @@ public class AutobotsComment extends BaseEntity{
 	@JoinColumn(name = "autobotsId", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
 	@ManyToOne(optional = true, fetch = FetchType.LAZY)
 	private Autobots autobots;
+	
+	/** 评论培训师 **/
+	@JoinColumn(name = "trainerId", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
+	@ManyToOne(optional = true, fetch = FetchType.LAZY)
+	private Trainer trainer;
 
 	public Integer getContentDesignScore() {
 		return contentDesignScore;
@@ -109,6 +114,14 @@ public class AutobotsComment extends BaseEntity{
 
 	public void setAutobots(Autobots autobots) {
 		this.autobots = autobots;
+	}
+
+	public Trainer getTrainer() {
+		return trainer;
+	}
+
+	public void setTrainer(Trainer trainer) {
+		this.trainer = trainer;
 	}
 	
 	
