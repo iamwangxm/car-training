@@ -92,11 +92,11 @@
 	    						  	<#if b = key>
 	    						  		<#if t_index = 0>
     						   		<li style="border:2px solid #ff7d00; padding:0px;">
-    						   		<#if t.UserCenter??>
-    						   			<div class="pxshi_pic"><a href="#"><img src="${t.UserCenter.headLogo!}" /></a></div>
+    						   		<#if t.userCenter??>
+    						   			<div class="pxshi_pic"><a href="#"><img src="${t.userCenter.headLogo!}" /></a></div>
     						   			<div class="pxshi_intro">
 					                    	<div class="pxshi_name">
-					                        	<div class="pxshi_xm left"><a href="#">${t.UserCenter.name!}</a></div>
+					                        	<div class="pxshi_xm left"><a href="#">${t.userCenter.name!}</a></div>
 					                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
 					                            
 					                            <div class="clear"></div>
@@ -118,11 +118,11 @@
     						   			<#break>
     						   		</#if>
     						   		<li>
-    						   			<#if t.UserCenter??>
-    						   			<div class="pxshi_pic"><a href="#"><img src="${t.UserCenter.headLogo!}" /></a></div>
+    						   			<#if t.userCenter??>
+    						   			<div class="pxshi_pic"><a href="#"><img src="${t.userCenter.headLogo!}" /></a></div>
     						   			<div class="pxshi_intro">
 					                    	<div class="pxshi_name">
-					                        	<div class="pxshi_xm left"><a href="#">${t.UserCenter.name!}</a></div>
+					                        	<div class="pxshi_xm left"><a href="#">${t.userCenter.name!}</a></div>
 					                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
 					                            
 					                            <div class="clear"></div>

@@ -115,7 +115,7 @@
         						<#else>
         							<li>
         						</#if>
-	        							<div class="gkk_pic"><a href="#"><#if t.trainer?? && t.trainer.UserCenter??><img src="${t.trainer.UserCenter.headLogo}" /></#if></a></div>
+	        							<div class="gkk_pic"><a href="#"><#if t.trainer?? && t.trainer.userCenter??><img src="${t.trainer.userCenter.headLogo}" /></#if></a></div>
 	        							<div class="gkk_intro">
 					                    	<div class="gkk_name">
 					                        	<div class="gkk_xm "><a href="#">${t.courseName!}</a></div>
