@@ -40,6 +40,10 @@ public class Autobots extends BaseEntity {
 	@Column(length = 50, nullable = true)
 	private String currentPosition;
 	
+	/**当前工作状态**/
+	@Column(length = 50, nullable = true)
+	private String currentWorkStatus;
+	
 	/** 当前汽车品牌 **/
 	private String autoBrand;
 	
@@ -153,6 +157,14 @@ public class Autobots extends BaseEntity {
 
 	public void setCurrentPosition(String currentPosition) {
 		this.currentPosition = currentPosition;
+	}
+
+	public String getCurrentWorkStatus() {
+		return currentWorkStatus;
+	}
+
+	public void setCurrentWorkStatus(String currentWorkStatus) {
+		this.currentWorkStatus = currentWorkStatus;
 	}
 
 	public String getAttentionTrainer() {

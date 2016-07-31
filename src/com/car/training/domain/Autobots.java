@@ -21,6 +21,9 @@ public class Autobots implements Serializable{
 	/**当前职位**/
 	private String currentPosition;  
 	
+	/**当前工作状态**/
+	private String currentWorkStatus;
+	
 	/**岗位类型**/
 	private PositionType positionType;  
 	
@@ -96,6 +99,14 @@ public class Autobots implements Serializable{
 
 	public void setCurrentPosition(String currentPosition) {
 		this.currentPosition = currentPosition;
+	}
+
+	public String getCurrentWorkStatus() {
+		return currentWorkStatus;
+	}
+
+	public void setCurrentWorkStatus(String currentWorkStatus) {
+		this.currentWorkStatus = currentWorkStatus;
 	}
 
 	public PositionType getPositionType() {
