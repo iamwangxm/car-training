@@ -119,8 +119,8 @@
                 </div>
                 <div class="pxshi_sp_box">
                 	<ul>
-                    	<li><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/sp1.jpg" /></li>
-                        <li><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/sp2.jpg" /></li>
+                    	<li><a href="${trainer.vedioURL1!}">${trainer.vedioURL1!}</a></li>
+                        <li><a href="${trainer.vedioURL2!}">${trainer.vedioURL2!}</a></li>
                     </ul>
                 </div>
           </div>
