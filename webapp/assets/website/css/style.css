@@ -27,15 +27,15 @@ a img {border: none;}
 .nav li.cn a,.nav li.cn a:hover{ display:block;width:95px; font-weight:700;height:50px;color:#ffffff;background:#3689b3;}
 
 .dl_top{ width:120px; padding-left:185px;}
-.dl_top li{ display:block; float:left; width:60px; text-align:center; background:url(../images/line.jpg) no-repeat left center; height:50px; line-height:50px; color:#a0a0a0; font-size:12px;}
+.dl_top li{ display:block; float:left; owidth:60px; text-align:center; background:url(../images/line.jpg) no-repeat left center; height:50px; line-height:50px; color:#a0a0a0; font-size:12px;}
 .dl_top li a{color:#a0a0a0;}
 .dl_top li a:hover{ color:#fff;}
 
 /*banner*/
-.banner{height:335px;}
+.banner{height:310px; padding-top:25px; background:url(../images/banner0.jpg) no-repeat center top; }
 
 
-.dl_box{  margin-left:900px;  margin-top:25px; width:260px; height:285px; padding:10px 20px 0px 20px; background:#383633;filter:alpha(opacity=80);   
+.dl_box{  margin-left:900px;width:260px; height:285px; padding:10px 20px 0px 20px; background:#383633;filter:alpha(opacity=80);   
       -moz-opacity:0.8;   
       -khtml-opacity: 0.8;   
       opacity: 0.8; color:#fff;   }
@@ -57,7 +57,17 @@ a img {border: none;}
 .wjpwd{height:20px; line-height:20px; text-align:right; padding-bottom:4px;  color:#fff;  }
 .wjpwd a,.wjpwd a:hover{ color:#fff;}
 .dl{ height:37px; line-height:37px;  padding-bottom:4px;  border-bottom:1px dotted #ccc;}
-
+.phonecode {
+    display: inline-block;
+    background: #ccc;
+    color: #fff;
+    width:120px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+   
+    vertical-align: middle;
+}
 
 /*main*/
 .main{ padding:20px 0px; width:100%; }
