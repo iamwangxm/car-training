@@ -8,22 +8,19 @@
 <!-- 头部开始 -->	
 <#include "/assets/website/common/header.html">
 <!-- 头部结束 -->	
-<!-- banner开始 -->	
+	<!-- banner开始 -->	
 <div class="banner">
-	<div id="content">
-	<ul id="slides">
-		<li style="background:url('http://7xtuyf.com1.z0.glb.clouddn.com/website/images/banner0.jpg') no-repeat center top">
-        <div class="content">
+	<div class="content">
         	<div class="dl_box">
             	<div class="dl_leibie">会员登录</div>
                 <div class="name">
                	  <div class="name_l left">账号：</div>
-                  <div class="name_r right"><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px;   width:196px; border:none; padding-left:4px; " type="text" name="user_login" data-nick="login_user" value="" class="text input-xlarge" placeholder="邮箱/手机号" validate-title="邮箱/手机号" /></div>
+                  <div class="name_r right"><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px; line-height:30px;   width:196px; border:none; padding-left:4px; " type="text" name="user_login" data-nick="login_user" value="" class="text input-xlarge" placeholder="邮箱/手机号" validate-title="邮箱/手机号" /></div>
                     <div class="clear"></div>
               </div>
                 <div class="pwd">
                	  <div class="pwd_l left">密码：</div>
-                  <div class="pwd_r right"><input  style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px; width:196px; border:none; padding-left:4px; " type="password" name="user_pwd" data-nick="login_pwd" value="" class="text input-xlarge"  placeholder="密码" validate-title="密码" /></div>
+                  <div class="pwd_r right"><input  style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px;line-height:30px; width:196px; border:none; padding-left:4px; " type="password" name="user_pwd" data-nick="login_pwd" value="" class="text input-xlarge"  placeholder="密码" validate-title="密码" /></div>
                     <div class="clear"></div>
               </div>
                 
@@ -31,13 +28,13 @@
                 <div class="yanzheng_l left">验证码：</div>
               
                   <div class="yanzheng_r right"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/yzm_bg.jpg) no-repeat left top; height:30px;  width:92px; border:none; padding-left:3px; " type="text" name="user_login" data-nick="login_user" value="" class="text input-xlarge" placeholder="验证码" validate-title="验证码" /></td>
-    <td></td>
-    <td> <input type="image" name="btn_yzm" id="btn_yzm" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/btn_yzm.jpg" /></td>
-  </tr>
-</table>
-</div>
+				  <tr>
+				    <td><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/yzm_bg.jpg) no-repeat left top; height:30px;line-height:30px;  width:92px; border:none; padding-left:3px; " type="text" name="user_login" data-nick="login_user" value="" class="text input-xlarge" placeholder="验证码" validate-title="验证码" /></td>
+				    <td></td>
+				    <td> <input type="image" name="btn_yzm" id="btn_yzm" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/btn_yzm.jpg" /></td>
+				  </tr>
+				</table>
+				</div>
                     <div class="clear"></div>
                 </div>
                 <div class="leibie"> 
@@ -52,95 +49,8 @@
            		<div class="wjpwd"><a href="#">忘记密码？</a></div>
             </div>
         </div>
-        </li>		
-		<li style="background:url('http://7xtuyf.com1.z0.glb.clouddn.com/website/images/banner1.jpg') no-repeat center top">
-        <div class="content">
-        	<div class="dl_box">
-            	<div class="dl_leibie">会员登录</div>
-                <div class="name">
-               	  <div class="name_l left">账号：</div>
-                  <div class="name_r right"><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px;   width:196px; border:none; padding-left:4px; " type="text" name="user_login" data-nick="login_user" value="" class="text input-xlarge" placeholder="邮箱/手机号" validate-title="邮箱/手机号" /></div>
-                    <div class="clear"></div>
-              </div>
-                <div class="pwd">
-               	  <div class="pwd_l left">密码：</div>
-                  <div class="pwd_r right"><input  style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px; width:196px; border:none; padding-left:4px; " type="password" name="user_pwd" data-nick="login_pwd" value="" class="text input-xlarge"  placeholder="密码" validate-title="密码" /></div>
-                    <div class="clear"></div>
-              </div>
-                
-                <div class="yanzheng">
-                <div class="yanzheng_l left">验证码：</div>
-              
-                  <div class="yanzheng_r right"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/yzm_bg.jpg) no-repeat left top; height:30px;  width:92px; border:none; padding-left:3px; " type="text" name="user_login" data-nick="login_user" value="" class="text input-xlarge" placeholder="验证码" validate-title="验证码" /></td>
-    <td></td>
-    <td> <input type="image" name="btn_yzm" id="btn_yzm" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/btn_yzm.jpg" />
-
-    </td>
-  </tr>
-</table>
 </div>
-                    <div class="clear"></div>
-                </div>
-                <div class="leibie"> 
-                	<div class="lb_l left"><input name="secret_e_shield" type="radio"  autocomplete="on" value="0" checked="checked" data-selector="company-toggle"/>培训企业</div>
-                    <div class="lb_m left"><input data-selector="company-toggle" type="radio" name="secret_e_shield" value="0"  autocomplete="off"/>培训师</div>
-                  <div class="lb_r left"><input data-selector="company-toggle" type="radio" name="secret_e_shield" value="0"  autocomplete="off"/>汽车人</div>
-                    <div class="clear"></div>
-            
-</div>
-				
-                <div class="dl"><input style="border:none;" type="image" name="dl" id="dl" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dl_bg.jpg" /></div>
-           		<div class="wjpwd"><a href="#">忘记密码？</a></div>
-            </div>
-        </div>
-        </li>
-        <li style="background:url('http://7xtuyf.com1.z0.glb.clouddn.com/website/images/banner2.jpg') no-repeat center top">
-        <div class="content">
-        	<div class="dl_box">
-            	<div class="dl_leibie">会员登录</div>
-                <div class="name">
-               	  <div class="name_l left">账号：</div>
-                  <div class="name_r right"><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px;   width:196px; border:none; padding-left:4px; " type="text" name="user_login" value="" placeholder="邮箱/手机号" validate-title="邮箱/手机号" /></div>
-                    <div class="clear"></div>
-              </div>
-                <div class="pwd">
-               	  <div class="pwd_l left">密码：</div>
-                  <div class="pwd_r right"><input  style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px; width:196px; border:none; padding-left:4px; " type="password" name="user_pwd"  placeholder="密码" validate-title="密码" /></div>
-                    <div class="clear"></div>
-              </div>
-                
-                <div class="yanzheng">
-                <div class="yanzheng_l left">验证码：</div>
-              
-                  <div class="yanzheng_r right"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/yzm_bg.jpg) no-repeat left top; height:30px;  width:92px; border:none; padding-left:3px; " type="text" name="user_login"  placeholder="验证码" validate-title="验证码" /></td>
-    <td></td>
-    <td> <input type="image" name="btn_yzm" id="btn_yzm" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/btn_yzm.jpg" /></td>
-  </tr>
-</table>
-</div>
-                    <div class="clear"></div>
-                </div>
-                <div class="leibie"> 
-                	<div class="lb_l left"><input name="secret_e_shield" type="radio"  autocomplete="on" value="0" checked="checked" data-selector="company-toggle"/>培训企业</div>
-                    <div class="lb_m left"><input data-selector="company-toggle" type="radio" name="secret_e_shield" value="0"  autocomplete="off"/>培训师</div>
-                  <div class="lb_r left"><input data-selector="company-toggle" type="radio" name="secret_e_shield" value="0"  autocomplete="off"/>汽车人</div>
-                    <div class="clear"></div>
-            
-</div>
-				
-                <div class="dl"><input style="border:none;" type="image" name="dl" id="dl" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dl_bg.jpg" /></div>
-           		<div class="wjpwd"><a href="#">忘记密码？</a></div>
-            </div>
-        </div>
-        </li>
-	</ul>
-</div>
-</div>
-<!-- banner结束 -->
+	<!-- banner结束 -->
 <!-- main开始 -->
 
 <div class="main">

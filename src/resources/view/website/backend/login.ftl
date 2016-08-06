@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <title>汽车培聘网</title>
-<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/login_style.css" type="text/css" media="screen" />
 
 
 </head>
@@ -13,7 +13,7 @@
 <!-- 头部开始 -->	
 <div class="top">
 	<div class="content">
-    	<div class="logo left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/logo.jpg" /></div>
+    	<div class="logo left"><img src="images/logo.jpg" /></div>
         <div class="nav_box left">
         	<div class="nav">
             	<ul>
@@ -46,9 +46,8 @@
     	<div class="links">
 		<div class="linksTop">
 			<ul id="tags1">
-				<li class="cn" onclick="selectTag('item_con_0',this)">我是培训师</li>
-				<li onclick="selectTag('item_con_1',this)">我是汽车人</li>
-				<li onclick="selectTag('item_con_2',this)">我是企业单位</li>
+				<li class="cn" onclick="selectTag('item_con_0',this)">个人登陆</li>
+				<li onclick="selectTag('item_con_1',this)">企业登陆</li>
 			</ul>
 		</div>
 		<div class="linksmain" id="item_con">
@@ -56,7 +55,7 @@
 				<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
                 
                 <tr>
-                  <td width="106" height="60" align="right" valign="middle"><font color="#ff0000">*</font>邮箱 / 手机：</td>
+                  <td width="106" height="60" align="right" valign="middle"><font color="#ff0000">*</font> 手机：</td>
                   <td colspan="2"><input style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:280px;" type="text" name="textfield8" id="textfield8" /></td>
                   <td width="282"><font color="#999999">请输入您的账号</font></td>
                 </tr>
@@ -66,14 +65,9 @@
                   <td><font color="#999999">6~16个字符，包含字母，数字，特殊符号</font></td>
                 </tr>
                 
+                
                 <tr>
-                  <td height="60" align="right" valign="middle"><font color="#ff0000">*</font>验证码：</td>
-                  <td width="100"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" type="text" name="captch" id="captchacode" /></td>
-                  <td width="72"><img src="/website/captch/captimg?token=149823767236" /></td>
-                  <td><font color="#999999">请输入左边图片上的文字</font></td>
-                </tr>
-                <tr>
-                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/denglu.jpg" /></td>
+                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="images/denglu.jpg" /></td>
                 </tr>
               </table>
 			</div>
@@ -81,7 +75,7 @@
 				<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
                 
                 <tr>
-                  <td width="106" height="60" align="right" valign="middle"><font color="#ff0000">*</font>邮箱 / 手机：</td>
+                  <td width="106" height="60" align="right" valign="middle"><font color="#ff0000">*</font>邮箱：</td>
                   <td colspan="2"><input style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:280px;" type="text" name="textfield8" id="textfield8" /></td>
                   <td width="282"><font color="#999999">请输入您的账号</font></td>
                 </tr>
@@ -91,42 +85,13 @@
                   <td><font color="#999999">6~16个字符，包含字母，数字，特殊符号</font></td>
                 </tr>
                 
+                
                 <tr>
-                  <td height="60" align="right" valign="middle"><font color="#ff0000">*</font>验证码：</td>
-                  <td width="100"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" type="text" name="textfield3" id="textfield3" /></td>
-                  <td width="72"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/yzm.jpg" /></td>
-                  <td><font color="#999999">请输入左边图片上的文字</font></td>
-                </tr>
-                <tr>
-                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/denglu.jpg" /></td>
+                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="images/denglu.jpg" /></td>
                 </tr>
               </table>
 			</div>
-			<div id="item_con_2" style="display:none">
-				<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-                
-                <tr>
-                  <td width="106" height="60" align="right" valign="middle"><font color="#ff0000">*</font>邮箱 / 手机：</td>
-                  <td colspan="2"><input style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:280px;" type="text" name="textfield8" id="textfield8" /></td>
-                  <td width="282"><font color="#999999">请输入您的账号</font></td>
-                </tr>
-                <tr>
-                  <td height="60" align="right" valign="middle"><font color="#ff0000">*</font>密码：</td>
-                  <td colspan="2"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:280px;" type="password" name="textfield" id="textfield" /></td>
-                  <td><font color="#999999">6~16个字符，包含字母，数字，特殊符号</font></td>
-                </tr>
-                
-                <tr>
-                  <td height="60" align="right" valign="middle"><font color="#ff0000">*</font>验证码：</td>
-                  <td width="100"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" type="text" name="textfield3" id="textfield3" /></td>
-                  <td width="72"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/yzm.jpg" /></td>
-                  <td><font color="#999999">请输入左边图片上的文字</font></td>
-                </tr>
-                <tr>
-                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/denglu.jpg" /></td>
-                </tr>
-              </table>
-			</div>
+			
 		</div>
 	</div>
     </div>
@@ -148,51 +113,7 @@ Copyright©2000-2016 peipin.net All Rights Reserved
     </div>
 </div>
 <!-- footer结束 -->
-<script>
-	
-	//图片验证码
-	$(function(){
-		$('div.captcha_box input:button').bind('click', sendmessage);
-	});
-	$('img.captcha').bind('click', refreshcode);
-	
-	$('div.button').bind('click', register);
-    function register(){
-    	var curr_form = $('div.button').siblings('form');
-          var inputs = curr_form.find('input');
-          inputs.blur();
-          if(!inputs.hasClass('on')){
-			$('div.button').unbind('click');
-			//$('#submit_btn').css('background-color', '#d7d7d7');
-			$.ajax({
-				 type: "POST",
-			     url: "/website/backend/login",
-			     data: $("#form_register").serialize(),
-			     error: function(request) {
-		             alert("网络错误！");
-		             $('div.button').bind('click', register);
-		         },
-			     success: function (data) {
-			     	 if(data.code == 400){
-			     	 	showErrMsg(data.msg);
-			     	 	$('div.button').bind('click', register);
-			     	 }else if(data.code == 200){
-			     	 	showErrMsg(data.msg);
-			     	 	if(data.target == "" || data.target == null){
-			     	 		setTimeout(function(){
-			     	 			window.location.href = "/website/backend/login";
-			     	 		},2000);
-						 }else{
-			     	 		setTimeout(function(){
-			     	 			window.location.href = data.target;
-			     	 		},2000);
-						 }
-			     	 	$('div.button').bind('click', register);
-			    	 }
-			     }
-			});
-		}
-	}
-</script>
+
+<script type="text/javascript" src="js/common.js"></script>
 </body>
 </html>
