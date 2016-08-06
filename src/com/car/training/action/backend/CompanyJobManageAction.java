@@ -14,7 +14,7 @@ import com.car.training.enums.BusinessCategory;
 import com.car.training.service.TrainerService;
 
 @AutoConfig
-public class TrainerAction extends BaseAction {
+public class CompanyJobManageAction extends BaseAction {
 
 	private static final long serialVersionUID = 4839883380537115435L;
 
