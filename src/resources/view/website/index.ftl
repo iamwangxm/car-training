@@ -8,7 +8,7 @@
 <!-- 头部开始 -->	
 <#include "/assets/website/common/header.html">
 <!-- 头部结束 -->	
-	<!-- banner开始 -->	
+<!-- banner开始 -->	
 <div class="banner">
 	<div class="content">
         	<div class="dl_box">
@@ -43,7 +43,7 @@
                   <div class="lb_r left"><input data-selector="company-toggle" type="radio" name="secret_e_shield" value="0"  autocomplete="off"/>汽车人</div>
                     <div class="clear"></div>
             
-</div>
+				</div>
 				
                 <div class="dl"><input style="border:none;" type="image" name="dl" id="dl" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dl_bg.jpg" /></div>
            		<div class="wjpwd"><a href="#">忘记密码？</a></div>
@@ -72,7 +72,6 @@
                         <div class="pxshi_rz">
                         	<ul>
                             	<li><a href='#'><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></li>
-                                
                                 <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></li>
                                 <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></li>
                                 <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></li>

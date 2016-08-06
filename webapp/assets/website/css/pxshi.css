@@ -27,7 +27,7 @@ a img {border: none;}
 .nav li.cn a,.nav li.cn a:hover{ display:block;width:95px; font-weight:700;height:50px;color:#ffffff;background:#3689b3;}
 
 .dl_top{ width:120px; padding-left:185px;}
-.dl_top li{ display:block; float:left; width:60px; text-align:center; background:url(../images/line.jpg) no-repeat left center; height:50px; line-height:50px; color:#a0a0a0; font-size:12px;}
+.dl_top li{ display:block; float:left; width:60px; text-align:center; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/line.jpg) no-repeat left center; height:50px; line-height:50px; color:#a0a0a0; font-size:12px;}
 .dl_top li a{color:#a0a0a0;}
 .dl_top li a:hover{ color:#fff;}
 
@@ -66,31 +66,31 @@ a img {border: none;}
 .sousuo_box{ border:1px solid #e3e3e3; background:#f9fbfb; padding:20px; height:100%; margin-bottom:25px;}
 /*培训领域*/
 .pxly{ font-size:12px; height:30px; line-height:30px; margin-bottom:5px;}
-.pxly h4{ display:block;font-size:12px; float:left; font-weight:100; width:65px; text-align:left; background:url(../images/pxly.jpg) no-repeat left 2px; padding-left:30px; color:#3689b3;  }
+.pxly h4{ display:block;font-size:12px; float:left; font-weight:100; width:65px; text-align:left; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxly.jpg) no-repeat left 2px; padding-left:30px; color:#3689b3;  }
 .pxly_box{ width:1030px;float:right;}
 .pxly_box li{ display:block; float:left; padding-right:40px;}
 
 
 /*擅长形式*/
 .scxs{font-size:12px; height:30px; line-height:30px; margin-bottom:5px;}
-.scxs h4{ display:block; float:left;font-size:12px;font-weight:100; width:65px; text-align:left; background:url(../images/scxs.jpg) no-repeat left 2px; padding-left:30px; color:#3689b3;  }
+.scxs h4{ display:block; float:left;font-size:12px;font-weight:100; width:65px; text-align:left; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/scxs.jpg) no-repeat left 2px; padding-left:30px; color:#3689b3;  }
 .scxs_box{ width:1030px;float:right;}
 .scxs_box li{ display:block; float:left; padding-right:40px;}
 
 /*职位地址*/
 .zwdz{font-size:12px; height:30px; line-height:30px; margin-bottom:5px;}
-.zwdz h4{ display:block; float:left;font-size:12px; font-weight:100; width:65px; text-align:left; background:url(../images/zwdz.jpg) no-repeat left 2px; padding-left:30px; color:#3689b3;  }
+.zwdz h4{ display:block; float:left;font-size:12px; font-weight:100; width:65px; text-align:left; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zwdz.jpg) no-repeat left 2px; padding-left:30px; color:#3689b3;  }
 .zwdz_box{ width:1030px;float:right;}
 .zwdz_box li{ display:block; float:left; padding-right:40px;}
 
 /*培训形式*/
 .pxxs{font-size:12px; height:30px; line-height:30px; margin-bottom:5px;}
-.pxxs h4{ display:block; float:left;font-size:12px; font-weight:100; width:65px; text-align:left; background:url(../images/pxxs.jpg) no-repeat left 4px; padding-left:30px; color:#3689b3;  }
+.pxxs h4{ display:block; float:left;font-size:12px; font-weight:100; width:65px; text-align:left; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxxs.jpg) no-repeat left 4px; padding-left:30px; color:#3689b3;  }
 .pxxs_box{ width:1030px;float:right;}
 .pxxs_box li{ display:block; float:left; padding-right:40px;}
 /*工作性质*/
 .gzxz{font-size:12px; height:30px; line-height:30px; margin-bottom:5px;}
-.gzxz h4{ display:block; float:left;font-size:12px; font-weight:100; width:65px; text-align:left; background:url(../images/gzxz.jpg) no-repeat left 2px; padding-left:30px; color:#3689b3;  }
+.gzxz h4{ display:block; float:left;font-size:12px; font-weight:100; width:65px; text-align:left; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/gzxz.jpg) no-repeat left 2px; padding-left:30px; color:#3689b3;  }
 .gzxz_box{ width:1030px;float:right;}
 .gzxz_box li{ display:block; float:left; padding-right:40px;}
 
@@ -102,38 +102,38 @@ a img {border: none;}
 
 /*培训时间*/
 .pxsj{ font-size:12px; height:30px; line-height:30px; margin-bottom:5px;}
-.pxsj h4{ display:block; float:left;font-size:12px; font-weight:100; width:65px; text-align:left; background:url(../images/pxsj.jpg) no-repeat left 3px; padding-left:30px; color:#3689b3;  }
+.pxsj h4{ display:block; float:left;font-size:12px; font-weight:100; width:65px; text-align:left; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxsj.jpg) no-repeat left 3px; padding-left:30px; color:#3689b3;  }
 .pxsj_box{ width:1030px;float:right;}
 .pxsj_box li{ display:block; float:left; padding-right:40px;}
 
 /*销售*/
 .xiaoshou_box{ height:340px; padding-bottom:15px;margin-bottom:30px; border-bottom:1px #ccc dotted;}
-.xiaoshou_box h4{ display:block;font-weight:100; height:40px; border-bottom:2px solid #ff7d00; background:url(../images/xs_h4.jpg) no-repeat left center; line-height:40px; font-size:18px; color:#ff7d00;font-weight:700; padding-left:40px;  }
+.xiaoshou_box h4{ display:block;font-weight:100; height:40px; border-bottom:2px solid #ff7d00; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xs_h4.jpg) no-repeat left center; line-height:40px; font-size:18px; color:#ff7d00;font-weight:700; padding-left:40px;  }
 .xiaoshou_box h4 span{ display:block; float:right; color:#ff7d00; font-size:14px; font-weight:100;}
 .xiaoshou_box h4 span a,.xiaoshou_box h4 span a:hover{color:#ff7d00;}
 
 
 /*产品*/
 .chanpin_box{ height:340px; padding-bottom:15px;margin-bottom:30px; border-bottom:1px #ccc dotted;}
-.chanpin_box h4{ display:block;font-weight:100; height:40px; border-bottom:2px solid #ff7d00; background:url(../images/cp_h4.jpg) no-repeat left center; line-height:40px; font-size:18px; color:#ff7d00;font-weight:700; padding-left:40px;  }
+.chanpin_box h4{ display:block;font-weight:100; height:40px; border-bottom:2px solid #ff7d00; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/cp_h4.jpg) no-repeat left center; line-height:40px; font-size:18px; color:#ff7d00;font-weight:700; padding-left:40px;  }
 .chanpin_box h4 span{ display:block; float:right; color:#ff7d00; font-size:14px; font-weight:100;}
 .chanpin_box h4 span a,.chanpin_box h4 span a:hover{color:#ff7d00;}
 
 /*非技术*/
 .fjs_box{ height:340px; padding-bottom:15px;margin-bottom:30px; border-bottom:1px #ccc dotted;}
-.fjs_box h4{ display:block;font-weight:100; height:40px; border-bottom:2px solid #ff7d00; background:url(../images/fjs_h4.jpg) no-repeat left center; line-height:40px; font-size:18px; color:#ff7d00;font-weight:700; padding-left:40px;  }
+.fjs_box h4{ display:block;font-weight:100; height:40px; border-bottom:2px solid #ff7d00; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/fjs_h4.jpg) no-repeat left center; line-height:40px; font-size:18px; color:#ff7d00;font-weight:700; padding-left:40px;  }
 .fjs_box h4 span{ display:block; float:right; color:#ff7d00; font-size:14px; font-weight:100;}
 .fjs_box h4 span a,.fjs_box h4 span a:hover{color:#ff7d00;}
 
 /*技术*/
 .js_box{ height:340px; padding-bottom:15px;margin-bottom:30px; border-bottom:1px #ccc dotted;}
-.js_box h4{ display:block;font-weight:100; height:40px; border-bottom:2px solid #ff7d00; background:url(../images/js_h4.jpg) no-repeat left center; line-height:40px; font-size:18px; color:#ff7d00;font-weight:700; padding-left:40px;  }
+.js_box h4{ display:block;font-weight:100; height:40px; border-bottom:2px solid #ff7d00; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/js_h4.jpg) no-repeat left center; line-height:40px; font-size:18px; color:#ff7d00;font-weight:700; padding-left:40px;  }
 .js_box h4 span{ display:block; float:right; color:#ff7d00; font-size:14px; font-weight:100;}
 .js_box h4 span a,.js_box h4 span a:hover{color:#ff7d00;}
 
 /*管理*/
 .gl_box{ height:340px; padding-bottom:15px;margin-bottom:30px; border-bottom:1px #ccc dotted;}
-.gl_box h4{ display:block;font-weight:100; height:40px; border-bottom:2px solid #ff7d00; background:url(../images/gl_h4.jpg) no-repeat left center; line-height:40px; font-size:18px; color:#ff7d00;font-weight:700; padding-left:40px;  }
+.gl_box h4{ display:block;font-weight:100; height:40px; border-bottom:2px solid #ff7d00; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/gl_h4.jpg) no-repeat left center; line-height:40px; font-size:18px; color:#ff7d00;font-weight:700; padding-left:40px;  }
 .gl_box h4 span{ display:block; float:right; color:#ff7d00; font-size:14px; font-weight:100;}
 .gl_box h4 span a,.gl_box h4 span a:hover{color:#ff7d00;}
 
@@ -141,7 +141,7 @@ a img {border: none;}
 
 /*财务*/
 .cw_box{ height:340px; padding-bottom:15px;margin-bottom:30px; border-bottom:1px #ccc dotted;}
-.cw_box h4{ display:block;font-weight:100; height:40px; border-bottom:2px solid #ff7d00; background:url(../images/cw_h4.jpg) no-repeat left center; line-height:40px; font-size:18px; color:#ff7d00;font-weight:700; padding-left:40px;  }
+.cw_box h4{ display:block;font-weight:100; height:40px; border-bottom:2px solid #ff7d00; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/cw_h4.jpg) no-repeat left center; line-height:40px; font-size:18px; color:#ff7d00;font-weight:700; padding-left:40px;  }
 .cw_box h4 span{ display:block; float:right; color:#ff7d00; font-size:14px; font-weight:100;}
 .cw_box h4 span a,.cw_box h4 span a:hover{color:#ff7d00;}
 
@@ -195,12 +195,12 @@ a img {border: none;}
 .pxxq_l{ width:383px;padding:10px 15px 0x 15px; border-right:1px dotted #e5e5e5;height: 105px;}
 .zw_name{ font-size:16px; line-height:24px; height:24px; color:#ff7d00; font-weight:700; margin-bottom:8px;}
 .dy_box{ height:24px; line-height:24px;margin-bottom:8px; color:#666666;}
-.dy_box span{ display:block; float:left; padding:0px 10px; background:url(../images/line2.jpg) no-repeat right center;color:#666666;}
+.dy_box span{ display:block; float:left; padding:0px 10px; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/line2.jpg) no-repeat right center;color:#666666;}
 .dy_box span a{color:#666666;}
 .dy_box span.cn a,.dy_box span.cn a:hover{color:#ff7d00;}
 .fb_box{ height:24px; line-height:24px; font-size:12px; color:#9c9c9c; }
 .fb_box a,.fb_box a:hover{color:#9c9c9c;}
-.fb_box span{ display:block; float:left; padding:0px 10px; background:url(../images/line2.jpg) no-repeat right center;}
+.fb_box span{ display:block; float:left; padding:0px 10px; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/line2.jpg) no-repeat right center;}
 
 
 .pxxq_r{ width:475px;padding:10px 0px 0x 15px; }
@@ -221,7 +221,7 @@ a img {border: none;}
 	position: absolute;
 	left: 878px;
 	top: -1px;
-	background: url(../images/qz.gif) no-repeat right top;
+	background: url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qz.gif) no-repeat right top;
 	height: 43px;
 	width: 41px;
 } 
@@ -229,7 +229,7 @@ a img {border: none;}
 	position: absolute;
 	left: 878px;
 	top: -1px;
-	background: url(../images/jz.gif) no-repeat right top;
+	background: url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/jz.gif) no-repeat right top;
 	height: 43px;
 	width: 41px;
 } 
@@ -251,7 +251,7 @@ a img {border: none;}
 
 /*培训公司招聘信息——右侧   企业基本信息*/
 .zwfb_qy{ margin-bottom:30px;}
-.zwfb_qy h4{ display:block; height:40px; line-height:40px; background:url(../images/qy_h4.jpg) no-repeat left center; padding-left:50px; font-size:18px; color:#3689b3; font-weight:100; border-bottom:1px solid #e1e1e1; margin-bottom:20px;}
+.zwfb_qy h4{ display:block; height:40px; line-height:40px; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_h4.jpg) no-repeat left center; padding-left:50px; font-size:18px; color:#3689b3; font-weight:100; border-bottom:1px solid #e1e1e1; margin-bottom:20px;}
 .qy_box{ margin-bottom:10px;}
 .qylogo_l{width:100px; height:50px; border:1px solid #f0f0f0; padding:2px;}
 .qylogo_r{ width:130px; padding:5px 0px;}
@@ -266,7 +266,7 @@ a img {border: none;}
 
 /*培训公司招聘信息——右侧   担保人列表*/
 .dbr{ }
-.dbr h4{ display:block; height:40px; line-height:40px; background:url(../images/dbr_h4.jpg) no-repeat left center; padding-left:40px; font-size:18px; color:#3689b3; font-weight:100; border-bottom:1px solid #e1e1e1; margin-bottom:20px;}
+.dbr h4{ display:block; height:40px; line-height:40px; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr_h4.jpg) no-repeat left center; padding-left:40px; font-size:18px; color:#3689b3; font-weight:100; border-bottom:1px solid #e1e1e1; margin-bottom:20px;}
 .dbr_box{}
 .dbr_box li{ display:block; height:70px; margin-bottom:15px;}
 .dbr_l img{ border:1px solid #ccc;}
@@ -276,7 +276,7 @@ a img {border: none;}
 .dbr_gs a,.dbr_gs a:hover{color:#3d9ccc;}
 
 /*培训公司招聘信息——左侧   职位名称及企业名称*/
-.zp_qy{ height:88px; background:url(../images/zp_qy.jpg) no-repeat left top; padding:40px 30px 20px 25px;}
+.zp_qy{ height:88px; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zp_qy.jpg) no-repeat left top; padding:40px 30px 20px 25px;}
 .zwmc{ height:45px; line-height:45px; color:#fff; font-size:24px; font-weight:100; }
 .zwmc span{ display:block; float:right;font-size:16px; font-weight:100;}
 .qymc{ height:35px; line-height:35px; color:#fff; font-size:16px; font-weight:100; }
@@ -290,29 +290,29 @@ a img {border: none;}
 .zwdy span{display:block; float:right;}
 .shoucang{height:30px; line-height:30px; color:#3d9ccc; text-align:right;font-size:14px; font-weight:100;}
 
-.didian{ background:url(../images/zb.jpg) no-repeat 15px center; height:30px; line-height:30px; font-size:14px; padding:0px 25px 0px 35px;}
-.fb_sj{ background:url(../images/sz.jpg) no-repeat left center; height:30px; line-height:30px; font-size:14px; padding:0px 25px 0px 20px;}
+.didian{ background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zb.jpg) no-repeat 15px center; height:30px; line-height:30px; font-size:14px; padding:0px 25px 0px 35px;}
+.fb_sj{ background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/sz.jpg) no-repeat left center; height:30px; line-height:30px; font-size:14px; padding:0px 25px 0px 20px;}
 
 .zwyq{ }
-.zwyq li{ display:block; float:left;height:30px; line-height:30px; font-size:14px; background:url(../images/line2.jpg) no-repeat right center; padding:0px 15px; text-align:center;}
+.zwyq li{ display:block; float:left;height:30px; line-height:30px; font-size:14px; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/line2.jpg) no-repeat right center; padding:0px 15px; text-align:center;}
 .fldy{ padding-top:15px;}
 .fldy li{ display:block; float:left;height:24px; line-height:24px; color:#3689b3; font-size:12px; border:1px solid #e1f2fa; background:#eef9ff; padding:0px 15px; text-align:center; margin:0px 10px 15px 0px;}
 
 /*培训公司招聘信息——左侧   职位描述*/
 .zwms{ border-bottom:1px  dotted #cccccc; padding-bottom:40px; margin-bottom:25px;}
-.zwms h4{ display:block; height:40px; line-height:40px; background:url(../images/zwms_h4.jpg) no-repeat left 5px; padding-left:45px; font-size:18px; color:#3689b3; font-weight:100;}
+.zwms h4{ display:block; height:40px; line-height:40px; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zwms_h4.jpg) no-repeat left 5px; padding-left:45px; font-size:18px; color:#3689b3; font-weight:100;}
 .zwms_box{ padding:10px; line-height:30px; font-size:12px;}
 
 
 /*培训公司招聘信息——左侧   所需经验*/
 .sxjy{ border-bottom:1px  dotted #cccccc; padding-bottom:40px; margin-bottom:25px;}
-.sxjy h4{ display:block; height:40px; line-height:40px; background:url(../images/sxjy_h4.jpg) no-repeat left 5px; padding-left:45px; font-size:18px; color:#3689b3; font-weight:100;}
+.sxjy h4{ display:block; height:40px; line-height:40px; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/sxjy_h4.jpg) no-repeat left 5px; padding-left:45px; font-size:18px; color:#3689b3; font-weight:100;}
 .sxjy_box{ padding:10px; line-height:30px; font-size:12px;}
 .nlsz{ border-bottom:1px  dotted #cccccc; padding-bottom:40px; margin-bottom:25px;}
 
 
 /*培训公司招聘信息——左侧   能力素质*/
-.nlsz h4{ display:block; height:40px; line-height:40px; background:url(../images/nlsz_h4.jpg) no-repeat left 5px; padding-left:45px; font-size:18px; color:#3689b3; font-weight:100;}
+.nlsz h4{ display:block; height:40px; line-height:40px; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/nlsz_h4.jpg) no-repeat left 5px; padding-left:45px; font-size:18px; color:#3689b3; font-weight:100;}
 .nlsz_box{ padding:10px; line-height:30px; font-size:12px;}
 
 
@@ -336,15 +336,15 @@ a img {border: none;}
 .mingzi_r{ width:170px;color:#ffa757;padding-top:13px;}
 .pinglun{ padding-top:5px;}
 .pinglun span{ color:#818180;padding-top:5px;}
-.dianzan{ background:url(../images/dz2.jpg) no-repeat left 7px; padding-top:5px; margin-left:15px; padding-left:20px;}
+.dianzan{ background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dz2.jpg) no-repeat left 7px; padding-top:5px; margin-left:15px; padding-left:20px;}
 .guanzhu{}
 
 .ziping{ height:30px; line-height:30px; font-weight:700;margin-bottom:5px;}
 .scxs2{height:18px; line-height:18px; }
 .scxs2 em{ float:left;font-style:normal;color:#000; font-weight:700;}
-.scxs2 span{ display:block; float:left; padding:0px 15px; background:url(../images/line.jpg) no-repeat right center;}
+.scxs2 span{ display:block; float:left; padding:0px 15px; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/line.jpg) no-repeat right center;}
 .lingyu em{ float:left;font-style:normal;color:#000; font-weight:700;}
-.lingyu span{ display:block; float:left; padding:0px 15px; background:url(../images/line.jpg) no-repeat right center;}
+.lingyu span{ display:block; float:left; padding:0px 15px; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/line.jpg) no-repeat right center;}
 
 .shijian{height:20px; line-height:20px; font-size:12px;  }
 .shijian_l{ width:270px;}
@@ -356,7 +356,7 @@ a img {border: none;}
 /*培训师个人信息——左侧  培训师简介*/
 .pxshi_jj{ border-bottom:1px dotted #ccc; padding:20px 15px 40px 15px; margin-bottom:30px;}
 .pxshi_bt{ background:#f0f8fc; height:40px;   padding:0px 15px;}
-.pxshi_jj h4{ display:block;height:40px; line-height:40px; background:url(../images/jj_h4.jpg) no-repeat left center; padding-left:40px; font-size:16px; color:#000; font-weight:100; }
+.pxshi_jj h4{ display:block;height:40px; line-height:40px; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/jj_h4.jpg) no-repeat left center; padding-left:40px; font-size:16px; color:#000; font-weight:100; }
 .pxshi_jj h4 span{ display:block; float:right;color:#ff7f00; font-size:12px; font-weight:100;}
 .pxshi_jj h4 span a,.pxshi_jj h4 span a:hover{color:#ff7f00;}
 
@@ -366,12 +366,12 @@ a img {border: none;}
 
 /*培训师个人信息——左侧  培训课程*/
 .pxshi_kc{ border-bottom:1px dotted #ccc; padding:20px 15px 40px 15px; margin-bottom:30px;}
-.pxshi_kc h4{ display:block;height:40px; line-height:40px; background:url(../images/kc_h4.jpg) no-repeat left center; padding-left:40px; font-size:16px; color:#000; font-weight:100; }
+.pxshi_kc h4{ display:block;height:40px; line-height:40px; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/kc_h4.jpg) no-repeat left center; padding-left:40px; font-size:16px; color:#000; font-weight:100; }
 .pxshi_kc h4 span{ display:block; float:right;color:#ff7f00; font-size:12px; font-weight:100;}
 .pxshi_kc h4 span a,.pxshi_kc h4 span a:hover{color:#ff7f00;}
 
 .pxshi_kc_box{ padding:20px 15px 0px 15px;}
-.pxshi_kc_box li{ display:block; height:30px; line-height:30px; background:url(../images/icon.jpg) no-repeat 5px center;  padding-left:14px; font-size:12px;}
+.pxshi_kc_box li{ display:block; height:30px; line-height:30px; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/icon.jpg) no-repeat 5px center;  padding-left:14px; font-size:12px;}
 .pxshi_kc_box li span{ display:block; float:right; padding-right:5px; color:#3996c9;}
 .pxshi_kc_box li span a,.pxshi_kc_box li span a:hover{ color:#3996c9;}
 
@@ -379,7 +379,7 @@ a img {border: none;}
 
 /*培训师个人信息——左侧  视频链接*/
 .pxshi_sp{ border-bottom:1px dotted #ccc; padding:20px 15px 40px 15px; margin-bottom:30px;}
-.pxshi_sp h4{ display:block;height:40px; line-height:40px; background:url(../images/sp_h4.jpg) no-repeat left center; padding-left:40px; font-size:16px; color:#000; font-weight:100; }
+.pxshi_sp h4{ display:block;height:40px; line-height:40px; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/sp_h4.jpg) no-repeat left center; padding-left:40px; font-size:16px; color:#000; font-weight:100; }
 .pxshi_sp h4 span{ display:block; float:right;color:#ff7f00; font-size:12px; font-weight:100;}
 .pxshi_sp h4 span a,.pxshi_sp h4 span a:hover{color:#ff7f00;}
 .pxshi_sp_box{ padding:40px 0px 0px 100px; height:245px;}
@@ -388,17 +388,17 @@ a img {border: none;}
 
 /*培训师个人信息——左侧  原创文章*/
 .pxshi_wz{ border-bottom:1px dotted #ccc; padding:20px 15px 40px 15px; margin-bottom:30px;}
-.pxshi_wz h4{ display:block;height:40px; line-height:40px; background:url(../images/wz_h4.jpg) no-repeat left center; padding-left:40px; font-size:16px; color:#000; font-weight:100; }
+.pxshi_wz h4{ display:block;height:40px; line-height:40px; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/wz_h4.jpg) no-repeat left center; padding-left:40px; font-size:16px; color:#000; font-weight:100; }
 .pxshi_wz h4 span{ display:block; float:right;color:#ff7f00; font-size:12px; font-weight:100;}
 .pxshi_wz h4 span a,.pxshi_wz h4 span a:hover{color:#ff7f00;}
 .pxshi_wz_box{ padding:20px 15px 0px 15px;}
-.pxshi_wz_box li{ display:block; height:30px; line-height:30px; background:url(../images/icon.jpg) no-repeat 5px center;  padding-left:14px; font-size:12px;}
+.pxshi_wz_box li{ display:block; height:30px; line-height:30px; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/icon.jpg) no-repeat 5px center;  padding-left:14px; font-size:12px;}
 .pxshi_wz_box li span{ display:block; float:right; padding-right:5px; color:#3996c9;}
 .pxshi_wz_box li span a,.ycwz_box li span a:hover{ color:#3996c9;}
 
 /*培训师个人信息——左侧  学员评论*/
 .pxshi_xypl{ border-bottom:1px dotted #ccc; padding:20px 15px 40px 15px; margin-bottom:30px;}
-.pxshi_xypl h4{ display:block;height:40px; line-height:40px; background:url(../images/pl_h4.jpg) no-repeat left center; padding-left:40px; font-size:16px; color:#000; font-weight:100; }
+.pxshi_xypl h4{ display:block;height:40px; line-height:40px; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pl_h4.jpg) no-repeat left center; padding-left:40px; font-size:16px; color:#000; font-weight:100; }
 .pxshi_xypl h4 span{ display:block; float:right;color:#ff7f00; font-size:12px; font-weight:100;}
 .pxshi_xypl h4 span a,.pxshi_xypl h4 span a:hover{color:#ff7f00;}
 .pxshi_xypl_box{ padding:40px 15px 20px 15px;}
@@ -407,18 +407,18 @@ a img {border: none;}
 
 /*培训师个人信息——右侧  联系方式*/
 .pxshi_lx{ margin-bottom:30px;}
-.pxshi_lx h4{ display:block; height:40px; line-height:40px; background:url(../images/pxshi_lx.jpg) no-repeat left center; padding-left:45px; font-size:18px; color:#000; font-weight:100; border-bottom:1px solid #e1e1e1; margin-bottom:10px;}
+.pxshi_lx h4{ display:block; height:40px; line-height:40px; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi_lx.jpg) no-repeat left center; padding-left:45px; font-size:18px; color:#000; font-weight:100; border-bottom:1px solid #e1e1e1; margin-bottom:10px;}
 .lx_box{line-height:24px;font-size:12px;}
 .xingming{ font-weight:700;  height:30px; line-height:30px;}
 
 
 /*培训师个人信息——右侧  学员评价*/
 .pxshi_pj{ margin-bottom:30px;}
-.pxshi_pj h4{ display:block; height:40px; line-height:40px; background:url(../images/pxshi_pj.jpg) no-repeat left center; padding-left:45px; font-size:18px; color:#000; font-weight:100; border-bottom:1px solid #e1e1e1; margin-bottom:10px;}
+.pxshi_pj h4{ display:block; height:40px; line-height:40px; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pxshi_pj.jpg) no-repeat left center; padding-left:45px; font-size:18px; color:#000; font-weight:100; border-bottom:1px solid #e1e1e1; margin-bottom:10px;}
 .pj_box{font-size:12px; padding:0px 10px;}
-.pj_box li{ display:block; height:30px;line-height:30px; background:url(../images/icon2.jpg) no-repeat left center; padding-left:10px; border-bottom:1px dotted #ccc; margin-bottom:5px;}
+.pj_box li{ display:block; height:30px;line-height:30px; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/icon2.jpg) no-repeat left center; padding-left:10px; border-bottom:1px dotted #ccc; margin-bottom:5px;}
 
 /*底部信息*/
-.footer{ width:100%; background:url(../images/footer_bg.jpg) repeat-x left top;height:90px; padding-top:40px;}
+.footer{ width:100%; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/footer_bg.jpg) repeat-x left top;height:90px; padding-top:40px;}
 
 .bq{ line-height:24px; color:#000; text-align:center;}

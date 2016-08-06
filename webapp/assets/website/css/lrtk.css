@@ -19,6 +19,6 @@ a { blr: expression(this.onFocus=this.blur()); outline: none; }
 
 /*上一个  下一个*/
 .www51buycom .prev,
-.www51buycom .next { display: none; width: 40px; height: 100px; background: url(../images/btn.png) no-repeat; position: absolute; top: 115px;}
+.www51buycom .next { display: none; width: 40px; height: 100px; background: url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/btn.png) no-repeat; position: absolute; top: 115px;}
 .www51buycom .prev { left: 0; }
 .www51buycom .next { right: 0; background-position: right }
