@@ -103,7 +103,7 @@ public class Courses extends BaseEntity {
 	
 	@Version(value = 0)
 	@UiConfig(hidden = true)
-	private int version = -1;
+	private int version = 0;
 
 	public String getCourseName() {
 		return courseName;
@@ -121,20 +121,20 @@ public class Courses extends BaseEntity {
 		this.courseType = courseType;
 	}
 
-	public String getSchoolTime() {
-		return schoolTime;
-	}
-
-	public void setSchoolTime(String schoolTime) {
-		this.schoolTime = schoolTime;
-	}
-
 	public Date getPublishDate() {
 		return publishDate;
 	}
 
 	public void setPublishDate(Date publishDate) {
 		this.publishDate = publishDate;
+	}
+
+	public String getSchoolTime() {
+		return schoolTime;
+	}
+
+	public void setSchoolTime(String schoolTime) {
+		this.schoolTime = schoolTime;
 	}
 
 	public BigDecimal getPrice() {
@@ -193,6 +193,14 @@ public class Courses extends BaseEntity {
 		this.toolModel = toolModel;
 	}
 
+	public Trainer getTrainer() {
+		return trainer;
+	}
+
+	public void setTrainer(Trainer trainer) {
+		this.trainer = trainer;
+	}
+
 	public Date getCreateDate() {
 		return createDate;
 	}
@@ -231,14 +239,6 @@ public class Courses extends BaseEntity {
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
-	}
-	
-	public Trainer getTrainer() {
-		return trainer;
-	}
-
-	public void setTrainer(Trainer trainer) {
-		this.trainer = trainer;
 	}
 
 	public boolean isPromoted() {
