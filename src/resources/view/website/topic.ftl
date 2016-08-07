@@ -4,11 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <title>汽车培聘网</title>
-<link rel="stylesheet" href="../css/zt.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="<@url value="/assets/website/css/zt.css"/>" type="text/css" media="screen" />
 
-<link rel="stylesheet" type="text/css" href="../css/lrtk.css">
-<script src="../js/jquery1.42.min.js" type="text/javascript"></script>
-<script src="../js/jquery.superslide.2.1.1.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="<@url value="/assets/website/css/lrtk.css"/>" />
+<script src="<@url value="/assets/website/js/jquery1.42.min.js?v=1.1.0"/>"></script>
+<script src="<@url value="/assets/website/js/jquery.superslide.2.1.1.js?v=1.1.0"/>" type="text/javascript"></script>
 </head>
 
 <body>
@@ -27,7 +27,7 @@
             	 <#if topicList??>
 	            	 <#list topicList.result as t>
 	            	 	<li>
-                    	<div class="zt_pic left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zt.jpg" /></div>
+                    	<div class="zt_pic left"><img src="${t.topicLogo!}" /></div>
                         <div class="zt_box right">
                        	    <div class="zt_tit">${t.title!}</div>
                             <div class="zt_xx">
@@ -38,7 +38,7 @@
                                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
                                       <td width="50%" align="right" valign="middle"><a href="#">评论</a></td>
-                                      <td width="21%" align="right" valign="middle"><img src="${t.topicLogo!}" /></td>
+                                      <td width="21%" align="right" valign="middle"></td>
                                       <td width="29%" align="right" valign="middle"><a href="#">赞(12)</a></td>
                                     </tr>
                                   </table>

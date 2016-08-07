@@ -4,11 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <title>汽车培聘网</title>
-<link rel="stylesheet" href="../css/qcren.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="<@url value="/assets/website/css/qcren.css"/>" type="text/css" media="screen" />
 
-<link rel="stylesheet" type="text/css" href="../css/lrtk.css">
-<script src="../js/jquery1.42.min.js" type="text/javascript"></script>
-<script src="../js/jquery.superslide.2.1.1.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="<@url value="/assets/website/css/lrtk.css"/>" />
+<script src="<@url value="/assets/website/js/jquery1.42.min.js"/>"></script>
+<script src="<@url value="/assets/website/js/jquery.superslide.2.1.1.js"/>" type="text/javascript"></script>
 </head>
 
 <body>

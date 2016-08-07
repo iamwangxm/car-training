@@ -4,10 +4,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <title>汽车培聘网</title>
-<link rel="stylesheet" href="/assets/website/css/gkk.css" type="text/css" media="screen" />
-<link rel="stylesheet" type="text/css" href="/assets/website/css/jquery.jslides.css" media="screen" />
-<script type="text/javascript" src="/assets/website/js/jquery-1.8.0.min.js"></script>
-<script type="text/javascript" src="/assets/website/js/jquery.jslides.js"></script>
+<link rel="stylesheet" href="<@url value="/assets/website/css/gkk.css"/>" type="text/css" media="screen" />
+<link rel="stylesheet" type="text/css" href="<@url value="/assets/website/css/jquery.jslides.css"/>" media="screen" />
+<script src="<@url value="/assets/website/js/jquery-1.8.0.min.js?v=1.1.0"/>"></script>
+<script type="text/javascript" src="<@url value="/assets/website/js/jquery.jslides.js"/>"></script>
 </head>
 
 <body>
