@@ -112,11 +112,16 @@ public class TopicServiceImpl  implements TopicService{
 		List<Topic> resultList = null;
 		List<com.car.training.model.Topic> sourceList = topicManager.findListByIndexTopic(count);
 		if (sourceList != null) {
-			resultList = new ArrayList<Topic>(sourceList.size());
+			resultList = new ArrayList<Topic>(count);
+
 			for (com.car.training.model.Topic sourceTopic : sourceList) {
 				Topic target = new Topic();
 				BeanUtils.copyProperties(sourceTopic, target);
 				resultList.add(target);
+				count--;
+				if (count == 0) {
+					break;
+				}
 			}
 		}
 		return resultList;

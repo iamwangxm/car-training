@@ -2,6 +2,7 @@
 <#escape x as x?html><html>
 <head>
 <title>汽车培聘网</title>
+<link rel="stylesheet" href="<@url value="/assets/website/css/style.css?v=1.1.0"/>" type="text/css" media="screen" />
 </head>
 
 <body>
@@ -251,7 +252,7 @@
             	<#list trainerEssayList as t>
                 	<li>
                 	<#if t??>
-                    	<span><a href="#">${t.publishDate!}</a></span><a href="#">${t.title!}</a>
+                    	<span><a href="#">${t.publishDate!?string("yyyy-MM-dd")}</a></span><a href="#">${t.title!}</a>
                     	</#if>
                   </li>
 					</#list>

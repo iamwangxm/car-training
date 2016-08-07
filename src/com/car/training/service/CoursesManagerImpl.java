@@ -80,6 +80,7 @@ public class CoursesManagerImpl extends BaseManagerImpl<Courses> implements Cour
 		}
 		dc.add(Restrictions.eq("enabled", true));
 		dc.addOrder(Order.asc("promoted"));
+		
 		return findListByCriteria(dc);
 	}
 }
