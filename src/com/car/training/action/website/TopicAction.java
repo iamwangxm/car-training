@@ -23,9 +23,9 @@ public class TopicAction extends BaseAction {
 	/** 热点专题列表 */
 	private List<Topic> topicHotList;
 	/** 页大小 */
-	private Integer pageSize;
+	private Integer pageSize = 10;
 	/** 页号 */
-	private Integer pageNo;
+	private Integer pageNo = 1;
 	
 	@Override
 	public String execute() throws Exception {
