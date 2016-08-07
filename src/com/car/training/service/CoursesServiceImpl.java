@@ -129,6 +129,11 @@ public class CoursesServiceImpl  implements CoursesService{
 					BeanUtils.copyProperties(sourceCourses.getRegion(), remotingRegion);
 					target.setRegion(remotingRegion);
 				}
+				int willnum = 0;
+				if(StringUtils.isNotBlank(target.getAudiences())){
+					willnum = target.getAudiences().split(",").length;
+					target.setWillnum(willnum);
+				}
 				resultList.add(target);
 				count--;
 				if (count == 0) {
