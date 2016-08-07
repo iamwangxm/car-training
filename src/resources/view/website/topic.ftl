@@ -29,7 +29,7 @@
 	            	 	<li>
                     	<div class="zt_pic left"><img src="${t.topicLogo!}" /></div>
                         <div class="zt_box right">
-                       	    <div class="zt_tit">${t.title!}</div>
+                       	    <a href="/website/topicDetail?topic.id=${t.id!}"><div class="zt_tit">${t.title!}</div></a>
                             <div class="zt_xx">
                            	<a href="#"><#if  t.content?length lt 201>${t.content!}<#else>${t.content?substring(0,200)!}...</#if></a>                   </div>	
                           <div class="zt_pl">

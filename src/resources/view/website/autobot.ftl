@@ -86,7 +86,7 @@
 						  			<#if key = t.positionType>
 						  				<#if t_index = 0>
 						                	<li style="border:2px solid #3689b3; padding:0px;">
-						                    <div class="pxshi_pic"><a href="#"><img src="${t.userCenter.headLogo!}" /></a></div>
+						                    <div class="pxshi_pic"><a href="/website/AutbotDetail?autobots.id=${t.id!}"><img src="${t.userCenter.headLogo!}" /></a></div>
 						                    <div class="pxshi_intro">
 						                    	<div class="pxshi_name">
 						                        	<div class="pxshi_xm left"><a href="#">${t.userCenter.name!}</a></div>
@@ -113,7 +113,7 @@
 		    						   			<#break>
 		    						   		</#if>
 						                    <li>
-						                    <div class="pxshi_pic"><a href="#"><img src="${t.userCenter.headLogo!}" /></a></div>
+						                    <div class="pxshi_pic"><a href="/website/AutbotDetail?autobots.id=${t.id!}"><img src="${t.userCenter.headLogo!}" /></a></div>
 						                    <div class="pxshi_intro">
 						                    	<div class="pxshi_name">
 						                        	<div class="pxshi_xm left"><a href="#">${t.userCenter.name!}</a></div>

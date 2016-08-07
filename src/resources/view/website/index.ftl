@@ -61,7 +61,7 @@
         	<div class="pxshi">
             	<div class="pxshi_l left">
                 		 <#if trainer?? && trainer.userCenter??>
-                	<div class="pxshi_l_pic"><img src="${trainer.userCenter.headLogo!}" /></div>
+                	<div class="pxshi_l_pic"><a href="/website/trainerDetail?trainer.id=${trainer.id!}"><img src="${trainer.userCenter.headLogo!}" /></a></div>
                     <div class="pxshi_l_intro">
                     	<div class="pxshi_name">
                         	<div class="xm left">${trainer.userCenter.name!}</div>
@@ -89,7 +89,7 @@
 							<#list trainerList as t>
                     	<li>
                     		<#if t?? && t.userCenter??>
-	                        	<div class="pxshi_pic2"><img src="${t.userCenter.headLogo!}" /></div>
+	                        	<div class="pxshi_pic2"><a href="/website/trainerDetail?trainer.id=${trainer.id!}"><img src="${t.userCenter.headLogo!}" /></a></div>
 			                    <div class="pxshi_intro2">
 			                    	<div class="pxshi_name2">
 			                        	<div class="xm2 left">${t.userCenter.name!}</div>
@@ -125,7 +125,7 @@
             	<#list autobotsList as t>
                 	<li>
                 	<#if t?? && t.userCenter??>
-                        	<div class="pxsheng_pic"><img src="${t.userCenter.headLogo!}" /></div>
+                        	<div class="pxsheng_pic"><a href="/website/autbotDetail?autbots.id=${t.id!}"><img src="${t.userCenter.headLogo!}" /></a></div>
                     <div class="pxsheng_intro">
                     	<div class="pxsheng_name">
                         	<div class="pxsheng_xm left">${t.userCenter.name!}</div>
@@ -162,7 +162,7 @@
                 	<li>
                 	<#if t?? && t.company??>
                 	<div class="qz"></div> <div class="pxxq_l left">
-                   	  <div class="zw_name">${t.name!}</div>
+                   	 <a href="/website/jobDetail?jobs.id=${t.id!}"> <div class="zw_name">${t.name!}</div></a>
                         <div class="dy_box">
                         	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">${t.workExprience!}年工作经验</a></span><span style="background:none;"><a href="#"><#if t.region??></#if>${t.region.fullname!}</a></span>
                         </div>
@@ -205,7 +205,7 @@
                 	<li>
                 	<#if t?? && t.company??>
                     	<div class="qcrxq_l left">
-                        	 <div class="qcrxq_zw_name">${t.name!} </div>
+                        	 <a href="/website/jobDetail?jobs.id=${t.id!}"> <div class="qcrxq_zw_name">${t.name!}</div></a>
                        		 <div class="qcrxq_dy_box">
                         	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">${t.workExprience!}年工作经验</a></span><span style="background:none;"><a href="#">上海-嘉定区</a></span>
                         </div>
