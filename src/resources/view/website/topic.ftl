@@ -24,7 +24,7 @@
     	<div class="zt">
         	<div class="zt_l left">
             	<ul>
-            	 <#if topicList??>
+            	 <#if topicList?? && topicList.result??>
 	            	 <#list topicList.result as t>
 	            	 	<li>
                     	<div class="zt_pic left"><img src="${t.topicLogo!}" /></div>
@@ -51,10 +51,84 @@
 	            	 </#list>
             	 </#if>
                 </ul>
-            	<div class="fypage" ><span>首页</span><span class="">上一页</span><span>1</span><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">下一页</a><a href="#">尾页</a>  跳转到 <select name="PageSelect" onchange=""><option value="" selected="selected">第01页</option><option value="">第02页</option><option value="">第03页</option><option value="">第04页</option><option value="">第05页</option><option value="">第06页</option><option value="index_7.html">第07页</option>
-                
-               
-               </select></div>
+            	
+				<#if topicList?? && topicList.result?? && topicList.result?size gt 0>
+            	<div class="fypage" >
+            	
+            	<#if pageNo gt 5>
+            	<a data-class="p5" href="javascript:void(0)" onclick="prevFivePage()"">上五页</a>
+            	<#else>
+            	<span data-class="p5">上五页</span>
+            	</#if>
+            	<#if pageNo gt 1>
+            	<a data-class="p1" href="/website/topic?pageNo=${pageNo-1}">上一页</a>
+            	<#else>
+            	<span data-class="p1" class="">上一页</span>
+            	</#if>
+            	
+            	<div data-class="pag" style="padding:0px;margin:0px;display:inline;">
+            	<#if pageNo lt 6>
+            	<#list 1..5 as t>
+            	<#if t = pageNo>
+            	<span>${t!}</span>
+            	<#else>
+            	<a href="/website/topic?pageNo=${t!}">${t!}</a>
+            	</#if>
+            	<#if t = topicList.totalPage>
+            	<#break>
+            	</#if>
+            	</#list>
+            	
+            	<#elseif pageNo%5 gt 0>
+            	<#list (pageNo/5)?floor*5+1..(pageNo/5)?floor*5+5 as t>
+            	<#if t = pageNo>
+            	<span>${t!}</span>
+            	<#else>
+            	<a href="/website/topic?&pageNo=${t!}">${t!}</a>
+            	</#if>
+            	<#if t = topicList.totalPage>
+            	<#break>
+            	</#if>
+            	</#list>
+            	
+            	<#elseif pageNo%5 = 0>
+            	<#list ((pageNo/5)?floor-1)*5+1..(pageNo/5)?floor*5 as t>
+            	<#if t = pageNo>
+            	<span>${t!}</span>
+            	<#else>
+            	<a href="/website/topic?pageNo=${t!}">${t!}</a>
+            	</#if>
+            	<#if t = topicList.totalPage>
+            	<#break>
+            	</#if>
+            	</#list>
+            	</#if>
+            	</div>
+            	
+            	<#if (topicList.totalPage - pageNo) gt 0>
+            	<a data-class="n1" href="/website/topic?pageNo=${pageNo+1}">下一页</a>
+            	<#else>
+            	<span data-class="n1" class="">下一页</span>
+            	</#if>
+            	<#if (topicList.totalPage - ((pageNo/5)?ceiling * 5)) gt 4>
+            	<a data-class="n5" href="javascript:void(0)" onclick="nextFivePage()">下五页</a>
+            	<#else>
+            	<span data-class="n5">下五页</span>
+            	</#if>
+            	 
+            	跳转到 
+            	<select name="PageSelect" onchange="jumpPage()">
+            	<#list 1..topicList.totalPage as t>
+            	<#if t = pageNo>
+            	<option selected="selected" value="${t!}">第${t!}页</option>
+            	<#else>
+            	<option value="${t!}">第${t!}页</option>
+            	</#if>
+            	</#list>
+               </select>
+               </div>
+               </#if>
+
             </div>
             
             <div class="zt_r right">
@@ -96,6 +170,51 @@
 </div>
     
 	
+<!--分页有关js-->
+    <script>
+    
+		var pageNo = ${pageNo};
+		var totalPage = ${topicList.totalPage};
+		var tarUrl = "/website/topic?";
+		
+    	function prevFivePage(){
+    		var pag = '';
+    		for(var i = Math.floor(pageNo/5) * 5 - 4; i<=Math.floor(pageNo/5)*5;i++){
+				pag += '<a href="' + tarUrl + 'pageNo=' + i + '">' + i + '</a>';
+    		}
+    		pageNo = Math.floor(pageNo/5) * 5 - 4;
+    		$("div.fypage").find("div[data-class=pag]").html(pag);
+    		resetPreNex();
+    	}
+    	function nextFivePage(){
+    		var pag = '';
+    		for(var i = Math.ceil(pageNo/5) * 5 + 1; i<=Math.ceil(pageNo/5) * 5+5;i++){
+				pag += '<a href="' + tarUrl + 'pageNo=' + i + '">' + i + '</a>';
+    		}
+    		pageNo = Math.ceil(pageNo/5) * 5 + 1;
+    		$("div.fypage").find("div[data-class=pag]").html(pag);
+    		resetPreNex();
+    	}
+    	function resetPreNex(){
+    		if(pageNo <= 5){
+    			$("[data-class=p5]").replaceWith('<span data-class="p5">上五页</span>');
+    		}else{
+    			$("[data-class=p5]").replaceWith('<a data-class="p5" href="javascript:void(0)" onclick="prevFivePage()"">上五页</a>');
+    		}
+    		if(totalPage > Math.ceil(pageNo/5) * 5 + 4){
+    			$("[data-class=n5]").replaceWith('<a data-class="n5" href="javascript:void(0)" onclick="nextFivePage()"">下五页</a>');
+    		}else{
+    			$("[data-class=n5]").replaceWith('<span data-class="n5">下五页</span>');
+    		}
+    		
+    	}
+    	
+    	function jumpPage(){
+    		window.location.href = tarUrl + 'pageNo=' + $("select[name=PageSelect]").val();	
+    	}
+    	
+    </script>
+
 
 <!-- main结束 -->
 <#include "/assets/website/common/footer.html">
