@@ -63,6 +63,7 @@ public class RecruitAction extends BaseAction {
 			jobs.setName(keyword);
 			// 按条件筛选公司招聘职位列表(包含分页)
 			jobsCompanyList = jobsService.findPageByJobs(jobs, pageSize, pageNo);
+			
 			return "trainerSearch";
 		} else if (companyType != null && companyType.getName().equals(CompanyType.STORE.getName())) {
 			jobs.setRegion(region);
