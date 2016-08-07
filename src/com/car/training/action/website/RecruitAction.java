@@ -58,13 +58,13 @@ public class RecruitAction extends BaseAction {
 			jobs.setName(keyword);
 			// 按条件筛选公司招聘职位列表(包含分页)
 			jobsCompanyList = jobsService.findPageByJobs(jobs, pageSize, pageNo);
-			return "/website/trainerSearch";
+			return "trainerSearch";
 		}else if(companyType.getName().equals(CompanyType.STORE)){
 			jobs.setRegion(region);
 			jobs.setCreateDate(createDate);
 			jobs.setName(keyword);
 			jobsStoreList = jobsService.findPageByJobs(jobs, pageSize, pageNo);
-			return "/website/autobotSearch";
+			return "autobotSearch";
 		}
 
 		return "";
