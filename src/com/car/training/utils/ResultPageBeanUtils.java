@@ -10,6 +10,7 @@ import com.car.training.domain.Autobots;
 import com.car.training.domain.AutobotsComment;
 import com.car.training.domain.Company;
 import com.car.training.domain.Courses;
+import com.car.training.domain.DeliveryResume;
 import com.car.training.domain.Jobs;
 import com.car.training.domain.Topic;
 import com.car.training.domain.TopicComment;
@@ -130,6 +131,25 @@ public class ResultPageBeanUtils {
 		LinkedHashSet<Jobs> targets = new LinkedHashSet<>();
 		for (com.car.training.model.Jobs source : sources) {
 			Jobs target = CopyPropertiesUtil.copyJobsPropertiesToRemote(source);
+			targets.add(target);
+		}
+		return targets;
+	}
+	
+	/**
+	 * 复制DeliveryResume： model --> remote
+	 * 
+	 * @param sources
+	 * @return results
+	 */
+	public static Collection<DeliveryResume> copyDeliveryResumePropertiesToRemote(
+			Collection<com.car.training.model.DeliveryResume> sources) {
+		if (sources == null) {
+			return null;
+		}
+		LinkedHashSet<DeliveryResume> targets = new LinkedHashSet<>();
+		for (com.car.training.model.DeliveryResume source : sources) {
+			DeliveryResume target = CopyPropertiesUtil.copyDeliveryResumePropertiesToRemote(source);
 			targets.add(target);
 		}
 		return targets;

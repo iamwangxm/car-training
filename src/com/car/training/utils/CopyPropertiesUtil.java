@@ -6,6 +6,7 @@ import com.car.training.domain.Autobots;
 import com.car.training.domain.AutobotsComment;
 import com.car.training.domain.Company;
 import com.car.training.domain.Courses;
+import com.car.training.domain.DeliveryResume;
 import com.car.training.domain.Jobs;
 import com.car.training.domain.Topic;
 import com.car.training.domain.TopicComment;
@@ -91,6 +92,41 @@ public class CopyPropertiesUtil {
 		return t;
 	}
 
+	/**
+	 * 复制DeliveryResume： model -- remote
+	 * 
+	 * @param s
+	 * @return
+	 */
+	public static DeliveryResume copyDeliveryResumePropertiesToRemote(com.car.training.model.DeliveryResume s) {
+		if (s == null) {
+			return null;
+		}
+		DeliveryResume t = new DeliveryResume();
+		BeanUtils.copyProperties(s, t);
+		if (s != null && s.getTrainer() != null) {
+			Trainer remotingTrainer = new Trainer();
+			BeanUtils.copyProperties(s.getTrainer(), remotingTrainer);
+			t.setTrainer(remotingTrainer);
+		}
+		if (s != null && s.getAutobots() != null) {
+			Autobots remotingAutobots = new Autobots();
+			BeanUtils.copyProperties(s.getAutobots(), remotingAutobots);
+			t.setAutobots(remotingAutobots);
+		}
+		if (s != null && s.getJobs() != null) {
+			Jobs remotingJobs = new Jobs();
+			BeanUtils.copyProperties(s.getJobs(), remotingJobs);
+			if (s != null && s.getJobs() != null && s.getJobs().getCompany() != null) {
+				Company remotingCompany = new Company();
+				BeanUtils.copyProperties(s.getJobs().getCompany(), remotingCompany);
+				t.getJobs().setCompany(remotingCompany);
+			}
+			t.setJobs(remotingJobs);
+		}
+		return t;
+	}
+	
 	/**
 	 * 复制Topic： model -- remote
 	 * 

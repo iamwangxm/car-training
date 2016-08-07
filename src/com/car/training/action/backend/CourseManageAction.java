@@ -5,49 +5,49 @@ import org.ironrhino.core.model.ResultPage;
 import org.ironrhino.core.struts.BaseAction;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.car.training.domain.Jobs;
-import com.car.training.service.JobsService;
+import com.car.training.domain.Courses;
+import com.car.training.service.CoursesService;
 
 @AutoConfig
-public class CompanyJobManageAction extends BaseAction {
+public class CourseManageAction extends BaseAction {
 
 	private static final long serialVersionUID = 4839883380537115435L;
 
 	@Autowired
-	private JobsService jobsService;
-	/**简历投递记录列表 */
-	private ResultPage<Jobs> jobsList;
+	private CoursesService coursesService;
+	/**文章列表 */
+	private ResultPage<Courses> coursesList;
 	/** 页大小 */
 	private Integer pageSize = 10;
 	/** 页号 */
 	private Integer pageNo = 1;
-	
+
 	@Override
 	public String execute() throws Exception {
-		jobsList = jobsService.findPageByJobs(new Jobs(), pageSize, pageNo);
+		coursesList = coursesService.findPageByCourses(new Courses(), pageSize, pageNo);
 		return SUCCESS;
 	}
-
-	public ResultPage<Jobs> getJobsList() {
-		return jobsList;
+	
+	
+	public ResultPage<Courses> getCoursesList() {
+		return coursesList;
 	}
 
-	public void setJobsList(ResultPage<Jobs> jobsList) {
-		this.jobsList = jobsList;
+
+	public void setCoursesList(ResultPage<Courses> coursesList) {
+		this.coursesList = coursesList;
 	}
+
 
 	public Integer getPageSize() {
 		return pageSize;
 	}
-
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 	}
-
 	public Integer getPageNo() {
 		return pageNo;
 	}
-
 	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
 	}

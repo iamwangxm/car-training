@@ -46,12 +46,6 @@ public class RecruitAction extends BaseAction {
 	/** 页号 */
 	private Integer pageNo = 1;
 
-	/*
-	 * @Override public String execute() throws Exception {
-	 * 
-	 * return index(); }
-	 */
-
 	public String index() throws Exception {
 		Jobs jobs = new Jobs();
 		if (companyType != null && companyType.getName().equals(CompanyType.COMPANY.getName())) {
