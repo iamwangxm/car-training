@@ -283,9 +283,26 @@
             	<ul>
             	<#list coursesList as t>
                 	<li>
-                	<#if t??>
-                    	<span><a href="#">2016-07-02</a></span><a href="#">全面薪酬体系设计“6+1”实操训练营</a>
-                    	</#if>
+                	<#if t?? && t.trainer ?? &&t.trainer.userCenter ?? >
+                        	<div class="pxsheng_pic"><img src="${t.trainer.userCenter.headLogo!}" /></div>
+                    <div class="pxsheng_intro">
+                    	<div class="pxsheng_name">
+                        	<div class="pxsheng_xm left">${t.courseName!}</div>
+                          
+                            <div class="clear"></div>
+                        </div>
+                        <div class="pxsheng_zw">
+                        	<div class="pxsheng_zw_l left"><#if t.region??></#if>${t.region.fullname!}</div>
+                            <div class="pxsheng_zw_r  right">${t.schoolTime!?string("yyyy-MM-dd")}</div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="pxsheng_rz">
+                        	<div class="pxsheng_zw_l left">${t.price!}</div>
+                           <div class="pxsheng_zw_r  right">报名数: ${t.willnum!}人</div>
+                           <div class="clear"></div>
+                        </div>
+                    </div>
+                    </#if>
                   </li>
 					</#list>
                 </ul>

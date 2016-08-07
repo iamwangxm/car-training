@@ -37,6 +37,9 @@ public class Courses implements Serializable {
 	/**受众**/
 	private String audiences;
 	
+	/**报名人数**/
+	private Integer willnum;
+	
 	/**课程目标**/
 	private String courseTarget;
 	
@@ -132,6 +135,14 @@ public class Courses implements Serializable {
 
 	public void setAudiences(String audiences) {
 		this.audiences = audiences;
+	}
+
+	public Integer getWillnum() {
+		return willnum;
+	}
+
+	public void setWillnum(Integer willnum) {
+		this.willnum = willnum;
 	}
 
 	public String getCourseTarget() {
