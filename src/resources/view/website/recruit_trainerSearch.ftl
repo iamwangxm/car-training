@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<<!-- 头部开始 -->	
+<!-- 头部开始 -->	
 <#include "/assets/website/common/header.html">
 <!-- 头部结束 -->	
 
