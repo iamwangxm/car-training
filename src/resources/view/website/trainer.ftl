@@ -93,7 +93,7 @@
 	    						  		<#if t_index = 0>
     						   		<li style="border:2px solid #ff7d00; padding:0px;">
     						   		<#if t.userCenter??>
-    						   			<div class="pxshi_pic"><a href="#"><img src="${t.userCenter.headLogo!}" /></a></div>
+    						   			<div class="pxshi_pic"><a href="/website/trainerDetail?trainer.id=${t.id!}"><img src="${t.userCenter.headLogo!}" /></a></div>
     						   			<div class="pxshi_intro">
 					                    	<div class="pxshi_name">
 					                        	<div class="pxshi_xm left"><a href="#">${t.userCenter.name!}</a></div>
@@ -119,7 +119,7 @@
     						   		</#if>
     						   		<li>
     						   			<#if t.userCenter??>
-    						   			<div class="pxshi_pic"><a href="#"><img src="${t.userCenter.headLogo!}" /></a></div>
+    						   			<div class="pxshi_pic"><a href="/website/trainerDetail?trainer.id=${t.id!}"><img src="${t.userCenter.headLogo!}" /></a></div>
     						   			<div class="pxshi_intro">
 					                    	<div class="pxshi_name">
 					                        	<div class="pxshi_xm left"><a href="#">${t.userCenter.name!}</a></div>
