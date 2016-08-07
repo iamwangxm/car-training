@@ -156,7 +156,7 @@
               </ul>
             	</#if>
             </div>
-            	<#if jobsCompanyList?? && jobsCompanyList.result?? && jobsCompanyList.result.size() gt 0>
+            	<#if jobsCompanyList?? && jobsCompanyList.result?? && jobsCompanyList.result?size gt 0>
             	<div class="fypage" >
             	
             	<#if pageNo gt 5>
@@ -264,12 +264,17 @@
     <script>
     
 		var pageNo = ${pageNo};
-		var totalPage = ${jobsCompanyList.totalPage};
+		<#if jobsCompanyList??>
+			var totalPage = ${jobsCompanyList.totalPage};
+		<#else>
+			var totalPage = 0;
+		</#if>
+		var tarUrl = "/website/recruit/?companyType=COMPANY&";
 		
     	function prevFivePage(){
     		var pag = '';
     		for(var i = Math.floor(pageNo/5) * 5 - 4; i<=Math.floor(pageNo/5)*5;i++){
-				pag += '<a href="/website/recruit/?companyType=COMPANY&pageNo=' + i + '">' + i + '</a>';
+				pag += '<a href="' + tarUrl + 'pageNo=' + i + '">' + i + '</a>';
     		}
     		pageNo = Math.floor(pageNo/5) * 5 - 4;
     		$("div.fypage").find("div[data-class=pag]").html(pag);
@@ -278,7 +283,7 @@
     	function nextFivePage(){
     		var pag = '';
     		for(var i = Math.ceil(pageNo/5) * 5 + 1; i<=Math.ceil(pageNo/5) * 5+5;i++){
-				pag += '<a href="/website/recruit/?companyType=COMPANY&pageNo=' + i + '">' + i + '</a>';
+				pag += '<a href="' + tarUrl + 'pageNo=' + i + '">' + i + '</a>';
     		}
     		pageNo = Math.ceil(pageNo/5) * 5 + 1;
     		$("div.fypage").find("div[data-class=pag]").html(pag);
@@ -299,7 +304,7 @@
     	}
     	
     	function jumpPage(){
-    		window.location.href = '/website/recruit/?companyType=COMPANY&pageNo=' + $("select[name=PageSelect]").val();	
+    		window.location.href = tarUrl + 'pageNo=' + $("select[name=PageSelect]").val();	
     	}
     	
     </script>
