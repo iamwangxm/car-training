@@ -264,7 +264,11 @@
     <script>
     
 		var pageNo = ${pageNo};
-		var totalPage = ${jobsStoreList.totalPage};
+		<#if jobsCompanyList??>
+			var totalPage = ${jobsCompanyList.totalPage};
+		<#else>
+			var totalPage = 0;
+		</#if>
 		var tarUrl = "/website/recruit/?companyType=COMPANY&";
 		
     	function prevFivePage(){

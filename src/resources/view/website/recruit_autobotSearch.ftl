@@ -102,7 +102,7 @@
         <div class="pxgs">
         	<div class="pxgs_l left">
             	<div class="pxxq">
-            	<#if jobsStoreList?? && jobsStoreList.result>
+            	<#if jobsStoreList?? && jobsStoreList.result??>
             	<ul>
             		<#list jobsStoreList.result as t>
             		<#if t?? && t.company??>
@@ -252,7 +252,11 @@
     <script>
     
 		var pageNo = ${pageNo};
-		var totalPage = ${jobsStoreList.totalPage};
+		<#if jobsStoreList??>
+			var totalPage = ${jobsStoreList.totalPage};
+		<#else>
+			var totalPage = 0;
+		</#if>
 		var tarUrl = "/website/recruit/?companyType=STORE&";
 		
     	function prevFivePage(){

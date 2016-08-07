@@ -174,7 +174,11 @@
     <script>
     
 		var pageNo = ${pageNo};
-		var totalPage = ${topicList.totalPage};
+		<#if topicList??>
+			var totalPage = ${topicList.totalPage};
+		<#else>
+			var totalPage = 0;
+		</#if>
 		var tarUrl = "/website/topic?";
 		
     	function prevFivePage(){

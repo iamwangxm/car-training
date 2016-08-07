@@ -229,7 +229,11 @@
     <script>
     
 		var pageNo = ${pageNo};
-		var totalPage = ${coursesList.totalPage};
+		<#if coursesList??>
+			var totalPage = ${coursesList.totalPage};
+		<#else>
+			var totalPage = 0;
+		</#if>
 		var tarUrl = "/website/courses?";
 		
     	function prevFivePage(){
