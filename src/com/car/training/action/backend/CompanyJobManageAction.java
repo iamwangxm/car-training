@@ -15,8 +15,10 @@ public class CompanyJobManageAction extends BaseAction {
 
 	@Autowired
 	private JobsService jobsService;
-	/**简历投递记录列表 */
+	/**职位列表 */
 	private ResultPage<Jobs> jobsList;
+	/** 职位 */
+	private Jobs jobs;
 	/** 页大小 */
 	private Integer pageSize = 10;
 	/** 页号 */
@@ -27,7 +29,18 @@ public class CompanyJobManageAction extends BaseAction {
 		jobsList = jobsService.findPageByJobs(new Jobs(), pageSize, pageNo);
 		return SUCCESS;
 	}
-
+	
+	/**职位新增&編輯*/
+	public String jobSave() throws Exception {
+		jobsService.save(jobs);
+		return SUCCESS;
+	}
+	
+	/**职位删除*/
+	public String jobDelete() throws Exception {
+		jobsService.delete(jobs.getId());
+		return SUCCESS;
+	}
 	public ResultPage<Jobs> getJobsList() {
 		return jobsList;
 	}

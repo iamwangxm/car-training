@@ -17,6 +17,8 @@ public class ArtticleManageAction extends BaseAction {
 	private TrainerEssayService trainerEssayService;
 	/**文章列表 */
 	private ResultPage<TrainerEssay> trainerEssayList;
+	/**文章 */
+	private TrainerEssay trainerEssay;
 	/** 页大小 */
 	private Integer pageSize = 10;
 	/** 页号 */
@@ -25,6 +27,18 @@ public class ArtticleManageAction extends BaseAction {
 	@Override
 	public String execute() throws Exception {
 		trainerEssayList = trainerEssayService.findPageByTrainerEssay(new TrainerEssay(), pageSize, pageNo);
+		return SUCCESS;
+	}
+	
+	/**文章新增&編輯*/
+	public String essaySave() throws Exception {
+		trainerEssayService.save(trainerEssay);
+		return SUCCESS;
+	}
+	
+	/**文章删除*/
+	public String essayDelete() throws Exception {
+		trainerEssayService.delete(trainerEssay.getId());
 		return SUCCESS;
 	}
 	

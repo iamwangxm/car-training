@@ -15,8 +15,10 @@ public class CourseManageAction extends BaseAction {
 
 	@Autowired
 	private CoursesService coursesService;
-	/**文章列表 */
+	/**公开课列表 */
 	private ResultPage<Courses> coursesList;
+	/**公开课 */
+	private Courses course;
 	/** 页大小 */
 	private Integer pageSize = 10;
 	/** 页号 */
@@ -28,6 +30,17 @@ public class CourseManageAction extends BaseAction {
 		return SUCCESS;
 	}
 	
+	/**公开课新增&編輯*/
+	public String essaySave() throws Exception {
+		coursesService.save(course);
+		return SUCCESS;
+	}
+	
+	/**公开课删除*/
+	public String essayDelete() throws Exception {
+		coursesService.delete(course.getId());
+		return SUCCESS;
+	}
 	
 	public ResultPage<Courses> getCoursesList() {
 		return coursesList;
