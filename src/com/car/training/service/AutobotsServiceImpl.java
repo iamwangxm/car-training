@@ -113,7 +113,7 @@ public class AutobotsServiceImpl  implements AutobotsService{
 		List<Autobots> resultList = null;
 		List<com.car.training.model.Autobots> sourceList = autobotsManager.findByIndexPromoted(promote, count);
 		if (sourceList != null) {
-			resultList = new ArrayList<Autobots>(sourceList.size());
+			resultList = new ArrayList<Autobots>(count);
 			for (com.car.training.model.Autobots sourceAutobots : sourceList) {
 				Autobots target = new Autobots();
 				BeanUtils.copyProperties(sourceAutobots, target);
@@ -123,6 +123,10 @@ public class AutobotsServiceImpl  implements AutobotsService{
 					target.setUserCenter(remotingUserCenter);
 				}
 				resultList.add(target);
+				count--;
+				if (count == 0) {
+					break;
+				}
 			}
 		}
 		return resultList;

@@ -126,7 +126,8 @@ public class TrainerServiceImpl  implements TrainerService{
 		List<Trainer> resultList = null;
 		List<com.car.training.model.Trainer> sourceList = trainerManager.findByIndexPromoted(promote, count);
 		if (sourceList != null) {
-			resultList = new ArrayList<Trainer>(sourceList.size());
+			resultList = new ArrayList<Trainer>(count);
+			
 			for (com.car.training.model.Trainer sourceTrainer : sourceList) {
 				Trainer target = new Trainer();
 				BeanUtils.copyProperties(sourceTrainer, target);
@@ -136,6 +137,10 @@ public class TrainerServiceImpl  implements TrainerService{
 					target.setUserCenter(remotingUserCenter);
 				}
 				resultList.add(target);
+				count--;
+				if (count == 0) {
+					break;
+				}
 			}
 		}
 		return resultList;

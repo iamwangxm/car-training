@@ -131,7 +131,8 @@ public class JobsServiceImpl  implements JobsService{
 		List<Jobs> resultList = null;
 		List<com.car.training.model.Jobs> sourceList = jobsManager.findListByIndexType(type, count);
 		if (sourceList != null) {
-			resultList = new ArrayList<Jobs>(sourceList.size());
+			resultList = new ArrayList<Jobs>(count);
+
 			for (com.car.training.model.Jobs sourceJobs : sourceList) {
 				Jobs target = new Jobs();
 				BeanUtils.copyProperties(sourceJobs, target);
@@ -151,6 +152,10 @@ public class JobsServiceImpl  implements JobsService{
 					target.setRegion(remotingRegion);
 				}
 				resultList.add(target);
+				count--;
+				if (count == 0) {
+					break;
+				}
 			}
 		}
 		return resultList;

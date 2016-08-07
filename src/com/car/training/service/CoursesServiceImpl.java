@@ -114,7 +114,8 @@ public class CoursesServiceImpl  implements CoursesService{
 		List<Courses> resultList = null;
 		List<com.car.training.model.Courses> sourceList = coursesManager.findByIndexPromoted(promote, count);
 		if (sourceList != null) {
-			resultList = new ArrayList<Courses>(sourceList.size());
+			resultList = new ArrayList<Courses>(count);
+
 			for (com.car.training.model.Courses sourceCourses : sourceList) {
 				Courses target = new Courses();
 				BeanUtils.copyProperties(sourceCourses, target);
@@ -129,6 +130,10 @@ public class CoursesServiceImpl  implements CoursesService{
 					target.setRegion(remotingRegion);
 				}
 				resultList.add(target);
+				count--;
+				if (count == 0) {
+					break;
+				}
 			}
 		}
 		return resultList;
