@@ -21,7 +21,18 @@ public class AutobotCompleteResumeAction extends BaseAction {
 	
 	@Override
 	public String execute() throws Exception {
-		
+		autobotsService.save(autobot);
 		return SUCCESS;
 	}
+
+
+	public Autobots getAutobot() {
+		return autobot;
+	}
+
+
+	public void setAutobot(Autobots autobot) {
+		this.autobot = autobot;
+	}
+	
 }

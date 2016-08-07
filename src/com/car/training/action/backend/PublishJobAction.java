@@ -20,7 +20,16 @@ public class PublishJobAction extends BaseAction {
 	
 	@Override
 	public String execute() throws Exception {
-	
+		jobsService.save(jobs);
 		return SUCCESS;
 	}
+
+	public Jobs getJobs() {
+		return jobs;
+	}
+
+	public void setJobs(Jobs jobs) {
+		this.jobs = jobs;
+	}
+	
 }

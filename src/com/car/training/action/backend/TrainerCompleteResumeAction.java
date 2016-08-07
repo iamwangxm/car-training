@@ -21,7 +21,18 @@ public class TrainerCompleteResumeAction extends BaseAction {
 	
 	@Override
 	public String execute() throws Exception {
-		
+		trainerService.save(trainer);
 		return SUCCESS;
 	}
+
+
+	public Trainer getTrainer() {
+		return trainer;
+	}
+
+
+	public void setTrainer(Trainer trainer) {
+		this.trainer = trainer;
+	}
+	
 }

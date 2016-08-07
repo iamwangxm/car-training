@@ -19,14 +19,20 @@ public class CompanyCompleteResumeAction extends BaseAction {
 	private Company company;
 	
 	
-	
 	@Override
 	public String execute() throws Exception {
 	
-		
+		companyService.save(company);
 		return SUCCESS;
 	}
-	
-	
+
+
+	public Company getCompany() {
+		return company;
+	}
+
+	public void setCompany(Company company) {
+		this.company = company;
+	}
 
 }
