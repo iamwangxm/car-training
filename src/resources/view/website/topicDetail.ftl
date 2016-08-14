@@ -52,7 +52,7 @@
                 	<div class="pingl_pic left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zttx2.jpg" /></div>
                     <div class="pingl_ren right">
                     	<div class="pingl_ren_m">${t.trainer.userCenter.name!}</div>
-                        <div class="pingl_ren_zw">${t.t.trainer.currentPosition!}</div>
+                        <div class="pingl_ren_zw">${t.trainer.currentPosition!}</div>
                     </div>
                 </div>
                 	<div class="pingl_xx">${t.content!}</div>
