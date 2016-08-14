@@ -268,7 +268,7 @@
             	<#list topicList as t>
                 	<li>
                 	<#if t??>
-                    	<span><a href="#">${t.publishDate?string("yyyy-MM-dd")}</a></span><a href="#">${t.title!}</a>
+                    	<span><a href="#">${t.publishDate?string("yyyy-MM-dd")}</a></span><a href="/website/topicDetail?topic.id=${t.id!}">${t.title!}</a>
                     	</#if>
                   </li>
 					</#list>
@@ -287,7 +287,7 @@
                         	<div class="pxsheng_pic"><img src="${t.trainer.userCenter.headLogo!}" /></div>
                     <div class="pxsheng_intro">
                     	<div class="pxsheng_name">
-                        	<div class="pxsheng_xm left">${t.courseName!}</div>
+                        	<div class="pxsheng_xm left"><a href="/website/courseDetail?course.id=${t.id!}">${t.courseName!}</a></div>
                           
                             <div class="clear"></div>
                         </div>
