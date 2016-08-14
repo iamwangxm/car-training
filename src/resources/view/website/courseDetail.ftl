@@ -10,32 +10,7 @@
 
 <body>
 <!-- 头部开始 -->	
-<div class="top">
-	<div class="content">
-    	<div class="logo left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/logo.jpg" /></div>
-        <div class="nav_box left">
-        	<div class="nav">
-            	<ul>
-            	<li><a href="#">首页</a></li>
-                <li><a href="#">培训师</a></li>
-                <li><a href="#">培训需求</a></li>
-                <li><a href="#">汽车人</a></li>
-                <li><a href="#">汽车人需求</a></li>
-                <li><a href="#">培训学院</a></li>
-                <li  class="cn"><a href="#">公开课</a></li>
-                
-            </ul>
-            </div>
-        </div>
-        <div class="dl_top right">
-        	<ul>
-            	<li style="background:none;"><a href="#">请登录</a></li>
-                <li><a href="#">免费注册</a></li>
-            </ul>
-        </div>
-        <div class="clear"></div>
-    </div>
-</div>
+<#include "/assets/website/common/header.html">
 <!-- 头部结束 -->	
 
 <!-- main开始 -->
@@ -111,6 +86,22 @@
                 </div>
                 <div class="xueyuan_pj_box">
  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+ <tr>
+   <td width="6%" height="50" align="left" valign="middle">打分：</td>
+   <td width="94%" colspan="2" align="left" valign="middle"><table width="300" border="0" cellspacing="0" cellpadding="0">
+     <tr>
+       <td width="73"><font color="#cccccc">内容设计</font></td>
+       <td width="227"><div>
+		<a href="javascript:click(1)"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png" id="star1" onMouseOut="out(1)"/></a>
+		<a href="javascript:click(2)"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png" id="star2" onMouseOut="out(2)" /></a>
+		<a href="javascript:click(3)"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png" id="star3" onMouseOut="out(3)" /></a>
+		<a href="javascript:click(4)"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png" id="star4" onMouseOut="out(4)"/></a>
+		<a href="javascript:click(5)"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png" id="star5" onMouseOut="out(5)"/></a>
+		<span id="message"></span>
+	</div></td>
+     </tr>
+   </table></td>
+   </tr>
 <tr>
    <td height="50" align="left" valign="middle">&nbsp;</td>
    <td colspan="2" align="left" valign="middle"><table width="300" border="0" cellspacing="0" cellpadding="0">
