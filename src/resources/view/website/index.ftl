@@ -125,7 +125,7 @@
             	<#list autobotsList as t>
                 	<li>
                 	<#if t?? && t.userCenter??>
-                        	<div class="pxsheng_pic"><a href="/website/autobotDetail?autbots.id=${t.id!}"><img src="${t.userCenter.headLogo!}" /></a></div>
+                        	<div class="pxsheng_pic"><a href="/website/autobotDetail?autobots.id=${t.id!}"><img src="${t.userCenter.headLogo!}" /></a></div>
                     <div class="pxsheng_intro">
                     	<div class="pxsheng_name">
                         	<div class="pxsheng_xm left">${t.userCenter.name!}</div>

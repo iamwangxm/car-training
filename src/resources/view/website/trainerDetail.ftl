@@ -82,7 +82,7 @@
                 	<#if coursesList??>
                 	<ul>
                 		<#list coursesList as c>
-                        <li><span><a href="#">${c.publishDate!}</a></span><a href="#">${c.courseName!}（${c.longTime!}天）</a></li>
+                        <li><span><a href="#">${c.publishDate!?string("yyyy-MM-dd")}</a></span><a href="#">${c.courseName!}（${c.longTime!}天）</a></li>
                         </#list>
                     </ul>
                     </#if>
@@ -104,13 +104,13 @@
             	<h4><span><a href="#">更多>></a></span>原创文章</h4>
                 </div>
                 <div class="pxshi_wz_box">
+                <#if trainerEssayList??>
                 	<ul>
-                    	<li><span><a href="#">2016-07-02</a></span><a href="#">全面薪酬体系设计“6+1”实操训练营</a></li>
-                        <li><span><a href="#">2016-07-02</a></span><a href="#">全面薪酬体系设计“6+1” </a></li>
-                        <li><span><a href="#">2016-07-02</a></span><a href="#">如何有效的提取绩效管理指标 </a></li>
-                        <li><span><a href="#">2016-07-02</a></span><a href="#">基于平衡计分卡的绩效管理体系（2天</a></li>
-                        <li><span><a href="#">2016-07-02</a></span><a href="#">基于KPI的绩效管理体系（2天）</a></li>
+                	<#list trainerEssayList as te>
+                    	<li><span><a href="#">${te.publishDate!?string("yyyy-MM-dd")}</a></span><a href="#">${te.title!}</a></li>
+                    </#list>
                     </ul>
+                    </#if>
                 </div>
           </div>
             <div class="pxshi_xypl">
@@ -147,9 +147,9 @@ QQ：${trainer.userCenter.QQ!}<br />
                 <div class="pj_box">
                 	<#if trainer.autobotsCommentList??>
                 	<ul>
-                		<#list trainer.autobotsCommentList as t>
-                		<#if t?? && t.content>
-                    	<li><a href="#"><#if  t.content?length lt 19>${t.content!}<#else>${t.content?substring(18)!}...</#if></a></li>
+                		<#list trainer.autobotsCommentList as c>
+                		<#if c?? && c.content??>
+                    	<li><a href="#"><#if  c.content?length lt 19>${c.content!}<#else>${c.content?substring(18)!}...</#if></a></li>
                     	</#if>
                         </#list>
                     </ul>
