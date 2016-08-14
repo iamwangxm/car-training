@@ -29,7 +29,7 @@
                 </div>
                 <div class="xinxi right">
                 	<div class="mingzi">
-                    	<div class="mingzi_l left">${trainer.userCneter.name!}</div>
+                    	<div class="mingzi_l left">${trainer.userCenter.name!}</div>
                         <div class="mingzi_m left"><span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
@@ -136,7 +136,7 @@
             	<h4>联系方式</h4>
                 <div class="lx_box">
                 	<div class="xingming">${trainer.userCenter.name!}(培训师本人)</div>
-                   电话：${course.trainer.userCenter.mobile!}<br />
+                   电话：${trainer.userCenter.mobile!}<br />
 QQ：${trainer.userCenter.QQ!}<br />
 邮箱：${trainer.userCenter.email!}<br />
 微信：${trainer.userCenter.weixin!}<br />
