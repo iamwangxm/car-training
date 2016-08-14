@@ -45,7 +45,7 @@
                 	<div class="fldy">
                 	<ul>
                 		<#if jobs.welfare??>
-                        	<#list t.welfare as w>
+                        	<#list jobs.welfare as w>
                         	<li>${w!}</li>
                             </#list>
                         </#if>
@@ -56,39 +56,19 @@
                 <div class="gwms">
                 	<h4>岗位描述：</h4>
                     <div class="gwms_box">
-                    	1.211本科及以上学历，英语CET4及<Br />
-2.2年以上相关管理工作经验； <Br />
-3.熟悉汽车维修、配件管理专业知识；<Br />
-4.能适应经常性的出差。
+                    	${jobs.jobDescription!}
                     </div>
                 </div>
-                <div class="gwyq">
-                	<h4>岗位要求：</h4>
-                    <div class="gwyq_box">
-                    	1.211本科及以上学历，英语CET4及<Br />
-2.2年以上相关管理工作经验； <Br />
-3.熟悉汽车维修、配件管理专业知识；<Br />
-4.能适应经常性的出差。
-                    </div>
-                </div>
-                <div class="rzyq">
-                	<h4>培训认证要求：</h4>
-                    <div class="rzyq_box">
-                    	1.211本科及以上学历，英语CET4及<Br />
-2.2年以上相关管理工作经验； <Br />
-3.熟悉汽车维修、配件管理专业知识；<Br />
-4.能适应经常性的出差。
-                    </div>
-                </div>
+
                 <div class="rzyq">
                 	<h4>其他信息：</h4>
                     <div class="rzyq_box">
                     	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="8%">所属部门：</td>
-    <td width="42%">运营部 </td>
+    <td width="42%">${jobs.department!}</td>
     <td width="8%">专业要求：</td>
-    <td width="42%">不限</td>
+    <td width="42%">${jobs.major!}</td>
   </tr>
 </table>
 
@@ -98,30 +78,6 @@
                 	<h4>企业简介：</h4>
                     <div class="qy_intro_box">
                     	${jobs.company.intro!}
-                    </div>
-                </div>
-                <div class="qt_gw">
-                	<h4>其他岗位：</h4>
-                    <div class="qt_gw_box">
-                    		<ul>
-                            	<li>
-                        	
-                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="33%" class="gw_mingcheng">项目管理工程师 </td>
-    <td width="32%" class="gzdaiyu">6-12万</td>
-    <td width="35%" class="gongsi_m">上海欧腾汽车销售有限公司</td>
-  </tr>
-  <tr>
-    <td>3年工作经验  |  本科及以上</td>
-    <td>上海-嘉定区</td>
-    <td>汽车销售、以及原厂配件、售后服务 </td>
-  </tr>
-</table>
-
-                        		</li>
-                        		
-                            </ul>
                     </div>
                 </div>
             </div>
@@ -143,15 +99,15 @@
                 </div>
                 <div class="qyjj">
                 	<h5>${jobs.company.name!}</h5>
-                    <div class="xz"><em style="font-style:normal;  font-size:12px; height:30px; line-height:30px; color:#000; font-weight:700;">经营范围：</em>${jobs.company}</div>
+                    <div class="xz"><em style="font-style:normal;  font-size:12px; height:30px; line-height:30px; color:#000; font-weight:700;">经营范围：</em>${jobs.company.industry!}</div>
                     <div class="dz"><em style="font-style:normal;  font-size:12px; height:30px; line-height:30px; color:#000; font-weight:700;">公司地址：</em>${jobs.company.address!}</div>
-                    <div class="jj"><em style="font-style:normal;  font-size:12px; height:30px; line-height:30px; color:#000; font-weight:700;">公司简介：</em>${jobs.company.intro}</div>
+                    <div class="jj"><em style="font-style:normal;  font-size:12px; height:30px; line-height:30px; color:#000; font-weight:700;">公司简介：</em>${jobs.company.intro!}</div>
                     <div class="jj_img">
                     	<!-- 代码 开始 -->
 						<div class="www51buycom">
     <ul class="51buypic">
-        <li><a href="#" target="_blank"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy1.jpg" /></a></li>
-       <li><a href="#" target="_blank"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy2.jpg" /></a></li>
+        <li><a href="#" target="_blank"><img src="${jobs.company.environmentURL1!}" /></a></li>
+       <li><a href="#" target="_blank"><img src="${jobs.company.environmentURL2!}" /></a></li>
         
     </ul>
    

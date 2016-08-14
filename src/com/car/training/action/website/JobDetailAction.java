@@ -24,7 +24,8 @@ public class JobDetailAction extends BaseAction {
 	private UserCenterService userCenterService;
 
 	private Jobs jobs;
-	
+	/**其他职位  */
+	private List<Jobs> jobsOtherList;
 	private List<UserCenter> bondsmanList;
 	
 	@Override
@@ -34,12 +35,16 @@ public class JobDetailAction extends BaseAction {
 			t.setId(jobs.getId());
 		}
 		jobs = jobsService.findById(t.getId());
-		for(String strId : jobs.getCompany().getBondsman().split(",")){
-			if(StringUtils.isNotBlank(strId)){
+		for (String strId : jobs.getCompany().getBondsman().split(",")) {
+			if (StringUtils.isNotBlank(strId)) {
 				UserCenter uc = userCenterService.findById(strId);
-				bondsmanList.add(uc);
+				if (uc != null) { 
+					bondsmanList.add(uc);
+				}
 			}
 		}
+		jobsOtherList = jobsService.findListByJobs(jobs);
+		
 		return SUCCESS;
 	}
 
@@ -49,6 +54,14 @@ public class JobDetailAction extends BaseAction {
 
 	public void setJobs(Jobs jobs) {
 		this.jobs = jobs;
+	}
+
+	public List<Jobs> getJobsOtherList() {
+		return jobsOtherList;
+	}
+
+	public void setJobsOtherList(List<Jobs> jobsOtherList) {
+		this.jobsOtherList = jobsOtherList;
 	}
 
 	public List<UserCenter> getBondsmanList() {

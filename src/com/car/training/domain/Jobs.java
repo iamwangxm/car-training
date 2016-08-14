@@ -49,6 +49,9 @@ public class Jobs implements Serializable {
 	/**福利**/
 	private Set<String> welfare;
 	
+	/**工资**/
+	private String salary;
+	
 	private Set<String> languages;
 	
 	private String jobDescription;
@@ -168,6 +171,14 @@ public class Jobs implements Serializable {
 
 	public void setWelfare(Set<String> welfare) {
 		this.welfare = welfare;
+	}
+
+	public String getSalary() {
+		return salary;
+	}
+
+	public void setSalary(String salary) {
+		this.salary = salary;
 	}
 
 	public Set<String> getLanguages() {

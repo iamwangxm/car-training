@@ -54,7 +54,7 @@
                     	<div class="jiben left">
                         	<span>售后</span><span>销售</span><span style=" background:none;">客服</span>擅长领域/行业：
                         </div>
-                        <div class="qc_pp right">${autobot.autoBrand!}<span style=" border:none;">简历查看数：30</span></div>
+                        <div class="qc_pp right">${autobots.autoBrand!}<span style=" border:none;">简历查看数：30</span></div>
                         <div class="clear"></div>
                         
                         
@@ -168,7 +168,7 @@
                 <div class="pyquan_box">
                 	<ul>
                    	  <#list autobotsList as t>
-                   	  <#if t?? && t.userCenter>
+                   	  <#if t?? && t.userCenter??>
                       <li>
                         	<div class="dbr_l left"><a href="#"><img src="${t.userCenter.headLogo!}" /></a></div>
                           <div class="dbr_r right">

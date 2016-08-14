@@ -75,6 +75,10 @@ public class Jobs extends BaseEntity {
 	@UiConfig(hiddenInList = @Hidden(true) )
 	private JobType jobType;
 	
+	/**工资**/
+	@Column(length = 50, nullable = true)
+	private String salary;
+	
 	/**福利**/
 	@UiConfig(hiddenInList = @Hidden(true) )
 	private Set<String> welfare = new HashSet<String>(0);;
@@ -207,6 +211,14 @@ public class Jobs extends BaseEntity {
 
 	public void setWelfare(Set<String> welfare) {
 		this.welfare = welfare;
+	}
+
+	public String getSalary() {
+		return salary;
+	}
+
+	public void setSalary(String salary) {
+		this.salary = salary;
 	}
 
 	public Set<String> getLanguages() {
