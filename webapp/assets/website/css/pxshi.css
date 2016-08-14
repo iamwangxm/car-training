@@ -95,7 +95,7 @@ a img {border: none;}
 .gzxz_box li{ display:block; float:left; padding-right:40px;}
 
 /*搜索框*/
-.sou{ height:35px; line-height:35px; margin-top:10px;}
+.sou{ height:35px; /*line-height:35px;*/ margin-top:10px;}
 .sou h4{ display:block; float:left; font-weight:100; width:65px; text-align:left;  padding-left:30px; color:#3689b3;font-weight:700;  }
 .sou_box{ width:1030px;float:right;}
 .sou_box li{ display:block; float:left; padding-right:40px;}
