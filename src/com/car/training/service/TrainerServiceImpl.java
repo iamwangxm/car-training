@@ -20,7 +20,7 @@ public class TrainerServiceImpl  implements TrainerService{
 	@Autowired
 	private TrainerManager trainerManager;
 
-	/** 新增企业/公司信息 */
+	/** 新增培训师信息 */
 	@Override
 	@Timing
 	@Transactional
@@ -30,7 +30,7 @@ public class TrainerServiceImpl  implements TrainerService{
 		trainerManager.save(target);
 	}
 
-	/** 更新企业/公司信息 */
+	/** 更新培训师信息 */
 	@Override
 	@Timing
 	@Transactional
@@ -38,7 +38,7 @@ public class TrainerServiceImpl  implements TrainerService{
 		this.save(trainer);
 	}
 
-	/** 删除企业/公司信息 */
+	/** 删除培训师信息 */
 	@Override
 	@Timing
 	@Transactional
@@ -50,7 +50,7 @@ public class TrainerServiceImpl  implements TrainerService{
 		}
 	}
 
-	/** 获取企业/公司信息 **/
+	/** 获取培训师信息 **/
 	@Override
 	@Timing
 	@Transactional(readOnly = true)
@@ -64,7 +64,7 @@ public class TrainerServiceImpl  implements TrainerService{
 		return target;
 	}
 	
-	/** 获取企业/公司列表 */
+	/** 获取培训师列表 */
 	@Override
 	@Timing
 	@Transactional(readOnly = true)
@@ -86,7 +86,7 @@ public class TrainerServiceImpl  implements TrainerService{
 		return tResultPage;
 	}
 	
-	/** 获取企业/公司列表 */
+	/** 获取培训师列表 */
 	@Override
 	@Timing
 	@Transactional(readOnly = true)
@@ -116,6 +116,11 @@ public class TrainerServiceImpl  implements TrainerService{
 		}
 		Trainer target = new Trainer();
 		BeanUtils.copyProperties(source, target);
+		if (source != null && source.getUserCenter() != null) {
+			UserCenter remotingUserCenter = new UserCenter();
+			BeanUtils.copyProperties(source.getUserCenter(), remotingUserCenter);
+			target.setUserCenter(remotingUserCenter);
+		}
 		return target;
 	}
 

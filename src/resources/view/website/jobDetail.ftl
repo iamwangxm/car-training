@@ -33,7 +33,7 @@
                	 	<div class="shoucang">收藏</div>
                 	<div class="gzdd">
                 	<div class="didian left"><#if jobs.region??>${jobs.region.fullname!}</#if></div>
-                    <div class="fb_sj left">${jobs.publishDate!}</div>
+                    <div class="fb_sj left">${jobs.publishDate!?string("yyyy-MM-dd")}</div>
                     <div class="clear"></div>
                 </div>
                 	<div class="zwyq">
@@ -133,7 +133,7 @@
                 	<div class="qylogo">
                     	<div class="qylogo_l left"><img src="${jobs.company.logo!}" /></div>
                       <div class="qylogo_r right">
-                       	<div class="danbao">已有<#if bondsmanList??>${bondsmanList?size}</#if>人担保</div>
+                       	<div class="danbao">已有${jobs.company.bondsmanCount!}人担保</div>
                             <div class="wydb"><a href="#">
                               <input style="border:none;" type="image" name="db" id="db" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/danbao.jpg" />
                             </a></div>
