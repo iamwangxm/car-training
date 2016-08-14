@@ -68,7 +68,7 @@ public class Courses extends BaseEntity {
 	/**课程大纲**/
 	private String courseOutline;
 	
-	/**课程大纲**/
+	/**工具模型**/
 	private String toolModel;
 	
 	/**培训师*/

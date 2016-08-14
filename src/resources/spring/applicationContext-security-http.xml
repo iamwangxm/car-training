@@ -11,6 +11,8 @@
 		<security:headers disabled="true"/>
 		<security:csrf disabled="true"/>
 		<security:x509 subject-principal-regex="CN=(.*?)," user-service-ref="userDetailsService"/>
+		<security:intercept-url pattern="/website/**" access="permitAll" />
+		<security:intercept-url pattern="/backend/**" access="permitAll" />
 		<security:intercept-url pattern="/login*/**" access="permitAll" />
 		<security:intercept-url pattern="/oauth*/**" access="permitAll" />
 		<security:intercept-url pattern="/locale" access="permitAll" />

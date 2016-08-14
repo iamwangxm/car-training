@@ -293,7 +293,7 @@
                         </div>
                         <div class="pxsheng_zw">
                         	<div class="pxsheng_zw_l left"><#if t.region??></#if>${t.region.fullname!}</div>
-                            <div class="pxsheng_zw_r  right">${t.schoolTime!?string("yyyy-MM-dd")}</div>
+                            <div class="pxsheng_zw_r  right">${t.schoolTime!}</div>
                             <div class="clear"></div>
                         </div>
                         <div class="pxsheng_rz">
