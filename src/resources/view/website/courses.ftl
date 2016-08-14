@@ -123,11 +123,11 @@
 					                        </div>
 					                        <div class="gkk_zw">
 					                        	<div class="gkk_zw_l left"><#if t.region??>${t.region.fullname!}</#if></div>
-					                            <div class="gkk_zw_r  right">${t.publishDate!}</div>
+					                            <div class="gkk_zw_r  right">${t.publishDate!?string("yyyy-MM-dd")}</div>
 					                            <div class="clear"></div>
 					                        </div>
 					                        <div class="gkk_zw">
-					                        	<div class="gkk_zw_l left"><font color="ff8100">${price!}元</font></div>
+					                        	<div class="gkk_zw_l left"><font color="ff8100">${t.price!}元</font></div>
 					                            <div class="gkk_zw_r  right">报名数：<font color="ff8100">58人</font></div>
 					                            <div class="clear"></div>
 					                        </div>

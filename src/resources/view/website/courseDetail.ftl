@@ -110,13 +110,39 @@
             	<h4>学员课后评价</h4>
                 </div>
                 <div class="xueyuan_pj_box">
-                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+ <table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+   <td height="50" align="left" valign="middle">&nbsp;</td>
+   <td colspan="2" align="left" valign="middle"><table width="300" border="0" cellspacing="0" cellpadding="0">
+     <tr>
+       <td width="73"><font color="#cccccc">上课气氛</font></td>
+       <td width="227"><div>
+		<a href="javascript:click1(11)"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png" id="star11"  onMouseOut="out1(11)"/></a>
+		<a href="javascript:click1(12)"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png" id="star12"  onMouseOut="out1(12)" /></a>
+		<a href="javascript:click1(13)"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png" id="star13"  onMouseOut="out1(13)" /></a>
+		<a href="javascript:click1(14)"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png" id="star14"  onMouseOut="out1(14)"/></a>
+		<a href="javascript:click1(15)"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png" id="star15"  onMouseOut="out1(15)"/></a>
+		<span id="message1"></span>
+	</div></td>
+     </tr>
+   </table></td>
+   </tr>
  <tr>
-    <td width="6%" height="50" align="left" valign="middle">打分：
-     </td>
-    <td width="25%" align="left" valign="middle"><input type="text" name="textfield" id="textfield" /></td>
-    <td width="69%" align="left" valign="middle"><font color="#cccccc">1、内容设计（满分5分）；2、上课气氛（满分5分）；3、课后所得（满分5分）；</font></td>
-  </tr>
+   <td height="50" align="left" valign="middle">&nbsp;</td>
+   <td colspan="2" align="left" valign="middle"><table width="300" border="0" cellspacing="0" cellpadding="0">
+     <tr>
+       <td width="73"><font color="#cccccc">上课气氛</font></td>
+       <td width="227"><div>
+		<a href="javascript:click2(21)"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png" id="star21" onMouseOut="out2(21)"/></a>
+		<a href="javascript:click2(22)"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png" id="star22" onMouseOut="out2(22)" /></a>
+		<a href="javascript:click2(23)"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png" id="star23" onMouseOut="out2(23)" /></a>
+		<a href="javascript:click2(24)"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png" id="star24" onMouseOut="out2(24)"/></a>
+		<a href="javascript:click2(25)"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png" id="star25" onMouseOut="out2(25)"/></a>
+		<span id="message2"></span>
+	</div></td>
+     </tr>
+   </table></td>
+   </tr>
   <tr>
     <td colspan="3" align="center" valign="middle"><table width="90%" border="0" align="left" cellpadding="0" cellspacing="0">
       <tr>
@@ -166,9 +192,167 @@ QQ：910283168<br />
     </#if>
 </div>
     
-	
-
 <!-- main结束 -->
 <#include "/assets/website/common/footer.html">
 </body>
+<script type="text/javascript">
+var check = 0;//该变量是记录当前选择的评分
+var time = 0;//该变量是统计用户评价的次数，这个是我的业务要求统计的（改变评分不超过三次），可以忽略
+
+/*over()是鼠标移过事件的处理方法*/
+
+/*out 方法是鼠标移除事件的处理方法，当鼠标移出时，恢复到我的打分情况*/
+function out(){
+	if(check == 1){//打分是1，设置第一颗星星亮，其他星星暗，其他情况以此类推
+		$("#star1").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star2").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star3").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star4").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star5").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#message").html("1分");
+	}else if(check == 2){
+		$("#star1").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star2").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star3").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star4").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star5").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#message").html("2分");
+	}else if(check == 3){
+		$("#star1").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star2").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star3").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star4").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star5").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#message").html("3分");
+	}else if(check == 4){
+		$("#star1").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star2").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star3").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star4").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star5").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#message").html("4分");
+	}else if(check == 5){
+		$("#star1").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star2").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star3").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star4").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star5").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#message").html("5分");
+	}else if(check == 0){
+		$("#star1").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star2").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star3").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star4").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star5").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#message").html("");
+	}
+}
+function out1(){
+	if(check == 11){//打分是1，设置第一颗星星亮，其他星星暗，其他情况以此类推
+		$("#star11").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star12").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star13").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star14").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star15").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#message1").html("1分");
+	}else if(check == 12){
+		$("#star11").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star12").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star13").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star14").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star15").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#message1").html("2分");
+	}else if(check == 13){
+		$("#star11").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star12").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star13").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star14").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star15").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#message1").html("3分");
+	}else if(check == 14){
+		$("#star11").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star12").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star13").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star14").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star15").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#message1").html("4分");
+	}else if(check == 15){
+		$("#star11").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star12").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star13").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star14").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star15").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#message1").html("5分");
+	}else if(check == 0){
+		$("#star11").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star12").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star13").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star14").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star15").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#message1").html("");
+	}
+}
+function out2(){
+	if(check == 21){//打分是1，设置第一颗星星亮，其他星星暗，其他情况以此类推
+		$("#star21").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star22").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star23").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star24").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star25").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#message2").html("1分");
+	}else if(check == 22){
+		$("#star21").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star22").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star23").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star24").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star25").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#message2").html("2分");
+	}else if(check == 23){
+		$("#star21").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star22").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star23").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star24").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star25").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#message2").html("3分");
+	}else if(check == 24){
+		$("#star21").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star22").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star23").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star24").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star25").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#message2").html("4分");
+	}else if(check == 25){
+		$("#star21").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star22").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star23").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star24").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#star25").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star_red.png");
+		$("#message2").html("5分");
+	}else if(check == 0){
+		$("#star21").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star22").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star23").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star24").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#star25").attr("src","http://7xtuyf.com1.z0.glb.clouddn.com/website/images/star.png");
+		$("#message2").html("");
+	}
+}
+/*click()点击事件处理，记录打分*/
+function click(param){
+	time++;//记录打分次数
+	check = param;//记录当前打分
+	out();//设置星星数
+}
+
+function click1(param){
+	time++;//记录打分次数
+	check = param;//记录当前打分
+	out1();//设置星星数
+}
+function click2(param){
+	time++;//记录打分次数
+	check = param;//记录当前打分
+	out2();//设置星星数
+}
+</script>
 </html>
