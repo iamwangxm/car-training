@@ -207,7 +207,7 @@
                     	<div class="qcrxq_l left">
                         	 <a href="/website/jobDetail?jobs.id=${t.id!}"> <div class="qcrxq_zw_name">${t.name!}</div></a>
                        		 <div class="qcrxq_dy_box">
-                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">${t.workExprience!}年工作经验</a></span><span style="background:none;"><a href="#">上海-嘉定区</a></span>
+                        	<span class="cn" style="padding-left:0px;"><a href="#">${t.salary!}</a></span><span><a href="#">${t.workExprience!}年工作经验</a></span><span style="background:none;"><a href="#">上海-嘉定区</a></span>
                         </div>
                         	 <div class="pingpai">
                         <em>当前汽车品牌：</em><span>宝马</span><span>宝马</span>

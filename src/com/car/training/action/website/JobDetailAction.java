@@ -35,11 +35,13 @@ public class JobDetailAction extends BaseAction {
 			t.setId(jobs.getId());
 		}
 		jobs = jobsService.findById(t.getId());
-		for (String strId : jobs.getCompany().getBondsman().split(",")) {
-			if (StringUtils.isNotBlank(strId)) {
-				UserCenter uc = userCenterService.findById(strId);
-				if (uc != null) { 
-					bondsmanList.add(uc);
+		if (jobs != null && jobs.getCompany() != null && StringUtils.isNotBlank(jobs.getCompany().getBondsman())) {
+			for (String strId : jobs.getCompany().getBondsman().split(",")) {
+				if (StringUtils.isNotBlank(strId)) {
+					UserCenter uc = userCenterService.findById(strId);
+					if (uc != null) {
+						bondsmanList.add(uc);
+					}
 				}
 			}
 		}

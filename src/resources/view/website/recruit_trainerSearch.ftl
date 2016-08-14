@@ -126,7 +126,7 @@
                 	<div class="qz"></div> <div class="pxxq_l left">
                    	  <a href="/website/jobDetail?jobs.id=${t.id!}"><div class="zw_name">${t.name!}</div></a>
                         <div class="dy_box">
-                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">${t.workExprience!}年工作经验</a></span><span style="background:none;"><a href="#"><#if t.region??>${t.region.fullname}</#if></a></span>
+                        	<span class="cn" style="padding-left:0px;"><a href="#">${t.salary!}</a></span><span><a href="#">${t.workExprience!}年工作经验</a></span><span style="background:none;"><a href="#"><#if t.region??>${t.region.fullname}</#if></a></span>
                         </div>
                         <div class="fb_box">
                         	<span  style="padding-left:0px;"><a href="#">发布于：${t.publishDate!}</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
