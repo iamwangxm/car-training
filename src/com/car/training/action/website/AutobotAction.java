@@ -14,7 +14,7 @@ import com.car.training.enums.PositionType;
 import com.car.training.service.AutobotsService;
 
 @AutoConfig
-public class AutobotsAction extends BaseAction {
+public class AutobotAction extends BaseAction {
 
 	private static final long serialVersionUID = 4839883380537115435L;
 
