@@ -276,37 +276,38 @@
                 </#if>
                 </div>
             </div>
+            
             <div class="gkk right">
             	<h4><span><a href="#">更多>></a></span>公开课</h4>
                 <div class="gkk_box">
-                	<#if coursesList??>
-            	<ul>
-            	<#list coursesList as t>
-                	<li>
-                	<#if t?? && t.trainer ?? &&t.trainer.userCenter ?? >
-                        	<div class="pxsheng_pic"><img src="${t.trainer.userCenter.headLogo!}" /></div>
-                    <div class="pxsheng_intro">
-                    	<div class="pxsheng_name">
-                        	<div class="pxsheng_xm left"><a href="/website/courseDetail?course.id=${t.id!}">${t.courseName!}</a></div>
-                          
+                   <#if coursesList??>
+                	<ul>
+                		<#list coursesList as t>
+                    	<li>
+					<#if t?? && t.trainer ?? &&t.trainer.userCenter ?? >
+                    <div class="sy_gkk_pic"><a href="#"><img src="${t.trainer.userCenter.headLogo!}" /></a></div>
+                    <div class="sy_gkk_intro">
+                    	<div class="sy_gkk_name">
+                        	<div class="sy_gkk_xm"><a href="/website/courseDetail?course.id=${t.id!}">${t.courseName!}</a></div>
+                            
                             <div class="clear"></div>
                         </div>
-                        <div class="pxsheng_zw">
-                        	<div class="pxsheng_zw_l left"><#if t.region??></#if>${t.region.fullname!}</div>
-                            <div class="pxsheng_zw_r  right">${t.schoolTime!}</div>
+                         <div class="sy_gkk_zw">
+                        	<div class="sy_gkk_zw_l left"><#if t.region??></#if>${t.region.fullname!}</div>
+                            <div class="sy_gkk_zw_r  right">2016-6-18</div>
                             <div class="clear"></div>
                         </div>
-                        <div class="pxsheng_rz">
-                        	<div class="pxsheng_zw_l left">${t.price!}</div>
-                           <div class="pxsheng_zw_r  right">报名数: ${t.willnum!}人</div>
-                           <div class="clear"></div>
+                        <div class="sy_gkk_zw">
+                        	<div class="sy_gkk_zw_l left"><font color="ff8100">${t.price!}元</font></div>
+                            <div class="sy_gkk_zw_r  right">报名数：<font color="ff8100">${t.willnum!}人</font></div>
+                            <div class="clear"></div>
                         </div>
                     </div>
-                    </#if>
+                  </#if>
                   </li>
-					</#list>
-                </ul>
-                </#if>
+				</#list>
+                 </ul>
+                 </#if>
                 </div>
             </div>
             <div class="clear"></div>
