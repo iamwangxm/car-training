@@ -4,16 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.ServletActionContext;
 import org.ironrhino.core.event.EventPublisher;
 import org.ironrhino.core.metadata.AutoConfig;
 import org.ironrhino.core.metadata.JsonConfig;
-import org.ironrhino.core.metadata.Scope;
-import org.ironrhino.core.model.Persistable;
-import org.ironrhino.core.security.event.LoginEvent;
 import org.ironrhino.core.spring.security.DefaultLogoutSuccessHandler;
 import org.ironrhino.core.spring.security.DefaultUsernamePasswordAuthenticationFilter;
 import org.ironrhino.core.struts.BaseAction;
@@ -21,16 +18,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
 
+import com.car.training.domain.Company;
+import com.car.training.domain.UserCenter;
 import com.car.training.enums.UserType;
-import com.car.training.model.UserCenter;
+import com.car.training.exceptions.NotFoundException;
 import com.car.training.service.CaptchManager;
 import com.car.training.service.CompanyManager;
+import com.car.training.service.CompanyService;
 import com.car.training.service.UserCenterManager;
-import com.car.training.sms.SmsManager;
+import com.car.training.service.UserCenterService;
 
 @AutoConfig
 @Order(0)
@@ -51,11 +48,12 @@ public class LoginAction extends BaseAction {
 	private Object data;
 
 	private String captcha;
-
+	@Autowired
+	protected transient UserCenterService usercenterService;
+	@Autowired
+	protected transient CompanyService companyService;
 	@Autowired
 	private CaptchManager captchManager;
-	@Autowired
-	private SmsManager smsManager;
 	@Autowired
 	protected transient UserCenterManager usercenterManager;
 	@Autowired
@@ -123,77 +121,53 @@ public class LoginAction extends BaseAction {
 	public String login() {
 		Map<String, Object> map = new HashMap<String, Object>();
 		HttpServletRequest request = ServletActionContext.getRequest();
-		HttpServletResponse response = ServletActionContext.getResponse();
-		Authentication authResult = null;
-		UserDetails ud = null;
 		UserCenter usercenter = null;
-		if(userType.equals(UserType.PERSONAL)){
-		if (StringUtils.isNotBlank(username) && StringUtils.isNotBlank(password)) {
-			usercenter = usercenterManager.findByUsernamePassword(username, password);
-			if (usercenter == null && usercenterManager.checkCode(username, password)) {
-				usercenter = usercenterManager.findByMobile(username);
-			}
-		} else if (StringUtils.isNotBlank(username) && StringUtils.isNotBlank(vercode)) {
-			if (smsManager.checkCode(username, vercode) || usercenterManager.checkCode(username, vercode)) {
-				usercenter = usercenterManager.findByMobile(username);
-			} else {
-				map.put("code", 400);
-				map.put("msg", "验证码输入错误！");
-			}
-		} else {
-			map.put("code", 400);
-			map.put("msg", "请求有误！");
+		Company company = null;
+		if (StringUtils.isBlank(username)) {
+			throw new NotFoundException("1001","用户名不能为空");
 		}
-		if (usercenter != null) {
-			ud = usercenterManager.loadUserByUsername(usercenter.getId());
-			if (ud instanceof Persistable) {
-				authResult = new UsernamePasswordAuthenticationToken(ud, ud.getPassword(), ud.getAuthorities());
-				System.out.println(authResult);
-			} else {
-				try {
-					map.put("code", 400);
-					map.put("msg", "您的账号或密码错误！");
-					usernamePasswordAuthenticationFilter.unsuccess(request, response, null);
-				} catch (Exception e) {
-					log.error(e.getMessage(), e);
+		if (StringUtils.isBlank(password)) {
+			throw new NotFoundException("1002","密码不能为空");
+		}
+		if (StringUtils.isBlank(vercode)) {
+			throw new NotFoundException("1003","验证码不能为空");
+		}
+		if (userType==null) {
+			throw new NotFoundException("1004","请选择用户类型");
+		}
+		if(userType.equals(UserType.PERSONAL)){			
+			if (StringUtils.isNotBlank(username) && StringUtils.isNotBlank(password)) {
+				usercenter = usercenterService.findByUsernamePassword(username, password);
+					if (usercenter != null) {
+						HttpSession context = request.getSession();
+						context.setAttribute("userDetails", usercenter);
+						targetUrl = "/website/backend/companyJobManger";
+						request.getSession().setAttribute("loginState", "Y");
+						map.put("code", 200);
+						map.put("target", targetUrl);
+						map.put("msg", "登陆成功！");
+					}else{
+						map.put("code", 400);
+						map.put("msg", "您的账号或密码错误！");
+					}
+			}
+		} else if(userType.equals(UserType.PERSONAL)){
+			if (StringUtils.isNotBlank(username) && StringUtils.isNotBlank(password)) {
+				company = companyService.findByUsernamePassword(username, password);
+				if (company != null) {
+					HttpSession context = request.getSession();
+					context.setAttribute("userDetails", company);
+					targetUrl = "/website/backend/companyJobManger";
+					request.getSession().setAttribute("loginState", "Y");
+					map.put("code", 200);
+					map.put("target", targetUrl);
+					map.put("msg", "登陆成功！");
 				}
-			}
-		} else {
-			try {
-				map.put("code", 400);
-				map.put("msg", "您的账号或密码错误！");
-				usernamePasswordAuthenticationFilter.unsuccess(request, response, null);
-			} catch (Exception e) {
-				log.error(e.getMessage(), e);
-			}
-		}
-		if (authResult != null) {
-			try {
-				usernamePasswordAuthenticationFilter.success(request, response, authResult);
-				Object principal = authResult.getPrincipal();
-				if (principal instanceof UserDetails)
-					eventPublisher.publish(
-							new LoginEvent(((UserDetails) principal).getUsername(), request.getRemoteAddr()),
-							Scope.LOCAL);
-				if (StringUtils.isBlank(targetUrl))
-					targetUrl = "/website/index";
-
-				request.getSession().setAttribute("loginState", "Y");
-
-				map.put("code", 200);
-				map.put("target", targetUrl);
-				map.put("msg", "登陆成功！");
-			} catch (Exception e) {
-				log.error(e.getMessage(), e);
-			}
 		} else {
 			map.put("code", 400);
 			map.put("msg", "您的账号或密码错误！");
 		}
-		setData(map);
-		}else if(userType.equals(UserType.COMPANY)){
-			
-		}
+	  }
 		return JSON;
 	}
 
@@ -231,37 +205,7 @@ public class LoginAction extends BaseAction {
 			map.put("msg", "验证码填写错误");
 			this.setData(map);
 		}
-/*
-		UserCenter usercenter = usercenterManager.findByMobile(username);
-		if (usercenter != null) {
-			try {
-				smsManager.send(username, SmsTemplate.LOGIN);
-				map.put("code", 200);
-				map.put("msg", "消息发送成功！");
-			} catch (Exception e) {
-				log.info(e.getMessage());
-				map.put("code", 400);
-				map.put("msg", "消息发送失败！请稍后重试。");
-			}
-		} else {
-			usercenter = usercenterManager.register(username, null, null, null);
-			if (usercenter == null) {
-				map.put("code", 400);
-				map.put("msg", "手机号未注册。");
-			} else {
-				try {
-					smsManager.send(username, SmsTemplate.LOGIN);
-					map.put("code", 200);
-					map.put("msg", "消息发送成功！(未注册)");
-				} catch (Exception e) {
-					log.info(e.getMessage());
-					map.put("code", 400);
-					map.put("msg", "消息发送失败！请稍后重试。");
-				}
-			}
-		}
-		this.setData(map);
-		return JSON;*/
+
 		return JSON;
 	}
 

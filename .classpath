@@ -52,7 +52,6 @@
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/ironrhino-remoting-common-2.0.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/ironrhino-rest-2.0.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/ironrhino-security-2.0.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/ironrhino-security-config-2.0.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/ironrhino-security-loginrecord-2.0.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/ironrhino-sitemesh-config-2.0.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/ironrhino-wechat-2.0.jar"/>
@@ -124,5 +123,6 @@
 	<classpathentry kind="lib" path="D:/weshare/car-training/lib/servlet-api-3.1.jar"/>
 	<classpathentry kind="lib" path="/apicenter/lib/servlet-api-3.1.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/taobao-sdk-java-auto_1450022832134-20151224.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/ironrhino-security-config-base-2.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
