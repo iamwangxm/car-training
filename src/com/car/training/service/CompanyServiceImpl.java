@@ -64,6 +64,21 @@ public class CompanyServiceImpl  implements CompanyService{
 		return target;
 	}
 	
+	/** 获取企业/公司信息 **/
+	@Override
+	@Timing
+	@Transactional(readOnly = true)
+	public Company findByUsernamePassword(String username,String password){
+		com.car.training.model.Company source = companyManager.findByUsernamePassword(username,password);
+		if (source == null) {
+			return null;
+		}
+		Company target = new Company();
+		BeanUtils.copyProperties(source, target);
+		return target;
+	}
+	
+	
 	/** 获取企业/公司列表 */
 	@Override
 	@Timing

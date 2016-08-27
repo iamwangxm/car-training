@@ -21,6 +21,9 @@ public interface CompanyManager extends BaseManager<Company> {
 	/** 获取企业/公司信息 **/
 	Company findById(String id);
 	
+	/** 获取企业/公司信息 **/
+	Company findByUsernamePassword(String username,String password);
+	
 	/** 获取企业/公司列表 */
 	ResultPage<Company> findPageByCompany(Company company, Integer pageSize, Integer pageNo);
 	

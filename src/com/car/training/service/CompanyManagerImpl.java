@@ -41,6 +41,18 @@ public class CompanyManagerImpl extends BaseManagerImpl<Company> implements Comp
 		dc.add(Restrictions.eq("id", id));
 		return findByCriteria(dc);
 	}
+	
+	@Override
+	@Transactional(readOnly=true)
+	public Company findByUsernamePassword(String username,String password){
+			if (StringUtils.isBlank(username)||StringUtils.isBlank(password))
+				return null;
+			DetachedCriteria dc = detachedCriteria();
+			dc.add(Restrictions.eq("enabled", true));
+			dc.add(Restrictions.eq("username", username));
+			dc.add(Restrictions.eq("password", password));
+			return findByCriteria(dc);
+		}
 
 	@Override
 	@Transactional(readOnly=true)

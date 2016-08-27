@@ -1,24 +1,40 @@
  package com.car.training.action.website;
 
- import java.util.List;
+ import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.struts2.ServletActionContext;
+import org.ironrhino.core.event.EventPublisher;
 import org.ironrhino.core.metadata.AutoConfig;
+import org.ironrhino.core.spring.security.DefaultLogoutSuccessHandler;
+import org.ironrhino.core.spring.security.DefaultUsernamePasswordAuthenticationFilter;
 import org.ironrhino.core.struts.BaseAction;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.car.training.domain.Autobots;
+import com.car.training.domain.Company;
 import com.car.training.domain.Courses;
 import com.car.training.domain.Jobs;
 import com.car.training.domain.Topic;
 import com.car.training.domain.Trainer;
 import com.car.training.domain.TrainerEssay;
+import com.car.training.domain.UserCenter;
 import com.car.training.enums.CompanyType;
+import com.car.training.enums.UserType;
+import com.car.training.exceptions.NotFoundException;
 import com.car.training.service.AutobotsService;
+import com.car.training.service.CompanyService;
 import com.car.training.service.CoursesService;
 import com.car.training.service.JobsService;
 import com.car.training.service.TopicService;
 import com.car.training.service.TrainerEssayService;
 import com.car.training.service.TrainerService;
+import com.car.training.service.UserCenterService;
 
 @AutoConfig
 public class IndexAction extends BaseAction {
@@ -37,6 +53,16 @@ public class IndexAction extends BaseAction {
 	private AutobotsService autobotsService;
 	@Autowired
 	private TrainerEssayService trainerEssayService;
+	@Autowired
+	protected transient UserCenterService usercenterService;
+	@Autowired
+	protected transient CompanyService companyService;
+	@Autowired
+	protected transient DefaultUsernamePasswordAuthenticationFilter usernamePasswordAuthenticationFilter;
+	@Autowired
+	protected transient DefaultLogoutSuccessHandler defaultLogoutSuccessHandler;
+	@Autowired
+	protected transient EventPublisher eventPublisher;
 
 	/** 首页推荐培训师大图 */
 	private Trainer trainer;
@@ -54,6 +80,14 @@ public class IndexAction extends BaseAction {
 	private List<Topic> topicList;
 	/** 首页2个公开课列表 */
 	private List<Courses> coursesList;
+	/** 用户类型 */
+	protected UserType userType;
+	
+	protected String password;
+
+	protected String username;
+
+	private String vercode;
 
 	private String loginState = "N";
 
@@ -77,6 +111,62 @@ public class IndexAction extends BaseAction {
 		coursesList = coursesService.findByIndexPromoted(true,2);
 		
 		return SUCCESS;
+	}
+	
+	/**用户登陆
+	 * @author season
+	 * */
+	public String login(){
+		Map<String, Object> map = new HashMap<String, Object>();
+		HttpServletRequest request = ServletActionContext.getRequest();
+		UserCenter usercenter = null;
+		Company company = null;
+		if (StringUtils.isBlank(username)) {
+			throw new NotFoundException("1001","用户名不能为空");
+		}
+		if (StringUtils.isBlank(password)) {
+			throw new NotFoundException("1002","密码不能为空");
+		}
+		if (StringUtils.isBlank(vercode)) {
+			throw new NotFoundException("1003","验证码不能为空");
+		}
+		if (userType==null) {
+			throw new NotFoundException("1004","请选择用户类型");
+		}
+		if(userType.equals(UserType.PERSONAL)){			
+			if (StringUtils.isNotBlank(username) && StringUtils.isNotBlank(password)) {
+				usercenter = usercenterService.findByUsernamePassword(username, password);
+					if (usercenter != null) {
+						HttpSession context = request.getSession();
+						context.setAttribute("userDetails", usercenter);
+						targetUrl = "/website/index";
+						request.getSession().setAttribute("loginState", "Y");
+						map.put("code", 200);
+						map.put("target", targetUrl);
+						map.put("msg", "登陆成功！");
+					}else{
+						map.put("code", 400);
+						map.put("msg", "您的账号或密码错误！");
+					}
+			}
+		} else if(userType.equals(UserType.PERSONAL)){
+			if (StringUtils.isNotBlank(username) && StringUtils.isNotBlank(password)) {
+				company = companyService.findByUsernamePassword(username, password);
+				if (company != null) {
+					HttpSession context = request.getSession();
+					context.setAttribute("userDetails", company);
+					targetUrl = "/website/index";
+					request.getSession().setAttribute("loginState", "Y");
+					map.put("code", 200);
+					map.put("target", targetUrl);
+					map.put("msg", "登陆成功！");
+				}
+		} else {
+			map.put("code", 400);
+			map.put("msg", "您的账号或密码错误！");
+		}
+	  }
+		return JSON;
 	}
 
 	public Trainer getTrainer() {
@@ -113,5 +203,13 @@ public class IndexAction extends BaseAction {
 
 	public String getLoginState() {
 		return loginState;
+	}
+
+	public UserType getUserType() {
+		return userType;
+	}
+
+	public void setUserType(UserType userType) {
+		this.userType = userType;
 	}
 }
