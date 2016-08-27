@@ -11,6 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.ServletActionContext;
 import org.ironrhino.core.event.EventPublisher;
 import org.ironrhino.core.metadata.AutoConfig;
+import org.ironrhino.core.metadata.JsonConfig;
 import org.ironrhino.core.spring.security.DefaultLogoutSuccessHandler;
 import org.ironrhino.core.spring.security.DefaultUsernamePasswordAuthenticationFilter;
 import org.ironrhino.core.struts.BaseAction;
@@ -28,6 +29,7 @@ import com.car.training.enums.CompanyType;
 import com.car.training.enums.UserType;
 import com.car.training.exceptions.NotFoundException;
 import com.car.training.service.AutobotsService;
+import com.car.training.service.CaptchManager;
 import com.car.training.service.CompanyService;
 import com.car.training.service.CoursesService;
 import com.car.training.service.JobsService;
@@ -63,6 +65,8 @@ public class IndexAction extends BaseAction {
 	protected transient DefaultLogoutSuccessHandler defaultLogoutSuccessHandler;
 	@Autowired
 	protected transient EventPublisher eventPublisher;
+	@Autowired
+	private transient CaptchManager captchManager;
 
 	/** 首页推荐培训师大图 */
 	private Trainer trainer;
@@ -90,6 +94,10 @@ public class IndexAction extends BaseAction {
 	private String vercode;
 
 	private String loginState = "N";
+	
+	private String captcha;
+	
+	private Object data;
 
 	@Override
 	public String execute() throws Exception {
@@ -166,6 +174,35 @@ public class IndexAction extends BaseAction {
 			map.put("msg", "您的账号或密码错误！");
 		}
 	  }
+		setData(map);
+		return JSON;
+	}
+	
+
+	/** 用户登出 */
+	@JsonConfig(root = "data")
+	public String logout() {
+		Map<String, Object> map = new HashMap<String, Object>();
+		HttpServletRequest request = ServletActionContext.getRequest();
+		request.getSession().setAttribute("loginState", "N");
+		map.put("code", 200);
+		map.put("msg", "退出成功");
+		setData(map);
+		return JSON;
+	}
+
+	@JsonConfig(root = "data")
+	public String sendMsg() {
+		Map<String, Object> map = new HashMap<String, Object>();
+
+		String sid = ServletActionContext.getRequest().getSession().getId();
+
+		if (!captchManager.volidateCode(sid, captcha)) {
+			map.put("code", 400);
+			map.put("msg", "验证码填写错误");
+			this.setData(map);
+		}
+
 		return JSON;
 	}
 
@@ -211,5 +248,49 @@ public class IndexAction extends BaseAction {
 
 	public void setUserType(UserType userType) {
 		this.userType = userType;
+	}
+
+	public Object getData() {
+		return data;
+	}
+
+	public void setData(Object data) {
+		this.data = data;
+	}
+
+	public void setLoginState(String loginState) {
+		this.loginState = loginState;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getVercode() {
+		return vercode;
+	}
+
+	public void setVercode(String vercode) {
+		this.vercode = vercode;
+	}
+
+	public String getCaptcha() {
+		return captcha;
+	}
+
+	public void setCaptcha(String captcha) {
+		this.captcha = captcha;
 	}
 }

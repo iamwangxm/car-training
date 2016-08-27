@@ -168,6 +168,7 @@ public class LoginAction extends BaseAction {
 			map.put("msg", "您的账号或密码错误！");
 		}
 	  }
+		setData(map);
 		return JSON;
 	}
 

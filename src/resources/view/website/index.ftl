@@ -39,8 +39,10 @@
                     <div class="clear"></div>
                 </div>
                 <div class="leibie"> 
-                	<div class="lb_l left"><input name="userType" id="userType" type="radio"  autocomplete="on" value="PERSONAL" checked="checked" data-selector="company-toggle"/>企业</div>
-                    <div class="lb_m left"><input data-selector="company-toggle" type="radio" name="userType" id="userType" value="COMPANY"  autocomplete="off"/>个人</div>
+                	<div class="lb_l left">
+                	<input name="userType" id="userType" type="radio"  autocomplete="on" value="PERSONAL" checked="checked" data-selector="company-toggle"/>个人
+                	<input data-selector="company-toggle" type="radio" name="userType" id="userType" value="COMPANY"  autocomplete="off"/>企业
+                    </div>
                     <div class="clear"></div>
             
 				</div>
