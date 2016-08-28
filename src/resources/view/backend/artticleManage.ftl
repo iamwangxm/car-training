@@ -238,7 +238,7 @@
     	
     </script>
 
-<#include "/assets/backend/common/footer.html">
+<#include "/assets/website/backend/common/footer.html">
 
 </body>
 </html>

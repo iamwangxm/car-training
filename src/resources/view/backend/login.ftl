@@ -208,7 +208,7 @@
     
 </script>
 <!-- main结束 -->
-<#include "/assets/backend/common/footer.html">
+<#include "/assets/website/backend/common/footer.html">
 
 <script type="text/javascript" src="js/common.js"></script>
 </body>
