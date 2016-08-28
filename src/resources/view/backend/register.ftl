@@ -88,7 +88,7 @@ function displayimg()
                   <td height="60" align="right" valign="middle"><font color="#ff0000">*</font>验证码：</td>
                   <td width="100"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" type="text" name="gr_verCode" id="gr_verCode" /></td>
                   <td width="72"> 
-                    <a href="javascript:void(0);" id="btnGetCode" enabled="true" class="phonecode" loadingmsg="发送验证码中，请留意接收短信..." loadingurl="59S后重新获取">免费获取验证码</a></td>
+                    <a href="javascript:sendmsg($("#loginform0").find("#gr_username").val());" id="btnGetCode" enabled="true" class="phonecode" loadingmsg="发送验证码中，请留意接收短信..." loadingurl="59S后重新获取">免费获取验证码</a></td>
                   <td><font color="#999999">请输入手机验证码</font></td>
                 </tr>
                 <tr>
@@ -134,7 +134,7 @@ function displayimg()
                   <td height="60" align="right" valign="middle"><font color="#ff0000">*</font>验证码：</td>
                   <td width="100"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" type="text" name="qy_verCode" id="qy_verCode" /></td>
                   <td width="72"> 
-                    <a href="javascript:void(0);" id="btnGetCode" enabled="true" class="phonecode" loadingmsg="发送验证码中，请留意接收短信..." loadingurl="59S后重新获取">免费获取验证码</a></td>
+                    <a href="javascript:sendmsg($("#loginform0").find("#qy_username").val());" id="btnGetCode" enabled="true" class="phonecode" loadingmsg="发送验证码中，请留意接收短信..." loadingurl="59S后重新获取">免费获取验证码</a></td>
                   <td><font color="#999999">请输入手机验证码</font></td>
                 </tr>
                 <tr>
@@ -166,136 +166,168 @@ function displayimg()
     </div>
 </div>
 <script>
-    function gr_register(){
-		var form_data={};
-		var username = $("#loginform0").find("#gr_username").val();
-		var password = $("#loginform0").find("#gr_password").val();
-		var vercode = $("#loginform0").find("#gr_verCode").val();
-		var personalType = $("#loginform0").find("#personalType").val();
-		
-		var userType = 'PERSONAL';
-		if(username==''||username==null){
-			alert('请输入用户名');
-			return false;
-		}
-		if(password==''||password==null){
-			alert('请输入密码');
-			return false;
-		}
-		if(vercode==''||vercode==null){
-			alert('请选择短信验证码');
-			return false;
-		}
-		if(personalType==''||personalType==null){
-			alert('请选择企业类型');
-			return false;
-		}
-		if(userType==''||userType==null){
-			alert('请选择用户登陆类型');
-			return false;
-		}
-		form_data.username = username;
-		form_data.password = password;
-		form_data.vercode = vercode;
-		form_data.userType = userType;
-		form_data.personalType = personalType;
-		$.ajax({
-			 type: "POST",
-		     url: "/backend/register",
-		     data: form_data,
-		     error: function(request) {
-	             showErrMsg("网络出错啦！");
-	             return false;
-	         },
-		     success: function (data) {
-		    	 if(data.code==200){
-					 showErrMsg("注册成功！");
-					 if(data.target == "" || data.target == null){
-					 	setTimeout(function(){
-			     	 			window.location.href = "/backend/applyJobHistory";
-			     	 		},300);
-					 }else{
-					 	setTimeout(function(){
-			     	 			window.location.href = data.target;
-			     	 		},300);
-					 }
-		    	 }else if(data.code==400){
-		    	 	 showErrMsg(data.msg);
-		    	 	 return false;
-		    	 }else{
-		    	 	 return false;
-		    	 }
-		     }
-		});
-    }
+
+function gr_register(){
+	var form_data={};
+	var username = $("#loginform0").find("#gr_username").val();
+	var password = $("#loginform0").find("#gr_password").val();
+	var vercode = $("#loginform0").find("#gr_verCode").val();
+	var personalType = $("#loginform0").find("#personalType").val();
+	
+	var userType = 'PERSONAL';
+	if(username==''||username==null){
+		alert('请输入用户名');
+		return false;
+	}
+	if(password==''||password==null){
+		alert('请输入密码');
+		return false;
+	}
+	if(vercode==''||vercode==null){
+		alert('请选择短信验证码');
+		return false;
+	}
+	if(personalType==''||personalType==null){
+		alert('请选择企业类型');
+		return false;
+	}
+	if(userType==''||userType==null){
+		alert('请选择用户登陆类型');
+		return false;
+	}
+	form_data.username = username;
+	form_data.password = password;
+	form_data.vercode = vercode;
+	form_data.userType = userType;
+	form_data.personalType = personalType;
+	$.ajax({
+		 type: "POST",
+	     url: "/backend/register",
+	     data: form_data,
+	     error: function(request) {
+             showErrMsg("网络出错啦！");
+             return false;
+         },
+	     success: function (data) {
+	    	 if(data.code==200){
+				 showErrMsg("注册成功！");
+				 if(data.target == "" || data.target == null){
+				 	setTimeout(function(){
+		     	 			window.location.href = "/backend/applyJobHistory";
+		     	 		},300);
+				 }else{
+				 	setTimeout(function(){
+		     	 			window.location.href = data.target;
+		     	 		},300);
+				 }
+	    	 }else if(data.code==400){
+	    	 	 showErrMsg(data.msg);
+	    	 	 return false;
+	    	 }else{
+	    	 	 return false;
+	    	 }
+	     }
+	});
+}
+
+function qy_register(){
+	var form_data={};
+	var username = $("#loginform1").find("#qy_username").val();
+	var password = $("#loginform1").find("#qy_password").val();
+	var vercode = $("#loginform1").find("#gr_verCode").val();	
+	var companyType = $("#loginform1").find("#companyType").val();
+	var userType = 'COMPANY';
+	
+	if(username==''||username==null){
+		alert('请输入用户名');
+		return false;
+	}
+	if(password==''||password==null){
+		alert('请输入密码');
+		return false;
+	}
+	if(vercode==''||vercode==null){
+		alert('请输入短信验证码');
+		return false;
+	}
+	if(userType==''||userType==null){
+		alert('请选择用户登陆类型');
+		return false;
+	}
+	if(companyType==''||companyType==null){
+		alert('请选择企业类型');
+		return false;
+	}
+	
+	form_data.username = username;
+	form_data.password = password;
+	form_data.vercode = vercode;
+	form_data.userType = userType;
+	form_data.companyType = companyType;
+	$.ajax({
+		 type: "POST",
+	     url: "/backend/register",
+	     data: form_data,
+	     error: function(request) {
+             showErrMsg("网络出错啦！");
+             return false;
+         },
+	     success: function (data) {
+	    	 if(data.code==200){
+				 showErrMsg("注册成功！");
+				 if(data.target == "" || data.target == null){
+				 	setTimeout(function(){
+		     	 			window.location.href = "/backend/companyJobManage";
+		     	 		},300);
+				 }else{
+				 	setTimeout(function(){
+		     	 			window.location.href = data.target;
+		     	 		},300);
+				 }
+	    	 }else if(data.code==400){
+	    	 	 showErrMsg(data.msg);
+	    	 	 return false;
+	    	 }else{
+	    	 	 return false;
+	    	 }
+	     }
+	});
+}
+
+function showErrMsg(errMsg){
+	$("span.errMsg").text(errMsg);
+}
     
-    function qy_register(){
-		var form_data={};
-		var username = $("#loginform1").find("#qy_username").val();
-		var password = $("#loginform1").find("#qy_password").val();
-		var vercode = $("#loginform1").find("#gr_verCode").val();	
-		var companyType = $("#loginform1").find("#companyType").val();
-		var userType = 'COMPANY';
-		
-		if(username==''||username==null){
-			alert('请输入用户名');
-			return false;
-		}
-		if(password==''||password==null){
-			alert('请输入密码');
-			return false;
-		}
-		if(vercode==''||vercode==null){
-			alert('请输入短信验证码');
-			return false;
-		}
-		if(userType==''||userType==null){
-			alert('请选择用户登陆类型');
-			return false;
-		}
-		if(companyType==''||companyType==null){
-			alert('请选择企业类型');
-			return false;
-		}
-		
-		form_data.username = username;
-		form_data.password = password;
-		form_data.vercode = vercode;
-		form_data.userType = userType;
-		form_data.companyType = companyType;
-		$.ajax({
-			 type: "POST",
-		     url: "/backend/register",
-		     data: form_data,
-		     error: function(request) {
-	             showErrMsg("网络出错啦！");
-	             return false;
-	         },
-		     success: function (data) {
-		    	 if(data.code==200){
-					 showErrMsg("注册成功！");
-					 if(data.target == "" || data.target == null){
-					 	setTimeout(function(){
-			     	 			window.location.href = "/backend/companyJobManage";
-			     	 		},300);
-					 }else{
-					 	setTimeout(function(){
-			     	 			window.location.href = data.target;
-			     	 		},300);
-					 }
-		    	 }else if(data.code==400){
-		    	 	 showErrMsg(data.msg);
-		    	 	 return false;
-		    	 }else{
-		    	 	 return false;
-		    	 }
-		     }
-		});
-    }
-    
-    function showErrMsg(errMsg){
-    	$("span.errMsg").text(errMsg);
-    }
+ function sendmsg(username){
+	var form_data={};
+	
+	if(username==''||username==null){
+		alert('请输入手机号');
+		return false;
+	}
+	
+	
+	form_data.username = username;
+	$.ajax({
+		 type: "POST",
+	     url: "/backend/register/sendMsg",
+	     data: form_data,
+	     error: function(request) {
+             showErrMsg("网络出错啦！");
+             return false;
+         },
+	     success: function (data) {
+	    	 if(data.code==200){
+				 showErrMsg("发送成功！");
+	    	 }else if(data.code==400){
+	    	 	 showErrMsg(data.msg);
+	    	 	 return false;
+	    	 }else{
+	    	 	 return false;
+	    	 }
+	     }
+	});
+}
     
 </script>
 <!-- main结束 -->
