@@ -64,28 +64,29 @@ function displayimg()
 		</div>
 		<div class="linksmain" id="item_con">
 			<div id="item_con_0">
+			  <form action="" id="loginform0">
 				<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
                 <tr>
                   <td height="60" colspan="4" align="left" valign="middle" style="background:url(images/zc_icon2.jpg) no-repeat left center; padding:20px 0px; height:30px; line-height:30px; padding-left:30px;">每个手机只能申请一个账号</td>
                   </tr>
                 <tr>
                   <td width="106" height="60" align="right" valign="middle"><font color="#ff0000">*</font>手机：</td>
-                  <td colspan="2"><input style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:280px;" type="text" name="textfield8" id="textfield8" /></td>
+                  <td colspan="2"><input style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:280px;" type="text" name="gr_username" id="gr_username" /></td>
                   <td width="282"><font color="#999999">作为登录账号，请填写未注册过的手机或邮箱</font></td>
                 </tr>
                 <tr>
                   <td height="60" align="right" valign="middle"><font color="#ff0000">*</font>密码：</td>
-                  <td colspan="2"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:280px;" type="password" name="textfield" id="textfield" /></td>
+                  <td colspan="2"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:280px;" type="password" name="gr_password" id="gr_password" /></td>
                   <td><font color="#999999">6~16个字符，包含字母，数字，特殊符号</font></td>
                 </tr>
                 <tr>
                   <td height="60" align="right" valign="middle"><font color="#ff0000">*</font>确认密码：</td>
-                  <td colspan="2"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:280px;" type="password" name="textfield2" id="textfield2" /></td>
+                  <td colspan="2"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:280px;" type="password" name="gr_confirmPassword" id="gr_confirmPassword" /></td>
                   <td><font color="#999999">请再次输入密码</font></td>
                 </tr>
                 <tr>
                   <td height="60" align="right" valign="middle"><font color="#ff0000">*</font>验证码：</td>
-                  <td width="100"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" type="text" name="textfield3" id="textfield3" /></td>
+                  <td width="100"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" type="text" name="gr_verCode" id="gr_verCode" /></td>
                   <td width="72"> 
                     <a href="javascript:void(0);" id="btnGetCode" enabled="true" class="phonecode" loadingmsg="发送验证码中，请留意接收短信..." loadingurl="59S后重新获取">免费获取验证码</a></td>
                   <td><font color="#999999">请输入手机验证码</font></td>
@@ -94,42 +95,44 @@ function displayimg()
                   <td height="60" colspan="4" align="center" valign="middle"><table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                       <td width="6%" height="33">&nbsp;</td>
-                      <td width="94%"><input name="radio" type="radio" id="radio" value="radio" checked="checked" />
+                      <td width="94%"><input name="personalType" type="radio" id="personalType" value="AUTOBOT" checked="checked" />
 汽车人
                        &nbsp;&nbsp;&nbsp;&nbsp;
-                       <input name="radio" type="radio" id="radio2" value="radio" />
+                       <input name="personalType" type="radio" id="personalType" value="TRAINER" />
 培训师</td>
                     </tr>
                   </table></td>
                   </tr>
                 <tr>
-                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="images/tj.jpg" /></td>
+                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="images/tj.jpg" onClick='javascript:gr_register();'/></td>
                 </tr>
               </table>
+              </form>
 			</div>
 			<div id="item_con_1" style="display:none">
+			  <form action="" id="loginform1">
 				<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
                 <tr>
                   <td height="60" colspan="4" align="left" valign="middle" style="background:url(images/icon2.jpg) no-repeat left center; padding:20px 0px; height:30px; line-height:30px; padding-left:30px;">每个邮箱只能申请一个账号</td>
                   </tr>
                 <tr>
                   <td width="106" height="60" align="right" valign="middle"><font color="#ff0000">*</font>邮箱：</td>
-                  <td colspan="2"><input style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:280px;" type="text" name="textfield8" id="textfield8" /></td>
-                  <td width="282"><font color="#999999">作为登录账号，请填写未注册过的手机或邮箱</font></td>
+                  <td colspan="2"><input style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:280px;" type="text" name="qy_username" id="qy_username" /></td>
+                  <td width="282"><font color="#999999">作为登录账号，请填写未注册过的手机</font></td>
                 </tr>
                 <tr>
                   <td height="60" align="right" valign="middle"><font color="#ff0000">*</font>密码：</td>
-                  <td colspan="2"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:280px;" type="password" name="textfield" id="textfield" /></td>
+                  <td colspan="2"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:280px;" type="password" name="qy_password" id="qy_password" /></td>
                   <td><font color="#999999">6~16个字符，包含字母，数字，特殊符号</font></td>
                 </tr>
                 <tr>
                   <td height="60" align="right" valign="middle"><font color="#ff0000">*</font>确认密码：</td>
-                  <td colspan="2"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:280px;" type="password" name="textfield2" id="textfield2" /></td>
+                  <td colspan="2"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:280px;" type="password" name="qy_confirmPassword" id="qy_confirmPassword" /></td>
                   <td><font color="#999999">请再次输入密码</font></td>
                 </tr>
                 <tr>
                   <td height="60" align="right" valign="middle"><font color="#ff0000">*</font>验证码：</td>
-                  <td width="100"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" type="text" name="textfield3" id="textfield3" /></td>
+                  <td width="100"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" type="text" name="qy_verCode" id="qy_verCode" /></td>
                   <td width="72"> 
                     <a href="javascript:void(0);" id="btnGetCode" enabled="true" class="phonecode" loadingmsg="发送验证码中，请留意接收短信..." loadingurl="59S后重新获取">免费获取验证码</a></td>
                   <td><font color="#999999">请输入手机验证码</font></td>
@@ -138,18 +141,19 @@ function displayimg()
                   <td height="60" colspan="4" align="center" valign="middle"><table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                       <td width="6%" height="33">&nbsp;</td>
-                      <td width="94%"><input name="radio2" type="radio" id="radio2" value="radio2" checked="checked" />
+                      <td width="94%"><input name="companyType" type="radio" id="COMPANY" value="radio2" checked="checked" />
 培训企业
                        &nbsp;&nbsp;&nbsp;&nbsp;
-                       <input name="radio" type="radio" id="radio2" value="radio" />
+                       <input name="companyType" type="radio" id="companyType" value="STORE" />
 汽车公司</td>
                     </tr>
                   </table></td>
                   </tr>
                 <tr>
-                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="images/tj.jpg" /></td>
+                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="images/tj.jpg"  onClick='javascript:qy_register();'/></td>
                 </tr>
               </table>
+              </form>
 			</div>
 			
 		</div>
@@ -161,7 +165,139 @@ function displayimg()
     </div>
     </div>
 </div>
-
+<script>
+    function gr_register(){
+		var form_data={};
+		var username = $("#loginform0").find("#gr_username").val();
+		var password = $("#loginform0").find("#gr_password").val();
+		var vercode = $("#loginform0").find("#gr_verCode").val();
+		var personalType = $("#loginform0").find("#personalType").val();
+		
+		var userType = 'PERSONAL';
+		if(username==''||username==null){
+			alert('请输入用户名');
+			return false;
+		}
+		if(password==''||password==null){
+			alert('请输入密码');
+			return false;
+		}
+		if(vercode==''||vercode==null){
+			alert('请选择短信验证码');
+			return false;
+		}
+		if(personalType==''||personalType==null){
+			alert('请选择企业类型');
+			return false;
+		}
+		if(userType==''||userType==null){
+			alert('请选择用户登陆类型');
+			return false;
+		}
+		form_data.username = username;
+		form_data.password = password;
+		form_data.vercode = vercode;
+		form_data.userType = userType;
+		form_data.personalType = personalType;
+		$.ajax({
+			 type: "POST",
+		     url: "/backend/register",
+		     data: form_data,
+		     error: function(request) {
+	             showErrMsg("网络出错啦！");
+	             return false;
+	         },
+		     success: function (data) {
+		    	 if(data.code==200){
+					 showErrMsg("注册成功！");
+					 if(data.target == "" || data.target == null){
+					 	setTimeout(function(){
+			     	 			window.location.href = "/backend/applyJobHistory";
+			     	 		},300);
+					 }else{
+					 	setTimeout(function(){
+			     	 			window.location.href = data.target;
+			     	 		},300);
+					 }
+		    	 }else if(data.code==400){
+		    	 	 showErrMsg(data.msg);
+		    	 	 return false;
+		    	 }else{
+		    	 	 return false;
+		    	 }
+		     }
+		});
+    }
+    
+    function qy_register(){
+		var form_data={};
+		var username = $("#loginform1").find("#qy_username").val();
+		var password = $("#loginform1").find("#qy_password").val();
+		var vercode = $("#loginform1").find("#gr_verCode").val();	
+		var companyType = $("#loginform1").find("#companyType").val();
+		var userType = 'COMPANY';
+		
+		if(username==''||username==null){
+			alert('请输入用户名');
+			return false;
+		}
+		if(password==''||password==null){
+			alert('请输入密码');
+			return false;
+		}
+		if(vercode==''||vercode==null){
+			alert('请输入短信验证码');
+			return false;
+		}
+		if(userType==''||userType==null){
+			alert('请选择用户登陆类型');
+			return false;
+		}
+		if(companyType==''||companyType==null){
+			alert('请选择企业类型');
+			return false;
+		}
+		
+		form_data.username = username;
+		form_data.password = password;
+		form_data.vercode = vercode;
+		form_data.userType = userType;
+		form_data.companyType = companyType;
+		$.ajax({
+			 type: "POST",
+		     url: "/backend/register",
+		     data: form_data,
+		     error: function(request) {
+	             showErrMsg("网络出错啦！");
+	             return false;
+	         },
+		     success: function (data) {
+		    	 if(data.code==200){
+					 showErrMsg("注册成功！");
+					 if(data.target == "" || data.target == null){
+					 	setTimeout(function(){
+			     	 			window.location.href = "/backend/companyJobManage";
+			     	 		},300);
+					 }else{
+					 	setTimeout(function(){
+			     	 			window.location.href = data.target;
+			     	 		},300);
+					 }
+		    	 }else if(data.code==400){
+		    	 	 showErrMsg(data.msg);
+		    	 	 return false;
+		    	 }else{
+		    	 	 return false;
+		    	 }
+		     }
+		});
+    }
+    
+    function showErrMsg(errMsg){
+    	$("span.errMsg").text(errMsg);
+    }
+    
+</script>
 <!-- main结束 -->
 <#include "/assets/backend/common/footer.html">
 <script type="text/javascript" src="js/common.js"></script>
