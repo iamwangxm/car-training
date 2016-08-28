@@ -13,31 +13,34 @@
 <div class="banner">
 	<div class="content">
         	<div class="dl_box">
+        	  <form action="" id="loginform0">
+                <input type="hidden" name="targetUrl" value=${targetUrl!} />
             	<div class="dl_leibie">会员登录</div>
                 <div class="name">
                	  <div class="name_l left">账号：</div>
-                  <div class="name_r right"><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px; line-height:30px;   width:196px; border:none; padding-left:4px; " type="text" name="username" data-nick="login_user" value="" class="text input-xlarge" placeholder="邮箱/手机号" validate-title="邮箱/手机号" /></div>
+                  <div class="name_r right"><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px; line-height:30px;   width:196px; border:none; padding-left:4px; " type="text" name="username" data-nick="login_user" value="" class="text input-xlarge" placeholder="请输入邮箱/手机号" required validate-title="邮箱/手机号" /></div>
                     <div class="clear"></div>
               </div>
                 <div class="pwd">
                	  <div class="pwd_l left">密码：</div>
-                  <div class="pwd_r right"><input  style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px;line-height:30px; width:196px; border:none; padding-left:4px; " type="password" name="password" data-nick="login_pwd" value="" class="text input-xlarge"  placeholder="密码" validate-title="密码" /></div>
+                  <div class="pwd_r right"><input  style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px;line-height:30px; width:196px; border:none; padding-left:4px; " type="password" name="password" data-nick="login_pwd" value="" class="text input-xlarge"  laceholder="请输入6-16位字母、数字组成的登录密码" required validate-title="密码" /></div>
                     <div class="clear"></div>
               </div>
-                
+                <!--
                 <div class="yanzheng">
                 <div class="yanzheng_l left">验证码：</div>
               
                   <div class="yanzheng_r right"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 				  <tr>
-				    <td><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/yzm_bg.jpg) no-repeat left top; height:30px;line-height:30px;  width:92px; border:none; padding-left:3px; " type="text" name="vercode" data-nick="login_user" value="" class="text input-xlarge" placeholder="验证码" validate-title="验证码" /></td>
+				    <td><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/yzm_bg.jpg) no-repeat left top; height:30px;line-height:30px;  width:92px; border:none; padding-left:3px; " type="text"  data-nick="login_user" value="" class="text input-xlarge"  id="captchacode" name="cpatch" data-title="图片验证码" placeholder="请输入图片验证码"/></td>
 				    <td></td>
-				    <td> <input type="image" name="btn_yzm" id="btn_yzm" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/btn_yzm.jpg" /></td>
+				    <td> <input type="image" name="btn_yzm" id="btn_yzm" src="/website/captch/captimg?token=149823767236" /></td>
 				  </tr>
 				</table>
 				</div>
                     <div class="clear"></div>
                 </div>
+                -->
                 <div class="leibie"> 
                 	<div class="lb_l left">
                 	<input name="userType" id="userType" type="radio"  autocomplete="on" value="PERSONAL" checked="checked" data-selector="company-toggle"/>个人
@@ -46,7 +49,7 @@
                     <div class="clear"></div>
             
 				</div>
-				
+				</form>
                 <div class="dl"><input style="border:none;" type="image" name="dl" id="dl" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dl_bg.jpg" /></div>
            		<div class="wjpwd"><a href="#">忘记密码？</a></div>
             </div>
@@ -316,7 +319,54 @@
     </div>
     
 </div>	
-
+<script>
+    function login(){
+    	$('div.button').unbind('click');
+		var form_data;
+		if(curr_form == "loginform0"){
+			form_data = $('#loginform0').serialize();
+		}else if(curr_form == "loginform1"){
+			form_data = $('#loginform1').serialize();
+		}
+		$.ajax({
+			 type: "POST",
+		     url: "/website/index",
+		     data: form_data,
+		     error: function(request) {
+	             showErrMsg("网络出错啦！");
+	             $('div.button').bind('click',login);
+	             return false;
+	         },
+		     success: function (data) {
+		    	 if(data.code==200){
+					 showErrMsg("登录成功！");
+	            	 $('div.button').bind('click',login);
+					 if(data.target == "" || data.target == null){
+					 	setTimeout(function(){
+			     	 			window.location.href = "/website/index";
+			     	 		},300);
+					 }else{
+					 	setTimeout(function(){
+			     	 			window.location.href = data.target;
+			     	 		},300);
+					 }
+		    	 }else if(data.code==400){
+		    	 	 showErrMsg(data.msg);
+	            	 $('div.button').bind('click',login);
+		    	 	 return false;
+		    	 }else{
+	            	 $('div.button').bind('click',login);
+		    	 	 return false;
+		    	 }
+		     }
+		});
+    }
+    
+    function showErrMsg(errMsg){
+    	$("span.errMsg").text(errMsg);
+    }
+    
+</script>
 <!-- main结束 -->
 <#include "/assets/website/common/footer.html">
 </body>
