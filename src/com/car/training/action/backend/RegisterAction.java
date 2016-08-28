@@ -1,19 +1,16 @@
 package com.car.training.action.backend;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.ServletActionContext;
 import org.ironrhino.core.event.EventPublisher;
 import org.ironrhino.core.metadata.AutoConfig;
 import org.ironrhino.core.metadata.JsonConfig;
-import org.ironrhino.core.metadata.Scope;
-import org.ironrhino.core.model.Persistable;
-import org.ironrhino.core.security.event.LoginEvent;
 import org.ironrhino.core.spring.security.DefaultLogoutSuccessHandler;
 import org.ironrhino.core.spring.security.DefaultUsernamePasswordAuthenticationFilter;
 import org.ironrhino.core.struts.BaseAction;
@@ -21,15 +18,20 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
 
+import com.car.training.domain.Autobots;
+import com.car.training.domain.Company;
+import com.car.training.domain.Trainer;
+import com.car.training.domain.UserCenter;
+import com.car.training.enums.CompanyType;
+import com.car.training.enums.PersonalType;
 import com.car.training.enums.UserType;
-import com.car.training.model.UserCenter;
+import com.car.training.exceptions.NotFoundException;
+import com.car.training.service.AutobotsService;
 import com.car.training.service.CaptchManager;
-import com.car.training.service.CompanyManager;
-import com.car.training.service.UserCenterManager;
+import com.car.training.service.CompanyService;
+import com.car.training.service.TrainerService;
+import com.car.training.service.UserCenterService;
 import com.car.training.sms.SmsManager;
 
 @AutoConfig
@@ -41,8 +43,14 @@ public class RegisterAction extends BaseAction {
 	protected static Logger log = LoggerFactory.getLogger(RegisterAction.class);
 	
 	protected UserType userType;
+	
+	protected PersonalType personalType;
+	
+	protected CompanyType companyType;
 
 	protected String password;
+	
+	protected String comfirmPassword;
 
 	protected String username;
 
@@ -57,10 +65,13 @@ public class RegisterAction extends BaseAction {
 	@Autowired
 	private SmsManager smsManager;
 	@Autowired
-	protected transient UserCenterManager usercenterManager;
+	protected transient UserCenterService usercenterService;
 	@Autowired
-	protected transient CompanyManager companyManager;
-
+	protected transient CompanyService companyService;
+	@Autowired
+	private AutobotsService autobotsService;
+	@Autowired
+	private TrainerService trainerService;
 	@Autowired
 	protected transient DefaultUsernamePasswordAuthenticationFilter usernamePasswordAuthenticationFilter;
 
@@ -122,78 +133,75 @@ public class RegisterAction extends BaseAction {
 	@JsonConfig(root = "data")
 	public String login() {
 		Map<String, Object> map = new HashMap<String, Object>();
-		HttpServletRequest request = ServletActionContext.getRequest();
-		HttpServletResponse response = ServletActionContext.getResponse();
-		Authentication authResult = null;
-		UserDetails ud = null;
 		UserCenter usercenter = null;
-		if(userType.equals(UserType.PERSONAL)){
-		if (StringUtils.isNotBlank(username) && StringUtils.isNotBlank(password)) {
-			usercenter = usercenterManager.findByUsernamePassword(username, password);
-			if (usercenter == null && usercenterManager.checkCode(username, password)) {
-				usercenter = usercenterManager.findByMobile(username);
-			}
-		} else if (StringUtils.isNotBlank(username) && StringUtils.isNotBlank(vercode)) {
-			if (smsManager.checkCode(username, vercode) || usercenterManager.checkCode(username, vercode)) {
-				usercenter = usercenterManager.findByMobile(username);
-			} else {
-				map.put("code", 400);
-				map.put("msg", "验证码输入错误！");
-			}
-		} else {
-			map.put("code", 400);
-			map.put("msg", "请求有误！");
+		Company company = null;
+		if (StringUtils.isBlank(username)) {
+			throw new NotFoundException("1001","用户名不能为空");
 		}
-		if (usercenter != null) {
-			ud = usercenterManager.loadUserByUsername(usercenter.getId());
-			if (ud instanceof Persistable) {
-				authResult = new UsernamePasswordAuthenticationToken(ud, ud.getPassword(), ud.getAuthorities());
-				System.out.println(authResult);
-			} else {
-				try {
-					map.put("code", 400);
-					map.put("msg", "您的账号或密码错误！");
-					usernamePasswordAuthenticationFilter.unsuccess(request, response, null);
-				} catch (Exception e) {
-					log.error(e.getMessage(), e);
+		if (StringUtils.isBlank(password)) {
+			throw new NotFoundException("1002","密码不能为空");
+		}
+		if (!password.equals(comfirmPassword)) {
+			throw new NotFoundException("1002","两次密码输入不一致");
+		}
+		if (StringUtils.isBlank(vercode)) {
+			throw new NotFoundException("1003","验证码不能为空");
+		}
+		if (userType==null) {
+			throw new NotFoundException("1004","请选择用户类型");
+		}
+		
+		if (userType.equals(UserType.PERSONAL)) {
+			usercenter = usercenterService.findByUsername(username);
+			if (usercenter == null) {
+				if (smsManager.checkCode(username, vercode)) {
+					usercenter = new UserCenter();
+					usercenter.setUsername(username);
+					usercenter.setPassword(password);
+					usercenter.setActiveDate(new Date());
+					usercenter.setMobile(username);
+					usercenterService.save(usercenter);
+					if (personalType == null) {
+						throw new NotFoundException("1005", "请选择个人用户类型");
+					} else {
+						if (personalType.equals(PersonalType.AUTOBOT)) {
+							Autobots autobot = new Autobots();
+							autobot.setUserCenter(usercenter);
+							autobotsService.save(autobot);
+						} else if (personalType.equals(PersonalType.TRAINER)) {
+							Trainer trainer = new Trainer();
+							trainer.setUserCenter(usercenter);
+							trainerService.save(trainer);
+						}
+					}
+				} else {
+					map.put("code", 402);
+					map.put("msg", "手机验证码错误！");
 				}
+			} else {
+				map.put("code", 405);
+				map.put("msg", "用户名已存在！");
 			}
-		} else {
-			try {
-				map.put("code", 400);
-				map.put("msg", "您的账号或密码错误！");
-				usernamePasswordAuthenticationFilter.unsuccess(request, response, null);
-			} catch (Exception e) {
-				log.error(e.getMessage(), e);
-			}
-		}
-		if (authResult != null) {
-			try {
-				usernamePasswordAuthenticationFilter.success(request, response, authResult);
-				Object principal = authResult.getPrincipal();
-				if (principal instanceof UserDetails)
-					eventPublisher.publish(
-							new LoginEvent(((UserDetails) principal).getUsername(), request.getRemoteAddr()),
-							Scope.LOCAL);
-				if (StringUtils.isBlank(targetUrl))
-					targetUrl = "/website/index";
-
-				request.getSession().setAttribute("loginState", "Y");
-
-				map.put("code", 200);
-				map.put("target", targetUrl);
-				map.put("msg", "登陆成功！");
-			} catch (Exception e) {
-				log.error(e.getMessage(), e);
-			}
-		} else {
-			map.put("code", 400);
-			map.put("msg", "您的账号或密码错误！");
-		}
-		setData(map);
 		}else if(userType.equals(UserType.COMPANY)){
-			
+			company = companyService.findByUsername(username);
+			if (company == null) {
+				if (smsManager.checkCode(username, vercode)) {
+					company = new Company();
+					company.setUsername(username);
+					company.setPassword(password);
+					company.setCompanyType(companyType);
+					companyService.save(company);
+					
+				} else {
+					map.put("code", 402);
+					map.put("msg", "邮箱验证码错误！");
+				}
+			} else {
+				map.put("code", 405);
+				map.put("msg", "用户名已存在！");
+			}
 		}
+		setData(data);
 		return JSON;
 	}
 
@@ -265,4 +273,13 @@ public class RegisterAction extends BaseAction {
 		return JSON;
 	}
 
+	public String getComfirmPassword() {
+		return comfirmPassword;
+	}
+
+	public void setComfirmPassword(String comfirmPassword) {
+		this.comfirmPassword = comfirmPassword;
+	}
+
+	
 }

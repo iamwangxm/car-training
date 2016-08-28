@@ -25,6 +25,9 @@ public interface CompanyService  {
 	Company findById(String id);
 	
 	/** 获取企业/公司信息 **/
+	Company findByUsername(String username);
+	
+	/** 获取企业/公司信息 **/
 	Company findByUsernamePassword(String username,String password);
 	
 	/** 获取企业/公司列表 */

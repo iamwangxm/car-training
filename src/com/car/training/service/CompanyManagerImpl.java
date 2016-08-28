@@ -56,6 +56,17 @@ public class CompanyManagerImpl extends BaseManagerImpl<Company> implements Comp
 
 	@Override
 	@Transactional(readOnly=true)
+	public Company findByUsername(String username){
+			if (StringUtils.isBlank(username))
+				return null;
+			DetachedCriteria dc = detachedCriteria();
+			dc.add(Restrictions.eq("enabled", true));
+			dc.add(Restrictions.eq("username", username));
+			return findByCriteria(dc);
+		}
+	
+	@Override
+	@Transactional(readOnly=true)
 	public ResultPage<Company> findPageByCompany(Company autobotsComment, Integer pageSize, Integer pageNo) {
 		ResultPage<Company> resultPage = new ResultPage<Company>();
 		if (autobotsComment == null)

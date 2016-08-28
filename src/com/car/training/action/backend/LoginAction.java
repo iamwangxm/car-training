@@ -24,9 +24,7 @@ import com.car.training.domain.UserCenter;
 import com.car.training.enums.UserType;
 import com.car.training.exceptions.NotFoundException;
 import com.car.training.service.CaptchManager;
-import com.car.training.service.CompanyManager;
 import com.car.training.service.CompanyService;
-import com.car.training.service.UserCenterManager;
 import com.car.training.service.UserCenterService;
 
 @AutoConfig
@@ -54,11 +52,6 @@ public class LoginAction extends BaseAction {
 	protected transient CompanyService companyService;
 	@Autowired
 	private CaptchManager captchManager;
-	@Autowired
-	protected transient UserCenterManager usercenterManager;
-	@Autowired
-	protected transient CompanyManager companyManager;
-
 	@Autowired
 	protected transient DefaultUsernamePasswordAuthenticationFilter usernamePasswordAuthenticationFilter;
 
