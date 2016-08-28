@@ -124,6 +124,7 @@ public class IndexAction extends BaseAction {
 	/**用户登陆
 	 * @author season
 	 * */
+	@JsonConfig(root = "data")
 	public String login(){
 		Map<String, Object> map = new HashMap<String, Object>();
 		HttpServletRequest request = ServletActionContext.getRequest();
@@ -135,9 +136,9 @@ public class IndexAction extends BaseAction {
 		if (StringUtils.isBlank(password)) {
 			throw new NotFoundException("1002","密码不能为空");
 		}
-		if (StringUtils.isBlank(vercode)) {
+		/*if (StringUtils.isBlank(vercode)) {
 			throw new NotFoundException("1003","验证码不能为空");
-		}
+		}*/
 		if (userType==null) {
 			throw new NotFoundException("1004","请选择用户类型");
 		}

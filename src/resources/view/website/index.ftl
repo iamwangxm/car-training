@@ -3,6 +3,7 @@
 <head>
 <title>汽车培聘网</title>
 <link rel="stylesheet" href="<@url value="/assets/website/css/style.css?v=1.1.0"/>" type="text/css" media="screen" />
+<script src="<@url value="/assets/website/js/jquery-1.8.0.min.js?v=1.1.0"/>"></script>
 </head>
 
 <body>
@@ -18,12 +19,12 @@
             	<div class="dl_leibie">会员登录</div>
                 <div class="name">
                	  <div class="name_l left">账号：</div>
-                  <div class="name_r right"><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px; line-height:30px;   width:196px; border:none; padding-left:4px; " type="text" name="username" data-nick="login_user" value="" class="text input-xlarge" placeholder="请输入邮箱/手机号" required validate-title="邮箱/手机号" /></div>
+                  <div class="name_r right"><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px; line-height:30px;   width:196px; border:none; padding-left:4px; " type="text" id="username" name="username" data-nick="login_user" value="" class="text input-xlarge" placeholder="请输入邮箱/手机号" required validate-title="邮箱/手机号" /></div>
                     <div class="clear"></div>
               </div>
                 <div class="pwd">
                	  <div class="pwd_l left">密码：</div>
-                  <div class="pwd_r right"><input  style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px;line-height:30px; width:196px; border:none; padding-left:4px; " type="password" name="password" data-nick="login_pwd" value="" class="text input-xlarge"  laceholder="请输入6-16位字母、数字组成的登录密码" required validate-title="密码" /></div>
+                  <div class="pwd_r right"><input  style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px;line-height:30px; width:196px; border:none; padding-left:4px; " type="password" name="password" id="password" data-nick="login_pwd" value="" class="text input-xlarge"  laceholder="请输入6-16位字母、数字组成的登录密码" required validate-title="密码" /></div>
                     <div class="clear"></div>
               </div>
                 <!--
@@ -50,8 +51,8 @@
             
 				</div>
 				</form>
-                <div class="dl"><input style="border:none;" type="image" name="dl" id="dl" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dl_bg.jpg" /></div>
-           		<div class="wjpwd"><a href="#">忘记密码？</a></div>
+                <div class="dl"><input style="border:none;" type="image" name="dl" id="dl" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dl_bg.jpg" onClick='javascript:login();' /></div>
+           		<div class="wjpwd"> <span class="errMsg" style="display:block; padding-left:166px;line-height: 40px;font-color:red;"></span><a href="#">忘记密码？</a></div>
             </div>
         </div>
 </div>
@@ -321,26 +322,37 @@
 </div>	
 <script>
     function login(){
-    	$('div.button').unbind('click');
-		var form_data;
-		if(curr_form == "loginform0"){
-			form_data = $('#loginform0').serialize();
-		}else if(curr_form == "loginform1"){
-			form_data = $('#loginform1').serialize();
+		var form_data={};
+		var username = $("#loginform0").find("#username").val();
+		var password = $("#loginform0").find("#password").val();
+		var userType = $("#loginform0").find("#userType").val();
+		if(username==''||username==null){
+			alert('请输入用户名');
+			return false;
 		}
+		if(password==''||password==null){
+			alert('请输入密码');
+			return false;
+		}
+		if(userType==''||userType==null){
+			alert('请选择用户登陆类型');
+			return false;
+		}
+		
+		form_data.username = username;
+		form_data.password = password;
+		form_data.userType = userType;
 		$.ajax({
 			 type: "POST",
-		     url: "/website/index",
+		     url: "/website/index/login",
 		     data: form_data,
 		     error: function(request) {
 	             showErrMsg("网络出错啦！");
-	             $('div.button').bind('click',login);
 	             return false;
 	         },
 		     success: function (data) {
 		    	 if(data.code==200){
 					 showErrMsg("登录成功！");
-	            	 $('div.button').bind('click',login);
 					 if(data.target == "" || data.target == null){
 					 	setTimeout(function(){
 			     	 			window.location.href = "/website/index";
@@ -352,10 +364,8 @@
 					 }
 		    	 }else if(data.code==400){
 		    	 	 showErrMsg(data.msg);
-	            	 $('div.button').bind('click',login);
 		    	 	 return false;
 		    	 }else{
-	            	 $('div.button').bind('click',login);
 		    	 	 return false;
 		    	 }
 		     }
