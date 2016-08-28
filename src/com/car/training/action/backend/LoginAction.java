@@ -8,11 +8,8 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.ServletActionContext;
-import org.ironrhino.core.event.EventPublisher;
 import org.ironrhino.core.metadata.AutoConfig;
 import org.ironrhino.core.metadata.JsonConfig;
-import org.ironrhino.core.spring.security.DefaultLogoutSuccessHandler;
-import org.ironrhino.core.spring.security.DefaultUsernamePasswordAuthenticationFilter;
 import org.ironrhino.core.struts.BaseAction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +20,6 @@ import com.car.training.domain.Company;
 import com.car.training.domain.UserCenter;
 import com.car.training.enums.UserType;
 import com.car.training.exceptions.NotFoundException;
-import com.car.training.service.CaptchManager;
 import com.car.training.service.CompanyService;
 import com.car.training.service.UserCenterService;
 
@@ -50,17 +46,6 @@ public class LoginAction extends BaseAction {
 	protected transient UserCenterService usercenterService;
 	@Autowired
 	protected transient CompanyService companyService;
-	@Autowired
-	private CaptchManager captchManager;
-	@Autowired
-	protected transient DefaultUsernamePasswordAuthenticationFilter usernamePasswordAuthenticationFilter;
-
-	@Autowired
-	protected transient DefaultLogoutSuccessHandler defaultLogoutSuccessHandler;
-
-	@Autowired
-	protected transient EventPublisher eventPublisher;
-
 	
 	public UserType getUserType() {
 		return userType;
@@ -179,28 +164,27 @@ public class LoginAction extends BaseAction {
 
 	@Override
 	public String execute() {
-		if (StringUtils.isBlank(targetUrl))
-			if (userType.equals(UserType.COMPANY)) {
-				targetUrl = "/website/backend/companyJobManger";
-			} else if (userType.equals(UserType.COMPANY)) {
-				targetUrl = "/website/backend/companyJobManger";
-			}
+//		if (StringUtils.isBlank(targetUrl))
+//			if (userType.equals(UserType.COMPANY)) {
+//				targetUrl = "/website/backend/companyJobManger";
+//			} else if (userType.equals(UserType.COMPANY)) {
+//				targetUrl = "/website/backend/companyJobManger";
+//			}
 		return SUCCESS;
 	}
 
-	@JsonConfig(root = "data")
-	public String sendMsg() {
-		Map<String, Object> map = new HashMap<String, Object>();
-
-		String sid = ServletActionContext.getRequest().getSession().getId();
-
-		if (!captchManager.volidateCode(sid, captcha)) {
-			map.put("code", 400);
-			map.put("msg", "验证码填写错误");
-			this.setData(map);
-		}
-
-		return JSON;
-	}
+//	@JsonConfig(root = "data")
+//	public String sendMsg() {
+//		Map<String, Object> map = new HashMap<String, Object>();
+//
+//		String sid = ServletActionContext.getRequest().getSession().getId();
+//
+//		if (!captchManager.volidateCode(sid, captcha)) {
+//			map.put("code", 400);
+//			map.put("msg", "验证码填写错误");
+//			this.setData(map);
+//		}
+//		return JSON;
+//	}
 
 }

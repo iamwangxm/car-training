@@ -1,4 +1,4 @@
-package com.car.training.action;
+package com.car.training.action.website;
 
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;

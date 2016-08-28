@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <title>汽车培聘网</title>
-<link rel="stylesheet" href="css/login_style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="<@url value='/assets/website/backend/css/login_style.css'/>" type="text/css" media="screen" />
 
 
 </head>
@@ -13,7 +13,7 @@
 <!-- 头部开始 -->	
 <div class="top">
 	<div class="content">
-    	<div class="logo left"><img src="images/logo.jpg" /></div>
+    	<div class="logo left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/logo.jpg" /></div>
         <div class="nav_box left">
         	<div class="nav">
             	<ul>
@@ -210,6 +210,6 @@
 <!-- main结束 -->
 <#include "/assets/website/backend/common/footer.html">
 
-<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="<@url value='/assets/website/backend/js/common.js'/>"></script>
 </body>
 </html>

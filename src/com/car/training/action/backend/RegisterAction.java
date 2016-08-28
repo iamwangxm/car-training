@@ -232,12 +232,12 @@ public class RegisterAction extends BaseAction {
 
 	@Override
 	public String execute() {
-		if (StringUtils.isBlank(targetUrl))
-			if (userType.equals(UserType.COMPANY)) {
-				targetUrl = "/website/backend/companyJobManger";
-			} else if (userType.equals(UserType.COMPANY)) {
-				targetUrl = "/website/backend/companyJobManger";
-			}
+//		if (StringUtils.isBlank(targetUrl))
+//			if (userType.equals(UserType.COMPANY)) {
+//				targetUrl = "/website/backend/companyJobManger";
+//			} else if (userType.equals(UserType.COMPANY)) {
+//				targetUrl = "/website/backend/companyJobManger";
+//			}
 		return SUCCESS;
 	}
 
