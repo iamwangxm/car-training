@@ -1,5 +1,6 @@
 package com.car.training.action.backend;
 
+import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,11 +29,11 @@ import com.car.training.enums.PersonalType;
 import com.car.training.enums.UserType;
 import com.car.training.exceptions.NotFoundException;
 import com.car.training.service.AutobotsService;
-import com.car.training.service.CaptchManager;
 import com.car.training.service.CompanyService;
 import com.car.training.service.TrainerService;
 import com.car.training.service.UserCenterService;
 import com.car.training.sms.SmsManager;
+import com.car.training.sms.SmsTemplate;
 
 @AutoConfig
 @Order(0)
@@ -60,8 +61,6 @@ public class RegisterAction extends BaseAction {
 
 	private String captcha;
 
-	@Autowired
-	private CaptchManager captchManager;
 	@Autowired
 	private SmsManager smsManager;
 	@Autowired
@@ -129,6 +128,15 @@ public class RegisterAction extends BaseAction {
 	public void setCaptcha(String captcha) {
 		this.captcha = captcha;
 	}
+	
+
+	public String getComfirmPassword() {
+		return comfirmPassword;
+	}
+
+	public void setComfirmPassword(String comfirmPassword) {
+		this.comfirmPassword = comfirmPassword;
+	}
 
 	@JsonConfig(root = "data")
 	public String login() {
@@ -168,10 +176,14 @@ public class RegisterAction extends BaseAction {
 							Autobots autobot = new Autobots();
 							autobot.setUserCenter(usercenter);
 							autobotsService.save(autobot);
+							map.put("code", 200);
+							map.put("msg", "注册成功！");
 						} else if (personalType.equals(PersonalType.TRAINER)) {
 							Trainer trainer = new Trainer();
 							trainer.setUserCenter(usercenter);
 							trainerService.save(trainer);
+							map.put("code", 200);
+							map.put("msg", "注册成功！");
 						}
 					}
 				} else {
@@ -191,10 +203,11 @@ public class RegisterAction extends BaseAction {
 					company.setPassword(password);
 					company.setCompanyType(companyType);
 					companyService.save(company);
-					
+					map.put("code", 200);
+					map.put("msg", "注册成功！");
 				} else {
 					map.put("code", 402);
-					map.put("msg", "邮箱验证码错误！");
+					map.put("msg", "手机验证码错误！");
 				}
 			} else {
 				map.put("code", 405);
@@ -231,55 +244,25 @@ public class RegisterAction extends BaseAction {
 	@JsonConfig(root = "data")
 	public String sendMsg() {
 		Map<String, Object> map = new HashMap<String, Object>();
-
-		String sid = ServletActionContext.getRequest().getSession().getId();
-
-		if (!captchManager.volidateCode(sid, captcha)) {
-			map.put("code", 400);
-			map.put("msg", "验证码填写错误");
-			this.setData(map);
+		if (username == null) {
+			throw new NotFoundException("1001", "手机账号不能为空");
 		}
-/*
-		UserCenter usercenter = usercenterManager.findByMobile(username);
-		if (usercenter != null) {
-			try {
-				smsManager.send(username, SmsTemplate.LOGIN);
-				map.put("code", 200);
-				map.put("msg", "消息发送成功！");
-			} catch (Exception e) {
-				log.info(e.getMessage());
-				map.put("code", 400);
-				map.put("msg", "消息发送失败！请稍后重试。");
-			}
-		} else {
-			usercenter = usercenterManager.register(username, null, null, null);
+		if (userType.equals(UserType.PERSONAL)) {
+			UserCenter usercenter = usercenterService.findByUsername(username);
 			if (usercenter == null) {
-				map.put("code", 400);
-				map.put("msg", "手机号未注册。");
-			} else {
 				try {
-					smsManager.send(username, SmsTemplate.LOGIN);
+					smsManager.send(username, SmsTemplate.REGISTER);
 					map.put("code", 200);
-					map.put("msg", "消息发送成功！(未注册)");
-				} catch (Exception e) {
-					log.info(e.getMessage());
-					map.put("code", 400);
-					map.put("msg", "消息发送失败！请稍后重试。");
+					map.put("msg", "手机验证码发送成功！");
+				} catch (IOException e) {
+					e.printStackTrace();
 				}
+
+			}else{
+				throw new NotFoundException("1001", "手机账号已注册");
 			}
 		}
-		this.setData(map);
-		return JSON;*/
+		setData(data);
 		return JSON;
 	}
-
-	public String getComfirmPassword() {
-		return comfirmPassword;
-	}
-
-	public void setComfirmPassword(String comfirmPassword) {
-		this.comfirmPassword = comfirmPassword;
-	}
-
-	
 }
