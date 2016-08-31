@@ -80,7 +80,7 @@
       <tr>
         <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>出生年月：</td>
         <td>
-        <input type="date" name="trainer.userCenter.brithday" value="2012-12-12" />
+        <input type="date" name="trainer.userCenter.brithday" value="${trainer.userCenter.brithday?string("yyyy-MM-dd")!}" />
      
       </td>
       </tr>
