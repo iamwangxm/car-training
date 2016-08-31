@@ -204,7 +204,25 @@
 <script>
 
 function checkform(){
-	return false;
+	var name = $("[name='autobot.userCenter.name']").val();
+	var brithday = $("[name='autobot.userCenter.brithday']").val();
+	var marryStatus = $("[name='autobot.userCenter.marryStatus']").val();
+	var currentWorkStatus = $("[name='autobot.currentWorkStatus']").val();
+	var autoBrand = $("[name='autobot.autoBrand']").val();
+	var mobile = $("input[name='autobot.userCenter.mobile']").val();
+	var authHistroy = $("[name='autobot.authHistroy']").val();
+	var workingHistroy = $("[name='autobot.workingHistroy']").val();
+	
+	if(name == undefined || brithday == undefined || marryStatus == undefined || currentWorkStatus == undefined autoBrand == undefined || mobile == undefined || authHistroy == undefined || workingHistroy == undefined){
+		alert("带*的为必填字段 ");
+		return false;
+	}
+	if(name == "" || brithday == "" || marryStatus == "" || currentWorkStatus == "" autoBrand == "" || mobile == "" || authHistroy == "" || workingHistroy == ""){
+		alert("带*的为必填字段 ");
+		return false;
+	}
+	
+	return true;
 }
 
 </script>
