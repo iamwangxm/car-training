@@ -65,6 +65,10 @@
           </div>
       </div>
         <div class="pxshi_gl_r right">
+        
+        <#if company??>
+        <form id="form1" method="post" action="/backend/companyCompleteResume" onSubmit="return checkform()">
+        
        	  <div class="pxshijl">
                	  <h5>企业基本信息</h5>
                     <div class="pxshijl_box">
@@ -73,29 +77,63 @@
     <td colspan="2"width="420" align="left" valign="top"><table width="400" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="69" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 企业名称：</td>
-        <td width="292"><input type="text" name="textfield" id="textfield" /></td>
+        <td width="292"><input type="text" name="company.name" value="${company.name!}" id="textfield" /></td>
       </tr>
       <tr>
-        <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>企业法人：</td>
-        <td><input type="text" name="textfield11" id="textfield11" /></td>
-      </tr>
-      <tr>
-        <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>经营范围：</td>
-        <td><input type="text" name="textfield4" id="textfield4" /></td>
-      </tr>
+                    	    <td width="125" align="right" valign="middle"><font color="#ff0000">*</font>企业规模：</td>
+                    	    <td width="337">
+                    	    <select name="company.scale" id="scale">
+                    	    <option value="">请选择</option>
+                    	    <#if company.scale.name() = 'UNDER50'>
+							<option selected="selected" value="UNDER50">50人以下</option>
+							<#else>
+							<option value="UNDER50">50人以下</option>
+							</#if>
+							<#if company.scale.name() = 'FROM51TO100'>
+							<option selected="selected" value="FROM51TO100">51人-100人</option>
+							<#else>
+							<option value="FROM51TO100">51人-100人</option>
+							</#if>
+							<#if company.scale.name() = 'FROM101TO200'>
+							<option selected="selected" value="FROM51TO100">101人-200人</option>
+							<#else>
+							<option value="FROM101TO200">101人-200人</option>
+							</#if>
+							<#if company.scale.name() = 'FROM201TO500'>
+							<option selected="selected" value="FROM51TO100">201人-500人</option>
+							<#else>
+							<option value="FROM201TO500">201人-500人</option>
+							</#if>
+							<#if company.scale.name() = 'FROM501TO1000'>
+							<option selected="selected" value="FROM51TO100">501人-1000人</option>
+							<#else>
+							<option value="FROM501TO1000">501人-1000</option>
+							</#if>
+							<#if company.scale.name() = 'ABOVE1000'>
+							<option selected="selected" value="ABOVE1000">1000人以上</option>
+							<#else>
+							<option value="ABOVE1000">1000人以上</option>
+							</#if>
+                            </select>
+                    	    </td>
+                  	    </tr>
     </table></td>
     <td width="439" colspan="4" align="left" valign="top"><table width="400" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/zw.jpg" /></td>
         </tr>
       <tr>
-        <td><table width="400" border="0" cellspacing="0" cellpadding="0">
+        <td>
+        
+        <table width="400" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td  width="15%" height="40" align="left" valign="middle"><input type="submit" name="button" id="button" value="浏 览" /></td>
             <td width="23%" align="left" valign="middle">未选择图片。</td>
             <td width="62%" align="left" valign="middle"><input type="submit" name="button2" id="button2" value="上 传" /></td>
             </tr>
-          </table></td>
+          </table>
+          
+          </td>
         </tr>
       <tr>
         <td><font color="#CCCCCC">请上传宽度为100px,高度为50px,格式：jpg,gif, 大小&lt;500kb的图片</font></td>
@@ -103,70 +141,6 @@
       </table></td>
   </tr>
   </table>
-                    	<table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
-                    	  <tr>
-                    	    <td width="76" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 经营品牌：</td>
-                    	    <td width="262"><input type="text" name="textfield2" id="textfield2" /></td>
-                    	    <td width="125" align="right" valign="middle"><font color="#ff0000">*</font>企业规模：</td>
-                    	    <td width="337"><input type="text" name="textfield3" id="textfield3" /></td>
-                  	    </tr>
-                    	  <tr>
-                    	    <td height="40" align="right" valign="middle"><font color="#ff0000">*</font> 所在地：</td>
-                    	    <td><input type="text" name="textfield10" id="textfield10" /></td>
-                    	   <td align="right" valign="middle">&nbsp;</td>
-                    	    <td>&nbsp;</td>
-                  	    </tr>
-                          
-                        
-                  	  </table>
-
-
-                </div>
-          </div>
-          <div class="pxshijl">
-               	  <h5>联系方式</h5>
-                    <div class="pxshijl_box">
-                   	  <table width="800" border="0" cellspacing="0" cellpadding="0">
-                                <tr>
-                                    <td width="110" height="40" align="right" valign="middle">
-                                       <font color="#ff0000">*</font> 联系人：
-                                  </td>
-                                    <td width="265">
-                                        <input name="txt_lianxiren" type="text"  />
-                                    </td>
-                                    <td width="124" align="right" valign="middle">
-                                        传 真：
-                                    </td>
-                                    <td width="301">
-                                        <input name="txt_fax" type="text" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="40" align="right" valign="middle">
-                                       <font color="#ff0000">*</font> 联系电话：
-                                  </td>
-                                    <td>
-                                      <input name="txt_dianhua" type="text"  />
-                                    </td>
-                                    <td align="right" valign="middle">
-                                        邮 箱：
-                                    </td>
-                                    <td>
-                                        <input name="txt_email" type="text" id="txt_email" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="40" align="right" valign="middle">
-                                        通讯地址：
-                                    </td>
-                                    <td>
-                                      <input name="txt_address" type="text"  />
-                                    </td>
-                                    <td align="right" valign="middle">&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                </tr>
-                            </table>
-
 
 
                 </div>
@@ -235,13 +209,11 @@
                     <div class="pxshijl_box">
                     	<table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
   
-  
-  
      <tr>
     <td height="40" colspan="4" align="left" valign="middle"><table width="90%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="11%"><font color="#ff0000">*</font>企业介绍：</td>
-    <td width="89%"><textarea style="width:600px;" name="textarea2" id="textarea2" cols="45" rows="5"></textarea></td>
+    <td width="89%"><textarea style="width:600px;" name="company.intro" id="intro" cols="45" rows="5">${company.intro!}</textarea></td>
   </tr>
 </table></td>
     </tr>
@@ -253,19 +225,33 @@
           <div class="tj">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <td height="60" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/tj.jpg" /> </td>
+                    <td height="60" align="center" valign="middle">
+                    <input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/tj.jpg" /> 
+                    </td>
                   </tr>
             </table>
           </div>
       </div>
+      
+      <form>
+      </#if>
+      
         <div class="clear"></div>
     
     </div>
     </div>
 </div>
 
+<script>
+
+function checkform(){
+	return false;
+}
+
+</script>
+
 <!-- main结束 -->
-<#include "/assets/website/backend/common/footer.html">
+<#--<#include "/assets/backend/common/footer.html">-->
 
 </body>
 </html>
