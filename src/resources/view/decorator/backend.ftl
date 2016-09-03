@@ -14,12 +14,6 @@
 	<meta name="keyword" content=""/>
     <meta name="Description" content=""/>
     </#if>
-    <link rel="stylesheet" href="<@url value="/assets/website/backend/css/login_style.cssv=1.1.0/>" type="text/css" media="screen" />
-    <link href="<@url value="/assets/website/backend/css/pxshi.css?v=1.1.0"/>" type="text/css" rel="stylesheet" />
-	<link href="<@url value="/assets/website/backend/css/style.css?v=1.1.0"/>" type="text/css" rel="stylesheet"  media="screen" />	
-	<script src="<@url value="/assets/website/backend/js/common.js?v=1.1.1"/>"></script>
-    <script src="<@url value="/assets/website/backend/js/jquery-1.8.0.min.js?v=1.1.0"/>"></script>
-
     <title>汽车培聘网后台管理</title>
 <#noescape>${head}</#noescape>
 </head>

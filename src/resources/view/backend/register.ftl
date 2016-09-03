@@ -5,7 +5,7 @@
 
 <title>汽车培聘网</title>
 <link rel="stylesheet" href="<@url value='/assets/website/backend/css/login_style.css'/>" type="text/css" media="screen" />
-
+<script type="text/javascript" src="<@url value='/assets/website/backend/js/jquery.min.js'/>"></script>
 <script type="text/javascript" src="<@url value='/assets/website/backend/js/jquery.js'/>"></script>
 <script type="text/javascript">
 
@@ -88,7 +88,7 @@ function displayimg()
                   <td height="60" align="right" valign="middle"><font color="#ff0000">*</font>验证码：</td>
                   <td width="100"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" type="text" name="gr_verCode" id="gr_verCode" /></td>
                   <td width="72"> 
-                    <a href="javascript:sendmsg($("#loginform0").find("#gr_username").val());" id="btnGetCode" enabled="true" class="phonecode" loadingmsg="发送验证码中，请留意接收短信..." loadingurl="59S后重新获取">免费获取验证码</a></td>
+                      <input type="button" id="btn" value="免费获取验证码" onclick="settime(this)" /></td>
                   <td><font color="#999999">请输入手机验证码</font></td>
                 </tr>
                 <tr>
@@ -134,7 +134,7 @@ function displayimg()
                   <td height="60" align="right" valign="middle"><font color="#ff0000">*</font>验证码：</td>
                   <td width="100"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" type="text" name="qy_verCode" id="qy_verCode" /></td>
                   <td width="72"> 
-                    <a href="javascript:sendmsg($("#loginform0").find("#qy_username").val());" id="btnGetCode" enabled="true" class="phonecode" loadingmsg="发送验证码中，请留意接收短信..." loadingurl="59S后重新获取">免费获取验证码</a></td>
+                   <input type="button" id="btn" value="免费获取验证码" onclick="settime(this)" /></td>
                   <td><font color="#999999">请输入手机验证码</font></td>
                 </tr>
                 <tr>
@@ -328,7 +328,23 @@ function showErrMsg(errMsg){
 	     }
 	});
 }
-    
+
+var countdown=60; 
+function settime(obj) { 
+    if (countdown == 0) { 
+        obj.removeAttribute("disabled");    
+        obj.value="免费获取验证码"; 
+        countdown = 60; 
+        return;
+    } else { 
+        obj.setAttribute("disabled", true); 
+        obj.value="重新发送(" + countdown + ")"; 
+        countdown--; 
+    } 
+setTimeout(function() { 
+    settime(obj) }
+    ,1000) 
+}
 </script>
 <!-- main结束 -->
 <#include "/assets/website/backend/common/footer.html">
