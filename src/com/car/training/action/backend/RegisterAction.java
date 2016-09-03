@@ -139,18 +139,14 @@ public class RegisterAction extends BaseAction {
 	}
 
 	@JsonConfig(root = "data")
-	public String login() {
+	public String register() {
 		Map<String, Object> map = new HashMap<String, Object>();
-		UserCenter usercenter = null;
-		Company company = null;
+
 		if (StringUtils.isBlank(username)) {
 			throw new NotFoundException("1001","用户名不能为空");
 		}
 		if (StringUtils.isBlank(password)) {
 			throw new NotFoundException("1002","密码不能为空");
-		}
-		if (!password.equals(comfirmPassword)) {
-			throw new NotFoundException("1002","两次密码输入不一致");
 		}
 		if (StringUtils.isBlank(vercode)) {
 			throw new NotFoundException("1003","验证码不能为空");
@@ -160,7 +156,7 @@ public class RegisterAction extends BaseAction {
 		}
 		
 		if (userType.equals(UserType.PERSONAL)) {
-			usercenter = usercenterService.findByUsername(username);
+			UserCenter usercenter = usercenterService.findByUsername(username);
 			if (usercenter == null) {
 				if (smsManager.checkCode(username, vercode)) {
 					usercenter = new UserCenter();
@@ -195,7 +191,7 @@ public class RegisterAction extends BaseAction {
 				map.put("msg", "用户名已存在！");
 			}
 		}else if(userType.equals(UserType.COMPANY)){
-			company = companyService.findByUsername(username);
+			Company 	company = companyService.findByUsername(username);
 			if (company == null) {
 				if (smsManager.checkCode(username, vercode)) {
 					company = new Company();
@@ -242,7 +238,7 @@ public class RegisterAction extends BaseAction {
 	}
 
 	@JsonConfig(root = "data")
-	public String sendMsg() {
+	public String sendmsg() {
 		Map<String, Object> map = new HashMap<String, Object>();
 		if (username == null) {
 			throw new NotFoundException("1001", "手机账号不能为空");
@@ -257,9 +253,21 @@ public class RegisterAction extends BaseAction {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-
 			}else{
 				throw new NotFoundException("1001", "手机账号已注册");
+			}
+		}else if(userType.equals(UserType.COMPANY)){
+			Company company = companyService.findByUsername(username);
+			if (company == null) {
+				try {
+					smsManager.send(username, SmsTemplate.REGISTER);
+					map.put("code", 200);
+					map.put("msg", "手机验证码发送成功！");
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+		}else{
+			throw new NotFoundException("1001", "手机账号已注册");
 			}
 		}
 		setData(data);

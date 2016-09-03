@@ -11,7 +11,7 @@
 		<pattern>/website/*</pattern>
 	</decorator>
 	<decorator name="backend" page="backend.ftl" >
-	<pattern>/website/backend/*</pattern>
+	<pattern>/backend/*</pattern>
 	</decorator>
 	<decorator name="main" page="main.ftl">
 		<pattern>/*</pattern>
