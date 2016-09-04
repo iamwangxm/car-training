@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.ServletActionContext;
+import org.ironrhino.common.model.Region;
 import org.ironrhino.core.event.EventPublisher;
 import org.ironrhino.core.metadata.AutoConfig;
 import org.ironrhino.core.metadata.JsonConfig;
@@ -20,17 +21,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 
-import com.car.training.domain.Autobots;
 import com.car.training.domain.Company;
-import com.car.training.domain.Trainer;
 import com.car.training.domain.UserCenter;
 import com.car.training.enums.CompanyType;
 import com.car.training.enums.PersonalType;
 import com.car.training.enums.UserType;
 import com.car.training.exceptions.NotFoundException;
-import com.car.training.service.AutobotsService;
 import com.car.training.service.CompanyService;
-import com.car.training.service.TrainerService;
 import com.car.training.service.UserCenterService;
 import com.car.training.sms.SmsManager;
 import com.car.training.sms.SmsTemplate;
@@ -67,10 +64,6 @@ public class RegisterAction extends BaseAction {
 	protected transient UserCenterService usercenterService;
 	@Autowired
 	protected transient CompanyService companyService;
-	@Autowired
-	private AutobotsService autobotsService;
-	@Autowired
-	private TrainerService trainerService;
 	@Autowired
 	protected transient DefaultUsernamePasswordAuthenticationFilter usernamePasswordAuthenticationFilter;
 
@@ -138,6 +131,22 @@ public class RegisterAction extends BaseAction {
 		this.comfirmPassword = comfirmPassword;
 	}
 
+	public PersonalType getPersonalType() {
+		return personalType;
+	}
+
+	public void setPersonalType(PersonalType personalType) {
+		this.personalType = personalType;
+	}
+
+	public CompanyType getCompanyType() {
+		return companyType;
+	}
+
+	public void setCompanyType(CompanyType companyType) {
+		this.companyType = companyType;
+	}
+
 	@JsonConfig(root = "data")
 	public String register() {
 		Map<String, Object> map = new HashMap<String, Object>();
@@ -164,24 +173,13 @@ public class RegisterAction extends BaseAction {
 					usercenter.setPassword(password);
 					usercenter.setActiveDate(new Date());
 					usercenter.setMobile(username);
+					usercenter.setPersonalType(personalType);
+					Region region = new Region();
+					region.setId(new Long(0L));
+					usercenter.setRegion(region);
 					usercenterService.save(usercenter);
-					if (personalType == null) {
-						throw new NotFoundException("1005", "请选择个人用户类型");
-					} else {
-						if (personalType.equals(PersonalType.AUTOBOT)) {
-							Autobots autobot = new Autobots();
-							autobot.setUserCenter(usercenter);
-							autobotsService.save(autobot);
-							map.put("code", 200);
-							map.put("msg", "注册成功！");
-						} else if (personalType.equals(PersonalType.TRAINER)) {
-							Trainer trainer = new Trainer();
-							trainer.setUserCenter(usercenter);
-							trainerService.save(trainer);
-							map.put("code", 200);
-							map.put("msg", "注册成功！");
-						}
-					}
+					map.put("code", 200);
+					map.put("msg", "注册成功！");
 				} else {
 					map.put("code", 402);
 					map.put("msg", "手机验证码错误！");
@@ -210,7 +208,7 @@ public class RegisterAction extends BaseAction {
 				map.put("msg", "用户名已存在！");
 			}
 		}
-		setData(data);
+		setData(map);
 		return JSON;
 	}
 

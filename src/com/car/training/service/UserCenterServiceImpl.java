@@ -8,37 +8,63 @@ import org.ironrhino.core.util.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.car.training.domain.Autobots;
+import com.car.training.domain.Trainer;
 import com.car.training.domain.UserCenter;
+import com.car.training.enums.PersonalType;
+import com.car.training.exceptions.NotFoundException;
 
 @Component
 public class UserCenterServiceImpl implements UserCenterService {
 
 	@Autowired
-	private UserCenterManager employeeManager;
+	private UserCenterManager userCenterManager;
+	@Autowired
+	private AutobotsService autobotsService;
+	@Autowired
+	private TrainerService trainerService;
 
 	@Override
+	@Transactional
 	public void save(UserCenter uc) {
 		com.car.training.model.UserCenter target = new com.car.training.model.UserCenter();
 		BeanUtils.copyProperties(uc, target);
-		employeeManager.save(target);
+		userCenterManager.save(target);
+		if (target.getPersonalType() == null) {
+			throw new NotFoundException("1005", "请选择个人用户类型");
+		} else {
+			if (target.getPersonalType().equals(PersonalType.AUTOBOT)) {
+				Autobots autobot = new Autobots();
+				autobot.setUserCenter(uc);
+				autobotsService.save(autobot);
+			} else if (target.getPersonalType().equals(PersonalType.TRAINER)) {
+				Trainer trainer = new Trainer();
+				trainer.setUserCenter(uc);
+				trainerService.save(trainer);
+			}
+		}
 	}
 
 	@Override
+	@Transactional
 	public void update(UserCenter uc) {
-		com.car.training.model.UserCenter  target = employeeManager.get(uc.getId());
+		com.car.training.model.UserCenter  target = userCenterManager.get(uc.getId());
 		BeanUtils.copyProperties(uc, target);
-		employeeManager.save(target);
+		userCenterManager.save(target);
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public boolean accepts(final String username) {
-		return employeeManager.accepts(username);
+		return userCenterManager.accepts(username);
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public UserCenter findById(String userId) {
-		com.car.training.model.UserCenter source = employeeManager.get(userId);
+		com.car.training.model.UserCenter source = userCenterManager.get(userId);
 		UserCenter target = null;
 		if (source != null) {
 			target = new UserCenter();
@@ -48,23 +74,27 @@ public class UserCenterServiceImpl implements UserCenterService {
 	}
 
 	@Override
+	@Transactional
 	public void changePassword(String username, String currentPassword, String newPassword) {
-		employeeManager.changePassword(username, currentPassword, newPassword);
+		userCenterManager.changePassword(username, currentPassword, newPassword);
 	}
 
 	@Override
+	@Transactional
 	public void resetPassword(String username, String verifycode, String newPassword) {
-		employeeManager.resetPassword(username, verifycode, newPassword);
+		userCenterManager.resetPassword(username, verifycode, newPassword);
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public void forgetPassword(String username, String verifycode, String newPassword) {
-		employeeManager.forgetPassword(username, verifycode, newPassword);
+		userCenterManager.forgetPassword(username, verifycode, newPassword);
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public UserDetails loadUserByUsername(final String username) {
-		com.car.training.model.UserCenter source = (com.car.training.model.UserCenter) employeeManager
+		com.car.training.model.UserCenter source = (com.car.training.model.UserCenter) userCenterManager
 				.loadUserByUsername(username);
 		UserCenter target = null;
 		if (source != null) {
@@ -75,8 +105,9 @@ public class UserCenterServiceImpl implements UserCenterService {
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public UserCenter findByUsername(String username) {
-		com.car.training.model.UserCenter source = employeeManager.findByUsername(username);
+		com.car.training.model.UserCenter source = userCenterManager.findByUsername(username);
 		UserCenter target = null;
 		if (source != null) {
 			target = new UserCenter();
@@ -86,8 +117,9 @@ public class UserCenterServiceImpl implements UserCenterService {
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public UserCenter findByMobile(String mobile) {
-		com.car.training.model.UserCenter source = employeeManager.findByMobile(mobile);
+		com.car.training.model.UserCenter source = userCenterManager.findByMobile(mobile);
 		UserCenter target = null;
 		if (source != null) {
 			target = new UserCenter();
@@ -97,18 +129,19 @@ public class UserCenterServiceImpl implements UserCenterService {
 	}
 
 	@Override
+	@Transactional
 	public void delete(String userId) {
-		com.car.training.model.UserCenter employee = employeeManager.get(userId);
+		com.car.training.model.UserCenter employee = userCenterManager.get(userId);
 		if (employee != null) {
-			employeeManager.delete(employee);
+			userCenterManager.delete(employee);
 		}
 	}
 
 	@Override
 	public void recover(String userId) {
-		com.car.training.model.UserCenter  uc = employeeManager.get(userId);
+		com.car.training.model.UserCenter  uc = userCenterManager.get(userId);
 		if (uc != null) {
-			employeeManager.recover(uc);
+			userCenterManager.recover(uc);
 		}
 	}
 
@@ -129,10 +162,11 @@ public class UserCenterServiceImpl implements UserCenterService {
 	}
 	
 	@Override
+	@Transactional(readOnly = true)
 	public UserCenter findByUsernamePassword(String username, String password) {
 		UserCenter  target = null;
 		if (StringUtils.isNotBlank(username)) {
-			com.car.training.model.UserCenter source = employeeManager.findByUsernamePassword(username, password);
+			com.car.training.model.UserCenter source = userCenterManager.findByUsernamePassword(username, password);
 			if (source != null) {
 				target = new UserCenter();
 				BeanUtils.copyProperties(source, target);

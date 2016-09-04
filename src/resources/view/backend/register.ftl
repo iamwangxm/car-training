@@ -79,7 +79,7 @@ function displayimg()
                   </table></td>
                   </tr>
                 <tr>
-                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/tj.jpg" onClick='javascript:gr_register();'/></td>
+                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/tj.jpg" onClick='javascript:gr_register();return false;'/></td>
                 </tr>
               </table>
               </form>
@@ -206,19 +206,19 @@ function gr_register(){
 		     	 			window.location.href = data.target;
 		     	 		},300);
 				 }
-	    	 }else if(data.code==400){
+	    	 }else{
+	    	 if(data.code==400){
 	    	 	 showErrMsg(data.msg);
 	    	 	 return false;
 	    	 }else if(data.code==402){
-	    	  showErrMsg(data.msg);
-	    	 return false;
+	    	  	showErrMsg(data.msg);
+	    	 	return false;
 	    	 }else if(data.code==405){
-	    	  showErrMsg(data.msg);
-	    	 return false;
-	    	 }else{
-	    	 	 return false;
+	    	  	showErrMsg(data.msg);
+	    	 	return false;
 	    	 }
 	     }
+	    }
 	});
 }
 
