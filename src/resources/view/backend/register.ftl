@@ -125,7 +125,7 @@ function displayimg()
                   </table></td>
                   </tr>
                 <tr>
-                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/tj.jpg"  onClick='javascript:qy_register();'/></td>
+                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/tj.jpg"  onClick='javascript:qy_register();return false;'/></td>
                 </tr>
               </table>
               </form>
