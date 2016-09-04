@@ -6,7 +6,6 @@
 <title>汽车培聘网</title>
 <link rel="stylesheet" href="<@url value='/assets/website/backend/css/login_style.css'/>" type="text/css" media="screen" />
 <script type="text/javascript" src="<@url value='/assets/website/backend/js/jquery.min.js'/>"></script>
-<script type="text/javascript" src="<@url value='/assets/website/backend/js/jquery.js'/>"></script>
 <script type="text/javascript" src="<@url value='/assets/website/backend/js/common.js'/>"></script>
 <script type="text/javascript">
 
@@ -43,7 +42,7 @@ function displayimg()
 			  <form action="" id="loginform0">
 				<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td height="60" colspan="4" align="left" valign="middle" style="background:url(http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/zc_icon2.jpg) no-repeat left center; padding:20px 0px; height:30px; line-height:30px; padding-left:30px;">每个手机只能申请一个账号</td>
+                  <td height="60" colspan="4" align="left" valign="middle" style="background:url(http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/icon2.jpg) no-repeat left center; padding:20px 0px; height:30px; line-height:30px; padding-left:30px;">每个手机只能申请一个账号</td>
                   </tr>
                 <tr>
                   <td width="106" height="60" align="right" valign="middle"><font color="#ff0000">*</font>手机：</td>
@@ -71,7 +70,7 @@ function displayimg()
                   <td height="60" colspan="4" align="center" valign="middle"><table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                       <td width="6%" height="33">&nbsp;</td>
-                      <td width="94%"><input name="personalType" type="radio" id="personalType" value="AUTOBOT" checked="checked" />
+                      <td width="94%"><input name="personalType" type="radio" id="personalType" value="AUTOBOT" />
 汽车人
                        &nbsp;&nbsp;&nbsp;&nbsp;
                        <input name="personalType" type="radio" id="personalType" value="TRAINER" />
@@ -151,7 +150,7 @@ function gr_register(){
 	var password = $("#loginform0").find("#gr_password").val();
 	var comfirmPassword = $("#loginform0").find("#gr_confirmPassword").val();
 	var vercode = $("#loginform0").find("#gr_verCode").val();
-	var personalType = $("#loginform0").find("#personalType").val();
+	var personalType = $("input[name='personalType']:checked").val();
 	
 	var userType = 'PERSONAL';
 	if(username==''||username==null){
@@ -174,7 +173,7 @@ function gr_register(){
 		alert('请选择短信验证码');
 		return false;
 	}
-	if(personalType==''||personalType==null){
+	if(personalType==''||personalType==null||personalType=='undefined'){
 		alert('请选择个人类型');
 		return false;
 	}
@@ -228,8 +227,8 @@ function qy_register(){
 	var username = $("#loginform1").find("#qy_username").val();
 	var password = $("#loginform1").find("#qy_password").val();
 	var comfirmPassword = $("#loginform1").find("#qy_confirmPassword").val();
-	var vercode = $("#loginform1").find("#gr_verCode").val();	
-	var companyType = $("#loginform1").find("#companyType").val();
+	var vercode = $("#loginform1").find("#qy_verCode").val();	
+	var companyType = $("input[name='companyType']:checked").val();
 	var userType = 'COMPANY';
 	
 	if(username==''||username==null){
@@ -256,7 +255,7 @@ function qy_register(){
 		alert('请选择用户登陆类型');
 		return false;
 	}
-	if(companyType==''||companyType==null){
+	if(companyType==''||companyType==null||companyType=='undefined'){
 		alert('请选择企业类型');
 		return false;
 	}
@@ -364,6 +363,5 @@ setTimeout(function() {
 </script>
 <!-- main结束 -->
 <#include "/assets/website/backend/common/footer.html">
-<script type="text/javascript" src="js/common.js"></script>
 </body>
 </html>
