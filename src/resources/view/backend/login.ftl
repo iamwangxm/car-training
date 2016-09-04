@@ -74,7 +74,7 @@
 
 <!-- main结束 -->
 <#include "/assets/website/backend/common/footer.html">
-<script type="text/javascript" src="<@url value='/assets/website/backend/js/jquery.min.js'/>"></script>
+<script type="text/javascript" src="<@url value='/assets/website/backend/js/jquery-1.8.0.min.js'/>"></script>
 <script type="text/javascript" src="<@url value='/assets/website/backend/js/common.js'/>"></script>
 <script>
     function gr_login(){
