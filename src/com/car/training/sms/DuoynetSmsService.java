@@ -2,7 +2,6 @@ package com.car.training.sms;
 
 import java.io.IOException;
 import java.net.URLEncoder;
-import java.util.Date;
 import java.util.Map;
 
 import org.ironrhino.core.util.ErrorMessage;
@@ -26,7 +25,7 @@ public class DuoynetSmsService implements SmsService {
 	@Value("${sms.duoynet.username:shengke}")
 	private String username;
 
-	@Value("${sms.duoynet.password:123qwe}")
+	@Value("${sms.duoynet.password:345147}")
 	private String password;
 
 	@Value("${sms.duoynet.channel:0}")
@@ -37,7 +36,7 @@ public class DuoynetSmsService implements SmsService {
 		StringBuilder sbf = new StringBuilder(apiBaseUrl);
 		sbf.append("/SendSmsExt?user=").append(username).append("&pwd=").append(password).append("&chid=")
 				.append(channel).append("&mobiles=").append(phone).append("&contents=")
-				.append(URLEncoder.encode(message, "UTF-8")).append("&sendtime=").append(new Date());
+				.append(URLEncoder.encode(message, "UTF-8")).append("&sendtime=").append("");
 		logger.info("sending '{}' to '{}'", message, phone);
 		String callback = HttpClientUtils.get(sbf.toString());
 		logger.info("return '{}'", callback);

@@ -17,8 +17,12 @@
         </div>
         <div class="dl_top right">
         	<ul>
+        	<#if '{}' != '${session}' && Session.SPRING_SECURITY_CONTEXT?exists && '${Session.SPRING_SECURITY_CONTEXT.authentication.principal.username!}' != '' >
+        	欢迎您,${Session.SPRING_SECURITY_CONTEXT.authentication.principal.username!}!<a href="<@url value='/backend/login'/>" />我的管理</a>
+        	<#else>
             	<li style="background:none;"><a href='<@url value='/backend/login'/>'>请登录</a></li>
                 <li><a href='<@url value='/backend/register'/>'>免费注册</a></li>
+           </#if>
             </ul>
         </div>
         <div class="clear"></div>

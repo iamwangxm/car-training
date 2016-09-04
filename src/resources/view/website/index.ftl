@@ -13,6 +13,7 @@
 <!-- banner开始 -->	
 <div class="banner">
 	<div class="content">
+	  <#if '{}' != '${session}' && Session.SPRING_SECURITY_CONTEXT?exists && '${Session.SPRING_SECURITY_CONTEXT.authentication.principal.username!}' != '' >
         	<div class="dl_box">
         	  <form action="" id="loginform0">
                 <input type="hidden" name="targetUrl" value=${targetUrl!} />
@@ -50,10 +51,11 @@
                     <div class="clear"></div>
             
 				</div>
-				</form>
+
                 <div class="dl"><input style="border:none;" type="image" name="dl" id="dl" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dl_bg.jpg" onClick='javascript:login();' /></div>
            		<div class="wjpwd"><span class="errMsg" style="display:block; padding-left:10px;line-height: 40px;color:red;"></span><!--<a href="#">忘记密码？</a>--></div>
             </div>
+          	</#if>
         </div>
 </div>
 	<!-- banner结束 -->
