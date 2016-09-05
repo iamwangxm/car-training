@@ -40,7 +40,7 @@
                 
                 
                 <tr>
-                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/denglu.jpg" onClick='javascript:gr_login();return false;'/></td>
+                  <td height="80" colspan="4" align="center" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/denglu.jpg" onclick="gr_login()"></td>
                 </tr>
                 </form>
               </table>
@@ -59,7 +59,7 @@
                   <td><font color="#999999">6~16个字符，包含字母，数字，特殊符号</font></td>
                 </tr>
                 <tr>
-                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/denglu.jpg" onClick='javascript:qy_login();return false;'/></td>
+                  <td height="80" colspan="4" align="center" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/denglu.jpg" onclick="gy_login()"></td>
                 </tr>
                </form>
               </table>
@@ -74,7 +74,7 @@
 
 <!-- main结束 -->
 <#include "/assets/website/backend/common/footer.html">
-<script type="text/javascript" src="<@url value='/assets/website/backend/js/jquery.min.js'/>"></script>
+<script type="text/javascript" src="<@url value='/assets/website/backend/js/jquery-1.8.0.min.js'/>"></script>
 <script type="text/javascript" src="<@url value='/assets/website/backend/js/common.js'/>"></script>
 <script>
     function gr_login(){

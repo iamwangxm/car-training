@@ -5,7 +5,7 @@
 
 <title>汽车培聘网</title>
 <link rel="stylesheet" href="<@url value='/assets/website/backend/css/login_style.css'/>" type="text/css" media="screen" />
-<script type="text/javascript" src="<@url value='/assets/website/backend/js/jquery.min.js'/>"></script>
+<script type="text/javascript" src="<@url value='/assets/website/backend/js/jquery-1.8.0.min.js'/>"></script>
 <script type="text/javascript" src="<@url value='/assets/website/backend/js/common.js'/>"></script>
 <script type="text/javascript">
 
@@ -125,7 +125,7 @@ function displayimg()
                   </table></td>
                   </tr>
                 <tr>
-                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/tj.jpg"  onClick='javascript:qy_register();return false;'/></td>
+                  <td height="80" colspan="4" align="center" valign="middle"><img id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/tj.jpg"  onClick='qy_register()'/></td>
                 </tr>
               </table>
               </form>
