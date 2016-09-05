@@ -13,7 +13,6 @@
 <!-- banner开始 -->	
 <div class="banner">
 	<div class="content">
-	  <#if '{}' != '${session}' && Session.SPRING_SECURITY_CONTEXT?exists && '${Session.SPRING_SECURITY_CONTEXT.authentication.principal.username!}' != '' >
         	<div class="dl_box">
         	  <form action="" id="loginform0">
                 <input type="hidden" name="targetUrl" value=${targetUrl!} />
@@ -25,7 +24,7 @@
               </div>
                 <div class="pwd">
                	  <div class="pwd_l left">密码：</div>
-                  <div class="pwd_r right"><input  style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px;line-height:30px; width:196px; border:none; padding-left:4px; " type="password" name="password" id="password" data-nick="login_pwd" value="" class="text input-xlarge"  laceholder="请输入6-16位字母、数字组成的登录密码" required validate-title="密码" /></div>
+                  <div class="pwd_r right"><input  style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px;line-height:30px; width:196px; border:none; padding-left:4px; " type="password" name="password" id="password" data-nick="login_pwd" value="" class="text input-xlarge"  placeholder="请输入6-16位字母、数字组成的登录密码" required validate-title="密码" /></div>
                     <div class="clear"></div>
               </div>
                 <!--
@@ -55,7 +54,6 @@
                 <div class="dl"><input style="border:none;" type="image" name="dl" id="dl" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dl_bg.jpg" onClick='javascript:login();' /></div>
            		<div class="wjpwd"><span class="errMsg" style="display:block; padding-left:10px;line-height: 40px;color:red;"></span><!--<a href="#">忘记密码？</a>--></div>
             </div>
-          	</#if>
         </div>
 </div>
 	<!-- banner结束 -->

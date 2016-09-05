@@ -45,7 +45,7 @@ function displayimg()
                   <td height="60" colspan="4" align="left" valign="middle" style="background:url(http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/icon2.jpg) no-repeat left center; padding:20px 0px; height:30px; line-height:30px; padding-left:30px;">每个手机只能申请一个账号</td>
                   </tr>
                 <tr>
-                  <td width="106" height="60" align="right" valign="middle"><font color="#ff0000">*</font>手机：</td>
+                  <td width="106" height="60" align="right" valign="middle"><font color="#ff0000">*</font>个人账号：</td>
                   <td colspan="2"><input style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:280px;" type="text" name="gr_username" id="gr_username"  data-reg="/^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/" placeholder="请输入11位手机号" required/></td>
                   <td width="282"><font color="#999999">作为登录账号，请填写未注册过的手机</font></td>
                 </tr>
@@ -63,7 +63,7 @@ function displayimg()
                   <td height="60" align="right" valign="middle"><font color="#ff0000">*</font>验证码：</td>
                   <td width="100"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" type="text" name="gr_verCode" id="gr_verCode" /></td>
                   <td width="72"> 
-                      <input type="button" id="gr_msgsend" value="免费获取验证码" onclick="javascript:settime(this);sendmsg(this.id);" style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" /></td>
+                      <input type="button" id="gr_msgsend" value="免费获取验证码" onclick="javascript:settime(this);sendmsg(this.id);return false;" style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" /></td>
                   <td><font color="#999999">请输入手机验证码</font></td>
                 </tr>
                 <tr>
@@ -91,7 +91,7 @@ function displayimg()
                   <td height="60" colspan="4" align="left" valign="middle" style="background:url(http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/icon2.jpg) no-repeat left center; padding:20px 0px; height:30px; line-height:30px; padding-left:30px;">每个手机只能申请一个账号</td>
                   </tr>
                 <tr>
-                  <td width="106" height="60" align="right" valign="middle"><font color="#ff0000">*</font>手机：</td>
+                  <td width="106" height="60" align="right" valign="middle"><font color="#ff0000">*</font>企业账号：</td>
                   <td colspan="2"><input style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:280px;" type="text" name="qy_username" id="qy_username"  data-reg="/^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/" placeholder="请输入11位手机号" required/></td>
                   <td width="282"><font color="#999999">作为登录账号，请填写未注册过的手机</font></td>
                 </tr>
@@ -109,7 +109,7 @@ function displayimg()
                   <td height="60" align="right" valign="middle"><font color="#ff0000">*</font>验证码：</td>
                   <td width="100"><input  style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" type="text" name="qy_verCode" id="qy_verCode" /></td>
                   <td width="72" align="left"> 
-                   <input type="button" id="qy_msgsend" style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" value="免费获取验证码" onclick="settime(this);sendmsg(this.id)" /></td>
+                   <input type="button" id="qy_msgsend" style="border:1px solid #e7e6eb; height:30px; line-height:30px; width:120px;" value="免费获取验证码" onclick="settime(this);return false;sendmsg(this.id);" /></td>
                   <td><font color="#999999">请输入手机验证码</font></td>
                 </tr>
                 <tr>
