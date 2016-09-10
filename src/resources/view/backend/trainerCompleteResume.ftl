@@ -22,18 +22,7 @@
     	<div class="pxshi_gl_l left">
        	  <h4>培训师管理中心</h4>
         
-          <div class="lanmu">
-          	<ul>
-            	<li><div class="sqjl"><a href="#">申请记录</a></div></li>
-                <li><div class="wsjl cn"><a href="#">完善简历</a></div></li>
-                <li><div class="wdwz"><a href="#">我的文章</a></div></li>
-                <li><div class="wdgkk"><a href="#">我的公开课</a></div></li>
-                <li><div class="xgmm"><a href="#">修改密码</a></div></li>
-                <li><div class="aqtc"><a href="#">安全退出</a></div></li>
-                
-            </ul>
-          </div>
-      </div>
+        <#include "/assets/website/backend/common/menu.html">
         <div class="pxshi_gl_r right">
         <#if trainer?? && trainer.userCenter??>
         <form id="form1" method="post" action="/backend/trainerCompleteResume"  onSubmit="return checkform()">

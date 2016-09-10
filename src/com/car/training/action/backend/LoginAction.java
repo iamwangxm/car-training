@@ -116,7 +116,7 @@ public class LoginAction extends BaseAction {
 					if (usercenter != null) {
 						HttpSession context = request.getSession();
 						context.setAttribute("userDetails", usercenter);
-						targetUrl = "/website/backend/companyJobManger";
+						targetUrl = "/backend/applyJobHistory";
 						request.getSession().setAttribute("loginState", "Y");
 						map.put("code", 200);
 						map.put("target", targetUrl);
@@ -132,7 +132,7 @@ public class LoginAction extends BaseAction {
 				if (company != null) {
 					HttpSession context = request.getSession();
 					context.setAttribute("userDetails", company);
-					targetUrl = "/website/backend/companyJobManger";
+					targetUrl = "/backend/companyJobManage";
 					request.getSession().setAttribute("loginState", "Y");
 					map.put("code", 200);
 					map.put("target", targetUrl);

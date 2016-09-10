@@ -23,20 +23,8 @@
     <div class="pxshi_gl">
     	<div class="pxshi_gl_l left">
        	  <h4>企业管理中心</h4>
-        
-          <div class="lanmu">
-          	<ul>
-            	<li><div class="zlws"><a href="企业——完善资料.html">完善资料</a></div></li>
-                <li><div class="wdzt"><a href="企业——我的专题.html">我的专题</a></div></li>
-                <li><div class="zwfb"><a href="企业——发布职位.html">发布职位</a></div></li>
-                 <li><div class="zwgl  cn"><a href="企业——职位管理.html">职位管理</a></div></li>
-               
-              <li><div class="xgmm"><a href="#">修改密码</a></div></li>
-                <li><div class="aqtc"><a href="#">安全退出</a></div></li>
-                
-            </ul>
-          </div>
-      </div>
+       <#include "/assets/website/backend/common/menu.html">
+       
         <div class="pxshi_gl_r right">
         <#if jobsList?? && jobsList.result??>
        	  <table bgcolor="#dedede" border="0" cellpadding="4" cellspacing="1" align="center" width="860">

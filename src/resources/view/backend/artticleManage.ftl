@@ -21,18 +21,7 @@
     <div class="pxshi_gl">
     	<div class="pxshi_gl_l left">
        	  <h4>培训师管理中心</h4>
-        
-          <div class="lanmu">
-          	<ul>
-            	<li><div class="sqjl"><a href="培训师——申请记录.html">申请记录</a></div></li>
-                <li><div class="wsjl"><a href="培训师——完善简历.html">完善简历</a></div></li>
-                <li><div class="wdwz cn"><a href="培训师——我的文章.html">我的文章</a></div></li>
-                <li><div class="wdgkk"><a href="#">我的公开课</a></div></li>
-                <li><div class="xgmm"><a href="培训师——修改密码.html">修改密码</a></div></li>
-                <li><div class="aqtc"><a href="#">安全退出</a></div></li>
-                
-            </ul>
-          </div>
+      <#include "/assets/website/backend/common/menu.html">
       </div>
         <div class="pxshi_gl_r right">
         <#if trainerEssayList?? && trainerEssayList.result??>

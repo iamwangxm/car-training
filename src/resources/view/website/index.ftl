@@ -12,6 +12,7 @@
 <!-- 头部结束 -->	
 <!-- banner开始 -->	
 <div class="banner">
+ <#if '{}' == '${session}'|| Session["loginState"]=='N' >
 	<div class="content">
         	<div class="dl_box">
         	  <form action="" id="loginform0">
@@ -55,6 +56,8 @@
            		<div class="wjpwd"><span class="errMsg" style="display:block; padding-left:10px;line-height: 40px;color:red;"></span><!--<a href="#">忘记密码？</a>--></div>
             </div>
         </div>
+        <#else>
+ </#if>
 </div>
 	<!-- banner结束 -->
 <!-- main开始 -->
