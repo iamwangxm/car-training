@@ -22,7 +22,7 @@
     	<div class="pxshi_gl_l left">
        	  <h4>培训师管理中心</h4>
       <#include "/assets/website/backend/common/menu.html">
-      </div>
+
         <div class="pxshi_gl_r right">
         <#if trainerEssayList?? && trainerEssayList.result??>
          <table bgcolor="#dedede" border="0" cellpadding="4" cellspacing="1" align="center" width="860">

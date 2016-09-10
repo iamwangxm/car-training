@@ -16,19 +16,35 @@
             </div>
         </div>
         <div class="dl_top right">
+        <#if '{}' != '${session}'&& Session["loginState"]=='Y' >
+     	 <li style="background:none;"><#if Session["userDetails"].personalType==''||Session["userDetails"].personalType=='TRAINER' > <a href='<@url value='/backend/applyJobHistory'/>' ><#else> <a href='<@url value='/backend/companyJobManage'/>'> </#if>我的管理</a></li>
+     	 <li "><a href="#" onclick="javascript:logout();">退出</a></li>
+        <#else> 
         	<ul>
             	<li style="background:none;"><a href='<@url value='/backend/login'/>'>请登录</a></li>
                 <li><a href='<@url value='/backend/register'/>'>免费注册</a></li>
             </ul>
+        </#if> 
         </div>
         <div class="clear"></div>
     </div>
 </div>
 <script type="text/javascript">
-$(function () {
-$(".menu li").click(function () {
-$(this).addClass("cn"); 
-});
-});
+function logout(){
+	$.ajax({
+		type : "GET",
+		data : {},
+		dataType : "json",
+		url : "/website/index/logout",
+		success : function(data){
+			if(data.code == 200){
+				window.location = '/website/index';
+			}else{
+				alert('退出失败,请稍后再试');
+			}
+		}
+	});
+	
+}
 </script>
 <!-- 头部结束 -->	

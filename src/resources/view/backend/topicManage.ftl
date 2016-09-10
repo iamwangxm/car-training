@@ -25,7 +25,6 @@
         
           <#include "/assets/website/backend/common/menu.html">
           <div class="tjzt"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/tjzt.jpg" /></a></div>
-      </div>
         <div class="pxshi_gl_r right">
        	  <table bgcolor="#dedede" border="0" cellpadding="4" cellspacing="1" align="center" width="860">
                     <tbody>
