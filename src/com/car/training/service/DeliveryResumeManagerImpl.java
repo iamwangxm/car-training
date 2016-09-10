@@ -44,9 +44,9 @@ public class DeliveryResumeManagerImpl extends BaseManagerImpl<DeliveryResume> i
 
 	@Override
 	@Transactional(readOnly=true)
-	public ResultPage<DeliveryResume> findPageByDeliveryResume(DeliveryResume autobotsComment, Integer pageSize, Integer pageNo) {
+	public ResultPage<DeliveryResume> findPageByDeliveryResume(DeliveryResume deliveryResume, Integer pageSize, Integer pageNo) {
 		ResultPage<DeliveryResume> resultPage = new ResultPage<DeliveryResume>();
-		if (autobotsComment == null)
+		if (deliveryResume == null)
 			return null;
 		DetachedCriteria dc = detachedCriteria();
 		dc.add(Restrictions.eq("enabled", true));

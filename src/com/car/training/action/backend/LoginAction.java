@@ -170,18 +170,4 @@ public class LoginAction extends BaseAction {
 		return SUCCESS;
 	}
 
-//	@JsonConfig(root = "data")
-//	public String sendMsg() {
-//		Map<String, Object> map = new HashMap<String, Object>();
-//
-//		String sid = ServletActionContext.getRequest().getSession().getId();
-//
-//		if (!captchManager.volidateCode(sid, captcha)) {
-//			map.put("code", 400);
-//			map.put("msg", "验证码填写错误");
-//			this.setData(map);
-//		}
-//		return JSON;
-//	}
-
 }

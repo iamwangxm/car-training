@@ -1,5 +1,6 @@
 package com.car.training.utils;
 
+import org.ironrhino.common.model.Region;
 import org.ironrhino.core.util.BeanUtils;
 
 import com.car.training.domain.Autobots;
@@ -120,7 +121,12 @@ public class CopyPropertiesUtil {
 			if (s != null && s.getJobs() != null && s.getJobs().getCompany() != null) {
 				Company remotingCompany = new Company();
 				BeanUtils.copyProperties(s.getJobs().getCompany(), remotingCompany);
-				t.getJobs().setCompany(remotingCompany);
+				remotingJobs.setCompany(remotingCompany);
+			}
+			if (s != null && s.getJobs() != null && s.getJobs().getRegion() != null) {
+				Region remotingRegion = new Region();
+				BeanUtils.copyProperties(s.getJobs().getRegion(), remotingRegion);
+				remotingJobs.setRegion(remotingRegion);
 			}
 			t.setJobs(remotingJobs);
 		}
