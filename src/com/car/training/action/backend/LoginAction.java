@@ -126,7 +126,7 @@ public class LoginAction extends BaseAction {
 						map.put("msg", "您的账号或密码错误！");
 					}
 			}
-		} else if(userType.equals(UserType.PERSONAL)){
+		} else if (userType.equals(UserType.COMPANY)) {
 			if (StringUtils.isNotBlank(username) && StringUtils.isNotBlank(password)) {
 				company = companyService.findByUsernamePassword(username, password);
 				if (company != null) {
@@ -137,12 +137,12 @@ public class LoginAction extends BaseAction {
 					map.put("code", 200);
 					map.put("target", targetUrl);
 					map.put("msg", "登陆成功！");
+				} else {
+					map.put("code", 400);
+					map.put("msg", "您的账号或密码错误！");
 				}
-		} else {
-			map.put("code", 400);
-			map.put("msg", "您的账号或密码错误！");
+			}
 		}
-	  }
 		setData(map);
 		return JSON;
 	}

@@ -156,7 +156,7 @@ public class IndexAction extends BaseAction {
 						map.put("msg", "您的账号或密码错误！");
 					}
 			}
-		} else if(userType.equals(UserType.PERSONAL)){
+		} else if(userType.equals(UserType.COMPANY)){
 			if (StringUtils.isNotBlank(username) && StringUtils.isNotBlank(password)) {
 				company = companyService.findByUsernamePassword(username, password);
 				if (company != null) {
