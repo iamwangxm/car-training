@@ -373,7 +373,7 @@
     }
     
     function showErrMsg(errMsg){
-    	$("span.errMsg").text(errMsg);
+    	alert(errMsg);
     }
     
 </script>

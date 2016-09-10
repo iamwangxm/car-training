@@ -107,9 +107,6 @@ public class LoginAction extends BaseAction {
 		if (StringUtils.isBlank(password)) {
 			throw new NotFoundException("1002","密码不能为空");
 		}
-		if (StringUtils.isBlank(vercode)) {
-			throw new NotFoundException("1003","验证码不能为空");
-		}
 		if (userType==null) {
 			throw new NotFoundException("1004","请选择用户类型");
 		}

@@ -252,7 +252,8 @@ public class RegisterAction extends BaseAction {
 					e.printStackTrace();
 				}
 			}else{
-				throw new NotFoundException("1001", "手机账号已注册");
+				map.put("code", 400);
+				map.put("msg", "手机账号已注册！");
 			}
 		}else if(userType.equals(UserType.COMPANY)){
 			Company company = companyService.findByUsername(username);
@@ -265,10 +266,11 @@ public class RegisterAction extends BaseAction {
 					e.printStackTrace();
 				}
 		}else{
-			throw new NotFoundException("1001", "手机账号已注册");
+			map.put("code", 400);
+			map.put("msg", "手机账号已注册！");
 			}
 		}
-		setData(data);
+		setData(map);
 		return JSON;
 	}
 }

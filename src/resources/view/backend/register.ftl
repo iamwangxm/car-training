@@ -302,7 +302,7 @@ function qy_register(){
 }
 
 function showErrMsg(errMsg){
-	$("span.errMsg").text(errMsg);
+	alert(errMsg);
 }
     
  function sendmsg(s_type){
