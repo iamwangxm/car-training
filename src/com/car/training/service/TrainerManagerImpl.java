@@ -47,7 +47,7 @@ public class TrainerManagerImpl extends BaseManagerImpl<Trainer> implements Trai
 		if (StringUtils.isBlank(uid))
 			return null;
 		DetachedCriteria dc = detachedCriteria();
-		dc.createAlias("UserCenter", "uc").add(Restrictions.eq("uc.id", uid));
+		dc.createAlias("userCenter", "uc").add(Restrictions.eq("uc.id", uid));
 		return findByCriteria(dc);
 	}
 

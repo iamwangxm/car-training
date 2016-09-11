@@ -30,8 +30,11 @@ public class TrainerCompleteResumeAction extends BaseAction {
 		uc = (UserCenter) request.getSession().getAttribute("userDetails");
 		if (uc != null) {
 			trainer = trainerService.findByUserCenter(uc.getId());
-			trainerService.save(trainer);
 		}
+		return SUCCESS;
+	}
+	public String save() throws Exception{
+		trainerService.save(trainer);
 		return SUCCESS;
 	}
 

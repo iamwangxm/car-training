@@ -30,7 +30,7 @@ public class UserCenter  implements Serializable {
 	private String password;
 
 	/** 生日 */
-	private Date brithday;
+	private Date birthday;
 
 	/** 头像 */
 	private String headLogo;
@@ -135,12 +135,12 @@ public class UserCenter  implements Serializable {
 		this.password = password;
 	}
 
-	public Date getBrithday() {
-		return brithday;
+	public Date getBirthday() {
+		return birthday;
 	}
 
-	public void setBrithday(Date brithday) {
-		this.brithday = brithday;
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
 	}
 
 	public String getHeadLogo() {

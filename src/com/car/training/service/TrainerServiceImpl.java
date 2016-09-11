@@ -69,7 +69,7 @@ public class TrainerServiceImpl  implements TrainerService{
 	@Timing
 	@Transactional(readOnly = true)
 	public Trainer findByUserCenter(String uid) {
-		com.car.training.model.Trainer source = trainerManager.get(uid);
+		com.car.training.model.Trainer source = trainerManager.findByUserCenter(uid);
 		if (source == null) {
 			return null;
 		}

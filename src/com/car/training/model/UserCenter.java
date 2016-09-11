@@ -58,7 +58,7 @@ public class UserCenter extends BaseEntity implements UserDetails{
 	private String password;
 
 	/** 生日 */
-	private Date brithday;
+	private Date birthday;
 
 	/** 头像 */
 	@Column(length = 255, nullable = true)
@@ -216,14 +216,13 @@ public class UserCenter extends BaseEntity implements UserDetails{
 	public boolean isPasswordValid(String legiblePassword) {
 		return AuthzUtils.encodePassword(this, legiblePassword).equals(this.password);
 	}
-
-
-	public Date getBrithday() {
-		return brithday;
+	
+	public Date getBirthday() {
+		return birthday;
 	}
 
-	public void setBrithday(Date brithday) {
-		this.brithday = brithday;
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
 	}
 
 	public String getHeadLogo() {

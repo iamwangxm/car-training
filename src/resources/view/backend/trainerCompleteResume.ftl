@@ -16,7 +16,7 @@
 	<div class="content">
     <div class="dq_box">
     <div class="dqwz left">当前位置 : <a href="#">首 页</a> > <a href="#">培训师管理中心</a> > <a href="#">完善简历</a></div>
-    <div class="wdcf right"><span>2016-07-20 — 2016-08-20</span>我的财富：<font color="#FF66001">845</font></div>
+    <div class="wdcf right"><span>2016/07/20—2016/08/20</span>我的财富：<font color="#FF66001">845</font></div>
     <div class="clear"></div>
     </div>
     <div class="pxshi_gl">
@@ -43,7 +43,7 @@
       <tr>
         <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>出生年月：</td>
         <td>
-        <input type="date" name="trainer.userCenter.brithday" value="${trainer.userCenter.brithday?string("yyyy-MM-dd")!}" />
+        <input type="date" name="trainer.userCenter.birthday" value="${trainer.userCenter.birthday?string("yyyy-MM-dd")!}" />
      
       </td>
       </tr>
