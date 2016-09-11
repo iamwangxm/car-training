@@ -64,6 +64,20 @@ public class TrainerServiceImpl  implements TrainerService{
 		return target;
 	}
 	
+	/** 获取培训师信息 **/
+	@Override
+	@Timing
+	@Transactional(readOnly = true)
+	public Trainer findByUserCenter(String uid) {
+		com.car.training.model.Trainer source = trainerManager.get(uid);
+		if (source == null) {
+			return null;
+		}
+		Trainer target = new Trainer();
+		BeanUtils.copyProperties(source, target);
+		return target;
+	}
+	
 	/** 获取培训师列表 */
 	@Override
 	@Timing

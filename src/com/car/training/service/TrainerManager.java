@@ -21,6 +21,9 @@ public interface TrainerManager extends BaseManager<Trainer> {
 	/** 获取培训师信息 **/
 	Trainer findById(String id);
 	
+	/** 获取培训师信息 **/
+	Trainer findByUserCenter(String uid) ;
+	
 	/** 获取首页推荐培训师信息 **/
 	Trainer findByIndexPromoted(Boolean promote);
 	

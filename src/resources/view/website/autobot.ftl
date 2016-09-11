@@ -32,7 +32,7 @@
                 </div>
                 <div class="clear"></div>
             </div>
-            <div class="scxs">
+            <!--<div class="scxs">
             	<h4>擅长形式:</h4>
                 <div class="pxly_box">
                 	<ul>
@@ -45,11 +45,12 @@
                     </ul>
                 </div>
                 <div class="clear"></div>
-            </div>
+            </div>-->
             <div class="pxsj">
             	<h4>培训时间:</h4>
                 <div class="pxly_box">
                 	<ul>
+                		<li><a href="#">应界毕业生</a></li>
                     	<li><a href="#">5年内</a></li>
                         <li><a href="#">5-10年</a></li>
                         <li><a href="#">10-15年</a></li>

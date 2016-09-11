@@ -1,10 +1,14 @@
  package com.car.training.action.backend;
 
- import org.ironrhino.core.metadata.AutoConfig;
+ import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
+import org.ironrhino.core.metadata.AutoConfig;
 import org.ironrhino.core.struts.BaseAction;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.car.training.domain.Trainer;
+import com.car.training.domain.UserCenter;
 import com.car.training.service.TrainerService;
 
 @AutoConfig
@@ -21,7 +25,13 @@ public class TrainerCompleteResumeAction extends BaseAction {
 	
 	@Override
 	public String execute() throws Exception {
-		trainerService.save(trainer);
+		HttpServletRequest request = ServletActionContext.getRequest();
+		UserCenter uc = new UserCenter();
+		uc = (UserCenter) request.getSession().getAttribute("userDetails");
+		if (uc != null) {
+			trainer = trainerService.findByUserCenter(uc.getId());
+			trainerService.save(trainer);
+		}
 		return SUCCESS;
 	}
 
