@@ -164,51 +164,56 @@ public class RegisterAction extends BaseAction {
 			throw new NotFoundException("1004","请选择用户类型");
 		}
 		
-		if (userType.equals(UserType.PERSONAL)) {
-			UserCenter usercenter = usercenterService.findByUsername(username);
-			if (usercenter == null) {
-				if (smsManager.checkCode(username, vercode)) {
-					usercenter = new UserCenter();
-					usercenter.setUsername(username);
-					usercenter.setPassword(password);
-					usercenter.setActiveDate(new Date());
-					usercenter.setMobile(username);
-					usercenter.setPersonalType(personalType);
-					Region region = new Region();
-					region.setId(new Long(0L));
-					usercenter.setRegion(region);
-					usercenterService.save(usercenter);
-					map.put("code", 200);
-					map.put("msg", "注册成功！");
+		try {
+			if (userType.equals(UserType.PERSONAL)) {
+				UserCenter usercenter = usercenterService.findByUsername(username);
+				if (usercenter == null) {
+					if (smsManager.checkCode(username, vercode)) {
+						usercenter = new UserCenter();
+						usercenter.setUsername(username);
+						usercenter.setPassword(password);
+						usercenter.setActiveDate(new Date());
+						usercenter.setMobile(username);
+						usercenter.setPersonalType(personalType);
+						Region region = new Region();
+						region.setId(new Long(0L));
+						usercenter.setRegion(region);
+						usercenterService.save(usercenter);
+						map.put("code", 200);
+						map.put("msg", "注册成功！");
+					} else {
+						map.put("code", 402);
+						map.put("msg", "手机验证码错误！");
+					}
 				} else {
-					map.put("code", 402);
-					map.put("msg", "手机验证码错误！");
+					map.put("code", 405);
+					map.put("msg", "用户名已存在！");
 				}
-			} else {
-				map.put("code", 405);
-				map.put("msg", "用户名已存在！");
-			}
-		}else if(userType.equals(UserType.COMPANY)){
-			Company 	company = companyService.findByUsername(username);
-			if (company == null) {
-				if (smsManager.checkCode(username, vercode)) {
-					company = new Company();
-					company.setUsername(username);
-					company.setPassword(password);
-					company.setCompanyType(companyType);
-					companyService.save(company);
-					map.put("code", 200);
-					map.put("msg", "注册成功！");
+			} else if (userType.equals(UserType.COMPANY)) {
+				Company company = companyService.findByUsername(username);
+				if (company == null) {
+					if (smsManager.checkCode(username, vercode)) {
+						company = new Company();
+						company.setUsername(username);
+						company.setPassword(password);
+						company.setCompanyType(companyType);
+						companyService.save(company);
+						map.put("code", 200);
+						map.put("msg", "注册成功！");
+					} else {
+						map.put("code", 402);
+						map.put("msg", "手机验证码错误！");
+					}
 				} else {
-					map.put("code", 402);
-					map.put("msg", "手机验证码错误！");
+					map.put("code", 405);
+					map.put("msg", "用户名已存在！");
 				}
-			} else {
-				map.put("code", 405);
-				map.put("msg", "用户名已存在！");
 			}
+			setData(map);
+		} catch (Exception ex) {
+			ex.printStackTrace();
 		}
-		setData(map);
+
 		return JSON;
 	}
 

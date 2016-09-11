@@ -10,11 +10,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.car.training.domain.Autobots;
-import com.car.training.domain.Trainer;
 import com.car.training.domain.UserCenter;
 import com.car.training.enums.PersonalType;
 import com.car.training.exceptions.NotFoundException;
+import com.car.training.model.Autobots;
+import com.car.training.model.Trainer;
 
 @Component
 public class UserCenterServiceImpl implements UserCenterService {
@@ -22,9 +22,9 @@ public class UserCenterServiceImpl implements UserCenterService {
 	@Autowired
 	private UserCenterManager userCenterManager;
 	@Autowired
-	private AutobotsService autobotsService;
+	private AutobotsManager autobotsManager;
 	@Autowired
-	private TrainerService trainerService;
+	private TrainerManager trainerManager;
 
 	@Override
 	@Transactional
@@ -37,12 +37,12 @@ public class UserCenterServiceImpl implements UserCenterService {
 		} else {
 			if (target.getPersonalType().equals(PersonalType.AUTOBOT)) {
 				Autobots autobot = new Autobots();
-				autobot.setUserCenter(uc);
-				autobotsService.save(autobot);
+				autobot.setUserCenter(target);
+				autobotsManager.save(autobot);
 			} else if (target.getPersonalType().equals(PersonalType.TRAINER)) {
 				Trainer trainer = new Trainer();
-				trainer.setUserCenter(uc);
-				trainerService.save(trainer);
+				trainer.setUserCenter(target);
+				trainerManager.save(trainer);
 			}
 		}
 	}
