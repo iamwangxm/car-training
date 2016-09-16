@@ -27,7 +27,6 @@
         
         <div class="pxshi_gl_r right">
         
-        <#if Job?? && Job.company??>
         <form id="form1" method="post" action="/backend/publishedJob"  onSubmit="return checkform()">
         
        	  <div class="pxshijl">
@@ -36,7 +35,7 @@
                    	 <table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="79" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 职位名称：</td>
-    <td width="721"><input type="text" name="Job.name" id="textfield11" /></td>
+    <td width="721"><input type="text" name="Job.name" id="Job.name" /></td>
   </tr>
 
   <tr>
@@ -48,7 +47,7 @@
   </tr>
   <tr>
     <td height="150" align="right" valign="top"><font color="#ff0000">*</font> 职位描述：</td>
-    <td align="left" valign="top"><textarea style="width:600px;" name="Job.jobDescription" id="textarea" cols="45" rows="5"></textarea></td>
+    <td align="left" valign="top"><textarea style="width:600px;" name="Job.jobDescription" id="Job.jobDescription" cols="45" rows="5"></textarea></td>
   </tr>
 </table>
  
@@ -65,7 +64,6 @@
       </div>
       
       </form>
-      </#if>
       
         <div class="clear"></div>
     

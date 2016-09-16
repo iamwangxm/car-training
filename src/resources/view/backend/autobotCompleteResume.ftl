@@ -27,7 +27,6 @@
         <#include "/assets/website/backend/common/menu.html">
         
         <div class="pxshi_gl_r right">
-        <#if autobot?? && autobot.userCenter??>
         <form id="form1" method="post" action="/backend/autobotCompleteResume"  onSubmit="return checkform()">
         <!--隐藏域-->
         <input type="hidden" name="autobot.userCenter.personalType" value="AUTOBOT">
@@ -40,30 +39,40 @@
     <td colspan="2"width="420" align="left" valign="top"><table width="400" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="69" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 姓 名：</td>
-        <td width="292"><input type="text" name="autobot.userCenter.name" value="${autobot.userCenter.name!}" id="name" /></td>
+        <td width="292">
+        <#if autobot?? && autobot.userCenter?? && autobot.userCenter.name??>
+        <input type="text" name="autobot.userCenter.name" value="${autobot.userCenter.name!}" id="autobot.userCenter.name" />
+        <#else>
+        <input type="text" name="autobot.userCenter.name" value="" id="autobot.userCenter.name" />
+        </#if>
+        </td>
       </tr>
       <tr>
         <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>出生年月：</td>
         <td>
-        <input name="autobot.userCenter.birthday" value="${autobot.userCenter.brithday?string("yyyy-MM-dd")!}" type="date"/>
+        <#if autobot?? && autobot.userCenter?? && autobot.userCenter.name??>
+        <input name="autobot.userCenter.birthday" value="${autobot.userCenter.birthday?string("yyyy-MM-dd")!}" type="date"/>
+        <#else>
+        <input name="autobot.userCenter.birthday" value="" type="date"/>
+        </#if>
         </td>
       </tr>
       <tr>
         <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>婚姻状况：</td>
         <td>
-        	<#if autobot.userCenter.marryStatus.name() = 'UNMARRIED'>
+        	<#if autobot?? && autobot.userCenter?? && autobot.userCenter.marryStatus?? && autobot.userCenter.marryStatus.name() = 'UNMARRIED'>
         	<input checked="checked" type="radio" name="autobot.userCenter.marryStatus" value="UNMARRIED" id="ty_per10" />
         	<#else>
         	<input type="radio" name="autobot.userCenter.marryStatus" value="UNMARRIED" id="ty_per10" />
         	</#if>
 			未婚
-			<#if autobot.userCenter.marryStatus.name() = 'MARRIED'>
+			<#if autobot?? && autobot.userCenter?? && autobot.userCenter.marryStatus?? && autobot.userCenter.marryStatus.name() = 'MARRIED'>
 			<input checked="checked" type="radio" name="autobot.userCenter.marryStatus" value="MARRIED" id="ty_per11" />
 			<#else>
 			<input type="radio" name="autobot.userCenter.marryStatus" value="MARRIED" id="ty_per11" />
 			</#if>
 			已婚
-			<#if autobot.userCenter.marryStatus.name() = 'RAISED'>
+			<#if autobot?? && autobot.userCenter?? && autobot.userCenter.marryStatus?? && autobot.userCenter.marryStatus.name() = 'RAISED'>
 			<input checked="checked" type="radio" name="autobot.userCenter.marryStatus" value="RAISED" id="ty_per12" />
 			<#else>
 			<input type="radio" name="autobot.userCenter.marryStatus" value="RAISED" id="ty_per12" />
@@ -97,13 +106,31 @@
                     	<table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
                     	  <tr>
                     	    <td width="76" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 目前状态：</td>
-                    	    <td width="262"><input type="text" name="autobot.currentWorkStatus" value="${autobot.currentWorkStatus!}" id="textfield2" /></td>
+                    	    <td width="262">
+                    	    <#if autobot?? && autobot.currentWorkStatus?? >
+                    	    <input type="text" name="autobot.currentWorkStatus" value="${autobot.currentWorkStatus!}" id="autobot.currentWorkStatus" />
+                    	    <#else>
+                    	    <input type="text" name="autobot.currentWorkStatus" value="" id="autobot.currentWorkStatus" />
+                    	    </#if>
+                    	    </td>
                     	    <td width="125" align="right" valign="middle"><font color="#ff0000">*</font> 当前汽车品牌：</td>
-                    	    <td width="337"><input type="text" name="autobot.autoBrand" value="${autobot.autoBrand!}" id="textfield3" /></td>
+                    	    <td width="337">
+                    	    <#if autobot?? && autobot.autoBrand?? >
+                    	    <input type="text" name="autobot.autoBrand" value="${autobot.autoBrand!}" id="autobot.autoBrand" />
+                    	    <#else>
+                    	    <input type="text" name="autobot.autoBrand" value="" id="autobot.autoBrand" />
+                    	    </#if>
+                    	    </td>
                   	    </tr>
                         <tr>
                     	    <td height="40" align="right" valign="middle"><font color="#ff0000">*</font> 手 机：</td>
-                    	    <td><input type="tel" name="autobot.userCenter.mobile" value="${autobot.userCenter.mobile!}" id="textfield4" /></td>
+                    	    <td>
+                    	    <#if autobot?? && autobot.userCenter?? && autobot.userCenter.mobile??>
+                    	    <input type="tel" name="autobot.userCenter.mobile" value="${autobot.userCenter.mobile!}" id="autobot.userCenter.mobile" />
+                    	    <#else>
+                    	    <input type="tel" name="autobot.userCenter.mobile" value="" id="autobot.userCenter.mobile" />
+                    	    </#if>
+                    	    </td>
                   	    </tr>
                   	  </table>
 
@@ -120,7 +147,7 @@
     <td height="40" colspan="4" align="left" valign="middle"><table width="90%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="11%"><font color="#ff0000">*</font>所获认证：</td>
-    <td width="89%"><textarea style="width:600px;" name="autobot.authHistroy" id="textarea2" cols="45" rows="5">${autobot.authHistroy!}</textarea></td>
+    <td width="89%"><textarea style="width:600px;" name="autobot.authHistroy" id="autobot.authHistroy" cols="45" rows="5"><#if autobot?? && autobot.authHistroy??> ${autobot.authHistroy!}<#else>请输入所获认证</#if></textarea></td>
   </tr>
 </table></td>
     </tr>
@@ -140,7 +167,7 @@
     <td height="40" colspan="4" align="left" valign="middle"><table width="90%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="11%"><font color="#ff0000">*</font>工作经历：</td>
-    <td width="89%"><textarea style="width:600px;" name="autobot.workingHistroy" id="textarea2" cols="45" rows="5">${autobot.workingHistroy!}</textarea></td>
+    <td width="89%"><textarea style="width:600px;" name="autobot.workingHistroy" id="textarea2" cols="45" rows="5"><#if autobot?? autobot.workingHistroy??> ${autobot.workingHistroy!} <#else>请输入工作经历</#if></textarea></td>
   </tr>
 </table></td>
     </tr>

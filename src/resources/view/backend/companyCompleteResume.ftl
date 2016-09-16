@@ -34,43 +34,49 @@
                	  <h5>企业基本信息</h5>
                     <div class="pxshijl_box">
                    	  <table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td colspan="2"width="420" align="left" valign="top"><table width="400" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td width="69" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 企业名称：</td>
-        <td width="292"><input type="text" name="company.name" value="${company.name!}" id="textfield" /></td>
-      </tr>
-      <tr>
+					  <tr>
+					    <td colspan="2"width="420" align="left" valign="top"><table width="400" border="0" cellspacing="0" cellpadding="0">
+					      <tr>
+					        <td width="69" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 企业名称：</td>
+					        <td width="292">
+					        <#if company?? && company.name??>
+					        <input type="text" name="company.name" value="${company.name!}" id="company.name" />
+					        <#else>
+					        <input type="text" name="company.name" value="" id="company.name" />
+					        </#if>
+					        </td>
+					      </tr>
+					      <tr>
                     	    <td width="125" align="right" valign="middle"><font color="#ff0000">*</font>企业规模：</td>
                     	    <td width="337">
                     	    <select name="company.scale" id="scale">
                     	    <option value="">请选择</option>
-                    	    <#if company.scale.name() = 'UNDER50'>
+                    	    <#if company?? && company.scale?? && company.scale.name() = 'UNDER50'>
 							<option selected="selected" value="UNDER50">50人以下</option>
 							<#else>
 							<option value="UNDER50">50人以下</option>
 							</#if>
-							<#if company.scale.name() = 'FROM51TO100'>
+							<#if company?? && company.scale?? && company.scale.name() = 'FROM51TO100'>
 							<option selected="selected" value="FROM51TO100">51人-100人</option>
 							<#else>
 							<option value="FROM51TO100">51人-100人</option>
 							</#if>
-							<#if company.scale.name() = 'FROM101TO200'>
+							<#if company?? && company.scale?? && company.scale.name() = 'FROM101TO200'>
 							<option selected="selected" value="FROM51TO100">101人-200人</option>
 							<#else>
 							<option value="FROM101TO200">101人-200人</option>
 							</#if>
-							<#if company.scale.name() = 'FROM201TO500'>
+							<#if company?? && company.scale?? && company.scale.name() = 'FROM201TO500'>
 							<option selected="selected" value="FROM51TO100">201人-500人</option>
 							<#else>
 							<option value="FROM201TO500">201人-500人</option>
 							</#if>
-							<#if company.scale.name() = 'FROM501TO1000'>
+							<#if company?? && company.scale?? && company.scale.name() = 'FROM501TO1000'>
 							<option selected="selected" value="FROM51TO100">501人-1000人</option>
 							<#else>
 							<option value="FROM501TO1000">501人-1000</option>
 							</#if>
-							<#if company.scale.name() = 'ABOVE1000'>
+							<#if company?? && company.scale?? && company.scale.name() = 'ABOVE1000'>
 							<option selected="selected" value="ABOVE1000">1000人以上</option>
 							<#else>
 							<option value="ABOVE1000">1000人以上</option>
@@ -78,30 +84,30 @@
                             </select>
                     	    </td>
                   	    </tr>
-    </table></td>
-    <td width="439" colspan="4" align="left" valign="top"><table width="400" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/zw.jpg" /></td>
-        </tr>
-      <tr>
-        <td>
-        
-        <table width="400" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td  width="15%" height="40" align="left" valign="middle"><input type="submit" name="button" id="button" value="浏 览" /></td>
-            <td width="23%" align="left" valign="middle">未选择图片。</td>
-            <td width="62%" align="left" valign="middle"><input type="submit" name="button2" id="button2" value="上 传" /></td>
-            </tr>
-          </table>
-          
-          </td>
-        </tr>
-      <tr>
-        <td><font color="#CCCCCC">请上传宽度为100px,高度为50px,格式：jpg,gif, 大小&lt;500kb的图片</font></td>
-        </tr>
-      </table></td>
-  </tr>
-  </table>
+					    </table></td>
+					    <td width="439" colspan="4" align="left" valign="top"><table width="400" border="0" cellspacing="0" cellpadding="0">
+					      <tr>
+					        <td><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/zw.jpg" /></td>
+					        </tr>
+					      <tr>
+					        <td>
+					        
+					        <table width="400" border="0" cellspacing="0" cellpadding="0">
+					          <tr>
+					            <td  width="15%" height="40" align="left" valign="middle"><input type="submit" name="button" id="button" value="浏 览" /></td>
+					            <td width="23%" align="left" valign="middle">未选择图片。</td>
+					            <td width="62%" align="left" valign="middle"><input type="submit" name="button2" id="button2" value="上 传" /></td>
+					            </tr>
+					          </table>
+					          
+					          </td>
+					        </tr>
+					      <tr>
+					        <td><font color="#CCCCCC">请上传宽度为100px,高度为50px,格式：jpg,gif, 大小&lt;500kb的图片</font></td>
+					        </tr>
+					      </table></td>
+					  </tr>
+					  </table>
 
 
                 </div>
@@ -174,7 +180,7 @@
     <td height="40" colspan="4" align="left" valign="middle"><table width="90%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="11%"><font color="#ff0000">*</font>企业介绍：</td>
-    <td width="89%"><textarea style="width:600px;" name="company.intro" id="intro" cols="45" rows="5">${company.intro!}</textarea></td>
+    <td width="89%"><textarea style="width:600px;" name="company.intro" id="intro" cols="45" rows="5"><#if company?? && company.intro??>{company.intro!}<#else>请输入企业介绍</#if></textarea></td>
   </tr>
 </table></td>
     </tr>
@@ -204,7 +210,6 @@
 </div>
 
 <script>
-
 function checkform(){
 	return false;
 }

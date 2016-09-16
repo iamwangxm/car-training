@@ -53,7 +53,6 @@
     
     </div>
     </div>
-</div>
 
 <!-- main结束 -->
 <#include "/assets/website/backend/common/footer.html">
