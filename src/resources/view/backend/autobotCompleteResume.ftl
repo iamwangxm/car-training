@@ -26,9 +26,11 @@
         <#include "/assets/website/backend/common/menu.html">
         
         <div class="pxshi_gl_r right">
-        <form id="form1" method="post" action="/backend/autobotCompleteResume"  onSubmit="return checkform()">
+        <form id="form1">
         <!--隐藏域-->
         <input type="hidden" name="autobot.userCenter.personalType" value="AUTOBOT">
+        <input type="hidden" name="autobot.id" value="<#if autobot??>${autobot.id!}</#if>">
+        <input type="hidden" name="autobot.userCenter.id" value="<#if autobot?? && autobot.userCenter??>${autobot.userCenter.id!}</#if>">
         <!--隐藏域-->
        	  <div class="pxshijl">
                	  <h5>基本信息</h5>
@@ -40,9 +42,9 @@
         <td width="69" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 姓 名：</td>
         <td width="292">
         <#if autobot?? && autobot.userCenter?? && autobot.userCenter.name??>
-        <input type="text" name="autobot.userCenter.name" value="${autobot.userCenter.name!}" id="autobot.userCenter.name" />
+        <input type="text" name="autobot.userCenter.name" value="${autobot.userCenter.name!}" />
         <#else>
-        <input type="text" name="autobot.userCenter.name" value="" id="autobot.userCenter.name" />
+        <input type="text" name="autobot.userCenter.name" value=""  />
         </#if>
         </td>
       </tr>
@@ -88,9 +90,9 @@
         
         <table width="400" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td  width="15%" height="40" align="left" valign="middle"><input type="submit" name="button" id="button" value="浏 览" /></td>
+            <td  width="15%" height="40" align="left" valign="middle"><input type="button" name="button" id="button" value="浏 览" /></td>
             <td width="23%" align="left" valign="middle">未选这图片。</td>
-            <td width="62%" align="left" valign="middle"><input type="submit" name="button2" id="button2" value="上 传" /></td>
+            <td width="62%" align="left" valign="middle"><input type="button" name="button2" id="button2" value="上 传" /></td>
             </tr>
           </table>
           
@@ -107,17 +109,17 @@
                     	    <td width="76" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 目前状态：</td>
                     	    <td width="262">
                     	    <#if autobot?? && autobot.currentWorkStatus?? >
-                    	    <input type="text" name="autobot.currentWorkStatus" value="${autobot.currentWorkStatus!}" id="autobot.currentWorkStatus" />
+                    	    <input type="text" name="autobot.currentWorkStatus" value="${autobot.currentWorkStatus!}"  />
                     	    <#else>
-                    	    <input type="text" name="autobot.currentWorkStatus" value="" id="autobot.currentWorkStatus" />
+                    	    <input type="text" name="autobot.currentWorkStatus" value=""  />
                     	    </#if>
                     	    </td>
                     	    <td width="125" align="right" valign="middle"><font color="#ff0000">*</font> 当前汽车品牌：</td>
                     	    <td width="337">
                     	    <#if autobot?? && autobot.autoBrand?? >
-                    	    <input type="text" name="autobot.autoBrand" value="${autobot.autoBrand!}" id="autobot.autoBrand" />
+                    	    <input type="text" name="autobot.autoBrand" value="${autobot.autoBrand!}"  />
                     	    <#else>
-                    	    <input type="text" name="autobot.autoBrand" value="" id="autobot.autoBrand" />
+                    	    <input type="text" name="autobot.autoBrand" value="" />
                     	    </#if>
                     	    </td>
                   	    </tr>
@@ -125,9 +127,9 @@
                     	    <td height="40" align="right" valign="middle"><font color="#ff0000">*</font> 手 机：</td>
                     	    <td>
                     	    <#if autobot?? && autobot.userCenter?? && autobot.userCenter.mobile??>
-                    	    <input type="tel" name="autobot.userCenter.mobile" value="${autobot.userCenter.mobile!}" id="autobot.userCenter.mobile" />
+                    	    <input type="tel" name="autobot.userCenter.mobile" value="${autobot.userCenter.mobile!}" />
                     	    <#else>
-                    	    <input type="tel" name="autobot.userCenter.mobile" value="" id="autobot.userCenter.mobile" />
+                    	    <input type="tel" name="autobot.userCenter.mobile" value=""  />
                     	    </#if>
                     	    </td>
                   	    </tr>
@@ -179,7 +181,7 @@
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
                     <td height="60" align="center" valign="middle">
-                    <input type="submit" style="width:58px;height:28px;background-repeat:no-repeat;background-image:url(http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/bc.jpg);border:0;" value=""/>
+                    <input type="button" onclick="submitdata()" style="width:58px;height:28px;background-repeat:no-repeat;background-image:url(http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/bc.jpg);border:0;"/>
                   </tr>
                 </table>
               </div>
@@ -195,7 +197,7 @@
 
 function checkform(){
 	var name = $("[name='autobot.userCenter.name']").val();
-	var brithday = $("[name='autobot.userCenter.brithday']").val();
+	var birthday = $("[name='autobot.userCenter.birthday']").val();
 	var marryStatus = $("[name='autobot.userCenter.marryStatus']").val();
 	var currentWorkStatus = $("[name='autobot.currentWorkStatus']").val();
 	var autoBrand = $("[name='autobot.autoBrand']").val();
@@ -203,16 +205,44 @@ function checkform(){
 	var authHistroy = $("[name='autobot.authHistroy']").val();
 	var workingHistroy = $("[name='autobot.workingHistroy']").val();
 	
-	if(name == undefined || brithday == undefined || marryStatus == undefined || currentWorkStatus == undefined autoBrand == undefined || mobile == undefined || authHistroy == undefined || workingHistroy == undefined){
+	if(name == undefined || birthday == undefined || marryStatus == undefined || currentWorkStatus == undefined || autoBrand == undefined || mobile == undefined || authHistroy == undefined || workingHistroy == undefined){
 		alert("带*的为必填字段 ");
 		return false;
 	}
-	if(name == "" || brithday == "" || marryStatus == "" || currentWorkStatus == "" autoBrand == "" || mobile == "" || authHistroy == "" || workingHistroy == ""){
+	if(name == "" || birthday == "" || marryStatus == "" || currentWorkStatus == "" || autoBrand == "" || mobile == "" || authHistroy == "" || workingHistroy == ""){
 		alert("带*的为必填字段 ");
 		return false;
 	}
 	
 	return true;
+}
+
+function submitdata(){
+
+	if(!checkform()){
+		return;
+	}
+
+	var url  = "/backend/autobotCompleteResume/save";
+	var data = $("#form1").serialize();
+	$.ajax({
+			 type: "POST",
+		     url: url,
+		     data: data,
+		     error: function(request) {
+	             alert("网络出错啦！");
+	             return false;
+	         },
+		     success: function (data) {
+		    	 alert(data.msg);
+		    	 	if(data.code==200){
+		    	 		var tid = $("[name='autobot.id']").val();
+		    	 		if(tid != undefined && tid != ""){
+		    	 			window.location.href = "/website/autobotDetail?autobot.id=" + tid;
+		    	 		}
+		    	 	}
+		     }
+	});
 }
 
 </script>
