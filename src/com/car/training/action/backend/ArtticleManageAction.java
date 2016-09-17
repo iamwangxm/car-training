@@ -1,6 +1,9 @@
  package com.car.training.action.backend;
 
- import org.ironrhino.core.metadata.AutoConfig;
+ import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
+import org.ironrhino.core.metadata.AutoConfig;
 import org.ironrhino.core.model.ResultPage;
 import org.ironrhino.core.struts.BaseAction;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +41,9 @@ public class ArtticleManageAction extends BaseAction {
 	
 	/**文章删除*/
 	public String essayDelete() throws Exception {
-		trainerEssayService.delete(trainerEssay.getId());
+		HttpServletRequest request = ServletActionContext.getRequest();
+		String eid = request.getParameter("jobs.id");
+		trainerEssayService.delete(eid);
 		return SUCCESS;
 	}
 	
