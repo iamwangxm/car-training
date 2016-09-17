@@ -116,10 +116,10 @@ function displayimg()
                   <td height="60" colspan="4" align="center" valign="middle"><table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                       <td width="6%" height="33">&nbsp;</td>
-                      <td width="94%"><input name="companyType" type="radio" id="COMPANY" value="COMPANY" checked="checked" />
+                      <td width="94%"><input name="companyType" type="radio" id="COMPANY" value="COMPANY"  />
 培训企业
                        &nbsp;&nbsp;&nbsp;&nbsp;
-                       <input name="companyType" type="radio" id="companyType" valu	e="STORE" />
+                       <input name="companyType" type="radio" id="companyType" value="STORE" />
 汽车公司</td>
                     </tr>
                   </table></td>

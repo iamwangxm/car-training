@@ -5,7 +5,7 @@
  <h4>汽车人管理中心</h4>
  <#elseIf '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='COMPANY'>
   <h4>培训公司管理中心</h4>
- <#elseIf '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='AUTOBOT'>
+ <#elseIf '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='STORE'>
   <h4>汽车公司管理中心</h4>
  <#else>
  </#if>
