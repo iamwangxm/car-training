@@ -16,13 +16,12 @@
 <div class="main">
 	<div class="content">
     <div class="dq_box">
-    <div class="dqwz left">当前位置 : <a href="#">首 页</a> > <a href="#">培训师管理中心</a> > <a href="#">申请记录</a></div>
+    <div class="dqwz left">当前位置 : <a href="#">首 页</a> > <a href="#"><#if '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='TRAINER'>培训师管理中心<#else>汽车人管理中心</#if></a> > <a href="#">申请记录</a></div>
     <div class="wdcf right"><span>2016/07/20—2016/08/20</span>我的财富：<font color="#FF66001">845</font></div>
     <div class="clear"></div>
     </div>
     <div class="pxshi_gl">
     	<div class="pxshi_gl_l left">
-       	  <h4>培训师管理中心</h4>
       <#include "/assets/website/backend/common/menu.html">
 
         <div class="pxshi_gl_r right">
@@ -36,7 +35,7 @@
                         <td width="55" align="center" valign="middle" bgcolor="#f0faff"><strong>工作类型</strong></td>
                         <td width="55" align="center" valign="middle" bgcolor="#f0faff"><strong>工作性质</strong></td>
                         <td width="200" align="center" valign="middle" bgcolor="#f0faff"><strong>工作地点</strong></td>
-                        <td width="60" align="center" valign="middle" bgcolor="#f0faff"><strong>发布时间</strong></td>
+                        <td width="60" align="center" valign="middle" bgcolor="#f0faff"><strong>申请日期</strong></td>
                         <td width="70" align="center" valign="middle" bgcolor="#f0faff"> <strong> 操作 </strong></td>
                       </tr>
                       
@@ -50,8 +49,8 @@
                         <td  align="center" valign="middle" bgcolor="#ffffff">销售</td>
                         <td align="center" valign="middle" bgcolor="#ffffff">${t.jobs.jobType!}</td>
                         <td  align="center" valign="middle" bgcolor="#ffffff">${t.jobs.region.fullname!}</td>
-                        <td  align="center" valign="middle" bgcolor="#ffffff">${t.createDate!}</td>
-                        <td align="center" valign="middle" bgcolor="#ffffff"  class="caozuo"><a href="#">查看</a>&nbsp;&nbsp;  <a href="#">删除</a></td>
+                        <td  align="center" valign="middle" bgcolor="#ffffff">${t.createDate!?string("yyyy-MM-dd")}</td>
+                        <td align="center" valign="middle" bgcolor="#ffffff"  class="caozuo"><a href="/website/jobDetail?jobs.id=${t.jobs.id!}" target="blank">查看</a>&nbsp;&nbsp;  <a href="#">删除</a></td>
                       </tr>
                       </#if>
                       </#list>

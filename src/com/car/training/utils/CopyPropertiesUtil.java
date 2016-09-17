@@ -1,5 +1,6 @@
 package com.car.training.utils;
 
+import org.apache.commons.lang3.StringUtils;
 import org.ironrhino.common.model.Region;
 import org.ironrhino.core.util.BeanUtils;
 
@@ -90,6 +91,21 @@ public class CopyPropertiesUtil {
 		}
 		Jobs t = new Jobs();
 		BeanUtils.copyProperties(s, t);
+		if (s != null && s.getCompany() != null) {
+			Company remotingCompany = new Company();
+			BeanUtils.copyProperties(s.getCompany(), remotingCompany);
+			int bandmanCount = 0;
+			if (StringUtils.isNotBlank(remotingCompany.getBondsman())) {
+				bandmanCount = remotingCompany.getBondsman().split(",").length;
+				remotingCompany.setBondsmanCount(bandmanCount);
+			}
+			t.setCompany(remotingCompany);
+		}
+		if (s != null && s.getRegion()!= null) {
+			Region remotingRegion = new Region();
+			BeanUtils.copyProperties(s.getRegion(), remotingRegion);
+			t.setRegion(remotingRegion);
+		}
 		return t;
 	}
 

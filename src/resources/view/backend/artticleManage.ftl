@@ -15,21 +15,21 @@
 	<div class="content">
     <div class="dq_box">
     <div class="dqwz left">当前位置 : <a href="#">首 页</a> > <a href="#">培训师管理中心</a> > <a href="#">我的文章</a></div>
-    <div class="wdcf right"><span>2016-07-20 — 2016-08-20</span>我的财富：<font color="#FF66001">845</font></div>
+    <div class="wdcf right"><span>2016-07-20—2016-08-20</span>我的财富：<font color="#FF66001">845</font></div>
     <div class="clear"></div>
     </div>
     <div class="pxshi_gl">
     	<div class="pxshi_gl_l left">
-       	  <h4>培训师管理中心</h4>
+    	
       <#include "/assets/website/backend/common/menu.html">
-
+      
         <div class="pxshi_gl_r right">
         <#if trainerEssayList?? && trainerEssayList.result??>
          <table bgcolor="#dedede" border="0" cellpadding="4" cellspacing="1" align="center" width="860">
                     <tbody>
                       <tr>
-                        <td width="50" height="50" align="center" valign="middle" bgcolor="#f0faff"><strong>选择</strong></td>
-                        <td width="50" align="center" valign="middle" bgcolor="#f0faff"> <strong>序号</strong></td>
+                        <td width="40" height="50" align="center" valign="middle" bgcolor="#f0faff"><strong>选择</strong></td>
+                        <td width="30" align="center" valign="middle" bgcolor="#f0faff"> <strong>序号</strong></td>
                         <td align="center" valign="middle" bgcolor="#f0faff"><strong>文章标题</strong></td>
                         <td width="60" align="center" valign="middle" bgcolor="#f0faff"><strong>发布时间</strong></td>
                         <td width="70" align="center" valign="middle" bgcolor="#f0faff"> <strong> 操作 </strong></td>
@@ -42,8 +42,8 @@
                         <td  height="40" align="center" valign="middle" bgcolor="#ffffff"><input type="checkbox" name="checkbox" id="checkbox" /></td>
                         <td  align="center" valign="middle" bgcolor="#ffffff" class="sq">${t_index + 1}</td>
                         <td align="center" valign="middle" bgcolor="#ffffff"class="sq"><a href="#">${t.title!} </a></td>
-                        <td  align="center" valign="middle" bgcolor="#ffffff">${t.publishDate!}</td>
-                        <td align="center" valign="middle" bgcolor="#ffffff"  class="caozuo"><a href="#">查看</a>&nbsp;&nbsp;  <a href="#">删除</a></td>
+                        <td  align="center" valign="middle" bgcolor="#ffffff">${t.publishDate!?string("yyyy-MM-dd")}</td>
+                        <td align="center" valign="middle" bgcolor="#ffffff"  class="caozuo"><a href="/website/trainerEssayDetail?trainerEssay.id=${t.id!}">查看</a>&nbsp;&nbsp;  <a href="/website/artticleManage/essayDelete?trainerEssay.id=${t.id!}">删除</a></td>
                       </tr>
                      </#if>
                       </#list>

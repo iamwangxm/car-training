@@ -22,7 +22,6 @@
     </div>
     <div class="pxshi_gl">
     	<div class="pxshi_gl_l left">
-       	  <h4>企业管理中心</h4>
        <#include "/assets/website/backend/common/menu.html">
        
         <div class="pxshi_gl_r right">
@@ -30,11 +29,11 @@
        	  <table bgcolor="#dedede" border="0" cellpadding="4" cellspacing="1" align="center" width="860">
                     <tbody>
                       <tr>
-                        <td width="80" height="50" align="center" valign="middle" bgcolor="#f0faff"><strong>选择</strong></td>
+                        <td width="40" height="50" align="center" valign="middle" bgcolor="#f0faff"><strong>选择</strong></td>
                         <td colspan="2" align="center" valign="middle" bgcolor="#f0faff"><strong>职位名称</strong></td>
                         <td width="109" align="center" valign="middle" bgcolor="#f0faff"><strong>工作类型</strong></td>
-                        <td width="90" align="center" valign="middle" bgcolor="#f0faff"><strong>工作性质</strong></td>
-                        <td width="222" align="center" valign="middle" bgcolor="#f0faff"><strong>工作地点</strong></td>
+                        <td width="50" align="center" valign="middle" bgcolor="#f0faff"><strong>工作性质</strong></td>
+                        <td width="80" align="center" valign="middle" bgcolor="#f0faff"><strong>工作地点</strong></td>
                         <td width="66" align="center" valign="middle" bgcolor="#f0faff"><strong>发布时间</strong></td>
                         <td width="70" align="center" valign="middle" bgcolor="#f0faff"> <strong> 操作 </strong></td>
                       </tr>
@@ -44,13 +43,13 @@
                       <#if t??>
                       <tr>
                         <td  height="40" align="center" valign="middle" bgcolor="#ffffff"><input type="checkbox" name="checkbox" id="checkbox" /></td>
-                        <td  align="center" valign="middle" bgcolor="#ffffff" class="sq"><a href="#">${t.company.name!} </a></td>
-                        <td align="center" valign="middle" bgcolor="#ffffff"class="sq"><a href="#">${t.name!}</a></td>
+                        <td  align="center" valign="middle" bgcolor="#ffffff" class="sq"><a href="#">${t.name!}</a></td>
+                        <td align="center" valign="middle" bgcolor="#ffffff"class="sq"><a href="#">${t.company.name!}</a></td>
                         <td  align="center" valign="middle" bgcolor="#ffffff">销售</td>
                         <td align="center" valign="middle" bgcolor="#ffffff">${t.jobType!}</td>
                         <td  align="center" valign="middle" bgcolor="#ffffff">${t.fullname!}</td>
-                        <td  align="center" valign="middle" bgcolor="#ffffff">${t.publishDate!}</td>
-                        <td align="center" valign="middle" bgcolor="#ffffff"  class="caozuo"><a href="#">查看</a>&nbsp;&nbsp;  <a href="#">删除</a></td>
+                        <td  align="center" valign="middle" bgcolor="#ffffff">${t.publishDate!?string("yyyy-MM-dd")}</td>
+                        <td align="center" valign="middle" bgcolor="#ffffff"  class="caozuo"><a href="/website/jobDetail?jobs.id=${t.id!}" target="blank">查看</a>&nbsp;&nbsp;  <a href="/backend/companyJobManage/jobDelete?jobs.id=${t.id!}">删除</a></td>
                       </tr>
                       </#if>
                       </#list>

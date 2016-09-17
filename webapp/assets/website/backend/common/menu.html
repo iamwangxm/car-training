@@ -1,4 +1,14 @@
 <!-- menu开始 -->
+<#if '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='TRAINER'>
+ <h4>培训师管理中心</h4>
+ <#elseIf '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='AUTOBOT'>
+ <h4>汽车人管理中心</h4>
+ <#elseIf '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='COMPANY'>
+  <h4>培训公司管理中心</h4>
+ <#elseIf '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='AUTOBOT'>
+  <h4>汽车公司管理中心</h4>
+ <#else>
+ </#if>
 <div class="lanmu">
           	<ul>
             	
@@ -36,8 +46,27 @@
                 <li><div class="zwgl"><a href="<@url value='/backend/companyJobManage'/>">职位管理</a></div></li>
                 </#if>
                 <li><div class="xgmm"><a href="<@url value='/backend/modifyPassword'/>">修改密码</a></div></li>
-                <li><div class="aqtc"><a href="<@url value='/website/index/logout'/>">安全退出</a></div></li>
+                <li><div class="aqtc"><a href="#"  onclick="javascript:logout();">安全退出</a></div></li>
             </ul>
           </div>
 </div>
+
+<script type="text/javascript">
+function logout(){
+	$.ajax({
+		type : "GET",
+		data : {},
+		dataType : "json",
+		url : "/website/index/logout",
+		success : function(data){
+			if(data.code == 200){
+				window.location = '/website/index';
+			}else{
+				alert('退出失败,请稍后再试');
+			}
+		}
+	});
+	
+}
+</script>
 <!-- menu结束 -->

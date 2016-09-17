@@ -1,6 +1,9 @@
  package com.car.training.action.backend;
 
- import org.ironrhino.core.metadata.AutoConfig;
+ import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
+import org.ironrhino.core.metadata.AutoConfig;
 import org.ironrhino.core.model.ResultPage;
 import org.ironrhino.core.struts.BaseAction;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +41,9 @@ public class CompanyJobManageAction extends BaseAction {
 	
 	/**职位删除*/
 	public String jobDelete() throws Exception {
-		jobsService.delete(jobs.getId());
+		HttpServletRequest request = ServletActionContext.getRequest();
+		String jobId = request.getParameter("jobs.id");
+		jobsService.delete(jobId);
 		return SUCCESS;
 	}
 	public ResultPage<Jobs> getJobsList() {
