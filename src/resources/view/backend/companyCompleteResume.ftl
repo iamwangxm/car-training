@@ -246,7 +246,7 @@ function submitdata(){
 		    	 	if(data.code==200){
 		    	 		var tid = $("[name='company.id']").val();
 		    	 		if(tid != undefined && tid != ""){
-		    	 			window.location.href = "/website/companyDetail?company.id=" + tid;
+		    	 			window.location.href = "/website/autoCompany?company.id=" + tid;
 		    	 		}
 		    	 	}
 		     }

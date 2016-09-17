@@ -13,50 +13,32 @@
 
 <body>
 <!-- 头部开始 -->	
-<div class="top">
-	<div class="content">
-    	<div class="logo left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/logo.jpg" /></div>
-        <div class="nav_box left">
-        	<div class="nav">
-            	<ul>
-            	<li><a href="#">首页</a></li>
-                <li><a href="#">培训师</a></li>
-                <li><a href="#">培训需求</a></li>
-                <li class="cn"><a href="#">汽车人</a></li>
-                <li><a href="#">汽车人需求</a></li>
-                <li><a href="#">培训学院</a></li>
-                <li><a href="#">公开课</a></li>
-                
-            </ul>
-            </div>
-        </div>
-        <div class="dl_top right">
-        	<ul>
-            	<li style="background:none;"><a href="#">请登录</a></li>
-                <li><a href="#">免费注册</a></li>
-            </ul>
-        </div>
-        <div class="clear"></div>
-    </div>
-</div>
-<!-- 头部结束 -->	
+<#include "/assets/website/common/header.html">
+<!-- 头部结束 -->		
 
 <!-- main开始 -->
 
 <div class="zhaopin_qy">
     <div class="content" >
+    
+    	<#if company??>
+    
     	<div class="qy_top" >
         	<div class="zpqy_logo left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zpqy_logo.jpg" /></div>
             <div class="zpqy_xx right">
             	
                 <div class="zpqy_xx_box">
-               	  <div class="zpqy_xx_l left">上海欧腾汽车销售有限公司</div>
-                    <div class="zpqy_xx_r right"><span ><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/db.jpg" /></a></span><span >已有59人担保</span></div>
+               	  <div class="zpqy_xx_l left">${company.name!}</div>
+                    <div class="zpqy_xx_r right"><span ><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/db.jpg" /></a></span><span >已有${bondsmanCount!}人担保</span></div>
                   <div class="clear"></div>
                 </div>
                 <div class="fl_dy">
                 	<ul>
-                    	<li>扁平管理</li><li>扁平管理</li><li>扁平管理</li><li>扁平管理</li><li>扁平管理</li><li>扁平管理</li><li>扁平管理</li><li>扁平管理</li><li>扁平管理</li><li>扁平管理</li><li>扁平管理</li><li>扁平管理</li><li>扁平管理</li>
+                    	<#if company.welfare??>
+                        	<#list company.welfare as w>
+                    			<li>${w!}</li>
+                            </#list>
+                    	</#if>
                     </ul>
                 </div>
             </div>
@@ -70,148 +52,136 @@
                 </div>
             	<div class="gongsi_jj_box">
                　
-                 上海欧腾汽车销售有限公司是上海汽车股份有限公司与戴姆勒股份公司、戴姆勒大中华区投资有限公司组建的合资企业，于2005年8月8日正式成立。<bR /><bR />
-
-    上海奔驰工厂位于安亭汽车城内。作为中国最先进的世界级汽车制造企业，上海奔驰为汽车企业设立了全新标准：精益化制造、先进的质量工艺、环保科技和对员工的关注。上海奔驰目前生产梅赛德斯-奔驰长轴距E级轿车、C级轿车和GLK级豪华中型SUV。另有多个梅赛德斯-奔驰新项目在顺利进展之中。海奔驰工厂位于安亭汽车城内。作为中国最先进的世界级汽车制造企业，上海奔驰为汽车企业设立了全新标准：精益化制造、先进的质量工艺、环保科技和对员工的关注。上海奔驰目前生产梅赛德斯-奔驰长轴距E级轿车、C级轿车和GLK级豪华中型SUV。另有多个梅赛德斯-奔驰新项目在顺利进展之中。<bR /><bR />
-
-    以“拓展行驶空间，提高生活品质”为使命，上海奔驰正在向中国用户提供先进的与奔驰全球标准一致的产品和服务，努力成为中国高端轿车市场的主角。
+	                 ${company.intro!}
            	</div>
             </div>
             	<div class="qiye_zp">
             	<div class="qiche_bt">
-            	<h4><span>共4个职位</span>招聘职位</h4>
+            	<h4><span>共<#if jobsCompanyList??>${jobsCompanyList.totalResults!}<#else>0</#if>个职位</span>招聘职位</h4>
                 </div>
             	
                <div class="qiye_zp_box">
-                    <ul>
+                    <#if jobsCompanyList?? && jobsCompanyList.result??>
+            			<ul>
+            		<#list jobsCompanyList.result as t>
+            		<#if t?? && t.company??>
                        <li>
                         <div class="zpgw_l left">
-                   	  <div class="zw_name">项目管理培训师 </div>
+                   	  <div class="zw_name">${t.name!}</div>
                         <div class="dy_box">
-                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">3年工作经验</a></span><span style="background:none;"><a href="#">上海-嘉定区</a></span>
+                        	<span class="cn" style="padding-left:0px;"><a href="#">${t.salary!}</a></span><span><a href="#">${t.workExprience!}年工作经验</a></span><span style="background:none;"><a href="#"><#if t.region??>${t.region.fullname}</#if></a></span>
                         </div>
                         
                         <div class="fb_box">
-                        	<span  style="padding-left:0px;"><a href="#">发布于：昨天</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
+                        	<span  style="padding-left:0px;"><a href="#">发布于：${t.publishDate!?string("yyyy-MM-dd")}</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
                         </div>
                     </div>
                   	    <div class="zpgw_r right">
-                   	  	<img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/ljyp.jpg" />
-                        
-                    </div>
-                    <div class="clear"></div>
-                      </li>
-                       <li>
-                        <div class="zpgw_l left">
-                   	  <div class="zw_name">项目管理培训师 </div>
-                        <div class="dy_box">
-                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">3年工作经验</a></span><span style="background:none;"><a href="#">上海-嘉定区</a></span>
-                        </div>
-                        
-                        <div class="fb_box">
-                        	<span  style="padding-left:0px;"><a href="#">发布于：昨天</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
-                        </div>
-                    </div>
-                  	    <div class="zpgw_r right">
-                   	  	<img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/ljyp.jpg" />
-                        
-                    </div>
-                    <div class="clear"></div>
-                      </li>
-                      <li>
-                        <div class="zpgw_l left">
-                   	  <div class="zw_name">项目管理培训师 </div>
-                        <div class="dy_box">
-                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">3年工作经验</a></span><span style="background:none;"><a href="#">上海-嘉定区</a></span>
-                        </div>
-                        
-                        <div class="fb_box">
-                        	<span  style="padding-left:0px;"><a href="#">发布于：昨天</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
-                        </div>
-                    </div>
-                  	    <div class="zpgw_r right">
-                   	  	<img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/ljyp.jpg" />
-                        
-                    </div>
-                    <div class="clear"></div>
-                      </li>
-                       <li>
-                        <div class="zpgw_l left">
-                   	  <div class="zw_name">项目管理培训师 </div>
-                        <div class="dy_box">
-                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">3年工作经验</a></span><span style="background:none;"><a href="#">上海-嘉定区</a></span>
-                        </div>
-                        
-                        <div class="fb_box">
-                        	<span  style="padding-left:0px;"><a href="#">发布于：昨天</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
-                        </div>
-                    </div>
-                  	    <div class="zpgw_r right">
-                   	  	<img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/ljyp.jpg" />
-                        
-                    </div>
-                    <div class="clear"></div>
-                      </li>
-                      <li>
-                        <div class="zpgw_l left">
-                   	  <div class="zw_name">项目管理培训师 </div>
-                        <div class="dy_box">
-                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">3年工作经验</a></span><span style="background:none;"><a href="#">上海-嘉定区</a></span>
-                        </div>
-                        
-                        <div class="fb_box">
-                        	<span  style="padding-left:0px;"><a href="#">发布于：昨天</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
-                        </div>
-                    </div>
-                  	    <div class="zpgw_r right">
-                   	  	<img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/ljyp.jpg" />
-                        
-                    </div>
-                    <div class="clear"></div>
-                      </li>
-                      <li>
-                        <div class="zpgw_l left">
-                   	  <div class="zw_name">项目管理培训师 </div>
-                        <div class="dy_box">
-                        	<span class="cn" style="padding-left:0px;"><a href="#">8-10万</a></span><span><a href="#">3年工作经验</a></span><span style="background:none;"><a href="#">上海-嘉定区</a></span>
-                        </div>
-                        
-                        <div class="fb_box">
-                        	<span  style="padding-left:0px;"><a href="#">发布于：昨天</a></span><span style="background:none;"><a href="#">投递后：48小时反馈 </a></span>
-                        </div>
-                    </div>
-                  	    <div class="zpgw_r right">
-                   	  	<img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/ljyp.jpg" />
+                   	  	<img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/ljyp.jpg" / onclick="alert('暂未开放')">
                         
                     </div>
                     <div class="clear"></div>
                       </li>		
-                        		
-                                
-                            </ul>
+                         </#if>
+              			</#list>
+              			</ul>
+            			</#if>
                     </div>
-           <div class="fypage" ><span>上五页</span><span class="">上一页</span><span>1</span><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">下一页</a><a href="#">下五页</a>  跳转到 <select name="PageSelect" onchange=""><option value="" selected="selected">第01页</option><option value="">第02页</option><option value="">第03页</option><option value="">第04页</option><option value="">第05页</option><option value="">第06页</option><option value="index_7.html">第07页</option>
-                
-               
-               </select></div>
+          
+			<#if jobsCompanyList?? && jobsCompanyList.result?? && jobsCompanyList.result?size gt 0>
+            	<div class="fypage" >
+            	
+            	<#if pageNo gt 5>
+            	<a data-class="p5" href="javascript:void(0)" onclick="prevFivePage()"">上五页</a>
+            	<#else>
+            	<span data-class="p5">上五页</span>
+            	</#if>
+            	<#if pageNo gt 1>
+            	<a data-class="p1" href="/website/autoCompany?pageNo=${pageNo-1}">上一页</a>
+            	<#else>
+            	<span data-class="p1" class="">上一页</span>
+            	</#if>
+            	
+            	<div data-class="pag" style="padding:0px;margin:0px;display:inline;">
+            	<#if pageNo lt 6>
+            	<#list 1..5 as t>
+            	<#if t = pageNo>
+            	<span>${t!}</span>
+            	<#else>
+            	<a href="/website/autoCompany?pageNo=${t!}">${t!}</a>
+            	</#if>
+            	<#if t = jobsCompanyList.totalPage>
+            	<#break>
+            	</#if>
+            	</#list>
+            	
+            	<#elseif pageNo%5 gt 0>
+            	<#list (pageNo/5)?floor*5+1..(pageNo/5)?floor*5+5 as t>
+            	<#if t = pageNo>
+            	<span>${t!}</span>
+            	<#else>
+            	<a href="/website/autoCompany?pageNo=${t!}">${t!}</a>
+            	</#if>
+            	<#if t = jobsCompanyList.totalPage>
+            	<#break>
+            	</#if>
+            	</#list>
+            	
+            	<#elseif pageNo%5 = 0>
+            	<#list ((pageNo/5)?floor-1)*5+1..(pageNo/5)?floor*5 as t>
+            	<#if t = pageNo>
+            	<span>${t!}</span>
+            	<#else>
+            	<a href="/website/autoCompany?pageNo=${t!}">${t!}</a>
+            	</#if>
+            	<#if t = jobsCompanyList.totalPage>
+            	<#break>
+            	</#if>
+            	</#list>
+            	</#if>
+            	</div>
+            	
+            	<#if (jobsCompanyList.totalPage - pageNo) gt 0>
+            	<a data-class="n1" href="/website/autoCompany?pageNo=${pageNo+1}">下一页</a>
+            	<#else>
+            	<span data-class="n1" class="">下一页</span>
+            	</#if>
+            	<#if (jobsCompanyList.totalPage - ((pageNo/5)?ceiling * 5)) gt 4>
+            	<a data-class="n5" href="javascript:void(0)" onclick="nextFivePage()">下五页</a>
+            	<#else>
+            	<span data-class="n5">下五页</span>
+            	</#if>
+            	 
+            	跳转到 
+            	<select name="PageSelect" onchange="jumpPage()">
+            	<#list 1..jobsCompanyList.totalPage as t>
+            	<#if t = pageNo>
+            	<option selected="selected" value="${t!}">第${t!}页</option>
+            	<#else>
+            	<option value="${t!}">第${t!}页</option>
+            	</#if>
+            	</#list>
+               </select>
+               </div>
+               </#if>
+
             </div>
             </div>
             <div class="zp_qiye_r right">
             <div class="zwfb_qy">
             	<h4>基本信息</h4>
             	<div class="qyjj">
-               	  <h5>上海奥马汽车管理培训有限公司</h5>
+               	  <h5>${company.name!}</h5>
                     <div class="xz"><em style="font-style:normal;  font-size:12px; height:30px; line-height:30px; color:#000; font-weight:700;">经营范围：</em>汽车销售/以及原厂配件/售后服务</div>
-                    <div class="xz"><em style="font-style:normal;  font-size:12px; height:30px; line-height:30px; color:#000; font-weight:700;">公司规模：</em>10-30人</div>
-                    <div class="dz"><em style="font-style:normal;  font-size:12px; height:30px; line-height:30px; color:#000; font-weight:700;">公司地址：</em>上海市嘉定区安亭镇昌吉路588号</div>
+                    <div class="xz"><em style="font-style:normal;  font-size:12px; height:30px; line-height:30px; color:#000; font-weight:700;">公司规模：</em>${company.scale!}</div>
+                    <div class="dz"><em style="font-style:normal;  font-size:12px; height:30px; line-height:30px; color:#000; font-weight:700;">公司地址：</em><#if company.region??>${company.region.fullname!}</#if></div>
                     
                     <div class="jj_img">
                     	<!-- 代码 开始 -->
 						<div class="www51buycom">
     <ul class="51buypic">
-        <li><a href="#" target="_blank"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy1.jpg" /></a></li>
-       <li><a href="#" target="_blank"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy2.jpg" /></a></li>
-        
+        <li><a href="#" target="_blank"><img src="${company.environmentURL1!}" /></a></li>
+       <li><a href="#" target="_blank"><img src="${company.environmentURL2}" /></a></li>
     </ul>
    
     <div class="num">
@@ -237,70 +207,65 @@ $(".www51buycom").slide({ titCell:".num ul" , mainCell:".51buypic" , effect:"fol
                     </div>
                 </div>
             </div>
-            <div class="dbr">
-            	<h4>担保人列表</h4>
-                <div class="dbr_box">
-                	<ul>
-                   	  
-                      <li>
-                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr1.jpg" /></a></div>
-                          <div class="dbr_r right">
-                            	<div class="dbr_name"><a href="#">郭启军</a></div>
-                                <div class="dbr_gs"><a href="#">上海美克斯汽车服务有限公司</a></div>
-                          </div>
-                            <div class="clear"></div>
-                        </li>
-                      <li>
-                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr2.jpg" /></a></div>
-                          <div class="dbr_r right">
-                            	<div class="dbr_name"><a href="#">郭启军</a></div>
-                                <div class="dbr_gs"><a href="#">上海美克斯汽车服务有限公司</a></div>
-                          </div>
-                            <div class="clear"></div>
-                        </li>
-                      <li>
-                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr1.jpg" /></a></div>
-                          <div class="dbr_r right">
-                            	<div class="dbr_name"><a href="#">郭启军</a></div>
-                                <div class="dbr_gs"><a href="#">上海美克斯汽车服务有限公司</a></div>
-                          </div>
-                            <div class="clear"></div>
-                        </li>
-                      <li>
-                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr2.jpg" /></a></div>
-                          <div class="dbr_r right">
-                            	<div class="dbr_name"><a href="#">郭启军</a></div>
-                                <div class="dbr_gs"><a href="#">上海美克斯汽车服务有限公司</a></div>
-                          </div>
-                            <div class="clear"></div>
-                        </li>
-                      <li>
-                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr1.jpg" /></a></div>
-                          <div class="dbr_r right">
-                            	<div class="dbr_name"><a href="#">郭启军</a></div>
-                                <div class="dbr_gs"><a href="#">上海美克斯汽车服务有限公司</a></div>
-                          </div>
-                            <div class="clear"></div>
-                        </li>
-                      <li>
-                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr2.jpg" /></a></div>
-                          <div class="dbr_r right">
-                            	<div class="dbr_name"><a href="#">郭启军</a></div>
-                                <div class="dbr_gs"><a href="#">上海美克斯汽车服务有限公司</a></div>
-                          </div>
-                            <div class="clear"></div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+				
             </div>
             <div class="clear"></div>
         </div>
         
+        </#if>
        
   </div>
 </div>
     
+	
+<!--分页有关js-->
+    <script>
+    
+		var pageNo = ${pageNo};
+		<#if jobsCompanyList??>
+			var totalPage = ${jobsCompanyList.totalPage};
+		<#else>
+			var totalPage = 0;
+		</#if>
+		var tarUrl = "/website/autoCompany?";
+		
+    	function prevFivePage(){
+    		var pag = '';
+    		for(var i = Math.floor(pageNo/5) * 5 - 4; i<=Math.floor(pageNo/5)*5;i++){
+				pag += '<a href="' + tarUrl + 'pageNo=' + i + '">' + i + '</a>';
+    		}
+    		pageNo = Math.floor(pageNo/5) * 5 - 4;
+    		$("div.fypage").find("div[data-class=pag]").html(pag);
+    		resetPreNex();
+    	}
+    	function nextFivePage(){
+    		var pag = '';
+    		for(var i = Math.ceil(pageNo/5) * 5 + 1; i<=Math.ceil(pageNo/5) * 5+5;i++){
+				pag += '<a href="' + tarUrl + 'pageNo=' + i + '">' + i + '</a>';
+    		}
+    		pageNo = Math.ceil(pageNo/5) * 5 + 1;
+    		$("div.fypage").find("div[data-class=pag]").html(pag);
+    		resetPreNex();
+    	}
+    	function resetPreNex(){
+    		if(pageNo <= 5){
+    			$("[data-class=p5]").replaceWith('<span data-class="p5">上五页</span>');
+    		}else{
+    			$("[data-class=p5]").replaceWith('<a data-class="p5" href="javascript:void(0)" onclick="prevFivePage()"">上五页</a>');
+    		}
+    		if(totalPage > Math.ceil(pageNo/5) * 5 + 4){
+    			$("[data-class=n5]").replaceWith('<a data-class="n5" href="javascript:void(0)" onclick="nextFivePage()"">下五页</a>');
+    		}else{
+    			$("[data-class=n5]").replaceWith('<span data-class="n5">下五页</span>');
+    		}
+    		
+    	}
+    	
+    	function jumpPage(){
+    		window.location.href = tarUrl + 'pageNo=' + $("select[name=PageSelect]").val();	
+    	}
+    	
+    </script>
 	
 
 <!-- main结束 -->
