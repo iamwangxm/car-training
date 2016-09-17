@@ -42,7 +42,7 @@
                         <td  height="40" align="center" valign="middle" bgcolor="#ffffff"><input type="checkbox" name="checkbox" id="checkbox" /></td>
                         <td  align="center" valign="middle" bgcolor="#ffffff" class="sq">${t_index + 1}</td>
                         <td align="center" valign="middle" bgcolor="#ffffff"class="sq"><a href="#">${t.title!} </a></td>
-                        <td  align="center" valign="middle" bgcolor="#ffffff">${t.publishDate!}</td>
+                        <td  align="center" valign="middle" bgcolor="#ffffff">${t.publishDate!?string("yyyy-MM-dd")}</td>
                         <td align="center" valign="middle" bgcolor="#ffffff"  class="caozuo"><a href="#">查看</a>&nbsp;&nbsp;  <a href="#">删除</a></td>
                       </tr>
                      </#if>

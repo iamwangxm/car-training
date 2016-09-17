@@ -35,7 +35,7 @@
                         <td width="55" align="center" valign="middle" bgcolor="#f0faff"><strong>工作类型</strong></td>
                         <td width="55" align="center" valign="middle" bgcolor="#f0faff"><strong>工作性质</strong></td>
                         <td width="200" align="center" valign="middle" bgcolor="#f0faff"><strong>工作地点</strong></td>
-                        <td width="60" align="center" valign="middle" bgcolor="#f0faff"><strong>发布时间</strong></td>
+                        <td width="60" align="center" valign="middle" bgcolor="#f0faff"><strong>申请日期</strong></td>
                         <td width="70" align="center" valign="middle" bgcolor="#f0faff"> <strong> 操作 </strong></td>
                       </tr>
                       
@@ -49,8 +49,8 @@
                         <td  align="center" valign="middle" bgcolor="#ffffff">销售</td>
                         <td align="center" valign="middle" bgcolor="#ffffff">${t.jobs.jobType!}</td>
                         <td  align="center" valign="middle" bgcolor="#ffffff">${t.jobs.region.fullname!}</td>
-                        <td  align="center" valign="middle" bgcolor="#ffffff">${t.createDate!}</td>
-                        <td align="center" valign="middle" bgcolor="#ffffff"  class="caozuo"><a href="#">查看</a>&nbsp;&nbsp;  <a href="#">删除</a></td>
+                        <td  align="center" valign="middle" bgcolor="#ffffff">${t.createDate!?string("yyyy-MM-dd")}</td>
+                        <td align="center" valign="middle" bgcolor="#ffffff"  class="caozuo"><a href="/website/jobDetail?jobs.id=${t.jobs.id!}" target="blank">查看</a>&nbsp;&nbsp;  <a href="#">删除</a></td>
                       </tr>
                       </#if>
                       </#list>
