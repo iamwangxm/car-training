@@ -26,8 +26,10 @@
  		
         <div class="pxshi_gl_r right">
         
-        <form id="form1" method="post" action="/backend/companyCompleteResume" onSubmit="return checkform()">
-        
+        <form id="form1">
+        <!--隐藏域-->
+        <input type="hidden" name="company.id" value="<#if company??>${company.id!}</#if>">
+        <!--隐藏域-->
        	  <div class="pxshijl">
                	  <h5>企业基本信息</h5>
                     <div class="pxshijl_box">
@@ -92,9 +94,9 @@
 					        
 					        <table width="400" border="0" cellspacing="0" cellpadding="0">
 					          <tr>
-					            <td  width="15%" height="40" align="left" valign="middle"><input type="submit" name="button" id="button" value="浏 览" /></td>
+					            <td  width="15%" height="40" align="left" valign="middle"><input type="button" name="button" id="button" value="浏 览" /></td>
 					            <td width="23%" align="left" valign="middle">未选择图片。</td>
-					            <td width="62%" align="left" valign="middle"><input type="submit" name="button2" id="button2" value="上 传" /></td>
+					            <td width="62%" align="left" valign="middle"><input type="button" name="button2" id="button2" value="上 传" /></td>
 					            </tr>
 					          </table>
 					          
@@ -127,9 +129,9 @@
     <td><table width="500" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="90" height="50" align="left" valign="middle"><font color="#ff0000">*</font> 上传证件照：</td>
-        <td width="60" align="left" valign="middle"><input type="submit" name="button3" id="button3" value="浏览" /></td>
+        <td width="60" align="left" valign="middle"><input type="button" name="button3" id="button3" value="浏览" /></td>
         <td width="80" align="left" valign="middle">未选择图片。</td>
-        <td width="80" align="left" valign="middle"><input type="submit" name="button4" id="button4" value="上传照片" /></td>
+        <td width="80" align="left" valign="middle"><input type="button" name="button4" id="button4" value="上传照片" /></td>
         <td width="190" align="left" valign="middle">&nbsp;</td>
       </tr>
     </table></td>
@@ -154,9 +156,9 @@
     <td><table width="500" border="0" cellspacing="0" cellpadding="0">
       <tr>
        
-        <td width="50" align="left" valign="middle"><input type="submit" name="button3" id="button3" value="浏览" /></td>
+        <td width="50" align="left" valign="middle"><input type="button" name="button3" id="button3" value="浏览" /></td>
         <td width="80" align="left" valign="middle">未选择图片。</td>
-        <td width="80" align="left" valign="middle"><input type="submit" name="button4" id="button4" value="上传照片" /></td>
+        <td width="80" align="left" valign="middle"><input type="button" name="button4" id="button4" value="上传照片" /></td>
         <td width="190" align="left" valign="middle">&nbsp;</td>
       </tr>
     </table></td>
@@ -178,7 +180,7 @@
     <td height="40" colspan="4" align="left" valign="middle"><table width="90%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="11%"><font color="#ff0000">*</font>企业介绍：</td>
-    <td width="89%"><textarea style="width:600px;" name="company.intro" id="intro" cols="45" rows="5"><#if company?? && company.intro??>{company.intro!}<#else>请输入企业介绍</#if></textarea></td>
+    <td width="89%"><textarea style="width:600px;" name="company.intro" id="intro" cols="45" rows="5"><#if company?? && company.intro??>${company.intro!}<#else>请输入企业介绍</#if></textarea></td>
   </tr>
 </table></td>
     </tr>
@@ -191,7 +193,7 @@
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
                     <td height="60" align="center" valign="middle">
-                    <input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/tj.jpg" /> 
+                    <input type="button" onclick="submitdata()" style="width:95px;height:35px;background-repeat:no-repeat;background-image:url(http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/tj.jpg);border:0;"/>
                     </td>
                   </tr>
             </table>
@@ -207,7 +209,48 @@
 
 <script>
 function checkform(){
-	return false;
+	var name = $("[name='company.name']").val();
+	var scale = $("[name='company.scale']").val();
+	var intro = $("[name='company.intro']").val();
+	
+	if(name == undefined || scale == undefined || intro == undefined){
+		alert("带*的为必填字段 ");
+		return false;
+	}
+	if(name == "" || scale == "" || intro == ""){
+		alert("带*的为必填字段 ");
+		return false;
+	}
+	
+	return true;
+}
+
+function submitdata(){
+
+	if(!checkform()){
+		return;
+	}
+
+	var url  = "/backend/companyCompleteResume/save";
+	var data = $("#form1").serialize();
+	$.ajax({
+			 type: "POST",
+		     url: url,
+		     data: data,
+		     error: function(request) {
+	             alert("网络出错啦！");
+	             return false;
+	         },
+		     success: function (data) {
+		    	 alert(data.msg);
+		    	 	if(data.code==200){
+		    	 		var tid = $("[name='company.id']").val();
+		    	 		if(tid != undefined && tid != ""){
+		    	 			window.location.href = "/website/companyDetail?company.id=" + tid;
+		    	 		}
+		    	 	}
+		     }
+	});
 }
 
 </script>

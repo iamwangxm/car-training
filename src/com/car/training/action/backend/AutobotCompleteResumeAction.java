@@ -1,9 +1,13 @@
  package com.car.training.action.backend;
 
- import javax.servlet.http.HttpServletRequest;
+ import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
 import org.ironrhino.core.metadata.AutoConfig;
+import org.ironrhino.core.metadata.JsonConfig;
 import org.ironrhino.core.struts.BaseAction;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -22,7 +26,17 @@ public class AutobotCompleteResumeAction extends BaseAction {
 	/** 汽车人 */
 	private Autobots autobot;
 	
+	private Object data;
 	
+	
+	public Object getData() {
+		return data;
+	}
+
+	public void setData(Object data) {
+		this.data = data;
+	}
+
 	@Override
 	public String execute() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
@@ -34,9 +48,16 @@ public class AutobotCompleteResumeAction extends BaseAction {
 		return SUCCESS;
 	}
 	
+	@JsonConfig(root = "data")
 	public String save() throws Exception{
-		autobotsService.save(autobot);
-		return SUCCESS;
+		if(autobot != null){
+			autobotsService.save(autobot);
+		}
+		Map<String,Object> map = new HashMap<>();
+		map.put("code", "200");
+		map.put("msg", "保存成功");
+		data = map;
+		return JSON;
 	}
 
 
