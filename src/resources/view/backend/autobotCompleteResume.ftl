@@ -22,7 +22,6 @@
     </div>
     <div class="pxshi_gl">
     	<div class="pxshi_gl_l left">
-       	  <h4>汽车人管理中心</h4>
         
         <#include "/assets/website/backend/common/menu.html">
         
