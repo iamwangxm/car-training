@@ -5,12 +5,10 @@
 
 <title>汽车培聘网</title>
 <<link rel="stylesheet" href="../css/qcren.css" type="text/css" media="screen" />
-
-<link rel="stylesheet" type="text/css" href="<@url value="/assets/website/css/lrtk.css"/>">
-
-<link rel="stylesheet" type="text/css" href="<@url value="/assets/website/css/lrtk.css"/>">
-<script src="<@url value="/assets/website/js/jquery1.42.min.js"/>"></script>
-<script src="<@url value="/assets/website/js/jquery.superslide.2.1.1.js"/>" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="<@url value='/assets/website/css/lrtk.css'/>" >
+<link rel="stylesheet" type="text/css" href="<@url value='/assets/website/css/lrtk.css'/>" >
+<script src="<@url value='/assets/website/js/jquery1.42.min.js'/>" ></script>
+<script src="<@url value='/assets/website/js/jquery.superslide.2.1.1.js'/>" type="text/javascript"></script>
 </head>
 
 <body>
@@ -44,7 +42,6 @@
 <!-- 头部结束 -->	
 
 <!-- main开始 -->
-
 
 <div class="zhaopin_qy">
     <div class="content" >
