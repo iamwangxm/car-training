@@ -12,7 +12,7 @@
 <!-- 头部结束 -->	
 <!-- banner开始 -->	
 <div class="banner">
- <#if '{}' == '${session}'|| Session["loginState"]=='N' >
+ <#if '{}' == '${session}'|| Session["loginState"]!='Y' >
 	<div class="content">
         	<div class="dl_box">
         	  <form action="" id="loginform0">
@@ -45,8 +45,8 @@
                 -->
                 <div class="leibie"> 
                 	<div class="lb_l left">
-                	<input name="userType" id="userType" type="radio"  autocomplete="on" value="PERSONAL" checked="checked" data-selector="company-toggle"/>个人
-                	<input data-selector="company-toggle" type="radio" name="userType" id="userType" value="COMPANY"  autocomplete="off"/>企业
+                	<input name="userType" id="userType" type="radio"  autoComplete="on" value="PERSONAL" checked="checked" data-selector="company-toggle"/>个人
+                	<input data-selector="company-toggle" type="radio" name="userType" id="userType" value="COMPANY"  autoComplete="off"/>企业
                     </div>
                     <div class="clear"></div>
             
