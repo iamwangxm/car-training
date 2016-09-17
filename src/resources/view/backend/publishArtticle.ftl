@@ -33,12 +33,12 @@
                    	 <table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
 			  <tr>
 			    <td width="79" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 标题：</td>
-			    <td width="721"><input type="text" name="traineEssay.title" id="trainerEssay.title" style="width:600px;"/></td>
+			    <td width="721"><input type="text" name="traineEssay.title" id="trainerEssay.title" style="width:500px;"/></td>
 			  </tr>
 			
 			  <tr>
 			    <td height="150" align="right" valign="top"><font color="#ff0000">*</font> 文章内容：</td>
-			    <td align="left" valign="top"><textarea style="width:600px;" name="trainerEssay.content" id="trainerEssay.content" cols="45" rows="8"></textarea></td>
+			    <td align="left" valign="top"><textarea style="width:500px;" name="trainerEssay.content" id="trainerEssay.content" cols="45" rows="8"></textarea></td>
 			  </tr>
 			</table>
             </div>
@@ -47,7 +47,7 @@
           <div class="tj">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <td height="60" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/bc.jpg" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/fb.jpg" /></td>
+                    <td height="60" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/fb.jpg" /></td>
                   </tr>
             </table>
           </div>
