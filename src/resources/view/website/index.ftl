@@ -260,7 +260,7 @@
             	<#list trainerEssayList as t>
                 	<li>
                 	<#if t??>
-                    	<span><a href="#">${t.publishDate!?string("yyyy-MM-dd")}</a></span><a href="#">${t.title!}</a>
+                    	<span><a href="#">${t.publishDate!?string("yyyy-MM-dd")}</a></span><a href="/website/trainerEssayDetail?trainerEssay.id=${t.id!}">${t.title!}</a>
                     	</#if>
                   </li>
 					</#list>
@@ -293,7 +293,7 @@
                 		<#list coursesList as t>
                     	<li>
 					<#if t?? && t.trainer ?? &&t.trainer.userCenter ?? >
-                    <div class="sy_gkk_pic"><a href="#"><img src="${t.trainer.userCenter.headLogo!}" /></a></div>
+                    <div class="sy_gkk_pic"><a href="/website/courseDetail?course.id=${t.id!}"><img src="${t.trainer.userCenter.headLogo!}" /></a></div>
                     <div class="sy_gkk_intro">
                     	<div class="sy_gkk_name">
                         	<div class="sy_gkk_xm"><a href="/website/courseDetail?course.id=${t.id!}">${t.courseName!}</a></div>

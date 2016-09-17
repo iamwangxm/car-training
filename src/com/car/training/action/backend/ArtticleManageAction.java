@@ -42,7 +42,7 @@ public class ArtticleManageAction extends BaseAction {
 	/**文章删除*/
 	public String essayDelete() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
-		String eid = request.getParameter("jobs.id");
+		String eid = request.getParameter("trainerEssay.id");
 		trainerEssayService.delete(eid);
 		return SUCCESS;
 	}

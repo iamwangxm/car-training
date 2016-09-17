@@ -43,7 +43,7 @@
                         <td  align="center" valign="middle" bgcolor="#ffffff" class="sq">${t_index + 1}</td>
                         <td align="center" valign="middle" bgcolor="#ffffff"class="sq"><a href="#">${t.title!} </a></td>
                         <td  align="center" valign="middle" bgcolor="#ffffff">${t.publishDate!?string("yyyy-MM-dd")}</td>
-                        <td align="center" valign="middle" bgcolor="#ffffff"  class="caozuo"><a href="/website/trainerEssayDetail?trainerEssay.id=${t.id!}">查看</a>&nbsp;&nbsp;  <a href="#">删除</a></td>
+                        <td align="center" valign="middle" bgcolor="#ffffff"  class="caozuo"><a href="/website/trainerEssayDetail?trainerEssay.id=${t.id!}">查看</a>&nbsp;&nbsp;  <a href="/website/artticleManage/essayDelete?trainerEssay.id=${t.id!}">删除</a></td>
                       </tr>
                      </#if>
                       </#list>

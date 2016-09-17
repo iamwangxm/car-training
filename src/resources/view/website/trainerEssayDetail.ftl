@@ -18,24 +18,24 @@
 
 <!-- main开始 -->
 
-
 <div class="zhuanti">
     <div class="content" >
     	<div class="zt">
     	<#if trainerEssay??>
         	<div class="zt_l left">
             	<div class="wenti">
-                	<div class="tubiao left"></div> 
-                    <div class="wt_box right">
-                    	<h4><span>30人关注该问题</span><span><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/gz2.jpg" /></span>${trainerEssay.title!}</h4>${trainerEssay.content!}
+                    <div class="wt_box center">
+                    	<center><h4>${trainerEssay.title!}</h4></center> 
+                    	发布日期：${trainerEssay.publishDate!?string("yyyy-MM-dd")}&nbsp;&nbsp; &nbsp;作者：${trainerEssay.trainer.userCenter.name!}<br/><br/>
+                    	
+                    	${trainerEssay.content!}
                     </div>
+                </div>
                 </div>
             </#if>
             
             <div class="clear"></div>
         </div>
-        
-       
   </div>
 </div>
     
