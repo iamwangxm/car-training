@@ -49,7 +49,7 @@
                         <td align="center" valign="middle" bgcolor="#ffffff">${t.jobType!}</td>
                         <td  align="center" valign="middle" bgcolor="#ffffff">${t.fullname!}</td>
                         <td  align="center" valign="middle" bgcolor="#ffffff">${t.publishDate!?string("yyyy-MM-dd")}</td>
-                        <td align="center" valign="middle" bgcolor="#ffffff"  class="caozuo"><a href="#">查看</a>&nbsp;&nbsp;  <a href="#">删除</a></td>
+                        <td align="center" valign="middle" bgcolor="#ffffff"  class="caozuo"><a href="/website/jobDetail?jobs.id=${t.id!}" target="blank">查看</a>&nbsp;&nbsp;  <a href="#">删除</a></td>
                       </tr>
                       </#if>
                       </#list>
