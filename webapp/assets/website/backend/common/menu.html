@@ -1,4 +1,14 @@
 <!-- menu开始 -->
+<#if '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='TRAINER'>
+ <h4>培训师管理中心</h4>
+ <#elseIf '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='AUTOBOT'>
+ <h4>汽车人管理中心</h4>
+ <#elseIf '{}' != '${session}' && Session["loginState"]=='Y' && ( Session["loginType"]=='COMPANY'>
+  <h4>培训公司管理中心</h4>
+ <#elseIf '{}' != '${session}' && Session["loginState"]=='Y' && ( Session["loginType"]=='AUTOBOT'>
+  <h4>汽车公司管理中心</h4>
+ <#else>
+ </#if>
 <div class="lanmu">
           	<ul>
             	
