@@ -1,9 +1,13 @@
  package com.car.training.action.backend;
 
- import javax.servlet.http.HttpServletRequest;
+ import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
 import org.ironrhino.core.metadata.AutoConfig;
+import org.ironrhino.core.metadata.JsonConfig;
 import org.ironrhino.core.struts.BaseAction;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -22,6 +26,8 @@ public class TrainerCompleteResumeAction extends BaseAction {
 	/** 培训师 */
 	private Trainer  trainer;
 	
+	private Object data;
+	
 	
 	@Override
 	public String execute() throws Exception {
@@ -33,9 +39,17 @@ public class TrainerCompleteResumeAction extends BaseAction {
 		}
 		return SUCCESS;
 	}
+	
+	@JsonConfig(root = "data")
 	public String save() throws Exception{
-		trainerService.save(trainer);
-		return SUCCESS;
+		if(trainer != null){
+			trainerService.save(trainer);
+		}
+		Map<String,Object> map = new HashMap<>();
+		map.put("code", "200");
+		map.put("msg", "保存成功");
+		data = map;
+		return JSON;
 	}
 
 
@@ -46,6 +60,14 @@ public class TrainerCompleteResumeAction extends BaseAction {
 
 	public void setTrainer(Trainer trainer) {
 		this.trainer = trainer;
+	}
+
+	public Object getData() {
+		return data;
+	}
+
+	public void setData(Object data) {
+		this.data = data;
 	}
 	
 }
