@@ -16,7 +16,7 @@
 <div class="main">
 	<div class="content">
     <div class="dq_box">
-    <div class="dqwz left">当前位置 : <a href="#">首 页</a> > <a href="#">培训师管理中心</a> > <a href="#">申请记录</a></div>
+    <div class="dqwz left">当前位置 : <a href="#">首 页</a> > <a href="#"><#if '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='TRAINER'>培训师管理中心<#else>汽车人管理中心</#if></a> > <a href="#">申请记录</a></div>
     <div class="wdcf right"><span>2016/07/20—2016/08/20</span>我的财富：<font color="#FF66001">845</font></div>
     <div class="clear"></div>
     </div>
