@@ -4,10 +4,11 @@ import java.util.List;
 
 import org.ironrhino.core.model.ResultPage;
 import org.ironrhino.core.service.BaseManager;
+import org.ironrhino.core.spring.security.ConcreteUserDetailsService;
 
 import com.car.training.model.Company;
 
-public interface CompanyManager extends BaseManager<Company> {
+public interface CompanyManager extends BaseManager<Company> , ConcreteUserDetailsService {
 
 	/** 新增企业/公司信息 */
 	void save(Company company);

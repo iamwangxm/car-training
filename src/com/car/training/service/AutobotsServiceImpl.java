@@ -10,6 +10,7 @@ import org.ironrhino.core.util.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+
 import com.car.training.domain.Autobots;
 import com.car.training.domain.UserCenter;
 import com.car.training.utils.ResultPageBeanUtils;
@@ -56,6 +57,20 @@ public class AutobotsServiceImpl  implements AutobotsService{
 	@Transactional(readOnly = true)
 	public Autobots findById(String id) {
 		com.car.training.model.Autobots source = autobotsManager.get(id);
+		if (source == null) {
+			return null;
+		}
+		Autobots target = new Autobots();
+		BeanUtils.copyProperties(source, target);
+		return target;
+	}
+	
+	/** 获取汽车人信息 **/
+	@Override
+	@Timing
+	@Transactional(readOnly = true)
+	public Autobots findByUserCenter(String uid) {
+		com.car.training.model.Autobots source = autobotsManager.findByUserCenter(uid);
 		if (source == null) {
 			return null;
 		}

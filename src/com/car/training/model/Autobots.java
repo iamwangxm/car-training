@@ -52,7 +52,7 @@ public class Autobots extends BaseEntity {
 	
 	/**岗位类型**/
 	@Enumerated(EnumType.STRING)
-	@Column(length=20, nullable = false)
+	@Column(length=20, nullable = true)
 	private PositionType positionType;  
 
 	/** 关注培训师 **/

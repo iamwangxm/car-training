@@ -167,7 +167,7 @@
     <td height="40" colspan="4" align="left" valign="middle"><table width="90%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="11%"><font color="#ff0000">*</font>工作经历：</td>
-    <td width="89%"><textarea style="width:600px;" name="autobot.workingHistroy" id="textarea2" cols="45" rows="5"><#if autobot?? autobot.workingHistroy??> ${autobot.workingHistroy!} <#else>请输入工作经历</#if></textarea></td>
+    <td width="89%"><textarea style="width:600px;" name="autobot.workingHistroy" id="textarea2" cols="45" rows="5"><#if autobot?? && autobot.workingHistroy??> ${autobot.workingHistroy!} <#else>请输入工作经历</#if></textarea></td>
   </tr>
 </table></td>
     </tr>
@@ -186,7 +186,6 @@
               </div>
       </div>
       </form>
-      </#if>
         <div class="clear"></div>
     
     </div>

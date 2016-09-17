@@ -11,6 +11,7 @@ import org.ironrhino.core.util.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+
 import com.car.training.domain.Company;
 import com.car.training.utils.ResultPageBeanUtils;
 

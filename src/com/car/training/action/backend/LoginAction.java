@@ -118,6 +118,7 @@ public class LoginAction extends BaseAction {
 						context.setAttribute("userDetails", usercenter);
 						targetUrl = "/backend/applyJobHistory";
 						request.getSession().setAttribute("loginState", "Y");
+						request.getSession().setAttribute("loginType", usercenter.getPersonalType().name());
 						map.put("code", 200);
 						map.put("target", targetUrl);
 						map.put("msg", "登陆成功！");
@@ -134,6 +135,7 @@ public class LoginAction extends BaseAction {
 					context.setAttribute("userDetails", company);
 					targetUrl = "/backend/companyJobManage";
 					request.getSession().setAttribute("loginState", "Y");
+					request.getSession().setAttribute("loginType", company.getCompanyType().name());
 					map.put("code", 200);
 					map.put("target", targetUrl);
 					map.put("msg", "登陆成功！");

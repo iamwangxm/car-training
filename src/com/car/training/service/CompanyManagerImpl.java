@@ -8,6 +8,9 @@ import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.ironrhino.core.model.ResultPage;
 import org.ironrhino.core.service.BaseManagerImpl;
+import org.ironrhino.core.util.ApplicationContextUtils;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,6 +23,9 @@ public class CompanyManagerImpl extends BaseManagerImpl<Company> implements Comp
 	@Override
 	@Transactional
 	public void save(Company obj) {
+		if(StringUtils.isNotBlank(obj.getPassword())){
+			obj.setLegiblePassword(obj.getPassword());
+		}
 		super.save(obj);
 	}
 	
@@ -45,12 +51,13 @@ public class CompanyManagerImpl extends BaseManagerImpl<Company> implements Comp
 	@Override
 	@Transactional(readOnly=true)
 	public Company findByUsernamePassword(String username,String password){
+		PasswordEncoder encoder = ApplicationContextUtils.getBean(PasswordEncoder.class);
 			if (StringUtils.isBlank(username)||StringUtils.isBlank(password))
 				return null;
 			DetachedCriteria dc = detachedCriteria();
 			dc.add(Restrictions.eq("enabled", true));
 			dc.add(Restrictions.eq("username", username));
-			dc.add(Restrictions.eq("password", password));
+			dc.add(Restrictions.eq("password", encoder.encode(password)));
 			return findByCriteria(dc);
 		}
 
@@ -90,5 +97,15 @@ public class CompanyManagerImpl extends BaseManagerImpl<Company> implements Comp
 		dc.add(Restrictions.eq("enabled", true));
 		dc.addOrder(Order.desc("createDate"));
 		return findListByCriteria(dc);
+	}
+
+	@Override
+	public boolean accepts(String username) {
+		return false;
+	}
+
+	@Override
+	public UserDetails loadUserByUsername(String username) {
+		return null;
 	}
 }

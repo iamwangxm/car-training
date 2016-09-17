@@ -21,6 +21,9 @@ public interface AutobotsManager extends BaseManager<Autobots> {
 	/** 获取汽车人信息 **/
 	Autobots findById(String id);
 	
+	/** 获取汽车人信息 **/
+	Autobots findByUserCenter(String uid) ;
+	
 	/** 获取汽车人列表分页 */
 	ResultPage<Autobots> findPageByAutobots(Autobots autobots, Integer pageSize, Integer pageNo);
 	

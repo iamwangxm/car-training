@@ -43,6 +43,16 @@ public class AutobotsManagerImpl extends BaseManagerImpl<Autobots> implements Au
 
 	@Override
 	@Transactional(readOnly=true)
+	public Autobots findByUserCenter(String uid) {
+		if (StringUtils.isBlank(uid))
+			return null;
+		DetachedCriteria dc = detachedCriteria();
+		dc.createAlias("userCenter", "uc").add(Restrictions.eq("uc.id", uid));
+		return findByCriteria(dc);
+	}
+	
+	@Override
+	@Transactional(readOnly=true)
 	public ResultPage<Autobots> findPageByAutobots(Autobots autobotsComment, Integer pageSize, Integer pageNo) {
 		ResultPage<Autobots> resultPage = new ResultPage<Autobots>();
 		if (autobotsComment == null)

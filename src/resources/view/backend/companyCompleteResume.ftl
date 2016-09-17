@@ -27,7 +27,6 @@
  		
         <div class="pxshi_gl_r right">
         
-        <#if company??>
         <form id="form1" method="post" action="/backend/companyCompleteResume" onSubmit="return checkform()">
         
        	  <div class="pxshijl">
@@ -201,8 +200,6 @@
       </div>
       
       <form>
-      </#if>
-      
         <div class="clear"></div>
     
     </div>

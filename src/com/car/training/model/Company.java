@@ -1,6 +1,7 @@
 package com.car.training.model;
 
 import java.math.BigDecimal;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -24,7 +25,10 @@ import org.ironrhino.core.metadata.NotInCopy;
 import org.ironrhino.core.metadata.UiConfig;
 import org.ironrhino.core.model.BaseEntity;
 import org.ironrhino.core.search.elasticsearch.annotations.Searchable;
+import org.ironrhino.core.util.AuthzUtils;
 import org.nustaq.serialization.annotations.Version;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import com.car.training.enums.CompanyType;
 import com.car.training.enums.Industry;
@@ -36,7 +40,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @AutoConfig
 @javax.persistence.Entity
 @Table(name = "company")
-public class Company extends BaseEntity {
+public class Company extends BaseEntity  implements UserDetails {
 
 	private static final long serialVersionUID = -5484521796779236186L;
 
@@ -79,14 +83,14 @@ public class Company extends BaseEntity {
 	/**所属行业**/
 	@UiConfig(hiddenInList = @Hidden(true) )
 	@Enumerated(EnumType.STRING)
-	@Column(length=30, nullable = false)
-	private Industry industry;
+	@Column(length=30, nullable = true)
+	private Industry industry = Industry.AUTO;
 	
 	/**公司性质**/
 	@UiConfig(hiddenInList = @Hidden(true) )
 	@Enumerated(EnumType.STRING)
-	@Column(length=20, nullable = false)
-	private Nature nature;
+	@Column(length=20, nullable = true)
+	private Nature nature = Nature.PERSONAL;
 	
 	/**福利**/
 	@UiConfig(hiddenInList = @Hidden(true) )
@@ -176,6 +180,14 @@ public class Company extends BaseEntity {
 
 	public CompanyType getCompanyType() {
 		return companyType;
+	}
+	
+	public void setLegiblePassword(String legiblePassword) {
+		this.password = AuthzUtils.encodePassword(this, legiblePassword);
+	}
+
+	public boolean isPasswordValid(String legiblePassword) {
+		return AuthzUtils.encodePassword(this, legiblePassword).equals(this.password);
 	}
 
 	public void setCompanyType(CompanyType companyType) {
@@ -340,5 +352,25 @@ public class Company extends BaseEntity {
 
 	public void setVersion(int version) {
 		this.version = version;
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return null;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return false;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return false;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return false;
 	}
 }

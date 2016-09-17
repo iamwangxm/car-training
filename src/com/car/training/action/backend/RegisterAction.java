@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.ServletActionContext;
@@ -150,7 +151,7 @@ public class RegisterAction extends BaseAction {
 	@JsonConfig(root = "data")
 	public String register() {
 		Map<String, Object> map = new HashMap<String, Object>();
-
+		HttpServletRequest request = ServletActionContext.getRequest();
 		if (StringUtils.isBlank(username)) {
 			throw new NotFoundException("1001","用户名不能为空");
 		}
@@ -178,9 +179,16 @@ public class RegisterAction extends BaseAction {
 						Region region = new Region();
 						region.setId(new Long(0L));
 						usercenter.setRegion(region);
+						usercenter.setCreateDate(new Date());
 						usercenterService.save(usercenter);
 						map.put("code", 200);
 						map.put("msg", "注册成功！");
+						
+						HttpSession context = request.getSession();
+						context.setAttribute("userDetails", usercenter);
+						targetUrl = "/backend/applyJobHistory";
+						request.getSession().setAttribute("loginState", "Y");
+						request.getSession().setAttribute("loginType", personalType.name());
 					} else {
 						map.put("code", 402);
 						map.put("msg", "手机验证码错误！");
@@ -197,9 +205,20 @@ public class RegisterAction extends BaseAction {
 						company.setUsername(username);
 						company.setPassword(password);
 						company.setCompanyType(companyType);
+						company.setEnabled(true);
+						Region region = new Region();
+						region.setId(new Long(0L));
+						company.setRegion(region);
+						company.setCreateDate(new Date());
 						companyService.save(company);
 						map.put("code", 200);
 						map.put("msg", "注册成功！");
+						
+						HttpSession context = request.getSession();
+						context.setAttribute("userDetails", company);
+						targetUrl = "/backend/companyJobManage";
+						request.getSession().setAttribute("loginState", "Y");
+						request.getSession().setAttribute("loginType", companyType.name());
 					} else {
 						map.put("code", 402);
 						map.put("msg", "手机验证码错误！");
