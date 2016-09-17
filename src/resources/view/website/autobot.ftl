@@ -84,7 +84,7 @@
 			        	<div class="pxshi">
 			            	<ul>
 			            		<#list autobotsList as t>
-						  			<#if key = t.positionType>
+						  			<#if t.positionType?? && key = t.positionType>
 						  				<#if t_index = 0>
 						                	<li style="border:2px solid #3689b3; padding:0px;">
 						                    <div class="pxshi_pic"><a href="/website/AutbotDetail?autobots.id=${t.id!}"><img src="${t.userCenter.headLogo!}" /></a></div>
