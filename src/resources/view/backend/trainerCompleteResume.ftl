@@ -28,6 +28,7 @@
         <!--隐藏域-->
         <input type="hidden" name="trainer.userCenter.personalType" value="TRAINER">
         <input type="hidden" name="trainer.id" value="<#if trainer??>${trainer.id!}</#if>">
+        <input type="hidden" name="trainer.userCenter.id" value="<#if trainer?? && trainer.userCenter??>${trainer.userCenter.id!}</#if>">
         <!--隐藏域-->
        	  <div class="pxshijl">
                	  <h5>基本信息</h5>
