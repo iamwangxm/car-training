@@ -6,7 +6,7 @@
 <title>汽车培聘网</title>
 <link rel="stylesheet" href="<@url value='/assets/website/backend/css/style.css'/>" type="text/css" media="screen" />
 <link rel="stylesheet" href="<@url value='/assets/website/backend/css/laydate.css'/>" type="text/css" media="screen" />
-<link rel="stylesheet" href="<@url value='/assets/website/backend/css/molv.css'/>" type="text/css" media="screen" />
+<link rel="stylesheet" href="<@url value='/assets/website/backend/css/date-molv.css'/>" type="text/css" media="screen" />
 <script src="<@url value="/assets/website/js/jquery-1.8.0.min.js?v=1.1.0"/>"></script>
 <script src="<@url value="/assets/website/js/laydate.js?v=1.1.0"/>"></script>
 </head>
