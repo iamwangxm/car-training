@@ -15,6 +15,9 @@
             </ul>
             </div>
         </div>
+        <#if '{}' != '${session}' && Session["loginState"]=='Y' >
+        <div  class="dl_tel left" >欢迎您,${Session["userDetails"].username}</div>
+        </#if>
         <div class="dl_top right"> 
         <#if '{}' != '${session}' && Session["loginState"]=='Y' >
      	 <li style="background:none;"><#if '{}' != '${session}' && Session["loginState"]=='Y' && (Session["loginType"]=='TRAINER'||Session["loginType"]=='AUTOBOT') > <a href='<@url value='/backend/applyJobHistory'/>' ><#else> <a href='<@url value='/backend/companyJobManage'/>'> </#if>我的管理</a></li>
@@ -27,9 +30,6 @@
         </#if> 
 
         </div>
-        <#if '{}' != '${session}' && Session["loginState"]=='Y' >
-        <div  class="top" align="right">欢迎您,${Session["userDetails"].username}</div>
-        </#if>
         <div class="clear"></div>
     </div>
 </div>
