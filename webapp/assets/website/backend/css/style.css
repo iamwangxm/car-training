@@ -149,6 +149,7 @@ a img {border: none;}
 .fypage a:hover {color: #fff;}
 
 /*完善简历*/
+.laydate-icon{border:1px solid #ccc; background-image:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/icon.png)}
 .pxshijl{ margin-bottom:60px;}
 .pxshijl h5{ display:block; padding-left:15px; height:40px; line-height:40px; font-weight:100; font-size:16px; color:#000; background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/icon3.jpg) no-repeat 10px center; padding-left:50px;border-bottom:1px dotted #ccc; margin-bottom:10px;}
 .pxshijl_box{ padding-top:20px; line-height:30px;}

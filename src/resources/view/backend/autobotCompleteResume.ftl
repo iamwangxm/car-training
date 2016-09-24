@@ -5,8 +5,10 @@
 
 <title>汽车培聘网</title>
 <link rel="stylesheet" href="<@url value='/assets/website/backend/css/style.css'/>" type="text/css" media="screen" />
+<link rel="stylesheet" href="<@url value='/assets/website/backend/css/laydate.css'/>" type="text/css" media="screen" />
+<link rel="stylesheet" href="<@url value='/assets/website/backend/css/molv.css'/>" type="text/css" media="screen" />
 <script src="<@url value="/assets/website/js/jquery-1.8.0.min.js?v=1.1.0"/>"></script>
-
+<script src="<@url value="/assets/website/js/laydate.js?v=1.1.0"/>"></script>
 </head>
 
 <body>
@@ -40,7 +42,7 @@
     <td colspan="2"width="420" align="left" valign="top"><table width="400" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="69" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 姓 名：</td>
-        <td width="292">
+        <td>
         <#if autobot?? && autobot.userCenter?? && autobot.userCenter.name??>
         <input type="text" name="autobot.userCenter.name" value="${autobot.userCenter.name!}" />
         <#else>
@@ -54,7 +56,7 @@
         <#if autobot?? && autobot.userCenter?? && autobot.userCenter.name??>
         <input name="autobot.userCenter.birthday" value="${autobot.userCenter.birthday?string("yyyy-MM-dd")!}" type="date"/>
         <#else>
-        <input name="autobot.userCenter.birthday" value="" type="date"/>
+        <input name="autobot.userCenter.birthday" value="" type="date" onclick="laydate()" class="laydate-icon"/>
         </#if>
         </td>
       </tr>

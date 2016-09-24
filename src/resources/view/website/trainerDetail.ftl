@@ -137,9 +137,9 @@
                 <div class="lx_box">
                 	<div class="xingming">${trainer.userCenter.name!}(培训师本人)</div>
                    电话：${trainer.userCenter.mobile!}<br />
-QQ：${trainer.userCenter.QQ!}<br />
+<!--QQ：${trainer.userCenter.QQ!}<br />
 邮箱：${trainer.userCenter.email!}<br />
-微信：${trainer.userCenter.weixin!}<br />
+微信：${trainer.userCenter.weixin!}<br />-->
                 </div>
             </div>
             <div class="pxshi_pj">
