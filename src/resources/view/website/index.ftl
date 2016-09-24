@@ -59,7 +59,7 @@
         <#else>
  </#if>
 </div>
-	<!-- banner结束 -->
+<!-- banner结束 -->
 <!-- main开始 -->
 
 <div class="main">
@@ -180,9 +180,9 @@
                     </div>
                     <div class="pxxq_r right">
                    	  <div class="qy">
-                        	<div class="qy_l left"><img src="${t.company.logo!}" /></div>
+                        	<div class="qy_l left"><a href="/website/autoCompany?company.id=${t.company.id!}"><img src="${t.company.logo!}" /></a></div>
                           <div class="qy_r right">
-                            	<div class="qy_name"><span><a href="#">已有${t.company.bondsmanCount}人担保</a></span><a href="#">${t.company.name!}</a></div>
+                            	<div class="qy_name"><span><a href="#">已有${t.company.bondsmanCount}人担保</a></span><a href="/website/autoCompany?company.id=${t.company.id!}">${t.company.name!}</a></div>
                                 <div class="jyfw"><a href="#">${t.company.industry!}</a></div>
                           </div>
                             <div class="clear"></div>
@@ -228,9 +228,9 @@
                        
                			<div class="qcrxq_r right">
                    	  <div class="qcrxq_qy">
-                        	<div class="qcrxq_qy_l left"><a href="/website/autoCompany?jobs.id=${t.id!}"><img src="${t.company.logo!}" /></a></div>
+                        	<div class="qcrxq_qy_l left"><a href="/website/autoCompany?company.id=${t.company.id!}"><img src="${t.company.logo!}" /></a></div>
                           <div class="qcrxq_qy_r right">
-                            	<div class="qcrxq_qy_name"><span><a href="#">已有${t.company.bondsmanCount}人担保</a></span><a href="#">${t.company.name!}</a></div>
+                            	<div class="qcrxq_qy_name"><span><a href="#">已有${t.company.bondsmanCount}人担保</a></span><a href="/website/autoCompany?company.id=${t.company.id!}">${t.company.name!}</a></div>
                                 <div class="qcrxq_jyfw"><a href="#">${t.company.industry!}</a></div>
                           </div>
                             <div class="clear"></div>
