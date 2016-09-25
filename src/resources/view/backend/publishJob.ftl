@@ -32,23 +32,78 @@
                	  <h5>职位描述</h5>
                     <div class="pxshijl_box">
                    	 <table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="79" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 职位名称：</td>
-    <td width="721"><input type="text" name="Job.name" id="Job.name" /></td>
-  </tr>
-
-  <tr>
-    <td width="79" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 工作性质：</td>
-    <td width="721"><input type="radio" name="Job.jobType" value="FULLTIME" id="ty_per7" />
-全职&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="radio" name="Job.jobType" value="PARTTIME" id="ty_per8" />
-兼职</td>
-  </tr>
-  <tr>
-    <td height="150" align="right" valign="top"><font color="#ff0000">*</font> 职位描述：</td>
-    <td align="left" valign="top"><textarea style="width:600px;" name="Job.jobDescription" id="Job.jobDescription" cols="45" rows="5"></textarea></td>
-  </tr>
-</table>
+			   <tr>
+			    <td width="79" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 工作性质：</td>
+			    <td width="721"><input type="radio" name="job.jobType" value="FULLTIME" id="ty_per7" />
+			全职&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="radio" name="job.jobType" value="PARTTIME" id="ty_per8" />
+			兼职</td>
+			  </tr>
+			  <tr>
+			    <td width="79" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 职位名称：</td>
+			    <td width="721">
+			    <input type="text" name="job.name" id="job.name" />
+			    </td>
+			  </tr>
+			  <tr>
+			    <td width="79" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 要求年限：</td>
+			    <td width="721">
+			    <select name="autobot.autoYears" id="autobot.autoYears">
+	        	    <option value="">请选择</option>
+					<#list 1..20 as t>
+					<option value="${t}">${t}</option>
+					</#list>	
+					</select>
+				</td>
+			  </tr>
+			   <tr>
+			    <td width="79" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 待遇：</td>
+			    <td width="721">
+			    <input type="text" name="job.salary" id="job.salary" />
+				</td>
+			  </tr>
+			   <tr>
+			    <td width="79" height="40" align="right" valign="middle"><font color="#ff0000">*</font>语言要求：</td>
+			    <td width="721">
+			   	<input type="checkbox" name="job.languages" id="job.languages" value="普通语"/>普通语
+	    	   	<input type="checkbox" name="job.languages" id="job.languages" value="英语"/>英语
+	    	   	<input type="checkbox" name="job.languages" id="job.languages" value="日语"/>日语
+		   		<input type="checkbox" name="job.languages" id="job.languages" value="德语"/>德语
+	    	   	<input type="checkbox" name="job.languages" id="job.languages" value="韩语"/>韩语
+				</td>
+			  </tr>
+			   <tr>
+			    <td width="79" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 工作区域：</td>
+			    <td width="721">
+			     <select name="province" id="province" onChange="selectCities()">
+        	    <option value="">请选择省</option>
+				<#list provinces as t>
+				<option value="${t.id!}">${t.fullname!}</option>
+				</#list>
+				</select>
+				<select name="city" id="city">
+        	    <option value="">请选择市</option>
+				</select>
+				</td>
+			  </tr>
+			   <tr>
+			    <td width="79" height="40" align="right" valign="middle"><font color="#ff0000">*</font>公司福利：</td>
+			    <td width="721">
+			       	<input type="checkBox" name="job.welfare" id="job.welfare" value="五险一金"/>五险一金
+		    	   	<input type="checkBox" name="job.welfare" id="job.welfare" value="工作餐"/>工作餐
+		    	   	<input type="checkBox" name="job.welfare" id="job.welfare" value="免费班车"/>免费班车
+			   		<input type="checkBox" name="job.welfare" id="job.welfare" value="股票期权"/>股票期权
+		    	   	<input type="checkBox" name="job.welfare" id="job.welfare" value="带薪休假"/>带薪休假
+		    	   	<input type="checkBox" name="job.welfare" id="job.welfare" value="年底双薪"/>年底双薪
+		    	   	<input type="checkBox" name="job.welfare" id="job.welfare" value="绩效奖金研发"/>绩效奖金
+		    	   	<input type="checkBox" name="job.welfare" id="job.welfare" value="定期体检"/>定期体检
+				</td>
+			  </tr>
+			  <tr>
+			    <td height="150" align="right" valign="top"><font color="#ff0000">*</font> 职位描述：</td>
+			    <td align="left" valign="top"><textarea style="width:600px;" name="job.jobDescription" id="job.jobDescription" cols="45" rows="5"></textarea></td>
+			  </tr>
+			</table>
  
             </div>
           </div>
@@ -73,9 +128,9 @@
 <script>
 
 function checkform(){
-	var name = $("[name='Job.name']").val();
-	var jobType = $("[name='Job.jobType']").val();
-	var jobDescription = $("[name='Job.jobDescription']").val();
+	var name = $("[name='job.name']").val();
+	var jobType = $("[name='job.jobType']").val();
+	var jobDescription = $("[name='job.jobDescription']").val();
 	
 	if(name == undefined || jobType == undefined || jobDescription == undefined){
 		alert("带*的为必填字段 ");
@@ -89,6 +144,30 @@ function checkform(){
 	return true;
 }
 
+function selectCities(){
+	var form_data={};
+	form_data.parentId = $("[name='province']").val();;
+	$.ajax({
+		 type: "POST",
+	     url: "/backend/publishJob/getcities",
+	     data: form_data,
+	     error: function(request) {
+	         showErrMsg("网络出错啦！");
+	         return false;
+	     },
+	     success: function (data) {
+	    	 if(data.code==200){
+				$("#city").get(0).options.length=data.cities.length+1;
+	    		for(var i=0;i<data.cities.length;i++)
+	    		{
+	    		  $("#city").get(0).options[i+1]=new Option(data.cities[i].name,data.cities[i].id);
+	    		}
+	    	 }else{
+	    	 	 return false;
+	    	 }
+	     }
+	});
+}
 </script>
 
 <!-- main结束 -->
