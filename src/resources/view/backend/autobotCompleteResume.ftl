@@ -146,13 +146,17 @@
                   	     <tr>
                     	    <td height="40" align="right" valign="middle"><font color="#ff0000">*</font> 区域：</td>
                     	    <td>
-                    	    <select name="autobot.userCenter.region.fullname" id="autobot.userCenter.region.fullname">
+                    	    <select name="province" id="province" onChange="selectCities()">
                     	    <option value="">请选择省</option>
                     	    <#if autobot?? && autobot.userCenter?? && autobot.userCenter.region??>
-							<option selected="selected" value="${autobot.userCenter.region.fullname!}">${autobot.userCenter.region.fullname!}</option>
+							<option selected="selected" value="${autobot.userCenter.region.id!}">${autobot.userCenter.region.fullname!}</option>
+							<#else>
+							<#list provinces as t>
+							<option value="${t.id!}">${t.fullname!}</option>
+							</#list>
 							</#if>
 							</select>
-							<select name="autobot.userCenter.region.fullname" id="autobot.userCenter.region.fullname">
+							<select name="city" id="city">
                     	    <option value="">请选择市</option>
                     	    <#if autobot?? && autobot.userCenter?? && autobot.userCenter.region??>
 							<option selected="selected" value="${autobot.userCenter.region.fullname!}">${autobot.userCenter.region.fullname!}</option>
@@ -167,7 +171,7 @@
                     	    <#if autobot?? && autobot.autoYears?? >
                     	    <option selected="selected" value="${autobot.autoYears!}">${autobot.autoYears!}</option>
                     	    <#else>
-							<option selected="selected" value="${t}">${t}</option>
+							<option value="${t}">${t}</option>
 							</#if>
 							</#list>	
 							</select>
@@ -187,6 +191,10 @@
                     	    </td>
                     	    
                   	    </tr>
+                  	    <tr>
+                  	     <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>工作照：</td>
+                  	     <td colspan="3" align="left" valign="middle"><input type="file" name="workPhotoURL1" id="workPhotoURL1" value="浏览" /><input type="file" name="workPhotoURL2" id="workPhotoURL1" value="浏览" /></td>
+                  	  	</tr>
                   	  </table>
                 </div>
                 </div>
@@ -294,6 +302,31 @@ function submitdata(){
 		    	 		}
 		    	 	}
 		     }
+	});
+}
+
+function selectCities(){
+	var form_data={};
+	form_data.parentId = $("[name='province']").val();;
+	$.ajax({
+		 type: "POST",
+	     url: "/backend/autobotCompleteResume/getcities",
+	     data: form_data,
+	     error: function(request) {
+	         showErrMsg("网络出错啦！");
+	         return false;
+	     },
+	     success: function (data) {
+	    	 if(data.code==200){
+				$("#city").get(0).options.length=data.cities.length+1;
+	    		for(var i=0;i<data.cities.length;i++)
+	    		{
+	    		  $("#city").get(0).options[i+1]=new Option(data.cities[i].name,data.cities[i].id);
+	    		}
+	    	 }else{
+	    	 	 return false;
+	    	 }
+	     }
 	});
 }
 

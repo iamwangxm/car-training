@@ -156,25 +156,29 @@
       	    <tr>
       	     <td height="40" align="right" valign="middle"><font color="#ff0000">*</font> 区域：</td>
                     	    <td>
-                    	    <select name="autobot.userCenter.region.fullname" id="autobot.userCenter.region.fullname">
+                    	   <select name="province" id="province" onChange="selectCities()">
                     	    <option value="">请选择省</option>
-                    	    <#if autobot?? && autobot.userCenter?? && autobot.userCenter.region??>
-							<option selected="selected" value="${autobot.userCenter.region.fullname!}">${autobot.userCenter.region.fullname!}</option>
+                    	    <#if trainer?? && trainer.userCenter?? && trainer.userCenter.region??>
+							<option selected="selected" value="${trainer.userCenter.region.id!}">${trainer.userCenter.region.fullname!}</option>
+							<#else>
+							<#list provinces as t>
+							<option value="${t.id!}">${t.fullname!}</option>
+							</#list>
 							</#if>
 							</select>
-							<select name="autobot.userCenter.region.fullname" id="autobot.userCenter.region.fullname">
+							<select name="city" id="city">
                     	    <option value="">请选择市</option>
-                    	    <#if autobot?? && autobot.userCenter?? && autobot.userCenter.region??>
-							<option selected="selected" value="${autobot.userCenter.region.fullname!}">${autobot.userCenter.region.fullname!}</option>
+                    	    <#if trainer?? && trainer.userCenter?? && trainer.userCenter.region??>
+							<option selected="selected" value="${trainer.userCenter.region.fullname!}">${trainer.userCenter.region.fullname!}</option>
 							</#if>
 							</select>
                     	    </td>
       	    <td width="125" align="right" valign="middle"><font color="#ff0000">*</font> 邮箱：</td>
     	    <td width="337">
-    	     <#if autobot?? && autobot.userCenter?? && autobot.userCenter.email??>
-    	    <input type="eamil" name="autobot.userCenter.email" value="${autobot.userCenter.email!}" />
+    	     <#if trainer?? && trainer.userCenter?? && trainer.userCenter.email??>
+    	    <input type="eamil" name="trainer.userCenter.email" value="${trainer.userCenter.email!}" />
     	    <#else>
-    	    <input type="email" name="autobot.userCenter.email" value=""  />
+    	    <input type="email" name="trainer.userCenter.email" value=""  />
     	    </#if>
     	    </td>
     	   
@@ -182,11 +186,11 @@
     	     <tr>
                     	   <td width="125" align="right" valign="middle"><font color="#ff0000">*</font> 汽车行业经验：</td>
                     	    <td width="337">
-	                	    <select name="autobot.autoYears" id="autobot.autoYears">
+	                	    <select name="trainer.autoYears" id="trainer.autoYears">
                     	    <option value="">请选择</option>
 							<#list 1..20 as t>
-                    	    <#if autobot?? && autobot.autoYears?? >
-                    	    <option selected="selected" value="${autobot.autoYears!}">${autobot.autoYears!}</option>
+                    	    <#if trainer?? && autobot.autoYears?? >
+                    	    <option selected="selected" value="${trainer.autoYears!}">${trainer.autoYears!}</option>
                     	    <#else>
 							<option selected="selected" value="${t}">${t}</option>
 							</#if>
@@ -194,17 +198,40 @@
 							</select>
                     	    </td>
                   	    </tr>
-    	     <tr>
+    	     			<tr>
                     	    <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>擅长领域：</td>
                     	    <td colspan="3">
-                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="销售"/>销售
-                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="售后"/>售后
-                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="客服"/>客服
-                	   		<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="市场"/>市场
-                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="管理"/>管理
-                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="内训"/>内训
-                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="生产研发"/>生产研发
-                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="行政"/>行政
+                    	   	<input type="checkbox" name="trainer.positionType" id="autobot.positionType" value="销售"/>销售
+                    	   	<input type="checkbox" name="trainer.positionType" id="autobot.positionType" value="售后"/>售后
+                    	   	<input type="checkbox" name="trainer.positionType" id="autobot.positionType" value="客服"/>客服
+                	   		<input type="checkbox" name="trainer.positionType" id="autobot.positionType" value="市场"/>市场
+                    	   	<input type="checkbox" name="trainer.positionType" id="autobot.positionType" value="管理"/>管理
+                    	   	<input type="checkbox" name="trainer.positionType" id="autobot.positionType" value="内训"/>内训
+                    	   	<input type="checkbox" name="trainer.positionType" id="autobot.positionType" value="生产研发"/>生产研发
+                    	   	<input type="checkbox" name="trainer.positionType" id="autobot.positionType" value="行政"/>行政
+                    	    </td>
+                    	    
+                  	    </tr>
+                  	    	<tr>
+                    	    <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>视频链接1：</td>
+                    	    <td colspan="3">
+                    	    <#if trainer?? && trainer.vedioURL1?? >
+					        <input type="text" name="trainer.vedioURL1" value="${trainer.vedioURL1!}" style="width:400px;"/>
+							<#else> 
+							<input type="text" name="trainer.vedioURL1" value="" style="width:400px;"/>
+							</#if>
+                    	    </td>
+                    	    
+                  	    </tr>
+                  	     </tr>
+                  	    	<tr>
+                    	    <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>视频链接2：</td>
+                    	    <td colspan="3">
+							<#if trainer?? && trainer.vedioURL2?? >
+					        <input type="text" name="trainer.vedioURL2" value="${trainer.vedioURL2!}" style="width:400px;"/>
+							<#else> 
+							<input type="text" name="trainer.vedioURL2" value="" style="width:400px;"/>
+							</#if>
                     	    </td>
                     	    
                   	    </tr>
@@ -327,6 +354,31 @@ function submitdata(){
 	});
 }
 
+
+function selectCities(){
+	var form_data={};
+	form_data.parentId = $("[name='province']").val();;
+	$.ajax({
+		 type: "POST",
+	     url: "/backend/autobotCompleteResume/getcities",
+	     data: form_data,
+	     error: function(request) {
+	         showErrMsg("网络出错啦！");
+	         return false;
+	     },
+	     success: function (data) {
+	    	 if(data.code==200){
+				$("#city").get(0).options.length=data.cities.length+1;
+	    		for(var i=0;i<data.cities.length;i++)
+	    		{
+	    		  $("#city").get(0).options[i+1]=new Option(data.cities[i].name,data.cities[i].id);
+	    		}
+	    	 }else{
+	    	 	 return false;
+	    	 }
+	     }
+	});
+}
 </script>
 
 <!-- main结束 -->

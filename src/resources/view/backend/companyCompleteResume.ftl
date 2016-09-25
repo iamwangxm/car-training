@@ -108,6 +108,27 @@
                     	    </td>
                   	    </tr>
                   	    <tr>
+                    	    <td width="125" align="right" valign="middle"><font color="#ff0000">*</font>所在地：</td>
+                    	    <td colspan="3">
+                    	     <select name="province" id="province" onChange="selectCities()">
+                    	    <option value="">请选择省</option>
+                    	    <#if company?? && company.region??>
+							<option selected="selected" value="${company.region.id!}">${company.region.fullname!}</option>
+							<#else>
+							<#list provinces as t>
+							<option value="${t.id!}">${t.fullname!}</option>
+							</#list>
+							</#if>
+							</select>
+							<select name="city" id="city">
+                    	    <option value="">请选择市</option>
+                    	    <#if company?? &&  company.region??>
+							<option selected="selected" value="${company.region.fullname!}">${company.region.fullname!}</option>
+							</#if>
+							</select>
+                    	    </td>
+                  	    </tr>
+                  	    <tr>
                     	    <td width="125" align="right" valign="middle"><font color="#ff0000">*</font>公司福利：</td>
                     	    <td colspan="3">
                     	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="五险一金"/>五险一金
@@ -119,6 +140,7 @@
                     	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="绩效奖金研发"/>绩效奖金
                     	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="定期体检"/>定期体检
                     	    </td>
+                    	   
                   	    </tr>
 					    </table></td>
 					    <td width="439" colspan="4" align="left" valign="top"><table width="400" border="0" cellspacing="0" cellpadding="0">
@@ -286,6 +308,31 @@ function submitdata(){
 		    	 		}
 		    	 	}
 		     }
+	});
+}
+
+function selectCities(){
+	var form_data={};
+	form_data.parentId = $("[name='province']").val();;
+	$.ajax({
+		 type: "POST",
+	     url: "/backend/autobotCompleteResume/getcities",
+	     data: form_data,
+	     error: function(request) {
+	         showErrMsg("网络出错啦！");
+	         return false;
+	     },
+	     success: function (data) {
+	    	 if(data.code==200){
+				$("#city").get(0).options.length=data.cities.length+1;
+	    		for(var i=0;i<data.cities.length;i++)
+	    		{
+	    		  $("#city").get(0).options[i+1]=new Option(data.cities[i].name,data.cities[i].id);
+	    		}
+	    	 }else{
+	    	 	 return false;
+	    	 }
+	     }
 	});
 }
 
