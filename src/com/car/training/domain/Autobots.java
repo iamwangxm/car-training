@@ -41,7 +41,7 @@ public class Autobots implements Serializable{
 	/**公司发起的橄榄枝**/
 	private String olives;
 	
-	/**汽车经验**/
+	/**汽车行业经验**/
 	private Integer autoYears;
 	
 	/**是否认证**/

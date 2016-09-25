@@ -5,7 +5,10 @@
 
 <title>汽车培聘网</title>
 <link rel="stylesheet" href="<@url value='/assets/website/backend/css/style.css'/>" type="text/css" media="screen" />
+<link rel="stylesheet" href="<@url value='/assets/website/backend/css/laydate.css'/>" type="text/css" media="screen" />
+<link rel="stylesheet" href="<@url value='/assets/website/backend/css/date-molv.css'/>" type="text/css" media="screen" />
 <script src="<@url value="/assets/website/js/jquery-1.8.0.min.js?v=1.1.0"/>"></script>
+<script src="<@url value="/assets/website/js/laydate.js?v=1.1.0"/>"></script>
 </head>
 
 <body>
@@ -31,8 +34,8 @@
         <input type="hidden" name="trainer.userCenter.id" value="<#if trainer?? && trainer.userCenter??>${trainer.userCenter.id!}</#if>">
         <!--隐藏域-->
        	  <div class="pxshijl">
-               	  <h5>基本信息</h5>
-                    <div class="pxshijl_box">
+           <h5>基本信息</h5>
+            <div class="pxshijl_box">
         	<table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
 			  <tr>
 			    <td colspan="2"width="420" align="left" valign="top"><table width="400" border="0" cellspacing="0" cellpadding="0">
@@ -44,14 +47,14 @@
 					<#else> 
 					<input type="text" name="trainer.userCenter.name" value="" />
 					</#if></td>
-								      </tr>
+					</tr>
 			      <tr>
 			        <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>出生年月：</td>
 			        <td>
 			         <#if trainer?? && trainer.userCenter?? && trainer.userCenter.birthday?? >
-			        <input type="date" name="trainer.userCenter.birthday" value="${trainer.userCenter.birthday!}" />
+			        <input type="date" name="trainer.userCenter.birthday" value="${trainer.userCenter.birthday!}" onclick="laydate()" />
 			        <#else>
-			        <input type="date" name="trainer.userCenter.birthday" value="" />
+			        <input type="date" name="trainer.userCenter.birthday" value=""  onclick="laydate()"/>
 			     	</#if>
 			      </td>
 			      </tr>
@@ -88,9 +91,9 @@
 			        
 				        <table width="400" border="0" cellspacing="0" cellpadding="0">
 				          <tr>
-				            <td  width="15%" height="40" align="left" valign="middle"><input type="button" name="button" id="button" value="浏 览" /></td>
-				            <td width="23%" align="left" valign="middle">未选这图片。</td>
-				            <td width="62%" align="left" valign="middle"><input type="button" name="button2" id="button2" value="上 传" /></td>
+				            <td  width="15%" height="40" align="left" valign="middle"><input type="file" name="trainer.userCenter.headLogo" id="trainer.userCenter.headLogo" value="浏 览" /></td>
+				            <td width="23%" align="left" valign="middle"></td>
+				            <td width="62%" align="left" valign="middle"></td>
 				            </tr>
 				          </table></td>
 				        </tr>
@@ -103,7 +106,7 @@
 			      </td>
 			  </tr>
 			  </table>
-        	<table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
+        	<table width="800" border="0" align="center" cellpadding="0" cellspacing="0" align="left">
               <tr>
         	    <td height="40" align="right" valign="middle"><font color="#ff0000">*</font> 学历：</td>
         	    <td>
@@ -150,6 +153,61 @@
         	    </#if>
         	    </td>
       	    </tr>
+      	    <tr>
+      	     <td height="40" align="right" valign="middle"><font color="#ff0000">*</font> 区域：</td>
+                    	    <td>
+                    	    <select name="autobot.userCenter.region.fullname" id="autobot.userCenter.region.fullname">
+                    	    <option value="">请选择省</option>
+                    	    <#if autobot?? && autobot.userCenter?? && autobot.userCenter.region??>
+							<option selected="selected" value="${autobot.userCenter.region.fullname!}">${autobot.userCenter.region.fullname!}</option>
+							</#if>
+							</select>
+							<select name="autobot.userCenter.region.fullname" id="autobot.userCenter.region.fullname">
+                    	    <option value="">请选择市</option>
+                    	    <#if autobot?? && autobot.userCenter?? && autobot.userCenter.region??>
+							<option selected="selected" value="${autobot.userCenter.region.fullname!}">${autobot.userCenter.region.fullname!}</option>
+							</#if>
+							</select>
+                    	    </td>
+      	    <td width="125" align="right" valign="middle"><font color="#ff0000">*</font> 邮箱：</td>
+    	    <td width="337">
+    	     <#if autobot?? && autobot.userCenter?? && autobot.userCenter.email??>
+    	    <input type="eamil" name="autobot.userCenter.email" value="${autobot.userCenter.email!}" />
+    	    <#else>
+    	    <input type="email" name="autobot.userCenter.email" value=""  />
+    	    </#if>
+    	    </td>
+    	   
+    	    </tr>
+    	     <tr>
+                    	   <td width="125" align="right" valign="middle"><font color="#ff0000">*</font> 汽车行业经验：</td>
+                    	    <td width="337">
+	                	    <select name="autobot.autoYears" id="autobot.autoYears">
+                    	    <option value="">请选择</option>
+							<#list 1..20 as t>
+                    	    <#if autobot?? && autobot.autoYears?? >
+                    	    <option selected="selected" value="${autobot.autoYears!}">${autobot.autoYears!}</option>
+                    	    <#else>
+							<option selected="selected" value="${t}">${t}</option>
+							</#if>
+							</#list>	
+							</select>
+                    	    </td>
+                  	    </tr>
+    	     <tr>
+                    	    <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>擅长领域：</td>
+                    	    <td colspan="3">
+                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="销售"/>销售
+                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="售后"/>售后
+                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="客服"/>客服
+                	   		<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="市场"/>市场
+                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="管理"/>管理
+                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="内训"/>内训
+                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="生产研发"/>生产研发
+                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="行政"/>行政
+                    	    </td>
+                    	    
+                  	    </tr>
       	  </table>
 
 

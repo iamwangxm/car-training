@@ -37,52 +37,52 @@
        	  <div class="pxshijl">
                	  <h5>基本信息</h5>
                     <div class="pxshijl_box">
-                    	<table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td colspan="2"width="420" align="left" valign="top"><table width="400" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td width="69" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 姓 名：</td>
-        <td>
-        <#if autobot?? && autobot.userCenter?? && autobot.userCenter.name??>
-        <input type="text" name="autobot.userCenter.name" value="${autobot.userCenter.name!}" />
-        <#else>
-        <input type="text" name="autobot.userCenter.name" value=""  />
-        </#if>
-        </td>
-      </tr>
-      <tr>
-        <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>出生年月：</td>
-        <td>
-        <#if autobot?? && autobot.userCenter?? && autobot.userCenter.name??>
-        <input name="autobot.userCenter.birthday" value="${autobot.userCenter.birthday?string("yyyy-MM-dd")!}" type="date"/>
-        <#else>
-        <input name="autobot.userCenter.birthday" value="" type="date" onclick="laydate()" class="laydate-icon"/>
-        </#if>
-        </td>
-      </tr>
-      <tr>
-        <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>婚姻状况：</td>
-        <td>
-        	<#if autobot?? && autobot.userCenter?? && autobot.userCenter.marryStatus?? && autobot.userCenter.marryStatus.name() = 'UNMARRIED'>
-        	<input checked="checked" type="radio" name="autobot.userCenter.marryStatus" value="UNMARRIED" id="ty_per10" />
-        	<#else>
-        	<input type="radio" name="autobot.userCenter.marryStatus" value="UNMARRIED" id="ty_per10" />
-        	</#if>
-			未婚
-			<#if autobot?? && autobot.userCenter?? && autobot.userCenter.marryStatus?? && autobot.userCenter.marryStatus.name() = 'MARRIED'>
-			<input checked="checked" type="radio" name="autobot.userCenter.marryStatus" value="MARRIED" id="ty_per11" />
-			<#else>
-			<input type="radio" name="autobot.userCenter.marryStatus" value="MARRIED" id="ty_per11" />
-			</#if>
-			已婚
-			<#if autobot?? && autobot.userCenter?? && autobot.userCenter.marryStatus?? && autobot.userCenter.marryStatus.name() = 'RAISED'>
-			<input checked="checked" type="radio" name="autobot.userCenter.marryStatus" value="RAISED" id="ty_per12" />
-			<#else>
-			<input type="radio" name="autobot.userCenter.marryStatus" value="RAISED" id="ty_per12" />
-			</#if>
-			离异</td>
-      </tr>
-    </table></td>
+    	<table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
+		  <tr>
+		    <td colspan="2"width="420" align="left" valign="top"><table width="400" border="0" cellspacing="0" cellpadding="0">
+		      <tr>
+		        <td width="69" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 姓 名：</td>
+		        <td>
+		        <#if autobot?? && autobot.userCenter?? && autobot.userCenter.name??>
+		        <input type="text" name="autobot.userCenter.name" value="${autobot.userCenter.name!}" />
+		        <#else>
+		        <input type="text" name="autobot.userCenter.name" value=""  />
+		        </#if>
+		        </td>
+		      </tr>
+		      <tr>
+		        <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>出生年月：</td>
+		        <td>
+		        <#if autobot?? && autobot.userCenter?? && autobot.userCenter.name??>
+		        <input name="autobot.userCenter.birthday" value="${autobot.userCenter.birthday?string("yyyy-MM-dd")!}" type="date" onclick="laydate()"/>
+		        <#else>
+		        <input name="autobot.userCenter.birthday" value="" type="date" onclick="laydate()" class="laydate-icon"/>
+		        </#if>
+		        </td>
+		      </tr>
+		      <tr>
+		        <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>婚姻状况：</td>
+		        <td>
+		        	<#if autobot?? && autobot.userCenter?? && autobot.userCenter.marryStatus?? && autobot.userCenter.marryStatus.name() = 'UNMARRIED'>
+		        	<input checked="checked" type="radio" name="autobot.userCenter.marryStatus" value="UNMARRIED" id="ty_per10" />
+		        	<#else>
+		        	<input type="radio" name="autobot.userCenter.marryStatus" value="UNMARRIED" id="ty_per10" />
+		        	</#if>
+					未婚
+					<#if autobot?? && autobot.userCenter?? && autobot.userCenter.marryStatus?? && autobot.userCenter.marryStatus.name() = 'MARRIED'>
+					<input checked="checked" type="radio" name="autobot.userCenter.marryStatus" value="MARRIED" id="ty_per11" />
+					<#else>
+					<input type="radio" name="autobot.userCenter.marryStatus" value="MARRIED" id="ty_per11" />
+					</#if>
+					已婚
+					<#if autobot?? && autobot.userCenter?? && autobot.userCenter.marryStatus?? && autobot.userCenter.marryStatus.name() = 'RAISED'>
+					<input checked="checked" type="radio" name="autobot.userCenter.marryStatus" value="RAISED" id="ty_per12" />
+					<#else>
+					<input type="radio" name="autobot.userCenter.marryStatus" value="RAISED" id="ty_per12" />
+					</#if>
+					离异</td>
+		      </tr>
+		    </table></td>
     <td width="439" colspan="4" align="left" valign="top"><table width="400" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/zw.jpg" /></td>
@@ -92,9 +92,9 @@
         
         <table width="400" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td  width="15%" height="40" align="left" valign="middle"><input type="button" name="button" id="button" value="浏 览" /></td>
-            <td width="23%" align="left" valign="middle">未选这图片。</td>
-            <td width="62%" align="left" valign="middle"><input type="button" name="button2" id="button2" value="上 传" /></td>
+            <td  width="15%" height="40" align="left" valign="middle"><input type="file" name="autobot.userCenter.headLogo" id="button" value="浏 览" onchange="readFile()"/></td>
+            <td width="23%" align="left" valign="middle"></td>
+            <td width="62%" align="left" valign="middle"></td>
             </tr>
           </table>
           
@@ -108,7 +108,7 @@
   </table>
                     	<table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
                     	  <tr>
-                    	    <td width="76" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 目前状态：</td>
+                    	    <td width="76" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 工作状态：</td>
                     	    <td width="262">
                     	    <#if autobot?? && autobot.currentWorkStatus?? >
                     	    <input type="text" name="autobot.currentWorkStatus" value="${autobot.currentWorkStatus!}"  />
@@ -129,15 +129,65 @@
                     	    <td height="40" align="right" valign="middle"><font color="#ff0000">*</font> 手 机：</td>
                     	    <td>
                     	    <#if autobot?? && autobot.userCenter?? && autobot.userCenter.mobile??>
-                    	    <input type="tel" name="autobot.userCenter.mobile" value="${autobot.userCenter.mobile!}" />
+                    	    <input type="mobile" name="autobot.userCenter.mobile" value="${autobot.userCenter.mobile!}" />
                     	    <#else>
-                    	    <input type="tel" name="autobot.userCenter.mobile" value=""  />
+                    	    <input type="mobile" name="autobot.userCenter.mobile" value=""  />
                     	    </#if>
                     	    </td>
+                    	    <td width="125" align="right" valign="middle"><font color="#ff0000">*</font> 邮箱：</td>
+                    	    <td width="337">
+                    	     <#if autobot?? && autobot.userCenter?? && autobot.userCenter.email??>
+	                	    <input type="eamil" name="autobot.userCenter.email" value="${autobot.userCenter.email!}" />
+	                	    <#else>
+	                	    <input type="email" name="autobot.userCenter.email" value=""  />
+	                	    </#if>
+                    	    </td>
+                  	    </tr>
+                  	     <tr>
+                    	    <td height="40" align="right" valign="middle"><font color="#ff0000">*</font> 区域：</td>
+                    	    <td>
+                    	    <select name="autobot.userCenter.region.fullname" id="autobot.userCenter.region.fullname">
+                    	    <option value="">请选择省</option>
+                    	    <#if autobot?? && autobot.userCenter?? && autobot.userCenter.region??>
+							<option selected="selected" value="${autobot.userCenter.region.fullname!}">${autobot.userCenter.region.fullname!}</option>
+							</#if>
+							</select>
+							<select name="autobot.userCenter.region.fullname" id="autobot.userCenter.region.fullname">
+                    	    <option value="">请选择市</option>
+                    	    <#if autobot?? && autobot.userCenter?? && autobot.userCenter.region??>
+							<option selected="selected" value="${autobot.userCenter.region.fullname!}">${autobot.userCenter.region.fullname!}</option>
+							</#if>
+							</select>
+                    	    </td>
+                    	    <td width="125" align="right" valign="middle"><font color="#ff0000">*</font> 汽车行业经验：</td>
+                    	    <td width="337">
+	                	    <select name="autobot.autoYears" id="autobot.autoYears">
+                    	    <option value="">请选择</option>
+							<#list 1..20 as t>
+                    	    <#if autobot?? && autobot.autoYears?? >
+                    	    <option selected="selected" value="${autobot.autoYears!}">${autobot.autoYears!}</option>
+                    	    <#else>
+							<option selected="selected" value="${t}">${t}</option>
+							</#if>
+							</#list>	
+							</select>
+                    	    </td>
+                  	    </tr>
+                  	     <tr>
+                    	    <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>擅长领域：</td>
+                    	    <td colspan="3">
+                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="销售"/>销售
+                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="售后"/>售后
+                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="客服"/>客服
+                	   		<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="市场"/>市场
+                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="管理"/>管理
+                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="内训"/>内训
+                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="生产研发"/>生产研发
+                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="行政"/>行政
+                    	    </td>
+                    	    
                   	    </tr>
                   	  </table>
-
-
                 </div>
                 </div>
                 
@@ -247,6 +297,18 @@ function submitdata(){
 	});
 }
 
+function readFile(){ 
+    var file = this.files[0]; 
+    if(!/image\/\w+/.test(file.type)){ 
+        alert("文件必须为图片！"); 
+        return false; 
+    } 
+    var reader = new FileReader(); 
+    reader.readAsDataURL(file); 
+    reader.onload = function(e){ 
+        result.innerHTML = '<img src="'+this.result+'" alt=""/>' 
+    } 
+} 
 </script>
 
 <!-- main结束 -->

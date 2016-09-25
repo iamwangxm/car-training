@@ -84,6 +84,42 @@
                             </select>
                     	    </td>
                   	    </tr>
+                  	     <tr>
+                    	    <td width="125" align="right" valign="middle"><font color="#ff0000">*</font>经营范围：</td>
+                    	    <td width="337">
+                    	    <select name="company.industry" id="industry">
+                    	    <option value="">请选择</option>
+                    	    <#if company?? && company.industry?? && company.industry.name() = 'AUTO'>
+							<option selected="selected" value="AUTO">汽车</option>
+							<#else>
+							<option value="AUTO">50人以下</option>
+							</#if>
+                            </select>
+                    	    </td>
+                  	    </tr>
+                  	    <tr>
+                    	    <td width="125" align="right" valign="middle"><font color="#ff0000">*</font>公司地址：</td>
+                    	    <td   colspan="3">
+                    	    <#if company?? && company.address??>
+					        <input type="text" name="company.address" value="${company.address!}" id="company.address" />
+					        <#else>
+					        <input type="text" name="company.address" value="" id="company.address"  style="width:300px"/>
+					        </#if>
+                    	    </td>
+                  	    </tr>
+                  	    <tr>
+                    	    <td width="125" align="right" valign="middle"><font color="#ff0000">*</font>公司福利：</td>
+                    	    <td colspan="3">
+                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="五险一金"/>五险一金
+                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="工作餐"/>工作餐
+                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="免费班车"/>免费班车
+                	   		<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="股票期权"/>股票期权
+                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="带薪休假"/>带薪休假
+                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="年底双薪"/>年底双薪
+                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="绩效奖金研发"/>绩效奖金
+                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="定期体检"/>定期体检
+                    	    </td>
+                  	    </tr>
 					    </table></td>
 					    <td width="439" colspan="4" align="left" valign="top"><table width="400" border="0" cellspacing="0" cellpadding="0">
 					      <tr>
@@ -94,16 +130,16 @@
 					        
 					        <table width="400" border="0" cellspacing="0" cellpadding="0">
 					          <tr>
-					            <td  width="15%" height="40" align="left" valign="middle"><input type="button" name="button" id="button" value="浏 览" /></td>
-					            <td width="23%" align="left" valign="middle">未选择图片。</td>
-					            <td width="62%" align="left" valign="middle"><input type="button" name="button2" id="button2" value="上 传" /></td>
+					            <td  width="15%" height="40" align="left" valign="middle"><input type="file" name="logo" id="logo" value="浏 览" /></td>
+					            <td width="23%" align="left" valign="middle"></td>
+					            <td width="62%" align="left" valign="middle"></td>
 					            </tr>
 					          </table>
 					          
 					          </td>
 					        </tr>
 					      <tr>
-					        <td><font color="#CCCCCC">请上传宽度为100px,高度为50px,格式：jpg,gif, 大小&lt;500kb的图片</font></td>
+					        <td><font color="#CCCCCC">请上传宽度为100px,高度为50px,格式：jpg,gif, 大小&lt;500kb的图片LOGO</font></td>
 					        </tr>
 					      </table></td>
 					  </tr>
@@ -112,8 +148,8 @@
 
                 </div>
           </div>
-         <div class="pxshijl">
-               	  <h5>上传企业营业执照</h5>
+        <!-- <div class="pxshijl">
+         <h5>上传企业营业执照</h5>
                     <div class="pxshijl_box">
                     	
 <table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -142,7 +178,7 @@
 </table>
 
             </div>
-          </div>
+          </div>-->
           <div class="pxshijl">
                	  <h5>上传企业照片</h5>
                     <div class="pxshijl_box">
@@ -156,9 +192,9 @@
     <td><table width="500" border="0" cellspacing="0" cellpadding="0">
       <tr>
        
-        <td width="50" align="left" valign="middle"><input type="button" name="button3" id="button3" value="浏览" /></td>
-        <td width="80" align="left" valign="middle">未选择图片。</td>
-        <td width="80" align="left" valign="middle"><input type="button" name="button4" id="button4" value="上传照片" /></td>
+        <td width="50" align="left" valign="middle"><input type="file" name="environmentURL1" id="environmentURL1" value="浏览" /></td>
+        <td width="80" align="left" valign="middle"><input type="file" name="environmentURL2" id="environmentURL2" value="浏览" /></td>
+        <td width="80" align="left" valign="middle"></td>
         <td width="190" align="left" valign="middle">&nbsp;</td>
       </tr>
     </table></td>
