@@ -85,14 +85,14 @@
 		    </table></td>
     <td width="439" colspan="4" align="left" valign="top"><table width="400" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/zw.jpg" /></td>
+        <td><img id="autobot.userCenter.headLogo" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/zw.jpg" style="width:40px;height:40px;" /></td>
         </tr>
       <tr>
         <td>
         
         <table width="400" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td  width="15%" height="40" align="left" valign="middle"><input type="file" name="autobot.userCenter.headLogo" id="button" value="浏 览" onchange="readFile()"/></td>
+            <td  width="15%" height="40" align="left" valign="middle"><input type="file" name="headLogo" id="headLogo" value="浏 览" onChange="selectImage(this)"/></td>
             <td width="23%" align="left" valign="middle"></td>
             <td width="62%" align="left" valign="middle"></td>
             </tr>
@@ -191,10 +191,16 @@
                     	    </td>
                     	    
                   	    </tr>
+                  	    
                   	    <tr>
                   	     <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>工作照：</td>
-                  	     <td colspan="3" align="left" valign="middle"><input type="file" name="workPhotoURL1" id="workPhotoURL1" value="浏览" /><input type="file" name="workPhotoURL2" id="workPhotoURL1" value="浏览" /></td>
+                  	     <td colspan="3" align="left" valign="middle">
+                  	     <img id="autobot.workPhotoURL1" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/zw.jpg" style="width:40px;height:40px;" />
+                  	     <input type="file" name="workPhotoURL1" id="workPhotoURL1" value="浏览" onChange="selectImage(this)"/>
+                  	     <img id="autobot.workPhotoURL2" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/zw.jpg" style="width:40px;height:40px;" />
+                  	     <input type="file" name="workPhotoURL2" id="workPhotoURL2" value="浏览" onChange="selectImage(this)"/></td>
                   	  	</tr>
+                  	  	
                   	  </table>
                 </div>
                 </div>
@@ -204,15 +210,15 @@
                     <div class="pxshijl_box">
                     	<table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
   
-     <tr>
-    <td height="40" colspan="4" align="left" valign="middle"><table width="90%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="11%"><font color="#ff0000">*</font>所获认证：</td>
-    <td width="89%"><textarea style="width:600px;" name="autobot.authHistroy" id="autobot.authHistroy" cols="45" rows="5"><#if autobot?? && autobot.authHistroy??> ${autobot.authHistroy!}<#else>请输入所获认证</#if></textarea></td>
-  </tr>
-</table></td>
-    </tr>
-</table>
+		     <tr>
+		    <td height="40" colspan="4" align="left" valign="middle"><table width="90%" border="0" cellspacing="0" cellpadding="0">
+		  <tr>
+		    <td width="11%"><font color="#ff0000">*</font>所获认证：</td>
+		    <td width="89%"><textarea style="width:600px;" name="autobot.authHistroy" id="autobot.authHistroy" cols="45" rows="5"><#if autobot?? && autobot.authHistroy??> ${autobot.authHistroy!}<#else>请输入所获认证</#if></textarea></td>
+		  </tr>
+		</table></td>
+		    </tr>
+		</table>
 
 
                 </div>
@@ -282,9 +288,12 @@ function submitdata(){
 	if(!checkform()){
 		return;
 	}
-
+	
 	var url  = "/backend/autobotCompleteResume/save";
 	var data = $("#form1").serialize();
+	//var autobot.userCenter.headLogo.data= document.getElementById('autobot.userCenter.headLogo').src;
+	//var autobot.userCenter.headLogo.imgPath =this._getFilePath(data.substring(data.indexOf("/") + 1, data.indexOf(";")), 0);
+	alert(autobot.userCenter.headLogo.data);
 	$.ajax({
 			 type: "POST",
 		     url: url,
@@ -330,18 +339,33 @@ function selectCities(){
 	});
 }
 
-function readFile(){ 
-    var file = this.files[0]; 
-    if(!/image\/\w+/.test(file.type)){ 
-        alert("文件必须为图片！"); 
-        return false; 
-    } 
-    var reader = new FileReader(); 
-    reader.readAsDataURL(file); 
-    reader.onload = function(e){ 
-        result.innerHTML = '<img src="'+this.result+'" alt=""/>' 
-    } 
-} 
+
+ var image = '';
+ function selectImage(file){
+	 if(!file.files || !file.files[0]){
+		return;
+	}
+	
+	 var reader = new FileReader();
+	 reader.onload = function(evt){
+	 if(file.name=='headLogo'){
+		 document.getElementById('autobot.userCenter.headLogo').src = evt.target.result;
+	 }
+	 if(file.name=='workPhotoURL1'){
+	 	document.getElementById('autobot.workPhotoURL1').src = evt.target.result;
+	 }
+	 if(file.name=='workPhotoURL2'){
+		document.getElementById('autobot.workPhotoURL2').src = evt.target.result;
+	 }
+	 image = evt.target.result;
+	}
+	reader.readAsDataURL(file.files[0]);
+}
+
+function _getFilePath(){
+    var timestamp=new Date().getTime();
+    return ("autobot/upload/" + timestamp + "." + type);
+}
 </script>
 
 <!-- main结束 -->

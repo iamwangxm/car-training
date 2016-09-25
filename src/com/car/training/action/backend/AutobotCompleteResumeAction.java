@@ -114,6 +114,7 @@ public class AutobotCompleteResumeAction extends BaseAction {
 	@JsonConfig(root = "data")
 	public String save() throws Exception{
 		if(autobot != null){
+			
 			autobotsService.save(autobot);
 		}
 		Map<String,Object> map = new HashMap<>();
