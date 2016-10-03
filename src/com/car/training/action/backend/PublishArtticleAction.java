@@ -8,7 +8,7 @@ import com.car.training.domain.TrainerEssay;
 import com.car.training.service.TrainerEssayService;
 
 @AutoConfig
-public class PublishedArtticleAction extends BaseAction {
+public class PublishArtticleAction extends BaseAction {
 
 	private static final long serialVersionUID = 4839883380537115435L;
 
