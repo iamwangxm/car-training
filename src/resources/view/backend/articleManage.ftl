@@ -37,7 +37,7 @@
                       
                       <#if trainerEssayList.result?size gt 0>
                       <#list trainerEssayList.result as t>
-                      <#if t?? && t.jobs??>
+                      <#if t?? && t.title??>
                       <tr>
                         <td  height="40" align="center" valign="middle" bgcolor="#ffffff"><input type="checkbox" name="checkbox" id="checkbox" /></td>
                         <td  align="center" valign="middle" bgcolor="#ffffff" class="sq">${t_index + 1}</td>

@@ -5,7 +5,7 @@
 
 <title>汽车培聘网</title>
 <link rel="stylesheet" href="<@url value='/assets/website/backend/css/style.css'/>" type="text/css" media="screen" />
-<script src="<@url value="/assets/website/js/jquery-1.8.0.min.js?v=1.1.0"/>"></script>
+<script src="<@url value='/assets/website/js/jquery-1.8.0.min.js'/>" ></script>
 </head>
 
 <body>
@@ -26,14 +26,15 @@
         
         <div class="pxshi_gl_r right">
         
-        <form id="form1">
+        <form action=""  id="form1">
+        <input type="hidden" name="trainer.id" id="trainer.id" value="<#if trainer??>${trainer.id!}</#if>"/>
        	  <div class="pxshijl">
                	  <h5>发布文章</h5>
                     <div class="pxshijl_box">
                    	 <table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
 			  <tr>
 			    <td width="79" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 标题：</td>
-			    <td width="721"><input type="text" name="traineEssay.title" id="trainerEssay.title" style="width:500px;"/></td>
+			    <td width="721"><input type="text" name="trainerEssay.title" id="trainerEssay.title" style="width:500px;"/></td>
 			  </tr>
 			
 			  <tr>
@@ -47,7 +48,7 @@
           <div class="tj">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <td height="60" align="center" valign="middle"><input type="image" name="imageField" onClick="javascript:submitdata();" id="imageField" src="http://obu3flkwk.bkt.clouddn.com/backend/images/fb.jpg" /></td>
+                    <td height="60" align="center" valign="middle"><img onclick="submitdata()"  src="http://obu3flkwk.bkt.clouddn.com/backend/images/fb.jpg" /></td>
                   </tr>
             </table>
           </div>
@@ -62,7 +63,11 @@
 </div>
 
 <script>
-function checkform(){
+function submitdata(){
+	var form_data = {};
+	var url  = "/backend/publishArticle/save";
+
+	var tid = $("[name='trainer.id']").val();
 	var title = $("[name='trainerEssay.title']").val();
 	var content = $("[name='trainerEssay.content']").val();
 	
@@ -70,25 +75,11 @@ function checkform(){
 		alert("带*的为必填字段 ");
 		return false;
 	}
-	if(title == "" || title == ""){
+	if(title == "" || content == ""){
 		alert("带*的为必填字段 ");
 		return false;
 	}
-	
-	return true;
-}
-
-function submitdata(){
-
-	if(!checkform()){
-		return;
-	}
-
-	var url  = "/backend/publishArticle/save";
-	var form_data = {};
-	var title = $("[name='trainerEssay.title']").val();
-	var content = $("[name='trainerEssay.content']").val();
-	
+	form_data.id = tid;
 	form_data.title = title;
 	form_data.content = content;
 	
@@ -97,17 +88,25 @@ function submitdata(){
 		     url: url,
 		     data: form_data,
 		     error: function(request) {
-	             alert("网络出错啦！");
+	             showErrMsg("网络出错啦！");
 	             return false;
 	         },
 		     success: function (data) {
-		    	alert(data.msg);
-	    	 	if(data.code==200){
-    	 			window.location.href = "/backend/articleManage;
-	    	 	}
+		    	 if(data.code==200){
+					 showErrMsg("添加成功！");
+					 window.location.href = "/backend/articleManage";
+		    	 }else if(data.code==400){
+		    	 	 showErrMsg(data.msg);
+		    	 	 return false;
+		    	 }else{
+		    	 	 return false;
+		    	 }
 		     }
-	});
+		});
 }
+function showErrMsg(errMsg){
+    	alert(errMsg);
+ }
 </script>
 
 <!-- main结束 -->

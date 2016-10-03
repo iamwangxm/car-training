@@ -8,8 +8,11 @@ import org.ironrhino.core.model.ResultPage;
 import org.ironrhino.core.struts.BaseAction;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.car.training.domain.Trainer;
 import com.car.training.domain.TrainerEssay;
+import com.car.training.domain.UserCenter;
 import com.car.training.service.TrainerEssayService;
+import com.car.training.service.TrainerService;
 
 @AutoConfig
 public class ArticleManageAction extends BaseAction {
@@ -18,6 +21,8 @@ public class ArticleManageAction extends BaseAction {
 
 	@Autowired
 	private TrainerEssayService trainerEssayService;
+	@Autowired
+	private TrainerService trainerService;
 	/**文章列表 */
 	private ResultPage<TrainerEssay> trainerEssayList;
 	/**文章 */
@@ -29,7 +34,15 @@ public class ArticleManageAction extends BaseAction {
 
 	@Override
 	public String execute() throws Exception {
-		trainerEssayList = trainerEssayService.findPageByTrainerEssay(new TrainerEssay(), pageSize, pageNo);
+		HttpServletRequest request = ServletActionContext.getRequest();
+		UserCenter uc = new UserCenter();
+		uc = (UserCenter) request.getSession().getAttribute("userDetails");
+		Trainer trainer = null;
+		if (uc != null) {
+			trainer = trainerService.findByUserCenter(uc.getId());
+		}
+		trainerEssay.setTrainer(trainer);
+		trainerEssayList = trainerEssayService.findPageByTrainerEssay(trainerEssay, pageSize, pageNo);
 		return SUCCESS;
 	}
 	

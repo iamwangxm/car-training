@@ -44,13 +44,16 @@ public class TrainerEssayManagerImpl extends BaseManagerImpl<TrainerEssay> imple
 
 	@Override
 	@Transactional(readOnly=true)
-	public ResultPage<TrainerEssay> findPageByTrainerEssay(TrainerEssay autobotsComment, Integer pageSize, Integer pageNo) {
+	public ResultPage<TrainerEssay> findPageByTrainerEssay(TrainerEssay trainerEssay, Integer pageSize, Integer pageNo) {
 		ResultPage<TrainerEssay> resultPage = new ResultPage<TrainerEssay>();
-		if (autobotsComment == null)
+		if (trainerEssay == null)
 			return null;
 		DetachedCriteria dc = detachedCriteria();
+		if (trainerEssay.getTrainer() != null && StringUtils.isNotBlank(trainerEssay.getTrainer().getId())) {
+			dc.createAlias("trainer", "t").add(Restrictions.eq("t.id", trainerEssay.getTrainer().getId()));
+		}
 		dc.add(Restrictions.eq("enabled", true));
-		dc.addOrder(Order.desc("createDate"));
+		dc.addOrder(Order.desc("publishDate"));
 		resultPage.setCriteria(dc);
 		
 		pageSize = ((pageSize == null || pageSize <= 0) ? ResultPage.DEFAULT_PAGE_SIZE : pageSize);
