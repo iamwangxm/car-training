@@ -83,7 +83,7 @@
 			    </table></td>
 			    <td width="439" colspan="4" align="left" valign="top"><table width="400" border="0" cellspacing="0" cellpadding="0">
 			      <tr>
-			        <td><img src="http://obu3flkwk.bkt.clouddn.com/backend/images/zw.jpg" /></td>
+			        <td><img id="trainer.userCenter.headLogo" src="http://obu3flkwk.bkt.clouddn.com/backend/images/zw.jpg" style="width:50px;height:50px;"/></td>
 			        </tr>
 			      <tr>
 			        <td>
@@ -91,7 +91,7 @@
 			        
 				        <table width="400" border="0" cellspacing="0" cellpadding="0">
 				          <tr>
-				            <td  width="15%" height="40" align="left" valign="middle"><input type="file" name="trainer.userCenter.headLogo" id="trainer.userCenter.headLogo" value="浏 览" /></td>
+				            <td  width="15%" height="40" align="left" valign="middle"><input type="file" name="headLogo" id="headLogo" value="浏 览" onClick="javascript:selectImage(this);"/></td>
 				            <td width="23%" align="left" valign="middle"></td>
 				            <td width="62%" align="left" valign="middle"></td>
 				            </tr>
@@ -201,14 +201,14 @@
     	     			<tr>
                     	    <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>擅长领域：</td>
                     	    <td colspan="3">
-                    	   	<input type="checkbox" name="trainer.positionType" id="autobot.positionType" value="销售"/>销售
-                    	   	<input type="checkbox" name="trainer.positionType" id="autobot.positionType" value="售后"/>售后
-                    	   	<input type="checkbox" name="trainer.positionType" id="autobot.positionType" value="客服"/>客服
-                	   		<input type="checkbox" name="trainer.positionType" id="autobot.positionType" value="市场"/>市场
-                    	   	<input type="checkbox" name="trainer.positionType" id="autobot.positionType" value="管理"/>管理
-                    	   	<input type="checkbox" name="trainer.positionType" id="autobot.positionType" value="内训"/>内训
-                    	   	<input type="checkbox" name="trainer.positionType" id="autobot.positionType" value="生产研发"/>生产研发
-                    	   	<input type="checkbox" name="trainer.positionType" id="autobot.positionType" value="行政"/>行政
+                    	   	<input type="checkBox" name="trainer.businessCategory" id="autobot.businessCategory" value="销售"/>销售
+                    	   	<input type="checkBox" name="trainer.businessCategory" id="autobot.businessCategory" value="售后"/>售后
+                    	   	<input type="checkBox" name="trainer.businessCategory" id="autobot.businessCategory" value="客服"/>客服
+                	   		<input type="checkBox" name="trainer.businessCategory" id="autobot.businessCategory" value="市场"/>市场
+                    	   	<input type="checkBox" name="trainer.businessCategory" id="autobot.businessCategory" value="管理"/>管理
+                    	   	<input type="checkBox" name="trainer.businessCategory" id="autobot.businessCategory" value="内训"/>内训
+                    	   	<input type="checkBox" name="trainer.businessCategory" id="autobot.businessCategory" value="生产研发"/>生产研发
+                    	   	<input type="checkBox" name="trainer.businessCategory" id="autobot.businessCategory" value="行政"/>行政
                     	    </td>
                     	    
                   	    </tr>
@@ -258,7 +258,7 @@
     <td height="40" colspan="4" align="left" valign="middle"><table width="90%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="11%"><font color="#ff0000">*</font>培训师简介：</td>
-    <td width="89%"><textarea style="width:600px;" name="trainer.userCenter.intro" id="intro" cols="45" rows="5"><#if trainer?? && trainer.userCenter?? && trainer.userCenter.intro??> ${trainer.userCenter.intro!} <#else>请输入个人简介</#if></textarea></td>
+    <td width="89%"><textarea style="width:600px;" name="trainer.userCenter.intro" id="trainer.userCenter.intro" cols="45" rows="5"><#if trainer?? && trainer.userCenter?? && trainer.userCenter.intro??> ${trainer.userCenter.intro!} <#else>请输入个人简介</#if></textarea></td>
   </tr>
 </table></td>
     </tr>
@@ -331,13 +331,49 @@ function submitdata(){
 	if(!checkform()){
 		return;
 	}
-
+	var form_data = {};
 	var url  = "/backend/trainerCompleteResume/save";
-	var data = $("#form1").serialize();
+
+	var uheadLogo = document.getElementById('trainer.userCenter.headLogo').src;
+	var upersonalType = $("[name='trainer.userCenter.personalType']").val();
+	var tid = $("[name='trainer.id']").val();
+	var uid = $("[name='trainer.userCenter.id']").val();
+	var uname = $("[name='trainer.userCenter.name']").val();
+	var ubirthday = $("[name='trainer.userCenter.birthday']").val();
+	var uemail = $("[name='trainer.userCenter.email']").val();
+	var uregionId = $("[name='city']").val();
+	var umarryStatus = $("[name='trainer.userCenter.marryStatus']").val();
+	var umobile = $("input[name='trainer.userCenter.mobile']").val();
+	var autoYears = $("[name='trainer.autoYears']").val();
+	var education = $("[name='trainer.education']").val();
+	var intro = $("[name='trainer.userCenter.intro']").val();
+	var mainCourse = $("[name='trainer.mainCourse']").val();
+	var businessCategory = $("[name='trainer.businessCategory']").val();
+	var vedioURL1 = $("[name='trainer.vedioURL1']").val();
+	var vedioURL2 = $("[name='trainer.vedioURL2']").val();
+	
+	form_data.tid = tid;
+	form_data.uid = uid;
+	form_data.uname = uname;
+	form_data.uheadLogo= uheadLogo;
+	form_data.ubirthday = ubirthday;
+	form_data.umarryStatus = umarryStatus;
+	form_data.education = education;
+	form_data.umobile = umobile;
+	form_data.uemail= uemail;
+	form_data.uregionId=uregionId;
+	form_data.autoYears =autoYears;
+	form_data.mainCourse =mainCourse;
+	form_data.intro =intro;
+	form_data.upersonalType = upersonalType;
+	form_data.vedioURL1 = vedioURL1;
+	form_data.vedioURL2 = vedioURL2;
+	form_data.businessCategory = businessCategory;
+	
 	$.ajax({
 			 type: "POST",
 		     url: url,
-		     data: data,
+		     data: form_data,
 		     error: function(request) {
 	             alert("网络出错啦！");
 	             return false;
@@ -378,6 +414,23 @@ function selectCities(){
 	    	 }
 	     }
 	});
+}
+
+var image = '';
+ function selectImage(file){
+	 if(!file.files || !file.files[0]){
+		return;
+	}
+	
+	 var reader = new FileReader();
+	 reader.onload = function(evt){
+	 if(file.name=='headLogo'){
+		 document.getElementById('trainer.userCenter.headLogo').src = evt.target.result;
+	 }
+	 
+	 image = evt.target.result;
+	}
+	reader.readAsDataURL(file.files[0]);
 }
 </script>
 

@@ -27,6 +27,10 @@ public class TrainerServiceImpl  implements TrainerService{
 	public void save(Trainer trainer) {
 		com.car.training.model.Trainer target = new com.car.training.model.Trainer();
 		BeanUtils.copyProperties(trainer, target);
+		if(trainer.getUserCenter()!=null){
+			com.car.training.model.UserCenter uc = new com.car.training.model.UserCenter();
+			BeanUtils.copyProperties(trainer.getUserCenter(), uc);
+		}
 		trainerManager.save(target);
 	}
 

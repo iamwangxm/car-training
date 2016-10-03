@@ -5,7 +5,7 @@
         <div class="nav_box left">
         	<div class="nav">
             	<ul class="menu">
-				<li ><a href='<@url value='/website/index' />'>首页</a></li>
+				<li><a href='<@url value='/website/index' />'>首页</a></li>
                 <li><a href='<@url value='/website/trainer' />'>培训师</a></li>
                 <li><a href='<@url value='/website/recruit/?companyType=COMPANY' />'>培训需求</a></li>
                 <li ><a href='<@url value='/website/autobot' />'>汽车人</a></li>
@@ -21,7 +21,7 @@
         <div class="dl_top right"> 
         <#if '{}' != '${session}' && Session["loginState"]=='Y' >
      	 <li style="background:none;"><#if '{}' != '${session}' && Session["loginState"]=='Y' && (Session["loginType"]=='TRAINER'||Session["loginType"]=='AUTOBOT') > <a href='<@url value='/backend/applyJobHistory'/>' ><#else> <a href='<@url value='/backend/companyJobManage'/>'> </#if>我的管理</a></li>
-     	 <li ><a href="#" onclick="javascript:logout();">退出</a></li>
+     	 <li><a href="#" onclick="javascript:logout();">退出</a></li>
         <#else> 
         	<ul>
             	<li style="background:none;"><a href='<@url value='/backend/login'/>'>请登录</a></li>
