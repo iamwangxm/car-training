@@ -162,7 +162,7 @@ public class AutobotCompleteResumeAction extends BaseAction {
 				}
 			}
 			autobot.setCurrentWorkStatus(currentWorkStatus);
-			Common com = new Common();
+
 			/*if (StringUtils.isNotBlank(uheadLogo) && !uheadLogo.startsWith("http")) {
 				String headLogo = com.uploadFile(uheadLogo);
 				uc.setHeadLogo(headLogo);

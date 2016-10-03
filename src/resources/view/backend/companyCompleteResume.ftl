@@ -49,7 +49,7 @@
 					      <tr>
                     	    <td width="125" align="right" valign="middle"><font color="#ff0000">*</font>企业规模：</td>
                     	    <td width="337">
-                    	    <select name="company.scale" id="scale">
+                    	    <select name="company.scale" id="company.scale">
                     	    <option value="">请选择</option>
                     	    <#if company?? && company.scale?? && company.scale.name() = 'UNDER50'>
 							<option selected="selected" value="UNDER50">50人以下</option>
@@ -87,12 +87,22 @@
                   	     <tr>
                     	    <td width="125" align="right" valign="middle"><font color="#ff0000">*</font>经营范围：</td>
                     	    <td width="337">
-                    	    <select name="company.industry" id="industry">
+                    	    <select name="company.industry" id="company.industry">
                     	    <option value="">请选择</option>
                     	    <#if company?? && company.industry?? && company.industry.name() = 'AUTO'>
 							<option selected="selected" value="AUTO">汽车</option>
 							<#else>
-							<option value="AUTO">50人以下</option>
+							<option value="AUTO">汽车</option>
+							</#if>
+							<#if company?? && company.industry?? && company.industry.name() = ''>
+							<option selected="selected" value="TRAINING">培训</option>
+							<#else>
+							<option value="TRAINING">培训</option>
+							</#if>
+							<#if company?? && company.industry?? && company.industry.name() = ''>
+							<option selected="selected" value="SELL">销售</option>
+							<#else>
+							<option value="SELL">培训</option>
 							</#if>
                             </select>
                     	    </td>
@@ -131,28 +141,27 @@
                   	    <tr>
                     	    <td width="125" align="right" valign="middle"><font color="#ff0000">*</font>公司福利：</td>
                     	    <td colspan="3">
-                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="五险一金"/>五险一金
-                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="工作餐"/>工作餐
-                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="免费班车"/>免费班车
-                	   		<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="股票期权"/>股票期权
-                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="带薪休假"/>带薪休假
-                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="年底双薪"/>年底双薪
-                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="绩效奖金研发"/>绩效奖金
-                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="定期体检"/>定期体检
+                    	   	<input type="checkBox" name="company.welfare" id="company.welfare" value="五险一金"/>五险一金
+                    	   	<input type="checkBox" name="company.welfare" id="company.welfare" value="工作餐"/>工作餐
+                    	   	<input type="checkBox" name="company.welfare" id="company.welfare" value="免费班车"/>免费班车
+                	   		<input type="checkBox" name="company.welfare" id="company.welfare" value="股票期权"/>股票期权
+                    	   	<input type="checkBox" name="company.welfare" id="company.welfare" value="带薪休假"/>带薪休假
+                    	   	<input type="checkBox" name="company.welfare" id="company.welfare" value="年底双薪"/>年底双薪
+                    	   	<input type="checkBox" name="company.welfare" id="company.welfare" value="绩效奖金研发"/>绩效奖金
+                    	   	<input type="checkBox" name="company.welfare" id="company.welfare" value="定期体检"/>定期体检
                     	    </td>
                     	   
                   	    </tr>
 					    </table></td>
 					    <td width="439" colspan="4" align="left" valign="top"><table width="400" border="0" cellspacing="0" cellpadding="0">
 					      <tr>
-					        <td><img src="http://obu3flkwk.bkt.clouddn.com/backend/images/zw.jpg" /></td>
+					        <td><img id="company.logo"  src="http://obu3flkwk.bkt.clouddn.com/backend/images/zw.jpg" style="width:40px;height:40px;" />
 					        </tr>
 					      <tr>
 					        <td>
-					        
 					        <table width="400" border="0" cellspacing="0" cellpadding="0">
 					          <tr>
-					            <td  width="15%" height="40" align="left" valign="middle"><input type="file" name="logo" id="logo" value="浏 览" /></td>
+					            <td  width="15%" height="40" align="left" valign="middle"><input type="file" name="logo" id="logo" value="浏 览" selectImage(this)/></td>
 					            <td width="23%" align="left" valign="middle"></td>
 					            <td width="62%" align="left" valign="middle"></td>
 					            </tr>
@@ -214,8 +223,12 @@
     <td><table width="500" border="0" cellspacing="0" cellpadding="0">
       <tr>
        
-        <td width="50" align="left" valign="middle"><input type="file" name="environmentURL1" id="environmentURL1" value="浏览" /></td>
-        <td width="80" align="left" valign="middle"><input type="file" name="environmentURL2" id="environmentURL2" value="浏览" /></td>
+        <td width="50" align="left" valign="middle"> 
+        <img id="company.environmentURL1" src="http://obu3flkwk.bkt.clouddn.com/backend/images/zw.jpg" style="width:40px;height:40px;" />
+        <input type="file" name="environmentURL1" id="environmentURL1" value="浏览" selectImage(this)/></td>
+        <td width="80" align="left" valign="middle">
+        <img id="company.environmentURL2" src="http://obu3flkwk.bkt.clouddn.com/backend/images/zw.jpg" style="width:40px;height:40px;" />
+        <input type="file" name="environmentURL2" id="environmentURL2" value="浏览" selectImage(this)/></td>
         <td width="80" align="left" valign="middle"></td>
         <td width="190" align="left" valign="middle">&nbsp;</td>
       </tr>
@@ -226,8 +239,8 @@
   </tr>
 </table>
 
-            </div>
-          </div>
+    </div>
+  </div>
          
           <div class="pxshijl">
                	  <h5>企业介绍</h5>
@@ -290,11 +303,36 @@ function submitdata(){
 	}
 
 	var url  = "/backend/companyCompleteResume/save";
-	var data = $("#form1").serialize();
+	var form_data = {};
+	var logo = document.getElementById('company.logo').src;
+	var name = $("[name='company.name']").val();
+	var cid = $("[name='company.id']").val();
+	var scale = $("[name='company.scale']").val();
+	var industry = $("[name='company.industry']").val();
+	var address = $("[name='company.address']").val();
+	var welfare = $("[name='company.welfare']").val();
+	var regionId = $("[name='city']").val();
+	var intro = $("[name='company.intro']").val();
+	var environmentURL1 = document.getElementById('company.environmentURL1').src;
+	var environmentURL2 = document.getElementById('company.environmentURL2').src;
+	
+	form_data.aid = aid;
+	form_data.cid = cid;
+	form_data.name = name;
+	form_data.logo= logo;
+	form_data.industry = industry;
+	form_data.address = address;
+	form_data.welfare = welfare;
+	form_data.regionId=regionId;
+	form_data.scale =scale;
+	form_data.intro = intro;
+	form_data.environmentURL1 = environmentURL1;
+	form_data.environmentURL2 = environmentURL2;
+	
 	$.ajax({
 			 type: "POST",
 		     url: url,
-		     data: data,
+		     data: form_data,
 		     error: function(request) {
 	             alert("网络出错啦！");
 	             return false;
@@ -336,6 +374,27 @@ function selectCities(){
 	});
 }
 
+var image = '';
+ function selectImage(file){
+	 if(!file.files || !file.files[0]){
+		return;
+	}
+	
+	 var reader = new FileReader();
+	 reader.onload = function(evt){
+	 if(file.name=='logo'){
+		 document.getElementById('company.logo').src = evt.target.result;
+	 }
+	 if(file.name=='environmentURL1'){
+	 	document.getElementById('company.environmentURL1').src = evt.target.result;
+	 }
+	 if(file.name=='environmentURL2'){
+		document.getElementById('company.environmentURL2').src = evt.target.result;
+	 }
+	 image = evt.target.result;
+	}
+	reader.readAsDataURL(file.files[0]);
+}
 </script>
 
 <!-- main结束 -->

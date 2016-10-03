@@ -1,9 +1,16 @@
  package com.car.training.action.backend;
 
- import java.util.HashMap;
+ import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.struts2.ServletActionContext;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
@@ -14,7 +21,10 @@ import org.ironrhino.core.service.EntityManager;
 import org.ironrhino.core.struts.BaseAction;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.car.training.domain.Company;
 import com.car.training.domain.Jobs;
+import com.car.training.enums.JobType;
+import com.car.training.service.CompanyService;
 import com.car.training.service.JobsService;
 
 @AutoConfig
@@ -26,6 +36,8 @@ public class PublishJobAction extends BaseAction {
 	private JobsService jobsService;
 	@Autowired
 	private transient EntityManager<Region> entityManager;
+	@Autowired
+	private CompanyService companyService;
 	
 	/** 职位 */
 	private Jobs  job;
@@ -37,6 +49,15 @@ private List<Region> provinces;
 	private Object data;
 	
 	private Long parentId;
+	
+	private String jobType = "";
+	private String name = "";
+	private String workExprience = "";
+	private String salary = "";
+	private String languages = "";
+	private String welfare = "";
+	private String regionId = "";
+	private String description = "";
 	
 	@Override
 	public String execute() throws Exception {
@@ -71,9 +92,48 @@ private List<Region> provinces;
 	}
 	@JsonConfig(root = "data")
 	public String save() throws Exception{
-		if(job != null){
-			jobsService.save(job);
+		HttpServletRequest request = ServletActionContext.getRequest();
+		Company company = new Company();
+		company = (Company) request.getSession().getAttribute("userDetails");
+		if (company != null) {
+			company = companyService.findById(company.getId());
 		}
+		Jobs job = new Jobs();
+		job.setCompany(company);
+		job.setCompanyType(company.getCompanyType());
+		job.setCreateDate(new Date());
+		job.setCreateUser(company.getUsername());
+		job.setEnabled(true);
+		job.setJobDescription(description);
+		job.setJobType(Enum.valueOf(JobType.class,jobType));
+		job.setName(name);
+		job.setWorkExprience(new Integer(workExprience));
+		if (StringUtils.isNotBlank(languages)) {
+			Set<String> setStr = new HashSet<String>();
+			String[] arr = languages.split(",");
+			if (arr != null && arr.length > 0) {
+				for (String s : arr) {
+					setStr.add(s);
+				}
+				job.setLanguages(setStr);
+			}
+		}
+		if (StringUtils.isNotBlank(welfare)) {
+			Set<String> setStr = new HashSet<String>();
+			String[] arr = welfare.split(",");
+			if (arr != null && arr.length > 0) {
+				for (String s : arr) {
+					setStr.add(s);
+				}
+				job.setLanguages(setStr);
+			}
+		}
+		job.setPublishDate(new Date());
+		Region region = new Region();
+		region.setId(Long.valueOf(regionId));
+		company.setRegion(region);
+		job.setSalary(salary);
+		jobsService.save(job);
 		Map<String,Object> map = new HashMap<>();
 		map.put("code", "200");
 		map.put("msg", "保存成功");
@@ -126,6 +186,70 @@ private List<Region> provinces;
 
 	public void setParentId(Long parentId) {
 		this.parentId = parentId;
+	}
+
+	public String getJobType() {
+		return jobType;
+	}
+
+	public void setJobType(String jobType) {
+		this.jobType = jobType;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getWorkExprience() {
+		return workExprience;
+	}
+
+	public void setWorkExprience(String workExprience) {
+		this.workExprience = workExprience;
+	}
+
+	public String getSalary() {
+		return salary;
+	}
+
+	public void setSalary(String salary) {
+		this.salary = salary;
+	}
+
+	public String getLanguages() {
+		return languages;
+	}
+
+	public void setLanguages(String languages) {
+		this.languages = languages;
+	}
+
+	public String getWelfare() {
+		return welfare;
+	}
+
+	public void setWelfare(String welfare) {
+		this.welfare = welfare;
+	}
+
+	public String getRegionId() {
+		return regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 }

@@ -26,7 +26,7 @@
         
         <div class="pxshi_gl_r right">
         
-        <form id="form1" method="post" action="/backend/publishedJob"  onSubmit="return checkform()">
+        <form id="form1"  >
         
        	  <div class="pxshijl">
                	  <h5>职位描述</h5>
@@ -48,7 +48,7 @@
 			  <tr>
 			    <td width="79" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 要求年限：</td>
 			    <td width="721">
-			    <select name="autobot.autoYears" id="autobot.autoYears">
+			    <select name="job.workExprience" id="job.workExprience">
 	        	    <option value="">请选择</option>
 					<#list 1..20 as t>
 					<option value="${t}">${t}</option>
@@ -65,11 +65,11 @@
 			   <tr>
 			    <td width="79" height="40" align="right" valign="middle"><font color="#ff0000">*</font>语言要求：</td>
 			    <td width="721">
-			   	<input type="checkbox" name="job.languages" id="job.languages" value="普通语"/>普通语
-	    	   	<input type="checkbox" name="job.languages" id="job.languages" value="英语"/>英语
-	    	   	<input type="checkbox" name="job.languages" id="job.languages" value="日语"/>日语
-		   		<input type="checkbox" name="job.languages" id="job.languages" value="德语"/>德语
-	    	   	<input type="checkbox" name="job.languages" id="job.languages" value="韩语"/>韩语
+			   	<input type="checkBox" name="job.languages" id="job.languages" value="普通语"/>普通语
+	    	   	<input type="checkBox" name="job.languages" id="job.languages" value="英语"/>英语
+	    	   	<input type="checkBox" name="job.languages" id="job.languages" value="日语"/>日语
+		   		<input type="checkBox" name="job.languages" id="job.languages" value="德语"/>德语
+	    	   	<input type="checkBox" name="job.languages" id="job.languages" value="韩语"/>韩语
 				</td>
 			  </tr>
 			   <tr>
@@ -111,7 +111,7 @@
           <div class="tj">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <td height="60" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://obu3flkwk.bkt.clouddn.com/backend/images/bc.jpg" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<input type="image" name="imageField" id="imageField" src="http://obu3flkwk.bkt.clouddn.com/backend/images/fb.jpg" /></td>
+                    <td height="60" align="center" valign="middle"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<input type="image" name="imageField" id="imageField" onClick="javascript:submitdata();" src="http://obu3flkwk.bkt.clouddn.com/backend/images/fb.jpg" /></td>
                   </tr>
             </table>
           </div>
@@ -143,6 +143,46 @@ function checkform(){
 	
 	return true;
 }
+
+function submitdata(){
+
+	var url  = "/backend/publishJob/save";
+	var form_data = {};
+	var jobType = $("[name='job.jobType']").val();
+	var name = $("[name='job.name']").val();
+	var workExprience = $("[name='job.workExprience']").val();
+	var salary = $("[name='job.salary']").val();
+	var languages = $("[name='job.languages']").val();
+	var welfare = $("[name='job.welfare']").val();
+	var regionId = $("[name='city']").val();
+	var description = $("[name='job.jobDescription']").val();
+	
+	form_data.jobType = jobType;
+	form_data.name = name;
+	form_data.workExprience= workExprience;
+	form_data.salary = salary;
+	form_data.languages = languages;
+	form_data.welfare = welfare;
+	form_data.regionId=regionId;
+	form_data.description =description;
+	
+	$.ajax({
+			 type: "POST",
+		     url: url,
+		     data: form_data,
+		     error: function(request) {
+	             alert("网络出错啦！");
+	             return false;
+	         },
+		     success: function (data) {
+		    	 alert(data.msg);
+		    	 	if(data.code==200){
+    	 				window.location.href = "/backend/companyJobManage;
+		    	 	}
+		     }
+	});
+}
+
 
 function selectCities(){
 	var form_data={};
