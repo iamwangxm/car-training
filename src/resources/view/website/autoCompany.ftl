@@ -181,7 +181,7 @@
 						<div class="www51buycom">
     <ul class="51buypic">
         <li><a href="#" target="_blank"><img src="${company.environmentURL1!}" /></a></li>
-       <li><a href="#" target="_blank"><img src="${company.environmentURL2}" /></a></li>
+       <li><a href="#" target="_blank"><img src="${company.environmentURL2!}" /></a></li>
     </ul>
    
     <div class="num">

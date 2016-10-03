@@ -111,7 +111,7 @@
           <div class="tj">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <td height="60" align="center" valign="middle"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<input type="image" name="imageField" id="imageField" onClick="javascript:submitdata();" src="http://obu3flkwk.bkt.clouddn.com/backend/images/fb.jpg" /></td>
+                    <td height="60" align="center" valign="middle"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<img  onClick="javascript:submitdata();" src="http://obu3flkwk.bkt.clouddn.com/backend/images/fb.jpg" /></td>
                   </tr>
             </table>
           </div>
@@ -171,16 +171,21 @@ function submitdata(){
 		     url: url,
 		     data: form_data,
 		     error: function(request) {
-	             alert("网络出错啦！");
+	             showErrMsg("网络出错啦！");
 	             return false;
 	         },
 		     success: function (data) {
-		    	 alert(data.msg);
-		    	 	if(data.code==200){
-    	 				window.location.href = "/backend/companyJobManage;
-		    	 	}
+		    	 if(data.code==200){
+					 showErrMsg("添加成功！");
+					 window.location.href = "/backend/companyJobManage";
+		    	 }else if(data.code==400){
+		    	 	 showErrMsg(data.msg);
+		    	 	 return false;
+		    	 }else{
+		    	 	 return false;
+		    	 }
 		     }
-	});
+		});
 }
 
 
@@ -208,6 +213,10 @@ function selectCities(){
 	     }
 	});
 }
+
+function showErrMsg(errMsg){
+    	alert(errMsg);
+ }
 </script>
 
 <!-- main结束 -->

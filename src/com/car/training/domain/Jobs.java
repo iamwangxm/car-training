@@ -76,6 +76,8 @@ public class Jobs implements Serializable {
 	
 	/**是否推荐**/
 	private boolean promoted;
+	
+	private Integer deliveryCount;
 
 	public String getId() {
 		return id;
@@ -266,6 +268,14 @@ public class Jobs implements Serializable {
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	}
+
+	public Integer getDeliveryCount() {
+		return deliveryCount;
+	}
+
+	public void setDeliveryCount(Integer deliveryCount) {
+		this.deliveryCount = deliveryCount;
 	}
 
 	public boolean isPromoted() {

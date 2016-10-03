@@ -30,12 +30,12 @@
                     <tbody>
                       <tr>
                         <td width="40" height="50" align="center" valign="middle" bgcolor="#f0faff"><strong>选择</strong></td>
-                        <td colspan="2" align="center" valign="middle" bgcolor="#f0faff"><strong>职位名称</strong></td>
-                        <td width="109" align="center" valign="middle" bgcolor="#f0faff"><strong>工作类型</strong></td>
+                        <td align="center" valign="middle" bgcolor="#f0faff"><strong>职位名称</strong></td>
+                        <td width="90" align="center" valign="middle" bgcolor="#f0faff"><strong>工作类型</strong></td>
                         <td width="50" align="center" valign="middle" bgcolor="#f0faff"><strong>工作性质</strong></td>
                         <td width="80" align="center" valign="middle" bgcolor="#f0faff"><strong>工作地点</strong></td>
                         <td width="66" align="center" valign="middle" bgcolor="#f0faff"><strong>发布时间</strong></td>
-                        <td width="70" align="center" valign="middle" bgcolor="#f0faff"> <strong> 操作 </strong></td>
+                        <td width="80" align="center" valign="middle" bgcolor="#f0faff"> <strong> 操作 </strong></td>
                       </tr>
                       
 					<#if jobsList.result?size gt 0>
@@ -43,13 +43,13 @@
                       <#if t??>
                       <tr>
                         <td  height="40" align="center" valign="middle" bgcolor="#ffffff"><input type="checkbox" name="checkbox" id="checkbox" /></td>
-                        <td  align="center" valign="middle" bgcolor="#ffffff" class="sq"><a href="#">${t.name!}</a></td>
-                        <td align="center" valign="middle" bgcolor="#ffffff"class="sq"><a href="#">${t.company.name!}</a></td>
+                        <td  align="center" valign="middle" bgcolor="#ffffff" class="sq"><a href="/website/jobDetail?jobs.id=${t.id!}" target="blank">${t.name!}</a></td>
+                        <!--<td align="center" valign="middle" bgcolor="#ffffff"class="sq"><a href="#">${t.company.name!}</a></td>-->
                         <td  align="center" valign="middle" bgcolor="#ffffff">销售</td>
                         <td align="center" valign="middle" bgcolor="#ffffff">${t.jobType!}</td>
-                        <td  align="center" valign="middle" bgcolor="#ffffff">${t.fullname!}</td>
+                        <td  align="center" valign="middle" bgcolor="#ffffff"><#if t?? && t.region??>${t.region.fullname!}</#if></td>
                         <td  align="center" valign="middle" bgcolor="#ffffff">${t.publishDate!?string("yyyy-MM-dd")}</td>
-                        <td align="center" valign="middle" bgcolor="#ffffff"  class="caozuo"><a href="/website/jobDetail?jobs.id=${t.id!}" target="blank">查看</a>&nbsp;&nbsp;  <a href="/backend/companyJobManage/jobDelete?jobs.id=${t.id!}">删除</a></td>
+                        <td align="center" valign="middle" bgcolor="#ffffff"  class="caozuo">已投: <a href="/website/jobDetail?jobs.id=${t.id!}" target="blank">${t.deliveryCount!} </a>&nbsp;&nbsp;  <a href="/backend/companyJobManage/jobDelete?jobs.id=${t.id!}">删除</a></td>
                       </tr>
                       </#if>
                       </#list>
