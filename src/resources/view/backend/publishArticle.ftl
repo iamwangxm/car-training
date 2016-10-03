@@ -26,7 +26,7 @@
         
         <div class="pxshi_gl_r right">
         
-        <form id="form1" method="post" action="/backend/publishedArtticle"  onSubmit="return submitdata()">
+        <form id="form1">
        	  <div class="pxshijl">
                	  <h5>发布文章</h5>
                     <div class="pxshijl_box">
@@ -47,7 +47,7 @@
           <div class="tj">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <td height="60" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://obu3flkwk.bkt.clouddn.com/backend/images/fb.jpg" /></td>
+                    <td height="60" align="center" valign="middle"><input type="image" name="imageField" onClick="javascript:submitdata();" id="imageField" src="http://obu3flkwk.bkt.clouddn.com/backend/images/fb.jpg" /></td>
                   </tr>
             </table>
           </div>
@@ -62,7 +62,6 @@
 </div>
 
 <script>
-
 function checkform(){
 	var title = $("[name='trainerEssay.title']").val();
 	var content = $("[name='trainerEssay.content']").val();
@@ -85,12 +84,18 @@ function submitdata(){
 		return;
 	}
 
-	var url  = "/backend/publishArtticle/save";
-	var data = $("#form1").serialize();
+	var url  = "/backend/publishArticle/save";
+	var form_data = {};
+	var title = $("[name='trainerEssay.title']").val();
+	var content = $("[name='trainerEssay.content']").val();
+	
+	form_data.title = title;
+	form_data.content = content;
+	
 	$.ajax({
 			 type: "POST",
 		     url: url,
-		     data: data,
+		     data: form_data,
 		     error: function(request) {
 	             alert("网络出错啦！");
 	             return false;
@@ -98,7 +103,7 @@ function submitdata(){
 		     success: function (data) {
 		    	alert(data.msg);
 	    	 	if(data.code==200){
-    	 			window.location.href = "/backend/artticleManage;
+    	 			window.location.href = "/backend/articleManage;
 	    	 	}
 		     }
 	});
