@@ -20,14 +20,21 @@ public class AutobotsServiceImpl  implements AutobotsService{
 
 	@Autowired
 	private AutobotsManager autobotsManager;
+	@Autowired
+	private UserCenterService userCenterServcie;
 
 	/** 新增汽车人信息 */
 	@Override
 	@Timing
 	@Transactional
 	public void save(Autobots autobots) {
-		com.car.training.model.Autobots target = new com.car.training.model.Autobots();
+ 		com.car.training.model.Autobots target = new com.car.training.model.Autobots();
 		BeanUtils.copyProperties(autobots, target);
+//		if(autobots.getUserCenter()!=null){
+//			com.car.training.model.UserCenter uc = new com.car.training.model.UserCenter();
+//			BeanUtils.copyProperties(autobots.getUserCenter(), uc);
+//			userCenterServcie.update(autobots.getUserCenter());
+//		}
 		autobotsManager.save(target);
 	}
 

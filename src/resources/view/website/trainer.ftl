@@ -70,8 +70,8 @@
                 <div class="sou_box">
                   <table width="590px" border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                      <td width="505px"><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/ss_bg.jpg) no-repeat left 1px; height:35px; line-height:35px;   width:501px; border:none; padding-left:4px; " type="text" name="user_login"  placeholder="请输入关键字，如销售市场" validate-title="请输入关键字，如销售市场" /></td>
-                      <td width="85px" height="35px"><input style="border:none;" type="image" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/ss.jpg" /></td>
+                      <td width="505px"><input style=" background:url(http://obu3flkwk.bkt.clouddn.com/website/images/ss_bg.jpg) no-repeat left 1px; height:35px; line-height:35px;   width:501px; border:none; padding-left:4px; " type="text" name="user_login"  placeholder="请输入关键字，如销售市场" validate-title="请输入关键字，如销售市场" /></td>
+                      <td width="85px" height="35px"><input style="border:none;" type="image" src="http://obu3flkwk.bkt.clouddn.com/website/images/ss.jpg" /></td>
                     </tr>
                   </table>
                 </div>
@@ -103,12 +103,12 @@
 					                        </div>
 					                          <div class="pxshi_zp"><a href="#">${t.currentPosition!}</a></div>
 					                        <div class="pxshi_rz">
-					                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-					                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-					                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-					                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-					                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-					                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
+					                        	<span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/hot.jpg" /></a></span>
+					                            <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/zan.jpg" /></a></span>
+					                            <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/zheng.jpg" /></a></span>
+					                            <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/xin.jpg" /></a></span>
+					                             <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/zishen.jpg" /></a></span> 
+					                              <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/dav.jpg" /></a></span>  
 					                        </div>
 					                    </div>
 				                    </#if>
@@ -129,12 +129,12 @@
 					                        </div>
 					                          <div class="pxshi_zp"><a href="#">${t.currentPosition!}</a></div>
 					                        <div class="pxshi_rz">
-					                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-					                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-					                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-					                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-					                             <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span> 
-					                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>  
+					                        	<span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/hot.jpg" /></a></span>
+					                            <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/zan.jpg" /></a></span>
+					                            <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/zheng.jpg" /></a></span>
+					                            <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/xin.jpg" /></a></span>
+					                             <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/zishen.jpg" /></a></span> 
+					                              <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/dav.jpg" /></a></span>  
 					                        </div>
 					                    </div>
 				                    </#if>

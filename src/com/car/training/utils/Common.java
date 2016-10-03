@@ -53,6 +53,36 @@ public class Common {
 		return set;
 	}
 	
+	/** 单个上传base64公用接口 */
+	public String uploadFile(String imgData) {
+		if (imgData == null ) {
+			throw RestStatus.valueOf(RestStatus.CODE_FIELD_INVALID, "参数有误");
+		}
+
+		String returnUrl ="",imgPath="";
+		// 使用BASE64对图片文件数据进行解码操作
+			if (imgData != null) {
+				try {
+					// 通过Base64解密，将图片数据解密成字节数组
+					byte[] bytes = Base64.getDecoder().decode(imgData.split(",")[1]);
+					for (int j = 0; j < bytes.length; ++j) {
+						if (bytes[j] < 0) {// 调整异常数据
+							bytes[j] += 256;
+						}
+					}
+					imgPath = String.valueOf(System.currentTimeMillis()+"."+imgData.substring(imgData.indexOf("/")+1,imgData.indexOf(";")));
+					InputStream in = new ByteArrayInputStream(bytes);
+					fileStorage.write(in, CARTRAINING_UPLOAD_FILEPATH.concat(imgPath));
+					String fileUrl = fileStorage.getFileUrl(CARTRAINING_UPLOAD_FILEPATH.concat(imgPath));
+					logger.info("上传文件青牛返回路径：" + fileUrl);
+					returnUrl = fileUrl;
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		return returnUrl ;
+	}
+	
 	/**删除图片功能**/
 	public void removeFile(String fileUrl){
 		fileStorage.delete(fileUrl.substring(fileUrl.lastIndexOf(".com")+4));

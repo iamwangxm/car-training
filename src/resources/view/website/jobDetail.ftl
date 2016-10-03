@@ -29,7 +29,7 @@
             </div>
             <div class="zhaopin_box">
             	<div class="xzdy">
-                	<div class="zwdy"><span><input style="border:none;" type="image" name="yp" id="yp" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/yp_an.jpg" /></span>面议</div>
+                	<div class="zwdy"><span><input style="border:none;" type="image" name="yp" id="yp" src="http://obu3flkwk.bkt.clouddn.com/website/images/yp_an.jpg" /></span>面议</div>
                	 	<div class="shoucang">收藏</div>
                 	<div class="gzdd">
                 	<div class="didian left"><#if jobs.region??>${jobs.region.fullname!}</#if></div>
@@ -91,7 +91,7 @@
                       <div class="qylogo_r right">
                        	<div class="danbao">已有${jobs.company.bondsmanCount!}人担保</div>
                             <div class="wydb"><a href="#">
-                              <input style="border:none;" type="image" name="db" id="db" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/danbao.jpg" />
+                              <input style="border:none;" type="image" name="db" id="db" src="http://obu3flkwk.bkt.clouddn.com/website/images/danbao.jpg" />
                             </a></div>
                       </div>
                         <div class="clear"></div>

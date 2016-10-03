@@ -24,12 +24,12 @@
     	<#if company??>
     
     	<div class="qy_top" >
-        	<div class="zpqy_logo left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zpqy_logo.jpg" /></div>
+        	<div class="zpqy_logo left"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/zpqy_logo.jpg" /></div>
             <div class="zpqy_xx right">
             	
                 <div class="zpqy_xx_box">
                	  <div class="zpqy_xx_l left">${company.name!}</div>
-                    <div class="zpqy_xx_r right"><span ><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/db.jpg" /></a></span><span >已有${bondsmanCount!}人担保</span></div>
+                    <div class="zpqy_xx_r right"><span ><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/db.jpg" /></a></span><span >已有${bondsmanCount!}人担保</span></div>
                   <div class="clear"></div>
                 </div>
                 <div class="fl_dy">
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                   	    <div class="zpgw_r right">
-                   	  	<img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/ljyp.jpg" / onclick="alert('暂未开放')">
+                   	  	<img src="http://obu3flkwk.bkt.clouddn.com/website/images/ljyp.jpg" / onclick="alert('暂未开放')">
                         
                     </div>
                     <div class="clear"></div>

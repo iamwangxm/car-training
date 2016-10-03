@@ -30,16 +30,16 @@
                 <div class="xinxi right">
                 	<div class="mingzi">
                     	<div class="mingzi_l left">${trainer.userCenter.name!}</div>
-                        <div class="mingzi_m left"><span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span>
-                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span></div>
+                        <div class="mingzi_m left"><span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/hot.jpg" /></a></span>
+                            <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/zan.jpg" /></a></span>
+                            <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/zheng.jpg" /></a></span>
+                            <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/xin.jpg" /></a></span>
+                            <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/zishen.jpg" /></a></span>
+                              <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/dav.jpg" /></a></span></div>
                         <div class="mingzi_r right">
                         	<div class="pinglun left">34人<span>评论</span></div>
                             <div class="dianzan left">35</div>
-                            <div class="guanzhu right"><input style="border:none;" type="image" name="gz" id="gz" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/gz.jpg" /></div>
+                            <div class="guanzhu right"><input style="border:none;" type="image" name="gz" id="gz" src="http://obu3flkwk.bkt.clouddn.com/website/images/gz.jpg" /></div>
                         </div>
                         <div class="clear"></div>
                     </div>
@@ -124,7 +124,7 @@
       <textarea style="width:800px; height:100px;" name="textarea" id="textarea" cols="45" rows="5"></textarea></td>
   </tr>
   <tr>
-    <td height="75" align="center" valign="bottom"><input type="image" name="tj" id="tj" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/tj.jpg" /></td>
+    <td height="75" align="center" valign="bottom"><input type="image" name="tj" id="tj" src="http://obu3flkwk.bkt.clouddn.com/website/images/tj.jpg" /></td>
   </tr>
 </table>
 

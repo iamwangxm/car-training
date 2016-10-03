@@ -40,7 +40,7 @@
                 
                 
                 <tr>
-                  <td height="80" colspan="4" align="center" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/denglu.jpg" onclick="gr_login()"></td>
+                  <td height="80" colspan="4" align="center" valign="middle"><img src="http://obu3flkwk.bkt.clouddn.com/backend/images/denglu.jpg" onclick="gr_login()"></td>
                 </tr>
                 </form>
               </table>
@@ -59,7 +59,7 @@
                   <td><font color="#999999">6~16个字符，包含字母，数字，特殊符号</font></td>
                 </tr>
                 <tr>
-                  <td height="80" colspan="4" align="center" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/denglu.jpg" onclick="qy_login()"></td>
+                  <td height="80" colspan="4" align="center" valign="middle"><img src="http://obu3flkwk.bkt.clouddn.com/backend/images/denglu.jpg" onclick="qy_login()"></td>
                 </tr>
                </form>
               </table>

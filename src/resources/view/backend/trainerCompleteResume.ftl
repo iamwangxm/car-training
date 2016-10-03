@@ -83,7 +83,7 @@
 			    </table></td>
 			    <td width="439" colspan="4" align="left" valign="top"><table width="400" border="0" cellspacing="0" cellpadding="0">
 			      <tr>
-			        <td><img src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/zw.jpg" /></td>
+			        <td><img src="http://obu3flkwk.bkt.clouddn.com/backend/images/zw.jpg" /></td>
 			        </tr>
 			      <tr>
 			        <td>
@@ -291,7 +291,7 @@
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
                     <td height="60" align="center" valign="middle">
-                    <input type="button" onclick="submitdata()" style="width:58px;height:28px;background-repeat:no-repeat;background-image:url(http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/bc.jpg);border:0;"/>
+                    <input type="button" onclick="submitdata()" style="width:58px;height:28px;background-repeat:no-repeat;background-image:url(http://obu3flkwk.bkt.clouddn.com/backend/images/bc.jpg);border:0;"/>
                      &nbsp;&nbsp;&nbsp;&nbsp;</td>
                   </tr>
                 </table>

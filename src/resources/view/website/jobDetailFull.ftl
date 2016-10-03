@@ -28,7 +28,7 @@
             </div>
             <div class="zhaopin_box">
             	<div class="xzdy">
-                	<div class="zwdy"><span><input style="border:none;" type="image" name="yp" id="yp" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/yp_an.jpg" /></span>面议</div>
+                	<div class="zwdy"><span><input style="border:none;" type="image" name="yp" id="yp" src="http://obu3flkwk.bkt.clouddn.com/website/images/yp_an.jpg" /></span>面议</div>
                	 	<div class="shoucang">收藏</div>
                 	<div class="gzdd">
                 	<div class="didian left">上 海</div>
@@ -82,11 +82,11 @@
             	<h4>职位发布企业</h4>
                 <div class="qy_box">
                 	<div class="qylogo">
-                    	<div class="qylogo_l left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy_logo.jpg" /></div>
+                    	<div class="qylogo_l left"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo.jpg" /></div>
                       <div class="qylogo_r right">
                        	<div class="danbao">已有25人担保</div>
                             <div class="wydb"><a href="#">
-                              <input style="border:none;" type="image" name="db" id="db" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/danbao.jpg" />
+                              <input style="border:none;" type="image" name="db" id="db" src="http://obu3flkwk.bkt.clouddn.com/website/images/danbao.jpg" />
                             </a></div>
                       </div>
                         <div class="clear"></div>
@@ -105,8 +105,8 @@
                     	<!-- 代码 开始 -->
 						<div class="www51buycom">
     <ul class="51buypic">
-        <li><a href="#" target="_blank"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy1.jpg" /></a></li>
-       <li><a href="#" target="_blank"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy2.jpg" /></a></li>
+        <li><a href="#" target="_blank"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy1.jpg" /></a></li>
+       <li><a href="#" target="_blank"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy2.jpg" /></a></li>
         
     </ul>
    
@@ -139,7 +139,7 @@ $(".www51buycom").slide({ titCell:".num ul" , mainCell:".51buypic" , effect:"fol
                 	<ul>
                    	  
                       <li>
-                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr1.jpg" /></a></div>
+                        	<div class="dbr_l left"><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/dbr1.jpg" /></a></div>
                           <div class="dbr_r right">
                             	<div class="dbr_name"><a href="#">郭启军</a></div>
                                 <div class="dbr_gs"><a href="#">上海美克斯汽车服务有限公司</a></div>
@@ -147,7 +147,7 @@ $(".www51buycom").slide({ titCell:".num ul" , mainCell:".51buypic" , effect:"fol
                             <div class="clear"></div>
                         </li>
                       <li>
-                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr2.jpg" /></a></div>
+                        	<div class="dbr_l left"><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/dbr2.jpg" /></a></div>
                           <div class="dbr_r right">
                             	<div class="dbr_name"><a href="#">郭启军</a></div>
                                 <div class="dbr_gs"><a href="#">上海美克斯汽车服务有限公司</a></div>
@@ -155,7 +155,7 @@ $(".www51buycom").slide({ titCell:".num ul" , mainCell:".51buypic" , effect:"fol
                             <div class="clear"></div>
                         </li>
                       <li>
-                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr1.jpg" /></a></div>
+                        	<div class="dbr_l left"><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/dbr1.jpg" /></a></div>
                           <div class="dbr_r right">
                             	<div class="dbr_name"><a href="#">郭启军</a></div>
                                 <div class="dbr_gs"><a href="#">上海美克斯汽车服务有限公司</a></div>
@@ -163,7 +163,7 @@ $(".www51buycom").slide({ titCell:".num ul" , mainCell:".51buypic" , effect:"fol
                             <div class="clear"></div>
                         </li>
                       <li>
-                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr2.jpg" /></a></div>
+                        	<div class="dbr_l left"><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/dbr2.jpg" /></a></div>
                           <div class="dbr_r right">
                             	<div class="dbr_name"><a href="#">郭启军</a></div>
                                 <div class="dbr_gs"><a href="#">上海美克斯汽车服务有限公司</a></div>
@@ -171,7 +171,7 @@ $(".www51buycom").slide({ titCell:".num ul" , mainCell:".51buypic" , effect:"fol
                             <div class="clear"></div>
                         </li>
                       <li>
-                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr1.jpg" /></a></div>
+                        	<div class="dbr_l left"><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/dbr1.jpg" /></a></div>
                           <div class="dbr_r right">
                             	<div class="dbr_name"><a href="#">郭启军</a></div>
                                 <div class="dbr_gs"><a href="#">上海美克斯汽车服务有限公司</a></div>
@@ -179,7 +179,7 @@ $(".www51buycom").slide({ titCell:".num ul" , mainCell:".51buypic" , effect:"fol
                             <div class="clear"></div>
                         </li>
                       <li>
-                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr2.jpg" /></a></div>
+                        	<div class="dbr_l left"><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/dbr2.jpg" /></a></div>
                           <div class="dbr_r right">
                             	<div class="dbr_name"><a href="#">郭启军</a></div>
                                 <div class="dbr_gs"><a href="#">上海美克斯汽车服务有限公司</a></div>

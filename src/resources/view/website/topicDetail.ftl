@@ -27,7 +27,7 @@
             	<div class="wenti">
                 	<div class="tubiao left"><img src="${topic.topicLogo!}" /></div> 
                     <div class="wt_box right">
-                    	<h4><span>30人关注该问题</span><span><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/gz2.jpg" /></span>${topic.title!}</h4>${topic.content!}
+                    	<h4><span>30人关注该问题</span><span><img src="http://obu3flkwk.bkt.clouddn.com/website/images/gz2.jpg" /></span>${topic.title!}</h4>${topic.content!}
                     </div>
                 </div>
                 <div class="pl_kuang">
@@ -36,7 +36,7 @@
                       <td height="140" align="center" valign="middle"><textarea name="textarea2" style="width:780px; height:100px; border:1px solid #e6e5e5;" id="textarea2"></textarea></td>
                     </tr>
                     <tr>
-                      <td height="60" align="center" valign="middle"><input type="image" name="imageField2" id="imageField2" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/tj.jpg" /></td>
+                      <td height="60" align="center" valign="middle"><input type="image" name="imageField2" id="imageField2" src="http://obu3flkwk.bkt.clouddn.com/website/images/tj.jpg" /></td>
                     </tr>
                   </table>
                 
@@ -49,7 +49,7 @@
                 <#if t?? && t.trainer?? && t.trainer.userCenter??>
             	<div class="pl_list">
                 	<div class="pingl">
-                	<div class="pingl_pic left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zttx2.jpg" /></div>
+                	<div class="pingl_pic left"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/zttx2.jpg" /></div>
                     <div class="pingl_ren right">
                     	<div class="pingl_ren_m">${t.trainer.userCenter.name!}</div>
                         <div class="pingl_ren_zw">${t.trainer.currentPosition!}</div>
@@ -61,10 +61,10 @@
                                 <div class="zt_pl2_r right">
                                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
-                                       <td width="30%" align="right" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/pl_icon.jpg" /></td>
+                                       <td width="30%" align="right" valign="middle"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/pl_icon.jpg" /></td>
                                       <td width="20%" align="right" valign="middle"><a href="#">评论</a></td>
                                      
-                                      <td width="21%" align="right" valign="middle"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/z.jpg" /></td>
+                                      <td width="21%" align="right" valign="middle"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/z.jpg" /></td>
                                       <td width="29%" align="right" valign="middle"><a href="#">赞(12)</a></td>
                                     </tr>
                                   </table>
@@ -94,7 +94,7 @@
   </tr>
   <tr>
     <td height="60" align="center" valign="middle">
-      <input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/tj.jpg" />
+      <input type="image" name="imageField" id="imageField" src="http://obu3flkwk.bkt.clouddn.com/website/images/tj.jpg" />
   </td>
   </tr>
 </table>

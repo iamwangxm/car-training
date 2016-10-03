@@ -20,12 +20,12 @@
             	<div class="dl_leibie">会员登录</div>
                 <div class="name">
                	  <div class="name_l left">账号：</div>
-                  <div class="name_r right"><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px; line-height:30px;   width:196px; border:none; padding-left:4px; " type="text" id="username" name="username" data-nick="login_user" value="" class="text input-xlarge" placeholder="请输入邮箱/手机号" required validate-title="邮箱/手机号" /></div>
+                  <div class="name_r right"><input style=" background:url(http://obu3flkwk.bkt.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px; line-height:30px;   width:196px; border:none; padding-left:4px; " type="text" id="username" name="username" data-nick="login_user" value="" class="text input-xlarge" placeholder="请输入邮箱/手机号" required validate-title="邮箱/手机号" /></div>
                     <div class="clear"></div>
               </div>
                 <div class="pwd">
                	  <div class="pwd_l left">密码：</div>
-                  <div class="pwd_r right"><input  style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px;line-height:30px; width:196px; border:none; padding-left:4px; " type="password" name="password" id="password" data-nick="login_pwd" value="" class="text input-xlarge"  placeholder="请输入6-16位字母、数字组成的登录密码" required validate-title="密码" /></div>
+                  <div class="pwd_r right"><input  style=" background:url(http://obu3flkwk.bkt.clouddn.com/website/images/name_bg2.jpg) no-repeat left top; height:30px;line-height:30px; width:196px; border:none; padding-left:4px; " type="password" name="password" id="password" data-nick="login_pwd" value="" class="text input-xlarge"  placeholder="请输入6-16位字母、数字组成的登录密码" required validate-title="密码" /></div>
                     <div class="clear"></div>
               </div>
                 <!--
@@ -34,7 +34,7 @@
               
                   <div class="yanzheng_r right"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 				  <tr>
-				    <td><input style=" background:url(http://7xtuyf.com1.z0.glb.clouddn.com/website/images/yzm_bg.jpg) no-repeat left top; height:30px;line-height:30px;  width:92px; border:none; padding-left:3px; " type="text"  data-nick="login_user" value="" class="text input-xlarge"  id="captchacode" name="cpatch" data-title="图片验证码" placeholder="请输入图片验证码"/></td>
+				    <td><input style=" background:url(http://obu3flkwk.bkt.clouddn.com/website/images/yzm_bg.jpg) no-repeat left top; height:30px;line-height:30px;  width:92px; border:none; padding-left:3px; " type="text"  data-nick="login_user" value="" class="text input-xlarge"  id="captchacode" name="cpatch" data-title="图片验证码" placeholder="请输入图片验证码"/></td>
 				    <td></td>
 				    <td> <input type="image" name="btn_yzm" id="btn_yzm" src="/website/captch/captimg?token=149823767236" /></td>
 				  </tr>
@@ -52,7 +52,7 @@
             
 				</div>
 
-                <div class="dl"><input style="border:none;" type="image" name="dl" id="dl" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dl_bg.jpg" onClick='javascript:login();' /></div>
+                <div class="dl"><input style="border:none;" type="image" name="dl" id="dl" src="http://obu3flkwk.bkt.clouddn.com/website/images/dl_bg.jpg" onClick='javascript:login();' /></div>
            		<div class="wjpwd"><span class="errMsg" style="display:block; padding-left:10px;line-height: 40px;color:red;"></span><!--<a href="#">忘记密码？</a>--></div>
             </div>
         </div>
@@ -80,12 +80,12 @@
                         <div class="pxshi_zp">${trainer.currentPosition!} </div>
                         <div class="pxshi_rz">
                         	<ul>
-                            	<li><a href='#'><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></li>
-                                <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></li>
-                                <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></li>
-                                <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></li>
-                                <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></li>
-                                <li><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></li>
+                            	<li><a href='#'><img src="http://obu3flkwk.bkt.clouddn.com/website/images/hot.jpg" /></a></li>
+                                <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/zan.jpg" /></a></li>
+                                <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/zheng.jpg" /></a></li>
+                                <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/xin.jpg" /></a></li>
+                                <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/zishen.jpg" /></a></li>
+                                <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/dav.jpg" /></a></li>
                             </ul>
                         </div>
                     </div>
@@ -107,12 +107,12 @@
 			                        </div>
 			                        <div class="pxshi_zp2">${t.currentPosition!} </div>
 			                        <div class="rz2">
-			                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot.jpg" /></a></span>
-			                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zan.jpg" /></a></span>
-			                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zheng.jpg" /></a></span>
-			                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/xin.jpg" /></a></span>
-			                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zishen.jpg" /></a></span>
-			                              <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dav.jpg" /></a></span>
+			                        	<span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/hot.jpg" /></a></span>
+			                            <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/zan.jpg" /></a></span>
+			                            <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/zheng.jpg" /></a></span>
+			                            <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/xin.jpg" /></a></span>
+			                            <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/zishen.jpg" /></a></span>
+			                              <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/dav.jpg" /></a></span>
 			                        </div>
 			                   </div>
 		                   </#if>
@@ -147,10 +147,10 @@
                             <div class="clear"></div>
                         </div>
                         <div class="pxsheng_rz">
-                        	<span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot2.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/yrz.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dr.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zs.jpg" /></a></span>
+                        	<span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/hot2.jpg" /></a></span>
+                            <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/yrz.jpg" /></a></span>
+                            <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/dr.jpg" /></a></span>
+                            <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/zs.jpg" /></a></span>
                            
                         </div>
                     </div>

@@ -141,7 +141,7 @@
   </tr>
   <tr>
     <td height="60" align="center" valign="middle">
-      <input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/tj.jpg" />
+      <input type="image" name="imageField" id="imageField" src="http://obu3flkwk.bkt.clouddn.com/website/images/tj.jpg" />
   </td>
   </tr>
 </table>

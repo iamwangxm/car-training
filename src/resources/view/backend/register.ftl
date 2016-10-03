@@ -42,7 +42,7 @@ function displayimg()
 			  <form action="" id="loginform0">
 				<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td height="60" colspan="4" align="left" valign="middle" style="background:url(http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/icon2.jpg) no-repeat left center; padding:20px 0px; height:30px; line-height:30px; padding-left:30px;">每个手机只能申请一个账号</td>
+                  <td height="60" colspan="4" align="left" valign="middle" style="background:url(http://obu3flkwk.bkt.clouddn.com/backend/images/icon2.jpg) no-repeat left center; padding:20px 0px; height:30px; line-height:30px; padding-left:30px;">每个手机只能申请一个账号</td>
                   </tr>
                 <tr>
                   <td width="106" height="60" align="right" valign="middle"><font color="#ff0000">*</font>个人账号：</td>
@@ -79,7 +79,7 @@ function displayimg()
                   </table></td>
                   </tr>
                 <tr>
-                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/tj.jpg" onClick='javascript:gr_register();return false;'/></td>
+                  <td height="80" colspan="4" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://obu3flkwk.bkt.clouddn.com/backend/images/tj.jpg" onClick='javascript:gr_register();return false;'/></td>
                 </tr>
               </table>
               </form>
@@ -88,7 +88,7 @@ function displayimg()
 			  <form action="" id="loginform1">
 				<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td height="60" colspan="4" align="left" valign="middle" style="background:url(http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/icon2.jpg) no-repeat left center; padding:20px 0px; height:30px; line-height:30px; padding-left:30px;">每个手机只能申请一个账号</td>
+                  <td height="60" colspan="4" align="left" valign="middle" style="background:url(http://obu3flkwk.bkt.clouddn.com/backend/images/icon2.jpg) no-repeat left center; padding:20px 0px; height:30px; line-height:30px; padding-left:30px;">每个手机只能申请一个账号</td>
                   </tr>
                 <tr>
                   <td width="106" height="60" align="right" valign="middle"><font color="#ff0000">*</font>企业账号：</td>
@@ -125,7 +125,7 @@ function displayimg()
                   </table></td>
                   </tr>
                 <tr>
-                  <td height="80" colspan="4" align="center" valign="middle"><img id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/tj.jpg"  onClick='qy_register()'/></td>
+                  <td height="80" colspan="4" align="center" valign="middle"><img id="imageField" src="http://obu3flkwk.bkt.clouddn.com/backend/images/tj.jpg"  onClick='qy_register()'/></td>
                 </tr>
               </table>
               </form>

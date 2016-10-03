@@ -15,7 +15,7 @@
 <!-- 头部开始 -->	
 <div class="top">
 	<div class="content">
-    	<div class="logo left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/logo.jpg" /></div>
+    	<div class="logo left"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/logo.jpg" /></div>
         <div class="nav_box left">
         	<div class="nav">
             	<ul>
@@ -47,12 +47,12 @@
 <div class="zhaopin_qy">
     <div class="content" >
     	<div class="qy_top" >
-        	<div class="zpqy_logo left"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zpqy_logo.jpg" /></div>
+        	<div class="zpqy_logo left"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/zpqy_logo.jpg" /></div>
             <div class="zpqy_xx right">
             	
                 <div class="zpqy_xx_box">
                	  <div class="zpqy_xx_l left">上海欧腾汽车销售有限公司</div>
-                    <div class="zpqy_xx_r right"><span ><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/db.jpg" /></a></span><span >已有59人担保</span></div>
+                    <div class="zpqy_xx_r right"><span ><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/db.jpg" /></a></span><span >已有59人担保</span></div>
                   <div class="clear"></div>
                 </div>
                 <div class="fl_dy">
@@ -97,7 +97,7 @@
                         </div>
                     </div>
                   	    <div class="zpgw_r right">
-                   	  	<img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/ljyp.jpg" />
+                   	  	<img src="http://obu3flkwk.bkt.clouddn.com/website/images/ljyp.jpg" />
                         
                     </div>
                     <div class="clear"></div>
@@ -114,7 +114,7 @@
                         </div>
                     </div>
                   	    <div class="zpgw_r right">
-                   	  	<img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/ljyp.jpg" />
+                   	  	<img src="http://obu3flkwk.bkt.clouddn.com/website/images/ljyp.jpg" />
                         
                     </div>
                     <div class="clear"></div>
@@ -131,7 +131,7 @@
                         </div>
                     </div>
                   	    <div class="zpgw_r right">
-                   	  	<img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/ljyp.jpg" />
+                   	  	<img src="http://obu3flkwk.bkt.clouddn.com/website/images/ljyp.jpg" />
                         
                     </div>
                     <div class="clear"></div>
@@ -148,7 +148,7 @@
                         </div>
                     </div>
                   	    <div class="zpgw_r right">
-                   	  	<img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/ljyp.jpg" />
+                   	  	<img src="http://obu3flkwk.bkt.clouddn.com/website/images/ljyp.jpg" />
                         
                     </div>
                     <div class="clear"></div>
@@ -165,7 +165,7 @@
                         </div>
                     </div>
                   	    <div class="zpgw_r right">
-                   	  	<img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/ljyp.jpg" />
+                   	  	<img src="http://obu3flkwk.bkt.clouddn.com/website/images/ljyp.jpg" />
                         
                     </div>
                     <div class="clear"></div>
@@ -182,7 +182,7 @@
                         </div>
                     </div>
                   	    <div class="zpgw_r right">
-                   	  	<img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/ljyp.jpg" />
+                   	  	<img src="http://obu3flkwk.bkt.clouddn.com/website/images/ljyp.jpg" />
                         
                     </div>
                     <div class="clear"></div>
@@ -210,8 +210,8 @@
                     	<!-- 代码 开始 -->
 						<div class="www51buycom">
     <ul class="51buypic">
-        <li><a href="#" target="_blank"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy1.jpg" /></a></li>
-       <li><a href="#" target="_blank"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/qy2.jpg" /></a></li>
+        <li><a href="#" target="_blank"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy1.jpg" /></a></li>
+       <li><a href="#" target="_blank"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy2.jpg" /></a></li>
         
     </ul>
    
@@ -244,7 +244,7 @@ $(".www51buycom").slide({ titCell:".num ul" , mainCell:".51buypic" , effect:"fol
                 	<ul>
                    	  
                       <li>
-                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr1.jpg" /></a></div>
+                        	<div class="dbr_l left"><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/dbr1.jpg" /></a></div>
                           <div class="dbr_r right">
                             	<div class="dbr_name"><a href="#">郭启军</a></div>
                                 <div class="dbr_gs"><a href="#">上海美克斯汽车服务有限公司</a></div>
@@ -252,7 +252,7 @@ $(".www51buycom").slide({ titCell:".num ul" , mainCell:".51buypic" , effect:"fol
                             <div class="clear"></div>
                         </li>
                       <li>
-                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr2.jpg" /></a></div>
+                        	<div class="dbr_l left"><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/dbr2.jpg" /></a></div>
                           <div class="dbr_r right">
                             	<div class="dbr_name"><a href="#">郭启军</a></div>
                                 <div class="dbr_gs"><a href="#">上海美克斯汽车服务有限公司</a></div>
@@ -260,7 +260,7 @@ $(".www51buycom").slide({ titCell:".num ul" , mainCell:".51buypic" , effect:"fol
                             <div class="clear"></div>
                         </li>
                       <li>
-                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr1.jpg" /></a></div>
+                        	<div class="dbr_l left"><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/dbr1.jpg" /></a></div>
                           <div class="dbr_r right">
                             	<div class="dbr_name"><a href="#">郭启军</a></div>
                                 <div class="dbr_gs"><a href="#">上海美克斯汽车服务有限公司</a></div>
@@ -268,7 +268,7 @@ $(".www51buycom").slide({ titCell:".num ul" , mainCell:".51buypic" , effect:"fol
                             <div class="clear"></div>
                         </li>
                       <li>
-                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr2.jpg" /></a></div>
+                        	<div class="dbr_l left"><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/dbr2.jpg" /></a></div>
                           <div class="dbr_r right">
                             	<div class="dbr_name"><a href="#">郭启军</a></div>
                                 <div class="dbr_gs"><a href="#">上海美克斯汽车服务有限公司</a></div>
@@ -276,7 +276,7 @@ $(".www51buycom").slide({ titCell:".num ul" , mainCell:".51buypic" , effect:"fol
                             <div class="clear"></div>
                         </li>
                       <li>
-                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr1.jpg" /></a></div>
+                        	<div class="dbr_l left"><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/dbr1.jpg" /></a></div>
                           <div class="dbr_r right">
                             	<div class="dbr_name"><a href="#">郭启军</a></div>
                                 <div class="dbr_gs"><a href="#">上海美克斯汽车服务有限公司</a></div>
@@ -284,7 +284,7 @@ $(".www51buycom").slide({ titCell:".num ul" , mainCell:".51buypic" , effect:"fol
                             <div class="clear"></div>
                         </li>
                       <li>
-                        	<div class="dbr_l left"><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dbr2.jpg" /></a></div>
+                        	<div class="dbr_l left"><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/dbr2.jpg" /></a></div>
                           <div class="dbr_r right">
                             	<div class="dbr_name"><a href="#">郭启军</a></div>
                                 <div class="dbr_gs"><a href="#">上海美克斯汽车服务有限公司</a></div>

@@ -31,12 +31,12 @@
                     	<div class="mingzi_l left">${autobots.userCenter.name!}</div>
                         <div class="mingzi_m left">
                        		
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/hot2.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/yrz.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/dr.jpg" /></a></span>
-                            <span><a href="#"><img src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/zs.jpg" /></a></span></div>
+                            <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/hot2.jpg" /></a></span>
+                            <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/yrz.jpg" /></a></span>
+                            <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/dr.jpg" /></a></span>
+                            <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/zs.jpg" /></a></span></div>
                     <div class="mingzi_r right">
-                        	<input style="border:none;" type="image" name="gz" id="gz" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/glz.jpg" />
+                        	<input style="border:none;" type="image" name="gz" id="gz" src="http://obu3flkwk.bkt.clouddn.com/website/images/glz.jpg" />
                     </div>
                         <div class="clear"></div>
                     </div>
@@ -140,7 +140,7 @@
       <textarea style="width:700px; height:100px;" name="textarea" id="textarea" cols="45" rows="5"></textarea></td>
   </tr>
   <tr>
-    <td height="75" align="center" valign="bottom"><input type="image" name="tj" id="tj" src="http://7xtuyf.com1.z0.glb.clouddn.com/website/images/tj.jpg" /></td>
+    <td height="75" align="center" valign="bottom"><input type="image" name="tj" id="tj" src="http://obu3flkwk.bkt.clouddn.com/website/images/tj.jpg" /></td>
   </tr>
 </table>
 

@@ -52,7 +52,7 @@ public class UserCenterServiceImpl implements UserCenterService {
 	public void update(UserCenter uc) {
 		com.car.training.model.UserCenter  target = userCenterManager.get(uc.getId());
 		BeanUtils.copyProperties(uc, target);
-		userCenterManager.save(target);
+		userCenterManager.update(target);
 	}
 
 	@Override

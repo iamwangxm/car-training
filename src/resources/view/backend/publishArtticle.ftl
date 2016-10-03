@@ -47,7 +47,7 @@
           <div class="tj">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <td height="60" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/fb.jpg" /></td>
+                    <td height="60" align="center" valign="middle"><input type="image" name="imageField" id="imageField" src="http://obu3flkwk.bkt.clouddn.com/backend/images/fb.jpg" /></td>
                   </tr>
             </table>
           </div>

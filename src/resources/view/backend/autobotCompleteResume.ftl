@@ -85,7 +85,10 @@
 		    </table></td>
     <td width="439" colspan="4" align="left" valign="top"><table width="400" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td><img id="autobot.userCenter.headLogo" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/zw.jpg" style="width:40px;height:40px;" /></td>
+        <td>
+        <img id="autobot.userCenter.headLogo" src="http://obu3flkwk.bkt.clouddn.com/backend/images/zw.jpg" style="width:40px;height:40px;" />
+        <input type="hidden" id="autobot.userCenter.headLogo" name="autobot.userCenter.headLogo" />
+        </td>
         </tr>
       <tr>
         <td>
@@ -180,14 +183,14 @@
                   	     <tr>
                     	    <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>擅长领域：</td>
                     	    <td colspan="3">
-                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="销售"/>销售
-                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="售后"/>售后
-                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="客服"/>客服
-                	   		<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="市场"/>市场
-                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="管理"/>管理
-                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="内训"/>内训
-                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="生产研发"/>生产研发
-                    	   	<input type="checkbox" name="autobot.positionType" id="autobot.positionType" value="行政"/>行政
+                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" value="销售"/>销售
+                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" value="售后"/>售后
+                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" value="客服"/>客服
+                	   		<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" value="市场"/>市场
+                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" value="管理"/>管理
+                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" value="内训"/>内训
+                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" value="生产研发"/>生产研发
+                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" value="行政"/>行政
                     	    </td>
                     	    
                   	    </tr>
@@ -195,9 +198,9 @@
                   	    <tr>
                   	     <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>工作照：</td>
                   	     <td colspan="3" align="left" valign="middle">
-                  	     <img id="autobot.workPhotoURL1" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/zw.jpg" style="width:40px;height:40px;" />
+                  	     <img id="autobot.workPhotoURL1" src="http://obu3flkwk.bkt.clouddn.com/backend/images/zw.jpg" style="width:40px;height:40px;" />
                   	     <input type="file" name="workPhotoURL1" id="workPhotoURL1" value="浏览" onChange="selectImage(this)"/>
-                  	     <img id="autobot.workPhotoURL2" src="http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/zw.jpg" style="width:40px;height:40px;" />
+                  	     <img id="autobot.workPhotoURL2" src="http://obu3flkwk.bkt.clouddn.com/backend/images/zw.jpg" style="width:40px;height:40px;" />
                   	     <input type="file" name="workPhotoURL2" id="workPhotoURL2" value="浏览" onChange="selectImage(this)"/></td>
                   	  	</tr>
                   	  	
@@ -247,7 +250,7 @@
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
                     <td height="60" align="center" valign="middle">
-                    <input type="button" onclick="submitdata()" style="width:58px;height:28px;background-repeat:no-repeat;background-image:url(http://7xtuyf.com1.z0.glb.clouddn.com/backend/images/bc.jpg);border:0;"/>
+                    <input type="button" onclick="submitdata()" style="width:58px;height:28px;background-repeat:no-repeat;background-image:url(http://obu3flkwk.bkt.clouddn.com/backend/images/bc.jpg);border:0;"/>
                   </tr>
                 </table>
               </div>
@@ -289,15 +292,51 @@ function submitdata(){
 		return;
 	}
 	
+	var form_data = {};
 	var url  = "/backend/autobotCompleteResume/save";
-	var data = $("#form1").serialize();
-	//var autobot.userCenter.headLogo.data= document.getElementById('autobot.userCenter.headLogo').src;
-	//var autobot.userCenter.headLogo.imgPath =this._getFilePath(data.substring(data.indexOf("/") + 1, data.indexOf(";")), 0);
-	alert(autobot.userCenter.headLogo.data);
+
+	var uheadLogo = document.getElementById('autobot.userCenter.headLogo').src;
+	var upersonalType = $("[name='autobot.userCenter.personalType']").val();
+	var aid = $("[name='autobot.id']").val();
+	var uid = $("[name='autobot.userCenter.id']").val();
+	var uname = $("[name='autobot.userCenter.name']").val();
+	var ubirthday = $("[name='autobot.userCenter.birthday']").val();
+	var uemail = $("[name='autobot.userCenter.email']").val();
+	var uregionId = $("[name='city']").val();
+	var umarryStatus = $("[name='autobot.userCenter.marryStatus']").val();
+	var currentWorkStatus = $("[name='autobot.currentWorkStatus']").val();
+	var autoBrand = $("[name='autobot.autoBrand']").val();
+	var umobile = $("input[name='autobot.userCenter.mobile']").val();
+	var autoYears = $("[name='autobot.autoYears']").val();
+	var authHistroy = $("[name='autobot.authHistroy']").val();
+	var workingHistroy = $("[name='autobot.workingHistroy']").val();
+	var businessCategory = $("[name='autobot.businessCategory']").val();
+	var workPhotoURL1 = document.getElementById('autobot.workPhotoURL1').src;
+	var workPhotoURL2 = document.getElementById('autobot.workPhotoURL2').src;
+	
+	form_data.aid = aid;
+	form_data.uid = uid;
+	form_data.uname = uname;
+	form_data.uheadLogo= uheadLogo;
+	form_data.ubirthday = ubirthday;
+	form_data.umarryStatus = umarryStatus;
+	form_data.currentWorkStatus = currentWorkStatus;
+	form_data.autoBrand = autoBrand;
+	form_data.umobile = umobile;
+	form_data.uemail= uemail;
+	form_data.uregionId=uregionId;
+	form_data.autoYears =autoYears;
+	form_data.authHistroy =authHistroy;
+	form_data.workingHistroy =workingHistroy;
+	form_data.upersonalType = upersonalType;
+	form_data.workPhotoURL1 = workPhotoURL1;
+	form_data.workPhotoURL2 = workPhotoURL2;
+	form_data.businessCategory = businessCategory;
+
 	$.ajax({
 			 type: "POST",
 		     url: url,
-		     data: data,
+		     data: form_data,
 		     error: function(request) {
 	             alert("网络出错啦！");
 	             return false;
@@ -307,7 +346,7 @@ function submitdata(){
 		    	 	if(data.code==200){
 		    	 		var tid = $("[name='autobot.id']").val();
 		    	 		if(tid != undefined && tid != ""){
-		    	 			window.location.href = "/website/autobotDetail?autobot.id=" + tid;
+		    	 			window.location.href = "/website/autobotDetail?autobots.id=" + tid;
 		    	 		}
 		    	 	}
 		     }
@@ -316,7 +355,7 @@ function submitdata(){
 
 function selectCities(){
 	var form_data={};
-	form_data.parentId = $("[name='province']").val();;
+	form_data.parentId = $("[name='province']").val();
 	$.ajax({
 		 type: "POST",
 	     url: "/backend/autobotCompleteResume/getcities",
@@ -362,9 +401,9 @@ function selectCities(){
 	reader.readAsDataURL(file.files[0]);
 }
 
-function _getFilePath(){
+function getFilePath(ext){
     var timestamp=new Date().getTime();
-    return ("autobot/upload/" + timestamp + "." + type);
+    return ("autobot/upload/" + timestamp + "." + ext);
 }
 </script>
 
