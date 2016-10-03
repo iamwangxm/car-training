@@ -41,8 +41,9 @@ public class ArticleManageAction extends BaseAction {
 		if (uc != null) {
 			trainer = trainerService.findByUserCenter(uc.getId());
 		}
-		trainerEssay.setTrainer(trainer);
-		trainerEssayList = trainerEssayService.findPageByTrainerEssay(trainerEssay, pageSize, pageNo);
+		TrainerEssay essay = new TrainerEssay();
+		essay.setTrainer(trainer);
+		trainerEssayList = trainerEssayService.findPageByTrainerEssay(new TrainerEssay(), pageSize, pageNo);
 		return SUCCESS;
 	}
 	
@@ -77,5 +78,13 @@ public class ArticleManageAction extends BaseAction {
 	}
 	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
+	}
+
+	public TrainerEssay getTrainerEssay() {
+		return trainerEssay;
+	}
+
+	public void setTrainerEssay(TrainerEssay trainerEssay) {
+		this.trainerEssay = trainerEssay;
 	}
 }

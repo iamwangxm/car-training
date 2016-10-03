@@ -45,14 +45,14 @@
                 -->
                 <div class="leibie"> 
                 	<div class="lb_l left">
-                	<input name="userType" id="userType" type="radio"  autoComplete="on" value="PERSONAL" checked="checked" data-selector="company-toggle"/>个人
-                	<input data-selector="company-toggle" type="radio" name="userType" id="userType" value="COMPANY"  autoComplete="off"/>企业
+                	<input name="userType" id="userType" type="radio"  value="PERSONAL"  />个人
+                	<input type="radio" name="userType" id="userType" value="COMPANY" />企业
                     </div>
                     <div class="clear"></div>
             
 				</div>
 
-                <div class="dl"><input style="border:none;" type="image" name="dl" id="dl" src="http://obu3flkwk.bkt.clouddn.com/website/images/dl_bg.jpg" onClick='javascript:login();' /></div>
+                <div class="dl"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/dl_bg.jpg" onClick='javascript:login();' /></div>
            		<div class="wjpwd"><span class="errMsg" style="display:block; padding-left:10px;line-height: 40px;color:red;"></span><!--<a href="#">忘记密码？</a>--></div>
             </div>
         </div>
@@ -328,7 +328,7 @@
 		var form_data={};
 		var username = $("#loginform0").find("#username").val();
 		var password = $("#loginform0").find("#password").val();
-		var userType = $("#loginform0").find("#userType").val();
+		var userType = $('input:radio[name="userType"]:checked').val();
 		if(username==''||username==null){
 			alert('请输入用户名');
 			return false;
