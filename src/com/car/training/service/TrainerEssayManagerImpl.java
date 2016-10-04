@@ -68,7 +68,7 @@ public class TrainerEssayManagerImpl extends BaseManagerImpl<TrainerEssay> imple
 	public List<TrainerEssay> findListByTrainerEssay(TrainerEssay autobotsComment) {
 		DetachedCriteria dc = detachedCriteria();
 		dc.add(Restrictions.eq("enabled", true));
-		dc.addOrder(Order.desc("createDate"));
+		dc.addOrder(Order.desc("publishDate"));
 		return findListByCriteria(dc);
 	}
 	

@@ -174,7 +174,7 @@ public class TrainerCompleteResumeAction extends BaseAction {
 				String headLogo = com.uploadFile(uheadLogo);
 				uc.setHeadLogo(headLogo);
 			}
-			trainer.setVedioURL2(vedioURL1);
+			trainer.setVedioURL1(vedioURL1);
 			trainer.setVedioURL2(vedioURL2);
 			trainer.setUserCenter(uc);
 			trainerService.update(trainer);

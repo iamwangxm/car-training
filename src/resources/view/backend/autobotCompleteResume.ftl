@@ -153,6 +153,9 @@
                     	    <option value="">请选择省</option>
                     	    <#if autobot?? && autobot.userCenter?? && autobot.userCenter.region??>
 							<option selected="selected" value="${autobot.userCenter.region.id!}">${autobot.userCenter.region.fullname!}</option>
+							<#list provinces as t>
+							<option value="${t.id!}">${t.fullname!}</option>
+							</#list>
 							<#else>
 							<#list provinces as t>
 							<option value="${t.id!}">${t.fullname!}</option>
@@ -170,27 +173,27 @@
                     	    <td width="337">
 	                	    <select name="autobot.autoYears" id="autobot.autoYears">
                     	    <option value="">请选择</option>
-							<#list 1..20 as t>
                     	    <#if autobot?? && autobot.autoYears?? >
                     	    <option selected="selected" value="${autobot.autoYears!}">${autobot.autoYears!}</option>
-                    	    <#else>
-							<option value="${t}">${t}</option>
 							</#if>
+							<#list 0..20 as t>
+							<option value="${t}">${t}</option>
 							</#list>	
-							</select>
+							</select>&nbsp;
+							<font color="red" >选择0表示应界毕业生</font>
                     	    </td>
                   	    </tr>
                   	     <tr>
                     	    <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>擅长领域：</td>
                     	    <td colspan="3">
-                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" value="销售"/>销售
-                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" value="售后"/>售后
-                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" value="客服"/>客服
-                	   		<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" value="市场"/>市场
-                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" value="管理"/>管理
-                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" value="内训"/>内训
-                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" value="生产研发"/>生产研发
-                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" value="行政"/>行政
+                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" <#if autobot.businessCategory ? index_of("销售")!=-1> checked </#if> value="销售"/>销售
+                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" <#if autobot.businessCategory ? index_of("售后")!=-1> checked </#if> value="售后"/>售后
+                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" <#if autobot.businessCategory ? index_of("客服")!=-1> checked </#if> value="客服"/>客服
+                	   		<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" <#if autobot.businessCategory ? index_of("市场")!=-1> checked </#if> value="市场"/>市场
+                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" <#if autobot.businessCategory ? index_of("管理")!=-1> checked </#if> value="管理"/>管理
+                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" <#if autobot.businessCategory ? index_of("内训")!=-1> checked </#if> value="内训"/>内训
+                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" <#if autobot.businessCategory ? index_of("生产研发")!=-1> checked </#if> value="生产研发"/>生产研发
+                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" <#if autobot.businessCategory ? index_of("行政")!=-1> checked </#if> value="行政"/>行政
                     	    </td>
                     	    
                   	    </tr>
@@ -310,7 +313,10 @@ function submitdata(){
 	var autoYears = $("[name='autobot.autoYears']").val();
 	var authHistroy = $("[name='autobot.authHistroy']").val();
 	var workingHistroy = $("[name='autobot.workingHistroy']").val();
-	var businessCategory = $("[name='autobot.businessCategory']").val();
+	var businessCategory = '';
+	$("input:checkbox[name='autobot.businessCategory']:checked").each(function(index, element) {
+                         businessCategory += $(this).val() + ",";
+	 }); 
 	var workPhotoURL1 = document.getElementById('autobot.workPhotoURL1').src;
 	var workPhotoURL2 = document.getElementById('autobot.workPhotoURL2').src;
 	

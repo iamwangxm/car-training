@@ -52,7 +52,7 @@
 			        <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>出生年月：</td>
 			        <td>
 			         <#if trainer?? && trainer.userCenter?? && trainer.userCenter.birthday?? >
-			        <input type="date" name="trainer.userCenter.birthday" value="${trainer.userCenter.birthday!}" onclick="laydate()" />
+			        <input type="date" name="trainer.userCenter.birthday" value="${trainer.userCenter.birthday!?string("yyyy-MM-dd")}" onclick="laydate()" />
 			        <#else>
 			        <input type="date" name="trainer.userCenter.birthday" value=""  onclick="laydate()"/>
 			     	</#if>
@@ -160,6 +160,9 @@
                     	    <option value="">请选择省</option>
                     	    <#if trainer?? && trainer.userCenter?? && trainer.userCenter.region??>
 							<option selected="selected" value="${trainer.userCenter.region.id!}">${trainer.userCenter.region.fullname!}</option>
+							<#list provinces as t>
+							<option value="${t.id!}">${t.fullname!}</option>
+							</#list>
 							<#else>
 							<#list provinces as t>
 							<option value="${t.id!}">${t.fullname!}</option>
@@ -170,45 +173,44 @@
                     	    <option value="">请选择市</option>
                     	    <#if trainer?? && trainer.userCenter?? && trainer.userCenter.region??>
 							<option selected="selected" value="${trainer.userCenter.region.id!}">${trainer.userCenter.region.fullname!}</option>
-							</#if>
+							</#if> 
 							</select>
                     	    </td>
-      	    <td width="125" align="right" valign="middle"><font color="#ff0000">*</font> 邮箱：</td>
-    	    <td width="337">
-    	     <#if trainer?? && trainer.userCenter?? && trainer.userCenter.email??>
-    	    <input type="eamil" name="trainer.userCenter.email" value="${trainer.userCenter.email!}" />
-    	    <#else>
-    	    <input type="email" name="trainer.userCenter.email" value=""  />
-    	    </#if>
-    	    </td>
-    	   
-    	    </tr>
-    	     <tr>
+				      	    <td width="125" align="right" valign="middle"><font color="#ff0000">*</font> 邮箱：</td>
+				    	    <td width="337">
+				    	     <#if trainer?? && trainer.userCenter?? && trainer.userCenter.email??>
+				    	    <input type="eamil" name="trainer.userCenter.email" value="${trainer.userCenter.email!}" />
+				    	    <#else>
+				    	    <input type="email" name="trainer.userCenter.email" value=""  />
+				    	    </#if>
+				    	    </td>
+				    	   
+				    	    </tr>
+				    	     <tr>
                     	   <td width="125" align="right" valign="middle"><font color="#ff0000">*</font> 汽车行业经验：</td>
                     	    <td width="337">
 	                	    <select name="trainer.autoYears" id="trainer.autoYears">
                     	    <option value="">请选择</option>
-							<#list 1..20 as t>
-                    	    <#if trainer?? && autobot.autoYears?? >
+                    	    <#if trainer?? && trainer.autoYears?? >
                     	    <option selected="selected" value="${trainer.autoYears!}">${trainer.autoYears!}</option>
-                    	    <#else>
-							<option selected="selected" value="${t}">${t}</option>
-							</#if>
-							</#list>	
-							</select>
+							</#if>          	   
+                    	    <#list 0..20 as t>
+							<option  value="${t}">${t}</option>
+							</#list>
+							</select>&nbsp;<font color="red" >选择0表示应界毕业生</font>
                     	    </td>
                   	    </tr>
     	     			<tr>
                     	    <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>擅长领域：</td>
                     	    <td colspan="3">
-                    	   	<input type="checkBox" name="trainer.businessCategory" id="autobot.businessCategory" value="销售"/>销售
-                    	   	<input type="checkBox" name="trainer.businessCategory" id="autobot.businessCategory" value="售后"/>售后
-                    	   	<input type="checkBox" name="trainer.businessCategory" id="autobot.businessCategory" value="客服"/>客服
-                	   		<input type="checkBox" name="trainer.businessCategory" id="autobot.businessCategory" value="市场"/>市场
-                    	   	<input type="checkBox" name="trainer.businessCategory" id="autobot.businessCategory" value="管理"/>管理
-                    	   	<input type="checkBox" name="trainer.businessCategory" id="autobot.businessCategory" value="内训"/>内训
-                    	   	<input type="checkBox" name="trainer.businessCategory" id="autobot.businessCategory" value="生产研发"/>生产研发
-                    	   	<input type="checkBox" name="trainer.businessCategory" id="autobot.businessCategory" value="行政"/>行政
+                    	   	<input type="checkBox" name="trainer.businessCategory" id="trainer.businessCategory" <#if trainer.businessCategory ? index_of("销售")!=-1> checked </#if> value="销售"/>销售
+                    	   	<input type="checkBox" name="trainer.businessCategory" id="trainer.businessCategory" <#if trainer.businessCategory ? index_of("售后")!=-1> checked </#if> value="售后"/>售后
+                    	   	<input type="checkBox" name="trainer.businessCategory" id="trainer.businessCategory" <#if trainer.businessCategory ? index_of("客服")!=-1> checked </#if> value="客服"/>客服
+                	   		<input type="checkBox" name="trainer.businessCategory" id="trainer.businessCategory" <#if trainer.businessCategory ? index_of("市场")!=-1> checked </#if> value="市场"/>市场
+                    	   	<input type="checkBox" name="trainer.businessCategory" id="trainer.businessCategory" <#if trainer.businessCategory ? index_of("管理")!=-1> checked </#if> value="管理"/>管理
+                    	   	<input type="checkBox" name="trainer.businessCategory" id="trainer.businessCategory" <#if trainer.businessCategory ? index_of("内训")!=-1> checked </#if> value="内训"/>内训
+                    	   	<input type="checkBox" name="trainer.businessCategory" id="trainer.businessCategory" <#if trainer.businessCategory ? index_of("生产研发")!=-1> checked </#if> value="生产研发"/>生产研发
+                    	   	<input type="checkBox" name="trainer.businessCategory" id="trainer.businessCategory" <#if trainer.businessCategory ? index_of("行政")!=-1> checked </#if> value="行政"/>行政
                     	    </td>
                     	    
                   	    </tr>
@@ -348,7 +350,10 @@ function submitdata(){
 	var education = $("[name='trainer.education']").val();
 	var intro = $("[name='trainer.userCenter.intro']").val();
 	var mainCourse = $("[name='trainer.mainCourse']").val();
-	var businessCategory = $("[name='trainer.businessCategory']").val();
+	var businessCategory = '';
+	$("input:checkbox[name='trainer.businessCategory']:checked").each(function(index, element) {
+                         businessCategory += $(this).val() + ",";
+	}); 
 	var vedioURL1 = $("[name='trainer.vedioURL1']").val();
 	var vedioURL2 = $("[name='trainer.vedioURL2']").val();
 	
@@ -383,7 +388,7 @@ function submitdata(){
 		    	 	if(data.code==200){
 		    	 		var tid = $("[name='trainer.id']").val();
 		    	 		if(tid != undefined && tid != ""){
-		    	 			window.location.href = "/website/trainerDetail?trainer.id=" + tid;
+		    	 			window.location.href = "/backend/trainerCompleteResume;
 		    	 		}
 		    	 	}
 		     }

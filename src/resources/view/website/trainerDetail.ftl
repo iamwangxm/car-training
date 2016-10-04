@@ -94,8 +94,11 @@
                 </div>
                 <div class="pxshi_sp_box">
                 	<ul>
-                    	<li><a href="${trainer.vedioURL1!}">${trainer.vedioURL1!}</a></li>
-                        <li><a href="${trainer.vedioURL2!}">${trainer.vedioURL2!}</a></li>
+                    	<li>
+                    	<a href="${trainer.vedioURL1!}">
+                    	<iframe height=240 width=250 src='${trainer.vedioURL1!}' frameborder=0 'allowfullscreen'></iframe></a></li>
+                        <li><a href="${trainer.vedioURL2!}">
+                        <iframe height=240 width=250 src='${trainer.vedioURL2!}' frameborder=0 'allowfullscreen'></iframe></a></li>
                     </ul>
                 </div>
           </div>
@@ -107,7 +110,7 @@
                 <#if trainerEssayList??>
                 	<ul>
                 	<#list trainerEssayList as te>
-                    	<li><span><a href="#">${te.publishDate!?string("yyyy-MM-dd")}</a></span><a href="#">${te.title!}</a></li>
+                    	<li><span><a href="/website/trainerEssayDetail?trainerEssay.id=${te.id!}">${te.publishDate!?string("yyyy-MM-dd")}</a></span><a href="#">${te.title!}</a></li>
                     </#list>
                     </ul>
                     </#if>

@@ -94,12 +94,12 @@
 							<#else>
 							<option value="AUTO">汽车</option>
 							</#if>
-							<#if company?? && company.industry?? && company.industry.name() = ''>
+							<#if company?? && company.industry?? && company.industry.name() = 'TRAINING'>
 							<option selected="selected" value="TRAINING">培训</option>
 							<#else>
 							<option value="TRAINING">培训</option>
 							</#if>
-							<#if company?? && company.industry?? && company.industry.name() = ''>
+							<#if company?? && company.industry?? && company.industry.name() = 'SELL'>
 							<option selected="selected" value="SELL">销售</option>
 							<#else>
 							<option value="SELL">培训</option>
@@ -124,6 +124,9 @@
                     	    <option value="">请选择省</option>
                     	    <#if company?? && company.region??>
 							<option selected="selected" value="${company.region.id!}">${company.region.fullname!}</option>
+							<#list provinces as t>
+							<option value="${t.id!}">${t.fullname!}</option>
+							</#list>
 							<#else>
 							<#list provinces as t>
 							<option value="${t.id!}">${t.fullname!}</option>
@@ -141,14 +144,14 @@
                   	    <tr>
                     	    <td width="125" align="right" valign="middle"><font color="#ff0000">*</font>公司福利：</td>
                     	    <td colspan="3">
-                    	   	<input type="checkBox" name="company.welfare" id="company.welfare" value="五险一金"/>五险一金
-                    	   	<input type="checkBox" name="company.welfare" id="company.welfare" value="工作餐"/>工作餐
-                    	   	<input type="checkBox" name="company.welfare" id="company.welfare" value="免费班车"/>免费班车
-                	   		<input type="checkBox" name="company.welfare" id="company.welfare" value="股票期权"/>股票期权
-                    	   	<input type="checkBox" name="company.welfare" id="company.welfare" value="带薪休假"/>带薪休假
-                    	   	<input type="checkBox" name="company.welfare" id="company.welfare" value="年底双薪"/>年底双薪
-                    	   	<input type="checkBox" name="company.welfare" id="company.welfare" value="绩效奖金研发"/>绩效奖金
-                    	   	<input type="checkBox" name="company.welfare" id="company.welfare" value="定期体检"/>定期体检
+                    	   	<input type="checkBox" name="company.welfare" id="company.welfare" <#if company.welfare ? index_of("五险一金")!=-1> checked </#if> value="五险一金"/>五险一金
+                    	   	<input type="checkBox" name="company.welfare" id="company.welfare" <#if company.welfare ? index_of("工作餐")!=-1> checked </#if> value="工作餐"/>工作餐
+                    	   	<input type="checkBox" name="company.welfare" id="company.welfare" <#if company.welfare ? index_of("免费班车")!=-1> checked </#if> value="免费班车"/>免费班车
+                	   		<input type="checkBox" name="company.welfare" id="company.welfare" <#if company.welfare ? index_of("股票期权")!=-1> checked </#if> value="股票期权"/>股票期权
+                    	   	<input type="checkBox" name="company.welfare" id="company.welfare" <#if company.welfare ? index_of("带薪休假")!=-1> checked </#if> value="带薪休假"/>带薪休假
+                    	   	<input type="checkBox" name="company.welfare" id="company.welfare" <#if company.welfare ? index_of("年底双薪")!=-1> checked </#if> value="年底双薪"/>年底双薪
+                    	   	<input type="checkBox" name="company.welfare" id="company.welfare" <#if company.welfare ? index_of("绩效奖金")!=-1> checked </#if> value="绩效奖金"/>绩效奖金
+                    	   	<input type="checkBox" name="company.welfare" id="company.welfare" <#if company.welfare ? index_of("定期体检")!=-1> checked </#if> value="定期体检"/>定期体检
                     	    </td>
                     	   
                   	    </tr>
@@ -310,7 +313,10 @@ function submitdata(){
 	var scale = $("[name='company.scale']").val();
 	var industry = $("[name='company.industry']").val();
 	var address = $("[name='company.address']").val();
-	var welfare = $("[name='company.welfare']").val();
+	var welfare = '';
+	$("input:checkbox[name='company.welfare']:checked").each(function(index, element) {
+                         welfare += $(this).val() + ",";
+	 }); 
 	var regionId = $("[name='city']").val();
 	var intro = $("[name='company.intro']").val();
 	var environmentURL1 = document.getElementById('company.environmentURL1').src;
@@ -328,7 +334,7 @@ function submitdata(){
 	form_data.environmentURL1 = environmentURL1;
 	form_data.environmentURL2 = environmentURL2;
 	
-	$.ajax({
+		$.ajax({
 			 type: "POST",
 		     url: url,
 		     data: form_data,
@@ -339,11 +345,7 @@ function submitdata(){
 		     success: function (data) {
 		    	 showErrMsg("保存成功！");
 		    	 	if(data.code==200){
-		    	 		var tid = $("[name='company.id']").val();
-		    	 		if(tid != undefined && tid != ""){
-		    	 			//window.location.href = "/website/autoCompany?company.id=" + tid;
-		    	 			window.location.href = "/backend/companyCompleteResume;
-		    	 		}
+		    	 		window.location.href = "/backend/companyCompleteResume";
 		    	 	}
 		     }
 	});

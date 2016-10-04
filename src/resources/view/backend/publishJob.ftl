@@ -50,16 +50,17 @@
 			    <td width="721">
 			    <select name="job.workExprience" id="job.workExprience">
 	        	    <option value="">请选择</option>
-					<#list 1..20 as t>
+					<#list 0..20 as t>
 					<option value="${t}">${t}</option>
 					</#list>	
-					</select>
+					</select>&nbsp;
+					<font color="red" >选择0表示应界毕业生</font>
 				</td>
 			  </tr>
 			   <tr>
 			    <td width="79" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 待遇：</td>
 			    <td width="721">
-			    <input type="text" name="job.salary" id="job.salary" />
+			    <input type="text" name="job.salary" id="job.salary" />元/月
 				</td>
 			  </tr>
 			   <tr>
@@ -152,8 +153,14 @@ function submitdata(){
 	var name = $("[name='job.name']").val();
 	var workExprience = $("[name='job.workExprience']").val();
 	var salary = $("[name='job.salary']").val();
-	var languages = $("[name='job.languages']").val();
-	var welfare = $("[name='job.welfare']").val();
+	var languages = '';
+	$("input:checkbox[name='job.languages']:checked").each(function(index, element) {
+                         welfare += $(this).val() + ",";
+	 });
+	var welfare = '';
+	$("input:checkbox[name='job.welfare']:checked").each(function(index, element) {
+                         welfare += $(this).val() + ",";
+	 });
 	var regionId = $("[name='city']").val();
 	var description = $("[name='job.jobDescription']").val();
 	
