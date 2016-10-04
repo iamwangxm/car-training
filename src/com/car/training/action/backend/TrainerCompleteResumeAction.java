@@ -177,7 +177,7 @@ public class TrainerCompleteResumeAction extends BaseAction {
 			trainer.setVedioURL2(vedioURL1);
 			trainer.setVedioURL2(vedioURL2);
 			trainer.setUserCenter(uc);
-			trainerService.save(trainer);
+			trainerService.update(trainer);
 		}
 		Map<String,Object> map = new HashMap<>();
 		map.put("code", "200");

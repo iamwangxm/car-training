@@ -19,6 +19,8 @@ public class TrainerServiceImpl  implements TrainerService{
 
 	@Autowired
 	private TrainerManager trainerManager;
+	@Autowired
+	private UserCenterService userCenterServcie;
 
 	/** 新增培训师信息 */
 	@Override
@@ -39,7 +41,14 @@ public class TrainerServiceImpl  implements TrainerService{
 	@Timing
 	@Transactional
 	public void update(Trainer trainer) {
-		this.save(trainer);
+		com.car.training.model.Trainer target = trainerManager.findById(trainer.getId());
+		BeanUtils.copyProperties(trainer, target);
+		if(trainer.getUserCenter()!=null){
+			com.car.training.model.UserCenter uc = new com.car.training.model.UserCenter();
+			BeanUtils.copyProperties(trainer.getUserCenter(), uc);
+			userCenterServcie.update(trainer.getUserCenter());
+		}
+		trainerManager.update(target);
 	}
 
 	/** 删除培训师信息 */
