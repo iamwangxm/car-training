@@ -133,7 +133,7 @@
 							<select name="city" id="city">
                     	    <option value="">请选择市</option>
                     	    <#if company?? &&  company.region??>
-							<option selected="selected" value="${company.region.fullname!}">${company.region.fullname!}</option>
+							<option selected="selected" value="${company.region.id!}">${company.region.fullname!}</option>
 							</#if>
 							</select>
                     	    </td>

@@ -94,6 +94,10 @@ public class UserCenter  implements Serializable {
 
 	/** 是否启用 */
 	private boolean enabled;
+	
+	private Autobots autobot;
+	
+	private Trainer trainer;
 
 	public String getId() {
 		return id;
@@ -309,6 +313,22 @@ public class UserCenter  implements Serializable {
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	}
+
+	public Autobots getAutobot() {
+		return autobot;
+	}
+
+	public void setAutobot(Autobots autobot) {
+		this.autobot = autobot;
+	}
+
+	public Trainer getTrainer() {
+		return trainer;
+	}
+
+	public void setTrainer(Trainer trainer) {
+		this.trainer = trainer;
 	}
 
 	

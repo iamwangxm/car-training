@@ -13,14 +13,14 @@
           	<ul>
             	<#if '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='TRAINER'>
             	<li><div class="zlws">
-            	<a href="<@url value='/website/trainerDetail?trainer.id=${Session["userDetails"].id}'/>" target="_blank">个人资料</a></div>
+            	<a href="<@url value='/website/trainerDetail?trainer.id=${Session["userDetails"].trainer.id!}'/>" target="_blank">个人资料</a></div>
             	</li>
             	<li><div class="zlws">
             	<a href="<@url value='/backend/trainerCompleteResume'/>">完善资料</a></div>
             	</li>
             	<#elseIf '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='AUTOBOT'>
             	<li><div class="zlws">
-            	<a href="<@url value='/website/autobotDetail?autobots.id=${Session["userDetails"].id}'/>" target="_blank">个人资料</a></div>
+            	<a href="<@url value='/website/autobotDetail?autobots.id=${Session["userDetails"].autobot.id!}'/>" target="_blank">个人资料</a></div>
             	</li>
             	<li><div class="zlws"><a href="<@url value='/backend/autobotCompleteResume'/>">完善资料</a></div>
             	</li>
@@ -53,7 +53,9 @@
                 <li><div class="zwfb"><a href="<@url value='/backend/publishJob'/>">发布职位</a></div></li>
                 <li><div class="zwgl"><a href="<@url value='/backend/companyJobManage'/>">职位管理</a></div></li>
                 </#if>
+                <#if '{}' != '${session}' && Session["loginState"]=='Y' >
                 <li><div class="xgmm"><a href="<@url value='/backend/modifyPassword'/>">修改密码</a></div></li>
+                </#if>
                 <li><div class="aqtc"><a href="#"  onclick="javascript:logout();">安全退出</a></div></li>
             </ul>
           </div>

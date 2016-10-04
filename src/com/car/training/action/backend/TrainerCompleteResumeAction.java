@@ -164,9 +164,11 @@ public class TrainerCompleteResumeAction extends BaseAction {
 			uc.setMobile(umobile);
 			uc.setName(uname);
 			uc.setPersonalType(Enum.valueOf(PersonalType.class,upersonalType));
-			Region region = new Region();
-			region.setId(Long.valueOf(uregionId));
-			uc.setRegion(region);
+			if (StringUtils.isNotBlank(uregionId)) {
+				Region region = new Region();
+				region.setId(Long.valueOf(uregionId));
+				uc.setRegion(region);
+			}
 			Common com = new Common();
 			if (StringUtils.isNotBlank(uheadLogo) && !uheadLogo.startsWith("http")) {
 				String headLogo = com.uploadFile(uheadLogo);

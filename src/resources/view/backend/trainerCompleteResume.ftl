@@ -169,7 +169,7 @@
 							<select name="city" id="city">
                     	    <option value="">请选择市</option>
                     	    <#if trainer?? && trainer.userCenter?? && trainer.userCenter.region??>
-							<option selected="selected" value="${trainer.userCenter.region.fullname!}">${trainer.userCenter.region.fullname!}</option>
+							<option selected="selected" value="${trainer.userCenter.region.id!}">${trainer.userCenter.region.fullname!}</option>
 							</#if>
 							</select>
                     	    </td>

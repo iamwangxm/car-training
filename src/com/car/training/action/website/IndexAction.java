@@ -145,6 +145,14 @@ public class IndexAction extends BaseAction {
 				usercenter = usercenterService.findByUsernamePassword(username, password);
 					if (usercenter != null) {
 						HttpSession context = request.getSession();
+						Autobots autobots = autobotsService.findByUserCenter(usercenter.getId());
+						if (autobots != null) {
+							usercenter.setAutobot(autobots);
+						}
+						Trainer trainer = trainerService.findByUserCenter(usercenter.getId());
+						if (trainer != null) {
+							usercenter.setTrainer(trainer);
+						}
 						context.setAttribute("userDetails", usercenter);
 						targetUrl = "/website/index";
 						request.getSession().setAttribute("loginState", "Y");

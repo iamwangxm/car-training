@@ -16,11 +16,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 
+import com.car.training.domain.Autobots;
 import com.car.training.domain.Company;
+import com.car.training.domain.Trainer;
 import com.car.training.domain.UserCenter;
 import com.car.training.enums.UserType;
 import com.car.training.exceptions.NotFoundException;
+import com.car.training.service.AutobotsService;
 import com.car.training.service.CompanyService;
+import com.car.training.service.TrainerService;
 import com.car.training.service.UserCenterService;
 
 @AutoConfig
@@ -42,6 +46,10 @@ public class LoginAction extends BaseAction {
 	private Object data;
 
 	private String captcha;
+	@Autowired
+	private TrainerService trainerService;
+	@Autowired
+	private AutobotsService autobotsService;
 	@Autowired
 	protected transient UserCenterService usercenterService;
 	@Autowired
@@ -115,6 +123,14 @@ public class LoginAction extends BaseAction {
 				usercenter = usercenterService.findByUsernamePassword(username, password);
 					if (usercenter != null) {
 						HttpSession context = request.getSession();
+						Autobots autobots = autobotsService.findByUserCenter(usercenter.getId());
+						if (autobots != null) {
+							usercenter.setAutobot(autobots);
+						}
+						Trainer trainer = trainerService.findByUserCenter(usercenter.getId());
+						if (trainer != null) {
+							usercenter.setTrainer(trainer);
+						}
 						context.setAttribute("userDetails", usercenter);
 						targetUrl = "/backend/applyJobHistory";
 						request.getSession().setAttribute("loginState", "Y");

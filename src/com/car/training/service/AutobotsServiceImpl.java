@@ -30,11 +30,11 @@ public class AutobotsServiceImpl  implements AutobotsService{
 	public void save(Autobots autobots) {
  		com.car.training.model.Autobots target = new com.car.training.model.Autobots();
 		BeanUtils.copyProperties(autobots, target);
-//		if(autobots.getUserCenter()!=null){
-//			com.car.training.model.UserCenter uc = new com.car.training.model.UserCenter();
-//			BeanUtils.copyProperties(autobots.getUserCenter(), uc);
-//			userCenterServcie.update(autobots.getUserCenter());
-//		}
+		if(autobots.getUserCenter()!=null){
+			com.car.training.model.UserCenter uc = new com.car.training.model.UserCenter();
+			BeanUtils.copyProperties(autobots.getUserCenter(), uc);
+			userCenterServcie.update(autobots.getUserCenter());
+		}
 		autobotsManager.save(target);
 	}
 
@@ -43,7 +43,14 @@ public class AutobotsServiceImpl  implements AutobotsService{
 	@Timing
 	@Transactional
 	public void update(Autobots autobots) {
-		this.save(autobots);
+		com.car.training.model.Autobots target = autobotsManager.findById(autobots.getId());
+		BeanUtils.copyProperties(autobots, target);
+		if(autobots.getUserCenter()!=null){
+			com.car.training.model.UserCenter uc = new com.car.training.model.UserCenter();
+			BeanUtils.copyProperties(autobots.getUserCenter(), uc);
+			userCenterServcie.update(autobots.getUserCenter());
+		}
+		autobotsManager.update(target);
 	}
 
 	/** 删除汽车人信息 */

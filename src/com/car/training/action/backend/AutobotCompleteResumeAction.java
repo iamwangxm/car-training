@@ -186,9 +186,11 @@ public class AutobotCompleteResumeAction extends BaseAction {
 			uc.setMarryStatus(Enum.valueOf(MarryStatus.class, umarryStatus));
 			uc.setName(uname);
 			uc.setPersonalType(Enum.valueOf(PersonalType.class,upersonalType));
-			Region region = new Region();
-			region.setId(Long.valueOf(uregionId));
-			uc.setRegion(region);
+			if (StringUtils.isNotBlank(uregionId)) {
+				Region region = new Region();
+				region.setId(Long.valueOf(uregionId));
+				uc.setRegion(region);
+			}
 			uc.setMobile(umobile);
 			autobot.setUserCenter(uc);
 			autobotsService.update(autobot);

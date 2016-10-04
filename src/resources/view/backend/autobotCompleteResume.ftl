@@ -162,7 +162,7 @@
 							<select name="city" id="city">
                     	    <option value="">请选择市</option>
                     	    <#if autobot?? && autobot.userCenter?? && autobot.userCenter.region??>
-							<option selected="selected" value="${autobot.userCenter.region.fullname!}">${autobot.userCenter.region.fullname!}</option>
+							<option selected="selected" value="${autobot.userCenter.region.id!}">${autobot.userCenter.region.fullname!}</option>
 							</#if>
 							</select>
                     	    </td>

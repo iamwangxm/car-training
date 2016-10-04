@@ -36,7 +36,7 @@
                             <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/dr.jpg" /></a></span>
                             <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/zs.jpg" /></a></span></div>
                     <div class="mingzi_r right">
-                        	<input style="border:none;" type="image" name="gz" id="gz" src="http://obu3flkwk.bkt.clouddn.com/website/images/glz.jpg" />
+                        	<!--<input style="border:none;" type="image" name="gz" id="gz" src="http://obu3flkwk.bkt.clouddn.com/website/images/glz.jpg" />-->
                     </div>
                         <div class="clear"></div>
                     </div>

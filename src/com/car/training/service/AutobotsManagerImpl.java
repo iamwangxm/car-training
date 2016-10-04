@@ -25,6 +25,11 @@ public class AutobotsManagerImpl extends BaseManagerImpl<Autobots> implements Au
 	
 	@Override
 	@Transactional
+	public void update(Autobots obj) {
+		super.update(obj);
+	}
+	@Override
+	@Transactional
 	public void delete(String id) {
 		if (StringUtils.isBlank(id))
 			throw new NotFoundException("要删除的对象不存在");
