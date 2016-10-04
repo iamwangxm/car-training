@@ -164,7 +164,7 @@
 					        <td>
 					        <table width="400" border="0" cellspacing="0" cellpadding="0">
 					          <tr>
-					            <td  width="15%" height="40" align="left" valign="middle"><input type="file" name="logo" id="logo" value="浏 览" selectImage(this)/></td>
+					            <td  width="15%" height="40" align="left" valign="middle"><input type="file" name="logo" id="logo" value="浏 览" onChange="selectImage(this)"/></td>
 					            <td width="23%" align="left" valign="middle"></td>
 					            <td width="62%" align="left" valign="middle"></td>
 					            </tr>
@@ -228,10 +228,10 @@
        
         <td width="50" align="left" valign="middle"> 
         <img id="company.environmentURL1" src="http://obu3flkwk.bkt.clouddn.com/backend/images/zw.jpg" style="width:40px;height:40px;" />
-        <input type="file" name="environmentURL1" id="environmentURL1" value="浏览" selectImage(this)/></td>
+        <input type="file" name="environmentURL1" id="environmentURL1" value="浏览" onChange="selectImage(this)"/></td>
         <td width="80" align="left" valign="middle">
         <img id="company.environmentURL2" src="http://obu3flkwk.bkt.clouddn.com/backend/images/zw.jpg" style="width:40px;height:40px;" />
-        <input type="file" name="environmentURL2" id="environmentURL2" value="浏览" selectImage(this)/></td>
+        <input type="file" name="environmentURL2" id="environmentURL2" value="浏览" onChange="selectImage(this)"/></td>
         <td width="80" align="left" valign="middle"></td>
         <td width="190" align="left" valign="middle">&nbsp;</td>
       </tr>

@@ -91,7 +91,7 @@
 			        
 				        <table width="400" border="0" cellspacing="0" cellpadding="0">
 				          <tr>
-				            <td  width="15%" height="40" align="left" valign="middle"><input type="file" name="headLogo" id="headLogo" value="浏 览" onClick="javascript:selectImage(this);"/></td>
+				            <td  width="15%" height="40" align="left" valign="middle"><input type="file" name="headLogo" id="headLogo" value="浏 览" onChange="selectImage(this)"/></td>
 				            <td width="23%" align="left" valign="middle"></td>
 				            <td width="62%" align="left" valign="middle"></td>
 				            </tr>
@@ -388,7 +388,7 @@ function submitdata(){
 		    	 	if(data.code==200){
 		    	 		var tid = $("[name='trainer.id']").val();
 		    	 		if(tid != undefined && tid != ""){
-		    	 			window.location.href = "/backend/trainerCompleteResume;
+		    	 			window.location.href = "/backend/trainerCompleteResume";
 		    	 		}
 		    	 	}
 		     }

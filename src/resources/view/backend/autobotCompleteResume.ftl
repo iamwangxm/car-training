@@ -350,10 +350,7 @@ function submitdata(){
 		     success: function (data) {
 		    	 alert(data.msg);
 		    	 	if(data.code==200){
-		    	 		var tid = $("[name='autobot.id']").val();
-		    	 		if(tid != undefined && tid != ""){
-		    	 			window.location.href = "/website/autobotDetail?autobots.id=" + tid;
-		    	 		}
+		    	 			window.location.href = "/backend/autobotCompleteResume";
 		    	 	}
 		     }
 	});
