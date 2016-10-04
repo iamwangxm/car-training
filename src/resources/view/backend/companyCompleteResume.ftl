@@ -180,7 +180,7 @@
                 </div>
           </div>
         <!-- <div class="pxshijl">
-         <h5>上传企业营业执照</h5>
+         <h5>上传公司环境</h5>
                     <div class="pxshijl_box">
                     	
 <table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -211,7 +211,7 @@
             </div>
           </div>-->
           <div class="pxshijl">
-               	  <h5>上传企业照片</h5>
+               	  <h5>上传企业环境照片</h5>
                     <div class="pxshijl_box">
                     	
 <table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -245,7 +245,7 @@
           <div class="pxshijl">
                	  <h5>企业介绍</h5>
                     <div class="pxshijl_box">
-                    	<table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
+    	<table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
   
      <tr>
     <td height="40" colspan="4" align="left" valign="middle"><table width="90%" border="0" cellspacing="0" cellpadding="0">
@@ -316,7 +316,6 @@ function submitdata(){
 	var environmentURL1 = document.getElementById('company.environmentURL1').src;
 	var environmentURL2 = document.getElementById('company.environmentURL2').src;
 	
-	form_data.aid = aid;
 	form_data.cid = cid;
 	form_data.name = name;
 	form_data.logo= logo;
@@ -334,15 +333,16 @@ function submitdata(){
 		     url: url,
 		     data: form_data,
 		     error: function(request) {
-	             alert("网络出错啦！");
+	             showErrMsg("网络出错啦！");
 	             return false;
 	         },
 		     success: function (data) {
-		    	 alert(data.msg);
+		    	 showErrMsg("保存成功！");
 		    	 	if(data.code==200){
 		    	 		var tid = $("[name='company.id']").val();
 		    	 		if(tid != undefined && tid != ""){
-		    	 			window.location.href = "/website/autoCompany?company.id=" + tid;
+		    	 			//window.location.href = "/website/autoCompany?company.id=" + tid;
+		    	 			window.location.href = "/backend/companyCompleteResume;
 		    	 		}
 		    	 	}
 		     }
@@ -395,6 +395,10 @@ var image = '';
 	}
 	reader.readAsDataURL(file.files[0]);
 }
+
+function showErrMsg(errMsg){
+    	alert(errMsg);
+ }
 </script>
 
 <!-- main结束 -->

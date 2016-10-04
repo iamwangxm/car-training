@@ -132,7 +132,7 @@ public class CompanyCompleteResumeAction extends BaseAction {
 	@JsonConfig(root = "data")
 	public String save() throws Exception{
 		HttpServletRequest request = ServletActionContext.getRequest();
-		Company company = new Company();
+		Company company = null;
 		company = (Company) request.getSession().getAttribute("userDetails");
 		if (company != null) {
 			company = companyService.findById(company.getId());
@@ -143,9 +143,11 @@ public class CompanyCompleteResumeAction extends BaseAction {
 			company.setEnabled(true);
 			company.setIntro(intro);
 			company.setAddress(address);
-			Region region = new Region();
-			region.setId(Long.valueOf(regionId));
-			company.setRegion(region);
+			if (StringUtils.isNotBlank(regionId)) {
+				Region region = new Region();
+				region.setId(Long.valueOf(regionId));
+				company.setRegion(region);
+			}
 			company.setScale(Enum.valueOf(Scale.class,scale));
 			if (StringUtils.isNotBlank(welfare)) {
 				Set<String> setStr = new HashSet<String>();
@@ -157,27 +159,27 @@ public class CompanyCompleteResumeAction extends BaseAction {
 					company.setWelfare(setStr);
 				}
 			}
-			Common com = new Common();
-			if (StringUtils.isNotBlank(logo) && !logo.startsWith("http")) {
-				String logoUrl = com.uploadFile(logo);
-				company.setLogo(logoUrl);
-			}
-			if (StringUtils.isNotBlank(environmentURL1) && !environmentURL1.startsWith("http")) {
-				String URL1 = com.uploadFile(environmentURL1);
-				company.setEnvironmentURL1(URL1);
-			}
-			if (StringUtils.isNotBlank(environmentURL2) && !environmentURL2.startsWith("http")) {
-				String URL2 = com.uploadFile(environmentURL2);
-				company.setEnvironmentURL2(URL2);
-			}
+//			Common com = new Common();
+//			if (StringUtils.isNotBlank(logo) && !logo.startsWith("http")) {
+//				String logoUrl = com.uploadFile(logo);
+//				company.setLogo(logoUrl);
+//			}
+//			if (StringUtils.isNotBlank(environmentURL1) && !environmentURL1.startsWith("http")) {
+//				String URL1 = com.uploadFile(environmentURL1);
+//				company.setEnvironmentURL1(URL1);
+//			}
+//			if (StringUtils.isNotBlank(environmentURL2) && !environmentURL2.startsWith("http")) {
+//				String URL2 = com.uploadFile(environmentURL2);
+//				company.setEnvironmentURL2(URL2);
+//			}
 
 			company.setIndustry(Enum.valueOf(Industry.class, industry));
-			companyService.save(company);
+			companyService.update(company);
 		}
 		Map<String,Object> map = new HashMap<>();
 		map.put("code", "200");
 		map.put("msg", "保存成功");
-		data = map;
+		setData(map);
 		return JSON;
 	}
 

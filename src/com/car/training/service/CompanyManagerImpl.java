@@ -31,6 +31,12 @@ public class CompanyManagerImpl extends BaseManagerImpl<Company> implements Comp
 	
 	@Override
 	@Transactional
+	public void update(Company obj) {
+		super.update(obj);
+	}
+	
+	@Override
+	@Transactional
 	public void delete(String id) {
 		if (StringUtils.isBlank(id))
 			throw new NotFoundException("要删除的对象不存在");

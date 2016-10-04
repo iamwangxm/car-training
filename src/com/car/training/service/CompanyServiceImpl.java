@@ -36,7 +36,9 @@ public class CompanyServiceImpl  implements CompanyService{
 	@Timing
 	@Transactional
 	public void update(Company company) {
-		this.save(company);
+		com.car.training.model.Company target = companyManager.findById(company.getId());
+		BeanUtils.copyProperties(company, target);
+		companyManager.update(target);
 	}
 
 	/** 删除企业/公司信息 */
