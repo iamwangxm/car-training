@@ -155,7 +155,7 @@ function submitdata(){
 	var salary = $("[name='job.salary']").val();
 	var languages = '';
 	$("input:checkbox[name='job.languages']:checked").each(function(index, element) {
-                         welfare += $(this).val() + ",";
+                         languages += $(this).val() + ",";
 	 });
 	var welfare = '';
 	$("input:checkbox[name='job.welfare']:checked").each(function(index, element) {

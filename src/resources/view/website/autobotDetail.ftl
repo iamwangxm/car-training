@@ -5,7 +5,7 @@
 
 <title>汽车培聘网</title>
 <link rel="stylesheet" href="<@url value="/assets/website/css/qcren.css"/>" type="text/css" media="screen" />
-
+<link rel="stylesheet" href="<@url value="/assets/website/css/pxshi.css"/>" type="text/css" media="screen" />
 
 </head>
 
@@ -52,9 +52,10 @@
                     </div>
                     <div class="qcr_jbxx">
                     	<div class="jiben left">
-                        	<span>售后</span><span>销售</span><span style=" background:none;">客服</span>擅长领域/行业：
+                        	擅长领域/行业：<span>售后</span><span>销售</span><span style=" background:none;">客服</span>
+                        	
                         </div>
-                        <div class="qc_pp right">${autobots.autoBrand!}<span style=" border:none;">简历查看数：30</span></div>
+                        <div class="jiben left"><span style=" border:none;">汽车品牌:</span>${autobots.autoBrand!}</div>
                         <div class="clear"></div>
                         
                         
@@ -76,12 +77,7 @@
                      <td width="20%" align="right">婚姻状况：</td>
                      <td width="30%">${autobots.userCenter.marryStatus!}</td>
                    </tr>
-                   <tr>
-                     <td align="right" valign="middle">手机：</td>
-                     <td>${autobots.userCenter.mobile!}</td>
-                     <td align="right">邮箱：</td>
-                     <td>${autobots.userCenter.email!}</td>
-                   </tr>
+                  
                    <tr>
                      <td align="right" valign="middle">国籍：</td>
                      <td>中国</td>
@@ -129,7 +125,16 @@
 
                 </div>
           </div>-->
-            <div class="pxshi_dp">
+           <div class="ny_pxshi_r right">
+        	<div class="pxshi_lx">
+            	<h4>联系方式</h4>
+                <div class="lx_box">
+                <div class="xingming">${autobots.userCenter.name!}(培训师本人)</div>
+                   电话：${autobots.userCenter.mobile!}<br />
+                   邮箱：${autobots.userCenter.email!}<br />
+                </div>
+            </div>
+           <!--<div class="pxshi_dp">
             	<div class="pxshi_bt">
             	<h4>培训师点评</h4>
                 </div>
@@ -137,7 +142,7 @@
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td align="center" valign="middle">
-      <textarea style="width:700px; height:100px;" name="textarea" id="textarea" cols="45" rows="5"></textarea></td>
+      <textarea style="width:230px; height:100px;" name="textarea" id="textarea" cols="45" rows="5"></textarea></td>
   </tr>
   <tr>
     <td height="75" align="center" valign="bottom"><input type="image" name="tj" id="tj" src="http://obu3flkwk.bkt.clouddn.com/website/images/tj.jpg" /></td>
@@ -161,7 +166,7 @@
                     </ul>
                 </div>
             </#if>
-        	</div>
+        	</div>-->
             <div class="pyquan">
             <#if autobotsList??>
             	<h4>朋友圈</h4>

@@ -82,7 +82,7 @@
                 	<#if coursesList??>
                 	<ul>
                 		<#list coursesList as c>
-                        <li><span><a href="#">${c.publishDate!?string("yyyy-MM-dd")}</a></span><a href="#">${c.courseName!}（${c.longTime!}天）</a></li>
+                        <li><span><a href="#">${c.publishDate!?string("yyyy-MM-dd")}</a></span><a href="/website/courseDetail?course.id=${c.id!}" target="_blank">${c.courseName!}（${c.longTime!}天）</a></li>
                         </#list>
                     </ul>
                     </#if>
@@ -110,7 +110,7 @@
                 <#if trainerEssayList??>
                 	<ul>
                 	<#list trainerEssayList as te>
-                    	<li><span><a href="/website/trainerEssayDetail?trainerEssay.id=${te.id!}">${te.publishDate!?string("yyyy-MM-dd")}</a></span><a href="#">${te.title!}</a></li>
+                    	<li><span><a href="#">${te.publishDate!?string("yyyy-MM-dd")}</a></span><a href="/website/trainerEssayDetail?trainerEssay.id=${te.id!}" target="_blank">${te.title!}</a></li>
                     </#list>
                     </ul>
                     </#if>
@@ -140,8 +140,8 @@
                 <div class="lx_box">
                 	<div class="xingming">${trainer.userCenter.name!}(培训师本人)</div>
                    电话：${trainer.userCenter.mobile!}<br />
+                   邮箱：${trainer.userCenter.email!}<br />
 <!--QQ：${trainer.userCenter.QQ!}<br />
-邮箱：${trainer.userCenter.email!}<br />
 微信：${trainer.userCenter.weixin!}<br />-->
                 </div>
             </div>

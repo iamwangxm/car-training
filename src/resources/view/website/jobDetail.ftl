@@ -25,20 +25,22 @@
     	<div class="zhaopin_l left">
         	<div class="zp_qy">
             	<div class="zwmc">${jobs.name!}</div>
-                <div class="qymc"><span>宝马</span><span>奔驰</span><span>当前汽车品牌：</span>${jobs.company.name!}</div>
+                <div class="qymc"><span>${jobs.company.brand!}</span><span>当前汽车品牌：</span>${jobs.company.name!}</div>
             </div>
             <div class="zhaopin_box">
             	<div class="xzdy">
                 	<div class="zwdy"><span><input style="border:none;" type="image" name="yp" id="yp" src="http://obu3flkwk.bkt.clouddn.com/website/images/yp_an.jpg" /></span>面议</div>
-               	 	<div class="shoucang">收藏</div>
+               	 	<!--<div class="shoucang">收藏</div>-->
                 	<div class="gzdd">
                 	<div class="didian left"><#if jobs.region??>${jobs.region.fullname!}</#if></div>
-                    <div class="fb_sj left">${jobs.publishDate!?string("yyyy-MM-dd")}</div>
+                    <div class="fb_dy left">${jobs.salary!} （元/月）</div>
+                    <div class="fb_sj right">${jobs.publishDate!?string("yyyy-MM-dd")}</div>
                     <div class="clear"></div>
                 </div>
                 	<div class="zwyq">
                 	<ul>
-                    	<li>${jobs.education!}</li><li>${jobs.workExprience!}年以上经验</li><li>英语+普通话</li><li style="background:none;">年龄不限</li>
+                    	<li>${jobs.education!}</li><li><#if jobs.workExprience=0 > 应界毕业生 <#else> ${jobs.workExprience!}年以上经验</#if></li><li>${jobs.languages!?replace(",","+")}</li>
+                    	<li style="background:none;"></li>
                     </ul>
                     <div class="clear"></div>
                 </div>
