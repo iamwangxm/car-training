@@ -74,6 +74,11 @@ public class JobsServiceImpl  implements JobsService{
 			}
 			target.setCompany(remotingCompany);
 		}
+		if(source!=null&&source.getRegion()!=null){
+			Region region = new Region();
+			BeanUtils.copyProperties(source.getRegion(), region);
+			target.setRegion(region);
+		}
 		return target;
 	}
 	

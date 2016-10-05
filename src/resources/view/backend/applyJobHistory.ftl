@@ -43,25 +43,25 @@
                       <#list deliveryResumeList.result as t>
                       <#if t?? && t.jobs??>
                       <tr>
-                        <td  height="40" align="center" valign="middle" bgcolor="#ffffff"><input type="checkbox" name="checkbox" id="checkbox" /></td>
+                        <td  height="40" align="center" valign="middle" bgcolor="#ffffff"><input type="checkBox" name="chk_list" id="chk_list" value="${t.id!}"/></td>
                         <td  align="center" valign="middle" bgcolor="#ffffff" class="sq"><a href="#">${t.jobs.company.name!} </a></td>
                         <td align="center" valign="middle" bgcolor="#ffffff"class="sq"><a href="#">${t.jobs.name!}</a></td>
                         <td  align="center" valign="middle" bgcolor="#ffffff">销售</td>
                         <td align="center" valign="middle" bgcolor="#ffffff">${t.jobs.jobType!}</td>
                         <td  align="center" valign="middle" bgcolor="#ffffff">${t.jobs.region.fullname!}</td>
                         <td  align="center" valign="middle" bgcolor="#ffffff">${t.createDate!?string("yyyy-MM-dd")}</td>
-                        <td align="center" valign="middle" bgcolor="#ffffff"  class="caozuo"><a href="/website/jobDetail?jobs.id=${t.jobs.id!}" target="blank">查看</a>&nbsp;&nbsp;  <a href="#">删除</a></td>
+                        <td align="center" valign="middle" bgcolor="#ffffff"  class="caozuo"><a href="/website/jobDetail?jobs.id=${t.jobs.id!}" target="blank">查看</a>&nbsp;&nbsp;  <a href="/backend/applyJobHistory/delete?dr.id=${t.id!}" onclick="javascript:if(confirm('确认要删除该记录吗?')==false) return false;">删除</a></td>
                       </tr>
                       </#if>
                       </#list>
                       </#if>
                       
                       <tr>
-                        <td  height="40" align="center" valign="middle" bgcolor="#ffffff"><input type="checkbox" name="checkbox" id="checkbox" /></td>
+                        <td  height="40" align="center" valign="middle" bgcolor="#ffffff"><input type="checkBox" name="chk_all" id="chk_all" /></td>
                         <td colspan="7"  align="left" valign="middle" bgcolor="#ffffff" class="sq"><table width="200" border="0" cellspacing="0" cellpadding="0">
                           <tr>
-                            <td width="80" align="center" valign="middle" class="quanxuan"><a href="#">全 选</a></td>
-                            <td width="163"><input type="image" name="imageField" id="imageField" src="http://obu3flkwk.bkt.clouddn.com/backend/images/sc.jpg" /></td>
+                            <td width="80" align="center" valign="middle" class="quanxuan"><input type="image" name="imageField" id="imageField" src="http://obu3flkwk.bkt.clouddn.com/backend/images/sc.jpg" /></td>
+                            <td width="163"></td>
                           </tr>
                         </table></td>
                       </tr>
@@ -156,7 +156,15 @@
 </div>
 
 <!-- main结束 -->
-
+<script>
+$("#chk_all").click(function(){
+	if($("#chk_all").attr("checked")){
+     	$("input[name='chk_list']").attr("checked",true);
+     }else{
+     	$("input[name='chk_list']").attr("checked",false);
+     }
+});
+</script>
 <!--分页有关js-->
     <script>
     

@@ -21,7 +21,7 @@ public class TrainerEssayServiceImpl  implements TrainerEssayService{
 	@Autowired
 	private TrainerEssayManager trainerEssayManager;
 
-	/** 新增企业/公司信息 */
+	/** 新增培训师文章信息 */
 	@Override
 	@Timing
 	@Transactional
@@ -31,7 +31,7 @@ public class TrainerEssayServiceImpl  implements TrainerEssayService{
 		trainerEssayManager.save(target);
 	}
 
-	/** 更新企业/公司信息 */
+	/** 更新培训师文章信息 */
 	@Override
 	@Timing
 	@Transactional
@@ -39,19 +39,17 @@ public class TrainerEssayServiceImpl  implements TrainerEssayService{
 		this.save(trainerEssay);
 	}
 
-	/** 删除企业/公司信息 */
+	/** 删除培训师文章信息 */
 	@Override
 	@Timing
 	@Transactional
 	public void delete(String id) {
 		if (StringUtils.isNotBlank(id)) {
-			com.car.training.model.TrainerEssay target = new com.car.training.model.TrainerEssay();
-			target = trainerEssayManager.get(id);
-			trainerEssayManager.delete(target);
+			trainerEssayManager.delete(id);
 		}
 	}
 
-	/** 获取企业/公司信息 **/
+	/** 获取培训师文章信息 **/
 	@Override
 	@Timing
 	@Transactional(readOnly = true)
@@ -65,7 +63,7 @@ public class TrainerEssayServiceImpl  implements TrainerEssayService{
 		return target;
 	}
 	
-	/** 获取企业/公司列表 */
+	/** 获取培训师文章列表 */
 	@Override
 	@Timing
 	@Transactional(readOnly = true)
@@ -87,7 +85,7 @@ public class TrainerEssayServiceImpl  implements TrainerEssayService{
 		return tResultPage;
 	}
 	
-	/** 获取企业/公司列表 */
+	/** 获取培训师文章列表 */
 	@Override
 	@Timing
 	@Transactional(readOnly = true)

@@ -29,11 +29,11 @@
             </div>
             <div class="zhaopin_box">
             	<div class="xzdy">
-                	<div class="zwdy"><span><input style="border:none;" type="image" name="yp" id="yp" src="http://obu3flkwk.bkt.clouddn.com/website/images/yp_an.jpg" /></span>面议</div>
+                	<div class="zwdy"><span><img style="border:none;"  name="yp" id="yp" src="http://obu3flkwk.bkt.clouddn.com/website/images/yp_an.jpg" onclick="applyJob('${jobs.id!}')" /></span></div>
                	 	<!--<div class="shoucang">收藏</div>-->
                 	<div class="gzdd">
                 	<div class="didian left"><#if jobs.region??>${jobs.region.fullname!}</#if></div>
-                    <div class="fb_dy left">${jobs.salary!} （元/月）</div>
+                    <div class="didian left">${jobs.salary!} （元/月）</div>
                     <div class="fb_sj right">${jobs.publishDate!?string("yyyy-MM-dd")}</div>
                     <div class="clear"></div>
                 </div>
@@ -93,7 +93,7 @@
                       <div class="qylogo_r right">
                        	<div class="danbao">已有${jobs.company.bondsmanCount!}人担保</div>
                             <div class="wydb"><a href="#">
-                              <input style="border:none;" type="image" name="db" id="db" src="http://obu3flkwk.bkt.clouddn.com/website/images/danbao.jpg" />
+                              <input style="border:none;" type="image" name="db" id="db" src="http://obu3flkwk.bkt.clouddn.com/website/images/danbao.jpg" onclick="bondsto('${jobs.company.id!}','${jobs.id!}')" />
                             </a></div>
                       </div>
                         <div class="clear"></div>
@@ -161,9 +161,93 @@ $(".www51buycom").slide({ titCell:".num ul" , mainCell:".51buypic" , effect:"fol
     </div>
     </#if>
 </div>
-    
-	
+<script>
 
+function applyJob(jid){
+if(confirm("确定要申请该职位吗?")){
+var form_data={};
+var jid = jid;
+
+if(jid==''||jid==null){
+	alert('您申请的职位已不存在');
+	return false;
+}
+
+form_data.jid = jid;
+
+$.ajax({
+	 type: "POST",
+     url: "/website/jobDetail/apply",
+     data: form_data,
+     error: function(request) {
+         showErrMsg("网络出错啦！");
+         return false;
+     },
+     success: function (data) {
+    	 if(data.code==200){
+			 showErrMsg("恭喜您,您已申请成功了！");
+		 	setTimeout(function(){
+		 		if(jid==''||jid==null){
+     	 			window.location.href = "/website/jobDetail?jobs.id=jid";
+     	 			}
+     	 		},300);
+    	 }else if(data.code==400){
+    	 	 showErrMsg(data.msg);
+    	 	 return false;
+    	 }else{
+    	 	 return false;
+    	 }
+     }
+});
+}else{
+	return false;
+}
+}
+    
+function bondsto(cid,jid){ 
+if(confirm("确定要为该公司担保吗?")){
+var form_data={};
+var cid = cid;
+var jid = jid;
+if(cid==''||cid==null){
+	alert('该公司已不存在');
+	return false;
+}
+
+form_data.cid = cid;
+
+$.ajax({
+	 type: "POST",
+     url: "/website/jobDetail/bondsman",
+     data: form_data,
+     error: function(request) {
+         showErrMsg("网络出错啦！");
+         return false;
+     },
+     success: function (data) {
+    	 if(data.code==200){
+			 showErrMsg("恭喜您,您已成为该公司的担保人！");
+			 setTimeout(function(){
+		 		if(jid==''||jid==null){
+     	 			window.location.href = "/website/jobDetail?jobs.id=jid";
+     	 			}
+     	 		},300);
+    	 }else if(data.code==400){
+    	 	 showErrMsg(data.msg);
+    	 	 return false;
+    	 }else{
+    	 	 return false;
+    	 }
+     }
+});
+}else{
+	return false;
+}
+}
+function showErrMsg(errMsg){
+	alert(errMsg);
+}
+</script>
 <!-- main结束 -->
 <#include "/assets/website/common/footer.html">
 </body>

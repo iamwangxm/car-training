@@ -42,25 +42,25 @@
                       <#list jobsList.result as t>
                       <#if t??>
                       <tr>
-                        <td  height="40" align="center" valign="middle" bgcolor="#ffffff"><input type="checkbox" name="checkbox" id="checkbox" /></td>
+                        <td  height="40" align="center" valign="middle" bgcolor="#ffffff"><input type="checkBox" name="chk_list" id="chk_list" /></td>
                         <td  align="center" valign="middle" bgcolor="#ffffff" class="sq"><a href="/website/jobDetail?jobs.id=${t.id!}" target="blank">${t.name!}</a></td>
                         <!--<td align="center" valign="middle" bgcolor="#ffffff"class="sq"><a href="#">${t.company.name!}</a></td>-->
                         <td  align="center" valign="middle" bgcolor="#ffffff">销售</td>
                         <td align="center" valign="middle" bgcolor="#ffffff">${t.jobType!}</td>
                         <td  align="center" valign="middle" bgcolor="#ffffff"><#if t?? && t.region??>${t.region.fullname!}</#if></td>
                         <td  align="center" valign="middle" bgcolor="#ffffff">${t.publishDate!?string("yyyy-MM-dd")}</td>
-                        <td align="center" valign="middle" bgcolor="#ffffff"  class="caozuo">已投: <a href="/website/jobDetail?jobs.id=${t.id!}" target="blank">${t.deliveryCount!} </a>&nbsp;&nbsp;  <a href="/backend/companyJobManage/jobDelete?jobs.id=${t.id!}">删除</a></td>
+                        <td align="center" valign="middle" bgcolor="#ffffff"  class="caozuo">已投: <a href="/website/jobDetail?jobs.id=${t.id!}" target="blank">${t.deliveryCount!} </a>&nbsp;&nbsp;  <a href="/backend/companyJobManage/jobDelete?jobs.id=${t.id!}" onclick="javascript:if(confirm('确认要删除该记录吗?')==false) return false;">删除</a></td>
                       </tr>
                       </#if>
                       </#list>
                       </#if>
                       
                       <tr>
-                        <td  height="40" align="center" valign="middle" bgcolor="#ffffff"><input type="checkbox" name="checkbox" id="checkbox" /></td>
+                        <td  height="40" align="center" valign="middle" bgcolor="#ffffff"><input type="checkBox" name="chk_all" id="chk_all" /></td>
                         <td colspan="7"  align="left" valign="middle" bgcolor="#ffffff" class="sq"><table width="200" border="0" cellspacing="0" cellpadding="0">
                           <tr>
-                            <td width="80" align="center" valign="middle" class="quanxuan"><a href="#">全 选</a></td>
-                            <td width="163"><input type="image" name="imageField" id="imageField" src="http://obu3flkwk.bkt.clouddn.com/backend/images/sc.jpg" /></td>
+                            <td width="80" align="center" valign="middle" class="quanxuan"><input type="image" name="imageField" id="imageField" src="http://obu3flkwk.bkt.clouddn.com/backend/images/sc.jpg" /></td>
+                            <td width="163"></td>
                           </tr>
                         </table></td>
                       </tr>
@@ -69,10 +69,82 @@
                   </table>
                   </#if>
           
-         <div class="fypage" ><span>上五页</span><span class="">上一页</span><span>1</span><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">下一页</a><a href="#">下五页</a>  跳转到 <select name="PageSelect" onchange=""><option value="" selected="selected">第01页</option><option value="">第02页</option><option value="">第03页</option><option value="">第04页</option><option value="">第05页</option><option value="">第06页</option><option value="index_7.html">第07页</option>
-                
-               
-          </select></div>
+      <#if jobsList?? && jobsList.result?? && jobsList.result?size gt 0>
+            	<div class="fypage" >
+            	
+            	<#if pageNo gt 5>
+            	<a data-class="p5" href="javascript:void(0)" onclick="prevFivePage()"">上五页</a>
+            	<#else>
+            	<span data-class="p5">上五页</span>
+            	</#if>
+            	<#if pageNo gt 1>
+            	<a data-class="p1" href="/backend/companyJobManage?pageNo=${pageNo-1}">上一页</a>
+            	<#else>
+            	<span data-class="p1" class="">上一页</span>
+            	</#if>
+            	
+            	<div data-class="pag" style="padding:0px;margin:0px;display:inline;">
+            	<#if pageNo lt 6>
+            	<#list 1..5 as t>
+            	<#if t = pageNo>
+            	<span>${t!}</span>
+            	<#else>
+            	<a href="/backend/companyJobManage?pageNo=${t!}">${t!}</a>
+            	</#if>
+            	<#if t = jobsList.totalPage>
+            	<#break>
+            	</#if>
+            	</#list>
+            	
+            	<#elseif pageNo%5 gt 0>
+            	<#list (pageNo/5)?floor*5+1..(pageNo/5)?floor*5+5 as t>
+            	<#if t = pageNo>
+            	<span>${t!}</span>
+            	<#else>
+            	<a href="/backend/companyJobManage?&pageNo=${t!}">${t!}</a>
+            	</#if>
+            	<#if t = jobsList.totalPage>
+            	<#break>
+            	</#if>
+            	</#list>
+            	
+            	<#elseif pageNo%5 = 0>
+            	<#list ((pageNo/5)?floor-1)*5+1..(pageNo/5)?floor*5 as t>
+            	<#if t = pageNo>
+            	<span>${t!}</span>
+            	<#else>
+            	<a href="/backend/companyJobManage?pageNo=${t!}">${t!}</a>
+            	</#if>
+            	<#if t = jobsList.totalPage>
+            	<#break>
+            	</#if>
+            	</#list>
+            	</#if>
+            	</div>
+            	
+            	<#if (jobsList.totalPage - pageNo) gt 0>
+            	<a data-class="n1" href="/backend/companyJobManage?pageNo=${pageNo+1}">下一页</a>
+            	<#else>
+            	<span data-class="n1" class="">下一页</span>
+            	</#if>
+            	<#if (jobsList.totalPage - ((pageNo/5)?ceiling * 5)) gt 4>
+            	<a data-class="n5" href="javascript:void(0)" onclick="nextFivePage()">下五页</a>
+            	<#else>
+            	<span data-class="n5">下五页</span>
+            	</#if>
+            	 
+            	跳转到 
+            	<select name="PageSelect" onchange="jumpPage()">
+            	<#list 1..jobsList.totalPage as t>
+            	<#if t = pageNo>
+            	<option selected="selected" value="${t!}">第${t!}页</option>
+            	<#else>
+            	<option value="${t!}">第${t!}页</option>
+            	</#if>
+            	</#list>
+               </select>
+               </div>
+               </#if>    
           
          
           
@@ -85,7 +157,63 @@
 </div>
 
 <!-- main结束 -->
+<script>
+$("#chk_all").click(function(){
+	if($("#chk_all").attr("checked")){
+     	$("input[name='chk_list']").attr("checked",true);
+     }else{
+     	$("input[name='chk_list']").attr("checked",false);
+     }
+});
+</script>
 <#include "/assets/website/backend/common/footer.html">
-
+<!--分页有关js-->
+    <script>
+    
+		var pageNo = ${pageNo};
+		<#if jobsList??>
+			var totalPage = ${jobsList.totalPage};
+		<#else>
+			var totalPage = 0;
+		</#if>
+		var tarUrl = "/backend/companyJobManage?";
+		
+    	function prevFivePage(){
+    		var pag = '';
+    		for(var i = Math.floor(pageNo/5) * 5 - 4; i<=Math.floor(pageNo/5)*5;i++){
+				pag += '<a href="' + tarUrl + 'pageNo=' + i + '">' + i + '</a>';
+    		}
+    		pageNo = Math.floor(pageNo/5) * 5 - 4;
+    		$("div.fypage").find("div[data-class=pag]").html(pag);
+    		resetPreNex();
+    	}
+    	function nextFivePage(){
+    		var pag = '';
+    		for(var i = Math.ceil(pageNo/5) * 5 + 1; i<=Math.ceil(pageNo/5) * 5+5;i++){
+				pag += '<a href="' + tarUrl + 'pageNo=' + i + '">' + i + '</a>';
+    		}
+    		pageNo = Math.ceil(pageNo/5) * 5 + 1;
+    		$("div.fypage").find("div[data-class=pag]").html(pag);
+    		resetPreNex();
+    	}
+    	function resetPreNex(){
+    		if(pageNo <= 5){
+    			$("[data-class=p5]").replaceWith('<span data-class="p5">上五页</span>');
+    		}else{
+    			$("[data-class=p5]").replaceWith('<a data-class="p5" href="javascript:void(0)" onclick="prevFivePage()"">上五页</a>');
+    		}
+    		if(totalPage > Math.ceil(pageNo/5) * 5 + 4){
+    			$("[data-class=n5]").replaceWith('<a data-class="n5" href="javascript:void(0)" onclick="nextFivePage()"">下五页</a>');
+    		}else{
+    			$("[data-class=n5]").replaceWith('<span data-class="n5">下五页</span>');
+    		}
+    		
+    	}
+    	
+    	function jumpPage(){
+    		window.location.href = tarUrl + 'pageNo=' + $("select[name=PageSelect]").val();	
+    	}
+    	
+    </script>
 </body>
 </html>

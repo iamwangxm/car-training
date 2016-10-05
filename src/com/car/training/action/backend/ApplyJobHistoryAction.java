@@ -1,6 +1,9 @@
  package com.car.training.action.backend;
 
- import org.ironrhino.core.metadata.AutoConfig;
+ import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
+import org.ironrhino.core.metadata.AutoConfig;
 import org.ironrhino.core.model.ResultPage;
 import org.ironrhino.core.struts.BaseAction;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +30,13 @@ public class ApplyJobHistoryAction extends BaseAction {
 		deliveryResumeList = deliveryResumeService.findPageByDeliveryResume(new DeliveryResume(), pageSize, pageNo);
 		return SUCCESS;
 	}
-
+	
+	public String delete(){
+		HttpServletRequest request = ServletActionContext.getRequest();
+		String did = request.getParameter("dr.id");
+		deliveryResumeService.delete(did);
+		return SUCCESS;
+	}
 	public ResultPage<DeliveryResume> getDeliveryResumeList() {
 		return deliveryResumeList;
 	}

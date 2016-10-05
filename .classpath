@@ -122,5 +122,6 @@
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/taobao-sdk-java-auto_1450022832134-20151224.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/ironrhino-security-config-base-2.0.jar"/>
 	<classpathentry kind="lib" path="lib/servlet-api-3.1.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ironrhino"/>
 	<classpathentry kind="output" path="webapp/WEB-INF/classes"/>
 </classpath>

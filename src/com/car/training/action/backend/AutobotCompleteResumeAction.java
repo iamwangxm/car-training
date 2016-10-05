@@ -37,6 +37,8 @@ public class AutobotCompleteResumeAction extends BaseAction {
 	@Autowired
 	private AutobotsService autobotsService;
 	@Autowired
+	public Common  comm;
+	@Autowired
 	private transient EntityManager<Region> entityManager;
 	/** 汽车人 */
 	private Autobots autobot;
@@ -162,19 +164,18 @@ public class AutobotCompleteResumeAction extends BaseAction {
 				}
 			}
 			autobot.setCurrentWorkStatus(currentWorkStatus);
-			Common com = new Common();
-			/*if (StringUtils.isNotBlank(uheadLogo) && !uheadLogo.startsWith("http")) {
-				String headLogo = com.uploadFile(uheadLogo);
+			if (StringUtils.isNotBlank(uheadLogo) && !uheadLogo.startsWith("http")) {
+				String headLogo = comm.uploadFile(uheadLogo);
 				uc.setHeadLogo(headLogo);
 			}
 			if (StringUtils.isNotBlank(workPhotoURL1) && !workPhotoURL1.startsWith("http")) {
-				String fileURL1 = com.uploadFile(workPhotoURL1);
+				String fileURL1 = comm.uploadFile(workPhotoURL1);
 				autobot.setWorkPhotoURL1(fileURL1);
 			}
 			if (StringUtils.isNotBlank(workPhotoURL2) && !workPhotoURL2.startsWith("http")) {
-				String fileURL2 = com.uploadFile(workPhotoURL2);
+				String fileURL2 = comm.uploadFile(workPhotoURL2);
 				autobot.setWorkPhotoURL2(fileURL2);
-			}*/
+			}
 			autobot.setWorkingHistroy(workingHistroy);
 			
 			uc.setActiveDate(new Date());
@@ -211,14 +212,6 @@ public class AutobotCompleteResumeAction extends BaseAction {
 
 	public void setAutobot(Autobots autobot) {
 		this.autobot = autobot;
-	}
-
-	public String getUheadLogo() {
-		return uheadLogo;
-	}
-
-	public void setUheadLogo(String uheadLogo) {
-		this.uheadLogo = uheadLogo;
 	}
 
 	public String getUpersonalType() {
@@ -331,6 +324,15 @@ public class AutobotCompleteResumeAction extends BaseAction {
 
 	public void setWorkingHistroy(String workingHistroy) {
 		this.workingHistroy = workingHistroy;
+	}
+
+
+	public String getUheadLogo() {
+		return uheadLogo;
+	}
+
+	public void setUheadLogo(String uheadLogo) {
+		this.uheadLogo = uheadLogo;
 	}
 
 	public String getWorkPhotoURL1() {

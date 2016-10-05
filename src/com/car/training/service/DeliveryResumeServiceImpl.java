@@ -22,7 +22,7 @@ public class DeliveryResumeServiceImpl  implements DeliveryResumeService{
 	@Autowired
 	private DeliveryResumeManager deliveryResumeManager;
 
-	/** 新增企业/公司信息 */
+	/** 新增投递记录信息 */
 	@Override
 	@Timing
 	@Transactional
@@ -32,7 +32,7 @@ public class DeliveryResumeServiceImpl  implements DeliveryResumeService{
 		deliveryResumeManager.save(target);
 	}
 
-	/** 更新企业/公司信息 */
+	/** 更新投递记录信息 */
 	@Override
 	@Timing
 	@Transactional
@@ -40,19 +40,17 @@ public class DeliveryResumeServiceImpl  implements DeliveryResumeService{
 		this.save(deliveryResume);
 	}
 
-	/** 删除企业/公司信息 */
+	/** 删除投递记录信息 */
 	@Override
 	@Timing
 	@Transactional
 	public void delete(String id) {
 		if (StringUtils.isNotBlank(id)) {
-			com.car.training.model.DeliveryResume target = new com.car.training.model.DeliveryResume();
-			target = deliveryResumeManager.get(id);
-			deliveryResumeManager.delete(target);
+			deliveryResumeManager.delete(id);
 		}
 	}
 
-	/** 获取企业/公司信息 **/
+	/** 获取投递记录信息 **/
 	@Override
 	@Timing
 	@Transactional(readOnly = true)
@@ -66,7 +64,7 @@ public class DeliveryResumeServiceImpl  implements DeliveryResumeService{
 		return target;
 	}
 	
-	/** 获取企业/公司列表 */
+	/** 获取投递记录列表 */
 	@Override
 	@Timing
 	@Transactional(readOnly = true)
@@ -88,7 +86,7 @@ public class DeliveryResumeServiceImpl  implements DeliveryResumeService{
 		return tResultPage;
 	}
 	
-	/** 获取企业/公司列表 */
+	/** 获取投递记录列表 */
 	@Override
 	@Timing
 	@Transactional(readOnly = true)
