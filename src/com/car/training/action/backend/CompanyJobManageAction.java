@@ -1,11 +1,15 @@
  package com.car.training.action.backend;
 
- import java.util.List;
+ import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.ServletActionContext;
 import org.ironrhino.core.metadata.AutoConfig;
+import org.ironrhino.core.metadata.JsonConfig;
 import org.ironrhino.core.model.ResultPage;
 import org.ironrhino.core.struts.BaseAction;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +33,8 @@ public class CompanyJobManageAction extends BaseAction {
 	private ResultPage<Jobs> jobsList;
 	/** 职位 */
 	private Jobs jobs;
+	private String ids;
+	private Object data;
 	/** 页大小 */
 	private Integer pageSize = 10;
 	/** 页号 */
@@ -64,12 +70,46 @@ public class CompanyJobManageAction extends BaseAction {
 		jobsService.delete(jobId);
 		return SUCCESS;
 	}
+	
+	@JsonConfig(root = "data")
+	public String delall() throws Exception {
+		if(StringUtils.isNotBlank(ids)){
+			String[] arr = ids.split(",");
+			for(String s : arr){
+				if(StringUtils.isNotBlank(s)){
+					jobsService.delete(s);
+				}
+			}
+		}
+		Map<String,Object> map = new HashMap<>();
+		map.put("code", "200");
+		map.put("msg", "删除成功");
+		setData(map);
+		return JSON;
+	}
+	
 	public ResultPage<Jobs> getJobsList() {
 		return jobsList;
 	}
 
 	public void setJobsList(ResultPage<Jobs> jobsList) {
 		this.jobsList = jobsList;
+	}
+
+	public String getIds() {
+		return ids;
+	}
+
+	public void setIds(String ids) {
+		this.ids = ids;
+	}
+
+	public Object getData() {
+		return data;
+	}
+
+	public void setData(Object data) {
+		this.data = data;
 	}
 
 	public Integer getPageSize() {

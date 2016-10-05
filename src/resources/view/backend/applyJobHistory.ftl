@@ -60,7 +60,7 @@
                         <td  height="40" align="center" valign="middle" bgcolor="#ffffff"><input type="checkBox" name="chk_all" id="chk_all" /></td>
                         <td colspan="7"  align="left" valign="middle" bgcolor="#ffffff" class="sq"><table width="200" border="0" cellspacing="0" cellpadding="0">
                           <tr>
-                            <td width="80" align="center" valign="middle" class="quanxuan"><input type="image" name="imageField" id="imageField" src="http://obu3flkwk.bkt.clouddn.com/backend/images/sc.jpg" /></td>
+                            <td width="80" align="center" valign="middle" class="quanxuan"><img onclick="deleteAll()" src="http://obu3flkwk.bkt.clouddn.com/backend/images/sc.jpg" /></td>
                             <td width="163"></td>
                           </tr>
                         </table></td>
@@ -164,6 +164,47 @@ $("#chk_all").click(function(){
      	$("input[name='chk_list']").attr("checked",false);
      }
 });
+
+function deleteAll(){
+if(confirm('确认删除选择记录吗')){
+var ids = '';
+$("input:checkbox[name='chk_list']:checked").each(function(index, element) {
+                         ids += $(this).val() + ",";
+});
+if(ids==''||ids==null){
+	showErrMsg('请选择记录');
+	return false;
+}
+form_data={};
+form_data.ids = ids;
+var url  = "/backend/applyJobHistory/delall";
+$.ajax({
+		 type: "POST",
+	     url: url,
+	     data: form_data,
+	     error: function(request) {
+         showErrMsg("网络出错啦！");
+         return false;
+         },
+	     success: function (data) {
+	    	 if(data.code==200){
+				 showErrMsg("删除成功！");
+				 window.location.href = "/backend/applyJobHistory";
+	    	 }else if(data.code==400){
+	    	 	 showErrMsg(data.msg);
+	    	 	 return false;
+	    	 }else{
+	    	 	 return false;
+	    	 }
+	     }
+	});
+}else{
+	return false;
+}
+}
+function showErrMsg(errMsg){
+    	alert(errMsg);
+}
 </script>
 <!--分页有关js-->
     <script>
