@@ -125,13 +125,15 @@ private List<Region> provinces;
 				for (String s : arr) {
 					setStr.add(s);
 				}
-				job.setLanguages(setStr);
+				job.setWelfare(setStr);
 			}
 		}
 		job.setPublishDate(new Date());
-		Region region = new Region();
-		region.setId(Long.valueOf(regionId));
-		company.setRegion(region);
+		if (StringUtils.isNotBlank(regionId)) {
+			Region region = new Region();
+			region.setId(Long.valueOf(regionId));
+			job.setRegion(region);
+		}
 		job.setSalary(salary);
 		jobsService.save(job);
 		Map<String,Object> map = new HashMap<>();

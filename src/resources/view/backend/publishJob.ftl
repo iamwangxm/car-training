@@ -149,7 +149,7 @@ function submitdata(){
 
 	var url  = "/backend/publishJob/save";
 	var form_data = {};
-	var jobType = $("[name='job.jobType']").val();
+	var jobType = $("[name='job.jobType']:checked").val();
 	var name = $("[name='job.name']").val();
 	var workExprience = $("[name='job.workExprience']").val();
 	var salary = $("[name='job.salary']").val();

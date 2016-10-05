@@ -102,7 +102,7 @@
 							<#if company?? && company.industry?? && company.industry.name() = 'SELL'>
 							<option selected="selected" value="SELL">销售</option>
 							<#else>
-							<option value="SELL">培训</option>
+							<option value="SELL">销售</option>
 							</#if>
                             </select>
                     	    </td>
@@ -144,6 +144,7 @@
                   	    <tr>
                     	    <td width="125" align="right" valign="middle"><font color="#ff0000">*</font>公司福利：</td>
                     	    <td colspan="3">
+                    	    <#if company?? && company.welfare??>
                     	   	<input type="checkBox" name="company.welfare" id="company.welfare" <#if company.welfare ? index_of("五险一金")!=-1> checked </#if> value="五险一金"/>五险一金
                     	   	<input type="checkBox" name="company.welfare" id="company.welfare" <#if company.welfare ? index_of("工作餐")!=-1> checked </#if> value="工作餐"/>工作餐
                     	   	<input type="checkBox" name="company.welfare" id="company.welfare" <#if company.welfare ? index_of("免费班车")!=-1> checked </#if> value="免费班车"/>免费班车
@@ -152,6 +153,16 @@
                     	   	<input type="checkBox" name="company.welfare" id="company.welfare" <#if company.welfare ? index_of("年底双薪")!=-1> checked </#if> value="年底双薪"/>年底双薪
                     	   	<input type="checkBox" name="company.welfare" id="company.welfare" <#if company.welfare ? index_of("绩效奖金")!=-1> checked </#if> value="绩效奖金"/>绩效奖金
                     	   	<input type="checkBox" name="company.welfare" id="company.welfare" <#if company.welfare ? index_of("定期体检")!=-1> checked </#if> value="定期体检"/>定期体检
+                    	    <#else>
+                    	     	<input type="checkBox" name="company.welfare" id="company.welfare"  value="五险一金"/>五险一金
+                    	   	<input type="checkBox" name="company.welfare" id="company.welfare"  value="工作餐"/>工作餐
+                    	   	<input type="checkBox" name="company.welfare" id="company.welfare"  value="免费班车"/>免费班车
+                	   		<input type="checkBox" name="company.welfare" id="company.welfare"  value="股票期权"/>股票期权
+                    	   	<input type="checkBox" name="company.welfare" id="company.welfare"  value="带薪休假"/>带薪休假
+                    	   	<input type="checkBox" name="company.welfare" id="company.welfare"  value="年底双薪"/>年底双薪
+                    	   	<input type="checkBox" name="company.welfare" id="company.welfare"  value="绩效奖金"/>绩效奖金
+                    	   	<input type="checkBox" name="company.welfare" id="company.welfare"  value="定期体检"/>定期体检
+                    	    </#if>
                     	    </td>
                     	   
                   	    </tr>

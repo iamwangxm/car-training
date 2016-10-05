@@ -10,6 +10,7 @@ import org.ironrhino.core.model.ResultPage;
 import org.ironrhino.core.struts.BaseAction;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.car.training.domain.Company;
 import com.car.training.domain.DeliveryResume;
 import com.car.training.domain.Jobs;
 import com.car.training.service.DeliveryResumeService;
@@ -35,7 +36,12 @@ public class CompanyJobManageAction extends BaseAction {
 	
 	@Override
 	public String execute() throws Exception {
-		jobsList = jobsService.findPageByJobs(new Jobs(), pageSize, pageNo);
+		HttpServletRequest request = ServletActionContext.getRequest();
+		Company com = new Company();
+		com = (Company) request.getSession().getAttribute("userDetails");
+		Jobs searchJob = new Jobs();
+		searchJob.setCompany(com);
+		jobsList = jobsService.findPageByJobs(searchJob, pageSize, pageNo);
 		for(Jobs job : jobsList.getResult()){
 			DeliveryResume deliveryResume = new DeliveryResume();
 			deliveryResume.setJobs(job);

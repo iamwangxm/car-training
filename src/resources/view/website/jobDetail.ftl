@@ -39,7 +39,7 @@
                 </div>
                 	<div class="zwyq">
                 	<ul>
-                    	<li>${jobs.education!}</li><li><#if jobs.workExprience=0 > 应界毕业生 <#else> ${jobs.workExprience!}年以上经验</#if></li><li>${jobs.languages!?replace(",","+")}</li>
+                    	<li>${jobs.education!}</li><li><#if jobs.workExprience=0 > 应界毕业生 <#else> ${jobs.workExprience!}年以上经验</#if></li><li>${jobs.languages!?replace(",","+")?replace("[","")?replace("]","")}</li>
                     	<li style="background:none;"></li>
                     </ul>
                     <div class="clear"></div>

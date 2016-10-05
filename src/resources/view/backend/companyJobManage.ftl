@@ -31,7 +31,7 @@
                       <tr>
                         <td width="40" height="50" align="center" valign="middle" bgcolor="#f0faff"><strong>选择</strong></td>
                         <td align="center" valign="middle" bgcolor="#f0faff"><strong>职位名称</strong></td>
-                        <td width="90" align="center" valign="middle" bgcolor="#f0faff"><strong>工作类型</strong></td>
+                        <td width="90" align="center" valign="middle" bgcolor="#f0faff"><strong>工资(元/月)</strong></td>
                         <td width="50" align="center" valign="middle" bgcolor="#f0faff"><strong>工作性质</strong></td>
                         <td width="80" align="center" valign="middle" bgcolor="#f0faff"><strong>工作地点</strong></td>
                         <td width="66" align="center" valign="middle" bgcolor="#f0faff"><strong>发布时间</strong></td>
@@ -45,7 +45,7 @@
                         <td  height="40" align="center" valign="middle" bgcolor="#ffffff"><input type="checkBox" name="chk_list" id="chk_list" /></td>
                         <td  align="center" valign="middle" bgcolor="#ffffff" class="sq"><a href="/website/jobDetail?jobs.id=${t.id!}" target="blank">${t.name!}</a></td>
                         <!--<td align="center" valign="middle" bgcolor="#ffffff"class="sq"><a href="#">${t.company.name!}</a></td>-->
-                        <td  align="center" valign="middle" bgcolor="#ffffff">销售</td>
+                        <td  align="center" valign="middle" bgcolor="#ffffff">${t.salary!}</td>
                         <td align="center" valign="middle" bgcolor="#ffffff">${t.jobType!}</td>
                         <td  align="center" valign="middle" bgcolor="#ffffff"><#if t?? && t.region??>${t.region.fullname!}</#if></td>
                         <td  align="center" valign="middle" bgcolor="#ffffff">${t.publishDate!?string("yyyy-MM-dd")}</td>

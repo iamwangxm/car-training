@@ -186,6 +186,7 @@
                   	     <tr>
                     	    <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>擅长领域：</td>
                     	    <td colspan="3">
+                    	    <#if autobot ?? && autobot.businessCategory??>
                     	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" <#if autobot.businessCategory ? index_of("销售")!=-1> checked </#if> value="销售"/>销售
                     	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" <#if autobot.businessCategory ? index_of("售后")!=-1> checked </#if> value="售后"/>售后
                     	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" <#if autobot.businessCategory ? index_of("客服")!=-1> checked </#if> value="客服"/>客服
@@ -194,6 +195,16 @@
                     	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" <#if autobot.businessCategory ? index_of("内训")!=-1> checked </#if> value="内训"/>内训
                     	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" <#if autobot.businessCategory ? index_of("生产研发")!=-1> checked </#if> value="生产研发"/>生产研发
                     	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory" <#if autobot.businessCategory ? index_of("行政")!=-1> checked </#if> value="行政"/>行政
+                    	    <#else>
+                    	     	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory"  value="销售"/>销售
+                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory"  value="售后"/>售后
+                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory"  value="客服"/>客服
+                	   		<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory"  value="市场"/>市场
+                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory"  value="管理"/>管理
+                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory"  value="内训"/>内训
+                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory"  value="生产研发"/>生产研发
+                    	   	<input type="checkBox" name="autobot.businessCategory" id="autobot.businessCategory"  value="行政"/>行政
+                    	    </#if>
                     	    </td>
                     	    
                   	    </tr>

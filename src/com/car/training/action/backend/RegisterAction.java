@@ -22,13 +22,17 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 
+import com.car.training.domain.Autobots;
 import com.car.training.domain.Company;
+import com.car.training.domain.Trainer;
 import com.car.training.domain.UserCenter;
 import com.car.training.enums.CompanyType;
 import com.car.training.enums.PersonalType;
 import com.car.training.enums.UserType;
 import com.car.training.exceptions.NotFoundException;
+import com.car.training.service.AutobotsService;
 import com.car.training.service.CompanyService;
+import com.car.training.service.TrainerService;
 import com.car.training.service.UserCenterService;
 import com.car.training.sms.SmsManager;
 import com.car.training.sms.SmsTemplate;
@@ -58,7 +62,10 @@ public class RegisterAction extends BaseAction {
 	private Object data;
 
 	private String captcha;
-
+	@Autowired
+	private TrainerService trainerService;
+	@Autowired
+	private AutobotsService autobotsService;
 	@Autowired
 	private SmsManager smsManager;
 	@Autowired
@@ -185,6 +192,14 @@ public class RegisterAction extends BaseAction {
 						map.put("msg", "注册成功！");
 						
 						HttpSession context = request.getSession();
+						Autobots autobots = autobotsService.findByUserCenter(usercenter.getId());
+						if (autobots != null) {
+							usercenter.setAutobot(autobots);
+						}
+						Trainer trainer = trainerService.findByUserCenter(usercenter.getId());
+						if (trainer != null) {
+							usercenter.setTrainer(trainer);
+						}
 						context.setAttribute("userDetails", usercenter);
 						targetUrl = "/backend/applyJobHistory";
 						request.getSession().setAttribute("loginState", "Y");

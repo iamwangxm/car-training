@@ -29,10 +29,10 @@
                 <div class="xinxi right">
                 	<div class="mingzi">
                     	<div class="mingzi_l left">${course.courseName!}</div>
-                    	<div class="mingzi_r right">
+                    	<!--<div class="mingzi_r right">
                        	  <div class="pinglun left"><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/bm.jpg" /></a></div>
                        	  <div class="guanzhu right"><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/cg.jpg" /></a></div>
-                        </div>
+                        </div>-->
                         <div class="clear"></div>
                     </div>
                     
@@ -156,11 +156,10 @@
                 <div class="lx_box">
                 	<div class="xingming">${course.trainer.userCenter.name!}(培训师本人)</div>
                     电话：${course.trainer.userCenter.mobile!}<br />
-QQ：${course.trainer.userCenter.QQ!}<br />
-邮箱：${course.trainer.userCenter.email!}<br />
+                    邮箱：${course.trainer.userCenter.email!}<br />
+<!--QQ：${course.trainer.userCenter.QQ!}<br />
 微信：${course.trainer.userCenter.weixin!}<br />
-<br />
-QQ：910283168<br />
+<br />-->
                 </div>
             </div>
             <div class="pxshi_pj">

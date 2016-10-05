@@ -45,20 +45,19 @@
                     </div>
                     <div class="ziping">${trainer.currentPosition!}</div>
                     <div class="scxs2">
-                    <em>擅长形式：</em><span>市场营销</span><span>产品</span><span style=" background:none;">非技术</span>
+                    <em>擅长形式：</em><span>${trainer.businessCategory!?replace(",","      ")?replace("[","")?replace("]","")}</span>
                     </div>
                     <div class="lingyu">
                     <em>培训领域：</em><span>开发</span><span>项目管理</span><span style=" background:none;">经销商托管</span>
                     <div class="clear"></div>
                     </div>
                     <div class="shijian">
-                  		<div class="shijian_l left"><em>汽车行业时间（不含培训）：</em>${trainer.autoYears!}年</div>
-                        <div class="shijian_r  right"><em>常住地：</em>上海——嘉定</div>
+                  		<div class="shijian_l left"><em>汽车行业时间（不含培训）：</em><#if trainer.autoYears=0 > 应界毕业生 <#else>${trainer.autoYears!}年以上</#if></div>
+                        <div class="shijian_r  right"><em>常住地：</em>${trainer.userCenter.region.fullname!}</div>
                         <div class="clear"></div>
 
                     </div>
                     <div class="shijian">
-                  		<div class="shijian_l left"><em>汽车培训时间：</em>${trainer.trainingYears!}年</div>
                         <div class="shijian_r  right"><em>学 历：</em>${trainer.education!}</div>
                         <div class="clear"></div>
 

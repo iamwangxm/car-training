@@ -45,11 +45,14 @@ public class JobsManagerImpl extends BaseManagerImpl<Jobs> implements JobsManage
 
 	@Override
 	@Transactional(readOnly=true)
-	public ResultPage<Jobs> findPageByJobs(Jobs autobotsComment, Integer pageSize, Integer pageNo) {
+	public ResultPage<Jobs> findPageByJobs(Jobs job, Integer pageSize, Integer pageNo) {
 		ResultPage<Jobs> resultPage = new ResultPage<Jobs>();
-		if (autobotsComment == null)
+		if (job == null)
 			return null;
 		DetachedCriteria dc = detachedCriteria();
+		if (job.getCompany() != null) {
+			dc.createAlias("company", "c").add(Restrictions.eq("c.id", job.getCompany().getId()));
+		}
 		dc.add(Restrictions.eq("enabled", true));
 		dc.addOrder(Order.desc("createDate"));
 		resultPage.setCriteria(dc);

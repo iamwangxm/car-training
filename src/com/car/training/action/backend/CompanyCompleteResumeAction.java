@@ -24,7 +24,6 @@ import com.car.training.domain.Company;
 import com.car.training.enums.Industry;
 import com.car.training.enums.Scale;
 import com.car.training.service.CompanyService;
-import com.car.training.utils.Common;
 
 @AutoConfig
 public class CompanyCompleteResumeAction extends BaseAction {
