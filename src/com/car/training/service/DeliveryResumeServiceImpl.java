@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
+import org.ironrhino.common.model.Region;
 import org.ironrhino.core.aop.Timing;
 import org.ironrhino.core.model.ResultPage;
 import org.ironrhino.core.util.BeanUtils;
@@ -12,7 +13,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.car.training.domain.Autobots;
+import com.car.training.domain.Company;
 import com.car.training.domain.DeliveryResume;
+import com.car.training.domain.Jobs;
 import com.car.training.domain.Trainer;
 import com.car.training.utils.ResultPageBeanUtils;
 
@@ -109,6 +112,21 @@ public class DeliveryResumeServiceImpl  implements DeliveryResumeService{
 					Autobots remotingAutobots = new Autobots();
 					BeanUtils.copyProperties(sourceDeliveryResume.getAutobots(), remotingAutobots);
 					target.setAutobots(remotingAutobots);
+				}
+				if (sourceDeliveryResume != null && sourceDeliveryResume.getJobs() != null) {
+					Jobs remotingJobs = new Jobs();
+					BeanUtils.copyProperties(sourceDeliveryResume.getJobs(), remotingJobs);
+					if (sourceDeliveryResume != null && sourceDeliveryResume.getJobs() != null && sourceDeliveryResume.getJobs().getCompany() != null) {
+						Company remotingCompany = new Company();
+						BeanUtils.copyProperties(sourceDeliveryResume.getJobs().getCompany(), remotingCompany);
+						remotingJobs.setCompany(remotingCompany);
+					}
+					if (sourceDeliveryResume != null && sourceDeliveryResume.getJobs() != null && sourceDeliveryResume.getJobs().getRegion() != null) {
+						Region remotingRegion = new Region();
+						BeanUtils.copyProperties(sourceDeliveryResume.getJobs().getRegion(), remotingRegion);
+						remotingJobs.setRegion(remotingRegion);
+					}
+					target.setJobs(remotingJobs);
 				}
 				resultList.add(target);
 			}

@@ -49,7 +49,7 @@
                         <td align="center" valign="middle" bgcolor="#ffffff">${t.jobType!}</td>
                         <td  align="center" valign="middle" bgcolor="#ffffff"><#if t?? && t.region??>${t.region.fullname!}</#if></td>
                         <td  align="center" valign="middle" bgcolor="#ffffff">${t.publishDate!?string("yyyy-MM-dd")}</td>
-                        <td align="center" valign="middle" bgcolor="#ffffff"  class="caozuo">已投: <a href="/website/jobDetail?jobs.id=${t.id!}" target="blank">${t.deliveryCount!} </a>&nbsp;&nbsp;  <a href="/backend/companyJobManage/jobDelete?jobs.id=${t.id!}" onclick="javascript:if(confirm('确认要删除该记录吗?')==false) return false;">删除</a></td>
+                        <td align="center" valign="middle" bgcolor="#ffffff"  class="caozuo">已投: <a href="/backend/delivered?jobs.id=${t.id!}" target="_blank">${t.deliveryCount!} </a>&nbsp;&nbsp;  <a href="/backend/companyJobManage/jobDelete?jobs.id=${t.id!}" onclick="javascript:if(confirm('确认要删除该记录吗?')==false) return false;">删除</a></td>
                       </tr>
                       </#if>
                       </#list>

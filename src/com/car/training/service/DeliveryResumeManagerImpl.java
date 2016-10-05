@@ -62,8 +62,11 @@ public class DeliveryResumeManagerImpl extends BaseManagerImpl<DeliveryResume> i
 
 	@Override
 	@Transactional(readOnly=true)
-	public List<DeliveryResume> findListByDeliveryResume(DeliveryResume autobotsComment) {
+	public List<DeliveryResume> findListByDeliveryResume(DeliveryResume deliveryResume) {
 		DetachedCriteria dc = detachedCriteria();
+		if (deliveryResume.getJobs() != null) {
+			dc.createAlias("jobs", "j").add(Restrictions.eq("j.id", deliveryResume.getJobs().getId()));
+		}
 		dc.add(Restrictions.eq("enabled", true));
 		dc.addOrder(Order.desc("createDate"));
 		return findListByCriteria(dc);
