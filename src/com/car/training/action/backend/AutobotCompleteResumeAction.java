@@ -27,7 +27,6 @@ import com.car.training.domain.UserCenter;
 import com.car.training.enums.MarryStatus;
 import com.car.training.enums.PersonalType;
 import com.car.training.service.AutobotsService;
-import com.car.training.utils.Common;
 
 @AutoConfig
 public class AutobotCompleteResumeAction extends BaseAction {
@@ -36,8 +35,6 @@ public class AutobotCompleteResumeAction extends BaseAction {
 
 	@Autowired
 	private AutobotsService autobotsService;
-	@Autowired
-	public Common  comm;
 	@Autowired
 	private transient EntityManager<Region> entityManager;
 	/** 汽车人 */
@@ -164,7 +161,7 @@ public class AutobotCompleteResumeAction extends BaseAction {
 				}
 			}
 			autobot.setCurrentWorkStatus(currentWorkStatus);
-			if (StringUtils.isNotBlank(uheadLogo) && !uheadLogo.startsWith("http")) {
+			/*if (StringUtils.isNotBlank(uheadLogo) && !uheadLogo.startsWith("http")) {
 				String headLogo = comm.uploadFile(uheadLogo);
 				uc.setHeadLogo(headLogo);
 			}
@@ -175,7 +172,7 @@ public class AutobotCompleteResumeAction extends BaseAction {
 			if (StringUtils.isNotBlank(workPhotoURL2) && !workPhotoURL2.startsWith("http")) {
 				String fileURL2 = comm.uploadFile(workPhotoURL2);
 				autobot.setWorkPhotoURL2(fileURL2);
-			}
+			}*/
 			autobot.setWorkingHistroy(workingHistroy);
 			
 			uc.setActiveDate(new Date());

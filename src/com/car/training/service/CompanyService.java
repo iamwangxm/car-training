@@ -27,6 +27,9 @@ public interface CompanyService  {
 	/** 获取企业/公司信息 **/
 	Company findByUsername(String username);
 	
+	/** 修改密码 */
+	void changePassword(String username, String currentPassword, String newPassword);
+	
 	/** 获取企业/公司信息 **/
 	Company findByUsernamePassword(String username,String password);
 	

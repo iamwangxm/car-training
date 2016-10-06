@@ -81,6 +81,12 @@ public class CompanyServiceImpl  implements CompanyService{
 		return target;
 	}
 
+	@Override
+	@Transactional
+	public void changePassword(String username, String currentPassword, String newPassword) {
+		companyManager.changePassword(username, currentPassword, newPassword);
+	}
+	
 	/** 获取企业/公司信息 **/
 	@Override
 	@Timing

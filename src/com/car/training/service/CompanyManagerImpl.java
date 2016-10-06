@@ -79,6 +79,21 @@ public class CompanyManagerImpl extends BaseManagerImpl<Company> implements Comp
 		}
 	
 	@Override
+	@Transactional
+	public void changePassword(final String username, final String currentPassword, final String newPassword) {
+		
+		Company user = findOne(username);
+		if (user == null) {
+			throw new NotFoundException("职员[" + username + "]不存在");
+		}
+		if (!user.isPasswordValid(currentPassword)) {
+			throw new IllegalArgumentException("密码错误");
+		}
+		user.setLegiblePassword(newPassword);
+		super.save(user);
+	}
+	
+	@Override
 	@Transactional(readOnly=true)
 	public ResultPage<Company> findPageByCompany(Company autobotsComment, Integer pageSize, Integer pageNo) {
 		ResultPage<Company> resultPage = new ResultPage<Company>();
