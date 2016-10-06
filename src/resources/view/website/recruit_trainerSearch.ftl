@@ -42,10 +42,16 @@
             <div class="zwdz">
             	<h4>职位地址:</h4>
                 <div class="zwdz_box">
-                	<table width="250" border="0" cellspacing="0" cellpadding="0"><form id="form1" name="form1" method="post" action="">
+                	<table width="250" border="0" cellspacing="0" cellpadding="0">
+                	<form id="form1" name="form1" method="post" action="">
   <tr>
     <td width="29">省</td>
     <td width="90">
+     <#if regionList??>
+    <#list regionList as t>
+    ${t.fullname!}
+    </#list>
+    </#if>
       <select name="select" id="select">
         <option value="上海市">上海市</option>
         <option value="浙江省">浙江省</option>
@@ -62,7 +68,7 @@
                 </div>
                 <div class="clear"></div>
             </div>
-            <div class="pxsj">
+            <!--<div class="pxsj">
             	<h4>发布时间:</h4>
                 <div class="pxly_box">
                 	<ul>
@@ -76,7 +82,7 @@
                 </div>
                 <div class="clear"></div>
             	
-            </div>
+            </div>-->
             <div class="pxxs">
             	<h4>培训形式:</h4>
                 <div class="pxly_box">
@@ -236,18 +242,11 @@
             <div class="pxgs_r right">
             	<div class="qy_logo">
                 	<ul>
-                    	<li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
+                		<#list jobsCompanyList.result as t>
+            			<#if t?? && t.company?? && t ? size gt 0>
+                    	<li><a href="#"><img src="${t.company.logo!}" style="width:226px;height:76px;"/></a></li>
+                		</#if>
+                		</#list>
                     </ul>
                 </div>
             </div>

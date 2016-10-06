@@ -25,7 +25,7 @@
     	<div class="ny_pxshi_l left">
         	<div class="pxshi_xx">
             	<div class="zhaopian left">
-                	<img src="${trainer.userCenter.headLogo!}" />
+                	<img src="${trainer.userCenter.headLogo!}" style="width:181px;height:153px;"/>
                 </div>
                 <div class="xinxi right">
                 	<div class="mingzi">
@@ -52,7 +52,7 @@
                     <div class="clear"></div>
                     </div>
                     <div class="shijian">
-                  		<div class="shijian_l left"><em>汽车行业时间（不含培训）：</em><#if trainer.autoYears=0 > 应界毕业生 <#else>${trainer.autoYears!}年以上</#if></div>
+                  		<div class="shijian_l left"><em>汽车行业时间（不含培训）：</em><#if trainer.autoYears?? && trainer.autoYears=0 > 应界毕业生 <#else>${trainer.autoYears!}年以上</#if></div>
                         <div class="shijian_r  right"><em>常住地：</em>${trainer.userCenter.region.fullname!}</div>
                         <div class="clear"></div>
 
@@ -123,10 +123,10 @@
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td align="center" valign="middle">
-      <textarea style="width:800px; height:100px;" name="textarea" id="textarea" cols="45" rows="5"></textarea></td>
+      <textarea style="width:800px; height:100px;" name="content" id="content" cols="45" rows="5"></textarea></td>
   </tr>
   <tr>
-    <td height="75" align="center" valign="bottom"><input type="image" name="tj" id="tj" src="http://obu3flkwk.bkt.clouddn.com/website/images/tj.jpg" /></td>
+    <td height="75" align="center" valign="bottom"><img onclick="addcomment('${trainer.id!}')" src="http://obu3flkwk.bkt.clouddn.com/website/images/tj.jpg" /></td>
   </tr>
 </table>
 
@@ -163,9 +163,53 @@
     </div>
     </#if>
 </div>
-    
-	
+<script>
+function addcomment(tid){ 
+var form_data={};
+var tid = tid;
+var content = $("#content").val();
 
+if(tid==''||tid==null){
+	alert('该培训师已不存在');
+	return false;
+}
+if(content==''||content==null){
+	alert('请填写评论内容');
+	return false;
+}
+
+form_data.content = content;
+form_data.tid = tid;
+
+$.ajax({
+	 type: "POST",
+     url: "/website/trainerDetail/commentTrainer",
+     data: form_data,
+     error: function(request) {
+         showErrMsg("网络出错啦！");
+         return false;
+     },
+     success: function (data) {
+    	 if(data.code==200){
+			 showErrMsg("添加评论成功！");
+			 setTimeout(function(){
+		 		if(jid==''||jid==null){
+     	 			window.location.href = "/website/trainerDetail?trainer.id=tid";
+     	 			}
+     	 		},300);
+    	 }else if(data.code==400){
+    	 	 showErrMsg(data.msg);
+    	 	 return false;
+    	 }else{
+    	 	 return false;
+    	 }
+     }
+});
+}
+function showErrMsg(errMsg){
+	alert(errMsg);
+}	
+</script>
 <!-- main结束 -->
 <#include "/assets/website/common/footer.html">
 </body>

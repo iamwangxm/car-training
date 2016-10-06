@@ -108,8 +108,8 @@
                     	<!-- 代码 开始 -->
 						<div class="www51buycom">
     <ul class="51buypic">
-        <li><a href="#" target="_blank"><img src="${jobs.company.environmentURL1!}" /></a></li>
-       <li><a href="#" target="_blank"><img src="${jobs.company.environmentURL2!}" /></a></li>
+        <li><a href="#" target="_blank"><img src="${jobs.company.environmentURL1!}" style="width:260px;height:170px;"/></a></li>
+       <li><a href="#" target="_blank"><img src="${jobs.company.environmentURL2!}" style="width:260px;height:170px;"/></a></li>
         
     </ul>
    

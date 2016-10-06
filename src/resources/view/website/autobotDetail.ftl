@@ -24,7 +24,7 @@
     	
         	<div class="pxshi_xx">
             	<div class="zhaopian left">
-                	<img src="${autobots.userCenter.headLogo!}" />
+                	<img src="${autobots.userCenter.headLogo!}" style="width:181px;height:153px;"/>
                 </div>
                 <div class="xinxi right">
                	  <div class="mingzi">
@@ -129,7 +129,7 @@
         	<div class="pxshi_lx">
             	<h4>联系方式</h4>
                 <div class="lx_box">
-                <div class="xingming">${autobots.userCenter.name!}(培训师本人)</div>
+                <div class="xingming">${autobots.userCenter.name!}(汽车人本人)</div>
                    电话：${autobots.userCenter.mobile!}<br />
                    邮箱：${autobots.userCenter.email!}<br />
                 </div>

@@ -21,14 +21,14 @@
             	<h4>职位类型:</h4>
                 <div class="pxly_box">
                 	<ul>
-                    	<li><a href="#">销售</a></li>
-                        <li><a href="#">售后</a></li>
-                        <li><a href="#">客服</a></li>
-                        <li><a href="#">市场</a></li>
-                        <li><a href="#">管理</a></li>
-                        <li><a href="#">内需</a></li>
-                        <li><a href="#">生产研发</a></li>
-                        <li><a href="#">行政</a></li>
+                    	<li><a href="/website/recruit/?companyType=COMPANY">销售</a></li>
+                        <li><a href="/website/recruit/?companyType=COMPANY">售后</a></li>
+                        <li><a href="/website/recruit/?companyType=COMPANY">客服</a></li>
+                        <li><a href="/website/recruit/?companyType=COMPANY">市场</a></li>
+                        <li><a href="/website/recruit/?companyType=COMPANY">管理</a></li>
+                        <li><a href="/website/recruit/?companyType=COMPANY">内需</a></li>
+                        <li><a href="/website/recruit/?companyType=COMPANY">生产研发</a></li>
+                        <li><a href="/website/recruit/?companyType=COMPANY">行政</a></li>
                     </ul>
                 </div>
                 <div class="clear"></div>
@@ -41,6 +41,11 @@
   <tr>
     <td width="29">省</td>
     <td width="90">
+    <#if regionList??>
+    <#list regionList as t>
+    ${t.fullname!}
+    </#list>
+    </#if>
       <select name="select" id="select">
         <option value="上海市">上海市</option>
         <option value="浙江省">浙江省</option>
@@ -57,7 +62,7 @@
                 </div>
                 <div class="clear"></div>
             </div>
-            <div class="pxsj">
+          <!--  <div class="pxsj">
             	<h4>发布时间:</h4>
                 <div class="pxly_box">
                 	<ul>
@@ -71,11 +76,12 @@
                 </div>
                 <div class="clear"></div>
             	
-            </div>
+            </div>-->
             <div class="pxxs">
             	<h4>工作经验:</h4>
                 <div class="pxly_box">
                 	<ul>
+                		<li><a href="#">应界毕业生</a></li>
                     	<li><a href="#">5年内</a></li>
                         <li><a href="#">5-10年</a></li>
                         <li><a href="#">10-15年</a></li>
@@ -227,18 +233,11 @@
             <div class="pxgs_r right">
             	<div class="qy_logo">
                 	<ul>
-                    	<li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
-                        <li><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/qy_logo_img.jpg" /></a></li>
+                    	<#list jobsStoreList.result as t>
+            			<#if t?? && t.company?? && t ? size gt 0>
+                    	<li><a href="#"><img src="${t.company.logo!}" style="width:226px;height:76px;"/></a></li>
+                		</#if>
+                		</#list>
                     </ul>
                 </div>
             </div>

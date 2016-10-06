@@ -1,11 +1,15 @@
 package com.car.training.action.website;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.ironrhino.common.model.Region;
 import org.ironrhino.core.metadata.AutoConfig;
 import org.ironrhino.core.model.ResultPage;
+import org.ironrhino.core.service.EntityManager;
 import org.ironrhino.core.struts.BaseAction;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -22,7 +26,8 @@ public class RecruitAction extends BaseAction {
 	private static final long serialVersionUID = 4839883380537115435L;
 	@Autowired
 	private JobsService jobsService;
-
+	@Autowired
+	private transient EntityManager<Region> entityManager;
 	/** 公司招聘职位列表 */
 	private ResultPage<Jobs> jobsCompanyList;
 	/** 4S店招聘职位列表 */
@@ -48,25 +53,41 @@ public class RecruitAction extends BaseAction {
 
 	public String index() throws Exception {
 		Jobs jobs = new Jobs();
+		Set<Long> regionSet = new HashSet<Long>();
+		List<Region> regionList = new ArrayList<Region>();
 		if (companyType != null && companyType.getName().equals(CompanyType.COMPANY.getName())) {
 			jobs.setCompanyType(CompanyType.COMPANY);// 公司招聘职位
 			jobs.setRegion(region);
 			jobs.setCreateDate(createDate);
-			jobs.setJobType(JobType.FULLTIME);
+			jobs.setJobType( jobType);
 			// jobs.setexe TODO 执行类别
 			jobs.setName(keyword);
 			// 按条件筛选公司招聘职位列表(包含分页)
 			jobsCompanyList = jobsService.findPageByJobs(jobs, pageSize, pageNo);
-			
+			//设置显示职位区域 
+			for (Jobs job : jobsCompanyList.getResult()) {
+				if (job.getRegion() != null) {
+					regionSet.add(job.getRegion().getId());
+				}
+			}
 			return "trainerSearch";
 		} else if (companyType != null && companyType.getName().equals(CompanyType.STORE.getName())) {
 			jobs.setRegion(region);
 			jobs.setCreateDate(createDate);
 			jobs.setName(keyword);
 			jobsStoreList = jobsService.findPageByJobs(jobs, pageSize, pageNo);
+			for (Jobs job : jobsStoreList.getResult()) {
+				if (job.getRegion() != null) {
+					regionSet.add(job.getRegion().getId() );
+				}
+			}
 			return "autobotSearch";
 		}
-
+		for(Long ln : regionSet){
+			entityManager.setEntityClass(Region.class);
+			Region _region = entityManager.get(ln);
+			regionList.add(_region);
+		}
 		return "";
 	}
 

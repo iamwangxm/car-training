@@ -97,7 +97,7 @@
 							<#list trainerList as t>
                     	<li>
                     		<#if t?? && t.userCenter??>
-	                        	<div class="pxshi_pic2"><a href="/website/trainerDetail?trainer.id=${trainer.id!}"><img src="${t.userCenter.headLogo!}" /></a></div>
+	                        	<div class="pxshi_pic2"><a href="/website/trainerDetail?trainer.id=${t.id!}"><img src="${t.userCenter.headLogo!}" /></a></div>
 			                    <div class="pxshi_intro2">
 			                    	<div class="pxshi_name2">
 			                        	<div class="xm2 left">${t.userCenter.name!}</div>

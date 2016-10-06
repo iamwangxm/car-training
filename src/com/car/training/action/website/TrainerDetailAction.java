@@ -1,9 +1,16 @@
  package com.car.training.action.website;
 
- import java.util.List;
+ import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.struts2.ServletActionContext;
 import org.ironrhino.core.metadata.AutoConfig;
+import org.ironrhino.core.metadata.JsonConfig;
 import org.ironrhino.core.struts.BaseAction;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -11,6 +18,8 @@ import com.car.training.domain.AutobotsComment;
 import com.car.training.domain.Courses;
 import com.car.training.domain.Trainer;
 import com.car.training.domain.TrainerEssay;
+import com.car.training.domain.UserCenter;
+import com.car.training.enums.PersonalType;
 import com.car.training.service.AutobotsCommentService;
 import com.car.training.service.CoursesService;
 import com.car.training.service.TrainerEssayService;
@@ -38,8 +47,9 @@ public class TrainerDetailAction extends BaseAction {
 	private List<TrainerEssay> trainerEssayList;
 	/**培训公开课列表 */
 	private List<Courses> coursesList;
-	
-
+	private String tid;
+	private Object data;
+	private String content;
 	@Override
 	public String execute() throws Exception {
 		Trainer t = new Trainer();
@@ -64,6 +74,31 @@ public class TrainerDetailAction extends BaseAction {
 			trainer.setAutobotsCommentList(autobotsCommentList);
 		}
 		return SUCCESS;
+	}
+	
+	@JsonConfig(root = "data")
+	public String commentTrainer() throws Exception{
+		HttpServletRequest request = ServletActionContext.getRequest();
+		UserCenter uc = new UserCenter();
+		Map<String, Object> map = new HashMap<String, Object>();
+		uc = (UserCenter) request.getSession().getAttribute("userDetails");
+		if (uc == null ||!uc.getPersonalType().equals(PersonalType.AUTOBOT)) {
+			map.put("code", 400);
+			map.put("msg", "您还没有登陆或您不是汽车人，不能添加评论！");
+		} else {
+			AutobotsComment autobotsComment = new AutobotsComment();
+			trainer = trainerService.findById(tid);
+			autobotsComment.setTrainer(trainer);
+			autobotsComment.setContent(content);
+			autobotsComment.setCreateDate(new Date());
+			autobotsComment.setAutobots(uc.getAutobot());
+			autobotsComment.setEnabled(true);
+			autobotsCommentService.save(autobotsComment);
+			map.put("code", 200);
+			map.put("msg", "评论成功！");
+		}
+		setData(map);
+		return JSON; 
 	}
 
 	public Trainer getTrainer() {
@@ -96,6 +131,30 @@ public class TrainerDetailAction extends BaseAction {
 
 	public void setCoursesList(List<Courses> coursesList) {
 		this.coursesList = coursesList;
+	}
+
+	public String getTid() {
+		return tid;
+	}
+
+	public void setTid(String tid) {
+		this.tid = tid;
+	}
+
+	public Object getData() {
+		return data;
+	}
+
+	public void setData(Object data) {
+		this.data = data;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 }

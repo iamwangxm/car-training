@@ -54,6 +54,7 @@
             	<h4>培训经验:</h4>
                 <div class="pxly_box">
                 	<ul>
+                		<li><a href="#">应界毕业生</a></li>
                     	<li><a href="#">5年内</a></li>
                         <li><a href="#">5-10年</a></li>
                         <li><a href="#">10-15年</a></li>
@@ -89,7 +90,7 @@
     						<#list trainerList as t>
 	    						<#if t?? && t.businessCategory??>
 	    						  <#list t.businessCategory as b>
-	    						  	<#if b = key>
+	    						  	<#if businessCategoryEnum.get(key) ? index_of(b) !=-1 >
 	    						  		<#if t_index = 0>
     						   		<li style="border:2px solid #ff7d00; padding:0px;">
     						   		<#if t.userCenter??>
