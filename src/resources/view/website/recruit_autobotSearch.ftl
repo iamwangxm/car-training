@@ -122,9 +122,9 @@
                     </div>
                     <div class="pxxq_r right">
                    	  <div class="qy">
-                        	<div class="qy_l left"><img src="${t.company.logo!}" /></div>
+                        	<div class="qy_l left"><img src="${t.company.logo!}" style="width:100px;height:50px;"/></div>
                           <div class="qy_r right">
-                            	<div class="qy_name"><span><a href="#">已有25人担保</a></span><a href="/website/autoCompany?company.id=${t.company.id!}">${t.company.name!}</a></div>
+                            	<div class="qy_name"><span><a href="#">已有${t.company.bondsmanCount!}人担保</a></span><a href="/website/autoCompany?company.id=${t.company.id!}">${t.company.name!}</a></div>
                                 <div class="jyfw"><a href="#">${t.company.industry!}</a></div>
                           </div>
                             <div class="clear"></div>

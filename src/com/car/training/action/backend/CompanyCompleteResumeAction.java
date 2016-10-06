@@ -1,6 +1,10 @@
  package com.car.training.action.backend;
 
- import java.util.HashMap;
+ import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Base64;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -14,11 +18,14 @@ import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.ironrhino.common.model.Region;
+import org.ironrhino.core.fs.FileStorage;
 import org.ironrhino.core.metadata.AutoConfig;
 import org.ironrhino.core.metadata.JsonConfig;
 import org.ironrhino.core.service.EntityManager;
 import org.ironrhino.core.struts.BaseAction;
+import org.ironrhino.rest.RestStatus;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 import com.car.training.domain.Company;
 import com.car.training.enums.Industry;
@@ -29,7 +36,10 @@ import com.car.training.service.CompanyService;
 public class CompanyCompleteResumeAction extends BaseAction {
 
 	private static final long serialVersionUID = 4839883380537115435L;
-
+	@Autowired
+	public FileStorage fileStorage;
+	@Value("${upload.filepath:/car/training/upload/}")
+	public static String CARTRAINING_UPLOAD_FILEPATH = "/car/training/upload/";
 	@Autowired
 	private CompanyService companyService;
 	@Autowired
@@ -158,19 +168,19 @@ public class CompanyCompleteResumeAction extends BaseAction {
 					company.setWelfare(setStr);
 				}
 			}
-//			Common com = new Common();
-//			if (StringUtils.isNotBlank(logo) && !logo.startsWith("http")) {
-//				String logoUrl = com.uploadFile(logo);
-//				company.setLogo(logoUrl);
-//			}
-//			if (StringUtils.isNotBlank(environmentURL1) && !environmentURL1.startsWith("http")) {
-//				String URL1 = com.uploadFile(environmentURL1);
-//				company.setEnvironmentURL1(URL1);
-//			}
-//			if (StringUtils.isNotBlank(environmentURL2) && !environmentURL2.startsWith("http")) {
-//				String URL2 = com.uploadFile(environmentURL2);
-//				company.setEnvironmentURL2(URL2);
-//			}
+
+			if (StringUtils.isNotBlank(logo) && !logo.startsWith("http")) {
+				String logoUrl = uploadFile(logo);
+				company.setLogo(logoUrl);
+			}
+			if (StringUtils.isNotBlank(environmentURL1) && !environmentURL1.startsWith("http")) {
+				String URL1 = uploadFile(environmentURL1);
+				company.setEnvironmentURL1(URL1);
+			}
+			if (StringUtils.isNotBlank(environmentURL2) && !environmentURL2.startsWith("http")) {
+				String URL2 = uploadFile(environmentURL2);
+				company.setEnvironmentURL2(URL2);
+			}
 
 			company.setIndustry(Enum.valueOf(Industry.class, industry));
 			companyService.update(company);
@@ -182,6 +192,35 @@ public class CompanyCompleteResumeAction extends BaseAction {
 		return JSON;
 	}
 
+	public String uploadFile(String imgData) {
+		if (imgData == null ) {
+			throw RestStatus.valueOf(RestStatus.CODE_FIELD_INVALID, "参数有误");
+		}
+
+		String returnUrl ="",imgPath="";
+		// 使用BASE64对图片文件数据进行解码操作
+			if (imgData != null) {
+				try {
+					// 通过Base64解密，将图片数据解密成字节数组
+					byte[] bytes = Base64.getDecoder().decode(imgData.split(",")[1]);
+					for (int j = 0; j < bytes.length; ++j) {
+						if (bytes[j] < 0) {// 调整异常数据
+							bytes[j] += 256;
+						}
+					}
+					imgPath = String.valueOf(System.currentTimeMillis()+"."+imgData.substring(imgData.indexOf("/")+1,imgData.indexOf(";")));
+					InputStream in = new ByteArrayInputStream(bytes);
+					fileStorage.write(in, CARTRAINING_UPLOAD_FILEPATH.concat(imgPath));
+					String fileUrl = fileStorage.getFileUrl(CARTRAINING_UPLOAD_FILEPATH.concat(imgPath));
+
+					returnUrl = fileUrl;
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		return returnUrl ;
+	}
+	
 	public Company getCompany() {
 		return company;
 	}

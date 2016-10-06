@@ -7,11 +7,12 @@ import java.util.Base64;
 import java.util.LinkedHashSet;
 
 import org.ironrhino.core.fs.FileStorage;
+import org.ironrhino.core.remoting.Remoting;
 import org.ironrhino.rest.RestStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-
+@Remoting
 public class Common {
 	@Autowired
 	public FileStorage fileStorage;

@@ -1,6 +1,10 @@
  package com.car.training.action.backend;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
+import java.util.Base64;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -16,11 +20,14 @@ import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.ironrhino.common.model.Region;
+import org.ironrhino.core.fs.FileStorage;
 import org.ironrhino.core.metadata.AutoConfig;
 import org.ironrhino.core.metadata.JsonConfig;
 import org.ironrhino.core.service.EntityManager;
 import org.ironrhino.core.struts.BaseAction;
+import org.ironrhino.rest.RestStatus;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 import com.car.training.domain.Autobots;
 import com.car.training.domain.UserCenter;
@@ -32,11 +39,14 @@ import com.car.training.service.AutobotsService;
 public class AutobotCompleteResumeAction extends BaseAction {
 
 	private static final long serialVersionUID = 4839883380537115435L;
-
 	@Autowired
 	private AutobotsService autobotsService;
 	@Autowired
 	private transient EntityManager<Region> entityManager;
+	@Autowired
+	public FileStorage fileStorage;
+	@Value("${upload.filepath:/car/training/upload/}")
+	public static String CARTRAINING_UPLOAD_FILEPATH = "/car/training/upload/";
 	/** 汽车人 */
 	private Autobots autobot;
 	
@@ -161,18 +171,18 @@ public class AutobotCompleteResumeAction extends BaseAction {
 				}
 			}
 			autobot.setCurrentWorkStatus(currentWorkStatus);
-			/*if (StringUtils.isNotBlank(uheadLogo) && !uheadLogo.startsWith("http")) {
-				String headLogo = comm.uploadFile(uheadLogo);
+			if (StringUtils.isNotBlank(uheadLogo) && !uheadLogo.startsWith("http")) {
+				String headLogo = uploadFile(uheadLogo);
 				uc.setHeadLogo(headLogo);
 			}
 			if (StringUtils.isNotBlank(workPhotoURL1) && !workPhotoURL1.startsWith("http")) {
-				String fileURL1 = comm.uploadFile(workPhotoURL1);
+				String fileURL1 = uploadFile(workPhotoURL1);
 				autobot.setWorkPhotoURL1(fileURL1);
 			}
 			if (StringUtils.isNotBlank(workPhotoURL2) && !workPhotoURL2.startsWith("http")) {
-				String fileURL2 = comm.uploadFile(workPhotoURL2);
+				String fileURL2 = uploadFile(workPhotoURL2);
 				autobot.setWorkPhotoURL2(fileURL2);
-			}*/
+			}
 			autobot.setWorkingHistroy(workingHistroy);
 			
 			uc.setActiveDate(new Date());
@@ -200,6 +210,35 @@ public class AutobotCompleteResumeAction extends BaseAction {
 		return JSON;
 	}
 
+	/** 单个上传base64公用接口 */
+	public String uploadFile(String imgData) {
+		if (imgData == null ) {
+			throw RestStatus.valueOf(RestStatus.CODE_FIELD_INVALID, "参数有误");
+		}
+
+		String returnUrl ="",imgPath="";
+		// 使用BASE64对图片文件数据进行解码操作
+			if (imgData != null) {
+				try {
+					// 通过Base64解密，将图片数据解密成字节数组
+					byte[] bytes = Base64.getDecoder().decode(imgData.split(",")[1]);
+					for (int j = 0; j < bytes.length; ++j) {
+						if (bytes[j] < 0) {// 调整异常数据
+							bytes[j] += 256;
+						}
+					}
+					imgPath = String.valueOf(System.currentTimeMillis()+"."+imgData.substring(imgData.indexOf("/")+1,imgData.indexOf(";")));
+					InputStream in = new ByteArrayInputStream(bytes);
+					fileStorage.write(in, CARTRAINING_UPLOAD_FILEPATH.concat(imgPath));
+					String fileUrl = fileStorage.getFileUrl(CARTRAINING_UPLOAD_FILEPATH.concat(imgPath));
+
+					returnUrl = fileUrl;
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		return returnUrl ;
+	}
 
 
 	public Autobots getAutobot() {

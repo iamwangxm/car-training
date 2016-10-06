@@ -29,7 +29,7 @@
             	
                 <div class="zpqy_xx_box">
                	  <div class="zpqy_xx_l left">${company.name!}</div>
-                    <div class="zpqy_xx_r right"><span ><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/db.jpg" /></a></span><span >已有${bondsmanCount!}人担保</span></div>
+                    <div class="zpqy_xx_r right"><span ><a href="#"><!--<img src="http://obu3flkwk.bkt.clouddn.com/website/images/db.jpg" />--></a></span><span >已有${bondsmanCount!}人担保</span></div>
                   <div class="clear"></div>
                 </div>
                 <div class="fl_dy">

@@ -86,7 +86,7 @@
     <td width="439" colspan="4" align="left" valign="top"><table width="400" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td>
-        <img id="autobot.userCenter.headLogo" src="http://obu3flkwk.bkt.clouddn.com/backend/images/zw.jpg" style="width:40px;height:40px;" />
+        <img id="autobot.userCenter.headLogo" src="<#if autobot.userCenter.headLogo?? >${autobot.userCenter.headLogo!}<#else>http://obu3flkwk.bkt.clouddn.com/backend/images/zw.jpg</#if>" style="width:40px;height:40px;" />
         <input type="hidden" id="autobot.userCenter.headLogo" name="autobot.userCenter.headLogo" />
         </td>
         </tr>
@@ -212,9 +212,9 @@
                   	    <tr>
                   	     <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>工作照：</td>
                   	     <td colspan="3" align="left" valign="middle">
-                  	     <img id="autobot.workPhotoURL1" src="http://obu3flkwk.bkt.clouddn.com/backend/images/zw.jpg" style="width:40px;height:40px;" />
+                  	     <img id="autobot.workPhotoURL1" src="<#if autobot.workPhotoURL1??>${autobot.workPhotoURL1!}<#else>http://obu3flkwk.bkt.clouddn.com/backend/images/zw.jpg</#if>" style="width:40px;height:40px;" />
                   	     <input type="file" name="workPhotoURL1" id="workPhotoURL1" value="浏览" onChange="selectImage(this)"/>
-                  	     <img id="autobot.workPhotoURL2" src="http://obu3flkwk.bkt.clouddn.com/backend/images/zw.jpg" style="width:40px;height:40px;" />
+                  	     <img id="autobot.workPhotoURL2" src="<#if autobot.workPhotoURL2??>${autobot.workPhotoURL2!}<#else>http://obu3flkwk.bkt.clouddn.com/backend/images/zw.jpg</#if>" style="width:40px;height:40px;" />
                   	     <input type="file" name="workPhotoURL2" id="workPhotoURL2" value="浏览" onChange="selectImage(this)"/></td>
                   	  	</tr>
                   	  	

@@ -1,6 +1,10 @@
  package com.car.training.action.backend;
 
- import java.text.SimpleDateFormat;
+ import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Base64;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -16,11 +20,14 @@ import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.ironrhino.common.model.Region;
+import org.ironrhino.core.fs.FileStorage;
 import org.ironrhino.core.metadata.AutoConfig;
 import org.ironrhino.core.metadata.JsonConfig;
 import org.ironrhino.core.service.EntityManager;
 import org.ironrhino.core.struts.BaseAction;
+import org.ironrhino.rest.RestStatus;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 import com.car.training.domain.Trainer;
 import com.car.training.domain.UserCenter;
@@ -28,13 +35,15 @@ import com.car.training.enums.Education;
 import com.car.training.enums.MarryStatus;
 import com.car.training.enums.PersonalType;
 import com.car.training.service.TrainerService;
-import com.car.training.utils.Common;
 
 @AutoConfig
 public class TrainerCompleteResumeAction extends BaseAction {
 
 	private static final long serialVersionUID = 4839883380537115435L;
-
+	@Autowired
+	public FileStorage fileStorage;
+	@Value("${upload.filepath:/car/training/upload/}")
+	public static String CARTRAINING_UPLOAD_FILEPATH = "/car/training/upload/";
 	@Autowired
 	private TrainerService trainerService;
 	@Autowired
@@ -169,9 +178,8 @@ public class TrainerCompleteResumeAction extends BaseAction {
 				region.setId(Long.valueOf(uregionId));
 				uc.setRegion(region);
 			}
-			Common com = new Common();
 			if (StringUtils.isNotBlank(uheadLogo) && !uheadLogo.startsWith("http")) {
-				String headLogo = com.uploadFile(uheadLogo);
+				String headLogo = uploadFile(uheadLogo);
 				uc.setHeadLogo(headLogo);
 			}
 			trainer.setVedioURL1(vedioURL1);
@@ -186,7 +194,35 @@ public class TrainerCompleteResumeAction extends BaseAction {
 		return JSON;
 	}
 
+	public String uploadFile(String imgData) {
+		if (imgData == null ) {
+			throw RestStatus.valueOf(RestStatus.CODE_FIELD_INVALID, "参数有误");
+		}
 
+		String returnUrl ="",imgPath="";
+		// 使用BASE64对图片文件数据进行解码操作
+			if (imgData != null) {
+				try {
+					// 通过Base64解密，将图片数据解密成字节数组
+					byte[] bytes = Base64.getDecoder().decode(imgData.split(",")[1]);
+					for (int j = 0; j < bytes.length; ++j) {
+						if (bytes[j] < 0) {// 调整异常数据
+							bytes[j] += 256;
+						}
+					}
+					imgPath = String.valueOf(System.currentTimeMillis()+"."+imgData.substring(imgData.indexOf("/")+1,imgData.indexOf(";")));
+					InputStream in = new ByteArrayInputStream(bytes);
+					fileStorage.write(in, CARTRAINING_UPLOAD_FILEPATH.concat(imgPath));
+					String fileUrl = fileStorage.getFileUrl(CARTRAINING_UPLOAD_FILEPATH.concat(imgPath));
+
+					returnUrl = fileUrl;
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		return returnUrl ;
+	}
+	
 	public Trainer getTrainer() {
 		return trainer;
 	}

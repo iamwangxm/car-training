@@ -83,7 +83,7 @@
 			    </table></td>
 			    <td width="439" colspan="4" align="left" valign="top"><table width="400" border="0" cellspacing="0" cellpadding="0">
 			      <tr>
-			        <td><img id="trainer.userCenter.headLogo" src="http://obu3flkwk.bkt.clouddn.com/backend/images/zw.jpg" style="width:50px;height:50px;"/></td>
+			        <td><img id="trainer.userCenter.headLogo" src="<#if trainer.userCenter.headLogo??>${trainer.userCenter.headLogo!}<#else>http://obu3flkwk.bkt.clouddn.com/backend/images/zw.jpg</#if>" style="width:50px;height:50px;"/></td>
 			        </tr>
 			      <tr>
 			        <td>
