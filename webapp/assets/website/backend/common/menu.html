@@ -1,30 +1,30 @@
 <!-- menu开始 -->
-<#if '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='TRAINER'>
+<#if Session?exists && '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='TRAINER'>
  <h4>培训师管理中心</h4>
- <#elseIf '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='AUTOBOT'>
+ <#elseIf Session?exists && '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='AUTOBOT'>
  <h4>汽车人管理中心</h4>
- <#elseIf '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='COMPANY'>
+ <#elseIf Session?exists && '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='COMPANY'>
   <h4>培训公司管理中心</h4>
- <#elseIf '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='STORE'>
+ <#elseIf Session?exists && '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='STORE'>
   <h4>汽车公司管理中心</h4>
  <#else>
  </#if>
 <div class="lanmu">
           	<ul>
-            	<#if '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='TRAINER'>
+            	<#if Session?exists && '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='TRAINER'>
             	<li><div class="zlws">
             	<a href="<@url value='/website/trainerDetail?trainer.id=${Session["userDetails"].trainer.id!}'/>" target="_blank">个人资料</a></div>
             	</li>
             	<li><div class="zlws">
             	<a href="<@url value='/backend/trainerCompleteResume'/>">完善资料</a></div>
             	</li>
-            	<#elseIf '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='AUTOBOT'>
+            	<#elseIf Session?exists && '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='AUTOBOT'>
             	<li><div class="zlws">
             	<a href="<@url value='/website/autobotDetail?autobots.id=${Session["userDetails"].autobot.id!}'/>" target="_blank">个人资料</a></div>
             	</li>
             	<li><div class="zlws"><a href="<@url value='/backend/autobotCompleteResume'/>">完善资料</a></div>
             	</li>
-            	<#elseIf '{}' != '${session}' && Session["loginState"]=='Y' && ( Session["loginType"]=='COMPANY'||  Session["loginType"]=='STORE')>
+            	<#elseIf Session?exists && '{}' != '${session}' && Session["loginState"]=='Y' && ( Session["loginType"]=='COMPANY'||  Session["loginType"]=='STORE')>
             	<li><div class="zlws">
             	<a href="<@url value='/website/autoCompany?company.id=${Session["userDetails"].id}'/>" target="_blank" >公司资料</a></div>
             	</li>
@@ -33,13 +33,13 @@
             	</li>
             	<#else>
             	</#if>
-            	<#if '{}' != '${session}' && Session["loginState"]=='Y' && (Session["loginType"]=='TRAINER'||Session["loginType"]=='AUTOBOT')>
+            	<#if Session?exists && '{}' != '${session}' && Session["loginState"]=='Y' && (Session["loginType"]=='TRAINER'||Session["loginType"]=='AUTOBOT')>
                 <li><div class="wdzt">
                 <a href="<@url value='/backend/applyJobHistory'/>">申请记录</a>
                 </div>
                 </li>
                 </#if>
-            	<#if '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='TRAINER'>
+            	<#if Session?exists && '{}' != '${session}' && Session["loginState"]=='Y' && Session["loginType"]=='TRAINER'>
                 <li><div class="wdzt">
                 <a href="<@url value='/backend/publishArticle'/>">发布文章</a>
                 </div>
@@ -49,11 +49,11 @@
          		</div>
          		</li>
          		</#if>
-         		<#if '{}' != '${session}' && Session["loginState"]=='Y' && (Session["loginType"]=='COMPANY'|| Session["loginType"]=='STORE')>
+         		<#if Session?exists && '{}' != '${session}' && Session["loginState"]=='Y' && (Session["loginType"]=='COMPANY'|| Session["loginType"]=='STORE')>
                 <li><div class="zwfb"><a href="<@url value='/backend/publishJob'/>">发布职位</a></div></li>
                 <li><div class="zwgl"><a href="<@url value='/backend/companyJobManage'/>">职位管理</a></div></li>
                 </#if>
-                <#if '{}' != '${session}' && Session["loginState"]=='Y' >
+                <#if Session?exists && '{}' != '${session}' && Session["loginState"]=='Y' >
                 <li><div class="xgmm"><a href="<@url value='/backend/modifyPassword'/>">修改密码</a></div></li>
                 </#if>
                 <li><div class="aqtc"><a href="#"  onclick="javascript:logout();">安全退出</a></div></li>

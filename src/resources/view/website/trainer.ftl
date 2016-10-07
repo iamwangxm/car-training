@@ -98,7 +98,7 @@
     						   			<div class="pxshi_intro">
 					                    	<div class="pxshi_name">
 					                        	<div class="pxshi_xm left"><a href="#">${t.userCenter.name!}</a></div>
-					                          <div class="pxshi_pl right"><a href="#">34人</a><span>评论</span></div>
+					                          <div class="pxshi_pl right"><a href="#"><#if t.autobotsCommentList??> ${t.autobotsCommentList.size!}<#else>0</#if>人</a><span>评论</span></div>
 					                            
 					                            <div class="clear"></div>
 					                        </div>

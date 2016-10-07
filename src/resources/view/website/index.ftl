@@ -73,7 +73,7 @@
                     <div class="pxshi_l_intro">
                     	<div class="pxshi_name">
                         	<div class="xm left">${trainer.userCenter.name!}</div>
-                            <div class="pl left">34人<span>评论</span></div>
+                            <div class="pl left"><#if trainer.autobotsCommentList??> ${trainer.autobotsCommentList.size!}<#else>0</#if>人<span>评论</span></div>
                             <div class="dz right">35</div>
                             <div class="clear"></div>
                         </div>
@@ -101,7 +101,7 @@
 			                    <div class="pxshi_intro2">
 			                    	<div class="pxshi_name2">
 			                        	<div class="xm2 left">${t.userCenter.name!}</div>
-			                            <div class="pl2 left">34人<span>评论</span></div>
+			                            <div class="pl2 left"><#if t.autobotsCommentList??> ${t.autobotsCommentList.size!}<#else>0</#if>人<span>评论</span></div>
 			                            <div class="dz2 right">35</div>
 			                            <div class="clear"></div>
 			                        </div>
@@ -137,7 +137,7 @@
                     <div class="pxsheng_intro">
                     	<div class="pxsheng_name">
                         	<div class="pxsheng_xm left">${t.userCenter.name!}</div>
-                          <div class="pxsheng_pl right">34人<span>评论</span></div>
+                          <!--<div class="pxsheng_pl right">34人<span>评论</span></div>-->
                             
                             <div class="clear"></div>
                         </div>

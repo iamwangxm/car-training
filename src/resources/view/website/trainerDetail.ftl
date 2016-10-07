@@ -138,7 +138,7 @@
             	<h4>联系方式</h4>
                 <div class="lx_box">
                 	<div class="xingming">${trainer.userCenter.name!}(培训师本人)</div>
-       <#if Session["loginState"]=='Y'>
+       <#if Session?exists && Session["loginState"]=='Y'>
                    电话：${trainer.userCenter.mobile!}<br />
                    邮箱：${trainer.userCenter.email!}<br />
 <!--QQ：${trainer.userCenter.QQ!}<br />

@@ -69,7 +69,7 @@ public class Trainer implements Serializable {
 	/**学员评论列表 */
 	private List<AutobotsComment> autobotsCommentList;
 	
-	/**学员评论列表 */
+	/**学员文章列表 */
 	private List<TrainerEssay> trainerEssayList;
 	
 	/**培训公开课列表 */
