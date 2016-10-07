@@ -2,8 +2,10 @@ package com.car.training.action.website;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.ironrhino.common.model.Region;
@@ -14,6 +16,7 @@ import org.ironrhino.core.struts.BaseAction;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.car.training.domain.Jobs;
+import com.car.training.enums.BusinessCategory;
 import com.car.training.enums.CompanyType;
 import com.car.training.enums.JobType;
 import com.car.training.enums.PositionType;
@@ -44,6 +47,8 @@ public class RecruitAction extends BaseAction {
 	private Region region;
 	/** 执行类别 */
 	private Set<String> executionCategories;
+	/**类别枚举*/
+	private Map<String,Object> businessCategoryEnum;
 	/** 关健字 */
 	private String keyword;
 	/** 页大小 */
@@ -88,7 +93,17 @@ public class RecruitAction extends BaseAction {
 			Region _region = entityManager.get(ln);
 			regionList.add(_region);
 		}
+		//设置类别枚举值
+		setBusinessCategorieEnumVal();
+		
 		return "";
+	}
+	
+	public void setBusinessCategorieEnumVal(){
+		businessCategoryEnum = new HashMap<>();
+		for (BusinessCategory b : BusinessCategory.values()) {
+			businessCategoryEnum.put(b.getName(), b);
+		}
 	}
 
 	public ResultPage<Jobs> getJobsCompanyList() {
@@ -169,5 +184,13 @@ public class RecruitAction extends BaseAction {
 
 	public void setCompanyType(CompanyType companyType) {
 		this.companyType = companyType;
+	}
+
+	public Map<String, Object> getBusinessCategoryEnum() {
+		return businessCategoryEnum;
+	}
+
+	public void setBusinessCategoryEnum(Map<String, Object> businessCategoryEnum) {
+		this.businessCategoryEnum = businessCategoryEnum;
 	}
 }

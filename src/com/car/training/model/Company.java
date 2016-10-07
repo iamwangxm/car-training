@@ -66,7 +66,6 @@ public class Company extends BaseEntity  implements UserDetails {
 	private String autoBrand;
 	
 	/**区域**/
-	@Column(nullable = true)
 	@JoinColumn(name = "regionId", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	private Region region;

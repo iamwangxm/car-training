@@ -37,9 +37,9 @@
                             <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/zishen.jpg" /></a></span>
                               <span><a href="#"><img src="http://obu3flkwk.bkt.clouddn.com/website/images/dav.jpg" /></a></span></div>
                         <div class="mingzi_r right">
-                        	<div class="pinglun left">34人<span>评论</span></div>
-                            <div class="dianzan left">35</div>
-                            <div class="guanzhu right"><input style="border:none;" type="image" name="gz" id="gz" src="http://obu3flkwk.bkt.clouddn.com/website/images/gz.jpg" /></div>
+                        	<div class="pinglun left">0 人<span>评论</span></div>
+                            <a href="#" onclick="dianz('${trainer.id!}')" ><div class="dianzan left" id="dainz">${trainer.starLevel!}</div></a>
+                            <!--<div class="guanzhu right"><input style="border:none;" type="image" name="gz" id="gz" src="http://obu3flkwk.bkt.clouddn.com/website/images/gz.jpg" /></div>-->
                         </div>
                         <div class="clear"></div>
                     </div>
@@ -168,6 +168,42 @@
     </#if>
 </div>
 <script>
+function dianz(tid){
+var form_data={};
+var tid = tid;
+
+if(tid==''||tid==null){
+	alert('该培训师已不存在');
+	return false;
+}
+
+form_data.tid = tid;
+
+$.ajax({
+	 type: "POST",
+     url: "/website/trainerDetail/dianzan",
+     data: form_data,
+     error: function(request) {
+         showErrMsg("网络出错啦！");
+         return false;
+     },
+     success: function (data) {
+    	 if(data.code==200){
+			 setTimeout(function(){
+		 		if(jid==''||jid==null){
+     	 			window.location.href = "/website/trainerDetail?trainer.id=tid";
+     	 			}
+     	 		},300);
+     	 		window.location.reload();
+    	 }else if(data.code==400){
+    	 	 showErrMsg(data.msg);
+    	 	 return false;
+    	 }else{
+    	 	 return false;
+    	 }
+     }
+});
+}
 function addcomment(tid){ 
 var form_data={};
 var tid = tid;

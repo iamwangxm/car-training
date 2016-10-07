@@ -20,18 +20,9 @@
             	<h4>业务领域:</h4>
                 <div class="pxly_box">
                 	<ul>
-                    	<li><a href="#">销售</a></li>
-                        <li><a href="#">产品</a></li>
-                        <li><a href="#">非技术</a></li>
-                        <li><a href="#">技术</a></li>
-                        <li><a href="#">管理</a></li>
-                        <li><a href="#">财务</a></li>
-                        <li><a href="#">市场营销</a></li>
-                        <li><a href="#">客户关系</a></li>
-                        <li><a href="#">人事</a></li>
-                        <li><a href="#">生产</a></li>
-                        <li><a href="#">领导力</a></li>
-                        <li><a href="#">新能源</a></li>
+                	  <#list businessCategoryEnum?keys as key>
+                    	<li><a href="/website/trainer?businessCategory=${key!}">${businessCategoryEnum.get(key)!}</a></li>
+                      </#list>
                     </ul>
                 </div>
                 <div class="clear"></div>
@@ -71,7 +62,7 @@
                 <div class="sou_box">
                   <table width="590px" border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                      <td width="505px"><input style=" background:url(http://obu3flkwk.bkt.clouddn.com/website/images/ss_bg.jpg) no-repeat left 1px; height:35px; line-height:35px;   width:501px; border:none; padding-left:4px; " type="text" name="user_login"  placeholder="请输入关键字，如销售市场" validate-title="请输入关键字，如销售市场" /></td>
+                      <td width="505px"><input style=" background:url(http://obu3flkwk.bkt.clouddn.com/website/images/ss_bg.jpg) no-repeat left 1px; height:35px; line-height:35px;   width:501px; border:none; padding-left:4px; " type="text" name="keyword" id="keyword" placeholder="请输入关键字，如销售市场" validate-title="请输入关键字，如销售市场" /></td>
                       <td width="85px" height="35px"><input style="border:none;" type="image" src="http://obu3flkwk.bkt.clouddn.com/website/images/ss.jpg" /></td>
                     </tr>
                   </table>

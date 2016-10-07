@@ -101,6 +101,19 @@ public class TrainerDetailAction extends BaseAction {
 		return JSON; 
 	}
 
+	@JsonConfig(root = "data")
+	public String dianzan() throws Exception {
+		Map<String, Object> map = new HashMap<String, Object>();
+		trainer = trainerService.findById(tid);
+		trainer.setStarLevel(trainer.getStarLevel()+1);
+		trainerService.update(trainer);
+
+		map.put("code", 200);
+		map.put("msg", "评论成功！");
+		setData(map);
+		return JSON;
+	}
+	
 	public Trainer getTrainer() {
 		return trainer;
 	}
