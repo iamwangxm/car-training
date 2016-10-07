@@ -25,7 +25,7 @@
     	<div class="zhaopin_l left">
         	<div class="zp_qy">
             	<div class="zwmc">${jobs.name!}</div>
-                <div class="qymc"><span>${jobs.company.brand!}</span><span>当前汽车品牌：</span>${jobs.company.name!}</div>
+                <div class="qymc"><span>${jobs.company.autoBrand!}</span><span>当前汽车品牌：</span></div>
             </div>
             <div class="zhaopin_box">
             	<div class="xzdy">
@@ -89,7 +89,7 @@
             	<h4>职位发布企业</h4>
                 <div class="qy_box">
                 	<div class="qylogo">
-                    	<div class="qylogo_l left"><img src="${jobs.company.logo!}" /></div>
+                    	<div class="qylogo_l left"><img src="${jobs.company.logo!}" style="width:100px;height:50px;"/></div>
                       <div class="qylogo_r right">
                        	<div class="danbao">已有${jobs.company.bondsmanCount!}人担保</div>
                             <div class="wydb"><a href="#">
@@ -144,7 +144,7 @@ $(".www51buycom").slide({ titCell:".num ul" , mainCell:".51buypic" , effect:"fol
                    	  <#list bondsmanList as b>
                    	  <#if b??>
                       	<li>
-                        	<div class="dbr_l left"><a href="#"><img src="${b.headLogo!}" /></a></div>
+                        	<div class="dbr_l left"><a href="#"><img src="${b.headLogo!}" style="width:58;height:63px;"/></a></div>
                           <div class="dbr_r right">
                             	<div class="dbr_name"><a href="#">${b.name!}</a></div>
                           </div>

@@ -62,7 +62,11 @@ public class Company extends BaseEntity  implements UserDetails {
 	@Column(length=20, nullable = false)
 	private CompanyType companyType;
 	
+	/** 汽车品牌 */
+	private String autoBrand;
+	
 	/**区域**/
+	@Column(nullable = true)
 	@JoinColumn(name = "regionId", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT) )
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	private Region region;
@@ -192,6 +196,14 @@ public class Company extends BaseEntity  implements UserDetails {
 
 	public void setCompanyType(CompanyType companyType) {
 		this.companyType = companyType;
+	}
+
+	public String getAutoBrand() {
+		return autoBrand;
+	}
+
+	public void setAutoBrand(String autoBrand) {
+		this.autoBrand = autoBrand;
 	}
 
 	public Region getRegion() {

@@ -15,7 +15,7 @@
 	<div class="content">
     <div class="dq_box">
     <div class="dqwz left">当前位置 : <a href="#">首 页</a> > <a href="#">培训师管理中心</a> > <a href="#">我的文章</a></div>
-    <div class="wdcf right"><span>2016-07-20—2016-08-20</span>我的财富：<font color="#FF66001">845</font></div>
+    <div class="wdcf right"><span color="#FF66001"><#if Session["userDetails"].wealthStartDate??> ${Session["userDetails"].wealthStartDate!?string("dd/MM/yyyy")}—${Session["userDetails"].wealthEndDate!?string("dd/MM/yyyy")}</#if></span>我的财富：<font color="#FF66001">${Session["userDetails"].wealth!}</font></div>
     <div class="clear"></div>
     </div>
     <div class="pxshi_gl">

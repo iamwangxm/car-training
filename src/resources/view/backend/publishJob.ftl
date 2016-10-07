@@ -16,7 +16,7 @@
 	<div class="content">
     <div class="dq_box">
     <div class="dqwz left">当前位置 : <a href="#">首 页</a> > <a href="#">企业管理中心</a> > <a href="#">发布职位</a></div>
-    <div class="wdcf right"><span>2016/07/20—2016/08/20</span>我的财富：<font color="#FF66001">845</font></div>
+    <div class="wdcf right"><span color="#FF66001"><#if Session["userDetails"].wealthStartDate??> ${Session["userDetails"].wealthStartDate!?string("dd/MM/yyyy")}—${Session["userDetails"].wealthEndDate!?string("dd/MM/yyyy")}</#if></span>我的财富：<font color="#FF66001">${Session["userDetails"].wealth!}</font></div>
     <div class="clear"></div>
     </div>
     <div class="pxshi_gl">
@@ -43,6 +43,12 @@
 			    <td width="79" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 职位名称：</td>
 			    <td width="721">
 			    <input type="text" name="job.name" id="job.name" />
+			    </td>
+			  </tr>
+			  <tr>
+			    <td width="79" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 汽车品牌：</td>
+			    <td width="721">
+			    <input type="text" name="job.autoBrand" id="job.autoBrand" />
 			    </td>
 			  </tr>
 			  <tr>
@@ -151,6 +157,7 @@ function submitdata(){
 	var form_data = {};
 	var jobType = $("[name='job.jobType']:checked").val();
 	var name = $("[name='job.name']").val();
+	var autoBrand = $("[name='job.autoBrand']").val();
 	var workExprience = $("[name='job.workExprience']").val();
 	var salary = $("[name='job.salary']").val();
 	var languages = '';
@@ -166,6 +173,7 @@ function submitdata(){
 	
 	form_data.jobType = jobType;
 	form_data.name = name;
+	form_data.autoBrand = autoBrand;
 	form_data.workExprience= workExprience;
 	form_data.salary = salary;
 	form_data.languages = languages;

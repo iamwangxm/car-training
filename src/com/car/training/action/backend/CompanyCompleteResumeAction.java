@@ -57,6 +57,7 @@ public class CompanyCompleteResumeAction extends BaseAction {
 	private Long parentId;
 	private String logo = "";
 	private String name = "";
+	private String autoBrand = "";
 	private String cid = "";
 	private String scale = "";
 	private String industry = "";
@@ -149,7 +150,8 @@ public class CompanyCompleteResumeAction extends BaseAction {
 		if(company != null){
 			company.setId(cid);
 			company.setName(name);
-			company.setEnabled(true);
+			company.setAutoBrand(autoBrand);
+			company.setEnabled(false);
 			company.setIntro(intro);
 			company.setAddress(address);
 			if (StringUtils.isNotBlank(regionId)) {
@@ -243,6 +245,14 @@ public class CompanyCompleteResumeAction extends BaseAction {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getAutoBrand() {
+		return autoBrand;
+	}
+
+	public void setAutoBrand(String autoBrand) {
+		this.autoBrand = autoBrand;
 	}
 
 	public String getCid() {

@@ -1,6 +1,8 @@
 package com.car.training.action.backend;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -177,6 +179,7 @@ public class RegisterAction extends BaseAction {
 				UserCenter usercenter = usercenterService.findByUsername(username);
 				if (usercenter == null) {
 					if (smsManager.checkCode(username, vercode)) {
+						Calendar calendar=Calendar.getInstance();
 						usercenter = new UserCenter();
 						usercenter.setUsername(username);
 						usercenter.setPassword(password);
@@ -186,7 +189,12 @@ public class RegisterAction extends BaseAction {
 						Region region = new Region();
 						region.setId(new Long(0L));
 						usercenter.setRegion(region);
-						usercenter.setCreateDate(new Date());
+						usercenter.setCreateDate(calendar.getTime());
+						usercenter.setEnabled(true);
+						usercenter.setWealth(new BigDecimal(0));
+						usercenter.setWealthStartDate(calendar.getTime());
+						calendar.add(Calendar.MONTH, 1);
+						usercenter.setWealthEndDate(calendar.getTime());;
 						usercenterService.save(usercenter);
 						map.put("code", 200);
 						map.put("msg", "注册成功！");
@@ -216,6 +224,7 @@ public class RegisterAction extends BaseAction {
 				Company company = companyService.findByUsername(username);
 				if (company == null) {
 					if (smsManager.checkCode(username, vercode)) {
+						Calendar calendar=Calendar.getInstance();
 						company = new Company();
 						company.setUsername(username);
 						company.setPassword(password);
@@ -224,7 +233,12 @@ public class RegisterAction extends BaseAction {
 						Region region = new Region();
 						region.setId(new Long(0L));
 						company.setRegion(region);
-						company.setCreateDate(new Date());
+						company.setCreateDate(calendar.getTime());
+						company.setBondsmanCount(0);
+						company.setWealth(new BigDecimal(0));
+						company.setWealthStartDate(calendar.getTime());
+						calendar.add(Calendar.MONTH, 1);
+						company.setWealthEndDate(calendar.getTime());
 						companyService.save(company);
 						map.put("code", 200);
 						map.put("msg", "注册成功！");

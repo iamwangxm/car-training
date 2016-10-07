@@ -52,6 +52,7 @@ private List<Region> provinces;
 	
 	private String jobType = "";
 	private String name = "";
+	private String autoBrand = "";
 	private String workExprience = "";
 	private String salary = "";
 	private String languages = "";
@@ -90,55 +91,63 @@ private List<Region> provinces;
 		setData(map);
 		return JSON;
 	}
+	
 	@JsonConfig(root = "data")
 	public String save() throws Exception{
 		HttpServletRequest request = ServletActionContext.getRequest();
+		Map<String,Object> map = new HashMap<>();
 		Company company = new Company();
 		company = (Company) request.getSession().getAttribute("userDetails");
 		if (company != null) {
 			company = companyService.findById(company.getId());
 		}
-		Jobs job = new Jobs();
-		job.setCompany(company);
-		job.setCompanyType(company.getCompanyType());
-		job.setCreateDate(new Date());
-		job.setCreateUser(company.getUsername());
-		job.setEnabled(true);
-		job.setJobDescription(description);
-		job.setJobType(Enum.valueOf(JobType.class,jobType));
-		job.setName(name);
-		job.setWorkExprience(new Integer(workExprience));
-		if (StringUtils.isNotBlank(languages)) {
-			Set<String> setStr = new HashSet<String>();
-			String[] arr = languages.split(",");
-			if (arr != null && arr.length > 0) {
-				for (String s : arr) {
-					setStr.add(s);
+		if(company.isEnabled()){
+			Jobs job = new Jobs();
+			job.setCompany(company);
+			job.setCompanyType(company.getCompanyType());
+			job.setCreateDate(new Date());
+			job.setCreateUser(company.getUsername());
+			job.setEnabled(true);
+			job.setJobDescription(description);
+			job.setJobType(Enum.valueOf(JobType.class,jobType));
+			job.setName(name);
+			job.setAutoBrand(autoBrand);
+			job.setWorkExprience(new Integer(workExprience));
+			if (StringUtils.isNotBlank(languages)) {
+				Set<String> setStr = new HashSet<String>();
+				String[] arr = languages.split(",");
+				if (arr != null && arr.length > 0) {
+					for (String s : arr) {
+						setStr.add(s);
+					}
+					job.setLanguages(setStr);
 				}
-				job.setLanguages(setStr);
 			}
-		}
-		if (StringUtils.isNotBlank(welfare)) {
-			Set<String> setStr = new HashSet<String>();
-			String[] arr = welfare.split(",");
-			if (arr != null && arr.length > 0) {
-				for (String s : arr) {
-					setStr.add(s);
+			if (StringUtils.isNotBlank(welfare)) {
+				Set<String> setStr = new HashSet<String>();
+				String[] arr = welfare.split(",");
+				if (arr != null && arr.length > 0) {
+					for (String s : arr) {
+						setStr.add(s);
+					}
+					job.setWelfare(setStr);
 				}
-				job.setWelfare(setStr);
 			}
+			job.setPublishDate(new Date());
+			if (StringUtils.isNotBlank(regionId)) {
+				Region region = new Region();
+				region.setId(Long.valueOf(regionId));
+				job.setRegion(region);
+			}
+			job.setSalary(salary);
+			jobsService.save(job);
+	
+			map.put("code", "200");
+			map.put("msg", "保存成功");
+		}else{
+			map.put("code", "400");
+			map.put("msg", "您的资料还没有通过培聘网的审核,暂不能发布职位信息！");
 		}
-		job.setPublishDate(new Date());
-		if (StringUtils.isNotBlank(regionId)) {
-			Region region = new Region();
-			region.setId(Long.valueOf(regionId));
-			job.setRegion(region);
-		}
-		job.setSalary(salary);
-		jobsService.save(job);
-		Map<String,Object> map = new HashMap<>();
-		map.put("code", "200");
-		map.put("msg", "保存成功");
 		setData(map);
 		return JSON;
 	}
@@ -204,6 +213,14 @@ private List<Region> provinces;
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getAutoBrand() {
+		return autoBrand;
+	}
+
+	public void setAutoBrand(String autoBrand) {
+		this.autoBrand = autoBrand;
 	}
 
 	public String getWorkExprience() {

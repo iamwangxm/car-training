@@ -108,7 +108,7 @@
 	         },
 		     success: function (data) {
 		    	 if(data.code==200){
-					 showErrMsg("登录成功！");
+					 //showErrMsg("登录成功！");
 					 if(data.target == "" || data.target == null){
 					 	setTimeout(function(){
 			     	 			window.location.href = "/backend/applyJobHistory";
@@ -159,7 +159,7 @@
 	         },
 		     success: function (data) {
 		    	 if(data.code==200){
-					 showErrMsg("登录成功！");
+					 //showErrMsg("登录成功！");
 					 if(data.target == "" || data.target == null){
 					 	setTimeout(function(){
 			     	 			window.location.href = "/backend/companyJobManage";

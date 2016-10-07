@@ -59,6 +59,9 @@ public class Jobs extends BaseEntity {
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Region region;
 	
+	/** 品牌 */
+	private String autoBrand;
+	
 	/**工作年限**/
 	private Integer workExprience;  
 	
@@ -171,6 +174,14 @@ public class Jobs extends BaseEntity {
 
 	public void setRegion(Region region) {
 		this.region = region;
+	}
+
+	public String getAutoBrand() {
+		return autoBrand;
+	}
+
+	public void setAutoBrand(String autoBrand) {
+		this.autoBrand = autoBrand;
 	}
 
 	public Integer getWorkExprience() {

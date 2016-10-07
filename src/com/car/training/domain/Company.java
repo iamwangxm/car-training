@@ -29,6 +29,9 @@ public class Company implements Serializable {
 	
 	/**公司类别(公司/4S店)**/
 	private CompanyType companyType;
+	
+	/** 汽车品牌 */
+	private String autoBrand;
 
 	/**区域**/
 	private Region region;
@@ -122,6 +125,14 @@ public class Company implements Serializable {
 
 	public void setCompanyType(CompanyType companyType) {
 		this.companyType = companyType;
+	}
+
+	public String getAutoBrand() {
+		return autoBrand;
+	}
+
+	public void setAutoBrand(String autoBrand) {
+		this.autoBrand = autoBrand;
 	}
 
 	public Region getRegion() {

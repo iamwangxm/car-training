@@ -130,8 +130,12 @@
             	<h4>联系方式</h4>
                 <div class="lx_box">
                 <div class="xingming">${autobots.userCenter.name!}(汽车人本人)</div>
+      <#if Session["loginState"]=='Y'>
                    电话：${autobots.userCenter.mobile!}<br />
                    邮箱：${autobots.userCenter.email!}<br />
+                   <#else>
+请联系培训网  400-820-6666
+      </#if>
                 </div>
             </div>
            <!--<div class="pxshi_dp">

@@ -34,6 +34,9 @@ public class Jobs implements Serializable {
 	/**学历要求**/
 	private Education education;
 	
+	/** 品牌 */
+	private String autoBrand;
+	
 	/**工作种类**/
 	private JobType jobType;
 	
@@ -109,6 +112,14 @@ public class Jobs implements Serializable {
 
 	public void setRegion(Region region) {
 		this.region = region;
+	}
+
+	public String getAutoBrand() {
+		return autoBrand;
+	}
+
+	public void setAutoBrand(String autoBrand) {
+		this.autoBrand = autoBrand;
 	}
 
 	public Integer getWorkExprience() {

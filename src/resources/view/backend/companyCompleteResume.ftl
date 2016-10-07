@@ -17,7 +17,7 @@
 	<div class="content">
     <div class="dq_box">
     <div class="dqwz left">当前位置 : <a href="#">首 页</a> > <a href="#">企业管理中心</a> > <a href="#">完善资料</a></div>
-    <div class="wdcf right"><span>2016-07-20 — 2016-08-20</span>我的财富：<font color="#FF66001">845</font></div>
+    <div class="wdcf right"><span color="#FF66001"><#if Session["userDetails"].wealthStartDate??> ${Session["userDetails"].wealthStartDate!?string("dd/MM/yyyy")}—${Session["userDetails"].wealthEndDate!?string("dd/MM/yyyy")}</#if></span>我的财富：<font color="#FF66001">${Session["userDetails"].wealth!}</font></div>
     <div class="clear"></div>
     </div>
     <div class="pxshi_gl">
@@ -43,6 +43,16 @@
 					        <input type="text" name="company.name" value="${company.name!}" id="company.name" />
 					        <#else>
 					        <input type="text" name="company.name" value="" id="company.name" />
+					        </#if>
+					        </td>
+					      </tr>
+					      <tr>
+					        <td width="69" height="40" align="right" valign="middle"><font color="#ff0000">*</font> 汽车品牌：</td>
+					        <td width="292">
+					        <#if company?? && company.autoBrand??>
+					        <input type="text" name="company.autoBrand" value="${company.autoBrand!}" id="company.autoBrand" />
+					        <#else>
+					        <input type="text" name="company.autoBrand" value="" id="company.autoBrand" />
 					        </#if>
 					        </td>
 					      </tr>
@@ -320,6 +330,7 @@ function submitdata(){
 	var form_data = {};
 	var logo = document.getElementById('company.logo').src;
 	var name = $("[name='company.name']").val();
+	var autoBrand = $("[name='company.autoBrand']").val();
 	var cid = $("[name='company.id']").val();
 	var scale = $("[name='company.scale']").val();
 	var industry = $("[name='company.industry']").val();
@@ -335,6 +346,7 @@ function submitdata(){
 	
 	form_data.cid = cid;
 	form_data.name = name;
+	form_data.autoBrand = autoBrand;
 	form_data.logo= logo;
 	form_data.industry = industry;
 	form_data.address = address;
@@ -354,7 +366,7 @@ function submitdata(){
 	             return false;
 	         },
 		     success: function (data) {
-		    	 showErrMsg("保存成功！");
+		    	 showErrMsg("资料完善成功,请耐心等待培聘网的审核！");
 		    	 	if(data.code==200){
 		    	 		window.location.href = "/backend/companyCompleteResume";
 		    	 	}
