@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<title>汽车培聘网</title>
+<title>培聘网</title>
 <link rel="stylesheet" href="<@url value='/assets/website/backend/css/login_style.css'/>" type="text/css" media="screen" />
 <script type="text/javascript" src="<@url value='/assets/website/backend/js/jquery-1.8.0.min.js'/>"></script>
 <script type="text/javascript" src="<@url value='/assets/website/backend/js/common.js'/>"></script>
