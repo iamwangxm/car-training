@@ -74,6 +74,7 @@ public class TrainerCompleteResumeAction extends BaseAction {
 	private String intro = "";
 	private String mainCourse = "";
 	private String businessCategory = "";
+	private String executionCategory = "";
 	private String vedioURL1 = "";
 	private String vedioURL2 = "";
 	
@@ -159,6 +160,16 @@ public class TrainerCompleteResumeAction extends BaseAction {
 						setStr.add(s);
 					}
 					trainer.setBusinessCategory(setStr);
+				}
+			}
+			if (StringUtils.isNotBlank(executionCategory)) {
+				Set<String> setStr = new HashSet<String>();
+				String[] arr = executionCategory.split(",");
+				if (arr != null && arr.length > 0) {
+					for (String s : arr) {
+						setStr.add(s);
+					}
+					trainer.setExecutionCategory(setStr);
 				}
 			}
 			trainer.setEducation(Enum.valueOf(Education.class, education));
@@ -358,6 +369,14 @@ public class TrainerCompleteResumeAction extends BaseAction {
 
 	public void setBusinessCategory(String businessCategory) {
 		this.businessCategory = businessCategory;
+	}
+
+	public String getExecutionCategory() {
+		return executionCategory;
+	}
+
+	public void setExecutionCategory(String executionCategory) {
+		this.executionCategory = executionCategory;
 	}
 
 	public String getVedioURL1() {

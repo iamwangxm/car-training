@@ -222,7 +222,24 @@
                     	   	<input type="checkBox" name="trainer.businessCategory" id="trainer.businessCategory"  value="行政"/>行政
                     	   	</#if>
                     	    </td>
-                    	    
+                  	    </tr>
+                  	    <tr>
+                    	    <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>执行类型：</td>
+                    	    <td colspan="3">
+                    	    <#if trainer ?? && trainer.executionCategory??>
+                    	   	<input type="checkBox" name="trainer.executionCategory" id="trainer.executionCategory" <#if trainer.executionCategory ? index_of("开发")!=-1> checked </#if> value="开发"/>开发
+                    	   	<input type="checkBox" name="trainer.executionCategory" id="trainer.executionCategory" <#if trainer.executionCategory ? index_of("培训")!=-1> checked </#if> value="培训"/>培训
+                    	   	<input type="checkBox" name="trainer.executionCategory" id="trainer.executionCategory" <#if trainer.executionCategory ? index_of("辅导")!=-1> checked </#if> value="辅导"/>辅导
+                	   		<input type="checkBox" name="trainer.executionCategory" id="trainer.executionCategory" <#if trainer.executionCategory ? index_of("项目管理")!=-1> checked </#if> value="项目管理"/>项目管理
+                    	   	<input type="checkBox" name="trainer.executionCategory" id="trainer.executionCategory" <#if trainer.executionCategory ? index_of("经销商托管")!=-1> checked </#if> value="经销商托管"/>经销商托管
+                    	    <#else>
+                    	    <input type="checkBox" name="trainer.executionCategory" id="trainer.executionCategory"  value="开发"/>开发
+                    	   	<input type="checkBox" name="trainer.executionCategory" id="trainer.executionCategory"  value="培训"/>培训
+                    	   	<input type="checkBox" name="trainer.executionCategory" id="trainer.executionCategory"  value="辅导"/>辅导
+                	   		<input type="checkBox" name="trainer.executionCategory" id="trainer.executionCategory"  value="项目管理"/>项目管理
+                    	   	<input type="checkBox" name="trainer.executionCategory" id="trainer.executionCategory"  value="经销商托管"/>经销商托管
+                    	   	</#if>
+                    	    </td>
                   	    </tr>
                   	    	<tr>
                     	    <td height="40" align="right" valign="middle"><font color="#ff0000">*</font>视频链接1：</td>
@@ -303,7 +320,7 @@
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
                     <td height="60" align="center" valign="middle">
-                    <input type="button" onclick="submitdata()" style="width:58px;height:28px;background-repeat:no-repeat;background-image:url(http://obu3flkwk.bkt.clouddn.com/backend/images/bc.jpg);border:0;"/>
+                    <a style="cursor:hand"><input type="button" onclick="submitdata()" style="width:58px;height:28px;background-repeat:no-repeat;background-image:url(http://obu3flkwk.bkt.clouddn.com/backend/images/bc.jpg);border:0;"/></a>
                      &nbsp;&nbsp;&nbsp;&nbsp;</td>
                   </tr>
                 </table>
@@ -364,6 +381,10 @@ function submitdata(){
 	$("input:checkbox[name='trainer.businessCategory']:checked").each(function(index, element) {
                          businessCategory += $(this).val() + ",";
 	}); 
+	var executionCategory = '';
+	$("input:checkbox[name='trainer.executionCategory']:checked").each(function(index, element) {
+                         executionCategory += $(this).val() + ",";
+	}); 
 	var vedioURL1 = $("[name='trainer.vedioURL1']").val();
 	var vedioURL2 = $("[name='trainer.vedioURL2']").val();
 	
@@ -384,6 +405,7 @@ function submitdata(){
 	form_data.vedioURL1 = vedioURL1;
 	form_data.vedioURL2 = vedioURL2;
 	form_data.businessCategory = businessCategory;
+	form_data.executionCategory = executionCategory;
 	
 	$.ajax({
 			 type: "POST",
